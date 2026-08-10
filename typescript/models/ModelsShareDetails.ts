@@ -21,6 +21,10 @@ export class ModelsShareDetails {
     */
     'ownerOrganizationId'?: string;
     /**
+    * OwnerOrganizationName is the owner org\'s friendly name, filled at read time alongside OwnerOrganizationID. Never persisted: friendly names are editable and a stored copy would go stale; omitted when unset.
+    */
+    'ownerOrganizationName'?: string;
+    /**
     * SharedWithChildren is true when the requesting org owns the resource and has shared it out to at least one child org.
     */
     'sharedWithChildren'?: boolean;
@@ -37,6 +41,12 @@ export class ModelsShareDetails {
         {
             "name": "ownerOrganizationId",
             "baseName": "owner_organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "ownerOrganizationName",
+            "baseName": "owner_organization_name",
             "type": "string",
             "format": ""
         },

@@ -29,9 +29,10 @@ class ModelsShareDetails(BaseModel):
     ShareDetails is set when the enrichment is involved in org-to-org sharing.
     """ # noqa: E501
     owner_organization_id: Optional[StrictStr] = Field(default=None, description="OwnerOrganizationID is the org that owns the resource; set only when SharedWithMe.")
+    owner_organization_name: Optional[StrictStr] = Field(default=None, description="OwnerOrganizationName is the owner org's friendly name, filled at read time alongside OwnerOrganizationID. Never persisted: friendly names are editable and a stored copy would go stale; omitted when unset.")
     shared_with_children: Optional[StrictBool] = Field(default=None, description="SharedWithChildren is true when the requesting org owns the resource and has shared it out to at least one child org.")
     shared_with_me: Optional[StrictBool] = Field(default=None, description="SharedWithMe is true when the resource is shared to the requesting org by a parent org.")
-    __properties: ClassVar[List[str]] = ["owner_organization_id", "shared_with_children", "shared_with_me"]
+    __properties: ClassVar[List[str]] = ["owner_organization_id", "owner_organization_name", "shared_with_children", "shared_with_me"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,6 +86,7 @@ class ModelsShareDetails(BaseModel):
 
         _obj = cls.model_validate({
             "owner_organization_id": obj.get("owner_organization_id"),
+            "owner_organization_name": obj.get("owner_organization_name"),
             "shared_with_children": obj.get("shared_with_children"),
             "shared_with_me": obj.get("shared_with_me")
         })

@@ -22,6 +22,8 @@ var _ MappedNullable = &ModelsShareDetails{}
 type ModelsShareDetails struct {
 	// OwnerOrganizationID is the org that owns the resource; set only when SharedWithMe.
 	OwnerOrganizationId *string `json:"owner_organization_id,omitempty"`
+	// OwnerOrganizationName is the owner org's friendly name, filled at read time alongside OwnerOrganizationID. Never persisted: friendly names are editable and a stored copy would go stale; omitted when unset.
+	OwnerOrganizationName *string `json:"owner_organization_name,omitempty"`
 	// SharedWithChildren is true when the requesting org owns the resource and has shared it out to at least one child org.
 	SharedWithChildren *bool `json:"shared_with_children,omitempty"`
 	// SharedWithMe is true when the resource is shared to the requesting org by a parent org.
@@ -75,6 +77,38 @@ func (o *ModelsShareDetails) HasOwnerOrganizationId() bool {
 // SetOwnerOrganizationId gets a reference to the given string and assigns it to the OwnerOrganizationId field.
 func (o *ModelsShareDetails) SetOwnerOrganizationId(v string) {
 	o.OwnerOrganizationId = &v
+}
+
+// GetOwnerOrganizationName returns the OwnerOrganizationName field value if set, zero value otherwise.
+func (o *ModelsShareDetails) GetOwnerOrganizationName() string {
+	if o == nil || IsNil(o.OwnerOrganizationName) {
+		var ret string
+		return ret
+	}
+	return *o.OwnerOrganizationName
+}
+
+// GetOwnerOrganizationNameOk returns a tuple with the OwnerOrganizationName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsShareDetails) GetOwnerOrganizationNameOk() (*string, bool) {
+	if o == nil || IsNil(o.OwnerOrganizationName) {
+		return nil, false
+	}
+	return o.OwnerOrganizationName, true
+}
+
+// HasOwnerOrganizationName returns a boolean if a field has been set.
+func (o *ModelsShareDetails) HasOwnerOrganizationName() bool {
+	if o != nil && !IsNil(o.OwnerOrganizationName) {
+		return true
+	}
+
+	return false
+}
+
+// SetOwnerOrganizationName gets a reference to the given string and assigns it to the OwnerOrganizationName field.
+func (o *ModelsShareDetails) SetOwnerOrganizationName(v string) {
+	o.OwnerOrganizationName = &v
 }
 
 // GetSharedWithChildren returns the SharedWithChildren field value if set, zero value otherwise.
@@ -153,6 +187,9 @@ func (o ModelsShareDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.OwnerOrganizationId) {
 		toSerialize["owner_organization_id"] = o.OwnerOrganizationId
+	}
+	if !IsNil(o.OwnerOrganizationName) {
+		toSerialize["owner_organization_name"] = o.OwnerOrganizationName
 	}
 	if !IsNil(o.SharedWithChildren) {
 		toSerialize["shared_with_children"] = o.SharedWithChildren

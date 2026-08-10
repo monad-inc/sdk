@@ -55,6 +55,11 @@ public class ModelsShareDetails {
   @javax.annotation.Nullable
   private String ownerOrganizationId;
 
+  public static final String SERIALIZED_NAME_OWNER_ORGANIZATION_NAME = "owner_organization_name";
+  @SerializedName(SERIALIZED_NAME_OWNER_ORGANIZATION_NAME)
+  @javax.annotation.Nullable
+  private String ownerOrganizationName;
+
   public static final String SERIALIZED_NAME_SHARED_WITH_CHILDREN = "shared_with_children";
   @SerializedName(SERIALIZED_NAME_SHARED_WITH_CHILDREN)
   @javax.annotation.Nullable
@@ -84,6 +89,25 @@ public class ModelsShareDetails {
 
   public void setOwnerOrganizationId(@javax.annotation.Nullable String ownerOrganizationId) {
     this.ownerOrganizationId = ownerOrganizationId;
+  }
+
+
+  public ModelsShareDetails ownerOrganizationName(@javax.annotation.Nullable String ownerOrganizationName) {
+    this.ownerOrganizationName = ownerOrganizationName;
+    return this;
+  }
+
+  /**
+   * OwnerOrganizationName is the owner org&#39;s friendly name, filled at read time alongside OwnerOrganizationID. Never persisted: friendly names are editable and a stored copy would go stale; omitted when unset.
+   * @return ownerOrganizationName
+   */
+  @javax.annotation.Nullable
+  public String getOwnerOrganizationName() {
+    return ownerOrganizationName;
+  }
+
+  public void setOwnerOrganizationName(@javax.annotation.Nullable String ownerOrganizationName) {
+    this.ownerOrganizationName = ownerOrganizationName;
   }
 
 
@@ -136,13 +160,14 @@ public class ModelsShareDetails {
     }
     ModelsShareDetails modelsShareDetails = (ModelsShareDetails) o;
     return Objects.equals(this.ownerOrganizationId, modelsShareDetails.ownerOrganizationId) &&
+        Objects.equals(this.ownerOrganizationName, modelsShareDetails.ownerOrganizationName) &&
         Objects.equals(this.sharedWithChildren, modelsShareDetails.sharedWithChildren) &&
         Objects.equals(this.sharedWithMe, modelsShareDetails.sharedWithMe);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ownerOrganizationId, sharedWithChildren, sharedWithMe);
+    return Objects.hash(ownerOrganizationId, ownerOrganizationName, sharedWithChildren, sharedWithMe);
   }
 
   @Override
@@ -150,6 +175,7 @@ public class ModelsShareDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsShareDetails {\n");
     sb.append("    ownerOrganizationId: ").append(toIndentedString(ownerOrganizationId)).append("\n");
+    sb.append("    ownerOrganizationName: ").append(toIndentedString(ownerOrganizationName)).append("\n");
     sb.append("    sharedWithChildren: ").append(toIndentedString(sharedWithChildren)).append("\n");
     sb.append("    sharedWithMe: ").append(toIndentedString(sharedWithMe)).append("\n");
     sb.append("}");
@@ -170,7 +196,7 @@ public class ModelsShareDetails {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("owner_organization_id", "shared_with_children", "shared_with_me"));
+    openapiFields = new HashSet<String>(Arrays.asList("owner_organization_id", "owner_organization_name", "shared_with_children", "shared_with_me"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -199,6 +225,9 @@ public class ModelsShareDetails {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("owner_organization_id") != null && !jsonObj.get("owner_organization_id").isJsonNull()) && !jsonObj.get("owner_organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `owner_organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("owner_organization_id").toString()));
+      }
+      if ((jsonObj.get("owner_organization_name") != null && !jsonObj.get("owner_organization_name").isJsonNull()) && !jsonObj.get("owner_organization_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `owner_organization_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("owner_organization_name").toString()));
       }
   }
 

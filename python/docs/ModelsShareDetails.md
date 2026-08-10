@@ -7,6 +7,7 @@ ShareDetails is set when the enrichment is involved in org-to-org sharing.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **owner_organization_id** | **str** | OwnerOrganizationID is the org that owns the resource; set only when SharedWithMe. | [optional] 
+**owner_organization_name** | **str** | OwnerOrganizationName is the owner org&#39;s friendly name, filled at read time alongside OwnerOrganizationID. Never persisted: friendly names are editable and a stored copy would go stale; omitted when unset. | [optional] 
 **shared_with_children** | **bool** | SharedWithChildren is true when the requesting org owns the resource and has shared it out to at least one child org. | [optional] 
 **shared_with_me** | **bool** | SharedWithMe is true when the resource is shared to the requesting org by a parent org. | [optional] 
 

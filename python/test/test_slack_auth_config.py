@@ -45,6 +45,7 @@ class TestSlackAuthConfig(unittest.TestCase):
                         organization_id = '', 
                         share_details = monad.models.models/share_details.models.ShareDetails(
                             owner_organization_id = '', 
+                            owner_organization_name = '', 
                             shared_with_children = True, 
                             shared_with_me = True, ), 
                         updated_at = '', 
@@ -60,6 +61,7 @@ class TestSlackAuthConfig(unittest.TestCase):
                         organization_id = '', 
                         share_details = monad.models.models/share_details.models.ShareDetails(
                             owner_organization_id = '', 
+                            owner_organization_name = '', 
                             shared_with_children = True, 
                             shared_with_me = True, ), 
                         updated_at = '', 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OwnerOrganizationId** | Pointer to **string** | OwnerOrganizationID is the org that owns the resource; set only when SharedWithMe. | [optional] 
+**OwnerOrganizationName** | Pointer to **string** | OwnerOrganizationName is the owner org&#39;s friendly name, filled at read time alongside OwnerOrganizationID. Never persisted: friendly names are editable and a stored copy would go stale; omitted when unset. | [optional] 
 **SharedWithChildren** | Pointer to **bool** | SharedWithChildren is true when the requesting org owns the resource and has shared it out to at least one child org. | [optional] 
 **SharedWithMe** | Pointer to **bool** | SharedWithMe is true when the resource is shared to the requesting org by a parent org. | [optional] 
 
@@ -51,6 +52,31 @@ SetOwnerOrganizationId sets OwnerOrganizationId field to given value.
 `func (o *ModelsShareDetails) HasOwnerOrganizationId() bool`
 
 HasOwnerOrganizationId returns a boolean if a field has been set.
+
+### GetOwnerOrganizationName
+
+`func (o *ModelsShareDetails) GetOwnerOrganizationName() string`
+
+GetOwnerOrganizationName returns the OwnerOrganizationName field if non-nil, zero value otherwise.
+
+### GetOwnerOrganizationNameOk
+
+`func (o *ModelsShareDetails) GetOwnerOrganizationNameOk() (*string, bool)`
+
+GetOwnerOrganizationNameOk returns a tuple with the OwnerOrganizationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwnerOrganizationName
+
+`func (o *ModelsShareDetails) SetOwnerOrganizationName(v string)`
+
+SetOwnerOrganizationName sets OwnerOrganizationName field to given value.
+
+### HasOwnerOrganizationName
+
+`func (o *ModelsShareDetails) HasOwnerOrganizationName() bool`
+
+HasOwnerOrganizationName returns a boolean if a field has been set.
 
 ### GetSharedWithChildren
 

@@ -6546,6 +6546,10 @@
                         "description": "OwnerOrganizationID is the org that owns the resource; set only when SharedWithMe.",
                         "type": "string"
                     },
+                    "owner_organization_name": {
+                        "description": "OwnerOrganizationName is the owner org's friendly name, filled at read time\nalongside OwnerOrganizationID. Never persisted: friendly names are editable\nand a stored copy would go stale; omitted when unset.",
+                        "type": "string"
+                    },
                     "shared_with_children": {
                         "description": "SharedWithChildren is true when the requesting org owns the resource and has\nshared it out to at least one child org.",
                         "type": "boolean"

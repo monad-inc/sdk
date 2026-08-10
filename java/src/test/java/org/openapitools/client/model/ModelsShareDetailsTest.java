@@ -46,6 +46,14 @@ public class ModelsShareDetailsTest {
     }
 
     /**
+     * Test the property 'ownerOrganizationName'
+     */
+    @Test
+    public void ownerOrganizationNameTest() {
+        // TODO: test ownerOrganizationName
+    }
+
+    /**
      * Test the property 'sharedWithChildren'
      */
     @Test
