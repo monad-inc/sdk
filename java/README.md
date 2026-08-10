@@ -382,8 +382,6 @@ Class | Method | HTTP request | Description
  - [AddIdArgumentsConfig](docs/AddIdArgumentsConfig.md)
  - [AdminLogsSecretsConfig](docs/AdminLogsSecretsConfig.md)
  - [AdminLogsSettingsConfig](docs/AdminLogsSettingsConfig.md)
- - [AivenServiceLogsSecretsConfig](docs/AivenServiceLogsSecretsConfig.md)
- - [AivenServiceLogsSettingsConfig](docs/AivenServiceLogsSettingsConfig.md)
  - [AlertsAlertCategory](docs/AlertsAlertCategory.md)
  - [AlertsAlertGranularity](docs/AlertsAlertGranularity.md)
  - [AlertsAlertHouse](docs/AlertsAlertHouse.md)

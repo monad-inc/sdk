@@ -8,8 +8,6 @@ import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
-import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
-import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
 import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
 import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
 import { AlertsAlertHouse } from '../models/AlertsAlertHouse';

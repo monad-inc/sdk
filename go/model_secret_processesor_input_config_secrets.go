@@ -20,7 +20,6 @@ import (
 // SecretProcessesorInputConfigSecrets - struct for SecretProcessesorInputConfigSecrets
 type SecretProcessesorInputConfigSecrets struct {
 	AdminLogsSecretsConfig *AdminLogsSecretsConfig
-	AivenServiceLogsSecretsConfig *AivenServiceLogsSecretsConfig
 	ArizeAuditLogsSecretsConfig *ArizeAuditLogsSecretsConfig
 	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AwsGuarddutySecretsConfig *AwsGuarddutySecretsConfig
@@ -97,13 +96,6 @@ type SecretProcessesorInputConfigSecrets struct {
 func AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AdminLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		AdminLogsSecretsConfig: v,
-	}
-}
-
-// AivenServiceLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AivenServiceLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func AivenServiceLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AivenServiceLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		AivenServiceLogsSecretsConfig: v,
 	}
 }
 
@@ -617,23 +609,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.AdminLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into AivenServiceLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.AivenServiceLogsSecretsConfig)
-	if err == nil {
-		jsonAivenServiceLogsSecretsConfig, _ := json.Marshal(dst.AivenServiceLogsSecretsConfig)
-		if string(jsonAivenServiceLogsSecretsConfig) == "{}" { // empty struct
-			dst.AivenServiceLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AivenServiceLogsSecretsConfig); err != nil {
-				dst.AivenServiceLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AivenServiceLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into ArizeAuditLogsSecretsConfig
@@ -1829,7 +1804,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AdminLogsSecretsConfig = nil
-		dst.AivenServiceLogsSecretsConfig = nil
 		dst.ArizeAuditLogsSecretsConfig = nil
 		dst.AuthLogsSecretsConfig = nil
 		dst.AwsGuarddutySecretsConfig = nil
@@ -2260,11 +2234,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
         } else {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
         }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
 	}
 }
 
@@ -2272,10 +2241,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 	if src.AdminLogsSecretsConfig != nil {
 		return json.Marshal(&src.AdminLogsSecretsConfig)
-	}
-
-	if src.AivenServiceLogsSecretsConfig != nil {
-		return json.Marshal(&src.AivenServiceLogsSecretsConfig)
 	}
 
 	if src.ArizeAuditLogsSecretsConfig != nil {
@@ -2570,10 +2535,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.AdminLogsSecretsConfig
 	}
 
-	if obj.AivenServiceLogsSecretsConfig != nil {
-		return obj.AivenServiceLogsSecretsConfig
-	}
-
 	if obj.ArizeAuditLogsSecretsConfig != nil {
 		return obj.ArizeAuditLogsSecretsConfig
 	}
@@ -2862,10 +2823,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interface{}) {
 	if obj.AdminLogsSecretsConfig != nil {
 		return *obj.AdminLogsSecretsConfig
-	}
-
-	if obj.AivenServiceLogsSecretsConfig != nil {
-		return *obj.AivenServiceLogsSecretsConfig
 	}
 
 	if obj.ArizeAuditLogsSecretsConfig != nil {

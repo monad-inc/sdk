@@ -4,8 +4,6 @@ export * from '../models/AddArgumentsConfig';
 export * from '../models/AddIdArgumentsConfig';
 export * from '../models/AdminLogsSecretsConfig';
 export * from '../models/AdminLogsSettingsConfig';
-export * from '../models/AivenServiceLogsSecretsConfig';
-export * from '../models/AivenServiceLogsSettingsConfig';
 export * from '../models/AlertsAlertCategory';
 export * from '../models/AlertsAlertGranularity';
 export * from '../models/AlertsAlertHouse';
@@ -636,8 +634,6 @@ import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
 import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
 import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
-import { AivenServiceLogsSecretsConfig } from '../models/AivenServiceLogsSecretsConfig';
-import { AivenServiceLogsSettingsConfig } from '../models/AivenServiceLogsSettingsConfig';
 import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
 import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
 import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
@@ -1365,8 +1361,6 @@ let typeMap: {[index: string]: any} = {
     "AddIdArgumentsConfig": AddIdArgumentsConfig,
     "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
     "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
-    "AivenServiceLogsSecretsConfig": AivenServiceLogsSecretsConfig,
-    "AivenServiceLogsSettingsConfig": AivenServiceLogsSettingsConfig,
     "AlertsAlertMeta": AlertsAlertMeta,
     "ApplyConditionV2Request": ApplyConditionV2RequestClass,
     "ApplyTransformationV2Request": ApplyTransformationV2RequestClass,

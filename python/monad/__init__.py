@@ -76,8 +76,6 @@ __all__ = [
     "AddIdArgumentsConfig",
     "AdminLogsSecretsConfig",
     "AdminLogsSettingsConfig",
-    "AivenServiceLogsSecretsConfig",
-    "AivenServiceLogsSettingsConfig",
     "AlertsAlertCategory",
     "AlertsAlertGranularity",
     "AlertsAlertHouse",
@@ -765,8 +763,6 @@ from monad.models.add_arguments_config import AddArgumentsConfig as AddArguments
 from monad.models.add_id_arguments_config import AddIdArgumentsConfig as AddIdArgumentsConfig
 from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig as AdminLogsSecretsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig as AdminLogsSettingsConfig
-from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig as AivenServiceLogsSecretsConfig
-from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig as AivenServiceLogsSettingsConfig
 from monad.models.alerts_alert_category import AlertsAlertCategory as AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity as AlertsAlertGranularity
 from monad.models.alerts_alert_house import AlertsAlertHouse as AlertsAlertHouse

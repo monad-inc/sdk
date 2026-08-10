@@ -20,8 +20,6 @@ from monad.models.add_arguments_config import AddArgumentsConfig
 from monad.models.add_id_arguments_config import AddIdArgumentsConfig
 from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig
 from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig
-from monad.models.aiven_service_logs_secrets_config import AivenServiceLogsSecretsConfig
-from monad.models.aiven_service_logs_settings_config import AivenServiceLogsSettingsConfig
 from monad.models.alerts_alert_category import AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity
 from monad.models.alerts_alert_house import AlertsAlertHouse

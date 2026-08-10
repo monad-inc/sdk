@@ -7,10 +7,8 @@ Name | Type | Description | Notes
 **Host** | **string** | The API hostname for your Duo Security integration. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
-**Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
-**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
-**Service** | Pointer to **string** | The Aiven service name | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **Region** | **string** | AWS Region of your bucket. | 
 **RoleArn** | Pointer to **string** | Role ARN to assume when reading from S3. | [optional] 
 **Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
@@ -43,6 +41,7 @@ Name | Type | Description | Notes
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
 **VirtualNetworkName** | Pointer to **string** | The name of the virtual network for which flow logs are being collected | [optional] 
 **Dataset** | Pointer to **string** | The BigQuery dataset ID containing the table | [optional] 
+**Project** | Pointer to **string** | The GCP project ID containing the BigQuery dataset | [optional] 
 **Query** | **string** | The query to run against the Log Analytics workspace | 
 **Table** | Pointer to **string** | The BigQuery table ID to query data from | [optional] 
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
@@ -240,30 +239,30 @@ SetBackfillStartTime sets BackfillStartTime field to given value.
 
 HasBackfillStartTime returns a boolean if a field has been set.
 
-### GetProject
+### GetIntervalSeconds
 
-`func (o *SecretProcessesorInputConfigSettings) GetProject() string`
+`func (o *SecretProcessesorInputConfigSettings) GetIntervalSeconds() int32`
 
-GetProject returns the Project field if non-nil, zero value otherwise.
+GetIntervalSeconds returns the IntervalSeconds field if non-nil, zero value otherwise.
 
-### GetProjectOk
+### GetIntervalSecondsOk
 
-`func (o *SecretProcessesorInputConfigSettings) GetProjectOk() (*string, bool)`
+`func (o *SecretProcessesorInputConfigSettings) GetIntervalSecondsOk() (*int32, bool)`
 
-GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+GetIntervalSecondsOk returns a tuple with the IntervalSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProject
+### SetIntervalSeconds
 
-`func (o *SecretProcessesorInputConfigSettings) SetProject(v string)`
+`func (o *SecretProcessesorInputConfigSettings) SetIntervalSeconds(v int32)`
 
-SetProject sets Project field to given value.
+SetIntervalSeconds sets IntervalSeconds field to given value.
 
-### HasProject
+### HasIntervalSeconds
 
-`func (o *SecretProcessesorInputConfigSettings) HasProject() bool`
+`func (o *SecretProcessesorInputConfigSettings) HasIntervalSeconds() bool`
 
-HasProject returns a boolean if a field has been set.
+HasIntervalSeconds returns a boolean if a field has been set.
 
 ### GetRateLimit
 
@@ -289,56 +288,6 @@ SetRateLimit sets RateLimit field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRateLimit() bool`
 
 HasRateLimit returns a boolean if a field has been set.
-
-### GetService
-
-`func (o *SecretProcessesorInputConfigSettings) GetService() string`
-
-GetService returns the Service field if non-nil, zero value otherwise.
-
-### GetServiceOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetServiceOk() (*string, bool)`
-
-GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetService
-
-`func (o *SecretProcessesorInputConfigSettings) SetService(v string)`
-
-SetService sets Service field to given value.
-
-### HasService
-
-`func (o *SecretProcessesorInputConfigSettings) HasService() bool`
-
-HasService returns a boolean if a field has been set.
-
-### GetIntervalSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) GetIntervalSeconds() int32`
-
-GetIntervalSeconds returns the IntervalSeconds field if non-nil, zero value otherwise.
-
-### GetIntervalSecondsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIntervalSecondsOk() (*int32, bool)`
-
-GetIntervalSecondsOk returns a tuple with the IntervalSeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntervalSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) SetIntervalSeconds(v int32)`
-
-SetIntervalSeconds sets IntervalSeconds field to given value.
-
-### HasIntervalSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) HasIntervalSeconds() bool`
-
-HasIntervalSeconds returns a boolean if a field has been set.
 
 ### GetRegion
 
@@ -1099,6 +1048,31 @@ SetDataset sets Dataset field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasDataset() bool`
 
 HasDataset returns a boolean if a field has been set.
+
+### GetProject
+
+`func (o *SecretProcessesorInputConfigSettings) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *SecretProcessesorInputConfigSettings) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *SecretProcessesorInputConfigSettings) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
 
 ### GetQuery
 

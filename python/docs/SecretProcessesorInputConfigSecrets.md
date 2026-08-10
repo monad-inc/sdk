@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 

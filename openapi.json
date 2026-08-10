@@ -102,40 +102,6 @@
                 ],
                 "type": "object"
             },
-            "aiven_service_logs.SecretsConfig": {
-                "description": "Aiven Service Logs secrets",
-                "properties": {
-                    "auth_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "aiven_service_logs.SettingsConfig": {
-                "description": "Aiven Service Logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "project": {
-                        "description": "The Aiven project name",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "service": {
-                        "description": "The Aiven service name",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "alerts.AlertCategory": {
                 "enum": [
                     "Security",
@@ -10282,9 +10248,6 @@
                                 "$ref": "#/components/schemas/admin_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/aiven_service_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/arize_audit_logs.SecretsConfig"
                             },
                             {
@@ -10511,9 +10474,6 @@
                         "oneOf": [
                             {
                                 "$ref": "#/components/schemas/admin_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/aiven_service_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/arize_audit_logs.SettingsConfig"

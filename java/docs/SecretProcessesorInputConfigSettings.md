@@ -10,10 +10,8 @@
 |**host** | **String** | The API hostname for your Duo Security integration. |  |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**backfillStartTime** | **String** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. |  [optional] |
-|**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
-|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
-|**service** | **String** | The Aiven service name |  [optional] |
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**region** | **String** | AWS Region of your bucket. |  |
 |**roleArn** | **String** | Role ARN to assume when reading from S3. |  [optional] |
 |**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
@@ -46,6 +44,7 @@
 |**storageAccountUrl** | **String** | The Azure storage account URL where flow logs are stored |  [optional] |
 |**virtualNetworkName** | **String** | The name of the virtual network for which flow logs are being collected |  [optional] |
 |**dataset** | **String** | The BigQuery dataset ID containing the table |  [optional] |
+|**project** | **String** | The GCP project ID containing the BigQuery dataset |  [optional] |
 |**query** | **String** | The query to run against the Log Analytics workspace |  |
 |**table** | **String** | The BigQuery table ID to query data from |  [optional] |
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |

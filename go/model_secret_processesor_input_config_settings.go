@@ -20,7 +20,6 @@ import (
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
 	AdminLogsSettingsConfig *AdminLogsSettingsConfig
-	AivenServiceLogsSettingsConfig *AivenServiceLogsSettingsConfig
 	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
 	AuthLogsSettingsConfig *AuthLogsSettingsConfig
 	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
@@ -106,13 +105,6 @@ type SecretProcessesorInputConfigSettings struct {
 func AdminLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AdminLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		AdminLogsSettingsConfig: v,
-	}
-}
-
-// AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AivenServiceLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AivenServiceLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AivenServiceLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AivenServiceLogsSettingsConfig: v,
 	}
 }
 
@@ -689,23 +681,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.AdminLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into AivenServiceLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AivenServiceLogsSettingsConfig)
-	if err == nil {
-		jsonAivenServiceLogsSettingsConfig, _ := json.Marshal(dst.AivenServiceLogsSettingsConfig)
-		if string(jsonAivenServiceLogsSettingsConfig) == "{}" { // empty struct
-			dst.AivenServiceLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AivenServiceLogsSettingsConfig); err != nil {
-				dst.AivenServiceLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AivenServiceLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into ArizeAuditLogsSettingsConfig
@@ -2054,7 +2029,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AdminLogsSettingsConfig = nil
-		dst.AivenServiceLogsSettingsConfig = nil
 		dst.ArizeAuditLogsSettingsConfig = nil
 		dst.AuthLogsSettingsConfig = nil
 		dst.AwsGuarddutySettingsConfig = nil
@@ -2539,11 +2513,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
         } else {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
         }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
 	}
 }
 
@@ -2551,10 +2520,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 	if src.AdminLogsSettingsConfig != nil {
 		return json.Marshal(&src.AdminLogsSettingsConfig)
-	}
-
-	if src.AivenServiceLogsSettingsConfig != nil {
-		return json.Marshal(&src.AivenServiceLogsSettingsConfig)
 	}
 
 	if src.ArizeAuditLogsSettingsConfig != nil {
@@ -2885,10 +2850,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.AdminLogsSettingsConfig
 	}
 
-	if obj.AivenServiceLogsSettingsConfig != nil {
-		return obj.AivenServiceLogsSettingsConfig
-	}
-
 	if obj.ArizeAuditLogsSettingsConfig != nil {
 		return obj.ArizeAuditLogsSettingsConfig
 	}
@@ -3213,10 +3174,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interface{}) {
 	if obj.AdminLogsSettingsConfig != nil {
 		return *obj.AdminLogsSettingsConfig
-	}
-
-	if obj.AivenServiceLogsSettingsConfig != nil {
-		return *obj.AivenServiceLogsSettingsConfig
 	}
 
 	if obj.ArizeAuditLogsSettingsConfig != nil {

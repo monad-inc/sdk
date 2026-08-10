@@ -9,7 +9,6 @@
 |------------ | ------------- | ------------- | -------------|
 |**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**authToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |

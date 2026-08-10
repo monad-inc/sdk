@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**AuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -90,31 +89,6 @@ and a boolean to check if the value has been set.
 
 SetSecretKey sets SecretKey field to given value.
 
-
-### GetAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAuthToken() ModelsSecret`
-
-GetAuthToken returns the AuthToken field if non-nil, zero value otherwise.
-
-### GetAuthTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetAuthTokenOk() (*ModelsSecret, bool)`
-
-GetAuthTokenOk returns a tuple with the AuthToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetAuthToken(v ModelsSecret)`
-
-SetAuthToken sets AuthToken field to given value.
-
-### HasAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasAuthToken() bool`
-
-HasAuthToken returns a boolean if a field has been set.
 
 ### GetApiKey
 

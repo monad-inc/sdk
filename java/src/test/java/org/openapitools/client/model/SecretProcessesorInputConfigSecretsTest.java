@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.client.model.AdminLogsSecretsConfig;
-import org.openapitools.client.model.AivenServiceLogsSecretsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
 import org.openapitools.client.model.AuthLogsSecretsConfig;
 import org.openapitools.client.model.AwsGuarddutySecretsConfig;
@@ -123,14 +122,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void secretKeyTest() {
         // TODO: test secretKey
-    }
-
-    /**
-     * Test the property 'authToken'
-     */
-    @Test
-    public void authTokenTest() {
-        // TODO: test authToken
     }
 
     /**

@@ -25,7 +25,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import org.openapitools.client.model.AdminLogsSettingsConfig;
-import org.openapitools.client.model.AivenServiceLogsSettingsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
 import org.openapitools.client.model.AuthLogsSettingsConfig;
 import org.openapitools.client.model.AwsGuarddutySettingsConfig;
@@ -172,11 +171,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'project'
+     * Test the property 'intervalSeconds'
      */
     @Test
-    public void projectTest() {
-        // TODO: test project
+    public void intervalSecondsTest() {
+        // TODO: test intervalSeconds
     }
 
     /**
@@ -185,22 +184,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void rateLimitTest() {
         // TODO: test rateLimit
-    }
-
-    /**
-     * Test the property 'service'
-     */
-    @Test
-    public void serviceTest() {
-        // TODO: test service
-    }
-
-    /**
-     * Test the property 'intervalSeconds'
-     */
-    @Test
-    public void intervalSecondsTest() {
-        // TODO: test intervalSeconds
     }
 
     /**
@@ -457,6 +440,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void datasetTest() {
         // TODO: test dataset
+    }
+
+    /**
+     * Test the property 'project'
+     */
+    @Test
+    public void projectTest() {
+        // TODO: test project
     }
 
     /**
