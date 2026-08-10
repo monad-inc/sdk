@@ -10460,9 +10460,6 @@
                                 "$ref": "#/components/schemas/twilio_sendgrid_email_activity.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/universal.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/vercel_user_events.SecretsConfig"
                             },
                             {
@@ -10704,9 +10701,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/twilio_sendgrid_email_activity.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/universal.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/vercel_user_events.SettingsConfig"
@@ -11828,38 +11822,6 @@
                     "value": {
                         "description": "The value to filter on.\n\nThis member is required.",
                         "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "universal.SecretsConfig": {
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "universal.SettingsConfig": {
-                "properties": {
-                    "instance_name": {
-                        "description": "Name of the ServiceNow instance",
-                        "type": "string"
-                    },
-                    "streams": {
-                        "description": "ServiceNow streams to fetch data from",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"

@@ -587,8 +587,6 @@ import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgr
 import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
 import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter } from '../models/TypesStringFilter';
-import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
-import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
 import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
 import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
 import { UpdateBillingAccountRequest } from '../models/UpdateBillingAccountRequest';

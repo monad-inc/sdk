@@ -960,8 +960,6 @@ Class | Method | HTTP request | Description
  - [TwilioSendgridEmailActivitySettingsConfig](docs/TwilioSendgridEmailActivitySettingsConfig.md)
  - [TypesStringComparison](docs/TypesStringComparison.md)
  - [TypesStringFilter](docs/TypesStringFilter.md)
- - [UniversalSecretsConfig](docs/UniversalSecretsConfig.md)
- - [UniversalSettingsConfig](docs/UniversalSettingsConfig.md)
  - [UpdateAPIKeyRequest](docs/UpdateAPIKeyRequest.md)
  - [UpdateAlertRuleRequest](docs/UpdateAlertRuleRequest.md)
  - [UpdateBillingAccountRequest](docs/UpdateBillingAccountRequest.md)

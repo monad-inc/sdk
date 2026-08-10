@@ -141,8 +141,6 @@ Name | Type | Description | Notes
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
 **ResourceSid** | Pointer to **string** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
-**InstanceName** | Pointer to **string** | Name of the ServiceNow instance | [optional] 
-**Streams** | Pointer to **[]string** | ServiceNow streams to fetch data from | [optional] 
 **WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
 **AssetStatus** | Pointer to [**[]WizAssetStatus**](WizAssetStatus.md) | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
@@ -3438,56 +3436,6 @@ SetResourceSid sets ResourceSid field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasResourceSid() bool`
 
 HasResourceSid returns a boolean if a field has been set.
-
-### GetInstanceName
-
-`func (o *SecretProcessesorInputConfigSettings) GetInstanceName() string`
-
-GetInstanceName returns the InstanceName field if non-nil, zero value otherwise.
-
-### GetInstanceNameOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetInstanceNameOk() (*string, bool)`
-
-GetInstanceNameOk returns a tuple with the InstanceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInstanceName
-
-`func (o *SecretProcessesorInputConfigSettings) SetInstanceName(v string)`
-
-SetInstanceName sets InstanceName field to given value.
-
-### HasInstanceName
-
-`func (o *SecretProcessesorInputConfigSettings) HasInstanceName() bool`
-
-HasInstanceName returns a boolean if a field has been set.
-
-### GetStreams
-
-`func (o *SecretProcessesorInputConfigSettings) GetStreams() []string`
-
-GetStreams returns the Streams field if non-nil, zero value otherwise.
-
-### GetStreamsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetStreamsOk() (*[]string, bool)`
-
-GetStreamsOk returns a tuple with the Streams field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStreams
-
-`func (o *SecretProcessesorInputConfigSettings) SetStreams(v []string)`
-
-SetStreams sets Streams field to given value.
-
-### HasStreams
-
-`func (o *SecretProcessesorInputConfigSettings) HasStreams() bool`
-
-HasStreams returns a boolean if a field has been set.
 
 ### GetWithPayload
 

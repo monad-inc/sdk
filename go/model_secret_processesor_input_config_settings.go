@@ -94,7 +94,6 @@ type SecretProcessesorInputConfigSettings struct {
 	TinesEventsLogsSettingsConfig *TinesEventsLogsSettingsConfig
 	TwilioEventsSettingsConfig *TwilioEventsSettingsConfig
 	TwilioSendgridEmailActivitySettingsConfig *TwilioSendgridEmailActivitySettingsConfig
-	UniversalSettingsConfig *UniversalSettingsConfig
 	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
@@ -623,13 +622,6 @@ func TwilioEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TwilioE
 func TwilioSendgridEmailActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *TwilioSendgridEmailActivitySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		TwilioSendgridEmailActivitySettingsConfig: v,
-	}
-}
-
-// UniversalSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns UniversalSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func UniversalSettingsConfigAsSecretProcessesorInputConfigSettings(v *UniversalSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		UniversalSettingsConfig: v,
 	}
 }
 
@@ -1941,23 +1933,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TwilioSendgridEmailActivitySettingsConfig = nil
 	}
 
-	// try to unmarshal data into UniversalSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.UniversalSettingsConfig)
-	if err == nil {
-		jsonUniversalSettingsConfig, _ := json.Marshal(dst.UniversalSettingsConfig)
-		if string(jsonUniversalSettingsConfig) == "{}" { // empty struct
-			dst.UniversalSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.UniversalSettingsConfig); err != nil {
-				dst.UniversalSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.UniversalSettingsConfig = nil
-	}
-
 	// try to unmarshal data into VercelUserEventsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSettingsConfig)
 	if err == nil {
@@ -2103,7 +2078,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TinesEventsLogsSettingsConfig = nil
 		dst.TwilioEventsSettingsConfig = nil
 		dst.TwilioSendgridEmailActivitySettingsConfig = nil
-		dst.UniversalSettingsConfig = nil
 		dst.VercelUserEventsSettingsConfig = nil
 		dst.VoltioAuditLogsSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
@@ -2113,11 +2087,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
         } else {
@@ -2818,10 +2787,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TwilioSendgridEmailActivitySettingsConfig)
 	}
 
-	if src.UniversalSettingsConfig != nil {
-		return json.Marshal(&src.UniversalSettingsConfig)
-	}
-
 	if src.VercelUserEventsSettingsConfig != nil {
 		return json.Marshal(&src.VercelUserEventsSettingsConfig)
 	}
@@ -3146,10 +3111,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.TwilioSendgridEmailActivitySettingsConfig
 	}
 
-	if obj.UniversalSettingsConfig != nil {
-		return obj.UniversalSettingsConfig
-	}
-
 	if obj.VercelUserEventsSettingsConfig != nil {
 		return obj.VercelUserEventsSettingsConfig
 	}
@@ -3470,10 +3431,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.TwilioSendgridEmailActivitySettingsConfig != nil {
 		return *obj.TwilioSendgridEmailActivitySettingsConfig
-	}
-
-	if obj.UniversalSettingsConfig != nil {
-		return *obj.UniversalSettingsConfig
 	}
 
 	if obj.VercelUserEventsSettingsConfig != nil {

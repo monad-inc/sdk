@@ -274,10 +274,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 event_type = '',
                 replication_start_time = '',
                 resource_sid = '',
-                instance_name = '',
-                streams = [
-                    ''
-                    ],
                 with_payload = True,
                 customer_id = '',
                 asset_status = [

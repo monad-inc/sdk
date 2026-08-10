@@ -84,7 +84,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	TinesEventsLogsSecretsConfig *TinesEventsLogsSecretsConfig
 	TwilioEventsSecretsConfig *TwilioEventsSecretsConfig
 	TwilioSendgridEmailActivitySecretsConfig *TwilioSendgridEmailActivitySecretsConfig
-	UniversalSecretsConfig *UniversalSecretsConfig
 	VercelUserEventsSecretsConfig *VercelUserEventsSecretsConfig
 	VoltioAuditLogsSecretsConfig *VoltioAuditLogsSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
@@ -544,13 +543,6 @@ func TwilioEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TwilioEve
 func TwilioSendgridEmailActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *TwilioSendgridEmailActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		TwilioSendgridEmailActivitySecretsConfig: v,
-	}
-}
-
-// UniversalSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns UniversalSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func UniversalSecretsConfigAsSecretProcessesorInputConfigSecrets(v *UniversalSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		UniversalSecretsConfig: v,
 	}
 }
 
@@ -1699,23 +1691,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TwilioSendgridEmailActivitySecretsConfig = nil
 	}
 
-	// try to unmarshal data into UniversalSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.UniversalSecretsConfig)
-	if err == nil {
-		jsonUniversalSecretsConfig, _ := json.Marshal(dst.UniversalSecretsConfig)
-		if string(jsonUniversalSecretsConfig) == "{}" { // empty struct
-			dst.UniversalSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.UniversalSecretsConfig); err != nil {
-				dst.UniversalSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.UniversalSecretsConfig = nil
-	}
-
 	// try to unmarshal data into VercelUserEventsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSecretsConfig)
 	if err == nil {
@@ -1868,7 +1843,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TinesEventsLogsSecretsConfig = nil
 		dst.TwilioEventsSecretsConfig = nil
 		dst.TwilioSendgridEmailActivitySecretsConfig = nil
-		dst.UniversalSecretsConfig = nil
 		dst.VercelUserEventsSecretsConfig = nil
 		dst.VoltioAuditLogsSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
@@ -1879,11 +1853,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
         } else {
@@ -2499,10 +2468,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TwilioSendgridEmailActivitySecretsConfig)
 	}
 
-	if src.UniversalSecretsConfig != nil {
-		return json.Marshal(&src.UniversalSecretsConfig)
-	}
-
 	if src.VercelUserEventsSecretsConfig != nil {
 		return json.Marshal(&src.VercelUserEventsSecretsConfig)
 	}
@@ -2791,10 +2756,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.TwilioSendgridEmailActivitySecretsConfig
 	}
 
-	if obj.UniversalSecretsConfig != nil {
-		return obj.UniversalSecretsConfig
-	}
-
 	if obj.VercelUserEventsSecretsConfig != nil {
 		return obj.VercelUserEventsSecretsConfig
 	}
@@ -3079,10 +3040,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.TwilioSendgridEmailActivitySecretsConfig != nil {
 		return *obj.TwilioSendgridEmailActivitySecretsConfig
-	}
-
-	if obj.UniversalSecretsConfig != nil {
-		return *obj.UniversalSecretsConfig
 	}
 
 	if obj.VercelUserEventsSecretsConfig != nil {

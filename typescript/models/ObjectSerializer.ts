@@ -582,8 +582,6 @@ export * from '../models/TwilioSendgridEmailActivitySecretsConfig';
 export * from '../models/TwilioSendgridEmailActivitySettingsConfig';
 export * from '../models/TypesStringComparison';
 export * from '../models/TypesStringFilter';
-export * from '../models/UniversalSecretsConfig';
-export * from '../models/UniversalSettingsConfig';
 export * from '../models/UpdateAPIKeyRequest';
 export * from '../models/UpdateAlertRuleRequest';
 export * from '../models/UpdateBillingAccountRequest';
@@ -1213,8 +1211,6 @@ import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgr
 import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
 import { TypesStringComparison } from '../models/TypesStringComparison';
 import { TypesStringFilter   } from '../models/TypesStringFilter';
-import { UniversalSecretsConfig } from '../models/UniversalSecretsConfig';
-import { UniversalSettingsConfig } from '../models/UniversalSettingsConfig';
 import { UpdateAPIKeyRequestClass } from '../models/UpdateAPIKeyRequest';
 import { UpdateAlertRuleRequestClass } from '../models/UpdateAlertRuleRequest';
 import { UpdateBillingAccountRequestClass } from '../models/UpdateBillingAccountRequest';
@@ -1905,8 +1901,6 @@ let typeMap: {[index: string]: any} = {
     "TwilioSendgridEmailActivitySecretsConfig": TwilioSendgridEmailActivitySecretsConfig,
     "TwilioSendgridEmailActivitySettingsConfig": TwilioSendgridEmailActivitySettingsConfig,
     "TypesStringFilter": TypesStringFilter,
-    "UniversalSecretsConfig": UniversalSecretsConfig,
-    "UniversalSettingsConfig": UniversalSettingsConfig,
     "UpdateAPIKeyRequest": UpdateAPIKeyRequestClass,
     "UpdateAlertRuleRequest": UpdateAlertRuleRequestClass,
     "UpdateBillingAccountRequest": UpdateBillingAccountRequestClass,

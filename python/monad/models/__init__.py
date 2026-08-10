@@ -598,8 +598,6 @@ from monad.models.twilio_sendgrid_email_activity_secrets_config import TwilioSen
 from monad.models.twilio_sendgrid_email_activity_settings_config import TwilioSendgridEmailActivitySettingsConfig
 from monad.models.types_string_comparison import TypesStringComparison
 from monad.models.types_string_filter import TypesStringFilter
-from monad.models.universal_secrets_config import UniversalSecretsConfig
-from monad.models.universal_settings_config import UniversalSettingsConfig
 from monad.models.update_api_key_request import UpdateAPIKeyRequest
 from monad.models.update_alert_rule_request import UpdateAlertRuleRequest
 from monad.models.update_billing_account_request import UpdateBillingAccountRequest

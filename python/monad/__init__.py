@@ -654,8 +654,6 @@ __all__ = [
     "TwilioSendgridEmailActivitySettingsConfig",
     "TypesStringComparison",
     "TypesStringFilter",
-    "UniversalSecretsConfig",
-    "UniversalSettingsConfig",
     "UpdateAPIKeyRequest",
     "UpdateAlertRuleRequest",
     "UpdateBillingAccountRequest",
@@ -1342,8 +1340,6 @@ from monad.models.twilio_sendgrid_email_activity_secrets_config import TwilioSen
 from monad.models.twilio_sendgrid_email_activity_settings_config import TwilioSendgridEmailActivitySettingsConfig as TwilioSendgridEmailActivitySettingsConfig
 from monad.models.types_string_comparison import TypesStringComparison as TypesStringComparison
 from monad.models.types_string_filter import TypesStringFilter as TypesStringFilter
-from monad.models.universal_secrets_config import UniversalSecretsConfig as UniversalSecretsConfig
-from monad.models.universal_settings_config import UniversalSettingsConfig as UniversalSettingsConfig
 from monad.models.update_api_key_request import UpdateAPIKeyRequest as UpdateAPIKeyRequest
 from monad.models.update_alert_rule_request import UpdateAlertRuleRequest as UpdateAlertRuleRequest
 from monad.models.update_billing_account_request import UpdateBillingAccountRequest as UpdateBillingAccountRequest
