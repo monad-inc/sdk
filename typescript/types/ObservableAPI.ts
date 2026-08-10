@@ -925,14 +925,14 @@ export class ObservableAlertsApi {
      * @param [severities] Comma-separated severity levels
      * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceType] Resource type filter
-     * @param [resourceId] Specific resource ID
+     * @param [resourceIds] Comma-separated resource IDs
      * @param [since] RFC3339 timestamp for start time
      * @param [until] RFC3339 timestamp for end time
      */
-    public listAlertsWithHttpInfo(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertList>> {
+    public listAlertsWithHttpInfo(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceIds?: string, since?: string, until?: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertList>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, _config);
+        const requestContextPromise = this.requestFactory.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -957,12 +957,12 @@ export class ObservableAlertsApi {
      * @param [severities] Comma-separated severity levels
      * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceType] Resource type filter
-     * @param [resourceId] Specific resource ID
+     * @param [resourceIds] Comma-separated resource IDs
      * @param [since] RFC3339 timestamp for start time
      * @param [until] RFC3339 timestamp for end time
      */
-    public listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: ConfigurationOptions): Observable<RoutesV3AlertList> {
-        return this.listAlertsWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertList>) => apiResponse.data));
+    public listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceIds?: string, since?: string, until?: string, _options?: ConfigurationOptions): Observable<RoutesV3AlertList> {
+        return this.listAlertsWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertList>) => apiResponse.data));
     }
 
     /**
@@ -973,13 +973,14 @@ export class ObservableAlertsApi {
      * @param [last] Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
      * @param [ruleIds] Comma-separated alert rule IDs
      * @param [severities] Comma-separated severity levels
+     * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceIds] Comma-separated resource IDs
      * @param [resourceType] Resource type filter
      */
-    public streamAlertsWithHttpInfo(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
+    public streamAlertsWithHttpInfo(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<HttpInfo<string>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.streamAlerts(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _config);
+        const requestContextPromise = this.requestFactory.streamAlerts(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -1004,11 +1005,12 @@ export class ObservableAlertsApi {
      * @param [last] Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
      * @param [ruleIds] Comma-separated alert rule IDs
      * @param [severities] Comma-separated severity levels
+     * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceIds] Comma-separated resource IDs
      * @param [resourceType] Resource type filter
      */
-    public streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<string> {
-        return this.streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceIds?: string, resourceType?: string, _options?: ConfigurationOptions): Observable<string> {
+        return this.streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
 }

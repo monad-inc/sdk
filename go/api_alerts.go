@@ -32,7 +32,7 @@ type ApiListAlertsRequest struct {
 	severities *string
 	pipelineIds *string
 	resourceType *string
-	resourceId *string
+	resourceIds *string
 	since *string
 	until *string
 }
@@ -61,9 +61,9 @@ func (r ApiListAlertsRequest) ResourceType(resourceType string) ApiListAlertsReq
 	return r
 }
 
-// Specific resource ID
-func (r ApiListAlertsRequest) ResourceId(resourceId string) ApiListAlertsRequest {
-	r.resourceId = &resourceId
+// Comma-separated resource IDs
+func (r ApiListAlertsRequest) ResourceIds(resourceIds string) ApiListAlertsRequest {
+	r.resourceIds = &resourceIds
 	return r
 }
 
@@ -134,8 +134,8 @@ func (a *AlertsAPIService) ListAlertsExecute(r ApiListAlertsRequest) (*RoutesV3A
 	if r.resourceType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "resource_type", r.resourceType, "form", "")
 	}
-	if r.resourceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "resource_id", r.resourceId, "form", "")
+	if r.resourceIds != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resource_ids", r.resourceIds, "form", "")
 	}
 	if r.since != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "since", r.since, "form", "")
@@ -240,6 +240,7 @@ type ApiStreamAlertsRequest struct {
 	last *string
 	ruleIds *string
 	severities *string
+	pipelineIds *string
 	resourceIds *string
 	resourceType *string
 }
@@ -265,6 +266,12 @@ func (r ApiStreamAlertsRequest) RuleIds(ruleIds string) ApiStreamAlertsRequest {
 // Comma-separated severity levels
 func (r ApiStreamAlertsRequest) Severities(severities string) ApiStreamAlertsRequest {
 	r.severities = &severities
+	return r
+}
+
+// Comma-separated pipeline IDs
+func (r ApiStreamAlertsRequest) PipelineIds(pipelineIds string) ApiStreamAlertsRequest {
+	r.pipelineIds = &pipelineIds
 	return r
 }
 
@@ -334,6 +341,9 @@ func (a *AlertsAPIService) StreamAlertsExecute(r ApiStreamAlertsRequest) (string
 	}
 	if r.severities != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "severities", r.severities, "form", "")
+	}
+	if r.pipelineIds != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pipeline_ids", r.pipelineIds, "form", "")
 	}
 	if r.resourceIds != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "resource_ids", r.resourceIds, "form", "")

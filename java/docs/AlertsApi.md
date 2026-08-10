@@ -10,7 +10,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="listAlerts"></a>
 # **listAlerts**
-> RoutesV3AlertList listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until)
+> RoutesV3AlertList listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until)
 
 List alerts with pagination
 
@@ -43,11 +43,11 @@ public class Example {
     String severities = "severities_example"; // String | Comma-separated severity levels
     String pipelineIds = "pipelineIds_example"; // String | Comma-separated pipeline IDs
     String resourceType = "resourceType_example"; // String | Resource type filter
-    String resourceId = "resourceId_example"; // String | Specific resource ID
+    String resourceIds = "resourceIds_example"; // String | Comma-separated resource IDs
     String since = "since_example"; // String | RFC3339 timestamp for start time
     String until = "until_example"; // String | RFC3339 timestamp for end time
     try {
-      RoutesV3AlertList result = apiInstance.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until);
+      RoutesV3AlertList result = apiInstance.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertsApi#listAlerts");
@@ -69,7 +69,7 @@ public class Example {
 | **severities** | **String**| Comma-separated severity levels | [optional] |
 | **pipelineIds** | **String**| Comma-separated pipeline IDs | [optional] |
 | **resourceType** | **String**| Resource type filter | [optional] |
-| **resourceId** | **String**| Specific resource ID | [optional] |
+| **resourceIds** | **String**| Comma-separated resource IDs | [optional] |
 | **since** | **String**| RFC3339 timestamp for start time | [optional] |
 | **until** | **String**| RFC3339 timestamp for end time | [optional] |
 
@@ -95,7 +95,7 @@ public class Example {
 
 <a id="streamAlerts"></a>
 # **streamAlerts**
-> String streamAlerts(organizationId, since, last, ruleIds, severities, resourceIds, resourceType)
+> String streamAlerts(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType)
 
 Stream alerts in real-time
 
@@ -128,10 +128,11 @@ public class Example {
     String last = "last_example"; // String | Duration to start streaming from (e.g., '5m', '1h', '24h')
     String ruleIds = "ruleIds_example"; // String | Comma-separated alert rule IDs
     String severities = "severities_example"; // String | Comma-separated severity levels
+    String pipelineIds = "pipelineIds_example"; // String | Comma-separated pipeline IDs
     String resourceIds = "resourceIds_example"; // String | Comma-separated resource IDs
     String resourceType = "resourceType_example"; // String | Resource type filter
     try {
-      String result = apiInstance.streamAlerts(organizationId, since, last, ruleIds, severities, resourceIds, resourceType);
+      String result = apiInstance.streamAlerts(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertsApi#streamAlerts");
@@ -153,6 +154,7 @@ public class Example {
 | **last** | **String**| Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) | [optional] |
 | **ruleIds** | **String**| Comma-separated alert rule IDs | [optional] |
 | **severities** | **String**| Comma-separated severity levels | [optional] |
+| **pipelineIds** | **String**| Comma-separated pipeline IDs | [optional] |
 | **resourceIds** | **String**| Comma-separated resource IDs | [optional] |
 | **resourceType** | **String**| Resource type filter | [optional] |
 

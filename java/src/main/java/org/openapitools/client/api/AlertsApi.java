@@ -79,7 +79,7 @@ public class AlertsApi {
      * @param severities Comma-separated severity levels (optional)
      * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceType Resource type filter (optional)
-     * @param resourceId Specific resource ID (optional)
+     * @param resourceIds Comma-separated resource IDs (optional)
      * @param since RFC3339 timestamp for start time (optional)
      * @param until RFC3339 timestamp for end time (optional)
      * @param _callback Callback for upload/download progress
@@ -94,7 +94,7 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertsCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,8 +136,8 @@ public class AlertsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("resource_type", resourceType));
         }
 
-        if (resourceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resource_id", resourceId));
+        if (resourceIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("resource_ids", resourceIds));
         }
 
         if (since != null) {
@@ -168,13 +168,13 @@ public class AlertsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertsValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertsValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling listAlerts(Async)");
         }
 
-        return listAlertsCall(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, _callback);
+        return listAlertsCall(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, _callback);
 
     }
 
@@ -186,7 +186,7 @@ public class AlertsApi {
      * @param severities Comma-separated severity levels (optional)
      * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceType Resource type filter (optional)
-     * @param resourceId Specific resource ID (optional)
+     * @param resourceIds Comma-separated resource IDs (optional)
      * @param since RFC3339 timestamp for start time (optional)
      * @param until RFC3339 timestamp for end time (optional)
      * @return RoutesV3AlertList
@@ -200,8 +200,8 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3AlertList listAlerts(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until) throws ApiException {
-        ApiResponse<RoutesV3AlertList> localVarResp = listAlertsWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until);
+    public RoutesV3AlertList listAlerts(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until) throws ApiException {
+        ApiResponse<RoutesV3AlertList> localVarResp = listAlertsWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until);
         return localVarResp.getData();
     }
 
@@ -213,7 +213,7 @@ public class AlertsApi {
      * @param severities Comma-separated severity levels (optional)
      * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceType Resource type filter (optional)
-     * @param resourceId Specific resource ID (optional)
+     * @param resourceIds Comma-separated resource IDs (optional)
      * @param since RFC3339 timestamp for start time (optional)
      * @param until RFC3339 timestamp for end time (optional)
      * @return ApiResponse&lt;RoutesV3AlertList&gt;
@@ -227,8 +227,8 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3AlertList> listAlertsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until) throws ApiException {
-        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, null);
+    public ApiResponse<RoutesV3AlertList> listAlertsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until) throws ApiException {
+        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, null);
         Type localVarReturnType = new TypeToken<RoutesV3AlertList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -241,7 +241,7 @@ public class AlertsApi {
      * @param severities Comma-separated severity levels (optional)
      * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceType Resource type filter (optional)
-     * @param resourceId Specific resource ID (optional)
+     * @param resourceIds Comma-separated resource IDs (optional)
      * @param since RFC3339 timestamp for start time (optional)
      * @param until RFC3339 timestamp for end time (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -256,9 +256,9 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, final ApiCallback<RoutesV3AlertList> _callback) throws ApiException {
+    public okhttp3.Call listAlertsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceType, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, final ApiCallback<RoutesV3AlertList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, _callback);
+        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3AlertList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -270,6 +270,7 @@ public class AlertsApi {
      * @param last Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) (optional)
      * @param ruleIds Comma-separated alert rule IDs (optional)
      * @param severities Comma-separated severity levels (optional)
+     * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceIds Comma-separated resource IDs (optional)
      * @param resourceType Resource type filter (optional)
      * @param _callback Callback for upload/download progress
@@ -284,7 +285,7 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call streamAlertsCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call streamAlertsCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -326,6 +327,10 @@ public class AlertsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("severities", severities));
         }
 
+        if (pipelineIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pipeline_ids", pipelineIds));
+        }
+
         if (resourceIds != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("resource_ids", resourceIds));
         }
@@ -354,13 +359,13 @@ public class AlertsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call streamAlertsValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call streamAlertsValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling streamAlerts(Async)");
         }
 
-        return streamAlertsCall(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _callback);
+        return streamAlertsCall(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, _callback);
 
     }
 
@@ -372,6 +377,7 @@ public class AlertsApi {
      * @param last Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) (optional)
      * @param ruleIds Comma-separated alert rule IDs (optional)
      * @param severities Comma-separated severity levels (optional)
+     * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceIds Comma-separated resource IDs (optional)
      * @param resourceType Resource type filter (optional)
      * @return String
@@ -385,8 +391,8 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public String streamAlerts(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType) throws ApiException {
-        ApiResponse<String> localVarResp = streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, resourceIds, resourceType);
+    public String streamAlerts(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType) throws ApiException {
+        ApiResponse<String> localVarResp = streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType);
         return localVarResp.getData();
     }
 
@@ -398,6 +404,7 @@ public class AlertsApi {
      * @param last Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) (optional)
      * @param ruleIds Comma-separated alert rule IDs (optional)
      * @param severities Comma-separated severity levels (optional)
+     * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceIds Comma-separated resource IDs (optional)
      * @param resourceType Resource type filter (optional)
      * @return ApiResponse&lt;String&gt;
@@ -411,8 +418,8 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<String> streamAlertsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType) throws ApiException {
-        okhttp3.Call localVarCall = streamAlertsValidateBeforeCall(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, null);
+    public ApiResponse<String> streamAlertsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType) throws ApiException {
+        okhttp3.Call localVarCall = streamAlertsValidateBeforeCall(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, null);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -425,6 +432,7 @@ public class AlertsApi {
      * @param last Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) (optional)
      * @param ruleIds Comma-separated alert rule IDs (optional)
      * @param severities Comma-separated severity levels (optional)
+     * @param pipelineIds Comma-separated pipeline IDs (optional)
      * @param resourceIds Comma-separated resource IDs (optional)
      * @param resourceType Resource type filter (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -439,9 +447,9 @@ public class AlertsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call streamAlertsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType, final ApiCallback<String> _callback) throws ApiException {
+    public okhttp3.Call streamAlertsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable String since, @javax.annotation.Nullable String last, @javax.annotation.Nullable String ruleIds, @javax.annotation.Nullable String severities, @javax.annotation.Nullable String pipelineIds, @javax.annotation.Nullable String resourceIds, @javax.annotation.Nullable String resourceType, final ApiCallback<String> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = streamAlertsValidateBeforeCall(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, _callback);
+        okhttp3.Call localVarCall = streamAlertsValidateBeforeCall(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, _callback);
         Type localVarReturnType = new TypeToken<String>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

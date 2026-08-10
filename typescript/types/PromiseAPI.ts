@@ -838,13 +838,13 @@ export class PromiseAlertsApi {
      * @param [severities] Comma-separated severity levels
      * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceType] Resource type filter
-     * @param [resourceId] Specific resource ID
+     * @param [resourceIds] Comma-separated resource IDs
      * @param [since] RFC3339 timestamp for start time
      * @param [until] RFC3339 timestamp for end time
      */
-    public listAlertsWithHttpInfo(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertList>> {
+    public listAlertsWithHttpInfo(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceIds?: string, since?: string, until?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertList>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.listAlertsWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, observableOptions);
+        const result = this.api.listAlertsWithHttpInfo(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, observableOptions);
         return result.toPromise();
     }
 
@@ -856,13 +856,13 @@ export class PromiseAlertsApi {
      * @param [severities] Comma-separated severity levels
      * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceType] Resource type filter
-     * @param [resourceId] Specific resource ID
+     * @param [resourceIds] Comma-separated resource IDs
      * @param [since] RFC3339 timestamp for start time
      * @param [until] RFC3339 timestamp for end time
      */
-    public listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertList> {
+    public listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceIds?: string, since?: string, until?: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertList> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceId, since, until, observableOptions);
+        const result = this.api.listAlerts(organizationId, ruleIds, severities, pipelineIds, resourceType, resourceIds, since, until, observableOptions);
         return result.toPromise();
     }
 
@@ -874,12 +874,13 @@ export class PromiseAlertsApi {
      * @param [last] Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
      * @param [ruleIds] Comma-separated alert rule IDs
      * @param [severities] Comma-separated severity levels
+     * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceIds] Comma-separated resource IDs
      * @param [resourceType] Resource type filter
      */
-    public streamAlertsWithHttpInfo(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
+    public streamAlertsWithHttpInfo(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceIds?: string, resourceType?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<string>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, observableOptions);
+        const result = this.api.streamAlertsWithHttpInfo(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, observableOptions);
         return result.toPromise();
     }
 
@@ -891,12 +892,13 @@ export class PromiseAlertsApi {
      * @param [last] Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
      * @param [ruleIds] Comma-separated alert rule IDs
      * @param [severities] Comma-separated severity levels
+     * @param [pipelineIds] Comma-separated pipeline IDs
      * @param [resourceIds] Comma-separated resource IDs
      * @param [resourceType] Resource type filter
      */
-    public streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: PromiseConfigurationOptions): Promise<string> {
+    public streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceIds?: string, resourceType?: string, _options?: PromiseConfigurationOptions): Promise<string> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.streamAlerts(organizationId, since, last, ruleIds, severities, resourceIds, resourceType, observableOptions);
+        const result = this.api.streamAlerts(organizationId, since, last, ruleIds, severities, pipelineIds, resourceIds, resourceType, observableOptions);
         return result.toPromise();
     }
 

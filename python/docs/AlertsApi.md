@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **list_alerts**
-> RoutesV3AlertList list_alerts(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_id=resource_id, since=since, until=until)
+> RoutesV3AlertList list_alerts(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_ids=resource_ids, since=since, until=until)
 
 List alerts with pagination
 
@@ -51,13 +51,13 @@ with monad.ApiClient(configuration) as api_client:
     severities = 'severities_example' # str | Comma-separated severity levels (optional)
     pipeline_ids = 'pipeline_ids_example' # str | Comma-separated pipeline IDs (optional)
     resource_type = 'resource_type_example' # str | Resource type filter (optional)
-    resource_id = 'resource_id_example' # str | Specific resource ID (optional)
+    resource_ids = 'resource_ids_example' # str | Comma-separated resource IDs (optional)
     since = 'since_example' # str | RFC3339 timestamp for start time (optional)
     until = 'until_example' # str | RFC3339 timestamp for end time (optional)
 
     try:
         # List alerts with pagination
-        api_response = api_instance.list_alerts(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_id=resource_id, since=since, until=until)
+        api_response = api_instance.list_alerts(organization_id, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_type=resource_type, resource_ids=resource_ids, since=since, until=until)
         print("The response of AlertsApi->list_alerts:\n")
         pprint(api_response)
     except Exception as e:
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
  **severities** | **str**| Comma-separated severity levels | [optional] 
  **pipeline_ids** | **str**| Comma-separated pipeline IDs | [optional] 
  **resource_type** | **str**| Resource type filter | [optional] 
- **resource_id** | **str**| Specific resource ID | [optional] 
+ **resource_ids** | **str**| Comma-separated resource IDs | [optional] 
  **since** | **str**| RFC3339 timestamp for start time | [optional] 
  **until** | **str**| RFC3339 timestamp for end time | [optional] 
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stream_alerts**
-> str stream_alerts(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, resource_ids=resource_ids, resource_type=resource_type)
+> str stream_alerts(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_ids=resource_ids, resource_type=resource_type)
 
 Stream alerts in real-time
 
@@ -145,12 +145,13 @@ with monad.ApiClient(configuration) as api_client:
     last = 'last_example' # str | Duration to start streaming from (e.g., '5m', '1h', '24h') (optional)
     rule_ids = 'rule_ids_example' # str | Comma-separated alert rule IDs (optional)
     severities = 'severities_example' # str | Comma-separated severity levels (optional)
+    pipeline_ids = 'pipeline_ids_example' # str | Comma-separated pipeline IDs (optional)
     resource_ids = 'resource_ids_example' # str | Comma-separated resource IDs (optional)
     resource_type = 'resource_type_example' # str | Resource type filter (optional)
 
     try:
         # Stream alerts in real-time
-        api_response = api_instance.stream_alerts(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, resource_ids=resource_ids, resource_type=resource_type)
+        api_response = api_instance.stream_alerts(organization_id, since=since, last=last, rule_ids=rule_ids, severities=severities, pipeline_ids=pipeline_ids, resource_ids=resource_ids, resource_type=resource_type)
         print("The response of AlertsApi->stream_alerts:\n")
         pprint(api_response)
     except Exception as e:
@@ -169,6 +170,7 @@ Name | Type | Description  | Notes
  **last** | **str**| Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) | [optional] 
  **rule_ids** | **str**| Comma-separated alert rule IDs | [optional] 
  **severities** | **str**| Comma-separated severity levels | [optional] 
+ **pipeline_ids** | **str**| Comma-separated pipeline IDs | [optional] 
  **resource_ids** | **str**| Comma-separated resource IDs | [optional] 
  **resource_type** | **str**| Resource type filter | [optional] 
 

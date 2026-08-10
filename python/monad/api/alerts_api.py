@@ -47,7 +47,7 @@ class AlertsApi:
         severities: Annotated[Optional[StrictStr], Field(description="Comma-separated severity levels")] = None,
         pipeline_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated pipeline IDs")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Resource type filter")] = None,
-        resource_id: Annotated[Optional[StrictStr], Field(description="Specific resource ID")] = None,
+        resource_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated resource IDs")] = None,
         since: Annotated[Optional[StrictStr], Field(description="RFC3339 timestamp for start time")] = None,
         until: Annotated[Optional[StrictStr], Field(description="RFC3339 timestamp for end time")] = None,
         _request_timeout: Union[
@@ -77,8 +77,8 @@ class AlertsApi:
         :type pipeline_ids: str
         :param resource_type: Resource type filter
         :type resource_type: str
-        :param resource_id: Specific resource ID
-        :type resource_id: str
+        :param resource_ids: Comma-separated resource IDs
+        :type resource_ids: str
         :param since: RFC3339 timestamp for start time
         :type since: str
         :param until: RFC3339 timestamp for end time
@@ -111,7 +111,7 @@ class AlertsApi:
             severities=severities,
             pipeline_ids=pipeline_ids,
             resource_type=resource_type,
-            resource_id=resource_id,
+            resource_ids=resource_ids,
             since=since,
             until=until,
             _request_auth=_request_auth,
@@ -144,7 +144,7 @@ class AlertsApi:
         severities: Annotated[Optional[StrictStr], Field(description="Comma-separated severity levels")] = None,
         pipeline_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated pipeline IDs")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Resource type filter")] = None,
-        resource_id: Annotated[Optional[StrictStr], Field(description="Specific resource ID")] = None,
+        resource_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated resource IDs")] = None,
         since: Annotated[Optional[StrictStr], Field(description="RFC3339 timestamp for start time")] = None,
         until: Annotated[Optional[StrictStr], Field(description="RFC3339 timestamp for end time")] = None,
         _request_timeout: Union[
@@ -174,8 +174,8 @@ class AlertsApi:
         :type pipeline_ids: str
         :param resource_type: Resource type filter
         :type resource_type: str
-        :param resource_id: Specific resource ID
-        :type resource_id: str
+        :param resource_ids: Comma-separated resource IDs
+        :type resource_ids: str
         :param since: RFC3339 timestamp for start time
         :type since: str
         :param until: RFC3339 timestamp for end time
@@ -208,7 +208,7 @@ class AlertsApi:
             severities=severities,
             pipeline_ids=pipeline_ids,
             resource_type=resource_type,
-            resource_id=resource_id,
+            resource_ids=resource_ids,
             since=since,
             until=until,
             _request_auth=_request_auth,
@@ -241,7 +241,7 @@ class AlertsApi:
         severities: Annotated[Optional[StrictStr], Field(description="Comma-separated severity levels")] = None,
         pipeline_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated pipeline IDs")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Resource type filter")] = None,
-        resource_id: Annotated[Optional[StrictStr], Field(description="Specific resource ID")] = None,
+        resource_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated resource IDs")] = None,
         since: Annotated[Optional[StrictStr], Field(description="RFC3339 timestamp for start time")] = None,
         until: Annotated[Optional[StrictStr], Field(description="RFC3339 timestamp for end time")] = None,
         _request_timeout: Union[
@@ -271,8 +271,8 @@ class AlertsApi:
         :type pipeline_ids: str
         :param resource_type: Resource type filter
         :type resource_type: str
-        :param resource_id: Specific resource ID
-        :type resource_id: str
+        :param resource_ids: Comma-separated resource IDs
+        :type resource_ids: str
         :param since: RFC3339 timestamp for start time
         :type since: str
         :param until: RFC3339 timestamp for end time
@@ -305,7 +305,7 @@ class AlertsApi:
             severities=severities,
             pipeline_ids=pipeline_ids,
             resource_type=resource_type,
-            resource_id=resource_id,
+            resource_ids=resource_ids,
             since=since,
             until=until,
             _request_auth=_request_auth,
@@ -333,7 +333,7 @@ class AlertsApi:
         severities,
         pipeline_ids,
         resource_type,
-        resource_id,
+        resource_ids,
         since,
         until,
         _request_auth,
@@ -376,9 +376,9 @@ class AlertsApi:
             
             _query_params.append(('resource_type', resource_type))
             
-        if resource_id is not None:
+        if resource_ids is not None:
             
-            _query_params.append(('resource_id', resource_id))
+            _query_params.append(('resource_ids', resource_ids))
             
         if since is not None:
             
@@ -433,6 +433,7 @@ class AlertsApi:
         last: Annotated[Optional[StrictStr], Field(description="Duration to start streaming from (e.g., '5m', '1h', '24h')")] = None,
         rule_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated alert rule IDs")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Comma-separated severity levels")] = None,
+        pipeline_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated pipeline IDs")] = None,
         resource_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated resource IDs")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Resource type filter")] = None,
         _request_timeout: Union[
@@ -462,6 +463,8 @@ class AlertsApi:
         :type rule_ids: str
         :param severities: Comma-separated severity levels
         :type severities: str
+        :param pipeline_ids: Comma-separated pipeline IDs
+        :type pipeline_ids: str
         :param resource_ids: Comma-separated resource IDs
         :type resource_ids: str
         :param resource_type: Resource type filter
@@ -494,6 +497,7 @@ class AlertsApi:
             last=last,
             rule_ids=rule_ids,
             severities=severities,
+            pipeline_ids=pipeline_ids,
             resource_ids=resource_ids,
             resource_type=resource_type,
             _request_auth=_request_auth,
@@ -526,6 +530,7 @@ class AlertsApi:
         last: Annotated[Optional[StrictStr], Field(description="Duration to start streaming from (e.g., '5m', '1h', '24h')")] = None,
         rule_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated alert rule IDs")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Comma-separated severity levels")] = None,
+        pipeline_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated pipeline IDs")] = None,
         resource_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated resource IDs")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Resource type filter")] = None,
         _request_timeout: Union[
@@ -555,6 +560,8 @@ class AlertsApi:
         :type rule_ids: str
         :param severities: Comma-separated severity levels
         :type severities: str
+        :param pipeline_ids: Comma-separated pipeline IDs
+        :type pipeline_ids: str
         :param resource_ids: Comma-separated resource IDs
         :type resource_ids: str
         :param resource_type: Resource type filter
@@ -587,6 +594,7 @@ class AlertsApi:
             last=last,
             rule_ids=rule_ids,
             severities=severities,
+            pipeline_ids=pipeline_ids,
             resource_ids=resource_ids,
             resource_type=resource_type,
             _request_auth=_request_auth,
@@ -619,6 +627,7 @@ class AlertsApi:
         last: Annotated[Optional[StrictStr], Field(description="Duration to start streaming from (e.g., '5m', '1h', '24h')")] = None,
         rule_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated alert rule IDs")] = None,
         severities: Annotated[Optional[StrictStr], Field(description="Comma-separated severity levels")] = None,
+        pipeline_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated pipeline IDs")] = None,
         resource_ids: Annotated[Optional[StrictStr], Field(description="Comma-separated resource IDs")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Resource type filter")] = None,
         _request_timeout: Union[
@@ -648,6 +657,8 @@ class AlertsApi:
         :type rule_ids: str
         :param severities: Comma-separated severity levels
         :type severities: str
+        :param pipeline_ids: Comma-separated pipeline IDs
+        :type pipeline_ids: str
         :param resource_ids: Comma-separated resource IDs
         :type resource_ids: str
         :param resource_type: Resource type filter
@@ -680,6 +691,7 @@ class AlertsApi:
             last=last,
             rule_ids=rule_ids,
             severities=severities,
+            pipeline_ids=pipeline_ids,
             resource_ids=resource_ids,
             resource_type=resource_type,
             _request_auth=_request_auth,
@@ -707,6 +719,7 @@ class AlertsApi:
         last,
         rule_ids,
         severities,
+        pipeline_ids,
         resource_ids,
         resource_type,
         _request_auth,
@@ -748,6 +761,10 @@ class AlertsApi:
         if severities is not None:
             
             _query_params.append(('severities', severities))
+            
+        if pipeline_ids is not None:
+            
+            _query_params.append(('pipeline_ids', pipeline_ids))
             
         if resource_ids is not None:
             

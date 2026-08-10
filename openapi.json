@@ -23133,9 +23133,9 @@
                         }
                     },
                     {
-                        "description": "Specific resource ID",
+                        "description": "Comma-separated resource IDs",
                         "in": "query",
-                        "name": "resource_id",
+                        "name": "resource_ids",
                         "schema": {
                             "type": "string"
                         }
@@ -23245,6 +23245,14 @@
                         "description": "Comma-separated severity levels",
                         "in": "query",
                         "name": "severities",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Comma-separated pipeline IDs",
+                        "in": "query",
+                        "name": "pipeline_ids",
                         "schema": {
                             "type": "string"
                         }

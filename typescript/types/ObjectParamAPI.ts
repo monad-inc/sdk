@@ -920,12 +920,12 @@ export interface AlertsApiListAlertsRequest {
      */
     resourceType?: string
     /**
-     * Specific resource ID
+     * Comma-separated resource IDs
      * Defaults to: undefined
      * @type string
      * @memberof AlertsApilistAlerts
      */
-    resourceId?: string
+    resourceIds?: string
     /**
      * RFC3339 timestamp for start time
      * Defaults to: undefined
@@ -979,6 +979,13 @@ export interface AlertsApiStreamAlertsRequest {
      */
     severities?: string
     /**
+     * Comma-separated pipeline IDs
+     * Defaults to: undefined
+     * @type string
+     * @memberof AlertsApistreamAlerts
+     */
+    pipelineIds?: string
+    /**
      * Comma-separated resource IDs
      * Defaults to: undefined
      * @type string
@@ -1007,7 +1014,7 @@ export class ObjectAlertsApi {
      * @param param the request object
      */
     public listAlertsWithHttpInfo(param: AlertsApiListAlertsRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertList>> {
-        return this.api.listAlertsWithHttpInfo(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
+        return this.api.listAlertsWithHttpInfo(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceIds, param.since, param.until,  options).toPromise();
     }
 
     /**
@@ -1016,7 +1023,7 @@ export class ObjectAlertsApi {
      * @param param the request object
      */
     public listAlerts(param: AlertsApiListAlertsRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertList> {
-        return this.api.listAlerts(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceId, param.since, param.until,  options).toPromise();
+        return this.api.listAlerts(param.organizationId, param.ruleIds, param.severities, param.pipelineIds, param.resourceType, param.resourceIds, param.since, param.until,  options).toPromise();
     }
 
     /**
@@ -1025,7 +1032,7 @@ export class ObjectAlertsApi {
      * @param param the request object
      */
     public streamAlertsWithHttpInfo(param: AlertsApiStreamAlertsRequest, options?: ConfigurationOptions): Promise<HttpInfo<string>> {
-        return this.api.streamAlertsWithHttpInfo(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
+        return this.api.streamAlertsWithHttpInfo(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.pipelineIds, param.resourceIds, param.resourceType,  options).toPromise();
     }
 
     /**
@@ -1034,7 +1041,7 @@ export class ObjectAlertsApi {
      * @param param the request object
      */
     public streamAlerts(param: AlertsApiStreamAlertsRequest, options?: ConfigurationOptions): Promise<string> {
-        return this.api.streamAlerts(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.resourceIds, param.resourceType,  options).toPromise();
+        return this.api.streamAlerts(param.organizationId, param.since, param.last, param.ruleIds, param.severities, param.pipelineIds, param.resourceIds, param.resourceType,  options).toPromise();
     }
 
 }

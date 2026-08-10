@@ -34,8 +34,8 @@ const request: AlertsApiListAlertsRequest = {
   pipelineIds: "pipeline_ids_example",
     // Resource type filter (optional)
   resourceType: "resource_type_example",
-    // Specific resource ID (optional)
-  resourceId: "resource_id_example",
+    // Comma-separated resource IDs (optional)
+  resourceIds: "resource_ids_example",
     // RFC3339 timestamp for start time (optional)
   since: "since_example",
     // RFC3339 timestamp for end time (optional)
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **severities** | [**string**] | Comma-separated severity levels | (optional) defaults to undefined
  **pipelineIds** | [**string**] | Comma-separated pipeline IDs | (optional) defaults to undefined
  **resourceType** | [**string**] | Resource type filter | (optional) defaults to undefined
- **resourceId** | [**string**] | Specific resource ID | (optional) defaults to undefined
+ **resourceIds** | [**string**] | Comma-separated resource IDs | (optional) defaults to undefined
  **since** | [**string**] | RFC3339 timestamp for start time | (optional) defaults to undefined
  **until** | [**string**] | RFC3339 timestamp for end time | (optional) defaults to undefined
 
@@ -110,6 +110,8 @@ const request: AlertsApiStreamAlertsRequest = {
   ruleIds: "rule_ids_example",
     // Comma-separated severity levels (optional)
   severities: "severities_example",
+    // Comma-separated pipeline IDs (optional)
+  pipelineIds: "pipeline_ids_example",
     // Comma-separated resource IDs (optional)
   resourceIds: "resource_ids_example",
     // Resource type filter (optional)
@@ -130,6 +132,7 @@ Name | Type | Description  | Notes
  **last** | [**string**] | Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;) | (optional) defaults to undefined
  **ruleIds** | [**string**] | Comma-separated alert rule IDs | (optional) defaults to undefined
  **severities** | [**string**] | Comma-separated severity levels | (optional) defaults to undefined
+ **pipelineIds** | [**string**] | Comma-separated pipeline IDs | (optional) defaults to undefined
  **resourceIds** | [**string**] | Comma-separated resource IDs | (optional) defaults to undefined
  **resourceType** | [**string**] | Resource type filter | (optional) defaults to undefined
 

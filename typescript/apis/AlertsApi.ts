@@ -23,11 +23,11 @@ export class AlertsApiRequestFactory extends BaseAPIRequestFactory {
      * @param severities Comma-separated severity levels
      * @param pipelineIds Comma-separated pipeline IDs
      * @param resourceType Resource type filter
-     * @param resourceId Specific resource ID
+     * @param resourceIds Comma-separated resource IDs
      * @param since RFC3339 timestamp for start time
      * @param until RFC3339 timestamp for end time
      */
-    public async listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceId?: string, since?: string, until?: string, _options?: Configuration): Promise<RequestContext> {
+    public async listAlerts(organizationId: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceType?: string, resourceIds?: string, since?: string, until?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -72,8 +72,8 @@ export class AlertsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
         // Query Params
-        if (resourceId !== undefined) {
-            requestContext.setQueryParam("resource_id", ObjectSerializer.serialize(resourceId, "string", ""));
+        if (resourceIds !== undefined) {
+            requestContext.setQueryParam("resource_ids", ObjectSerializer.serialize(resourceIds, "string", ""));
         }
 
         // Query Params
@@ -110,16 +110,18 @@ export class AlertsApiRequestFactory extends BaseAPIRequestFactory {
      * @param last Duration to start streaming from (e.g., \&#39;5m\&#39;, \&#39;1h\&#39;, \&#39;24h\&#39;)
      * @param ruleIds Comma-separated alert rule IDs
      * @param severities Comma-separated severity levels
+     * @param pipelineIds Comma-separated pipeline IDs
      * @param resourceIds Comma-separated resource IDs
      * @param resourceType Resource type filter
      */
-    public async streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, resourceIds?: string, resourceType?: string, _options?: Configuration): Promise<RequestContext> {
+    public async streamAlerts(organizationId: string, since?: string, last?: string, ruleIds?: string, severities?: string, pipelineIds?: string, resourceIds?: string, resourceType?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
         if (organizationId === null || organizationId === undefined) {
             throw new RequiredError("AlertsApi", "streamAlerts", "organizationId");
         }
+
 
 
 
@@ -154,6 +156,11 @@ export class AlertsApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (severities !== undefined) {
             requestContext.setQueryParam("severities", ObjectSerializer.serialize(severities, "string", ""));
+        }
+
+        // Query Params
+        if (pipelineIds !== undefined) {
+            requestContext.setQueryParam("pipeline_ids", ObjectSerializer.serialize(pipelineIds, "string", ""));
         }
 
         // Query Params

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## ListAlerts
 
-> RoutesV3AlertList ListAlerts(ctx, organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceId(resourceId).Since(since).Until(until).Execute()
+> RoutesV3AlertList ListAlerts(ctx, organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceIds(resourceIds).Since(since).Until(until).Execute()
 
 List alerts with pagination
 
@@ -35,13 +35,13 @@ func main() {
 	severities := "severities_example" // string | Comma-separated severity levels (optional)
 	pipelineIds := "pipelineIds_example" // string | Comma-separated pipeline IDs (optional)
 	resourceType := "resourceType_example" // string | Resource type filter (optional)
-	resourceId := "resourceId_example" // string | Specific resource ID (optional)
+	resourceIds := "resourceIds_example" // string | Comma-separated resource IDs (optional)
 	since := "since_example" // string | RFC3339 timestamp for start time (optional)
 	until := "until_example" // string | RFC3339 timestamp for end time (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlertsAPI.ListAlerts(context.Background(), organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceId(resourceId).Since(since).Until(until).Execute()
+	resp, r, err := apiClient.AlertsAPI.ListAlerts(context.Background(), organizationId).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceType(resourceType).ResourceIds(resourceIds).Since(since).Until(until).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertsAPI.ListAlerts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
  **severities** | **string** | Comma-separated severity levels | 
  **pipelineIds** | **string** | Comma-separated pipeline IDs | 
  **resourceType** | **string** | Resource type filter | 
- **resourceId** | **string** | Specific resource ID | 
+ **resourceIds** | **string** | Comma-separated resource IDs | 
  **since** | **string** | RFC3339 timestamp for start time | 
  **until** | **string** | RFC3339 timestamp for end time | 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ## StreamAlerts
 
-> string StreamAlerts(ctx, organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
+> string StreamAlerts(ctx, organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
 
 Stream alerts in real-time
 
@@ -119,12 +119,13 @@ func main() {
 	last := "last_example" // string | Duration to start streaming from (e.g., '5m', '1h', '24h') (optional)
 	ruleIds := "ruleIds_example" // string | Comma-separated alert rule IDs (optional)
 	severities := "severities_example" // string | Comma-separated severity levels (optional)
+	pipelineIds := "pipelineIds_example" // string | Comma-separated pipeline IDs (optional)
 	resourceIds := "resourceIds_example" // string | Comma-separated resource IDs (optional)
 	resourceType := "resourceType_example" // string | Resource type filter (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AlertsAPI.StreamAlerts(context.Background(), organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
+	resp, r, err := apiClient.AlertsAPI.StreamAlerts(context.Background(), organizationId).Since(since).Last(last).RuleIds(ruleIds).Severities(severities).PipelineIds(pipelineIds).ResourceIds(resourceIds).ResourceType(resourceType).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertsAPI.StreamAlerts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,6 +155,7 @@ Name | Type | Description  | Notes
  **last** | **string** | Duration to start streaming from (e.g., &#39;5m&#39;, &#39;1h&#39;, &#39;24h&#39;) | 
  **ruleIds** | **string** | Comma-separated alert rule IDs | 
  **severities** | **string** | Comma-separated severity levels | 
+ **pipelineIds** | **string** | Comma-separated pipeline IDs | 
  **resourceIds** | **string** | Comma-separated resource IDs | 
  **resourceType** | **string** | Resource type filter | 
 
