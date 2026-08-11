@@ -21179,6 +21179,16 @@
                         },
                         "description": "Invalid JSON request body"
                     },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Cannot create a role with permissions that your user does not have"
+                    },
                     "500": {
                         "content": {
                             "application/json": {
@@ -21463,6 +21473,16 @@
                             }
                         },
                         "description": "Invalid JSON request body"
+                    },
+                    "401": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Cannot change permissions on a role that your user does not have"
                     },
                     "500": {
                         "content": {

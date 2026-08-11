@@ -65,6 +65,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Role created successfully |  -  |
 **400** | Invalid JSON request body |  -  |
+**401** | Cannot create a role with permissions that your user does not have |  -  |
 **500** | Failed to create role |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -300,6 +301,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Role updated successfully |  -  |
 **400** | Invalid JSON request body |  -  |
+**401** | Cannot change permissions on a role that your user does not have |  -  |
 **500** | Failed to update role |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

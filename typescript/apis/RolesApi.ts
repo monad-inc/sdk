@@ -334,6 +334,13 @@ export class RolesApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
         }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Cannot create a role with permissions that your user does not have", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -484,6 +491,13 @@ export class RolesApiResponseProcessor {
                 "string", ""
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Cannot change permissions on a role that your user does not have", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

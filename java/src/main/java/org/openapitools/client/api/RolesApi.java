@@ -88,6 +88,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot create a role with permissions that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
@@ -166,6 +167,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot create a role with permissions that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
@@ -187,6 +189,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot create a role with permissions that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
@@ -210,6 +213,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role created successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot create a role with permissions that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to create role </td><td>  -  </td></tr>
      </table>
      */
@@ -663,6 +667,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot change permissions on a role that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
@@ -748,6 +753,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot change permissions on a role that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
@@ -770,6 +776,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot change permissions on a role that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
@@ -794,6 +801,7 @@ public class RolesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Role updated successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid JSON request body </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Cannot change permissions on a role that your user does not have </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to update role </td><td>  -  </td></tr>
      </table>
      */
