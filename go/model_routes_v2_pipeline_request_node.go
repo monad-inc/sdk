@@ -24,7 +24,7 @@ var _ MappedNullable = &RoutesV2PipelineRequestNode{}
 type RoutesV2PipelineRequestNode struct {
 	ComponentId string `json:"component_id"`
 	ComponentType ModelsComponentType `json:"component_type"`
-	// ConfigOverrides is the per-node override delta applied to a template component's base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
+	// ConfigOverrides is the per-node override delta applied over the component's base config (RFC 0017). The save-time gate merges it and fully validates the effective config. A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
 	ConfigOverrides map[string]*interface{} `json:"config_overrides,omitempty"`
 	// nil => enabled
 	Enabled *bool `json:"enabled,omitempty"`

@@ -8519,9 +8519,6 @@
                     "name": {
                         "type": "string"
                     },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
-                    },
                     "type": {
                         "type": "string"
                     }
@@ -8555,9 +8552,6 @@
                     },
                     "promise_id": {
                         "type": "string"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -8767,7 +8761,7 @@
                     },
                     "config_overrides": {
                         "additionalProperties": {},
-                        "description": "ConfigOverrides is the per-node override delta applied to a template\ncomponent's base config (RFC 0017). Ignored for non-template components\n(rejected by the save-time gate if present). A non-empty delta requires the\npipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the\ncolumn stays nil for every org until the feature is turned on.",
+                        "description": "ConfigOverrides is the per-node override delta applied over the component's\nbase config (RFC 0017). The save-time gate merges it and fully validates the\neffective config. A non-empty delta requires the pipeline_node_config_overrides\nflag — see nodeOverridesDisallowed — so the column stays nil for every org until\nthe feature is turned on.",
                         "type": "object"
                     },
                     "enabled": {
@@ -9356,9 +9350,6 @@
                     },
                     "name": {
                         "type": "string"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"

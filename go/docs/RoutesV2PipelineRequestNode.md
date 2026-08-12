@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ComponentId** | **string** |  | 
 **ComponentType** | [**ModelsComponentType**](ModelsComponentType.md) |  | 
-**ConfigOverrides** | Pointer to **map[string]interface{}** | ConfigOverrides is the per-node override delta applied to a template component&#39;s base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on. | [optional] 
+**ConfigOverrides** | Pointer to **map[string]interface{}** | ConfigOverrides is the per-node override delta applied over the component&#39;s base config (RFC 0017). The save-time gate merges it and fully validates the effective config. A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on. | [optional] 
 **Enabled** | Pointer to **bool** | nil &#x3D;&gt; enabled | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 

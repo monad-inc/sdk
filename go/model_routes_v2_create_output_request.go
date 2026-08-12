@@ -24,7 +24,6 @@ type RoutesV2CreateOutputRequest struct {
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
 	PromiseId *string `json:"promise_id,omitempty"`
-	TemplateSettings *ModelsTemplateSettings `json:"template_settings,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -173,38 +172,6 @@ func (o *RoutesV2CreateOutputRequest) SetPromiseId(v string) {
 	o.PromiseId = &v
 }
 
-// GetTemplateSettings returns the TemplateSettings field value if set, zero value otherwise.
-func (o *RoutesV2CreateOutputRequest) GetTemplateSettings() ModelsTemplateSettings {
-	if o == nil || IsNil(o.TemplateSettings) {
-		var ret ModelsTemplateSettings
-		return ret
-	}
-	return *o.TemplateSettings
-}
-
-// GetTemplateSettingsOk returns a tuple with the TemplateSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV2CreateOutputRequest) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool) {
-	if o == nil || IsNil(o.TemplateSettings) {
-		return nil, false
-	}
-	return o.TemplateSettings, true
-}
-
-// HasTemplateSettings returns a boolean if a field has been set.
-func (o *RoutesV2CreateOutputRequest) HasTemplateSettings() bool {
-	if o != nil && !IsNil(o.TemplateSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplateSettings gets a reference to the given ModelsTemplateSettings and assigns it to the TemplateSettings field.
-func (o *RoutesV2CreateOutputRequest) SetTemplateSettings(v ModelsTemplateSettings) {
-	o.TemplateSettings = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RoutesV2CreateOutputRequest) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -258,9 +225,6 @@ func (o RoutesV2CreateOutputRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PromiseId) {
 		toSerialize["promise_id"] = o.PromiseId
-	}
-	if !IsNil(o.TemplateSettings) {
-		toSerialize["template_settings"] = o.TemplateSettings
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { SecretProcessesorEnrichmentConfig } from '../models/SecretProcessesorEnrichmentConfig';
 import { HttpFile } from '../http/http';
 
@@ -18,7 +17,6 @@ export class RoutesV3CreateEnrichmentRequest {
     'config'?: SecretProcessesorEnrichmentConfig;
     'description'?: string;
     'name'?: string;
-    'templateSettings'?: ModelsTemplateSettings;
     'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -42,12 +40,6 @@ export class RoutesV3CreateEnrichmentRequest {
             "name": "name",
             "baseName": "name",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "templateSettings",
-            "baseName": "template_settings",
-            "type": "ModelsTemplateSettings",
             "format": ""
         },
         {

@@ -31,7 +31,7 @@ class RoutesV2PipelineRequestNode(BaseModel):
     """ # noqa: E501
     component_id: StrictStr
     component_type: ModelsComponentType
-    config_overrides: Optional[Dict[str, Any]] = Field(default=None, description="ConfigOverrides is the per-node override delta applied to a template component's base config (RFC 0017). Ignored for non-template components (rejected by the save-time gate if present). A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.")
+    config_overrides: Optional[Dict[str, Any]] = Field(default=None, description="ConfigOverrides is the per-node override delta applied over the component's base config (RFC 0017). The save-time gate merges it and fully validates the effective config. A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.")
     enabled: Optional[StrictBool] = Field(default=None, description="nil => enabled")
     id: Optional[StrictStr] = None
     slug: Optional[StrictStr] = None

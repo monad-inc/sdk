@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsTemplateSettings;
 import org.openapitools.client.model.SecretProcessesorOutputConfig;
 
 import com.google.gson.Gson;
@@ -71,11 +70,6 @@ public class RoutesV2CreateOutputRequest {
   @SerializedName(SERIALIZED_NAME_PROMISE_ID)
   @javax.annotation.Nullable
   private String promiseId;
-
-  public static final String SERIALIZED_NAME_TEMPLATE_SETTINGS = "template_settings";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_SETTINGS)
-  @javax.annotation.Nullable
-  private ModelsTemplateSettings templateSettings;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -161,25 +155,6 @@ public class RoutesV2CreateOutputRequest {
   }
 
 
-  public RoutesV2CreateOutputRequest templateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
-    this.templateSettings = templateSettings;
-    return this;
-  }
-
-  /**
-   * Get templateSettings
-   * @return templateSettings
-   */
-  @javax.annotation.Nullable
-  public ModelsTemplateSettings getTemplateSettings() {
-    return templateSettings;
-  }
-
-  public void setTemplateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
-    this.templateSettings = templateSettings;
-  }
-
-
   public RoutesV2CreateOutputRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -213,13 +188,12 @@ public class RoutesV2CreateOutputRequest {
         Objects.equals(this.description, routesV2CreateOutputRequest.description) &&
         Objects.equals(this.name, routesV2CreateOutputRequest.name) &&
         Objects.equals(this.promiseId, routesV2CreateOutputRequest.promiseId) &&
-        Objects.equals(this.templateSettings, routesV2CreateOutputRequest.templateSettings) &&
         Objects.equals(this.type, routesV2CreateOutputRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, promiseId, templateSettings, type);
+    return Objects.hash(config, description, name, promiseId, type);
   }
 
   @Override
@@ -230,7 +204,6 @@ public class RoutesV2CreateOutputRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    promiseId: ").append(toIndentedString(promiseId)).append("\n");
-    sb.append("    templateSettings: ").append(toIndentedString(templateSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -250,7 +223,7 @@ public class RoutesV2CreateOutputRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "promise_id", "template_settings", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "promise_id", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -289,10 +262,6 @@ public class RoutesV2CreateOutputRequest {
       }
       if ((jsonObj.get("promise_id") != null && !jsonObj.get("promise_id").isJsonNull()) && !jsonObj.get("promise_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `promise_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("promise_id").toString()));
-      }
-      // validate the optional field `template_settings`
-      if (jsonObj.get("template_settings") != null && !jsonObj.get("template_settings").isJsonNull()) {
-        ModelsTemplateSettings.validateJsonElement(jsonObj.get("template_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

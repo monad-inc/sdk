@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsTemplateSettings;
 import org.openapitools.client.model.SecretProcessesorOutputConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -69,14 +68,6 @@ public class RoutesV2CreateOutputRequestTest {
     @Test
     public void promiseIdTest() {
         // TODO: test promiseId
-    }
-
-    /**
-     * Test the property 'templateSettings'
-     */
-    @Test
-    public void templateSettingsTest() {
-        // TODO: test templateSettings
     }
 
     /**

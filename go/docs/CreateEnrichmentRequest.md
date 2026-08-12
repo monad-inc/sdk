@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**SecretProcessesorEnrichmentConfig**](SecretProcessesorEnrichmentConfig.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**TemplateSettings** | Pointer to [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -103,31 +102,6 @@ SetName sets Name field to given value.
 `func (o *CreateEnrichmentRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetTemplateSettings
-
-`func (o *CreateEnrichmentRequest) GetTemplateSettings() ModelsTemplateSettings`
-
-GetTemplateSettings returns the TemplateSettings field if non-nil, zero value otherwise.
-
-### GetTemplateSettingsOk
-
-`func (o *CreateEnrichmentRequest) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool)`
-
-GetTemplateSettingsOk returns a tuple with the TemplateSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTemplateSettings
-
-`func (o *CreateEnrichmentRequest) SetTemplateSettings(v ModelsTemplateSettings)`
-
-SetTemplateSettings sets TemplateSettings field to given value.
-
-### HasTemplateSettings
-
-`func (o *CreateEnrichmentRequest) HasTemplateSettings() bool`
-
-HasTemplateSettings returns a boolean if a field has been set.
 
 ### GetType
 
