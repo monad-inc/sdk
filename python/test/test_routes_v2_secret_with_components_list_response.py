@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
+from monad.models.routes_v2_secret_with_components_list_response import RoutesV2SecretWithComponentsListResponse
 
-class TestModelsSecretWithComponentsList(unittest.TestCase):
-    """ModelsSecretWithComponentsList unit test stubs"""
+class TestRoutesV2SecretWithComponentsListResponse(unittest.TestCase):
+    """RoutesV2SecretWithComponentsListResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,22 +26,22 @@ class TestModelsSecretWithComponentsList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsSecretWithComponentsList:
-        """Test ModelsSecretWithComponentsList
+    def make_instance(self, include_optional) -> RoutesV2SecretWithComponentsListResponse:
+        """Test RoutesV2SecretWithComponentsListResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsSecretWithComponentsList`
+        # uncomment below to create an instance of `RoutesV2SecretWithComponentsListResponse`
         """
-        model = ModelsSecretWithComponentsList()
+        model = RoutesV2SecretWithComponentsListResponse()
         if include_optional:
-            return ModelsSecretWithComponentsList(
+            return RoutesV2SecretWithComponentsListResponse(
                 pagination = monad.models.models/pagination.models.Pagination(
                     limit = 56, 
                     offset = 56, 
                     total = 56, ),
                 secrets = [
-                    monad.models.models/secret_with_components.models.SecretWithComponents(
+                    monad.models.routes_v2/secret_with_components_response.routesV2.SecretWithComponentsResponse(
                         created_at = '', 
                         description = '', 
                         enrichments = [
@@ -74,17 +74,16 @@ class TestModelsSecretWithComponentsList(unittest.TestCase):
                         transforms = [
                             
                             ], 
-                        updated_at = '', 
-                        value = '', )
+                        updated_at = '', )
                     ]
             )
         else:
-            return ModelsSecretWithComponentsList(
+            return RoutesV2SecretWithComponentsListResponse(
         )
         """
 
-    def testModelsSecretWithComponentsList(self):
-        """Test ModelsSecretWithComponentsList"""
+    def testRoutesV2SecretWithComponentsListResponse(self):
+        """Test RoutesV2SecretWithComponentsListResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -192,7 +192,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_secret**
-> ModelsSecretWithComponents get_secret(organization_id, secret_id)
+> RoutesV2SecretWithComponentsResponse get_secret(organization_id, secret_id)
 
 Get secret with components
 
@@ -205,7 +205,7 @@ Gets a specific secret by ID with the inputs, outputs, enrichments and transform
 
 ```python
 import monad
-from monad.models.models_secret_with_components import ModelsSecretWithComponents
+from monad.models.routes_v2_secret_with_components_response import RoutesV2SecretWithComponentsResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSecretWithComponents**](ModelsSecretWithComponents.md)
+[**RoutesV2SecretWithComponentsResponse**](RoutesV2SecretWithComponentsResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_secrets**
-> ModelsSecretWithComponentsList list_secrets(organization_id, limit=limit, offset=offset)
+> RoutesV2SecretWithComponentsListResponse list_secrets(organization_id, limit=limit, offset=offset)
 
 List secrets with components
 
@@ -295,7 +295,7 @@ Lists all secrets for the specified organization, each with the inputs, outputs,
 
 ```python
 import monad
-from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
+from monad.models.routes_v2_secret_with_components_list_response import RoutesV2SecretWithComponentsListResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSecretWithComponentsList**](ModelsSecretWithComponentsList.md)
+[**RoutesV2SecretWithComponentsListResponse**](RoutesV2SecretWithComponentsListResponse.md)
 
 ### Authorization
 

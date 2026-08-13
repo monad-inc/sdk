@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_component_reference import ModelsComponentReference
 from monad.models.models_share_details import ModelsShareDetails
@@ -26,23 +26,22 @@ from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsSecretWithComponents(BaseModel):
+class RoutesV2SecretWithComponentsResponse(BaseModel):
     """
-    ModelsSecretWithComponents
+    RoutesV2SecretWithComponentsResponse
     """ # noqa: E501
-    created_at: Optional[StrictStr] = Field(default=None, description="When the secret was created")
-    description: Optional[StrictStr] = Field(default=None, description="The user set Description of the secret")
+    created_at: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
     enrichments: Optional[List[ModelsComponentReference]] = None
-    id: Optional[StrictStr] = Field(default=None, description="The ID of the secret")
+    id: Optional[StrictStr] = None
     inputs: Optional[List[ModelsComponentReference]] = None
-    name: Optional[StrictStr] = Field(default=None, description="The user set Name of the secret")
-    organization_id: Optional[StrictStr] = Field(default=None, description="The OrganizationID the secret belongs to")
+    name: Optional[StrictStr] = None
+    organization_id: Optional[StrictStr] = None
     outputs: Optional[List[ModelsComponentReference]] = None
     share_details: Optional[ModelsShareDetails] = None
     transforms: Optional[List[ModelsComponentReference]] = None
-    updated_at: Optional[StrictStr] = Field(default=None, description="When the secret was updated")
-    value: Optional[StrictStr] = Field(default=None, description="The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.")
-    __properties: ClassVar[List[str]] = ["created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "share_details", "transforms", "updated_at", "value"]
+    updated_at: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "share_details", "transforms", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -62,7 +61,7 @@ class ModelsSecretWithComponents(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsSecretWithComponents from a JSON string"""
+        """Create an instance of RoutesV2SecretWithComponentsResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -118,7 +117,7 @@ class ModelsSecretWithComponents(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsSecretWithComponents from a dict"""
+        """Create an instance of RoutesV2SecretWithComponentsResponse from a dict"""
         if obj is None:
             return None
 
@@ -136,8 +135,7 @@ class ModelsSecretWithComponents(BaseModel):
             "outputs": [ModelsComponentReference.from_dict(_item) for _item in obj["outputs"]] if obj.get("outputs") is not None else None,
             "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
             "transforms": [ModelsComponentReference.from_dict(_item) for _item in obj["transforms"]] if obj.get("transforms") is not None else None,
-            "updated_at": obj.get("updated_at"),
-            "value": obj.get("value")
+            "updated_at": obj.get("updated_at")
         })
         return _obj
 

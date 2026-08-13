@@ -327,8 +327,6 @@ import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
-import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
@@ -456,6 +454,8 @@ import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPIKeyRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { RoutesV2SecretWithComponentsListResponse } from '../models/RoutesV2SecretWithComponentsListResponse';
+import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
@@ -7516,7 +7516,7 @@ export class ObjectSecretsApi {
      * Get secret with components
      * @param param the request object
      */
-    public getSecretWithHttpInfo(param: SecretsApiGetSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponents>> {
+    public getSecretWithHttpInfo(param: SecretsApiGetSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretWithComponentsResponse>> {
         return this.api.getSecretWithHttpInfo(param.organizationId, param.secretId,  options).toPromise();
     }
 
@@ -7525,7 +7525,7 @@ export class ObjectSecretsApi {
      * Get secret with components
      * @param param the request object
      */
-    public getSecret(param: SecretsApiGetSecretRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponents> {
+    public getSecret(param: SecretsApiGetSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretWithComponentsResponse> {
         return this.api.getSecret(param.organizationId, param.secretId,  options).toPromise();
     }
 
@@ -7534,7 +7534,7 @@ export class ObjectSecretsApi {
      * List secrets with components
      * @param param the request object
      */
-    public listSecretsWithHttpInfo(param: SecretsApiListSecretsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
+    public listSecretsWithHttpInfo(param: SecretsApiListSecretsRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretWithComponentsListResponse>> {
         return this.api.listSecretsWithHttpInfo(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 
@@ -7543,7 +7543,7 @@ export class ObjectSecretsApi {
      * List secrets with components
      * @param param the request object
      */
-    public listSecrets(param: SecretsApiListSecretsRequest, options?: ConfigurationOptions): Promise<ModelsSecretWithComponentsList> {
+    public listSecrets(param: SecretsApiListSecretsRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretWithComponentsListResponse> {
         return this.api.listSecrets(param.organizationId, param.limit, param.offset,  options).toPromise();
     }
 

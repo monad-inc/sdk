@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *RoutesV2SecretResponse) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetShareDetails
+
+`func (o *RoutesV2SecretResponse) GetShareDetails() ModelsShareDetails`
+
+GetShareDetails returns the ShareDetails field if non-nil, zero value otherwise.
+
+### GetShareDetailsOk
+
+`func (o *RoutesV2SecretResponse) GetShareDetailsOk() (*ModelsShareDetails, bool)`
+
+GetShareDetailsOk returns a tuple with the ShareDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareDetails
+
+`func (o *RoutesV2SecretResponse) SetShareDetails(v ModelsShareDetails)`
+
+SetShareDetails sets ShareDetails field to given value.
+
+### HasShareDetails
+
+`func (o *RoutesV2SecretResponse) HasShareDetails() bool`
+
+HasShareDetails returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

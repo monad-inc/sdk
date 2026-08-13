@@ -21,17 +21,17 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_pagination import ModelsPagination
-from monad.models.models_secret_with_components import ModelsSecretWithComponents
+from monad.models.routes_v2_secret_with_components_response import RoutesV2SecretWithComponentsResponse
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsSecretWithComponentsList(BaseModel):
+class RoutesV2SecretWithComponentsListResponse(BaseModel):
     """
-    ModelsSecretWithComponentsList
+    RoutesV2SecretWithComponentsListResponse
     """ # noqa: E501
     pagination: Optional[ModelsPagination] = None
-    secrets: Optional[List[ModelsSecretWithComponents]] = None
+    secrets: Optional[List[RoutesV2SecretWithComponentsResponse]] = None
     __properties: ClassVar[List[str]] = ["pagination", "secrets"]
 
     model_config = ConfigDict(
@@ -52,7 +52,7 @@ class ModelsSecretWithComponentsList(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsSecretWithComponentsList from a JSON string"""
+        """Create an instance of RoutesV2SecretWithComponentsListResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -87,7 +87,7 @@ class ModelsSecretWithComponentsList(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsSecretWithComponentsList from a dict"""
+        """Create an instance of RoutesV2SecretWithComponentsListResponse from a dict"""
         if obj is None:
             return None
 
@@ -96,7 +96,7 @@ class ModelsSecretWithComponentsList(BaseModel):
 
         _obj = cls.model_validate({
             "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
-            "secrets": [ModelsSecretWithComponents.from_dict(_item) for _item in obj["secrets"]] if obj.get("secrets") is not None else None
+            "secrets": [RoutesV2SecretWithComponentsResponse.from_dict(_item) for _item in obj["secrets"]] if obj.get("secrets") is not None else None
         })
         return _obj
 

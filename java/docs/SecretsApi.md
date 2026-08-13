@@ -172,7 +172,7 @@ null (empty response body)
 
 <a id="getSecret"></a>
 # **getSecret**
-> ModelsSecretWithComponents getSecret(organizationId, secretId)
+> RoutesV2SecretWithComponentsResponse getSecret(organizationId, secretId)
 
 Get secret with components
 
@@ -209,7 +209,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String secretId = "secretId_example"; // String | Secret ID
     try {
-      ModelsSecretWithComponents result = apiInstance.getSecret(organizationId, secretId);
+      RoutesV2SecretWithComponentsResponse result = apiInstance.getSecret(organizationId, secretId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#getSecret");
@@ -231,7 +231,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsSecretWithComponents**](ModelsSecretWithComponents.md)
+[**RoutesV2SecretWithComponentsResponse**](RoutesV2SecretWithComponentsResponse.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ public class Example {
 
 <a id="listSecrets"></a>
 # **listSecrets**
-> ModelsSecretWithComponentsList listSecrets(organizationId, limit, offset)
+> RoutesV2SecretWithComponentsListResponse listSecrets(organizationId, limit, offset)
 
 List secrets with components
 
@@ -289,7 +289,7 @@ public class Example {
     Integer limit = 56; // Integer | Limit number of results
     Integer offset = 56; // Integer | Offset results
     try {
-      ModelsSecretWithComponentsList result = apiInstance.listSecrets(organizationId, limit, offset);
+      RoutesV2SecretWithComponentsListResponse result = apiInstance.listSecrets(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SecretsApi#listSecrets");
@@ -312,7 +312,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsSecretWithComponentsList**](ModelsSecretWithComponentsList.md)
+[**RoutesV2SecretWithComponentsListResponse**](RoutesV2SecretWithComponentsListResponse.md)
 
 ### Authorization
 

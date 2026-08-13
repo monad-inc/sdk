@@ -1,78 +1,78 @@
-# ModelsSecretWithComponentsList
+# RoutesV2SecretWithComponentsListResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
-**Secrets** | Pointer to [**[]ModelsSecretWithComponents**](ModelsSecretWithComponents.md) |  | [optional] 
+**Secrets** | Pointer to [**[]RoutesV2SecretWithComponentsResponse**](RoutesV2SecretWithComponentsResponse.md) |  | [optional] 
 
 ## Methods
 
-### NewModelsSecretWithComponentsList
+### NewRoutesV2SecretWithComponentsListResponse
 
-`func NewModelsSecretWithComponentsList() *ModelsSecretWithComponentsList`
+`func NewRoutesV2SecretWithComponentsListResponse() *RoutesV2SecretWithComponentsListResponse`
 
-NewModelsSecretWithComponentsList instantiates a new ModelsSecretWithComponentsList object
+NewRoutesV2SecretWithComponentsListResponse instantiates a new RoutesV2SecretWithComponentsListResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewModelsSecretWithComponentsListWithDefaults
+### NewRoutesV2SecretWithComponentsListResponseWithDefaults
 
-`func NewModelsSecretWithComponentsListWithDefaults() *ModelsSecretWithComponentsList`
+`func NewRoutesV2SecretWithComponentsListResponseWithDefaults() *RoutesV2SecretWithComponentsListResponse`
 
-NewModelsSecretWithComponentsListWithDefaults instantiates a new ModelsSecretWithComponentsList object
+NewRoutesV2SecretWithComponentsListResponseWithDefaults instantiates a new RoutesV2SecretWithComponentsListResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetPagination
 
-`func (o *ModelsSecretWithComponentsList) GetPagination() ModelsPagination`
+`func (o *RoutesV2SecretWithComponentsListResponse) GetPagination() ModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *ModelsSecretWithComponentsList) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *RoutesV2SecretWithComponentsListResponse) GetPaginationOk() (*ModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *ModelsSecretWithComponentsList) SetPagination(v ModelsPagination)`
+`func (o *RoutesV2SecretWithComponentsListResponse) SetPagination(v ModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 
 ### HasPagination
 
-`func (o *ModelsSecretWithComponentsList) HasPagination() bool`
+`func (o *RoutesV2SecretWithComponentsListResponse) HasPagination() bool`
 
 HasPagination returns a boolean if a field has been set.
 
 ### GetSecrets
 
-`func (o *ModelsSecretWithComponentsList) GetSecrets() []ModelsSecretWithComponents`
+`func (o *RoutesV2SecretWithComponentsListResponse) GetSecrets() []RoutesV2SecretWithComponentsResponse`
 
 GetSecrets returns the Secrets field if non-nil, zero value otherwise.
 
 ### GetSecretsOk
 
-`func (o *ModelsSecretWithComponentsList) GetSecretsOk() (*[]ModelsSecretWithComponents, bool)`
+`func (o *RoutesV2SecretWithComponentsListResponse) GetSecretsOk() (*[]RoutesV2SecretWithComponentsResponse, bool)`
 
 GetSecretsOk returns a tuple with the Secrets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecrets
 
-`func (o *ModelsSecretWithComponentsList) SetSecrets(v []ModelsSecretWithComponents)`
+`func (o *RoutesV2SecretWithComponentsListResponse) SetSecrets(v []RoutesV2SecretWithComponentsResponse)`
 
 SetSecrets sets Secrets field to given value.
 
 ### HasSecrets
 
-`func (o *ModelsSecretWithComponentsList) HasSecrets() bool`
+`func (o *RoutesV2SecretWithComponentsListResponse) HasSecrets() bool`
 
 HasSecrets returns a boolean if a field has been set.
 

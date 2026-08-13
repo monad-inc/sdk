@@ -6471,85 +6471,6 @@
                 },
                 "type": "object"
             },
-            "models.SecretWithComponents": {
-                "properties": {
-                    "created_at": {
-                        "description": "When the secret was created",
-                        "type": "string"
-                    },
-                    "description": {
-                        "description": "The user set Description of the secret",
-                        "type": "string"
-                    },
-                    "enrichments": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.ComponentReference"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "id": {
-                        "description": "The ID of the secret",
-                        "type": "string"
-                    },
-                    "inputs": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.ComponentReference"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "name": {
-                        "description": "The user set Name of the secret",
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "description": "The OrganizationID the secret belongs to",
-                        "type": "string"
-                    },
-                    "outputs": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.ComponentReference"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "share_details": {
-                        "$ref": "#/components/schemas/models.ShareDetails"
-                    },
-                    "transforms": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.ComponentReference"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "updated_at": {
-                        "description": "When the secret was updated",
-                        "type": "string"
-                    },
-                    "value": {
-                        "description": "The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.",
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "models.SecretWithComponentsList": {
-                "properties": {
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    },
-                    "secrets": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.SecretWithComponents"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    }
-                },
-                "type": "object"
-            },
             "models.ShareDetails": {
                 "description": "ShareDetails is set when the enrichment is involved in org-to-org sharing.",
                 "properties": {
@@ -8841,6 +8762,78 @@
                     },
                     "organization_id": {
                         "type": "string"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV2.SecretWithComponentsListResponse": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "secrets": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV2.SecretWithComponentsResponse"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "routesV2.SecretWithComponentsResponse": {
+                "properties": {
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "enrichments": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.ComponentReference"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "inputs": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.ComponentReference"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "outputs": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.ComponentReference"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "transforms": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.ComponentReference"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     },
                     "updated_at": {
                         "type": "string"
@@ -21621,7 +21614,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.SecretWithComponentsList"
+                                    "$ref": "#/components/schemas/routesV2.SecretWithComponentsListResponse"
                                 }
                             }
                         },
@@ -21850,7 +21843,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.SecretWithComponents"
+                                    "$ref": "#/components/schemas/routesV2.SecretWithComponentsResponse"
                                 }
                             }
                         },

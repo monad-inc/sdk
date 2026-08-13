@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_share_details import ModelsShareDetails
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,8 +34,9 @@ class RoutesV2SecretResponse(BaseModel):
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
+    share_details: Optional[ModelsShareDetails] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "name", "organization_id", "share_details", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -75,6 +77,9 @@ class RoutesV2SecretResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of share_details
+        if self.share_details:
+            _dict['share_details'] = self.share_details.to_dict()
         return _dict
 
     @classmethod
@@ -92,6 +97,7 @@ class RoutesV2SecretResponse(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
+            "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
             "updated_at": obj.get("updated_at")
         })
         return _obj

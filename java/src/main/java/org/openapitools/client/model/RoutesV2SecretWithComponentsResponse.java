@@ -50,10 +50,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsSecretWithComponents
+ * RoutesV2SecretWithComponentsResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class ModelsSecretWithComponents {
+public class RoutesV2SecretWithComponentsResponse {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nullable
@@ -109,21 +109,16 @@ public class ModelsSecretWithComponents {
   @javax.annotation.Nullable
   private String updatedAt;
 
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
-  private String value;
-
-  public ModelsSecretWithComponents() {
+  public RoutesV2SecretWithComponentsResponse() {
   }
 
-  public ModelsSecretWithComponents createdAt(@javax.annotation.Nullable String createdAt) {
+  public RoutesV2SecretWithComponentsResponse createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
   /**
-   * When the secret was created
+   * Get createdAt
    * @return createdAt
    */
   @javax.annotation.Nullable
@@ -136,13 +131,13 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents description(@javax.annotation.Nullable String description) {
+  public RoutesV2SecretWithComponentsResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
   /**
-   * The user set Description of the secret
+   * Get description
    * @return description
    */
   @javax.annotation.Nullable
@@ -155,12 +150,12 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents enrichments(@javax.annotation.Nullable List<ModelsComponentReference> enrichments) {
+  public RoutesV2SecretWithComponentsResponse enrichments(@javax.annotation.Nullable List<ModelsComponentReference> enrichments) {
     this.enrichments = enrichments;
     return this;
   }
 
-  public ModelsSecretWithComponents addEnrichmentsItem(ModelsComponentReference enrichmentsItem) {
+  public RoutesV2SecretWithComponentsResponse addEnrichmentsItem(ModelsComponentReference enrichmentsItem) {
     if (this.enrichments == null) {
       this.enrichments = new ArrayList<>();
     }
@@ -182,13 +177,13 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents id(@javax.annotation.Nullable String id) {
+  public RoutesV2SecretWithComponentsResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
 
   /**
-   * The ID of the secret
+   * Get id
    * @return id
    */
   @javax.annotation.Nullable
@@ -201,12 +196,12 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents inputs(@javax.annotation.Nullable List<ModelsComponentReference> inputs) {
+  public RoutesV2SecretWithComponentsResponse inputs(@javax.annotation.Nullable List<ModelsComponentReference> inputs) {
     this.inputs = inputs;
     return this;
   }
 
-  public ModelsSecretWithComponents addInputsItem(ModelsComponentReference inputsItem) {
+  public RoutesV2SecretWithComponentsResponse addInputsItem(ModelsComponentReference inputsItem) {
     if (this.inputs == null) {
       this.inputs = new ArrayList<>();
     }
@@ -228,13 +223,13 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents name(@javax.annotation.Nullable String name) {
+  public RoutesV2SecretWithComponentsResponse name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * The user set Name of the secret
+   * Get name
    * @return name
    */
   @javax.annotation.Nullable
@@ -247,13 +242,13 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents organizationId(@javax.annotation.Nullable String organizationId) {
+  public RoutesV2SecretWithComponentsResponse organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
 
   /**
-   * The OrganizationID the secret belongs to
+   * Get organizationId
    * @return organizationId
    */
   @javax.annotation.Nullable
@@ -266,12 +261,12 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents outputs(@javax.annotation.Nullable List<ModelsComponentReference> outputs) {
+  public RoutesV2SecretWithComponentsResponse outputs(@javax.annotation.Nullable List<ModelsComponentReference> outputs) {
     this.outputs = outputs;
     return this;
   }
 
-  public ModelsSecretWithComponents addOutputsItem(ModelsComponentReference outputsItem) {
+  public RoutesV2SecretWithComponentsResponse addOutputsItem(ModelsComponentReference outputsItem) {
     if (this.outputs == null) {
       this.outputs = new ArrayList<>();
     }
@@ -293,7 +288,7 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
+  public RoutesV2SecretWithComponentsResponse shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
     this.shareDetails = shareDetails;
     return this;
   }
@@ -312,12 +307,12 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents transforms(@javax.annotation.Nullable List<ModelsComponentReference> transforms) {
+  public RoutesV2SecretWithComponentsResponse transforms(@javax.annotation.Nullable List<ModelsComponentReference> transforms) {
     this.transforms = transforms;
     return this;
   }
 
-  public ModelsSecretWithComponents addTransformsItem(ModelsComponentReference transformsItem) {
+  public RoutesV2SecretWithComponentsResponse addTransformsItem(ModelsComponentReference transformsItem) {
     if (this.transforms == null) {
       this.transforms = new ArrayList<>();
     }
@@ -339,13 +334,13 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public RoutesV2SecretWithComponentsResponse updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
   /**
-   * When the secret was updated
+   * Get updatedAt
    * @return updatedAt
    */
   @javax.annotation.Nullable
@@ -358,25 +353,6 @@ public class ModelsSecretWithComponents {
   }
 
 
-  public ModelsSecretWithComponents value(@javax.annotation.Nullable String value) {
-    this.value = value;
-    return this;
-  }
-
-  /**
-   * The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
-   * @return value
-   */
-  @javax.annotation.Nullable
-  public String getValue() {
-    return value;
-  }
-
-  public void setValue(@javax.annotation.Nullable String value) {
-    this.value = value;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -386,30 +362,29 @@ public class ModelsSecretWithComponents {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelsSecretWithComponents modelsSecretWithComponents = (ModelsSecretWithComponents) o;
-    return Objects.equals(this.createdAt, modelsSecretWithComponents.createdAt) &&
-        Objects.equals(this.description, modelsSecretWithComponents.description) &&
-        Objects.equals(this.enrichments, modelsSecretWithComponents.enrichments) &&
-        Objects.equals(this.id, modelsSecretWithComponents.id) &&
-        Objects.equals(this.inputs, modelsSecretWithComponents.inputs) &&
-        Objects.equals(this.name, modelsSecretWithComponents.name) &&
-        Objects.equals(this.organizationId, modelsSecretWithComponents.organizationId) &&
-        Objects.equals(this.outputs, modelsSecretWithComponents.outputs) &&
-        Objects.equals(this.shareDetails, modelsSecretWithComponents.shareDetails) &&
-        Objects.equals(this.transforms, modelsSecretWithComponents.transforms) &&
-        Objects.equals(this.updatedAt, modelsSecretWithComponents.updatedAt) &&
-        Objects.equals(this.value, modelsSecretWithComponents.value);
+    RoutesV2SecretWithComponentsResponse routesV2SecretWithComponentsResponse = (RoutesV2SecretWithComponentsResponse) o;
+    return Objects.equals(this.createdAt, routesV2SecretWithComponentsResponse.createdAt) &&
+        Objects.equals(this.description, routesV2SecretWithComponentsResponse.description) &&
+        Objects.equals(this.enrichments, routesV2SecretWithComponentsResponse.enrichments) &&
+        Objects.equals(this.id, routesV2SecretWithComponentsResponse.id) &&
+        Objects.equals(this.inputs, routesV2SecretWithComponentsResponse.inputs) &&
+        Objects.equals(this.name, routesV2SecretWithComponentsResponse.name) &&
+        Objects.equals(this.organizationId, routesV2SecretWithComponentsResponse.organizationId) &&
+        Objects.equals(this.outputs, routesV2SecretWithComponentsResponse.outputs) &&
+        Objects.equals(this.shareDetails, routesV2SecretWithComponentsResponse.shareDetails) &&
+        Objects.equals(this.transforms, routesV2SecretWithComponentsResponse.transforms) &&
+        Objects.equals(this.updatedAt, routesV2SecretWithComponentsResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, enrichments, id, inputs, name, organizationId, outputs, shareDetails, transforms, updatedAt, value);
+    return Objects.hash(createdAt, description, enrichments, id, inputs, name, organizationId, outputs, shareDetails, transforms, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelsSecretWithComponents {\n");
+    sb.append("class RoutesV2SecretWithComponentsResponse {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enrichments: ").append(toIndentedString(enrichments)).append("\n");
@@ -421,7 +396,6 @@ public class ModelsSecretWithComponents {
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    transforms: ").append(toIndentedString(transforms)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -440,7 +414,7 @@ public class ModelsSecretWithComponents {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "share_details", "transforms", "updated_at", "value"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "enrichments", "id", "inputs", "name", "organization_id", "outputs", "share_details", "transforms", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -450,20 +424,20 @@ public class ModelsSecretWithComponents {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ModelsSecretWithComponents
+   * @throws IOException if the JSON Element is invalid with respect to RoutesV2SecretWithComponentsResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ModelsSecretWithComponents.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsSecretWithComponents is not found in the empty JSON string", ModelsSecretWithComponents.openapiRequiredFields.toString()));
+        if (!RoutesV2SecretWithComponentsResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2SecretWithComponentsResponse is not found in the empty JSON string", RoutesV2SecretWithComponentsResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ModelsSecretWithComponents.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsSecretWithComponents` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RoutesV2SecretWithComponentsResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2SecretWithComponentsResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -545,31 +519,28 @@ public class ModelsSecretWithComponents {
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
       }
-      if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelsSecretWithComponents.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelsSecretWithComponents' and its subtypes
+       if (!RoutesV2SecretWithComponentsResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RoutesV2SecretWithComponentsResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelsSecretWithComponents> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsSecretWithComponents.class));
+       final TypeAdapter<RoutesV2SecretWithComponentsResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RoutesV2SecretWithComponentsResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ModelsSecretWithComponents>() {
+       return (TypeAdapter<T>) new TypeAdapter<RoutesV2SecretWithComponentsResponse>() {
            @Override
-           public void write(JsonWriter out, ModelsSecretWithComponents value) throws IOException {
+           public void write(JsonWriter out, RoutesV2SecretWithComponentsResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ModelsSecretWithComponents read(JsonReader in) throws IOException {
+           public RoutesV2SecretWithComponentsResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -580,18 +551,18 @@ public class ModelsSecretWithComponents {
   }
 
   /**
-   * Create an instance of ModelsSecretWithComponents given an JSON string
+   * Create an instance of RoutesV2SecretWithComponentsResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ModelsSecretWithComponents
-   * @throws IOException if the JSON string is invalid with respect to ModelsSecretWithComponents
+   * @return An instance of RoutesV2SecretWithComponentsResponse
+   * @throws IOException if the JSON string is invalid with respect to RoutesV2SecretWithComponentsResponse
    */
-  public static ModelsSecretWithComponents fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelsSecretWithComponents.class);
+  public static RoutesV2SecretWithComponentsResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RoutesV2SecretWithComponentsResponse.class);
   }
 
   /**
-   * Convert an instance of ModelsSecretWithComponents to an JSON string
+   * Convert an instance of RoutesV2SecretWithComponentsResponse to an JSON string
    *
    * @return JSON string
    */

@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## GetSecret
 
-> ModelsSecretWithComponents GetSecret(ctx, organizationId, secretId).Execute()
+> RoutesV2SecretWithComponentsResponse GetSecret(ctx, organizationId, secretId).Execute()
 
 Get secret with components
 
@@ -186,7 +186,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecretsAPI.GetSecret``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSecret`: ModelsSecretWithComponents
+	// response from `GetSecret`: RoutesV2SecretWithComponentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `SecretsAPI.GetSecret`: %v\n", resp)
 }
 ```
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSecretWithComponents**](ModelsSecretWithComponents.md)
+[**RoutesV2SecretWithComponentsResponse**](RoutesV2SecretWithComponentsResponse.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## ListSecrets
 
-> ModelsSecretWithComponentsList ListSecrets(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> RoutesV2SecretWithComponentsListResponse ListSecrets(ctx, organizationId).Limit(limit).Offset(offset).Execute()
 
 List secrets with components
 
@@ -260,7 +260,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecretsAPI.ListSecrets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListSecrets`: ModelsSecretWithComponentsList
+	// response from `ListSecrets`: RoutesV2SecretWithComponentsListResponse
 	fmt.Fprintf(os.Stdout, "Response from `SecretsAPI.ListSecrets`: %v\n", resp)
 }
 ```
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsSecretWithComponentsList**](ModelsSecretWithComponentsList.md)
+[**RoutesV2SecretWithComponentsListResponse**](RoutesV2SecretWithComponentsListResponse.md)
 
 ### Authorization
 

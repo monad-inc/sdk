@@ -22,119 +22,39 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.ModelsComponentReference;
-import org.openapitools.client.model.ModelsShareDetails;
+import org.openapitools.client.model.ModelsPagination;
+import org.openapitools.client.model.RoutesV2SecretWithComponentsResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelsSecretWithComponents
+ * Model tests for RoutesV2SecretWithComponentsListResponse
  */
-public class ModelsSecretWithComponentsTest {
-    private final ModelsSecretWithComponents model = new ModelsSecretWithComponents();
+public class RoutesV2SecretWithComponentsListResponseTest {
+    private final RoutesV2SecretWithComponentsListResponse model = new RoutesV2SecretWithComponentsListResponse();
 
     /**
-     * Model tests for ModelsSecretWithComponents
+     * Model tests for RoutesV2SecretWithComponentsListResponse
      */
     @Test
-    public void testModelsSecretWithComponents() {
-        // TODO: test ModelsSecretWithComponents
+    public void testRoutesV2SecretWithComponentsListResponse() {
+        // TODO: test RoutesV2SecretWithComponentsListResponse
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'pagination'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
+    public void paginationTest() {
+        // TODO: test pagination
     }
 
     /**
-     * Test the property 'description'
+     * Test the property 'secrets'
      */
     @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'enrichments'
-     */
-    @Test
-    public void enrichmentsTest() {
-        // TODO: test enrichments
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'inputs'
-     */
-    @Test
-    public void inputsTest() {
-        // TODO: test inputs
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'organizationId'
-     */
-    @Test
-    public void organizationIdTest() {
-        // TODO: test organizationId
-    }
-
-    /**
-     * Test the property 'outputs'
-     */
-    @Test
-    public void outputsTest() {
-        // TODO: test outputs
-    }
-
-    /**
-     * Test the property 'shareDetails'
-     */
-    @Test
-    public void shareDetailsTest() {
-        // TODO: test shareDetails
-    }
-
-    /**
-     * Test the property 'transforms'
-     */
-    @Test
-    public void transformsTest() {
-        // TODO: test transforms
-    }
-
-    /**
-     * Test the property 'updatedAt'
-     */
-    @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
-    }
-
-    /**
-     * Test the property 'value'
-     */
-    @Test
-    public void valueTest() {
-        // TODO: test value
+    public void secretsTest() {
+        // TODO: test secrets
     }
 
 }

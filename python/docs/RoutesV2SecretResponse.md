@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
+**share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example

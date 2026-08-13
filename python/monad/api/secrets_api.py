@@ -20,9 +20,9 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
 from monad.models.create_secret_request import CreateSecretRequest
-from monad.models.models_secret_with_components import ModelsSecretWithComponents
-from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse
+from monad.models.routes_v2_secret_with_components_list_response import RoutesV2SecretWithComponentsListResponse
+from monad.models.routes_v2_secret_with_components_response import RoutesV2SecretWithComponentsResponse
 from monad.models.update_secret_request import UpdateSecretRequest
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -645,7 +645,7 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsSecretWithComponents:
+    ) -> RoutesV2SecretWithComponentsResponse:
         """Get secret with components
 
         Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
@@ -686,7 +686,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretWithComponents",
+            '200': "RoutesV2SecretWithComponentsResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -718,7 +718,7 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsSecretWithComponents]:
+    ) -> ApiResponse[RoutesV2SecretWithComponentsResponse]:
         """Get secret with components
 
         Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
@@ -759,7 +759,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretWithComponents",
+            '200': "RoutesV2SecretWithComponentsResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -832,7 +832,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretWithComponents",
+            '200': "RoutesV2SecretWithComponentsResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -929,7 +929,7 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsSecretWithComponentsList:
+    ) -> RoutesV2SecretWithComponentsListResponse:
         """List secrets with components
 
         Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
@@ -973,7 +973,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretWithComponentsList",
+            '200': "RoutesV2SecretWithComponentsListResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1005,7 +1005,7 @@ class SecretsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsSecretWithComponentsList]:
+    ) -> ApiResponse[RoutesV2SecretWithComponentsListResponse]:
         """List secrets with components
 
         Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
@@ -1049,7 +1049,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretWithComponentsList",
+            '200': "RoutesV2SecretWithComponentsListResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1125,7 +1125,7 @@ class SecretsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsSecretWithComponentsList",
+            '200': "RoutesV2SecretWithComponentsListResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(

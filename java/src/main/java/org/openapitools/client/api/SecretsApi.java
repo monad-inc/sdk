@@ -28,10 +28,10 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.CreateSecretRequest;
-import org.openapitools.client.model.ModelsSecretWithComponents;
-import org.openapitools.client.model.ModelsSecretWithComponentsList;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV2SecretResponse;
+import org.openapitools.client.model.RoutesV2SecretWithComponentsListResponse;
+import org.openapitools.client.model.RoutesV2SecretWithComponentsResponse;
 import org.openapitools.client.model.UpdateSecretRequest;
 
 import java.lang.reflect.Type;
@@ -454,7 +454,7 @@ public class SecretsApi {
      * Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
      * @param organizationId Organization ID (required)
      * @param secretId Secret ID (required)
-     * @return ModelsSecretWithComponents
+     * @return RoutesV2SecretWithComponentsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -465,8 +465,8 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsSecretWithComponents getSecret(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
-        ApiResponse<ModelsSecretWithComponents> localVarResp = getSecretWithHttpInfo(organizationId, secretId);
+    public RoutesV2SecretWithComponentsResponse getSecret(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
+        ApiResponse<RoutesV2SecretWithComponentsResponse> localVarResp = getSecretWithHttpInfo(organizationId, secretId);
         return localVarResp.getData();
     }
 
@@ -475,7 +475,7 @@ public class SecretsApi {
      * Gets a specific secret by ID with the inputs, outputs, enrichments and transforms that reference it. Use this as the pre-check before DELETE: references in any of those lists mean the secret cannot be deleted. Pipeline-node config overrides are not included here but do block deletion, so an empty result is not a guarantee the delete will succeed.
      * @param organizationId Organization ID (required)
      * @param secretId Secret ID (required)
-     * @return ApiResponse&lt;ModelsSecretWithComponents&gt;
+     * @return ApiResponse&lt;RoutesV2SecretWithComponentsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -486,9 +486,9 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsSecretWithComponents> getSecretWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
+    public ApiResponse<RoutesV2SecretWithComponentsResponse> getSecretWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId) throws ApiException {
         okhttp3.Call localVarCall = getSecretValidateBeforeCall(organizationId, secretId, null);
-        Type localVarReturnType = new TypeToken<ModelsSecretWithComponents>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV2SecretWithComponentsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -509,10 +509,10 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSecretAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback<ModelsSecretWithComponents> _callback) throws ApiException {
+    public okhttp3.Call getSecretAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String secretId, final ApiCallback<RoutesV2SecretWithComponentsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSecretValidateBeforeCall(organizationId, secretId, _callback);
-        Type localVarReturnType = new TypeToken<ModelsSecretWithComponents>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV2SecretWithComponentsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -602,7 +602,7 @@ public class SecretsApi {
      * @param organizationId Organization ID (required)
      * @param limit Limit number of results (optional)
      * @param offset Offset results (optional)
-     * @return ModelsSecretWithComponentsList
+     * @return RoutesV2SecretWithComponentsListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -612,8 +612,8 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsSecretWithComponentsList listSecrets(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsSecretWithComponentsList> localVarResp = listSecretsWithHttpInfo(organizationId, limit, offset);
+    public RoutesV2SecretWithComponentsListResponse listSecrets(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<RoutesV2SecretWithComponentsListResponse> localVarResp = listSecretsWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
 
@@ -623,7 +623,7 @@ public class SecretsApi {
      * @param organizationId Organization ID (required)
      * @param limit Limit number of results (optional)
      * @param offset Offset results (optional)
-     * @return ApiResponse&lt;ModelsSecretWithComponentsList&gt;
+     * @return ApiResponse&lt;RoutesV2SecretWithComponentsListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -633,9 +633,9 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsSecretWithComponentsList> listSecretsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public ApiResponse<RoutesV2SecretWithComponentsListResponse> listSecretsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = listSecretsValidateBeforeCall(organizationId, limit, offset, null);
-        Type localVarReturnType = new TypeToken<ModelsSecretWithComponentsList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV2SecretWithComponentsListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -656,10 +656,10 @@ public class SecretsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSecretsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsSecretWithComponentsList> _callback) throws ApiException {
+    public okhttp3.Call listSecretsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<RoutesV2SecretWithComponentsListResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSecretsValidateBeforeCall(organizationId, limit, offset, _callback);
-        Type localVarReturnType = new TypeToken<ModelsSecretWithComponentsList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV2SecretWithComponentsListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -15,51 +15,43 @@ import (
 	"encoding/json"
 )
 
-// checks if the ModelsSecretWithComponents type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ModelsSecretWithComponents{}
+// checks if the RoutesV2SecretWithComponentsResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RoutesV2SecretWithComponentsResponse{}
 
-// ModelsSecretWithComponents struct for ModelsSecretWithComponents
-type ModelsSecretWithComponents struct {
-	// When the secret was created
+// RoutesV2SecretWithComponentsResponse struct for RoutesV2SecretWithComponentsResponse
+type RoutesV2SecretWithComponentsResponse struct {
 	CreatedAt *string `json:"created_at,omitempty"`
-	// The user set Description of the secret
 	Description *string `json:"description,omitempty"`
 	Enrichments []ModelsComponentReference `json:"enrichments,omitempty"`
-	// The ID of the secret
 	Id *string `json:"id,omitempty"`
 	Inputs []ModelsComponentReference `json:"inputs,omitempty"`
-	// The user set Name of the secret
 	Name *string `json:"name,omitempty"`
-	// The OrganizationID the secret belongs to
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Outputs []ModelsComponentReference `json:"outputs,omitempty"`
 	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
 	Transforms []ModelsComponentReference `json:"transforms,omitempty"`
-	// When the secret was updated
 	UpdatedAt *string `json:"updated_at,omitempty"`
-	// The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload.
-	Value *string `json:"value,omitempty"`
 }
 
-// NewModelsSecretWithComponents instantiates a new ModelsSecretWithComponents object
+// NewRoutesV2SecretWithComponentsResponse instantiates a new RoutesV2SecretWithComponentsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSecretWithComponents() *ModelsSecretWithComponents {
-	this := ModelsSecretWithComponents{}
+func NewRoutesV2SecretWithComponentsResponse() *RoutesV2SecretWithComponentsResponse {
+	this := RoutesV2SecretWithComponentsResponse{}
 	return &this
 }
 
-// NewModelsSecretWithComponentsWithDefaults instantiates a new ModelsSecretWithComponents object
+// NewRoutesV2SecretWithComponentsResponseWithDefaults instantiates a new RoutesV2SecretWithComponentsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewModelsSecretWithComponentsWithDefaults() *ModelsSecretWithComponents {
-	this := ModelsSecretWithComponents{}
+func NewRoutesV2SecretWithComponentsResponseWithDefaults() *RoutesV2SecretWithComponentsResponse {
+	this := RoutesV2SecretWithComponentsResponse{}
 	return &this
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetCreatedAt() string {
+func (o *RoutesV2SecretWithComponentsResponse) GetCreatedAt() string {
 	if o == nil || IsNil(o.CreatedAt) {
 		var ret string
 		return ret
@@ -69,7 +61,7 @@ func (o *ModelsSecretWithComponents) GetCreatedAt() string {
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetCreatedAtOk() (*string, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetCreatedAtOk() (*string, bool) {
 	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
@@ -77,7 +69,7 @@ func (o *ModelsSecretWithComponents) GetCreatedAtOk() (*string, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasCreatedAt() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -86,12 +78,12 @@ func (o *ModelsSecretWithComponents) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
-func (o *ModelsSecretWithComponents) SetCreatedAt(v string) {
+func (o *RoutesV2SecretWithComponentsResponse) SetCreatedAt(v string) {
 	o.CreatedAt = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetDescription() string {
+func (o *RoutesV2SecretWithComponentsResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
@@ -101,7 +93,7 @@ func (o *ModelsSecretWithComponents) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetDescriptionOk() (*string, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
@@ -109,7 +101,7 @@ func (o *ModelsSecretWithComponents) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasDescription() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -118,12 +110,12 @@ func (o *ModelsSecretWithComponents) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *ModelsSecretWithComponents) SetDescription(v string) {
+func (o *RoutesV2SecretWithComponentsResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetEnrichments returns the Enrichments field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetEnrichments() []ModelsComponentReference {
+func (o *RoutesV2SecretWithComponentsResponse) GetEnrichments() []ModelsComponentReference {
 	if o == nil || IsNil(o.Enrichments) {
 		var ret []ModelsComponentReference
 		return ret
@@ -133,7 +125,7 @@ func (o *ModelsSecretWithComponents) GetEnrichments() []ModelsComponentReference
 
 // GetEnrichmentsOk returns a tuple with the Enrichments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetEnrichmentsOk() ([]ModelsComponentReference, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetEnrichmentsOk() ([]ModelsComponentReference, bool) {
 	if o == nil || IsNil(o.Enrichments) {
 		return nil, false
 	}
@@ -141,7 +133,7 @@ func (o *ModelsSecretWithComponents) GetEnrichmentsOk() ([]ModelsComponentRefere
 }
 
 // HasEnrichments returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasEnrichments() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasEnrichments() bool {
 	if o != nil && !IsNil(o.Enrichments) {
 		return true
 	}
@@ -150,12 +142,12 @@ func (o *ModelsSecretWithComponents) HasEnrichments() bool {
 }
 
 // SetEnrichments gets a reference to the given []ModelsComponentReference and assigns it to the Enrichments field.
-func (o *ModelsSecretWithComponents) SetEnrichments(v []ModelsComponentReference) {
+func (o *RoutesV2SecretWithComponentsResponse) SetEnrichments(v []ModelsComponentReference) {
 	o.Enrichments = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetId() string {
+func (o *RoutesV2SecretWithComponentsResponse) GetId() string {
 	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
@@ -165,7 +157,7 @@ func (o *ModelsSecretWithComponents) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetIdOk() (*string, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -173,7 +165,7 @@ func (o *ModelsSecretWithComponents) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasId() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -182,12 +174,12 @@ func (o *ModelsSecretWithComponents) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ModelsSecretWithComponents) SetId(v string) {
+func (o *RoutesV2SecretWithComponentsResponse) SetId(v string) {
 	o.Id = &v
 }
 
 // GetInputs returns the Inputs field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetInputs() []ModelsComponentReference {
+func (o *RoutesV2SecretWithComponentsResponse) GetInputs() []ModelsComponentReference {
 	if o == nil || IsNil(o.Inputs) {
 		var ret []ModelsComponentReference
 		return ret
@@ -197,7 +189,7 @@ func (o *ModelsSecretWithComponents) GetInputs() []ModelsComponentReference {
 
 // GetInputsOk returns a tuple with the Inputs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetInputsOk() ([]ModelsComponentReference, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetInputsOk() ([]ModelsComponentReference, bool) {
 	if o == nil || IsNil(o.Inputs) {
 		return nil, false
 	}
@@ -205,7 +197,7 @@ func (o *ModelsSecretWithComponents) GetInputsOk() ([]ModelsComponentReference, 
 }
 
 // HasInputs returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasInputs() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasInputs() bool {
 	if o != nil && !IsNil(o.Inputs) {
 		return true
 	}
@@ -214,12 +206,12 @@ func (o *ModelsSecretWithComponents) HasInputs() bool {
 }
 
 // SetInputs gets a reference to the given []ModelsComponentReference and assigns it to the Inputs field.
-func (o *ModelsSecretWithComponents) SetInputs(v []ModelsComponentReference) {
+func (o *RoutesV2SecretWithComponentsResponse) SetInputs(v []ModelsComponentReference) {
 	o.Inputs = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetName() string {
+func (o *RoutesV2SecretWithComponentsResponse) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -229,7 +221,7 @@ func (o *ModelsSecretWithComponents) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetNameOk() (*string, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -237,7 +229,7 @@ func (o *ModelsSecretWithComponents) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasName() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -246,12 +238,12 @@ func (o *ModelsSecretWithComponents) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ModelsSecretWithComponents) SetName(v string) {
+func (o *RoutesV2SecretWithComponentsResponse) SetName(v string) {
 	o.Name = &v
 }
 
 // GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetOrganizationId() string {
+func (o *RoutesV2SecretWithComponentsResponse) GetOrganizationId() string {
 	if o == nil || IsNil(o.OrganizationId) {
 		var ret string
 		return ret
@@ -261,7 +253,7 @@ func (o *ModelsSecretWithComponents) GetOrganizationId() string {
 
 // GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetOrganizationIdOk() (*string, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetOrganizationIdOk() (*string, bool) {
 	if o == nil || IsNil(o.OrganizationId) {
 		return nil, false
 	}
@@ -269,7 +261,7 @@ func (o *ModelsSecretWithComponents) GetOrganizationIdOk() (*string, bool) {
 }
 
 // HasOrganizationId returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasOrganizationId() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasOrganizationId() bool {
 	if o != nil && !IsNil(o.OrganizationId) {
 		return true
 	}
@@ -278,12 +270,12 @@ func (o *ModelsSecretWithComponents) HasOrganizationId() bool {
 }
 
 // SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
-func (o *ModelsSecretWithComponents) SetOrganizationId(v string) {
+func (o *RoutesV2SecretWithComponentsResponse) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
 // GetOutputs returns the Outputs field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetOutputs() []ModelsComponentReference {
+func (o *RoutesV2SecretWithComponentsResponse) GetOutputs() []ModelsComponentReference {
 	if o == nil || IsNil(o.Outputs) {
 		var ret []ModelsComponentReference
 		return ret
@@ -293,7 +285,7 @@ func (o *ModelsSecretWithComponents) GetOutputs() []ModelsComponentReference {
 
 // GetOutputsOk returns a tuple with the Outputs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetOutputsOk() ([]ModelsComponentReference, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetOutputsOk() ([]ModelsComponentReference, bool) {
 	if o == nil || IsNil(o.Outputs) {
 		return nil, false
 	}
@@ -301,7 +293,7 @@ func (o *ModelsSecretWithComponents) GetOutputsOk() ([]ModelsComponentReference,
 }
 
 // HasOutputs returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasOutputs() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasOutputs() bool {
 	if o != nil && !IsNil(o.Outputs) {
 		return true
 	}
@@ -310,12 +302,12 @@ func (o *ModelsSecretWithComponents) HasOutputs() bool {
 }
 
 // SetOutputs gets a reference to the given []ModelsComponentReference and assigns it to the Outputs field.
-func (o *ModelsSecretWithComponents) SetOutputs(v []ModelsComponentReference) {
+func (o *RoutesV2SecretWithComponentsResponse) SetOutputs(v []ModelsComponentReference) {
 	o.Outputs = v
 }
 
 // GetShareDetails returns the ShareDetails field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetShareDetails() ModelsShareDetails {
+func (o *RoutesV2SecretWithComponentsResponse) GetShareDetails() ModelsShareDetails {
 	if o == nil || IsNil(o.ShareDetails) {
 		var ret ModelsShareDetails
 		return ret
@@ -325,7 +317,7 @@ func (o *ModelsSecretWithComponents) GetShareDetails() ModelsShareDetails {
 
 // GetShareDetailsOk returns a tuple with the ShareDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetShareDetailsOk() (*ModelsShareDetails, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetShareDetailsOk() (*ModelsShareDetails, bool) {
 	if o == nil || IsNil(o.ShareDetails) {
 		return nil, false
 	}
@@ -333,7 +325,7 @@ func (o *ModelsSecretWithComponents) GetShareDetailsOk() (*ModelsShareDetails, b
 }
 
 // HasShareDetails returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasShareDetails() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasShareDetails() bool {
 	if o != nil && !IsNil(o.ShareDetails) {
 		return true
 	}
@@ -342,12 +334,12 @@ func (o *ModelsSecretWithComponents) HasShareDetails() bool {
 }
 
 // SetShareDetails gets a reference to the given ModelsShareDetails and assigns it to the ShareDetails field.
-func (o *ModelsSecretWithComponents) SetShareDetails(v ModelsShareDetails) {
+func (o *RoutesV2SecretWithComponentsResponse) SetShareDetails(v ModelsShareDetails) {
 	o.ShareDetails = &v
 }
 
 // GetTransforms returns the Transforms field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetTransforms() []ModelsComponentReference {
+func (o *RoutesV2SecretWithComponentsResponse) GetTransforms() []ModelsComponentReference {
 	if o == nil || IsNil(o.Transforms) {
 		var ret []ModelsComponentReference
 		return ret
@@ -357,7 +349,7 @@ func (o *ModelsSecretWithComponents) GetTransforms() []ModelsComponentReference 
 
 // GetTransformsOk returns a tuple with the Transforms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetTransformsOk() ([]ModelsComponentReference, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetTransformsOk() ([]ModelsComponentReference, bool) {
 	if o == nil || IsNil(o.Transforms) {
 		return nil, false
 	}
@@ -365,7 +357,7 @@ func (o *ModelsSecretWithComponents) GetTransformsOk() ([]ModelsComponentReferen
 }
 
 // HasTransforms returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasTransforms() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasTransforms() bool {
 	if o != nil && !IsNil(o.Transforms) {
 		return true
 	}
@@ -374,12 +366,12 @@ func (o *ModelsSecretWithComponents) HasTransforms() bool {
 }
 
 // SetTransforms gets a reference to the given []ModelsComponentReference and assigns it to the Transforms field.
-func (o *ModelsSecretWithComponents) SetTransforms(v []ModelsComponentReference) {
+func (o *RoutesV2SecretWithComponentsResponse) SetTransforms(v []ModelsComponentReference) {
 	o.Transforms = v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetUpdatedAt() string {
+func (o *RoutesV2SecretWithComponentsResponse) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
 		var ret string
 		return ret
@@ -389,7 +381,7 @@ func (o *ModelsSecretWithComponents) GetUpdatedAt() string {
 
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetUpdatedAtOk() (*string, bool) {
+func (o *RoutesV2SecretWithComponentsResponse) GetUpdatedAtOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
@@ -397,7 +389,7 @@ func (o *ModelsSecretWithComponents) GetUpdatedAtOk() (*string, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasUpdatedAt() bool {
+func (o *RoutesV2SecretWithComponentsResponse) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -406,43 +398,11 @@ func (o *ModelsSecretWithComponents) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
-func (o *ModelsSecretWithComponents) SetUpdatedAt(v string) {
+func (o *RoutesV2SecretWithComponentsResponse) SetUpdatedAt(v string) {
 	o.UpdatedAt = &v
 }
 
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponents) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponents) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponents) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ModelsSecretWithComponents) SetValue(v string) {
-	o.Value = &v
-}
-
-func (o ModelsSecretWithComponents) MarshalJSON() ([]byte, error) {
+func (o RoutesV2SecretWithComponentsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -450,7 +410,7 @@ func (o ModelsSecretWithComponents) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ModelsSecretWithComponents) ToMap() (map[string]interface{}, error) {
+func (o RoutesV2SecretWithComponentsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt
@@ -485,44 +445,41 @@ func (o ModelsSecretWithComponents) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt
 	}
-	if !IsNil(o.Value) {
-		toSerialize["value"] = o.Value
-	}
 	return toSerialize, nil
 }
 
-type NullableModelsSecretWithComponents struct {
-	value *ModelsSecretWithComponents
+type NullableRoutesV2SecretWithComponentsResponse struct {
+	value *RoutesV2SecretWithComponentsResponse
 	isSet bool
 }
 
-func (v NullableModelsSecretWithComponents) Get() *ModelsSecretWithComponents {
+func (v NullableRoutesV2SecretWithComponentsResponse) Get() *RoutesV2SecretWithComponentsResponse {
 	return v.value
 }
 
-func (v *NullableModelsSecretWithComponents) Set(val *ModelsSecretWithComponents) {
+func (v *NullableRoutesV2SecretWithComponentsResponse) Set(val *RoutesV2SecretWithComponentsResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableModelsSecretWithComponents) IsSet() bool {
+func (v NullableRoutesV2SecretWithComponentsResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableModelsSecretWithComponents) Unset() {
+func (v *NullableRoutesV2SecretWithComponentsResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableModelsSecretWithComponents(val *ModelsSecretWithComponents) *NullableModelsSecretWithComponents {
-	return &NullableModelsSecretWithComponents{value: val, isSet: true}
+func NewNullableRoutesV2SecretWithComponentsResponse(val *RoutesV2SecretWithComponentsResponse) *NullableRoutesV2SecretWithComponentsResponse {
+	return &NullableRoutesV2SecretWithComponentsResponse{value: val, isSet: true}
 }
 
-func (v NullableModelsSecretWithComponents) MarshalJSON() ([]byte, error) {
+func (v NullableRoutesV2SecretWithComponentsResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableModelsSecretWithComponents) UnmarshalJSON(src []byte) error {
+func (v *NullableRoutesV2SecretWithComponentsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

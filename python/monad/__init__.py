@@ -395,8 +395,6 @@ __all__ = [
     "ModelsRoleWithPermissionsList",
     "ModelsSchemaDetection",
     "ModelsSecret",
-    "ModelsSecretWithComponents",
-    "ModelsSecretWithComponentsList",
     "ModelsShareDetails",
     "ModelsStorageTypeCostConfig",
     "ModelsStorageTypeCostEntry",
@@ -524,6 +522,8 @@ __all__ = [
     "RoutesV2PutOutputRequest",
     "RoutesV2RegenerateAPIKeyRequest",
     "RoutesV2SecretResponse",
+    "RoutesV2SecretWithComponentsListResponse",
+    "RoutesV2SecretWithComponentsResponse",
     "RoutesV2SetStorageTypeCostEntry",
     "RoutesV2SetStorageTypeCostRequest",
     "RoutesV2StorageTypeDetailsResponse",
@@ -1084,8 +1084,6 @@ from monad.models.models_role_with_permissions import ModelsRoleWithPermissions 
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_schema_detection import ModelsSchemaDetection as ModelsSchemaDetection
 from monad.models.models_secret import ModelsSecret as ModelsSecret
-from monad.models.models_secret_with_components import ModelsSecretWithComponents as ModelsSecretWithComponents
-from monad.models.models_secret_with_components_list import ModelsSecretWithComponentsList as ModelsSecretWithComponentsList
 from monad.models.models_share_details import ModelsShareDetails as ModelsShareDetails
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig as ModelsStorageTypeCostConfig
 from monad.models.models_storage_type_cost_entry import ModelsStorageTypeCostEntry as ModelsStorageTypeCostEntry
@@ -1213,6 +1211,8 @@ from monad.models.routes_v2_put_input_request import RoutesV2PutInputRequest as 
 from monad.models.routes_v2_put_output_request import RoutesV2PutOutputRequest as RoutesV2PutOutputRequest
 from monad.models.routes_v2_regenerate_api_key_request import RoutesV2RegenerateAPIKeyRequest as RoutesV2RegenerateAPIKeyRequest
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse as RoutesV2SecretResponse
+from monad.models.routes_v2_secret_with_components_list_response import RoutesV2SecretWithComponentsListResponse as RoutesV2SecretWithComponentsListResponse
+from monad.models.routes_v2_secret_with_components_response import RoutesV2SecretWithComponentsResponse as RoutesV2SecretWithComponentsResponse
 from monad.models.routes_v2_set_storage_type_cost_entry import RoutesV2SetStorageTypeCostEntry as RoutesV2SetStorageTypeCostEntry
 from monad.models.routes_v2_set_storage_type_cost_request import RoutesV2SetStorageTypeCostRequest as RoutesV2SetStorageTypeCostRequest
 from monad.models.routes_v2_storage_type_details_response import RoutesV2StorageTypeDetailsResponse as RoutesV2StorageTypeDetailsResponse

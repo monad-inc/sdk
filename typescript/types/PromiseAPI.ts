@@ -327,8 +327,6 @@ import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
-import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
@@ -456,6 +454,8 @@ import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPIKeyRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { RoutesV2SecretWithComponentsListResponse } from '../models/RoutesV2SecretWithComponentsListResponse';
+import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
@@ -5382,7 +5382,7 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public getSecretWithHttpInfo(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponents>> {
+    public getSecretWithHttpInfo(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretWithComponentsResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getSecretWithHttpInfo(organizationId, secretId, observableOptions);
         return result.toPromise();
@@ -5394,7 +5394,7 @@ export class PromiseSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public getSecret(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<ModelsSecretWithComponents> {
+    public getSecret(organizationId: string, secretId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretWithComponentsResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getSecret(organizationId, secretId, observableOptions);
         return result.toPromise();
@@ -5407,7 +5407,7 @@ export class PromiseSecretsApi {
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public listSecretsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSecretWithComponentsList>> {
+    public listSecretsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretWithComponentsListResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listSecretsWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -5420,7 +5420,7 @@ export class PromiseSecretsApi {
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public listSecrets(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsSecretWithComponentsList> {
+    public listSecrets(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretWithComponentsListResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listSecrets(organizationId, limit, offset, observableOptions);
         return result.toPromise();

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsPagination;
-import org.openapitools.client.model.ModelsSecretWithComponents;
+import org.openapitools.client.model.RoutesV2SecretWithComponentsResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,10 +50,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsSecretWithComponentsList
+ * RoutesV2SecretWithComponentsListResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
-public class ModelsSecretWithComponentsList {
+public class RoutesV2SecretWithComponentsListResponse {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
   @javax.annotation.Nullable
@@ -62,12 +62,12 @@ public class ModelsSecretWithComponentsList {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
   @javax.annotation.Nullable
-  private List<ModelsSecretWithComponents> secrets = new ArrayList<>();
+  private List<RoutesV2SecretWithComponentsResponse> secrets = new ArrayList<>();
 
-  public ModelsSecretWithComponentsList() {
+  public RoutesV2SecretWithComponentsListResponse() {
   }
 
-  public ModelsSecretWithComponentsList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public RoutesV2SecretWithComponentsListResponse pagination(@javax.annotation.Nullable ModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -86,12 +86,12 @@ public class ModelsSecretWithComponentsList {
   }
 
 
-  public ModelsSecretWithComponentsList secrets(@javax.annotation.Nullable List<ModelsSecretWithComponents> secrets) {
+  public RoutesV2SecretWithComponentsListResponse secrets(@javax.annotation.Nullable List<RoutesV2SecretWithComponentsResponse> secrets) {
     this.secrets = secrets;
     return this;
   }
 
-  public ModelsSecretWithComponentsList addSecretsItem(ModelsSecretWithComponents secretsItem) {
+  public RoutesV2SecretWithComponentsListResponse addSecretsItem(RoutesV2SecretWithComponentsResponse secretsItem) {
     if (this.secrets == null) {
       this.secrets = new ArrayList<>();
     }
@@ -104,11 +104,11 @@ public class ModelsSecretWithComponentsList {
    * @return secrets
    */
   @javax.annotation.Nullable
-  public List<ModelsSecretWithComponents> getSecrets() {
+  public List<RoutesV2SecretWithComponentsResponse> getSecrets() {
     return secrets;
   }
 
-  public void setSecrets(@javax.annotation.Nullable List<ModelsSecretWithComponents> secrets) {
+  public void setSecrets(@javax.annotation.Nullable List<RoutesV2SecretWithComponentsResponse> secrets) {
     this.secrets = secrets;
   }
 
@@ -122,9 +122,9 @@ public class ModelsSecretWithComponentsList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelsSecretWithComponentsList modelsSecretWithComponentsList = (ModelsSecretWithComponentsList) o;
-    return Objects.equals(this.pagination, modelsSecretWithComponentsList.pagination) &&
-        Objects.equals(this.secrets, modelsSecretWithComponentsList.secrets);
+    RoutesV2SecretWithComponentsListResponse routesV2SecretWithComponentsListResponse = (RoutesV2SecretWithComponentsListResponse) o;
+    return Objects.equals(this.pagination, routesV2SecretWithComponentsListResponse.pagination) &&
+        Objects.equals(this.secrets, routesV2SecretWithComponentsListResponse.secrets);
   }
 
   @Override
@@ -135,7 +135,7 @@ public class ModelsSecretWithComponentsList {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelsSecretWithComponentsList {\n");
+    sb.append("class RoutesV2SecretWithComponentsListResponse {\n");
     sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
     sb.append("    secrets: ").append(toIndentedString(secrets)).append("\n");
     sb.append("}");
@@ -166,20 +166,20 @@ public class ModelsSecretWithComponentsList {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ModelsSecretWithComponentsList
+   * @throws IOException if the JSON Element is invalid with respect to RoutesV2SecretWithComponentsListResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ModelsSecretWithComponentsList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsSecretWithComponentsList is not found in the empty JSON string", ModelsSecretWithComponentsList.openapiRequiredFields.toString()));
+        if (!RoutesV2SecretWithComponentsListResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV2SecretWithComponentsListResponse is not found in the empty JSON string", RoutesV2SecretWithComponentsListResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ModelsSecretWithComponentsList.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsSecretWithComponentsList` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RoutesV2SecretWithComponentsListResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV2SecretWithComponentsListResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -197,7 +197,7 @@ public class ModelsSecretWithComponentsList {
 
           // validate the optional field `secrets` (array)
           for (int i = 0; i < jsonArraysecrets.size(); i++) {
-            ModelsSecretWithComponents.validateJsonElement(jsonArraysecrets.get(i));
+            RoutesV2SecretWithComponentsResponse.validateJsonElement(jsonArraysecrets.get(i));
           };
         }
       }
@@ -207,22 +207,22 @@ public class ModelsSecretWithComponentsList {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelsSecretWithComponentsList.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelsSecretWithComponentsList' and its subtypes
+       if (!RoutesV2SecretWithComponentsListResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RoutesV2SecretWithComponentsListResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelsSecretWithComponentsList> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsSecretWithComponentsList.class));
+       final TypeAdapter<RoutesV2SecretWithComponentsListResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RoutesV2SecretWithComponentsListResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ModelsSecretWithComponentsList>() {
+       return (TypeAdapter<T>) new TypeAdapter<RoutesV2SecretWithComponentsListResponse>() {
            @Override
-           public void write(JsonWriter out, ModelsSecretWithComponentsList value) throws IOException {
+           public void write(JsonWriter out, RoutesV2SecretWithComponentsListResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ModelsSecretWithComponentsList read(JsonReader in) throws IOException {
+           public RoutesV2SecretWithComponentsListResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -233,18 +233,18 @@ public class ModelsSecretWithComponentsList {
   }
 
   /**
-   * Create an instance of ModelsSecretWithComponentsList given an JSON string
+   * Create an instance of RoutesV2SecretWithComponentsListResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ModelsSecretWithComponentsList
-   * @throws IOException if the JSON string is invalid with respect to ModelsSecretWithComponentsList
+   * @return An instance of RoutesV2SecretWithComponentsListResponse
+   * @throws IOException if the JSON string is invalid with respect to RoutesV2SecretWithComponentsListResponse
    */
-  public static ModelsSecretWithComponentsList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelsSecretWithComponentsList.class);
+  public static RoutesV2SecretWithComponentsListResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RoutesV2SecretWithComponentsListResponse.class);
   }
 
   /**
-   * Convert an instance of ModelsSecretWithComponentsList to an JSON string
+   * Convert an instance of RoutesV2SecretWithComponentsListResponse to an JSON string
    *
    * @return JSON string
    */

@@ -15,34 +15,34 @@ import (
 	"encoding/json"
 )
 
-// checks if the ModelsSecretWithComponentsList type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ModelsSecretWithComponentsList{}
+// checks if the RoutesV2SecretWithComponentsListResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RoutesV2SecretWithComponentsListResponse{}
 
-// ModelsSecretWithComponentsList struct for ModelsSecretWithComponentsList
-type ModelsSecretWithComponentsList struct {
+// RoutesV2SecretWithComponentsListResponse struct for RoutesV2SecretWithComponentsListResponse
+type RoutesV2SecretWithComponentsListResponse struct {
 	Pagination *ModelsPagination `json:"pagination,omitempty"`
-	Secrets []ModelsSecretWithComponents `json:"secrets,omitempty"`
+	Secrets []RoutesV2SecretWithComponentsResponse `json:"secrets,omitempty"`
 }
 
-// NewModelsSecretWithComponentsList instantiates a new ModelsSecretWithComponentsList object
+// NewRoutesV2SecretWithComponentsListResponse instantiates a new RoutesV2SecretWithComponentsListResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSecretWithComponentsList() *ModelsSecretWithComponentsList {
-	this := ModelsSecretWithComponentsList{}
+func NewRoutesV2SecretWithComponentsListResponse() *RoutesV2SecretWithComponentsListResponse {
+	this := RoutesV2SecretWithComponentsListResponse{}
 	return &this
 }
 
-// NewModelsSecretWithComponentsListWithDefaults instantiates a new ModelsSecretWithComponentsList object
+// NewRoutesV2SecretWithComponentsListResponseWithDefaults instantiates a new RoutesV2SecretWithComponentsListResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewModelsSecretWithComponentsListWithDefaults() *ModelsSecretWithComponentsList {
-	this := ModelsSecretWithComponentsList{}
+func NewRoutesV2SecretWithComponentsListResponseWithDefaults() *RoutesV2SecretWithComponentsListResponse {
+	this := RoutesV2SecretWithComponentsListResponse{}
 	return &this
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponentsList) GetPagination() ModelsPagination {
+func (o *RoutesV2SecretWithComponentsListResponse) GetPagination() ModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
 		var ret ModelsPagination
 		return ret
@@ -52,7 +52,7 @@ func (o *ModelsSecretWithComponentsList) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponentsList) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *RoutesV2SecretWithComponentsListResponse) GetPaginationOk() (*ModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *ModelsSecretWithComponentsList) GetPaginationOk() (*ModelsPagination, b
 }
 
 // HasPagination returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponentsList) HasPagination() bool {
+func (o *RoutesV2SecretWithComponentsListResponse) HasPagination() bool {
 	if o != nil && !IsNil(o.Pagination) {
 		return true
 	}
@@ -69,14 +69,14 @@ func (o *ModelsSecretWithComponentsList) HasPagination() bool {
 }
 
 // SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *ModelsSecretWithComponentsList) SetPagination(v ModelsPagination) {
+func (o *RoutesV2SecretWithComponentsListResponse) SetPagination(v ModelsPagination) {
 	o.Pagination = &v
 }
 
 // GetSecrets returns the Secrets field value if set, zero value otherwise.
-func (o *ModelsSecretWithComponentsList) GetSecrets() []ModelsSecretWithComponents {
+func (o *RoutesV2SecretWithComponentsListResponse) GetSecrets() []RoutesV2SecretWithComponentsResponse {
 	if o == nil || IsNil(o.Secrets) {
-		var ret []ModelsSecretWithComponents
+		var ret []RoutesV2SecretWithComponentsResponse
 		return ret
 	}
 	return o.Secrets
@@ -84,7 +84,7 @@ func (o *ModelsSecretWithComponentsList) GetSecrets() []ModelsSecretWithComponen
 
 // GetSecretsOk returns a tuple with the Secrets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSecretWithComponentsList) GetSecretsOk() ([]ModelsSecretWithComponents, bool) {
+func (o *RoutesV2SecretWithComponentsListResponse) GetSecretsOk() ([]RoutesV2SecretWithComponentsResponse, bool) {
 	if o == nil || IsNil(o.Secrets) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *ModelsSecretWithComponentsList) GetSecretsOk() ([]ModelsSecretWithCompo
 }
 
 // HasSecrets returns a boolean if a field has been set.
-func (o *ModelsSecretWithComponentsList) HasSecrets() bool {
+func (o *RoutesV2SecretWithComponentsListResponse) HasSecrets() bool {
 	if o != nil && !IsNil(o.Secrets) {
 		return true
 	}
@@ -100,12 +100,12 @@ func (o *ModelsSecretWithComponentsList) HasSecrets() bool {
 	return false
 }
 
-// SetSecrets gets a reference to the given []ModelsSecretWithComponents and assigns it to the Secrets field.
-func (o *ModelsSecretWithComponentsList) SetSecrets(v []ModelsSecretWithComponents) {
+// SetSecrets gets a reference to the given []RoutesV2SecretWithComponentsResponse and assigns it to the Secrets field.
+func (o *RoutesV2SecretWithComponentsListResponse) SetSecrets(v []RoutesV2SecretWithComponentsResponse) {
 	o.Secrets = v
 }
 
-func (o ModelsSecretWithComponentsList) MarshalJSON() ([]byte, error) {
+func (o RoutesV2SecretWithComponentsListResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -113,7 +113,7 @@ func (o ModelsSecretWithComponentsList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ModelsSecretWithComponentsList) ToMap() (map[string]interface{}, error) {
+func (o RoutesV2SecretWithComponentsListResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Pagination) {
 		toSerialize["pagination"] = o.Pagination
@@ -124,38 +124,38 @@ func (o ModelsSecretWithComponentsList) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 
-type NullableModelsSecretWithComponentsList struct {
-	value *ModelsSecretWithComponentsList
+type NullableRoutesV2SecretWithComponentsListResponse struct {
+	value *RoutesV2SecretWithComponentsListResponse
 	isSet bool
 }
 
-func (v NullableModelsSecretWithComponentsList) Get() *ModelsSecretWithComponentsList {
+func (v NullableRoutesV2SecretWithComponentsListResponse) Get() *RoutesV2SecretWithComponentsListResponse {
 	return v.value
 }
 
-func (v *NullableModelsSecretWithComponentsList) Set(val *ModelsSecretWithComponentsList) {
+func (v *NullableRoutesV2SecretWithComponentsListResponse) Set(val *RoutesV2SecretWithComponentsListResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableModelsSecretWithComponentsList) IsSet() bool {
+func (v NullableRoutesV2SecretWithComponentsListResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableModelsSecretWithComponentsList) Unset() {
+func (v *NullableRoutesV2SecretWithComponentsListResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableModelsSecretWithComponentsList(val *ModelsSecretWithComponentsList) *NullableModelsSecretWithComponentsList {
-	return &NullableModelsSecretWithComponentsList{value: val, isSet: true}
+func NewNullableRoutesV2SecretWithComponentsListResponse(val *RoutesV2SecretWithComponentsListResponse) *NullableRoutesV2SecretWithComponentsListResponse {
+	return &NullableRoutesV2SecretWithComponentsListResponse{value: val, isSet: true}
 }
 
-func (v NullableModelsSecretWithComponentsList) MarshalJSON() ([]byte, error) {
+func (v NullableRoutesV2SecretWithComponentsListResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableModelsSecretWithComponentsList) UnmarshalJSON(src []byte) error {
+func (v *NullableRoutesV2SecretWithComponentsListResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

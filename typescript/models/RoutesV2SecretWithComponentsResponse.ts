@@ -10,13 +10,22 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPagination } from '../models/ModelsPagination';
-import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
+import { ModelsComponentReference } from '../models/ModelsComponentReference';
+import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { HttpFile } from '../http/http';
 
-export class ModelsSecretWithComponentsList {
-    'pagination'?: ModelsPagination;
-    'secrets'?: Array<ModelsSecretWithComponents>;
+export class RoutesV2SecretWithComponentsResponse {
+    'createdAt'?: string;
+    'description'?: string;
+    'enrichments'?: Array<ModelsComponentReference>;
+    'id'?: string;
+    'inputs'?: Array<ModelsComponentReference>;
+    'name'?: string;
+    'organizationId'?: string;
+    'outputs'?: Array<ModelsComponentReference>;
+    'shareDetails'?: ModelsShareDetails;
+    'transforms'?: Array<ModelsComponentReference>;
+    'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,20 +33,74 @@ export class ModelsSecretWithComponentsList {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "pagination",
-            "baseName": "pagination",
-            "type": "ModelsPagination",
+            "name": "createdAt",
+            "baseName": "created_at",
+            "type": "string",
             "format": ""
         },
         {
-            "name": "secrets",
-            "baseName": "secrets",
-            "type": "Array<ModelsSecretWithComponents>",
+            "name": "description",
+            "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "enrichments",
+            "baseName": "enrichments",
+            "type": "Array<ModelsComponentReference>",
+            "format": ""
+        },
+        {
+            "name": "id",
+            "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "inputs",
+            "baseName": "inputs",
+            "type": "Array<ModelsComponentReference>",
+            "format": ""
+        },
+        {
+            "name": "name",
+            "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "organizationId",
+            "baseName": "organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "outputs",
+            "baseName": "outputs",
+            "type": "Array<ModelsComponentReference>",
+            "format": ""
+        },
+        {
+            "name": "shareDetails",
+            "baseName": "share_details",
+            "type": "ModelsShareDetails",
+            "format": ""
+        },
+        {
+            "name": "transforms",
+            "baseName": "transforms",
+            "type": "Array<ModelsComponentReference>",
+            "format": ""
+        },
+        {
+            "name": "updatedAt",
+            "baseName": "updated_at",
+            "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsSecretWithComponentsList.attributeTypeMap;
+        return RoutesV2SecretWithComponentsResponse.attributeTypeMap;
     }
 
     public constructor() {

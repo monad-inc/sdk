@@ -323,8 +323,6 @@ export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSchemaDetection';
 export * from '../models/ModelsSecret';
-export * from '../models/ModelsSecretWithComponents';
-export * from '../models/ModelsSecretWithComponentsList';
 export * from '../models/ModelsShareDetails';
 export * from '../models/ModelsStorageTypeCostConfig';
 export * from '../models/ModelsStorageTypeCostEntry';
@@ -452,6 +450,8 @@ export * from '../models/RoutesV2PutInputRequest';
 export * from '../models/RoutesV2PutOutputRequest';
 export * from '../models/RoutesV2RegenerateAPIKeyRequest';
 export * from '../models/RoutesV2SecretResponse';
+export * from '../models/RoutesV2SecretWithComponentsListResponse';
+export * from '../models/RoutesV2SecretWithComponentsResponse';
 export * from '../models/RoutesV2SetStorageTypeCostEntry';
 export * from '../models/RoutesV2SetStorageTypeCostRequest';
 export * from '../models/RoutesV2StorageTypeDetailsResponse';
@@ -955,8 +955,6 @@ import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
-import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
@@ -1084,6 +1082,8 @@ import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPIKeyRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { RoutesV2SecretWithComponentsListResponse } from '../models/RoutesV2SecretWithComponentsListResponse';
+import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
@@ -1655,8 +1655,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSchemaDetection": ModelsSchemaDetection,
     "ModelsSecret": ModelsSecret,
-    "ModelsSecretWithComponents": ModelsSecretWithComponents,
-    "ModelsSecretWithComponentsList": ModelsSecretWithComponentsList,
     "ModelsShareDetails": ModelsShareDetails,
     "ModelsStorageTypeCostConfig": ModelsStorageTypeCostConfig,
     "ModelsStorageTypeCostEntry": ModelsStorageTypeCostEntry,
@@ -1782,6 +1780,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2PutOutputRequest": RoutesV2PutOutputRequest,
     "RoutesV2RegenerateAPIKeyRequest": RoutesV2RegenerateAPIKeyRequest,
     "RoutesV2SecretResponse": RoutesV2SecretResponse,
+    "RoutesV2SecretWithComponentsListResponse": RoutesV2SecretWithComponentsListResponse,
+    "RoutesV2SecretWithComponentsResponse": RoutesV2SecretWithComponentsResponse,
     "RoutesV2SetStorageTypeCostEntry": RoutesV2SetStorageTypeCostEntry,
     "RoutesV2SetStorageTypeCostRequest": RoutesV2SetStorageTypeCostRequest,
     "RoutesV2StorageTypeDetailsResponse": RoutesV2StorageTypeDetailsResponse,

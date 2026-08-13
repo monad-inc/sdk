@@ -1,340 +1,314 @@
-# ModelsSecretWithComponents
+# RoutesV2SecretWithComponentsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedAt** | Pointer to **string** | When the secret was created | [optional] 
-**Description** | Pointer to **string** | The user set Description of the secret | [optional] 
+**CreatedAt** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Enrichments** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
-**Id** | Pointer to **string** | The ID of the secret | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **Inputs** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
-**Name** | Pointer to **string** | The user set Name of the secret | [optional] 
-**OrganizationId** | Pointer to **string** | The OrganizationID the secret belongs to | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**OrganizationId** | Pointer to **string** |  | [optional] 
 **Outputs** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
 **ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **Transforms** | Pointer to [**[]ModelsComponentReference**](ModelsComponentReference.md) |  | [optional] 
-**UpdatedAt** | Pointer to **string** | When the secret was updated | [optional] 
-**Value** | Pointer to **string** | The value of the secret. This will never be returned to the client but can be used to set new values when used in a request payload. | [optional] 
+**UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewModelsSecretWithComponents
+### NewRoutesV2SecretWithComponentsResponse
 
-`func NewModelsSecretWithComponents() *ModelsSecretWithComponents`
+`func NewRoutesV2SecretWithComponentsResponse() *RoutesV2SecretWithComponentsResponse`
 
-NewModelsSecretWithComponents instantiates a new ModelsSecretWithComponents object
+NewRoutesV2SecretWithComponentsResponse instantiates a new RoutesV2SecretWithComponentsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewModelsSecretWithComponentsWithDefaults
+### NewRoutesV2SecretWithComponentsResponseWithDefaults
 
-`func NewModelsSecretWithComponentsWithDefaults() *ModelsSecretWithComponents`
+`func NewRoutesV2SecretWithComponentsResponseWithDefaults() *RoutesV2SecretWithComponentsResponse`
 
-NewModelsSecretWithComponentsWithDefaults instantiates a new ModelsSecretWithComponents object
+NewRoutesV2SecretWithComponentsResponseWithDefaults instantiates a new RoutesV2SecretWithComponentsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreatedAt
 
-`func (o *ModelsSecretWithComponents) GetCreatedAt() string`
+`func (o *RoutesV2SecretWithComponentsResponse) GetCreatedAt() string`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *ModelsSecretWithComponents) GetCreatedAtOk() (*string, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetCreatedAtOk() (*string, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *ModelsSecretWithComponents) SetCreatedAt(v string)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetCreatedAt(v string)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *ModelsSecretWithComponents) HasCreatedAt() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *ModelsSecretWithComponents) GetDescription() string`
+`func (o *RoutesV2SecretWithComponentsResponse) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *ModelsSecretWithComponents) GetDescriptionOk() (*string, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *ModelsSecretWithComponents) SetDescription(v string)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *ModelsSecretWithComponents) HasDescription() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 
 ### GetEnrichments
 
-`func (o *ModelsSecretWithComponents) GetEnrichments() []ModelsComponentReference`
+`func (o *RoutesV2SecretWithComponentsResponse) GetEnrichments() []ModelsComponentReference`
 
 GetEnrichments returns the Enrichments field if non-nil, zero value otherwise.
 
 ### GetEnrichmentsOk
 
-`func (o *ModelsSecretWithComponents) GetEnrichmentsOk() (*[]ModelsComponentReference, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetEnrichmentsOk() (*[]ModelsComponentReference, bool)`
 
 GetEnrichmentsOk returns a tuple with the Enrichments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrichments
 
-`func (o *ModelsSecretWithComponents) SetEnrichments(v []ModelsComponentReference)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetEnrichments(v []ModelsComponentReference)`
 
 SetEnrichments sets Enrichments field to given value.
 
 ### HasEnrichments
 
-`func (o *ModelsSecretWithComponents) HasEnrichments() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasEnrichments() bool`
 
 HasEnrichments returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *ModelsSecretWithComponents) GetId() string`
+`func (o *RoutesV2SecretWithComponentsResponse) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSecretWithComponents) GetIdOk() (*string, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSecretWithComponents) SetId(v string)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *ModelsSecretWithComponents) HasId() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetInputs
 
-`func (o *ModelsSecretWithComponents) GetInputs() []ModelsComponentReference`
+`func (o *RoutesV2SecretWithComponentsResponse) GetInputs() []ModelsComponentReference`
 
 GetInputs returns the Inputs field if non-nil, zero value otherwise.
 
 ### GetInputsOk
 
-`func (o *ModelsSecretWithComponents) GetInputsOk() (*[]ModelsComponentReference, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetInputsOk() (*[]ModelsComponentReference, bool)`
 
 GetInputsOk returns a tuple with the Inputs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInputs
 
-`func (o *ModelsSecretWithComponents) SetInputs(v []ModelsComponentReference)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetInputs(v []ModelsComponentReference)`
 
 SetInputs sets Inputs field to given value.
 
 ### HasInputs
 
-`func (o *ModelsSecretWithComponents) HasInputs() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasInputs() bool`
 
 HasInputs returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *ModelsSecretWithComponents) GetName() string`
+`func (o *RoutesV2SecretWithComponentsResponse) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *ModelsSecretWithComponents) GetNameOk() (*string, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *ModelsSecretWithComponents) SetName(v string)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *ModelsSecretWithComponents) HasName() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetOrganizationId
 
-`func (o *ModelsSecretWithComponents) GetOrganizationId() string`
+`func (o *RoutesV2SecretWithComponentsResponse) GetOrganizationId() string`
 
 GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
 
 ### GetOrganizationIdOk
 
-`func (o *ModelsSecretWithComponents) GetOrganizationIdOk() (*string, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetOrganizationIdOk() (*string, bool)`
 
 GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizationId
 
-`func (o *ModelsSecretWithComponents) SetOrganizationId(v string)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetOrganizationId(v string)`
 
 SetOrganizationId sets OrganizationId field to given value.
 
 ### HasOrganizationId
 
-`func (o *ModelsSecretWithComponents) HasOrganizationId() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
 
 ### GetOutputs
 
-`func (o *ModelsSecretWithComponents) GetOutputs() []ModelsComponentReference`
+`func (o *RoutesV2SecretWithComponentsResponse) GetOutputs() []ModelsComponentReference`
 
 GetOutputs returns the Outputs field if non-nil, zero value otherwise.
 
 ### GetOutputsOk
 
-`func (o *ModelsSecretWithComponents) GetOutputsOk() (*[]ModelsComponentReference, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetOutputsOk() (*[]ModelsComponentReference, bool)`
 
 GetOutputsOk returns a tuple with the Outputs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutputs
 
-`func (o *ModelsSecretWithComponents) SetOutputs(v []ModelsComponentReference)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetOutputs(v []ModelsComponentReference)`
 
 SetOutputs sets Outputs field to given value.
 
 ### HasOutputs
 
-`func (o *ModelsSecretWithComponents) HasOutputs() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasOutputs() bool`
 
 HasOutputs returns a boolean if a field has been set.
 
 ### GetShareDetails
 
-`func (o *ModelsSecretWithComponents) GetShareDetails() ModelsShareDetails`
+`func (o *RoutesV2SecretWithComponentsResponse) GetShareDetails() ModelsShareDetails`
 
 GetShareDetails returns the ShareDetails field if non-nil, zero value otherwise.
 
 ### GetShareDetailsOk
 
-`func (o *ModelsSecretWithComponents) GetShareDetailsOk() (*ModelsShareDetails, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetShareDetailsOk() (*ModelsShareDetails, bool)`
 
 GetShareDetailsOk returns a tuple with the ShareDetails field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShareDetails
 
-`func (o *ModelsSecretWithComponents) SetShareDetails(v ModelsShareDetails)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetShareDetails(v ModelsShareDetails)`
 
 SetShareDetails sets ShareDetails field to given value.
 
 ### HasShareDetails
 
-`func (o *ModelsSecretWithComponents) HasShareDetails() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasShareDetails() bool`
 
 HasShareDetails returns a boolean if a field has been set.
 
 ### GetTransforms
 
-`func (o *ModelsSecretWithComponents) GetTransforms() []ModelsComponentReference`
+`func (o *RoutesV2SecretWithComponentsResponse) GetTransforms() []ModelsComponentReference`
 
 GetTransforms returns the Transforms field if non-nil, zero value otherwise.
 
 ### GetTransformsOk
 
-`func (o *ModelsSecretWithComponents) GetTransformsOk() (*[]ModelsComponentReference, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetTransformsOk() (*[]ModelsComponentReference, bool)`
 
 GetTransformsOk returns a tuple with the Transforms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransforms
 
-`func (o *ModelsSecretWithComponents) SetTransforms(v []ModelsComponentReference)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetTransforms(v []ModelsComponentReference)`
 
 SetTransforms sets Transforms field to given value.
 
 ### HasTransforms
 
-`func (o *ModelsSecretWithComponents) HasTransforms() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasTransforms() bool`
 
 HasTransforms returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
-`func (o *ModelsSecretWithComponents) GetUpdatedAt() string`
+`func (o *RoutesV2SecretWithComponentsResponse) GetUpdatedAt() string`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *ModelsSecretWithComponents) GetUpdatedAtOk() (*string, bool)`
+`func (o *RoutesV2SecretWithComponentsResponse) GetUpdatedAtOk() (*string, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *ModelsSecretWithComponents) SetUpdatedAt(v string)`
+`func (o *RoutesV2SecretWithComponentsResponse) SetUpdatedAt(v string)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *ModelsSecretWithComponents) HasUpdatedAt() bool`
+`func (o *RoutesV2SecretWithComponentsResponse) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
-
-### GetValue
-
-`func (o *ModelsSecretWithComponents) GetValue() string`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *ModelsSecretWithComponents) GetValueOk() (*string, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *ModelsSecretWithComponents) SetValue(v string)`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *ModelsSecretWithComponents) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

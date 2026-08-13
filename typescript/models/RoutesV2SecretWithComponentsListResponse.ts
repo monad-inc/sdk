@@ -10,20 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { ModelsShareDetails } from '../models/ModelsShareDetails';
+import { ModelsPagination } from '../models/ModelsPagination';
+import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
 import { HttpFile } from '../http/http';
 
-/**
-* A secret object without sensitive data
-*/
-export class RoutesV2SecretResponse {
-    'createdAt'?: string;
-    'description'?: string;
-    'id'?: string;
-    'name'?: string;
-    'organizationId'?: string;
-    'shareDetails'?: ModelsShareDetails;
-    'updatedAt'?: string;
+export class RoutesV2SecretWithComponentsListResponse {
+    'pagination'?: ModelsPagination;
+    'secrets'?: Array<RoutesV2SecretWithComponentsResponse>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -31,50 +24,20 @@ export class RoutesV2SecretResponse {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "createdAt",
-            "baseName": "created_at",
-            "type": "string",
+            "name": "pagination",
+            "baseName": "pagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {
-            "name": "description",
-            "baseName": "description",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "id",
-            "baseName": "id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "name",
-            "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "organizationId",
-            "baseName": "organization_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "shareDetails",
-            "baseName": "share_details",
-            "type": "ModelsShareDetails",
-            "format": ""
-        },
-        {
-            "name": "updatedAt",
-            "baseName": "updated_at",
-            "type": "string",
+            "name": "secrets",
+            "baseName": "secrets",
+            "type": "Array<RoutesV2SecretWithComponentsResponse>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV2SecretResponse.attributeTypeMap;
+        return RoutesV2SecretWithComponentsListResponse.attributeTypeMap;
     }
 
     public constructor() {

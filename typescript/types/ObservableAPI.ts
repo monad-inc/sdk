@@ -328,8 +328,6 @@ import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { ModelsSecret } from '../models/ModelsSecret';
-import { ModelsSecretWithComponents } from '../models/ModelsSecretWithComponents';
-import { ModelsSecretWithComponentsList } from '../models/ModelsSecretWithComponentsList';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
 import { ModelsStorageTypeCostEntry } from '../models/ModelsStorageTypeCostEntry';
@@ -457,6 +455,8 @@ import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
 import { RoutesV2PutOutputRequest } from '../models/RoutesV2PutOutputRequest';
 import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPIKeyRequest';
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
+import { RoutesV2SecretWithComponentsListResponse } from '../models/RoutesV2SecretWithComponentsListResponse';
+import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';
@@ -7259,7 +7259,7 @@ export class ObservableSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public getSecretWithHttpInfo(organizationId: string, secretId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsSecretWithComponents>> {
+    public getSecretWithHttpInfo(organizationId: string, secretId: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretWithComponentsResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.getSecret(organizationId, secretId, _config);
@@ -7285,8 +7285,8 @@ export class ObservableSecretsApi {
      * @param organizationId Organization ID
      * @param secretId Secret ID
      */
-    public getSecret(organizationId: string, secretId: string, _options?: ConfigurationOptions): Observable<ModelsSecretWithComponents> {
-        return this.getSecretWithHttpInfo(organizationId, secretId, _options).pipe(map((apiResponse: HttpInfo<ModelsSecretWithComponents>) => apiResponse.data));
+    public getSecret(organizationId: string, secretId: string, _options?: ConfigurationOptions): Observable<RoutesV2SecretWithComponentsResponse> {
+        return this.getSecretWithHttpInfo(organizationId, secretId, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretWithComponentsResponse>) => apiResponse.data));
     }
 
     /**
@@ -7296,7 +7296,7 @@ export class ObservableSecretsApi {
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public listSecretsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsSecretWithComponentsList>> {
+    public listSecretsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretWithComponentsListResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.listSecrets(organizationId, limit, offset, _config);
@@ -7323,8 +7323,8 @@ export class ObservableSecretsApi {
      * @param [limit] Limit number of results
      * @param [offset] Offset results
      */
-    public listSecrets(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsSecretWithComponentsList> {
-        return this.listSecretsWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsSecretWithComponentsList>) => apiResponse.data));
+    public listSecrets(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV2SecretWithComponentsListResponse> {
+        return this.listSecretsWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretWithComponentsListResponse>) => apiResponse.data));
     }
 
     /**

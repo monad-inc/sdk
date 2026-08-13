@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.models_secret_with_components import ModelsSecretWithComponents
+from monad.models.routes_v2_secret_with_components_response import RoutesV2SecretWithComponentsResponse
 
-class TestModelsSecretWithComponents(unittest.TestCase):
-    """ModelsSecretWithComponents unit test stubs"""
+class TestRoutesV2SecretWithComponentsResponse(unittest.TestCase):
+    """RoutesV2SecretWithComponentsResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestModelsSecretWithComponents(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsSecretWithComponents:
-        """Test ModelsSecretWithComponents
+    def make_instance(self, include_optional) -> RoutesV2SecretWithComponentsResponse:
+        """Test RoutesV2SecretWithComponentsResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsSecretWithComponents`
+        # uncomment below to create an instance of `RoutesV2SecretWithComponentsResponse`
         """
-        model = ModelsSecretWithComponents()
+        model = RoutesV2SecretWithComponentsResponse()
         if include_optional:
-            return ModelsSecretWithComponents(
+            return RoutesV2SecretWithComponentsResponse(
                 created_at = '',
                 description = '',
                 enrichments = [
@@ -86,16 +86,15 @@ class TestModelsSecretWithComponents(unittest.TestCase):
                         name = '', 
                         type = '', )
                     ],
-                updated_at = '',
-                value = ''
+                updated_at = ''
             )
         else:
-            return ModelsSecretWithComponents(
+            return RoutesV2SecretWithComponentsResponse(
         )
         """
 
-    def testModelsSecretWithComponents(self):
-        """Test ModelsSecretWithComponents"""
+    def testRoutesV2SecretWithComponentsResponse(self):
+        """Test RoutesV2SecretWithComponentsResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

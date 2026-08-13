@@ -362,7 +362,7 @@ type ApiGetSecretRequest struct {
 	secretId string
 }
 
-func (r ApiGetSecretRequest) Execute() (*ModelsSecretWithComponents, *http.Response, error) {
+func (r ApiGetSecretRequest) Execute() (*RoutesV2SecretWithComponentsResponse, *http.Response, error) {
 	return r.ApiService.GetSecretExecute(r)
 }
 
@@ -386,13 +386,13 @@ func (a *SecretsAPIService) GetSecret(ctx context.Context, organizationId string
 }
 
 // Execute executes the request
-//  @return ModelsSecretWithComponents
-func (a *SecretsAPIService) GetSecretExecute(r ApiGetSecretRequest) (*ModelsSecretWithComponents, *http.Response, error) {
+//  @return RoutesV2SecretWithComponentsResponse
+func (a *SecretsAPIService) GetSecretExecute(r ApiGetSecretRequest) (*RoutesV2SecretWithComponentsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsSecretWithComponents
+		localVarReturnValue  *RoutesV2SecretWithComponentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsAPIService.GetSecret")
@@ -531,7 +531,7 @@ func (r ApiListSecretsRequest) Offset(offset int32) ApiListSecretsRequest {
 	return r
 }
 
-func (r ApiListSecretsRequest) Execute() (*ModelsSecretWithComponentsList, *http.Response, error) {
+func (r ApiListSecretsRequest) Execute() (*RoutesV2SecretWithComponentsListResponse, *http.Response, error) {
 	return r.ApiService.ListSecretsExecute(r)
 }
 
@@ -553,13 +553,13 @@ func (a *SecretsAPIService) ListSecrets(ctx context.Context, organizationId stri
 }
 
 // Execute executes the request
-//  @return ModelsSecretWithComponentsList
-func (a *SecretsAPIService) ListSecretsExecute(r ApiListSecretsRequest) (*ModelsSecretWithComponentsList, *http.Response, error) {
+//  @return RoutesV2SecretWithComponentsListResponse
+func (a *SecretsAPIService) ListSecretsExecute(r ApiListSecretsRequest) (*RoutesV2SecretWithComponentsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsSecretWithComponentsList
+		localVarReturnValue  *RoutesV2SecretWithComponentsListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsAPIService.ListSecrets")
