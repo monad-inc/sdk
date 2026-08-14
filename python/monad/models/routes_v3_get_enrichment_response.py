@@ -25,7 +25,6 @@ from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_pipeline import ModelsPipeline
 from monad.models.models_references import ModelsReferences
 from monad.models.models_share_details import ModelsShareDetails
-from monad.models.models_template_settings import ModelsTemplateSettings
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -44,11 +43,10 @@ class RoutesV3GetEnrichmentResponse(BaseModel):
     organization_id: Optional[StrictStr] = None
     references: Optional[ModelsReferences] = None
     share_details: Optional[ModelsShareDetails] = None
-    template_settings: Optional[ModelsTemplateSettings] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     version: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "template_settings", "type", "updated_at", "version"]
+    __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -105,9 +103,6 @@ class RoutesV3GetEnrichmentResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of share_details
         if self.share_details:
             _dict['share_details'] = self.share_details.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of template_settings
-        if self.template_settings:
-            _dict['template_settings'] = self.template_settings.to_dict()
         return _dict
 
     @classmethod
@@ -130,7 +125,6 @@ class RoutesV3GetEnrichmentResponse(BaseModel):
             "organization_id": obj.get("organization_id"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
             "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
-            "template_settings": ModelsTemplateSettings.from_dict(obj["template_settings"]) if obj.get("template_settings") is not None else None,
             "type": obj.get("type"),
             "updated_at": obj.get("updated_at"),
             "version": obj.get("version")

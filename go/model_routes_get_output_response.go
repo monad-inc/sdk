@@ -30,7 +30,6 @@ type RoutesGetOutputResponse struct {
 	OrganizationId *string `json:"organization_id,omitempty"`
 	References *ModelsReferences `json:"references,omitempty"`
 	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
-	TemplateSettings *ModelsTemplateSettings `json:"template_settings,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	Version *int32 `json:"version,omitempty"`
@@ -373,38 +372,6 @@ func (o *RoutesGetOutputResponse) SetShareDetails(v ModelsShareDetails) {
 	o.ShareDetails = &v
 }
 
-// GetTemplateSettings returns the TemplateSettings field value if set, zero value otherwise.
-func (o *RoutesGetOutputResponse) GetTemplateSettings() ModelsTemplateSettings {
-	if o == nil || IsNil(o.TemplateSettings) {
-		var ret ModelsTemplateSettings
-		return ret
-	}
-	return *o.TemplateSettings
-}
-
-// GetTemplateSettingsOk returns a tuple with the TemplateSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesGetOutputResponse) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool) {
-	if o == nil || IsNil(o.TemplateSettings) {
-		return nil, false
-	}
-	return o.TemplateSettings, true
-}
-
-// HasTemplateSettings returns a boolean if a field has been set.
-func (o *RoutesGetOutputResponse) HasTemplateSettings() bool {
-	if o != nil && !IsNil(o.TemplateSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplateSettings gets a reference to the given ModelsTemplateSettings and assigns it to the TemplateSettings field.
-func (o *RoutesGetOutputResponse) SetTemplateSettings(v ModelsTemplateSettings) {
-	o.TemplateSettings = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RoutesGetOutputResponse) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -540,9 +507,6 @@ func (o RoutesGetOutputResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShareDetails) {
 		toSerialize["share_details"] = o.ShareDetails
-	}
-	if !IsNil(o.TemplateSettings) {
-		toSerialize["template_settings"] = o.TemplateSettings
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

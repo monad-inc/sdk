@@ -25,7 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 import org.openapitools.client.model.ModelsReferences;
 import org.openapitools.client.model.ModelsShareDetails;
-import org.openapitools.client.model.ModelsTemplateSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -95,11 +94,6 @@ public class ModelsNodeComponent {
   @javax.annotation.Nullable
   private ModelsShareDetails shareDetails;
 
-  public static final String SERIALIZED_NAME_TEMPLATE_SETTINGS = "template_settings";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_SETTINGS)
-  @javax.annotation.Nullable
-  private ModelsTemplateSettings templateSettings;
-
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
@@ -127,7 +121,7 @@ public class ModelsNodeComponent {
   }
 
   /**
-   * BaseConfig is the template&#39;s config before the override delta is applied.
+   * The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig &#x3D;&#x3D; Config.  BaseConfig is the component&#39;s config before the override delta is applied.
    * @return baseConfig
    */
   @javax.annotation.Nullable
@@ -154,7 +148,7 @@ public class ModelsNodeComponent {
   }
 
   /**
-   * Config is the node&#39;s effective config: for a template-backed node it is the base merged with the node&#39;s override delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged.
+   * Config is the node&#39;s effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged.
    * @return config
    */
   @javax.annotation.Nullable
@@ -289,25 +283,6 @@ public class ModelsNodeComponent {
   }
 
 
-  public ModelsNodeComponent templateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
-    this.templateSettings = templateSettings;
-    return this;
-  }
-
-  /**
-   * Get templateSettings
-   * @return templateSettings
-   */
-  @javax.annotation.Nullable
-  public ModelsTemplateSettings getTemplateSettings() {
-    return templateSettings;
-  }
-
-  public void setTemplateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
-    this.templateSettings = templateSettings;
-  }
-
-
   public ModelsNodeComponent type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -364,14 +339,13 @@ public class ModelsNodeComponent {
         Objects.equals(this.overrides, modelsNodeComponent.overrides) &&
         Objects.equals(this.references, modelsNodeComponent.references) &&
         Objects.equals(this.shareDetails, modelsNodeComponent.shareDetails) &&
-        Objects.equals(this.templateSettings, modelsNodeComponent.templateSettings) &&
         Objects.equals(this.type, modelsNodeComponent.type) &&
         Objects.equals(this.version, modelsNodeComponent.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseConfig, config, description, id, name, overrides, references, shareDetails, templateSettings, type, version);
+    return Objects.hash(baseConfig, config, description, id, name, overrides, references, shareDetails, type, version);
   }
 
   @Override
@@ -386,7 +360,6 @@ public class ModelsNodeComponent {
     sb.append("    overrides: ").append(toIndentedString(overrides)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
-    sb.append("    templateSettings: ").append(toIndentedString(templateSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
@@ -407,7 +380,7 @@ public class ModelsNodeComponent {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("base_config", "config", "description", "id", "name", "overrides", "references", "share_details", "template_settings", "type", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("base_config", "config", "description", "id", "name", "overrides", "references", "share_details", "type", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -450,10 +423,6 @@ public class ModelsNodeComponent {
       // validate the optional field `share_details`
       if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
         ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
-      }
-      // validate the optional field `template_settings`
-      if (jsonObj.get("template_settings") != null && !jsonObj.get("template_settings").isJsonNull()) {
-        ModelsTemplateSettings.validateJsonElement(jsonObj.get("template_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

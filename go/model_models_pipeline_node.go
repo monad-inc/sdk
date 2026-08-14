@@ -25,7 +25,7 @@ type ModelsPipelineNode struct {
 	ComponentId *string `json:"component_id,omitempty"`
 	ComponentSubType *string `json:"component_sub_type,omitempty"`
 	ComponentType *ModelsComponentType `json:"component_type,omitempty"`
-	// ConfigOverrides is the node's sparse override delta over its template component's base config (RFC 0017 §3). Nil for a non-template-backed node.
+	// ConfigOverrides is the node's sparse override delta over its component's base config (RFC 0017 §3). Nil when the node has no override.
 	ConfigOverrides map[string]*interface{} `json:"config_overrides,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`

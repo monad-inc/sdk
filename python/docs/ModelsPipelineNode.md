@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **component_id** | **str** |  | [optional] 
 **component_sub_type** | **str** |  | [optional] 
 **component_type** | [**ModelsComponentType**](ModelsComponentType.md) |  | [optional] 
-**config_overrides** | **Dict[str, Optional[object]]** | ConfigOverrides is the node&#39;s sparse override delta over its template component&#39;s base config (RFC 0017 §3). Nil for a non-template-backed node. | [optional] 
+**config_overrides** | **Dict[str, Optional[object]]** | ConfigOverrides is the node&#39;s sparse override delta over its component&#39;s base config (RFC 0017 §3). Nil when the node has no override. | [optional] 
 **created_at** | **str** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 

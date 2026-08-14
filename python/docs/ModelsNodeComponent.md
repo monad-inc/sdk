@@ -5,15 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**base_config** | **Dict[str, Optional[object]]** | BaseConfig is the template&#39;s config before the override delta is applied. | [optional] 
-**config** | **Dict[str, Optional[object]]** | Config is the node&#39;s effective config: for a template-backed node it is the base merged with the node&#39;s override delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged. | [optional] 
+**base_config** | **Dict[str, Optional[object]]** | The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig &#x3D;&#x3D; Config.  BaseConfig is the component&#39;s config before the override delta is applied. | [optional] 
+**config** | **Dict[str, Optional[object]]** | Config is the node&#39;s effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged. | [optional] 
 **description** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **overrides** | **Dict[str, Optional[object]]** | Overrides is the node&#39;s sparse override delta (secrets as {id} refs only). | [optional] 
 **references** | [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
-**template_settings** | [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **version** | **int** |  | [optional] 
 

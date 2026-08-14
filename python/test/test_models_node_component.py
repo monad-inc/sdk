@@ -61,10 +61,6 @@ class TestModelsNodeComponent(unittest.TestCase):
                     owner_organization_name = '', 
                     shared_with_children = True, 
                     shared_with_me = True, ),
-                template_settings = monad.models.models/template_settings.models.TemplateSettings(
-                    overridable_paths = [
-                        ''
-                        ], ),
                 type = '',
                 version = 56
             )

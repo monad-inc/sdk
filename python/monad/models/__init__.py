@@ -353,7 +353,6 @@ from monad.models.models_storage_type_summary_response import ModelsStorageTypeS
 from monad.models.models_storage_type_time_series import ModelsStorageTypeTimeSeries
 from monad.models.models_storage_type_time_series_response import ModelsStorageTypeTimeSeriesResponse
 from monad.models.models_supported_features import ModelsSupportedFeatures
-from monad.models.models_template_settings import ModelsTemplateSettings
 from monad.models.models_time_range import ModelsTimeRange
 from monad.models.models_transform import ModelsTransform
 from monad.models.models_transform_config import ModelsTransformConfig

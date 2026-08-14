@@ -12,16 +12,15 @@
 
 import { ModelsReferences } from '../models/ModelsReferences';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
-import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { HttpFile } from '../http/http';
 
 export class ModelsNodeComponent {
     /**
-    * BaseConfig is the template\'s config before the override delta is applied.
+    * The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig == Config.  BaseConfig is the component\'s config before the override delta is applied.
     */
     'baseConfig'?: { [key: string]: any | null; };
     /**
-    * Config is the node\'s effective config: for a template-backed node it is the base merged with the node\'s override delta (RFC 0017 §3); otherwise it is the component\'s base config unchanged.
+    * Config is the node\'s effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component\'s base config unchanged.
     */
     'config'?: { [key: string]: any | null; };
     'description'?: string;
@@ -33,7 +32,6 @@ export class ModelsNodeComponent {
     'overrides'?: { [key: string]: any | null; };
     'references'?: ModelsReferences;
     'shareDetails'?: ModelsShareDetails;
-    'templateSettings'?: ModelsTemplateSettings;
     'type'?: string;
     'version'?: number;
 
@@ -88,12 +86,6 @@ export class ModelsNodeComponent {
             "name": "shareDetails",
             "baseName": "share_details",
             "type": "ModelsShareDetails",
-            "format": ""
-        },
-        {
-            "name": "templateSettings",
-            "baseName": "template_settings",
-            "type": "ModelsTemplateSettings",
             "format": ""
         },
         {

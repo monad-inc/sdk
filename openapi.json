@@ -5016,9 +5016,6 @@
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
                     },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
-                    },
                     "type": {
                         "type": "string"
                     },
@@ -5116,9 +5113,6 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -5323,12 +5317,12 @@
                 "properties": {
                     "base_config": {
                         "additionalProperties": {},
-                        "description": "BaseConfig is the template's config before the override delta is applied.",
+                        "description": "The blocks below are populated only for a node carrying an override delta, so\nthe UI can derive per-field overridden markers client-side without a\nserver-built per-field structure (R-1). A node with no delta leaves them\nempty, and BaseConfig == Config.\n\nBaseConfig is the component's config before the override delta is applied.",
                         "type": "object"
                     },
                     "config": {
                         "additionalProperties": {},
-                        "description": "Config is the node's effective config: for a template-backed node it is the\nbase merged with the node's override delta (RFC 0017 §3); otherwise it is\nthe component's base config unchanged.",
+                        "description": "Config is the node's effective config: for a node carrying an override delta\nit is the base merged with that delta (RFC 0017 §3); otherwise it is the\ncomponent's base config unchanged.",
                         "type": "object"
                     },
                     "description": {
@@ -5350,9 +5344,6 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -5559,9 +5550,6 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -5913,7 +5901,7 @@
                     },
                     "config_overrides": {
                         "additionalProperties": {},
-                        "description": "ConfigOverrides is the node's sparse override delta over its template\ncomponent's base config (RFC 0017 §3). Nil for a non-template-backed node.",
+                        "description": "ConfigOverrides is the node's sparse override delta over its component's\nbase config (RFC 0017 §3). Nil when the node has no override.",
                         "type": "object"
                     },
                     "created_at": {
@@ -6753,20 +6741,6 @@
                 "properties": {
                     "test_connection": {
                         "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "models.TemplateSettings": {
-                "description": "TemplateSettings is present iff this component is a template: it carries the\nlock allow-list for per-pipeline overrides (RFC 0017 §2).",
-                "properties": {
-                    "overridable_paths": {
-                        "description": "OverridablePaths is the allow-list of config paths a pipeline may override\n(nested paths at any depth, subtree inheritance); everything else is locked.\nEmpty/absent means fully locked.",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -8033,9 +8007,6 @@
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
                     },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
-                    },
                     "type": {
                         "type": "string"
                     },
@@ -8083,9 +8054,6 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"
@@ -9567,9 +9535,6 @@
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
-                    },
-                    "template_settings": {
-                        "$ref": "#/components/schemas/models.TemplateSettings"
                     },
                     "type": {
                         "type": "string"

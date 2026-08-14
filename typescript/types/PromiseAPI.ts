@@ -341,7 +341,6 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
-import { ModelsTemplateSettings } from '../models/ModelsTemplateSettings';
 import { ModelsTimeRange } from '../models/ModelsTimeRange';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';

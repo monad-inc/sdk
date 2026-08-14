@@ -37,7 +37,7 @@ class ModelsPipelineNode(BaseModel):
     component_id: Optional[StrictStr] = None
     component_sub_type: Optional[StrictStr] = None
     component_type: Optional[ModelsComponentType] = None
-    config_overrides: Optional[Dict[str, Any]] = Field(default=None, description="ConfigOverrides is the node's sparse override delta over its template component's base config (RFC 0017 §3). Nil for a non-template-backed node.")
+    config_overrides: Optional[Dict[str, Any]] = Field(default=None, description="ConfigOverrides is the node's sparse override delta over its component's base config (RFC 0017 §3). Nil when the node has no override.")
     created_at: Optional[StrictStr] = None
     enabled: Optional[StrictBool] = None
     id: Optional[StrictStr] = None

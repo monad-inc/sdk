@@ -4,15 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BaseConfig** | Pointer to **map[string]interface{}** | BaseConfig is the template&#39;s config before the override delta is applied. | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Config is the node&#39;s effective config: for a template-backed node it is the base merged with the node&#39;s override delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged. | [optional] 
+**BaseConfig** | Pointer to **map[string]interface{}** | The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig &#x3D;&#x3D; Config.  BaseConfig is the component&#39;s config before the override delta is applied. | [optional] 
+**Config** | Pointer to **map[string]interface{}** | Config is the node&#39;s effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component&#39;s base config unchanged. | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Overrides** | Pointer to **map[string]interface{}** | Overrides is the node&#39;s sparse override delta (secrets as {id} refs only). | [optional] 
 **References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
-**TemplateSettings** | Pointer to [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
@@ -234,31 +233,6 @@ SetShareDetails sets ShareDetails field to given value.
 `func (o *ModelsNodeComponent) HasShareDetails() bool`
 
 HasShareDetails returns a boolean if a field has been set.
-
-### GetTemplateSettings
-
-`func (o *ModelsNodeComponent) GetTemplateSettings() ModelsTemplateSettings`
-
-GetTemplateSettings returns the TemplateSettings field if non-nil, zero value otherwise.
-
-### GetTemplateSettingsOk
-
-`func (o *ModelsNodeComponent) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool)`
-
-GetTemplateSettingsOk returns a tuple with the TemplateSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTemplateSettings
-
-`func (o *ModelsNodeComponent) SetTemplateSettings(v ModelsTemplateSettings)`
-
-SetTemplateSettings sets TemplateSettings field to given value.
-
-### HasTemplateSettings
-
-`func (o *ModelsNodeComponent) HasTemplateSettings() bool`
-
-HasTemplateSettings returns a boolean if a field has been set.
 
 ### GetType
 

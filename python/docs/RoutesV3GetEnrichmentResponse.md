@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **organization_id** | **str** |  | [optional] 
 **references** | [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
-**template_settings** | [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **version** | **int** |  | [optional] 

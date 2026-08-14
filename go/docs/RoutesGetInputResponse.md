@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
 **ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
-**TemplateSettings** | Pointer to [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
@@ -287,31 +286,6 @@ SetShareDetails sets ShareDetails field to given value.
 `func (o *RoutesGetInputResponse) HasShareDetails() bool`
 
 HasShareDetails returns a boolean if a field has been set.
-
-### GetTemplateSettings
-
-`func (o *RoutesGetInputResponse) GetTemplateSettings() ModelsTemplateSettings`
-
-GetTemplateSettings returns the TemplateSettings field if non-nil, zero value otherwise.
-
-### GetTemplateSettingsOk
-
-`func (o *RoutesGetInputResponse) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool)`
-
-GetTemplateSettingsOk returns a tuple with the TemplateSettings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTemplateSettings
-
-`func (o *RoutesGetInputResponse) SetTemplateSettings(v ModelsTemplateSettings)`
-
-SetTemplateSettings sets TemplateSettings field to given value.
-
-### HasTemplateSettings
-
-`func (o *RoutesGetInputResponse) HasTemplateSettings() bool`
-
-HasTemplateSettings returns a boolean if a field has been set.
 
 ### GetType
 

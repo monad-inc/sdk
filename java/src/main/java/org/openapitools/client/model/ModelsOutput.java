@@ -25,7 +25,6 @@ import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsOutputConfig;
 import org.openapitools.client.model.ModelsReferences;
 import org.openapitools.client.model.ModelsShareDetails;
-import org.openapitools.client.model.ModelsTemplateSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -99,11 +98,6 @@ public class ModelsOutput {
   @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
   @javax.annotation.Nullable
   private ModelsShareDetails shareDetails;
-
-  public static final String SERIALIZED_NAME_TEMPLATE_SETTINGS = "template_settings";
-  @SerializedName(SERIALIZED_NAME_TEMPLATE_SETTINGS)
-  @javax.annotation.Nullable
-  private ModelsTemplateSettings templateSettings;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -294,25 +288,6 @@ public class ModelsOutput {
   }
 
 
-  public ModelsOutput templateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
-    this.templateSettings = templateSettings;
-    return this;
-  }
-
-  /**
-   * Get templateSettings
-   * @return templateSettings
-   */
-  @javax.annotation.Nullable
-  public ModelsTemplateSettings getTemplateSettings() {
-    return templateSettings;
-  }
-
-  public void setTemplateSettings(@javax.annotation.Nullable ModelsTemplateSettings templateSettings) {
-    this.templateSettings = templateSettings;
-  }
-
-
   public ModelsOutput type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -389,7 +364,6 @@ public class ModelsOutput {
         Objects.equals(this.organizationId, modelsOutput.organizationId) &&
         Objects.equals(this.references, modelsOutput.references) &&
         Objects.equals(this.shareDetails, modelsOutput.shareDetails) &&
-        Objects.equals(this.templateSettings, modelsOutput.templateSettings) &&
         Objects.equals(this.type, modelsOutput.type) &&
         Objects.equals(this.updatedAt, modelsOutput.updatedAt) &&
         Objects.equals(this.version, modelsOutput.version);
@@ -397,7 +371,7 @@ public class ModelsOutput {
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, templateSettings, type, updatedAt, version);
+    return Objects.hash(config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt, version);
   }
 
   @Override
@@ -413,7 +387,6 @@ public class ModelsOutput {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
-    sb.append("    templateSettings: ").append(toIndentedString(templateSettings)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
@@ -435,7 +408,7 @@ public class ModelsOutput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "template_settings", "type", "updated_at", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -492,10 +465,6 @@ public class ModelsOutput {
       // validate the optional field `share_details`
       if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {
         ModelsShareDetails.validateJsonElement(jsonObj.get("share_details"));
-      }
-      // validate the optional field `template_settings`
-      if (jsonObj.get("template_settings") != null && !jsonObj.get("template_settings").isJsonNull()) {
-        ModelsTemplateSettings.validateJsonElement(jsonObj.get("template_settings"));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

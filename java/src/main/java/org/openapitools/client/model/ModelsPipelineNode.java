@@ -238,7 +238,7 @@ public class ModelsPipelineNode {
   }
 
   /**
-   * ConfigOverrides is the node&#39;s sparse override delta over its template component&#39;s base config (RFC 0017 §3). Nil for a non-template-backed node.
+   * ConfigOverrides is the node&#39;s sparse override delta over its component&#39;s base config (RFC 0017 §3). Nil when the node has no override.
    * @return configOverrides
    */
   @javax.annotation.Nullable

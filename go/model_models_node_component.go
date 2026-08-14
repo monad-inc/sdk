@@ -20,9 +20,9 @@ var _ MappedNullable = &ModelsNodeComponent{}
 
 // ModelsNodeComponent struct for ModelsNodeComponent
 type ModelsNodeComponent struct {
-	// BaseConfig is the template's config before the override delta is applied.
+	// The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig == Config.  BaseConfig is the component's config before the override delta is applied.
 	BaseConfig map[string]*interface{} `json:"base_config,omitempty"`
-	// Config is the node's effective config: for a template-backed node it is the base merged with the node's override delta (RFC 0017 §3); otherwise it is the component's base config unchanged.
+	// Config is the node's effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component's base config unchanged.
 	Config map[string]*interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -31,7 +31,6 @@ type ModelsNodeComponent struct {
 	Overrides map[string]*interface{} `json:"overrides,omitempty"`
 	References *ModelsReferences `json:"references,omitempty"`
 	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
-	TemplateSettings *ModelsTemplateSettings `json:"template_settings,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Version *int32 `json:"version,omitempty"`
 }
@@ -309,38 +308,6 @@ func (o *ModelsNodeComponent) SetShareDetails(v ModelsShareDetails) {
 	o.ShareDetails = &v
 }
 
-// GetTemplateSettings returns the TemplateSettings field value if set, zero value otherwise.
-func (o *ModelsNodeComponent) GetTemplateSettings() ModelsTemplateSettings {
-	if o == nil || IsNil(o.TemplateSettings) {
-		var ret ModelsTemplateSettings
-		return ret
-	}
-	return *o.TemplateSettings
-}
-
-// GetTemplateSettingsOk returns a tuple with the TemplateSettings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsNodeComponent) GetTemplateSettingsOk() (*ModelsTemplateSettings, bool) {
-	if o == nil || IsNil(o.TemplateSettings) {
-		return nil, false
-	}
-	return o.TemplateSettings, true
-}
-
-// HasTemplateSettings returns a boolean if a field has been set.
-func (o *ModelsNodeComponent) HasTemplateSettings() bool {
-	if o != nil && !IsNil(o.TemplateSettings) {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplateSettings gets a reference to the given ModelsTemplateSettings and assigns it to the TemplateSettings field.
-func (o *ModelsNodeComponent) SetTemplateSettings(v ModelsTemplateSettings) {
-	o.TemplateSettings = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ModelsNodeComponent) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -438,9 +405,6 @@ func (o ModelsNodeComponent) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ShareDetails) {
 		toSerialize["share_details"] = o.ShareDetails
-	}
-	if !IsNil(o.TemplateSettings) {
-		toSerialize["template_settings"] = o.TemplateSettings
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

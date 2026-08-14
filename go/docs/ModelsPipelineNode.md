@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ComponentId** | Pointer to **string** |  | [optional] 
 **ComponentSubType** | Pointer to **string** |  | [optional] 
 **ComponentType** | Pointer to [**ModelsComponentType**](ModelsComponentType.md) |  | [optional] 
-**ConfigOverrides** | Pointer to **map[string]interface{}** | ConfigOverrides is the node&#39;s sparse override delta over its template component&#39;s base config (RFC 0017 §3). Nil for a non-template-backed node. | [optional] 
+**ConfigOverrides** | Pointer to **map[string]interface{}** | ConfigOverrides is the node&#39;s sparse override delta over its component&#39;s base config (RFC 0017 §3). Nil when the node has no override. | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 

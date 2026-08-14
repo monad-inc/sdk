@@ -17,7 +17,6 @@
 |**organizationId** | **String** |  |  [optional] |
 |**references** | [**ModelsReferences**](ModelsReferences.md) |  |  [optional] |
 |**shareDetails** | [**ModelsShareDetails**](ModelsShareDetails.md) |  |  [optional] |
-|**templateSettings** | [**ModelsTemplateSettings**](ModelsTemplateSettings.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 |**version** | **Integer** |  |  [optional] |

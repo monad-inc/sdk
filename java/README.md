@@ -717,7 +717,6 @@ Class | Method | HTTP request | Description
  - [ModelsStorageTypeTimeSeries](docs/ModelsStorageTypeTimeSeries.md)
  - [ModelsStorageTypeTimeSeriesResponse](docs/ModelsStorageTypeTimeSeriesResponse.md)
  - [ModelsSupportedFeatures](docs/ModelsSupportedFeatures.md)
- - [ModelsTemplateSettings](docs/ModelsTemplateSettings.md)
  - [ModelsTimeRange](docs/ModelsTimeRange.md)
  - [ModelsTransform](docs/ModelsTransform.md)
  - [ModelsTransformConfig](docs/ModelsTransformConfig.md)
