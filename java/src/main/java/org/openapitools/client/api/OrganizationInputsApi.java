@@ -27,9 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ComponentpreviewResponse;
 import org.openapitools.client.model.CreateInputRequest;
 import org.openapitools.client.model.ModelsInput;
 import org.openapitools.client.model.ModelsInputList;
+import org.openapitools.client.model.PreviewInputRequest;
 import org.openapitools.client.model.ReplaceInputRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesGetInputResponse;
@@ -651,6 +653,173 @@ public class OrganizationInputsApi {
 
         okhttp3.Call localVarCall = listOrganizationInputsValidateBeforeCall(organizationId, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ModelsInputList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for previewInput
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param previewInputRequest Proposed input configuration (required)
+     * @param impact Include the affected-pipelines blast radius (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Configuration is valid </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or configuration validation error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call previewInputCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull PreviewInputRequest previewInputRequest, @javax.annotation.Nullable Boolean impact, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = previewInputRequest;
+
+        // create path and map variables
+        String localVarPath = "/v2/{organization_id}/inputs/{input_id}/preview"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "input_id" + "}", localVarApiClient.escapeString(inputId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (impact != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("impact", impact));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth", "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call previewInputValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull PreviewInputRequest previewInputRequest, @javax.annotation.Nullable Boolean impact, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling previewInput(Async)");
+        }
+
+        // verify the required parameter 'inputId' is set
+        if (inputId == null) {
+            throw new ApiException("Missing the required parameter 'inputId' when calling previewInput(Async)");
+        }
+
+        // verify the required parameter 'previewInputRequest' is set
+        if (previewInputRequest == null) {
+            throw new ApiException("Missing the required parameter 'previewInputRequest' when calling previewInput(Async)");
+        }
+
+        return previewInputCall(organizationId, inputId, previewInputRequest, impact, _callback);
+
+    }
+
+    /**
+     * Preview an input config change
+     * Validate a proposed input config and, with impact&#x3D;true, report the pipelines a save would affect. Persists nothing.
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param previewInputRequest Proposed input configuration (required)
+     * @param impact Include the affected-pipelines blast radius (optional)
+     * @return ComponentpreviewResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Configuration is valid </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or configuration validation error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ComponentpreviewResponse previewInput(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull PreviewInputRequest previewInputRequest, @javax.annotation.Nullable Boolean impact) throws ApiException {
+        ApiResponse<ComponentpreviewResponse> localVarResp = previewInputWithHttpInfo(organizationId, inputId, previewInputRequest, impact);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Preview an input config change
+     * Validate a proposed input config and, with impact&#x3D;true, report the pipelines a save would affect. Persists nothing.
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param previewInputRequest Proposed input configuration (required)
+     * @param impact Include the affected-pipelines blast radius (optional)
+     * @return ApiResponse&lt;ComponentpreviewResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Configuration is valid </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or configuration validation error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ComponentpreviewResponse> previewInputWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull PreviewInputRequest previewInputRequest, @javax.annotation.Nullable Boolean impact) throws ApiException {
+        okhttp3.Call localVarCall = previewInputValidateBeforeCall(organizationId, inputId, previewInputRequest, impact, null);
+        Type localVarReturnType = new TypeToken<ComponentpreviewResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Preview an input config change (asynchronously)
+     * Validate a proposed input config and, with impact&#x3D;true, report the pipelines a save would affect. Persists nothing.
+     * @param organizationId Organization ID (required)
+     * @param inputId Input ID (required)
+     * @param previewInputRequest Proposed input configuration (required)
+     * @param impact Include the affected-pipelines blast radius (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Configuration is valid </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body or configuration validation error </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Input not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call previewInputAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String inputId, @javax.annotation.Nonnull PreviewInputRequest previewInputRequest, @javax.annotation.Nullable Boolean impact, final ApiCallback<ComponentpreviewResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = previewInputValidateBeforeCall(organizationId, inputId, previewInputRequest, impact, _callback);
+        Type localVarReturnType = new TypeToken<ComponentpreviewResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -8,6 +8,7 @@ All URIs are relative to *https://monad.com/api*
 | [**deleteOrganizationOutput**](OrganizationOutputsApi.md#deleteOrganizationOutput) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output |
 | [**getOrganizationOutput**](OrganizationOutputsApi.md#getOrganizationOutput) | **GET** /v1/{organization_id}/outputs/{output_id} | Get a output |
 | [**listOrganizationOutputs**](OrganizationOutputsApi.md#listOrganizationOutputs) | **GET** /v1/{organization_id}/outputs | List configured outputs in organization |
+| [**previewOutput**](OrganizationOutputsApi.md#previewOutput) | **POST** /v2/{organization_id}/outputs/{output_id}/preview | Preview an output config change |
 | [**replaceOutput**](OrganizationOutputsApi.md#replaceOutput) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output |
 | [**testOutputConnection**](OrganizationOutputsApi.md#testOutputConnection) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection |
 | [**updateOutput**](OrganizationOutputsApi.md#updateOutput) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output |
@@ -329,6 +330,90 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | List of outputs |  -  |
 | **500** | Failed to marshal outputs |  -  |
+
+<a id="previewOutput"></a>
+# **previewOutput**
+> ComponentpreviewResponse previewOutput(organizationId, outputId, previewOutputRequest, impact)
+
+Preview an output config change
+
+Validate a proposed output config and, with impact&#x3D;true, report the pipelines a save would affect. Persists nothing.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationOutputsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationOutputsApi apiInstance = new OrganizationOutputsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String outputId = "outputId_example"; // String | Output ID
+    PreviewOutputRequest previewOutputRequest = new PreviewOutputRequest(); // PreviewOutputRequest | Proposed output configuration
+    Boolean impact = true; // Boolean | Include the affected-pipelines blast radius
+    try {
+      ComponentpreviewResponse result = apiInstance.previewOutput(organizationId, outputId, previewOutputRequest, impact);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationOutputsApi#previewOutput");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **outputId** | **String**| Output ID | |
+| **previewOutputRequest** | [**PreviewOutputRequest**](PreviewOutputRequest.md)| Proposed output configuration | |
+| **impact** | **Boolean**| Include the affected-pipelines blast radius | [optional] |
+
+### Return type
+
+[**ComponentpreviewResponse**](ComponentpreviewResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Configuration is valid |  -  |
+| **400** | Invalid request body or configuration validation error |  -  |
+| **404** | Output not found |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="replaceOutput"></a>
 # **replaceOutput**

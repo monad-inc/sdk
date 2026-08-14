@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_organization_input**](OrganizationInputsApi.md#delete_organization_input) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input
 [**get_organization_input**](OrganizationInputsApi.md#get_organization_input) | **GET** /v1/{organization_id}/inputs/{input_id} | Get organization input
 [**list_organization_inputs**](OrganizationInputsApi.md#list_organization_inputs) | **GET** /v1/{organization_id}/inputs | List organization inputs
+[**preview_input**](OrganizationInputsApi.md#preview_input) | **POST** /v2/{organization_id}/inputs/{input_id}/preview | Preview an input config change
 [**replace_input**](OrganizationInputsApi.md#replace_input) | **PUT** /v2/{organization_id}/inputs/{input_id} | Replace input
 [**test_input_connection**](OrganizationInputsApi.md#test_input_connection) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
 [**update_input**](OrganizationInputsApi.md#update_input) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
@@ -369,6 +370,102 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Inputs retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **preview_input**
+> ComponentpreviewResponse preview_input(organization_id, input_id, preview_input_request, impact=impact)
+
+Preview an input config change
+
+Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.componentpreview_response import ComponentpreviewResponse
+from monad.models.preview_input_request import PreviewInputRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationInputsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    input_id = 'input_id_example' # str | Input ID
+    preview_input_request = monad.PreviewInputRequest() # PreviewInputRequest | Proposed input configuration
+    impact = True # bool | Include the affected-pipelines blast radius (optional)
+
+    try:
+        # Preview an input config change
+        api_response = api_instance.preview_input(organization_id, input_id, preview_input_request, impact=impact)
+        print("The response of OrganizationInputsApi->preview_input:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationInputsApi->preview_input: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **input_id** | **str**| Input ID | 
+ **preview_input_request** | [**PreviewInputRequest**](PreviewInputRequest.md)| Proposed input configuration | 
+ **impact** | **bool**| Include the affected-pipelines blast radius | [optional] 
+
+### Return type
+
+[**ComponentpreviewResponse**](ComponentpreviewResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Configuration is valid |  -  |
+**400** | Invalid request body or configuration validation error |  -  |
+**404** | Input not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

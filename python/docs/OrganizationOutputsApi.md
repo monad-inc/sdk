@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_organization_output**](OrganizationOutputsApi.md#delete_organization_output) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 [**get_organization_output**](OrganizationOutputsApi.md#get_organization_output) | **GET** /v1/{organization_id}/outputs/{output_id} | Get a output
 [**list_organization_outputs**](OrganizationOutputsApi.md#list_organization_outputs) | **GET** /v1/{organization_id}/outputs | List configured outputs in organization
+[**preview_output**](OrganizationOutputsApi.md#preview_output) | **POST** /v2/{organization_id}/outputs/{output_id}/preview | Preview an output config change
 [**replace_output**](OrganizationOutputsApi.md#replace_output) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output
 [**test_output_connection**](OrganizationOutputsApi.md#test_output_connection) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
 [**update_output**](OrganizationOutputsApi.md#update_output) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
@@ -371,6 +372,102 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | List of outputs |  -  |
 **500** | Failed to marshal outputs |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **preview_output**
+> ComponentpreviewResponse preview_output(organization_id, output_id, preview_output_request, impact=impact)
+
+Preview an output config change
+
+Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.componentpreview_response import ComponentpreviewResponse
+from monad.models.preview_output_request import PreviewOutputRequest
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.OrganizationOutputsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    output_id = 'output_id_example' # str | Output ID
+    preview_output_request = monad.PreviewOutputRequest() # PreviewOutputRequest | Proposed output configuration
+    impact = True # bool | Include the affected-pipelines blast radius (optional)
+
+    try:
+        # Preview an output config change
+        api_response = api_instance.preview_output(organization_id, output_id, preview_output_request, impact=impact)
+        print("The response of OrganizationOutputsApi->preview_output:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationOutputsApi->preview_output: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **output_id** | **str**| Output ID | 
+ **preview_output_request** | [**PreviewOutputRequest**](PreviewOutputRequest.md)| Proposed output configuration | 
+ **impact** | **bool**| Include the affected-pipelines blast radius | [optional] 
+
+### Return type
+
+[**ComponentpreviewResponse**](ComponentpreviewResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Configuration is valid |  -  |
+**400** | Invalid request body or configuration validation error |  -  |
+**404** | Output not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

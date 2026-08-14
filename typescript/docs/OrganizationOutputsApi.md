@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteOrganizationOutput**](OrganizationOutputsApi.md#deleteOrganizationOutput) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 [**getOrganizationOutput**](OrganizationOutputsApi.md#getOrganizationOutput) | **GET** /v1/{organization_id}/outputs/{output_id} | Get a output
 [**listOrganizationOutputs**](OrganizationOutputsApi.md#listOrganizationOutputs) | **GET** /v1/{organization_id}/outputs | List configured outputs in organization
+[**previewOutput**](OrganizationOutputsApi.md#previewOutput) | **POST** /v2/{organization_id}/outputs/{output_id}/preview | Preview an output config change
 [**replaceOutput**](OrganizationOutputsApi.md#replaceOutput) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output
 [**testOutputConnection**](OrganizationOutputsApi.md#testOutputConnection) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
 [**updateOutput**](OrganizationOutputsApi.md#updateOutput) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
@@ -245,6 +246,71 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | List of outputs |  -  |
 **500** | Failed to marshal outputs |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **previewOutput**
+> ComponentpreviewResponse previewOutput(previewOutputRequest)
+
+Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationOutputsApi } from '';
+import type { OrganizationOutputsApiPreviewOutputRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationOutputsApi(configuration);
+
+const request: OrganizationOutputsApiPreviewOutputRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Output ID
+  outputId: "output_id_example",
+    // Proposed output configuration
+  previewOutputRequest: null,
+    // Include the affected-pipelines blast radius (optional)
+  impact: true,
+};
+
+const data = await apiInstance.previewOutput(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **previewOutputRequest** | **PreviewOutputRequest**| Proposed output configuration |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **outputId** | [**string**] | Output ID | defaults to undefined
+ **impact** | [**boolean**] | Include the affected-pipelines blast radius | (optional) defaults to undefined
+
+
+### Return type
+
+**ComponentpreviewResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Configuration is valid |  -  |
+**400** | Invalid request body or configuration validation error |  -  |
+**404** | Output not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

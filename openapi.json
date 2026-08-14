@@ -946,6 +946,96 @@
                 },
                 "type": "object"
             },
+            "blastradius.BlastRadius": {
+                "properties": {
+                    "blocking_count": {
+                        "type": "integer"
+                    },
+                    "findings": {
+                        "description": "not tied to a specific instance",
+                        "items": {
+                            "$ref": "#/components/schemas/blastradius.Finding"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "instance_count": {
+                        "type": "integer"
+                    },
+                    "instances": {
+                        "items": {
+                            "$ref": "#/components/schemas/blastradius.InstanceImpact"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "organization_count": {
+                        "type": "integer"
+                    },
+                    "warning_count": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "blastradius.Finding": {
+                "properties": {
+                    "bad_value": {},
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "$ref": "#/components/schemas/blastradius.Severity"
+                    }
+                },
+                "type": "object"
+            },
+            "blastradius.InstanceImpact": {
+                "properties": {
+                    "findings": {
+                        "items": {
+                            "$ref": "#/components/schemas/blastradius.Finding"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "node_id": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "organization_name": {
+                        "type": "string"
+                    },
+                    "pipeline_id": {
+                        "type": "string"
+                    },
+                    "pipeline_name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "blastradius.Severity": {
+                "enum": [
+                    "error",
+                    "warning",
+                    "info"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "SeverityError",
+                    "SeverityWarning",
+                    "SeverityInfo"
+                ]
+            },
             "brinqa_audit_logs.SecretsConfig": {
                 "description": "Brinqa Audit Logs secrets",
                 "properties": {
@@ -1719,6 +1809,17 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "componentpreview.Response": {
+                "properties": {
+                    "blast_radius": {
+                        "$ref": "#/components/schemas/blastradius.BlastRadius"
+                    },
+                    "changed": {
+                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -18074,6 +18175,117 @@
                 ]
             }
         },
+        "/v2/{organization_id}/inputs/{input_id}/preview": {
+            "post": {
+                "description": "Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.",
+                "operationId": "PreviewInput",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Input ID",
+                        "in": "path",
+                        "name": "input_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Include the affected-pipelines blast radius",
+                        "in": "query",
+                        "name": "impact",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV2.PutInputRequest",
+                                        "description": "Proposed input configuration",
+                                        "summary": "previewInputRequest"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Proposed input configuration",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/componentpreview.Response"
+                                }
+                            }
+                        },
+                        "description": "Configuration is valid"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request body or configuration validation error"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Input not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Preview an input config change",
+                "tags": [
+                    "Organization Inputs"
+                ],
+                "x-required-permissions": [
+                    "input:write"
+                ]
+            }
+        },
         "/v2/{organization_id}/mcp/registrations": {
             "get": {
                 "description": "List Connected-Applications: caller's own with `owned_by=me`, or all in the org for admins.",
@@ -19523,6 +19735,117 @@
                     }
                 ],
                 "summary": "Replace output",
+                "tags": [
+                    "Organization Outputs"
+                ],
+                "x-required-permissions": [
+                    "output:write"
+                ]
+            }
+        },
+        "/v2/{organization_id}/outputs/{output_id}/preview": {
+            "post": {
+                "description": "Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.",
+                "operationId": "PreviewOutput",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Output ID",
+                        "in": "path",
+                        "name": "output_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Include the affected-pipelines blast radius",
+                        "in": "query",
+                        "name": "impact",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV2.PutOutputRequest",
+                                        "description": "Proposed output configuration",
+                                        "summary": "previewOutputRequest"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Proposed output configuration",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/componentpreview.Response"
+                                }
+                            }
+                        },
+                        "description": "Configuration is valid"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request body or configuration validation error"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Output not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Preview an output config change",
                 "tags": [
                     "Organization Outputs"
                 ],

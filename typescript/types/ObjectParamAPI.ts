@@ -49,6 +49,10 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BlastradiusBlastRadius } from '../models/BlastradiusBlastRadius';
+import { BlastradiusFinding } from '../models/BlastradiusFinding';
+import { BlastradiusInstanceImpact } from '../models/BlastradiusInstanceImpact';
+import { BlastradiusSeverity } from '../models/BlastradiusSeverity';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
@@ -88,6 +92,7 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
+import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
@@ -389,6 +394,8 @@ import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
+import { PreviewInputRequest } from '../models/PreviewInputRequest';
+import { PreviewOutputRequest } from '../models/PreviewOutputRequest';
 import { PrometheusAuthConfig } from '../models/PrometheusAuthConfig';
 import { PrometheusBasicVariant } from '../models/PrometheusBasicVariant';
 import { PrometheusBearerVariant } from '../models/PrometheusBearerVariant';
@@ -3495,6 +3502,36 @@ export interface OrganizationInputsApiListOrganizationInputsRequest {
     offset?: number
 }
 
+export interface OrganizationInputsApiPreviewInputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApipreviewInput
+     */
+    organizationId: string
+    /**
+     * Input ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationInputsApipreviewInput
+     */
+    inputId: string
+    /**
+     * Proposed input configuration
+     * @type PreviewInputRequest
+     * @memberof OrganizationInputsApipreviewInput
+     */
+    previewInputRequest: PreviewInputRequest
+    /**
+     * Include the affected-pipelines blast radius
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationInputsApipreviewInput
+     */
+    impact?: boolean
+}
+
 export interface OrganizationInputsApiReplaceInputRequest {
     /**
      * Organization ID
@@ -3648,6 +3685,24 @@ export class ObjectOrganizationInputsApi {
      */
     public listOrganizationInputs(param: OrganizationInputsApiListOrganizationInputsRequest, options?: ConfigurationOptions): Promise<ModelsInputList> {
         return this.api.listOrganizationInputs(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an input config change
+     * @param param the request object
+     */
+    public previewInputWithHttpInfo(param: OrganizationInputsApiPreviewInputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ComponentpreviewResponse>> {
+        return this.api.previewInputWithHttpInfo(param.organizationId, param.inputId, param.previewInputRequest, param.impact,  options).toPromise();
+    }
+
+    /**
+     * Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an input config change
+     * @param param the request object
+     */
+    public previewInput(param: OrganizationInputsApiPreviewInputRequest, options?: ConfigurationOptions): Promise<ComponentpreviewResponse> {
+        return this.api.previewInput(param.organizationId, param.inputId, param.previewInputRequest, param.impact,  options).toPromise();
     }
 
     /**
@@ -3932,6 +3987,36 @@ export interface OrganizationOutputsApiListOrganizationOutputsRequest {
     offset?: number
 }
 
+export interface OrganizationOutputsApiPreviewOutputRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApipreviewOutput
+     */
+    organizationId: string
+    /**
+     * Output ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof OrganizationOutputsApipreviewOutput
+     */
+    outputId: string
+    /**
+     * Proposed output configuration
+     * @type PreviewOutputRequest
+     * @memberof OrganizationOutputsApipreviewOutput
+     */
+    previewOutputRequest: PreviewOutputRequest
+    /**
+     * Include the affected-pipelines blast radius
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof OrganizationOutputsApipreviewOutput
+     */
+    impact?: boolean
+}
+
 export interface OrganizationOutputsApiReplaceOutputRequest {
     /**
      * Organization ID
@@ -4085,6 +4170,24 @@ export class ObjectOrganizationOutputsApi {
      */
     public listOrganizationOutputs(param: OrganizationOutputsApiListOrganizationOutputsRequest, options?: ConfigurationOptions): Promise<ModelsOutputList> {
         return this.api.listOrganizationOutputs(param.organizationId, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an output config change
+     * @param param the request object
+     */
+    public previewOutputWithHttpInfo(param: OrganizationOutputsApiPreviewOutputRequest, options?: ConfigurationOptions): Promise<HttpInfo<ComponentpreviewResponse>> {
+        return this.api.previewOutputWithHttpInfo(param.organizationId, param.outputId, param.previewOutputRequest, param.impact,  options).toPromise();
+    }
+
+    /**
+     * Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an output config change
+     * @param param the request object
+     */
+    public previewOutput(param: OrganizationOutputsApiPreviewOutputRequest, options?: ConfigurationOptions): Promise<ComponentpreviewResponse> {
+        return this.api.previewOutput(param.organizationId, param.outputId, param.previewOutputRequest, param.impact,  options).toPromise();
     }
 
     /**

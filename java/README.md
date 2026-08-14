@@ -264,6 +264,7 @@ Class | Method | HTTP request | Description
 *OrganizationInputsApi* | [**deleteOrganizationInput**](docs/OrganizationInputsApi.md#deleteOrganizationInput) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input
 *OrganizationInputsApi* | [**getOrganizationInput**](docs/OrganizationInputsApi.md#getOrganizationInput) | **GET** /v1/{organization_id}/inputs/{input_id} | Get organization input
 *OrganizationInputsApi* | [**listOrganizationInputs**](docs/OrganizationInputsApi.md#listOrganizationInputs) | **GET** /v1/{organization_id}/inputs | List organization inputs
+*OrganizationInputsApi* | [**previewInput**](docs/OrganizationInputsApi.md#previewInput) | **POST** /v2/{organization_id}/inputs/{input_id}/preview | Preview an input config change
 *OrganizationInputsApi* | [**replaceInput**](docs/OrganizationInputsApi.md#replaceInput) | **PUT** /v2/{organization_id}/inputs/{input_id} | Replace input
 *OrganizationInputsApi* | [**testInputConnection**](docs/OrganizationInputsApi.md#testInputConnection) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
 *OrganizationInputsApi* | [**updateInput**](docs/OrganizationInputsApi.md#updateInput) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
@@ -274,6 +275,7 @@ Class | Method | HTTP request | Description
 *OrganizationOutputsApi* | [**deleteOrganizationOutput**](docs/OrganizationOutputsApi.md#deleteOrganizationOutput) | **DELETE** /v1/{organization_id}/outputs/{output_id} | Delete output
 *OrganizationOutputsApi* | [**getOrganizationOutput**](docs/OrganizationOutputsApi.md#getOrganizationOutput) | **GET** /v1/{organization_id}/outputs/{output_id} | Get a output
 *OrganizationOutputsApi* | [**listOrganizationOutputs**](docs/OrganizationOutputsApi.md#listOrganizationOutputs) | **GET** /v1/{organization_id}/outputs | List configured outputs in organization
+*OrganizationOutputsApi* | [**previewOutput**](docs/OrganizationOutputsApi.md#previewOutput) | **POST** /v2/{organization_id}/outputs/{output_id}/preview | Preview an output config change
 *OrganizationOutputsApi* | [**replaceOutput**](docs/OrganizationOutputsApi.md#replaceOutput) | **PUT** /v2/{organization_id}/outputs/{output_id} | Replace output
 *OrganizationOutputsApi* | [**testOutputConnection**](docs/OrganizationOutputsApi.md#testOutputConnection) | **POST** /v2/{organization_id}/outputs/test-connection | Test output connection
 *OrganizationOutputsApi* | [**updateOutput**](docs/OrganizationOutputsApi.md#updateOutput) | **PATCH** /v2/{organization_id}/outputs/{output_id} | Update output
@@ -423,6 +425,10 @@ Class | Method | HTTP request | Description
  - [BigqueryInputSettingsConfig](docs/BigqueryInputSettingsConfig.md)
  - [BigquerySecretsConfig](docs/BigquerySecretsConfig.md)
  - [BigquerySettingsConfig](docs/BigquerySettingsConfig.md)
+ - [BlastradiusBlastRadius](docs/BlastradiusBlastRadius.md)
+ - [BlastradiusFinding](docs/BlastradiusFinding.md)
+ - [BlastradiusInstanceImpact](docs/BlastradiusInstanceImpact.md)
+ - [BlastradiusSeverity](docs/BlastradiusSeverity.md)
  - [BrinqaAuditLogsSecretsConfig](docs/BrinqaAuditLogsSecretsConfig.md)
  - [BrinqaAuditLogsSettingsConfig](docs/BrinqaAuditLogsSettingsConfig.md)
  - [BugsnagOrgEventsSecretsConfig](docs/BugsnagOrgEventsSecretsConfig.md)
@@ -462,6 +468,7 @@ Class | Method | HTTP request | Description
  - [CommunityTransformsInternalTransformConfig](docs/CommunityTransformsInternalTransformConfig.md)
  - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
  - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
+ - [ComponentpreviewResponse](docs/ComponentpreviewResponse.md)
  - [ConvertTimestampArgumentsConfig](docs/ConvertTimestampArgumentsConfig.md)
  - [ConvertTimestampTimestampFormat](docs/ConvertTimestampTimestampFormat.md)
  - [CortexXsoarManagementLogsSecretsConfig](docs/CortexXsoarManagementLogsSecretsConfig.md)
@@ -763,6 +770,8 @@ Class | Method | HTTP request | Description
  - [PlaidWebhooksSettingsConfig](docs/PlaidWebhooksSettingsConfig.md)
  - [PostgresqlSecretsConfig](docs/PostgresqlSecretsConfig.md)
  - [PostgresqlSettingsConfig](docs/PostgresqlSettingsConfig.md)
+ - [PreviewInputRequest](docs/PreviewInputRequest.md)
+ - [PreviewOutputRequest](docs/PreviewOutputRequest.md)
  - [PrometheusAuthConfig](docs/PrometheusAuthConfig.md)
  - [PrometheusBasicVariant](docs/PrometheusBasicVariant.md)
  - [PrometheusBearerVariant](docs/PrometheusBearerVariant.md)

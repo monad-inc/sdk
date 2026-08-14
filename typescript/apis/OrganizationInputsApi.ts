@@ -8,9 +8,11 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { CreateInputRequest } from '../models/CreateInputRequest';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputList } from '../models/ModelsInputList';
+import { PreviewInputRequest } from '../models/PreviewInputRequest';
 import { ReplaceInputRequest } from '../models/ReplaceInputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
@@ -229,6 +231,82 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
             requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
         }
 
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an input config change
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param previewInputRequest Proposed input configuration
+     * @param impact Include the affected-pipelines blast radius
+     */
+    public async previewInput(organizationId: string, inputId: string, previewInputRequest: PreviewInputRequest, impact?: boolean, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "previewInput", "organizationId");
+        }
+
+
+        // verify required parameter 'inputId' is not null or undefined
+        if (inputId === null || inputId === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "previewInput", "inputId");
+        }
+
+
+        // verify required parameter 'previewInputRequest' is not null or undefined
+        if (previewInputRequest === null || previewInputRequest === undefined) {
+            throw new RequiredError("OrganizationInputsApi", "previewInput", "previewInputRequest");
+        }
+
+
+
+        // Path Params
+        const localVarPath = '/v2/{organization_id}/inputs/{input_id}/preview'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{input_id}', encodeURIComponent(String(inputId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.POST);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (impact !== undefined) {
+            requestContext.setQueryParam("impact", ObjectSerializer.serialize(impact, "boolean", ""));
+        }
+
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(previewInputRequest, "PreviewInputRequest", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         let authMethod: SecurityAuthentication | undefined;
         // Apply auth methods
@@ -598,6 +676,56 @@ export class OrganizationInputsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ModelsInputList", ""
             ) as ModelsInputList;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to previewInput
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async previewInputWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ComponentpreviewResponse >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: ComponentpreviewResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ComponentpreviewResponse", ""
+            ) as ComponentpreviewResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body or configuration validation error", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Input not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: ComponentpreviewResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ComponentpreviewResponse", ""
+            ) as ComponentpreviewResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

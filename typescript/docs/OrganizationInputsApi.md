@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteOrganizationInput**](OrganizationInputsApi.md#deleteOrganizationInput) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input
 [**getOrganizationInput**](OrganizationInputsApi.md#getOrganizationInput) | **GET** /v1/{organization_id}/inputs/{input_id} | Get organization input
 [**listOrganizationInputs**](OrganizationInputsApi.md#listOrganizationInputs) | **GET** /v1/{organization_id}/inputs | List organization inputs
+[**previewInput**](OrganizationInputsApi.md#previewInput) | **POST** /v2/{organization_id}/inputs/{input_id}/preview | Preview an input config change
 [**replaceInput**](OrganizationInputsApi.md#replaceInput) | **PUT** /v2/{organization_id}/inputs/{input_id} | Replace input
 [**testInputConnection**](OrganizationInputsApi.md#testInputConnection) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection
 [**updateInput**](OrganizationInputsApi.md#updateInput) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input
@@ -243,6 +244,71 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Inputs retrieved successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **previewInput**
+> ComponentpreviewResponse previewInput(previewInputRequest)
+
+Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+
+### Example
+
+
+```typescript
+import { createConfiguration, OrganizationInputsApi } from '';
+import type { OrganizationInputsApiPreviewInputRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new OrganizationInputsApi(configuration);
+
+const request: OrganizationInputsApiPreviewInputRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Input ID
+  inputId: "input_id_example",
+    // Proposed input configuration
+  previewInputRequest: null,
+    // Include the affected-pipelines blast radius (optional)
+  impact: true,
+};
+
+const data = await apiInstance.previewInput(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **previewInputRequest** | **PreviewInputRequest**| Proposed input configuration |
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **inputId** | [**string**] | Input ID | defaults to undefined
+ **impact** | [**boolean**] | Include the affected-pipelines blast radius | (optional) defaults to undefined
+
+
+### Return type
+
+**ComponentpreviewResponse**
+
+### Authorization
+
+[ApiKeyAuth](README.md#ApiKeyAuth), [Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Configuration is valid |  -  |
+**400** | Invalid request body or configuration validation error |  -  |
+**404** | Input not found |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

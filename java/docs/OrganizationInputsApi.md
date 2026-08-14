@@ -8,6 +8,7 @@ All URIs are relative to *https://monad.com/api*
 | [**deleteOrganizationInput**](OrganizationInputsApi.md#deleteOrganizationInput) | **DELETE** /v1/{organization_id}/inputs/{input_id} | Delete input |
 | [**getOrganizationInput**](OrganizationInputsApi.md#getOrganizationInput) | **GET** /v1/{organization_id}/inputs/{input_id} | Get organization input |
 | [**listOrganizationInputs**](OrganizationInputsApi.md#listOrganizationInputs) | **GET** /v1/{organization_id}/inputs | List organization inputs |
+| [**previewInput**](OrganizationInputsApi.md#previewInput) | **POST** /v2/{organization_id}/inputs/{input_id}/preview | Preview an input config change |
 | [**replaceInput**](OrganizationInputsApi.md#replaceInput) | **PUT** /v2/{organization_id}/inputs/{input_id} | Replace input |
 | [**testInputConnection**](OrganizationInputsApi.md#testInputConnection) | **POST** /v2/{organization_id}/inputs/test-connection | Test input connection |
 | [**updateInput**](OrganizationInputsApi.md#updateInput) | **PATCH** /v2/{organization_id}/inputs/{input_id} | Update input |
@@ -327,6 +328,90 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Inputs retrieved successfully |  -  |
+
+<a id="previewInput"></a>
+# **previewInput**
+> ComponentpreviewResponse previewInput(organizationId, inputId, previewInputRequest, impact)
+
+Preview an input config change
+
+Validate a proposed input config and, with impact&#x3D;true, report the pipelines a save would affect. Persists nothing.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OrganizationInputsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String inputId = "inputId_example"; // String | Input ID
+    PreviewInputRequest previewInputRequest = new PreviewInputRequest(); // PreviewInputRequest | Proposed input configuration
+    Boolean impact = true; // Boolean | Include the affected-pipelines blast radius
+    try {
+      ComponentpreviewResponse result = apiInstance.previewInput(organizationId, inputId, previewInputRequest, impact);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationInputsApi#previewInput");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **inputId** | **String**| Input ID | |
+| **previewInputRequest** | [**PreviewInputRequest**](PreviewInputRequest.md)| Proposed input configuration | |
+| **impact** | **Boolean**| Include the affected-pipelines blast radius | [optional] |
+
+### Return type
+
+[**ComponentpreviewResponse**](ComponentpreviewResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Configuration is valid |  -  |
+| **400** | Invalid request body or configuration validation error |  -  |
+| **404** | Input not found |  -  |
+| **500** | Internal server error |  -  |
 
 <a id="replaceInput"></a>
 # **replaceInput**

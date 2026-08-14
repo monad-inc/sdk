@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteOrganizationOutput**](OrganizationOutputsAPI.md#DeleteOrganizationOutput) | **Delete** /v1/{organization_id}/outputs/{output_id} | Delete output
 [**GetOrganizationOutput**](OrganizationOutputsAPI.md#GetOrganizationOutput) | **Get** /v1/{organization_id}/outputs/{output_id} | Get a output
 [**ListOrganizationOutputs**](OrganizationOutputsAPI.md#ListOrganizationOutputs) | **Get** /v1/{organization_id}/outputs | List configured outputs in organization
+[**PreviewOutput**](OrganizationOutputsAPI.md#PreviewOutput) | **Post** /v2/{organization_id}/outputs/{output_id}/preview | Preview an output config change
 [**ReplaceOutput**](OrganizationOutputsAPI.md#ReplaceOutput) | **Put** /v2/{organization_id}/outputs/{output_id} | Replace output
 [**TestOutputConnection**](OrganizationOutputsAPI.md#TestOutputConnection) | **Post** /v2/{organization_id}/outputs/test-connection | Test output connection
 [**UpdateOutput**](OrganizationOutputsAPI.md#UpdateOutput) | **Patch** /v2/{organization_id}/outputs/{output_id} | Update output
@@ -301,6 +302,83 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PreviewOutput
+
+> ComponentpreviewResponse PreviewOutput(ctx, organizationId, outputId).PreviewOutputRequest(previewOutputRequest).Impact(impact).Execute()
+
+Preview an output config change
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	outputId := "outputId_example" // string | Output ID
+	previewOutputRequest := openapiclient.PreviewOutput_request{RoutesV2PutOutputRequest: openapiclient.NewRoutesV2PutOutputRequest()} // PreviewOutputRequest | Proposed output configuration
+	impact := true // bool | Include the affected-pipelines blast radius (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrganizationOutputsAPI.PreviewOutput(context.Background(), organizationId, outputId).PreviewOutputRequest(previewOutputRequest).Impact(impact).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationOutputsAPI.PreviewOutput``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PreviewOutput`: ComponentpreviewResponse
+	fmt.Fprintf(os.Stdout, "Response from `OrganizationOutputsAPI.PreviewOutput`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**outputId** | **string** | Output ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPreviewOutputRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **previewOutputRequest** | [**PreviewOutputRequest**](PreviewOutputRequest.md) | Proposed output configuration | 
+ **impact** | **bool** | Include the affected-pipelines blast radius | 
+
+### Return type
+
+[**ComponentpreviewResponse**](ComponentpreviewResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

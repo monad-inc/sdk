@@ -50,6 +50,10 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BlastradiusBlastRadius } from '../models/BlastradiusBlastRadius';
+import { BlastradiusFinding } from '../models/BlastradiusFinding';
+import { BlastradiusInstanceImpact } from '../models/BlastradiusInstanceImpact';
+import { BlastradiusSeverity } from '../models/BlastradiusSeverity';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
@@ -89,6 +93,7 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
+import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
@@ -390,6 +395,8 @@ import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
+import { PreviewInputRequest } from '../models/PreviewInputRequest';
+import { PreviewOutputRequest } from '../models/PreviewOutputRequest';
 import { PrometheusAuthConfig } from '../models/PrometheusAuthConfig';
 import { PrometheusBasicVariant } from '../models/PrometheusBasicVariant';
 import { PrometheusBearerVariant } from '../models/PrometheusBearerVariant';
@@ -3670,6 +3677,46 @@ export class ObservableOrganizationInputsApi {
     }
 
     /**
+     * Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an input config change
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param previewInputRequest Proposed input configuration
+     * @param [impact] Include the affected-pipelines blast radius
+     */
+    public previewInputWithHttpInfo(organizationId: string, inputId: string, previewInputRequest: PreviewInputRequest, impact?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ComponentpreviewResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.previewInput(organizationId, inputId, previewInputRequest, impact, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.previewInputWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Validate a proposed input config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an input config change
+     * @param organizationId Organization ID
+     * @param inputId Input ID
+     * @param previewInputRequest Proposed input configuration
+     * @param [impact] Include the affected-pipelines blast radius
+     */
+    public previewInput(organizationId: string, inputId: string, previewInputRequest: PreviewInputRequest, impact?: boolean, _options?: ConfigurationOptions): Observable<ComponentpreviewResponse> {
+        return this.previewInputWithHttpInfo(organizationId, inputId, previewInputRequest, impact, _options).pipe(map((apiResponse: HttpInfo<ComponentpreviewResponse>) => apiResponse.data));
+    }
+
+    /**
      * Replace an existing input with new configuration including secrets handling
      * Replace input
      * @param organizationId Organization ID
@@ -4097,6 +4144,46 @@ export class ObservableOrganizationOutputsApi {
      */
     public listOrganizationOutputs(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsOutputList> {
         return this.listOrganizationOutputsWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<ModelsOutputList>) => apiResponse.data));
+    }
+
+    /**
+     * Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an output config change
+     * @param organizationId Organization ID
+     * @param outputId Output ID
+     * @param previewOutputRequest Proposed output configuration
+     * @param [impact] Include the affected-pipelines blast radius
+     */
+    public previewOutputWithHttpInfo(organizationId: string, outputId: string, previewOutputRequest: PreviewOutputRequest, impact?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<ComponentpreviewResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.previewOutput(organizationId, outputId, previewOutputRequest, impact, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.previewOutputWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Validate a proposed output config and, with impact=true, report the pipelines a save would affect. Persists nothing.
+     * Preview an output config change
+     * @param organizationId Organization ID
+     * @param outputId Output ID
+     * @param previewOutputRequest Proposed output configuration
+     * @param [impact] Include the affected-pipelines blast radius
+     */
+    public previewOutput(organizationId: string, outputId: string, previewOutputRequest: PreviewOutputRequest, impact?: boolean, _options?: ConfigurationOptions): Observable<ComponentpreviewResponse> {
+        return this.previewOutputWithHttpInfo(organizationId, outputId, previewOutputRequest, impact, _options).pipe(map((apiResponse: HttpInfo<ComponentpreviewResponse>) => apiResponse.data));
     }
 
     /**

@@ -45,6 +45,10 @@ export * from '../models/BigqueryInputSecretsConfig';
 export * from '../models/BigqueryInputSettingsConfig';
 export * from '../models/BigquerySecretsConfig';
 export * from '../models/BigquerySettingsConfig';
+export * from '../models/BlastradiusBlastRadius';
+export * from '../models/BlastradiusFinding';
+export * from '../models/BlastradiusInstanceImpact';
+export * from '../models/BlastradiusSeverity';
 export * from '../models/BrinqaAuditLogsSecretsConfig';
 export * from '../models/BrinqaAuditLogsSettingsConfig';
 export * from '../models/BugsnagOrgEventsSecretsConfig';
@@ -84,6 +88,7 @@ export * from '../models/CommunityEditionSettingsConfig';
 export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
+export * from '../models/ComponentpreviewResponse';
 export * from '../models/ConvertTimestampArgumentsConfig';
 export * from '../models/ConvertTimestampTimestampFormat';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
@@ -385,6 +390,8 @@ export * from '../models/PlaidWebhooksSecretsConfig';
 export * from '../models/PlaidWebhooksSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
 export * from '../models/PostgresqlSettingsConfig';
+export * from '../models/PreviewInputRequest';
+export * from '../models/PreviewOutputRequest';
 export * from '../models/PrometheusAuthConfig';
 export * from '../models/PrometheusBasicVariant';
 export * from '../models/PrometheusBearerVariant';
@@ -677,6 +684,10 @@ import { BigqueryInputSecretsConfig } from '../models/BigqueryInputSecretsConfig
 import { BigqueryInputSettingsConfig } from '../models/BigqueryInputSettingsConfig';
 import { BigquerySecretsConfig } from '../models/BigquerySecretsConfig';
 import { BigquerySettingsConfig } from '../models/BigquerySettingsConfig';
+import { BlastradiusBlastRadius } from '../models/BlastradiusBlastRadius';
+import { BlastradiusFinding      } from '../models/BlastradiusFinding';
+import { BlastradiusInstanceImpact } from '../models/BlastradiusInstanceImpact';
+import { BlastradiusSeverity } from '../models/BlastradiusSeverity';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
@@ -716,6 +727,7 @@ import { CommunityEditionSettingsConfig } from '../models/CommunityEditionSettin
 import { CommunityTransformsInternalTransformConfig } from '../models/CommunityTransformsInternalTransformConfig';
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
+import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { ConvertTimestampArgumentsConfig         } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
@@ -1017,6 +1029,8 @@ import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
+import { PreviewInputRequestClass } from '../models/PreviewInputRequest';
+import { PreviewOutputRequestClass } from '../models/PreviewOutputRequest';
 import { PrometheusAuthConfig } from '../models/PrometheusAuthConfig';
 import { PrometheusBasicVariant } from '../models/PrometheusBasicVariant';
 import { PrometheusBearerVariant } from '../models/PrometheusBearerVariant';
@@ -1282,6 +1296,7 @@ let enumsMap: Set<string> = new Set<string>([
     "AwssqsoutputQueueType",
     "Awssqss3SettingsConfigCompressionEnum",
     "Awssqss3SettingsConfigFormatEnum",
+    "BlastradiusSeverity",
     "CommonAuthConfigTypeEnum",
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
@@ -1402,6 +1417,9 @@ let typeMap: {[index: string]: any} = {
     "BigqueryInputSettingsConfig": BigqueryInputSettingsConfig,
     "BigquerySecretsConfig": BigquerySecretsConfig,
     "BigquerySettingsConfig": BigquerySettingsConfig,
+    "BlastradiusBlastRadius": BlastradiusBlastRadius,
+    "BlastradiusFinding": BlastradiusFinding,
+    "BlastradiusInstanceImpact": BlastradiusInstanceImpact,
     "BrinqaAuditLogsSecretsConfig": BrinqaAuditLogsSecretsConfig,
     "BrinqaAuditLogsSettingsConfig": BrinqaAuditLogsSettingsConfig,
     "BugsnagOrgEventsSecretsConfig": BugsnagOrgEventsSecretsConfig,
@@ -1440,6 +1458,7 @@ let typeMap: {[index: string]: any} = {
     "CommunityTransformsInternalTransformConfig": CommunityTransformsInternalTransformConfig,
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
+    "ComponentpreviewResponse": ComponentpreviewResponse,
     "ConvertTimestampArgumentsConfig": ConvertTimestampArgumentsConfig,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,
@@ -1715,6 +1734,8 @@ let typeMap: {[index: string]: any} = {
     "PlaidWebhooksSettingsConfig": PlaidWebhooksSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
     "PostgresqlSettingsConfig": PostgresqlSettingsConfig,
+    "PreviewInputRequest": PreviewInputRequestClass,
+    "PreviewOutputRequest": PreviewOutputRequestClass,
     "PrometheusAuthConfig": PrometheusAuthConfig,
     "PrometheusBasicVariant": PrometheusBasicVariant,
     "PrometheusBearerVariant": PrometheusBearerVariant,
