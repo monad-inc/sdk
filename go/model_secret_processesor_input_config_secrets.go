@@ -31,7 +31,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	BackblazeB2SecretsConfig *BackblazeB2SecretsConfig
 	BigqueryInputSecretsConfig *BigqueryInputSecretsConfig
 	BrinqaAuditLogsSecretsConfig *BrinqaAuditLogsSecretsConfig
-	BugsnagOrgEventsSecretsConfig *BugsnagOrgEventsSecretsConfig
 	BuildkiteAuditLogsSecretsConfig *BuildkiteAuditLogsSecretsConfig
 	BuildkiteGraphqlInputSecretsConfig *BuildkiteGraphqlInputSecretsConfig
 	CloudConfigurationFindingsSecretsConfig *CloudConfigurationFindingsSecretsConfig
@@ -71,8 +70,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	OwnbackupAccountEventsSecretsConfig *OwnbackupAccountEventsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
 	PlaidWebhooksSecretsConfig *PlaidWebhooksSecretsConfig
-	SemgrepCodeFindingsSecretsConfig *SemgrepCodeFindingsSecretsConfig
-	SemgrepSupplyChainFindingsSecretsConfig *SemgrepSupplyChainFindingsSecretsConfig
 	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
@@ -172,13 +169,6 @@ func BigqueryInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Bigquery
 func BrinqaAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BrinqaAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		BrinqaAuditLogsSecretsConfig: v,
-	}
-}
-
-// BugsnagOrgEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns BugsnagOrgEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func BugsnagOrgEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *BugsnagOrgEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		BugsnagOrgEventsSecretsConfig: v,
 	}
 }
 
@@ -452,20 +442,6 @@ func PaloAltoDataSecurityAlertsSecretsConfigAsSecretProcessesorInputConfigSecret
 func PlaidWebhooksSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PlaidWebhooksSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		PlaidWebhooksSecretsConfig: v,
-	}
-}
-
-// SemgrepCodeFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SemgrepCodeFindingsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SemgrepCodeFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepCodeFindingsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SemgrepCodeFindingsSecretsConfig: v,
-	}
-}
-
-// SemgrepSupplyChainFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SemgrepSupplyChainFindingsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SemgrepSupplyChainFindingsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SemgrepSupplyChainFindingsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SemgrepSupplyChainFindingsSecretsConfig: v,
 	}
 }
 
@@ -788,23 +764,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.BrinqaAuditLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into BugsnagOrgEventsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.BugsnagOrgEventsSecretsConfig)
-	if err == nil {
-		jsonBugsnagOrgEventsSecretsConfig, _ := json.Marshal(dst.BugsnagOrgEventsSecretsConfig)
-		if string(jsonBugsnagOrgEventsSecretsConfig) == "{}" { // empty struct
-			dst.BugsnagOrgEventsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BugsnagOrgEventsSecretsConfig); err != nil {
-				dst.BugsnagOrgEventsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BugsnagOrgEventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into BuildkiteAuditLogsSecretsConfig
@@ -1470,40 +1429,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PlaidWebhooksSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SemgrepCodeFindingsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepCodeFindingsSecretsConfig)
-	if err == nil {
-		jsonSemgrepCodeFindingsSecretsConfig, _ := json.Marshal(dst.SemgrepCodeFindingsSecretsConfig)
-		if string(jsonSemgrepCodeFindingsSecretsConfig) == "{}" { // empty struct
-			dst.SemgrepCodeFindingsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepCodeFindingsSecretsConfig); err != nil {
-				dst.SemgrepCodeFindingsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepCodeFindingsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into SemgrepSupplyChainFindingsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepSupplyChainFindingsSecretsConfig)
-	if err == nil {
-		jsonSemgrepSupplyChainFindingsSecretsConfig, _ := json.Marshal(dst.SemgrepSupplyChainFindingsSecretsConfig)
-		if string(jsonSemgrepSupplyChainFindingsSecretsConfig) == "{}" { // empty struct
-			dst.SemgrepSupplyChainFindingsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepSupplyChainFindingsSecretsConfig); err != nil {
-				dst.SemgrepSupplyChainFindingsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SlackEnterpriseAuditLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SlackEnterpriseAuditLogsSecretsConfig)
 	if err == nil {
@@ -1790,7 +1715,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.BackblazeB2SecretsConfig = nil
 		dst.BigqueryInputSecretsConfig = nil
 		dst.BrinqaAuditLogsSecretsConfig = nil
-		dst.BugsnagOrgEventsSecretsConfig = nil
 		dst.BuildkiteAuditLogsSecretsConfig = nil
 		dst.BuildkiteGraphqlInputSecretsConfig = nil
 		dst.CloudConfigurationFindingsSecretsConfig = nil
@@ -1830,8 +1754,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OwnbackupAccountEventsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 		dst.PlaidWebhooksSecretsConfig = nil
-		dst.SemgrepCodeFindingsSecretsConfig = nil
-		dst.SemgrepSupplyChainFindingsSecretsConfig = nil
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
 		dst.SnykIssuesSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
@@ -1853,21 +1775,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
         } else {
@@ -2256,10 +2163,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.BrinqaAuditLogsSecretsConfig)
 	}
 
-	if src.BugsnagOrgEventsSecretsConfig != nil {
-		return json.Marshal(&src.BugsnagOrgEventsSecretsConfig)
-	}
-
 	if src.BuildkiteAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.BuildkiteAuditLogsSecretsConfig)
 	}
@@ -2416,14 +2319,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PlaidWebhooksSecretsConfig)
 	}
 
-	if src.SemgrepCodeFindingsSecretsConfig != nil {
-		return json.Marshal(&src.SemgrepCodeFindingsSecretsConfig)
-	}
-
-	if src.SemgrepSupplyChainFindingsSecretsConfig != nil {
-		return json.Marshal(&src.SemgrepSupplyChainFindingsSecretsConfig)
-	}
-
 	if src.SlackEnterpriseAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.SlackEnterpriseAuditLogsSecretsConfig)
 	}
@@ -2542,10 +2437,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.BrinqaAuditLogsSecretsConfig != nil {
 		return obj.BrinqaAuditLogsSecretsConfig
-	}
-
-	if obj.BugsnagOrgEventsSecretsConfig != nil {
-		return obj.BugsnagOrgEventsSecretsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSecretsConfig != nil {
@@ -2704,14 +2595,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.PlaidWebhooksSecretsConfig
 	}
 
-	if obj.SemgrepCodeFindingsSecretsConfig != nil {
-		return obj.SemgrepCodeFindingsSecretsConfig
-	}
-
-	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {
-		return obj.SemgrepSupplyChainFindingsSecretsConfig
-	}
-
 	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {
 		return obj.SlackEnterpriseAuditLogsSecretsConfig
 	}
@@ -2828,10 +2711,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.BrinqaAuditLogsSecretsConfig != nil {
 		return *obj.BrinqaAuditLogsSecretsConfig
-	}
-
-	if obj.BugsnagOrgEventsSecretsConfig != nil {
-		return *obj.BugsnagOrgEventsSecretsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSecretsConfig != nil {
@@ -2988,14 +2867,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.PlaidWebhooksSecretsConfig != nil {
 		return *obj.PlaidWebhooksSecretsConfig
-	}
-
-	if obj.SemgrepCodeFindingsSecretsConfig != nil {
-		return *obj.SemgrepCodeFindingsSecretsConfig
-	}
-
-	if obj.SemgrepSupplyChainFindingsSecretsConfig != nil {
-		return *obj.SemgrepSupplyChainFindingsSecretsConfig
 	}
 
 	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {

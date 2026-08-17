@@ -87,7 +87,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 table = '',
                 timestamp_column = '',
                 hostname = '',
-                organization_id = '',
                 org_slug = '',
                 enable_pagination = True,
                 graphql_query = '',

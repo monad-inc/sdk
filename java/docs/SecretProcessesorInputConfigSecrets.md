@@ -19,7 +19,6 @@
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**username** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**personalAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |

@@ -1069,36 +1069,6 @@
                 },
                 "type": "object"
             },
-            "bugsnag_org_events.SecretsConfig": {
-                "description": "Bugsnag Org Events secrets",
-                "properties": {
-                    "personal_auth_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "bugsnag_org_events.SettingsConfig": {
-                "description": "Bugsnag Org Events settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from.",
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "description": "Organization ID",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "buildkite_audit_logs.SecretsConfig": {
                 "properties": {
                     "api_token": {
@@ -7661,14 +7631,6 @@
                 ],
                 "type": "object"
             },
-            "persona.SettingsConfig": {
-                "properties": {
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    }
-                },
-                "type": "object"
-            },
             "plaid_webhooks.SecretsConfig": {
                 "description": "Plaid Webhooks secrets",
                 "properties": {
@@ -10339,9 +10301,6 @@
                                 "$ref": "#/components/schemas/brinqa_audit_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/bugsnag_org_events.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/buildkite_audit_logs.SecretsConfig"
                             },
                             {
@@ -10465,12 +10424,6 @@
                                 "$ref": "#/components/schemas/plaid_webhooks.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/semgrep_code_findings.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/semgrep_supply_chain_findings.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/slack_enterprise_audit_logs.SecretsConfig"
                             },
                             {
@@ -10568,9 +10521,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/brinqa_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/bugsnag_org_events.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/buildkite_audit_logs.SettingsConfig"
@@ -10699,19 +10649,10 @@
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/persona.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/plaid_webhooks.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/redshift_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/semgrep_code_findings.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/semgrep_supply_chain_findings.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/slack_enterprise_audit_logs.SettingsConfig"
@@ -11002,64 +10943,6 @@
                     "source_region": {
                         "description": "Source AWS Region",
                         "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            "semgrep_code_findings.SecretsConfig": {
-                "description": "Semgrep code findings secrets",
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "api_key"
-                ],
-                "type": "object"
-            },
-            "semgrep_code_findings.SettingsConfig": {
-                "description": "Semgrep code findings settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "semgrep_supply_chain_findings.SecretsConfig": {
-                "description": "Semgrep supply chain findings secrets",
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "api_key"
-                ],
-                "type": "object"
-            },
-            "semgrep_supply_chain_findings.SettingsConfig": {
-                "description": "Semgrep supply chain findings settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"

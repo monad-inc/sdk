@@ -143,8 +143,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BlastradiusInstanceImpact.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BrinqaAuditLogsSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BrinqaAuditLogsSettingsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BugsnagOrgEventsSecretsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BugsnagOrgEventsSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BuildkiteAuditLogsSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.BuildkiteGraphqlInputSecretsConfig.CustomTypeAdapterFactory());
@@ -449,7 +447,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.PantherSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.PantherSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.ParquetParquetFormatter.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.PersonaSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.PlaidWebhooksSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.PlaidWebhooksSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.PostgresqlSecretsConfig.CustomTypeAdapterFactory());
@@ -598,10 +595,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SecretProcessesorOutputConfigSettings.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SecurityLakeSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SecurityLakeSourceAccountDetails.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.Sentinelv2DCRConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.Sentinelv2ManagedDCRVariant.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.Sentinelv2ManualDCRVariant.CustomTypeAdapterFactory());

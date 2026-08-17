@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **CredentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**PersonalAuthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -304,31 +303,6 @@ and a boolean to check if the value has been set.
 
 SetUsername sets Username field to given value.
 
-
-### GetPersonalAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAuthToken() ModelsSecret`
-
-GetPersonalAuthToken returns the PersonalAuthToken field if non-nil, zero value otherwise.
-
-### GetPersonalAuthTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAuthTokenOk() (*ModelsSecret, bool)`
-
-GetPersonalAuthTokenOk returns a tuple with the PersonalAuthToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPersonalAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAuthToken(v ModelsSecret)`
-
-SetPersonalAuthToken sets PersonalAuthToken field to given value.
-
-### HasPersonalAuthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAuthToken() bool`
-
-HasPersonalAuthToken returns a boolean if a field has been set.
 
 ### GetApiToken
 

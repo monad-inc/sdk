@@ -39,7 +39,6 @@ import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
 import org.openapitools.client.model.BackblazeB2SettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
-import org.openapitools.client.model.BugsnagOrgEventsSettingsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
 import org.openapitools.client.model.CisaUserSettingsConfig;
@@ -88,11 +87,8 @@ import org.openapitools.client.model.OperationLogsSettingsConfig;
 import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
-import org.openapitools.client.model.PersonaSettingsConfig;
 import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
 import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
-import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
-import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
@@ -479,14 +475,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void hostnameTest() {
         // TODO: test hostname
-    }
-
-    /**
-     * Test the property 'organizationId'
-     */
-    @Test
-    public void organizationIdTest() {
-        // TODO: test organizationId
     }
 
     /**

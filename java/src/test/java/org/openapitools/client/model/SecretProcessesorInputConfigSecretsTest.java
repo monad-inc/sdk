@@ -32,7 +32,6 @@ import org.openapitools.client.model.AzureVnetFlowLogsSecretsConfig;
 import org.openapitools.client.model.BackblazeB2SecretsConfig;
 import org.openapitools.client.model.BigqueryInputSecretsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSecretsConfig;
-import org.openapitools.client.model.BugsnagOrgEventsSecretsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSecretsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSecretsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSecretsConfig;
@@ -73,8 +72,6 @@ import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
 import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
-import org.openapitools.client.model.SemgrepCodeFindingsSecretsConfig;
-import org.openapitools.client.model.SemgrepSupplyChainFindingsSecretsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
@@ -201,14 +198,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void usernameTest() {
         // TODO: test username
-    }
-
-    /**
-     * Test the property 'personalAuthToken'
-     */
-    @Test
-    public void personalAuthTokenTest() {
-        // TODO: test personalAuthToken
     }
 
     /**

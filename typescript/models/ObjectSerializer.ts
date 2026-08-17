@@ -51,8 +51,6 @@ export * from '../models/BlastradiusInstanceImpact';
 export * from '../models/BlastradiusSeverity';
 export * from '../models/BrinqaAuditLogsSecretsConfig';
 export * from '../models/BrinqaAuditLogsSettingsConfig';
-export * from '../models/BugsnagOrgEventsSecretsConfig';
-export * from '../models/BugsnagOrgEventsSettingsConfig';
 export * from '../models/BuildkiteAuditLogsSecretsConfig';
 export * from '../models/BuildkiteAuditLogsSettingsConfig';
 export * from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -384,7 +382,6 @@ export * from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 export * from '../models/PantherSecretsConfig';
 export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
-export * from '../models/PersonaSettingsConfig';
 export * from '../models/PlaidWebhooksSecretsConfig';
 export * from '../models/PlaidWebhooksSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
@@ -533,10 +530,6 @@ export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
-export * from '../models/SemgrepCodeFindingsSecretsConfig';
-export * from '../models/SemgrepCodeFindingsSettingsConfig';
-export * from '../models/SemgrepSupplyChainFindingsSecretsConfig';
-export * from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 export * from '../models/Sentinelv2DCRConfig';
 export * from '../models/Sentinelv2ManagedDCRVariant';
 export * from '../models/Sentinelv2ManualDCRVariant';
@@ -689,8 +682,6 @@ import { BlastradiusInstanceImpact } from '../models/BlastradiusInstanceImpact';
 import { BlastradiusSeverity } from '../models/BlastradiusSeverity';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
-import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
-import { BugsnagOrgEventsSettingsConfig } from '../models/BugsnagOrgEventsSettingsConfig';
 import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
 import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -1022,7 +1013,6 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
 import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -1171,10 +1161,6 @@ import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
-import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
-import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
-import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
-import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 import { Sentinelv2DCRConfig  , Sentinelv2DCRConfigTypeEnum   } from '../models/Sentinelv2DCRConfig';
 import { Sentinelv2ManagedDCRVariant } from '../models/Sentinelv2ManagedDCRVariant';
 import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant';
@@ -1420,8 +1406,6 @@ let typeMap: {[index: string]: any} = {
     "BlastradiusInstanceImpact": BlastradiusInstanceImpact,
     "BrinqaAuditLogsSecretsConfig": BrinqaAuditLogsSecretsConfig,
     "BrinqaAuditLogsSettingsConfig": BrinqaAuditLogsSettingsConfig,
-    "BugsnagOrgEventsSecretsConfig": BugsnagOrgEventsSecretsConfig,
-    "BugsnagOrgEventsSettingsConfig": BugsnagOrgEventsSettingsConfig,
     "BuildkiteAuditLogsSecretsConfig": BuildkiteAuditLogsSecretsConfig,
     "BuildkiteAuditLogsSettingsConfig": BuildkiteAuditLogsSettingsConfig,
     "BuildkiteGraphqlInputSecretsConfig": BuildkiteGraphqlInputSecretsConfig,
@@ -1726,7 +1710,6 @@ let typeMap: {[index: string]: any} = {
     "PantherSecretsConfig": PantherSecretsConfig,
     "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
-    "PersonaSettingsConfig": PersonaSettingsConfig,
     "PlaidWebhooksSecretsConfig": PlaidWebhooksSecretsConfig,
     "PlaidWebhooksSettingsConfig": PlaidWebhooksSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
@@ -1875,10 +1858,6 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
-    "SemgrepCodeFindingsSecretsConfig": SemgrepCodeFindingsSecretsConfig,
-    "SemgrepCodeFindingsSettingsConfig": SemgrepCodeFindingsSettingsConfig,
-    "SemgrepSupplyChainFindingsSecretsConfig": SemgrepSupplyChainFindingsSecretsConfig,
-    "SemgrepSupplyChainFindingsSettingsConfig": SemgrepSupplyChainFindingsSettingsConfig,
     "Sentinelv2DCRConfig": Sentinelv2DCRConfig,
     "Sentinelv2ManagedDCRVariant": Sentinelv2ManagedDCRVariant,
     "Sentinelv2ManualDCRVariant": Sentinelv2ManualDCRVariant,

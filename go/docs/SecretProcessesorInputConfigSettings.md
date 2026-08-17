@@ -46,7 +46,6 @@ Name | Type | Description | Notes
 **Table** | Pointer to **string** | The BigQuery table ID to query data from | [optional] 
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
-**OrganizationId** | Pointer to **string** | Organization ID | [optional] 
 **OrgSlug** | **string** | Cron expression for scheduling the input | 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
@@ -1166,31 +1165,6 @@ SetHostname sets Hostname field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasHostname() bool`
 
 HasHostname returns a boolean if a field has been set.
-
-### GetOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationId() string`
-
-GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
-
-### GetOrganizationIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrganizationIdOk() (*string, bool)`
-
-GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrganizationId(v string)`
-
-SetOrganizationId sets OrganizationId field to given value.
-
-### HasOrganizationId
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrganizationId() bool`
-
-HasOrganizationId returns a boolean if a field has been set.
 
 ### GetOrgSlug
 

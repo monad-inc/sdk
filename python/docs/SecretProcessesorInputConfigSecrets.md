@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **username** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**personal_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 

@@ -33,7 +33,6 @@ type SecretProcessesorInputConfigSettings struct {
 	BackblazeB2SettingsConfig *BackblazeB2SettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BrinqaAuditLogsSettingsConfig *BrinqaAuditLogsSettingsConfig
-	BugsnagOrgEventsSettingsConfig *BugsnagOrgEventsSettingsConfig
 	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
 	BuildkiteGraphqlInputSettingsConfig *BuildkiteGraphqlInputSettingsConfig
 	CisaUserSettingsConfig *CisaUserSettingsConfig
@@ -76,11 +75,8 @@ type SecretProcessesorInputConfigSettings struct {
 	OrgAuditLogsSettingsConfig *OrgAuditLogsSettingsConfig
 	OwnbackupAccountEventsSettingsConfig *OwnbackupAccountEventsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
-	PersonaSettingsConfig *PersonaSettingsConfig
 	PlaidWebhooksSettingsConfig *PlaidWebhooksSettingsConfig
 	RedshiftAuditLogsSettingsConfig *RedshiftAuditLogsSettingsConfig
-	SemgrepCodeFindingsSettingsConfig *SemgrepCodeFindingsSettingsConfig
-	SemgrepSupplyChainFindingsSettingsConfig *SemgrepSupplyChainFindingsSettingsConfig
 	SlackEnterpriseAuditLogsSettingsConfig *SlackEnterpriseAuditLogsSettingsConfig
 	SnykIssuesSettingsConfig *SnykIssuesSettingsConfig
 	SnykTargetsSettingsConfig *SnykTargetsSettingsConfig
@@ -195,13 +191,6 @@ func BigqueryInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *Bigque
 func BrinqaAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BrinqaAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BrinqaAuditLogsSettingsConfig: v,
-	}
-}
-
-// BugsnagOrgEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BugsnagOrgEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func BugsnagOrgEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BugsnagOrgEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		BugsnagOrgEventsSettingsConfig: v,
 	}
 }
 
@@ -499,13 +488,6 @@ func PaloAltoDataSecurityAlertsSettingsConfigAsSecretProcessesorInputConfigSetti
 	}
 }
 
-// PersonaSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PersonaSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func PersonaSettingsConfigAsSecretProcessesorInputConfigSettings(v *PersonaSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		PersonaSettingsConfig: v,
-	}
-}
-
 // PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns PlaidWebhooksSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings(v *PlaidWebhooksSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -517,20 +499,6 @@ func PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings(v *PlaidW
 func RedshiftAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RedshiftAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RedshiftAuditLogsSettingsConfig: v,
-	}
-}
-
-// SemgrepCodeFindingsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SemgrepCodeFindingsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SemgrepCodeFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepCodeFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SemgrepCodeFindingsSettingsConfig: v,
-	}
-}
-
-// SemgrepSupplyChainFindingsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SemgrepSupplyChainFindingsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SemgrepSupplyChainFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SemgrepSupplyChainFindingsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SemgrepSupplyChainFindingsSettingsConfig: v,
 	}
 }
 
@@ -894,23 +862,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BrinqaAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into BugsnagOrgEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BugsnagOrgEventsSettingsConfig)
-	if err == nil {
-		jsonBugsnagOrgEventsSettingsConfig, _ := json.Marshal(dst.BugsnagOrgEventsSettingsConfig)
-		if string(jsonBugsnagOrgEventsSettingsConfig) == "{}" { // empty struct
-			dst.BugsnagOrgEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BugsnagOrgEventsSettingsConfig); err != nil {
-				dst.BugsnagOrgEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BugsnagOrgEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BuildkiteAuditLogsSettingsConfig
@@ -1627,23 +1578,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into PersonaSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.PersonaSettingsConfig)
-	if err == nil {
-		jsonPersonaSettingsConfig, _ := json.Marshal(dst.PersonaSettingsConfig)
-		if string(jsonPersonaSettingsConfig) == "{}" { // empty struct
-			dst.PersonaSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.PersonaSettingsConfig); err != nil {
-				dst.PersonaSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.PersonaSettingsConfig = nil
-	}
-
 	// try to unmarshal data into PlaidWebhooksSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.PlaidWebhooksSettingsConfig)
 	if err == nil {
@@ -1676,40 +1610,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.RedshiftAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into SemgrepCodeFindingsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepCodeFindingsSettingsConfig)
-	if err == nil {
-		jsonSemgrepCodeFindingsSettingsConfig, _ := json.Marshal(dst.SemgrepCodeFindingsSettingsConfig)
-		if string(jsonSemgrepCodeFindingsSettingsConfig) == "{}" { // empty struct
-			dst.SemgrepCodeFindingsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepCodeFindingsSettingsConfig); err != nil {
-				dst.SemgrepCodeFindingsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepCodeFindingsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into SemgrepSupplyChainFindingsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SemgrepSupplyChainFindingsSettingsConfig)
-	if err == nil {
-		jsonSemgrepSupplyChainFindingsSettingsConfig, _ := json.Marshal(dst.SemgrepSupplyChainFindingsSettingsConfig)
-		if string(jsonSemgrepSupplyChainFindingsSettingsConfig) == "{}" { // empty struct
-			dst.SemgrepSupplyChainFindingsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SemgrepSupplyChainFindingsSettingsConfig); err != nil {
-				dst.SemgrepSupplyChainFindingsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into SlackEnterpriseAuditLogsSettingsConfig
@@ -2017,7 +1917,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BackblazeB2SettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BrinqaAuditLogsSettingsConfig = nil
-		dst.BugsnagOrgEventsSettingsConfig = nil
 		dst.BuildkiteAuditLogsSettingsConfig = nil
 		dst.BuildkiteGraphqlInputSettingsConfig = nil
 		dst.CisaUserSettingsConfig = nil
@@ -2060,11 +1959,8 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OrgAuditLogsSettingsConfig = nil
 		dst.OwnbackupAccountEventsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
-		dst.PersonaSettingsConfig = nil
 		dst.PlaidWebhooksSettingsConfig = nil
 		dst.RedshiftAuditLogsSettingsConfig = nil
-		dst.SemgrepCodeFindingsSettingsConfig = nil
-		dst.SemgrepSupplyChainFindingsSettingsConfig = nil
 		dst.SlackEnterpriseAuditLogsSettingsConfig = nil
 		dst.SnykIssuesSettingsConfig = nil
 		dst.SnykTargetsSettingsConfig = nil
@@ -2087,26 +1983,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
         } else {
@@ -2543,10 +2419,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.BrinqaAuditLogsSettingsConfig)
 	}
 
-	if src.BugsnagOrgEventsSettingsConfig != nil {
-		return json.Marshal(&src.BugsnagOrgEventsSettingsConfig)
-	}
-
 	if src.BuildkiteAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.BuildkiteAuditLogsSettingsConfig)
 	}
@@ -2715,24 +2587,12 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PaloAltoDataSecurityAlertsSettingsConfig)
 	}
 
-	if src.PersonaSettingsConfig != nil {
-		return json.Marshal(&src.PersonaSettingsConfig)
-	}
-
 	if src.PlaidWebhooksSettingsConfig != nil {
 		return json.Marshal(&src.PlaidWebhooksSettingsConfig)
 	}
 
 	if src.RedshiftAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.RedshiftAuditLogsSettingsConfig)
-	}
-
-	if src.SemgrepCodeFindingsSettingsConfig != nil {
-		return json.Marshal(&src.SemgrepCodeFindingsSettingsConfig)
-	}
-
-	if src.SemgrepSupplyChainFindingsSettingsConfig != nil {
-		return json.Marshal(&src.SemgrepSupplyChainFindingsSettingsConfig)
 	}
 
 	if src.SlackEnterpriseAuditLogsSettingsConfig != nil {
@@ -2865,10 +2725,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.BrinqaAuditLogsSettingsConfig != nil {
 		return obj.BrinqaAuditLogsSettingsConfig
-	}
-
-	if obj.BugsnagOrgEventsSettingsConfig != nil {
-		return obj.BugsnagOrgEventsSettingsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSettingsConfig != nil {
@@ -3039,24 +2895,12 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.PaloAltoDataSecurityAlertsSettingsConfig
 	}
 
-	if obj.PersonaSettingsConfig != nil {
-		return obj.PersonaSettingsConfig
-	}
-
 	if obj.PlaidWebhooksSettingsConfig != nil {
 		return obj.PlaidWebhooksSettingsConfig
 	}
 
 	if obj.RedshiftAuditLogsSettingsConfig != nil {
 		return obj.RedshiftAuditLogsSettingsConfig
-	}
-
-	if obj.SemgrepCodeFindingsSettingsConfig != nil {
-		return obj.SemgrepCodeFindingsSettingsConfig
-	}
-
-	if obj.SemgrepSupplyChainFindingsSettingsConfig != nil {
-		return obj.SemgrepSupplyChainFindingsSettingsConfig
 	}
 
 	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {
@@ -3187,10 +3031,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BrinqaAuditLogsSettingsConfig != nil {
 		return *obj.BrinqaAuditLogsSettingsConfig
-	}
-
-	if obj.BugsnagOrgEventsSettingsConfig != nil {
-		return *obj.BugsnagOrgEventsSettingsConfig
 	}
 
 	if obj.BuildkiteAuditLogsSettingsConfig != nil {
@@ -3361,24 +3201,12 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.PaloAltoDataSecurityAlertsSettingsConfig
 	}
 
-	if obj.PersonaSettingsConfig != nil {
-		return *obj.PersonaSettingsConfig
-	}
-
 	if obj.PlaidWebhooksSettingsConfig != nil {
 		return *obj.PlaidWebhooksSettingsConfig
 	}
 
 	if obj.RedshiftAuditLogsSettingsConfig != nil {
 		return *obj.RedshiftAuditLogsSettingsConfig
-	}
-
-	if obj.SemgrepCodeFindingsSettingsConfig != nil {
-		return *obj.SemgrepCodeFindingsSettingsConfig
-	}
-
-	if obj.SemgrepSupplyChainFindingsSettingsConfig != nil {
-		return *obj.SemgrepSupplyChainFindingsSettingsConfig
 	}
 
 	if obj.SlackEnterpriseAuditLogsSettingsConfig != nil {

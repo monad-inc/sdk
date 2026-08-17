@@ -56,8 +56,6 @@ import { BlastradiusInstanceImpact } from '../models/BlastradiusInstanceImpact';
 import { BlastradiusSeverity } from '../models/BlastradiusSeverity';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
-import { BugsnagOrgEventsSecretsConfig } from '../models/BugsnagOrgEventsSecretsConfig';
-import { BugsnagOrgEventsSettingsConfig } from '../models/BugsnagOrgEventsSettingsConfig';
 import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
 import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
@@ -389,7 +387,6 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { PersonaSettingsConfig } from '../models/PersonaSettingsConfig';
 import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
@@ -538,10 +535,6 @@ import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcesseso
 import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
-import { SemgrepCodeFindingsSecretsConfig } from '../models/SemgrepCodeFindingsSecretsConfig';
-import { SemgrepCodeFindingsSettingsConfig } from '../models/SemgrepCodeFindingsSettingsConfig';
-import { SemgrepSupplyChainFindingsSecretsConfig } from '../models/SemgrepSupplyChainFindingsSecretsConfig';
-import { SemgrepSupplyChainFindingsSettingsConfig } from '../models/SemgrepSupplyChainFindingsSettingsConfig';
 import { Sentinelv2DCRConfig } from '../models/Sentinelv2DCRConfig';
 import { Sentinelv2ManagedDCRVariant } from '../models/Sentinelv2ManagedDCRVariant';
 import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant';

@@ -47,7 +47,6 @@ Name | Type | Description | Notes
 **table** | **str** | The BigQuery table ID to query data from | [optional] 
 **timestamp_column** | **str** | The column containing timestamp values used for incremental loading | [optional] 
 **hostname** | **str** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
-**organization_id** | **str** | Organization ID | [optional] 
 **org_slug** | **str** | Cron expression for scheduling the input | 
 **enable_pagination** | **bool** | Enable pagination support | [optional] 
 **graphql_query** | **str** | The GraphQL query to execute against the endpoint to fetch data | [optional] 

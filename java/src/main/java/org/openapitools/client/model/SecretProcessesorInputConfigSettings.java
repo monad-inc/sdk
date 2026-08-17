@@ -40,7 +40,6 @@ import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
 import org.openapitools.client.model.BackblazeB2SettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
-import org.openapitools.client.model.BugsnagOrgEventsSettingsConfig;
 import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
 import org.openapitools.client.model.CisaUserSettingsConfig;
@@ -89,11 +88,8 @@ import org.openapitools.client.model.OperationLogsSettingsConfig;
 import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
-import org.openapitools.client.model.PersonaSettingsConfig;
 import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
 import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
-import org.openapitools.client.model.SemgrepCodeFindingsSettingsConfig;
-import org.openapitools.client.model.SemgrepSupplyChainFindingsSettingsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
@@ -191,7 +187,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             final TypeAdapter<BackblazeB2SettingsConfig> adapterBackblazeB2SettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BackblazeB2SettingsConfig.class));
             final TypeAdapter<BigqueryInputSettingsConfig> adapterBigqueryInputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BigqueryInputSettingsConfig.class));
             final TypeAdapter<BrinqaAuditLogsSettingsConfig> adapterBrinqaAuditLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BrinqaAuditLogsSettingsConfig.class));
-            final TypeAdapter<BugsnagOrgEventsSettingsConfig> adapterBugsnagOrgEventsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BugsnagOrgEventsSettingsConfig.class));
             final TypeAdapter<BuildkiteAuditLogsSettingsConfig> adapterBuildkiteAuditLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BuildkiteAuditLogsSettingsConfig.class));
             final TypeAdapter<BuildkiteGraphqlInputSettingsConfig> adapterBuildkiteGraphqlInputSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(BuildkiteGraphqlInputSettingsConfig.class));
             final TypeAdapter<CisaUserSettingsConfig> adapterCisaUserSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(CisaUserSettingsConfig.class));
@@ -234,11 +229,8 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             final TypeAdapter<OrgAuditLogsSettingsConfig> adapterOrgAuditLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OrgAuditLogsSettingsConfig.class));
             final TypeAdapter<OwnbackupAccountEventsSettingsConfig> adapterOwnbackupAccountEventsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(OwnbackupAccountEventsSettingsConfig.class));
             final TypeAdapter<PaloAltoDataSecurityAlertsSettingsConfig> adapterPaloAltoDataSecurityAlertsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(PaloAltoDataSecurityAlertsSettingsConfig.class));
-            final TypeAdapter<PersonaSettingsConfig> adapterPersonaSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(PersonaSettingsConfig.class));
             final TypeAdapter<PlaidWebhooksSettingsConfig> adapterPlaidWebhooksSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(PlaidWebhooksSettingsConfig.class));
             final TypeAdapter<RedshiftAuditLogsSettingsConfig> adapterRedshiftAuditLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(RedshiftAuditLogsSettingsConfig.class));
-            final TypeAdapter<SemgrepCodeFindingsSettingsConfig> adapterSemgrepCodeFindingsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepCodeFindingsSettingsConfig.class));
-            final TypeAdapter<SemgrepSupplyChainFindingsSettingsConfig> adapterSemgrepSupplyChainFindingsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SemgrepSupplyChainFindingsSettingsConfig.class));
             final TypeAdapter<SlackEnterpriseAuditLogsSettingsConfig> adapterSlackEnterpriseAuditLogsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SlackEnterpriseAuditLogsSettingsConfig.class));
             final TypeAdapter<SnykIssuesSettingsConfig> adapterSnykIssuesSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykIssuesSettingsConfig.class));
             final TypeAdapter<SnykTargetsSettingsConfig> adapterSnykTargetsSettingsConfig = gson.getDelegateAdapter(this, TypeToken.get(SnykTargetsSettingsConfig.class));
@@ -346,12 +338,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                     // check if the actual instance is of the type `BrinqaAuditLogsSettingsConfig`
                     if (value.getActualInstance() instanceof BrinqaAuditLogsSettingsConfig) {
                         JsonElement element = adapterBrinqaAuditLogsSettingsConfig.toJsonTree((BrinqaAuditLogsSettingsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `BugsnagOrgEventsSettingsConfig`
-                    if (value.getActualInstance() instanceof BugsnagOrgEventsSettingsConfig) {
-                        JsonElement element = adapterBugsnagOrgEventsSettingsConfig.toJsonTree((BugsnagOrgEventsSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -607,12 +593,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `PersonaSettingsConfig`
-                    if (value.getActualInstance() instanceof PersonaSettingsConfig) {
-                        JsonElement element = adapterPersonaSettingsConfig.toJsonTree((PersonaSettingsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
                     // check if the actual instance is of the type `PlaidWebhooksSettingsConfig`
                     if (value.getActualInstance() instanceof PlaidWebhooksSettingsConfig) {
                         JsonElement element = adapterPlaidWebhooksSettingsConfig.toJsonTree((PlaidWebhooksSettingsConfig)value.getActualInstance());
@@ -622,18 +602,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                     // check if the actual instance is of the type `RedshiftAuditLogsSettingsConfig`
                     if (value.getActualInstance() instanceof RedshiftAuditLogsSettingsConfig) {
                         JsonElement element = adapterRedshiftAuditLogsSettingsConfig.toJsonTree((RedshiftAuditLogsSettingsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `SemgrepCodeFindingsSettingsConfig`
-                    if (value.getActualInstance() instanceof SemgrepCodeFindingsSettingsConfig) {
-                        JsonElement element = adapterSemgrepCodeFindingsSettingsConfig.toJsonTree((SemgrepCodeFindingsSettingsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
-                    // check if the actual instance is of the type `SemgrepSupplyChainFindingsSettingsConfig`
-                    if (value.getActualInstance() instanceof SemgrepSupplyChainFindingsSettingsConfig) {
-                        JsonElement element = adapterSemgrepSupplyChainFindingsSettingsConfig.toJsonTree((SemgrepSupplyChainFindingsSettingsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -739,7 +707,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PersonaSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig");
                 }
 
                 @Override
@@ -918,18 +886,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BrinqaAuditLogsSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'BrinqaAuditLogsSettingsConfig'", e);
-                    }
-                    // deserialize BugsnagOrgEventsSettingsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        BugsnagOrgEventsSettingsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterBugsnagOrgEventsSettingsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'BugsnagOrgEventsSettingsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BugsnagOrgEventsSettingsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'BugsnagOrgEventsSettingsConfig'", e);
                     }
                     // deserialize BuildkiteAuditLogsSettingsConfig
                     try {
@@ -1435,18 +1391,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PaloAltoDataSecurityAlertsSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'PaloAltoDataSecurityAlertsSettingsConfig'", e);
                     }
-                    // deserialize PersonaSettingsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        PersonaSettingsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterPersonaSettingsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'PersonaSettingsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PersonaSettingsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'PersonaSettingsConfig'", e);
-                    }
                     // deserialize PlaidWebhooksSettingsConfig
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1470,30 +1414,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RedshiftAuditLogsSettingsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'RedshiftAuditLogsSettingsConfig'", e);
-                    }
-                    // deserialize SemgrepCodeFindingsSettingsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        SemgrepCodeFindingsSettingsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterSemgrepCodeFindingsSettingsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'SemgrepCodeFindingsSettingsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SemgrepCodeFindingsSettingsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'SemgrepCodeFindingsSettingsConfig'", e);
-                    }
-                    // deserialize SemgrepSupplyChainFindingsSettingsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        SemgrepSupplyChainFindingsSettingsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterSemgrepSupplyChainFindingsSettingsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'SemgrepSupplyChainFindingsSettingsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SemgrepSupplyChainFindingsSettingsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'SemgrepSupplyChainFindingsSettingsConfig'", e);
                     }
                     // deserialize SlackEnterpriseAuditLogsSettingsConfig
                     try {
@@ -1739,7 +1659,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         schemas.put("BackblazeB2SettingsConfig", BackblazeB2SettingsConfig.class);
         schemas.put("BigqueryInputSettingsConfig", BigqueryInputSettingsConfig.class);
         schemas.put("BrinqaAuditLogsSettingsConfig", BrinqaAuditLogsSettingsConfig.class);
-        schemas.put("BugsnagOrgEventsSettingsConfig", BugsnagOrgEventsSettingsConfig.class);
         schemas.put("BuildkiteAuditLogsSettingsConfig", BuildkiteAuditLogsSettingsConfig.class);
         schemas.put("BuildkiteGraphqlInputSettingsConfig", BuildkiteGraphqlInputSettingsConfig.class);
         schemas.put("CisaUserSettingsConfig", CisaUserSettingsConfig.class);
@@ -1782,11 +1701,8 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         schemas.put("OrgAuditLogsSettingsConfig", OrgAuditLogsSettingsConfig.class);
         schemas.put("OwnbackupAccountEventsSettingsConfig", OwnbackupAccountEventsSettingsConfig.class);
         schemas.put("PaloAltoDataSecurityAlertsSettingsConfig", PaloAltoDataSecurityAlertsSettingsConfig.class);
-        schemas.put("PersonaSettingsConfig", PersonaSettingsConfig.class);
         schemas.put("PlaidWebhooksSettingsConfig", PlaidWebhooksSettingsConfig.class);
         schemas.put("RedshiftAuditLogsSettingsConfig", RedshiftAuditLogsSettingsConfig.class);
-        schemas.put("SemgrepCodeFindingsSettingsConfig", SemgrepCodeFindingsSettingsConfig.class);
-        schemas.put("SemgrepSupplyChainFindingsSettingsConfig", SemgrepSupplyChainFindingsSettingsConfig.class);
         schemas.put("SlackEnterpriseAuditLogsSettingsConfig", SlackEnterpriseAuditLogsSettingsConfig.class);
         schemas.put("SnykIssuesSettingsConfig", SnykIssuesSettingsConfig.class);
         schemas.put("SnykTargetsSettingsConfig", SnykTargetsSettingsConfig.class);
@@ -1814,7 +1730,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PersonaSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig
+     * AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -1886,11 +1802,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
         }
 
         if (instance instanceof BrinqaAuditLogsSettingsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof BugsnagOrgEventsSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2105,27 +2016,12 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             return;
         }
 
-        if (instance instanceof PersonaSettingsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof PlaidWebhooksSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
 
         if (instance instanceof RedshiftAuditLogsSettingsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof SemgrepCodeFindingsSettingsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof SemgrepSupplyChainFindingsSettingsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -2215,14 +2111,14 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PersonaSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PersonaSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig
+     * AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig
      *
-     * @return The actual instance (AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PersonaSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig)
+     * @return The actual instance (AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -2396,18 +2292,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     @SuppressWarnings("unchecked")
     public BrinqaAuditLogsSettingsConfig getBrinqaAuditLogsSettingsConfig() throws ClassCastException {
         return (BrinqaAuditLogsSettingsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `BugsnagOrgEventsSettingsConfig`. If the actual instance is not `BugsnagOrgEventsSettingsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `BugsnagOrgEventsSettingsConfig`
-     * @throws ClassCastException if the instance is not `BugsnagOrgEventsSettingsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public BugsnagOrgEventsSettingsConfig getBugsnagOrgEventsSettingsConfig() throws ClassCastException {
-        return (BugsnagOrgEventsSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -2915,18 +2799,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     }
 
     /**
-     * Get the actual instance of `PersonaSettingsConfig`. If the actual instance is not `PersonaSettingsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `PersonaSettingsConfig`
-     * @throws ClassCastException if the instance is not `PersonaSettingsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public PersonaSettingsConfig getPersonaSettingsConfig() throws ClassCastException {
-        return (PersonaSettingsConfig)super.getActualInstance();
-    }
-
-    /**
      * Get the actual instance of `PlaidWebhooksSettingsConfig`. If the actual instance is not `PlaidWebhooksSettingsConfig`,
      * the ClassCastException will be thrown.
      *
@@ -2948,30 +2820,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
     @SuppressWarnings("unchecked")
     public RedshiftAuditLogsSettingsConfig getRedshiftAuditLogsSettingsConfig() throws ClassCastException {
         return (RedshiftAuditLogsSettingsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `SemgrepCodeFindingsSettingsConfig`. If the actual instance is not `SemgrepCodeFindingsSettingsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `SemgrepCodeFindingsSettingsConfig`
-     * @throws ClassCastException if the instance is not `SemgrepCodeFindingsSettingsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public SemgrepCodeFindingsSettingsConfig getSemgrepCodeFindingsSettingsConfig() throws ClassCastException {
-        return (SemgrepCodeFindingsSettingsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `SemgrepSupplyChainFindingsSettingsConfig`. If the actual instance is not `SemgrepSupplyChainFindingsSettingsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `SemgrepSupplyChainFindingsSettingsConfig`
-     * @throws ClassCastException if the instance is not `SemgrepSupplyChainFindingsSettingsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public SemgrepSupplyChainFindingsSettingsConfig getSemgrepSupplyChainFindingsSettingsConfig() throws ClassCastException {
-        return (SemgrepSupplyChainFindingsSettingsConfig)super.getActualInstance();
     }
 
     /**
@@ -3298,14 +3146,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BrinqaAuditLogsSettingsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with BugsnagOrgEventsSettingsConfig
-        try {
-            BugsnagOrgEventsSettingsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for BugsnagOrgEventsSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with BuildkiteAuditLogsSettingsConfig
@@ -3644,14 +3484,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PaloAltoDataSecurityAlertsSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with PersonaSettingsConfig
-        try {
-            PersonaSettingsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for PersonaSettingsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with PlaidWebhooksSettingsConfig
         try {
             PlaidWebhooksSettingsConfig.validateJsonElement(jsonElement);
@@ -3666,22 +3498,6 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             validCount++;
         } catch (Exception e) {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for RedshiftAuditLogsSettingsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with SemgrepCodeFindingsSettingsConfig
-        try {
-            SemgrepCodeFindingsSettingsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SemgrepCodeFindingsSettingsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with SemgrepSupplyChainFindingsSettingsConfig
-        try {
-            SemgrepSupplyChainFindingsSettingsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SemgrepSupplyChainFindingsSettingsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SlackEnterpriseAuditLogsSettingsConfig
@@ -3821,7 +3637,7 @@ public class SecretProcessesorInputConfigSettings extends AbstractOpenApiSchema 
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorInputConfigSettings with oneOf schemas: AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BugsnagOrgEventsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PersonaSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SemgrepCodeFindingsSettingsConfig, SemgrepSupplyChainFindingsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorInputConfigSettings with oneOf schemas: AdminLogsSettingsConfig, ArizeAuditLogsSettingsConfig, AuthLogsSettingsConfig, AwsGuarddutySettingsConfig, AwsS3SettingsConfig, AwsSqsS3CloudtrailSettingsConfig, Awssqss3SettingsConfig, AzureActivityLogsSettingsConfig, AzureBlobStorageSettingsConfig, AzureEventHubsSettingsConfig, AzureVnetFlowLogsSettingsConfig, BackblazeB2SettingsConfig, BigqueryInputSettingsConfig, BrinqaAuditLogsSettingsConfig, BuildkiteAuditLogsSettingsConfig, BuildkiteGraphqlInputSettingsConfig, CisaUserSettingsConfig, CloudConfigurationFindingsSettingsConfig, CloudLogsSettingsConfig, CloudResourceInventorySettingsConfig, CloudflareDdosAttackAnalyticsSettingsConfig, CloudflareFirewallEventsSettingsConfig, CloudflareHttpRequestsSettingsConfig, CloudflareUrlScannerSettingsConfig, CloudflareZeroTrustAccessRequestsSettingsConfig, CloudtrailSettingsConfig, ClumioAuditLogsSettingsConfig, ClumioConsolidatedAlertsSettingsConfig, CortexXsoarManagementLogsSettingsConfig, DefenderForEndpointAlertsSettingsConfig, DuoSecurityActivityLogsSettingsConfig, EksAuditLogsSettingsConfig, EndorLabsAuditLogsSettingsConfig, EntraIdSettingsConfig, EventSettingsConfig, FullScansSettingsConfig, GithubActionsWorkflowLogsWebhookSettingsConfig, GkeAuditLogsSettingsConfig, GoogleCloudStorageSettingsConfig, GoogleWorkspaceSettingsConfig, GreenhouseAuditLogsSettingsConfig, IndividualAlertsSettingsConfig, InspectorSettingsConfig, IssuesSettingsConfig, KoiAuditLogsSettingsConfig, LogAnalyticsQuerySettingsConfig, LookerAuditLogsSettingsConfig, MerakiConfigLogsSettingsConfig, Microsoft365GenericSettingsConfig, MonadLogSettingsConfig, ObjectStorageInputSettingsConfig, OfflineenrollmentlogsSettingsConfig, OperationLogsSettingsConfig, OrgAuditLogsSettingsConfig, OwnbackupAccountEventsSettingsConfig, PaloAltoDataSecurityAlertsSettingsConfig, PlaidWebhooksSettingsConfig, RedshiftAuditLogsSettingsConfig, SlackEnterpriseAuditLogsSettingsConfig, SnykIssuesSettingsConfig, SnykTargetsSettingsConfig, SyntheticDataCustomSettingsConfig, SyntheticDataSettingsConfig, TaniumGraphqlInputSettingsConfig, TeamAccessLogsSettingsConfig, TeamIntegrationLogsSettingsConfig, TelephonyLogsSettingsConfig, TinesAuditLogsSettingsConfig, TinesEventsLogsSettingsConfig, TwilioEventsSettingsConfig, TwilioSendgridEmailActivitySettingsConfig, VercelUserEventsSettingsConfig, VoltioAuditLogsSettingsConfig, VulnerabilityFindingsSettingsConfig, WizAuditLogsSettingsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

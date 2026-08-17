@@ -123,8 +123,6 @@ __all__ = [
     "BlastradiusSeverity",
     "BrinqaAuditLogsSecretsConfig",
     "BrinqaAuditLogsSettingsConfig",
-    "BugsnagOrgEventsSecretsConfig",
-    "BugsnagOrgEventsSettingsConfig",
     "BuildkiteAuditLogsSecretsConfig",
     "BuildkiteAuditLogsSettingsConfig",
     "BuildkiteGraphqlInputSecretsConfig",
@@ -456,7 +454,6 @@ __all__ = [
     "PantherSecretsConfig",
     "PantherSettingsConfig",
     "ParquetParquetFormatter",
-    "PersonaSettingsConfig",
     "PlaidWebhooksSecretsConfig",
     "PlaidWebhooksSettingsConfig",
     "PostgresqlSecretsConfig",
@@ -605,10 +602,6 @@ __all__ = [
     "SecretProcessesorOutputConfigSettings",
     "SecurityLakeSettingsConfig",
     "SecurityLakeSourceAccountDetails",
-    "SemgrepCodeFindingsSecretsConfig",
-    "SemgrepCodeFindingsSettingsConfig",
-    "SemgrepSupplyChainFindingsSecretsConfig",
-    "SemgrepSupplyChainFindingsSettingsConfig",
     "Sentinelv2DCRConfig",
     "Sentinelv2ManagedDCRVariant",
     "Sentinelv2ManualDCRVariant",
@@ -818,8 +811,6 @@ from monad.models.blastradius_instance_impact import BlastradiusInstanceImpact a
 from monad.models.blastradius_severity import BlastradiusSeverity as BlastradiusSeverity
 from monad.models.brinqa_audit_logs_secrets_config import BrinqaAuditLogsSecretsConfig as BrinqaAuditLogsSecretsConfig
 from monad.models.brinqa_audit_logs_settings_config import BrinqaAuditLogsSettingsConfig as BrinqaAuditLogsSettingsConfig
-from monad.models.bugsnag_org_events_secrets_config import BugsnagOrgEventsSecretsConfig as BugsnagOrgEventsSecretsConfig
-from monad.models.bugsnag_org_events_settings_config import BugsnagOrgEventsSettingsConfig as BugsnagOrgEventsSettingsConfig
 from monad.models.buildkite_audit_logs_secrets_config import BuildkiteAuditLogsSecretsConfig as BuildkiteAuditLogsSecretsConfig
 from monad.models.buildkite_audit_logs_settings_config import BuildkiteAuditLogsSettingsConfig as BuildkiteAuditLogsSettingsConfig
 from monad.models.buildkite_graphql_input_secrets_config import BuildkiteGraphqlInputSecretsConfig as BuildkiteGraphqlInputSecretsConfig
@@ -1151,7 +1142,6 @@ from monad.models.palo_alto_data_security_alerts_settings_config import PaloAlto
 from monad.models.panther_secrets_config import PantherSecretsConfig as PantherSecretsConfig
 from monad.models.panther_settings_config import PantherSettingsConfig as PantherSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter as ParquetParquetFormatter
-from monad.models.persona_settings_config import PersonaSettingsConfig as PersonaSettingsConfig
 from monad.models.plaid_webhooks_secrets_config import PlaidWebhooksSecretsConfig as PlaidWebhooksSecretsConfig
 from monad.models.plaid_webhooks_settings_config import PlaidWebhooksSettingsConfig as PlaidWebhooksSettingsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as PostgresqlSecretsConfig
@@ -1300,10 +1290,6 @@ from monad.models.secret_processesor_output_config_secrets import SecretProcesse
 from monad.models.secret_processesor_output_config_settings import SecretProcessesorOutputConfigSettings as SecretProcessesorOutputConfigSettings
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig as SecurityLakeSettingsConfig
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails as SecurityLakeSourceAccountDetails
-from monad.models.semgrep_code_findings_secrets_config import SemgrepCodeFindingsSecretsConfig as SemgrepCodeFindingsSecretsConfig
-from monad.models.semgrep_code_findings_settings_config import SemgrepCodeFindingsSettingsConfig as SemgrepCodeFindingsSettingsConfig
-from monad.models.semgrep_supply_chain_findings_secrets_config import SemgrepSupplyChainFindingsSecretsConfig as SemgrepSupplyChainFindingsSecretsConfig
-from monad.models.semgrep_supply_chain_findings_settings_config import SemgrepSupplyChainFindingsSettingsConfig as SemgrepSupplyChainFindingsSettingsConfig
 from monad.models.sentinelv2_dcr_config import Sentinelv2DCRConfig as Sentinelv2DCRConfig
 from monad.models.sentinelv2_managed_dcr_variant import Sentinelv2ManagedDCRVariant as Sentinelv2ManagedDCRVariant
 from monad.models.sentinelv2_manual_dcr_variant import Sentinelv2ManualDCRVariant as Sentinelv2ManualDCRVariant
