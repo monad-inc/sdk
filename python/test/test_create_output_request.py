@@ -46,7 +46,8 @@ class TestCreateOutputRequest(unittest.TestCase):
                 description = '',
                 name = '',
                 promise_id = '',
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return CreateOutputRequest(

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **promise_id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**version** | **int** |  | [optional] 
 
 ## Example
 

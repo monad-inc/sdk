@@ -12,6 +12,7 @@
 |**name** | **String** |  |  [optional] |
 |**promiseId** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

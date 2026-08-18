@@ -45,7 +45,8 @@ class TestCreateInputRequest(unittest.TestCase):
                         }, ),
                 description = '',
                 name = '',
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return CreateInputRequest(

@@ -71,6 +71,11 @@ public class RoutesV2CreateInputRequest {
   @javax.annotation.Nullable
   private String type;
 
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
+
   public RoutesV2CreateInputRequest() {
   }
 
@@ -150,6 +155,25 @@ public class RoutesV2CreateInputRequest {
   }
 
 
+  public RoutesV2CreateInputRequest version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -163,12 +187,13 @@ public class RoutesV2CreateInputRequest {
     return Objects.equals(this.config, routesV2CreateInputRequest.config) &&
         Objects.equals(this.description, routesV2CreateInputRequest.description) &&
         Objects.equals(this.name, routesV2CreateInputRequest.name) &&
-        Objects.equals(this.type, routesV2CreateInputRequest.type);
+        Objects.equals(this.type, routesV2CreateInputRequest.type) &&
+        Objects.equals(this.version, routesV2CreateInputRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, type);
+    return Objects.hash(config, description, name, type, version);
   }
 
   @Override
@@ -179,6 +204,7 @@ public class RoutesV2CreateInputRequest {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -197,7 +223,7 @@ public class RoutesV2CreateInputRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "type", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -19,6 +19,7 @@ export class RoutesV2CreateOutputRequest {
     'name'?: string;
     'promiseId'?: string;
     'type'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -53,6 +54,12 @@ export class RoutesV2CreateOutputRequest {
             "name": "type",
             "baseName": "type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.secret_processesor_output_config import SecretProcessesorOutputConfig
 from typing import Optional, Set
@@ -34,7 +34,8 @@ class RoutesV2CreateOutputRequest(BaseModel):
     name: Optional[StrictStr] = None
     promise_id: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "name", "promise_id", "type"]
+    version: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["config", "description", "name", "promise_id", "type", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,7 +95,8 @@ class RoutesV2CreateOutputRequest(BaseModel):
             "description": obj.get("description"),
             "name": obj.get("name"),
             "promise_id": obj.get("promise_id"),
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "version": obj.get("version")
         })
         return _obj
 

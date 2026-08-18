@@ -18,6 +18,7 @@ export class RoutesV2CreateInputRequest {
     'description'?: string;
     'name'?: string;
     'type'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -46,6 +47,12 @@ export class RoutesV2CreateInputRequest {
             "name": "type",
             "baseName": "type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

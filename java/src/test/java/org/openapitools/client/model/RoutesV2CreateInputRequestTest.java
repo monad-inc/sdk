@@ -70,4 +70,12 @@ public class RoutesV2CreateInputRequestTest {
         // TODO: test type
     }
 
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
+    }
+
 }

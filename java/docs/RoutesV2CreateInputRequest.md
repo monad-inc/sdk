@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

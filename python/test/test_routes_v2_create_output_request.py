@@ -46,7 +46,8 @@ class TestRoutesV2CreateOutputRequest(unittest.TestCase):
                 description = '',
                 name = '',
                 promise_id = '',
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return RoutesV2CreateOutputRequest(

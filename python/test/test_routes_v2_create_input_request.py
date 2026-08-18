@@ -45,7 +45,8 @@ class TestRoutesV2CreateInputRequest(unittest.TestCase):
                         }, ),
                 description = '',
                 name = '',
-                type = ''
+                type = '',
+                version = 56
             )
         else:
             return RoutesV2CreateInputRequest(

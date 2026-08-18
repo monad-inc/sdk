@@ -78,4 +78,12 @@ public class RoutesV2CreateOutputRequestTest {
         // TODO: test type
     }
 
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
+    }
+
 }
