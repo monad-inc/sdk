@@ -90,7 +90,6 @@ Name | Type | Description | Notes
 **bucket_name** | **str** | The name of the Google Cloud Storage bucket to use | [optional] 
 **auth_type** | [**CommonAuthType**](CommonAuthType.md) |  | [optional] 
 **email** | **str** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
-**user_id** | **str** | ID of the user to harvest audit logs for | 
 **alert_type** | **str** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **embed** | **str** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **primary_entity_type** | **str** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 

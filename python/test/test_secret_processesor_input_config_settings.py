@@ -190,7 +190,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 bucket_name = '',
                 auth_type = 'personal_access_token',
                 email = '',
-                user_id = '',
                 alert_type = '',
                 embed = '',
                 primary_entity_type = '',
@@ -328,7 +327,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     value = '', ),
                 location = '',
                 project_id = '',
-                user_id = '',
                 project_ids = [
                     ''
                     ],

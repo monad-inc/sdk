@@ -59,7 +59,6 @@ type SecretProcessesorInputConfigSettings struct {
 	GkeAuditLogsSettingsConfig *GkeAuditLogsSettingsConfig
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	GoogleWorkspaceSettingsConfig *GoogleWorkspaceSettingsConfig
-	GreenhouseAuditLogsSettingsConfig *GreenhouseAuditLogsSettingsConfig
 	IndividualAlertsSettingsConfig *IndividualAlertsSettingsConfig
 	InspectorSettingsConfig *InspectorSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
@@ -73,7 +72,6 @@ type SecretProcessesorInputConfigSettings struct {
 	OfflineenrollmentlogsSettingsConfig *OfflineenrollmentlogsSettingsConfig
 	OperationLogsSettingsConfig *OperationLogsSettingsConfig
 	OrgAuditLogsSettingsConfig *OrgAuditLogsSettingsConfig
-	OwnbackupAccountEventsSettingsConfig *OwnbackupAccountEventsSettingsConfig
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	PlaidWebhooksSettingsConfig *PlaidWebhooksSettingsConfig
 	RedshiftAuditLogsSettingsConfig *RedshiftAuditLogsSettingsConfig
@@ -376,13 +374,6 @@ func GoogleWorkspaceSettingsConfigAsSecretProcessesorInputConfigSettings(v *Goog
 	}
 }
 
-// GreenhouseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns GreenhouseAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func GreenhouseAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *GreenhouseAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		GreenhouseAuditLogsSettingsConfig: v,
-	}
-}
-
 // IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns IndividualAlertsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *IndividualAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -471,13 +462,6 @@ func OperationLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Operat
 func OrgAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OrgAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		OrgAuditLogsSettingsConfig: v,
-	}
-}
-
-// OwnbackupAccountEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns OwnbackupAccountEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func OwnbackupAccountEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *OwnbackupAccountEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		OwnbackupAccountEventsSettingsConfig: v,
 	}
 }
 
@@ -1306,23 +1290,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GoogleWorkspaceSettingsConfig = nil
 	}
 
-	// try to unmarshal data into GreenhouseAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.GreenhouseAuditLogsSettingsConfig)
-	if err == nil {
-		jsonGreenhouseAuditLogsSettingsConfig, _ := json.Marshal(dst.GreenhouseAuditLogsSettingsConfig)
-		if string(jsonGreenhouseAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.GreenhouseAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.GreenhouseAuditLogsSettingsConfig); err != nil {
-				dst.GreenhouseAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.GreenhouseAuditLogsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into IndividualAlertsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.IndividualAlertsSettingsConfig)
 	if err == nil {
@@ -1542,23 +1509,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.OrgAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into OwnbackupAccountEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.OwnbackupAccountEventsSettingsConfig)
-	if err == nil {
-		jsonOwnbackupAccountEventsSettingsConfig, _ := json.Marshal(dst.OwnbackupAccountEventsSettingsConfig)
-		if string(jsonOwnbackupAccountEventsSettingsConfig) == "{}" { // empty struct
-			dst.OwnbackupAccountEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OwnbackupAccountEventsSettingsConfig); err != nil {
-				dst.OwnbackupAccountEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OwnbackupAccountEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into PaloAltoDataSecurityAlertsSettingsConfig
@@ -1943,7 +1893,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GkeAuditLogsSettingsConfig = nil
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.GoogleWorkspaceSettingsConfig = nil
-		dst.GreenhouseAuditLogsSettingsConfig = nil
 		dst.IndividualAlertsSettingsConfig = nil
 		dst.InspectorSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
@@ -1957,7 +1906,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.OfflineenrollmentlogsSettingsConfig = nil
 		dst.OperationLogsSettingsConfig = nil
 		dst.OrgAuditLogsSettingsConfig = nil
-		dst.OwnbackupAccountEventsSettingsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.PlaidWebhooksSettingsConfig = nil
 		dst.RedshiftAuditLogsSettingsConfig = nil
@@ -1983,16 +1931,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
         } else {
@@ -2523,10 +2461,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.GoogleWorkspaceSettingsConfig)
 	}
 
-	if src.GreenhouseAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.GreenhouseAuditLogsSettingsConfig)
-	}
-
 	if src.IndividualAlertsSettingsConfig != nil {
 		return json.Marshal(&src.IndividualAlertsSettingsConfig)
 	}
@@ -2577,10 +2511,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.OrgAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.OrgAuditLogsSettingsConfig)
-	}
-
-	if src.OwnbackupAccountEventsSettingsConfig != nil {
-		return json.Marshal(&src.OwnbackupAccountEventsSettingsConfig)
 	}
 
 	if src.PaloAltoDataSecurityAlertsSettingsConfig != nil {
@@ -2831,10 +2761,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.GoogleWorkspaceSettingsConfig
 	}
 
-	if obj.GreenhouseAuditLogsSettingsConfig != nil {
-		return obj.GreenhouseAuditLogsSettingsConfig
-	}
-
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return obj.IndividualAlertsSettingsConfig
 	}
@@ -2885,10 +2811,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.OrgAuditLogsSettingsConfig != nil {
 		return obj.OrgAuditLogsSettingsConfig
-	}
-
-	if obj.OwnbackupAccountEventsSettingsConfig != nil {
-		return obj.OwnbackupAccountEventsSettingsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {
@@ -3137,10 +3059,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.GoogleWorkspaceSettingsConfig
 	}
 
-	if obj.GreenhouseAuditLogsSettingsConfig != nil {
-		return *obj.GreenhouseAuditLogsSettingsConfig
-	}
-
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return *obj.IndividualAlertsSettingsConfig
 	}
@@ -3191,10 +3109,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.OrgAuditLogsSettingsConfig != nil {
 		return *obj.OrgAuditLogsSettingsConfig
-	}
-
-	if obj.OwnbackupAccountEventsSettingsConfig != nil {
-		return *obj.OwnbackupAccountEventsSettingsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSettingsConfig != nil {

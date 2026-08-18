@@ -21,10 +21,8 @@ Name | Type | Description | Notes
 **access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**harvest_api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**refresh_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | 

@@ -187,8 +187,6 @@ import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSec
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
 import { GoogleWorkspaceSecretsConfig } from '../models/GoogleWorkspaceSecretsConfig';
 import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
-import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
-import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
@@ -374,8 +372,6 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
 import { OutputsConnectorMeta } from '../models/OutputsConnectorMeta';
-import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
-import { OwnbackupAccountEventsSettingsConfig } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';

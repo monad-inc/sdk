@@ -20,10 +20,8 @@ Name | Type | Description | Notes
 **AccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**HarvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**RefreshToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Secret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Token** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -34,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, apiSecret ModelsSecret, harvestApiKey ModelsSecret, refreshToken ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, apiSecret ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -389,26 +387,6 @@ SetOauthToken sets OauthToken field to given value.
 
 HasOauthToken returns a boolean if a field has been set.
 
-### GetHarvestApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetHarvestApiKey() ModelsSecret`
-
-GetHarvestApiKey returns the HarvestApiKey field if non-nil, zero value otherwise.
-
-### GetHarvestApiKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetHarvestApiKeyOk() (*ModelsSecret, bool)`
-
-GetHarvestApiKeyOk returns a tuple with the HarvestApiKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHarvestApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetHarvestApiKey(v ModelsSecret)`
-
-SetHarvestApiKey sets HarvestApiKey field to given value.
-
-
 ### GetGithubAppPrivateKey
 
 `func (o *SecretProcessesorInputConfigSecrets) GetGithubAppPrivateKey() ModelsSecret`
@@ -458,26 +436,6 @@ SetPersonalAccessToken sets PersonalAccessToken field to given value.
 `func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
 
 HasPersonalAccessToken returns a boolean if a field has been set.
-
-### GetRefreshToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetRefreshToken() ModelsSecret`
-
-GetRefreshToken returns the RefreshToken field if non-nil, zero value otherwise.
-
-### GetRefreshTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetRefreshTokenOk() (*ModelsSecret, bool)`
-
-GetRefreshTokenOk returns a tuple with the RefreshToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefreshToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetRefreshToken(v ModelsSecret)`
-
-SetRefreshToken sets RefreshToken field to given value.
-
 
 ### GetSecret
 

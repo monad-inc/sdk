@@ -23,10 +23,8 @@
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**harvestApiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**refreshToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**secret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  |

@@ -55,7 +55,6 @@ import org.openapitools.client.model.FullScansSecretsConfig;
 import org.openapitools.client.model.GkeAuditLogsSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSecretsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSecretsConfig;
-import org.openapitools.client.model.GreenhouseAuditLogsSecretsConfig;
 import org.openapitools.client.model.IndividualAlertsSecretsConfig;
 import org.openapitools.client.model.InspectorSecretsConfig;
 import org.openapitools.client.model.IssuesSecretsConfig;
@@ -69,7 +68,6 @@ import org.openapitools.client.model.ObjectStorageInputSecretsConfig;
 import org.openapitools.client.model.OfflineenrollmentlogsSecretsConfig;
 import org.openapitools.client.model.OperationLogsSecretsConfig;
 import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
-import org.openapitools.client.model.OwnbackupAccountEventsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
 import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
 import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
@@ -233,14 +231,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'harvestApiKey'
-     */
-    @Test
-    public void harvestApiKeyTest() {
-        // TODO: test harvestApiKey
-    }
-
-    /**
      * Test the property 'githubAppPrivateKey'
      */
     @Test
@@ -254,14 +244,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void personalAccessTokenTest() {
         // TODO: test personalAccessToken
-    }
-
-    /**
-     * Test the property 'refreshToken'
-     */
-    @Test
-    public void refreshTokenTest() {
-        // TODO: test refreshToken
     }
 
     /**

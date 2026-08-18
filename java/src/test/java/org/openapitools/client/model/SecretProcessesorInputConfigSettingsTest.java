@@ -68,7 +68,6 @@ import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookSettingsCon
 import org.openapitools.client.model.GkeAuditLogsSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
-import org.openapitools.client.model.GreenhouseAuditLogsSettingsConfig;
 import org.openapitools.client.model.IndividualAlertsSettingsConfig;
 import org.openapitools.client.model.InspectorSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
@@ -85,7 +84,6 @@ import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
 import org.openapitools.client.model.OfflineenrollmentlogsSettingsConfig;
 import org.openapitools.client.model.OperationLogsSettingsConfig;
 import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
-import org.openapitools.client.model.OwnbackupAccountEventsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
 import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
@@ -819,14 +817,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void emailTest() {
         // TODO: test email
-    }
-
-    /**
-     * Test the property 'userId'
-     */
-    @Test
-    public void userIdTest() {
-        // TODO: test userId
     }
 
     /**

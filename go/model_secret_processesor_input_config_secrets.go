@@ -54,7 +54,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	GkeAuditLogsSecretsConfig *GkeAuditLogsSecretsConfig
 	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
 	GoogleWorkspaceSecretsConfig *GoogleWorkspaceSecretsConfig
-	GreenhouseAuditLogsSecretsConfig *GreenhouseAuditLogsSecretsConfig
 	IndividualAlertsSecretsConfig *IndividualAlertsSecretsConfig
 	InspectorSecretsConfig *InspectorSecretsConfig
 	IssuesSecretsConfig *IssuesSecretsConfig
@@ -67,7 +66,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	OfflineenrollmentlogsSecretsConfig *OfflineenrollmentlogsSecretsConfig
 	OperationLogsSecretsConfig *OperationLogsSecretsConfig
 	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
-	OwnbackupAccountEventsSecretsConfig *OwnbackupAccountEventsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
 	PlaidWebhooksSecretsConfig *PlaidWebhooksSecretsConfig
 	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
@@ -333,13 +331,6 @@ func GoogleWorkspaceSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Google
 	}
 }
 
-// GreenhouseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns GreenhouseAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func GreenhouseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *GreenhouseAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		GreenhouseAuditLogsSecretsConfig: v,
-	}
-}
-
 // IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns IndividualAlertsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func IndividualAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *IndividualAlertsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -421,13 +412,6 @@ func OperationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Operatio
 func OrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OrgAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		OrgAuditLogsSecretsConfig: v,
-	}
-}
-
-// OwnbackupAccountEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OwnbackupAccountEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func OwnbackupAccountEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OwnbackupAccountEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		OwnbackupAccountEventsSecretsConfig: v,
 	}
 }
 
@@ -1157,23 +1141,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.GoogleWorkspaceSecretsConfig = nil
 	}
 
-	// try to unmarshal data into GreenhouseAuditLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.GreenhouseAuditLogsSecretsConfig)
-	if err == nil {
-		jsonGreenhouseAuditLogsSecretsConfig, _ := json.Marshal(dst.GreenhouseAuditLogsSecretsConfig)
-		if string(jsonGreenhouseAuditLogsSecretsConfig) == "{}" { // empty struct
-			dst.GreenhouseAuditLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.GreenhouseAuditLogsSecretsConfig); err != nil {
-				dst.GreenhouseAuditLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.GreenhouseAuditLogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into IndividualAlertsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.IndividualAlertsSecretsConfig)
 	if err == nil {
@@ -1376,23 +1343,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.OrgAuditLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into OwnbackupAccountEventsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.OwnbackupAccountEventsSecretsConfig)
-	if err == nil {
-		jsonOwnbackupAccountEventsSecretsConfig, _ := json.Marshal(dst.OwnbackupAccountEventsSecretsConfig)
-		if string(jsonOwnbackupAccountEventsSecretsConfig) == "{}" { // empty struct
-			dst.OwnbackupAccountEventsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OwnbackupAccountEventsSecretsConfig); err != nil {
-				dst.OwnbackupAccountEventsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OwnbackupAccountEventsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into PaloAltoDataSecurityAlertsSecretsConfig
@@ -1738,7 +1688,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.GkeAuditLogsSecretsConfig = nil
 		dst.GoogleCloudStorageSecretsConfig = nil
 		dst.GoogleWorkspaceSecretsConfig = nil
-		dst.GreenhouseAuditLogsSecretsConfig = nil
 		dst.IndividualAlertsSecretsConfig = nil
 		dst.InspectorSecretsConfig = nil
 		dst.IssuesSecretsConfig = nil
@@ -1751,7 +1700,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OfflineenrollmentlogsSecretsConfig = nil
 		dst.OperationLogsSecretsConfig = nil
 		dst.OrgAuditLogsSecretsConfig = nil
-		dst.OwnbackupAccountEventsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 		dst.PlaidWebhooksSecretsConfig = nil
 		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
@@ -1775,16 +1723,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
         } else {
@@ -2255,10 +2193,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.GoogleWorkspaceSecretsConfig)
 	}
 
-	if src.GreenhouseAuditLogsSecretsConfig != nil {
-		return json.Marshal(&src.GreenhouseAuditLogsSecretsConfig)
-	}
-
 	if src.IndividualAlertsSecretsConfig != nil {
 		return json.Marshal(&src.IndividualAlertsSecretsConfig)
 	}
@@ -2305,10 +2239,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.OrgAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.OrgAuditLogsSecretsConfig)
-	}
-
-	if src.OwnbackupAccountEventsSecretsConfig != nil {
-		return json.Marshal(&src.OwnbackupAccountEventsSecretsConfig)
 	}
 
 	if src.PaloAltoDataSecurityAlertsSecretsConfig != nil {
@@ -2531,10 +2461,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.GoogleWorkspaceSecretsConfig
 	}
 
-	if obj.GreenhouseAuditLogsSecretsConfig != nil {
-		return obj.GreenhouseAuditLogsSecretsConfig
-	}
-
 	if obj.IndividualAlertsSecretsConfig != nil {
 		return obj.IndividualAlertsSecretsConfig
 	}
@@ -2581,10 +2507,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.OrgAuditLogsSecretsConfig != nil {
 		return obj.OrgAuditLogsSecretsConfig
-	}
-
-	if obj.OwnbackupAccountEventsSecretsConfig != nil {
-		return obj.OwnbackupAccountEventsSecretsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSecretsConfig != nil {
@@ -2805,10 +2727,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.GoogleWorkspaceSecretsConfig
 	}
 
-	if obj.GreenhouseAuditLogsSecretsConfig != nil {
-		return *obj.GreenhouseAuditLogsSecretsConfig
-	}
-
 	if obj.IndividualAlertsSecretsConfig != nil {
 		return *obj.IndividualAlertsSecretsConfig
 	}
@@ -2855,10 +2773,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.OrgAuditLogsSecretsConfig != nil {
 		return *obj.OrgAuditLogsSecretsConfig
-	}
-
-	if obj.OwnbackupAccountEventsSecretsConfig != nil {
-		return *obj.OwnbackupAccountEventsSecretsConfig
 	}
 
 	if obj.PaloAltoDataSecurityAlertsSecretsConfig != nil {

@@ -3203,42 +3203,6 @@
                 },
                 "type": "object"
             },
-            "greenhouse_audit_logs.SecretsConfig": {
-                "description": "Greenhouse Audit Log secrets",
-                "properties": {
-                    "harvest_api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "harvest_api_key"
-                ],
-                "type": "object"
-            },
-            "greenhouse_audit_logs.SettingsConfig": {
-                "description": "Greenhouse Audit Log settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    },
-                    "user_id": {
-                        "description": "ID of the user to harvest audit logs for",
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "user_id"
-                ],
-                "type": "object"
-            },
             "http.Headers": {
                 "properties": {
                     "header_key": {
@@ -7445,49 +7409,6 @@
                 },
                 "type": "object"
             },
-            "ownbackup_account_events.SecretsConfig": {
-                "description": "Ownbackup Audit Logs secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "refresh_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "client_id",
-                    "refresh_token"
-                ],
-                "type": "object"
-            },
-            "ownbackup_account_events.SettingsConfig": {
-                "description": "Ownbackup Audit Logs settings",
-                "properties": {
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "region": {
-                        "description": "Region of the OwnBackup instance",
-                        "enum": [
-                            "app1",
-                            "emea1",
-                            "uk1",
-                            "usgov2",
-                            "hipaa1"
-                        ],
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "region"
-                ],
-                "type": "object"
-            },
             "pagerduty.SecretsConfig": {
                 "description": "PagerDuty Output Secrets",
                 "properties": {
@@ -10373,9 +10294,6 @@
                                 "$ref": "#/components/schemas/google_workspace.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/greenhouse_audit_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/individual_alerts.SecretsConfig"
                             },
                             {
@@ -10413,9 +10331,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/org_audit_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/ownbackup_account_events.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SecretsConfig"
@@ -10601,9 +10516,6 @@
                                 "$ref": "#/components/schemas/google_workspace.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/greenhouse_audit_logs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/individual_alerts.SettingsConfig"
                             },
                             {
@@ -10641,9 +10553,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/org_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/ownbackup_account_events.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/palo_alto_data_security_alerts.SettingsConfig"

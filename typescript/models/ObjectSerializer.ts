@@ -183,8 +183,6 @@ export * from '../models/GoogleCloudStorageSecretsConfig';
 export * from '../models/GoogleCloudStorageSettingsConfig';
 export * from '../models/GoogleWorkspaceSecretsConfig';
 export * from '../models/GoogleWorkspaceSettingsConfig';
-export * from '../models/GreenhouseAuditLogsSecretsConfig';
-export * from '../models/GreenhouseAuditLogsSettingsConfig';
 export * from '../models/HttpHeaders';
 export * from '../models/HttpPayloadStructure';
 export * from '../models/HttpSecretsConfig';
@@ -370,8 +368,6 @@ export * from '../models/OperationLogsSettingsConfig';
 export * from '../models/OrgAuditLogsSecretsConfig';
 export * from '../models/OrgAuditLogsSettingsConfig';
 export * from '../models/OutputsConnectorMeta';
-export * from '../models/OwnbackupAccountEventsSecretsConfig';
-export * from '../models/OwnbackupAccountEventsSettingsConfig';
 export * from '../models/PagerdutyAlertsConfig';
 export * from '../models/PagerdutyEventType';
 export * from '../models/PagerdutySecretsConfig';
@@ -814,8 +810,6 @@ import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSec
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
 import { GoogleWorkspaceSecretsConfig } from '../models/GoogleWorkspaceSecretsConfig';
 import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
-import { GreenhouseAuditLogsSecretsConfig } from '../models/GreenhouseAuditLogsSecretsConfig';
-import { GreenhouseAuditLogsSettingsConfig } from '../models/GreenhouseAuditLogsSettingsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';
@@ -1001,8 +995,6 @@ import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConf
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig         } from '../models/OrgAuditLogsSettingsConfig';
 import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
-import { OwnbackupAccountEventsSecretsConfig } from '../models/OwnbackupAccountEventsSecretsConfig';
-import { OwnbackupAccountEventsSettingsConfig , OwnbackupAccountEventsSettingsConfigRegionEnum    } from '../models/OwnbackupAccountEventsSettingsConfig';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
@@ -1320,7 +1312,6 @@ let enumsMap: Set<string> = new Set<string>([
     "ObjectStorageInputSettingsConfigFormatEnum",
     "ObjectStorageInputSettingsConfigPartitionFormatEnum",
     "OpensearchAuthMode",
-    "OwnbackupAccountEventsSettingsConfigRegionEnum",
     "PagerdutyEventType",
     "RedshiftAuditLogsSettingsConfigLogTypeEnum",
     "ScannerAuthConfigTypeEnum",
@@ -1535,8 +1526,6 @@ let typeMap: {[index: string]: any} = {
     "GoogleCloudStorageSettingsConfig": GoogleCloudStorageSettingsConfig,
     "GoogleWorkspaceSecretsConfig": GoogleWorkspaceSecretsConfig,
     "GoogleWorkspaceSettingsConfig": GoogleWorkspaceSettingsConfig,
-    "GreenhouseAuditLogsSecretsConfig": GreenhouseAuditLogsSecretsConfig,
-    "GreenhouseAuditLogsSettingsConfig": GreenhouseAuditLogsSettingsConfig,
     "HttpHeaders": HttpHeaders,
     "HttpSecretsConfig": HttpSecretsConfig,
     "HttpSettingsConfig": HttpSettingsConfig,
@@ -1699,8 +1688,6 @@ let typeMap: {[index: string]: any} = {
     "OrgAuditLogsSecretsConfig": OrgAuditLogsSecretsConfig,
     "OrgAuditLogsSettingsConfig": OrgAuditLogsSettingsConfig,
     "OutputsConnectorMeta": OutputsConnectorMeta,
-    "OwnbackupAccountEventsSecretsConfig": OwnbackupAccountEventsSecretsConfig,
-    "OwnbackupAccountEventsSettingsConfig": OwnbackupAccountEventsSettingsConfig,
     "PagerdutyAlertsConfig": PagerdutyAlertsConfig,
     "PagerdutySecretsConfig": PagerdutySecretsConfig,
     "PagerdutySettingsConfig": PagerdutySettingsConfig,

@@ -89,7 +89,6 @@ Name | Type | Description | Notes
 **BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
 **AuthType** | Pointer to [**CommonAuthType**](CommonAuthType.md) |  | [optional] 
 **Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
-**UserId** | **string** | ID of the user to harvest audit logs for | 
 **AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
@@ -151,7 +150,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, userId string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2180,26 +2179,6 @@ SetEmail sets Email field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
-
-### GetUserId
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserId() string`
-
-GetUserId returns the UserId field if non-nil, zero value otherwise.
-
-### GetUserIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUserIdOk() (*string, bool)`
-
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserId
-
-`func (o *SecretProcessesorInputConfigSettings) SetUserId(v string)`
-
-SetUserId sets UserId field to given value.
-
 
 ### GetAlertType
 

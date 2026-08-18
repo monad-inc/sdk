@@ -255,8 +255,6 @@ __all__ = [
     "GoogleCloudStorageSettingsConfig",
     "GoogleWorkspaceSecretsConfig",
     "GoogleWorkspaceSettingsConfig",
-    "GreenhouseAuditLogsSecretsConfig",
-    "GreenhouseAuditLogsSettingsConfig",
     "HttpHeaders",
     "HttpPayloadStructure",
     "HttpSecretsConfig",
@@ -442,8 +440,6 @@ __all__ = [
     "OrgAuditLogsSecretsConfig",
     "OrgAuditLogsSettingsConfig",
     "OutputsConnectorMeta",
-    "OwnbackupAccountEventsSecretsConfig",
-    "OwnbackupAccountEventsSettingsConfig",
     "PagerdutyAlertsConfig",
     "PagerdutyEventType",
     "PagerdutySecretsConfig",
@@ -943,8 +939,6 @@ from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageS
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig as GoogleCloudStorageSettingsConfig
 from monad.models.google_workspace_secrets_config import GoogleWorkspaceSecretsConfig as GoogleWorkspaceSecretsConfig
 from monad.models.google_workspace_settings_config import GoogleWorkspaceSettingsConfig as GoogleWorkspaceSettingsConfig
-from monad.models.greenhouse_audit_logs_secrets_config import GreenhouseAuditLogsSecretsConfig as GreenhouseAuditLogsSecretsConfig
-from monad.models.greenhouse_audit_logs_settings_config import GreenhouseAuditLogsSettingsConfig as GreenhouseAuditLogsSettingsConfig
 from monad.models.http_headers import HttpHeaders as HttpHeaders
 from monad.models.http_payload_structure import HttpPayloadStructure as HttpPayloadStructure
 from monad.models.http_secrets_config import HttpSecretsConfig as HttpSecretsConfig
@@ -1130,8 +1124,6 @@ from monad.models.operation_logs_settings_config import OperationLogsSettingsCon
 from monad.models.org_audit_logs_secrets_config import OrgAuditLogsSecretsConfig as OrgAuditLogsSecretsConfig
 from monad.models.org_audit_logs_settings_config import OrgAuditLogsSettingsConfig as OrgAuditLogsSettingsConfig
 from monad.models.outputs_connector_meta import OutputsConnectorMeta as OutputsConnectorMeta
-from monad.models.ownbackup_account_events_secrets_config import OwnbackupAccountEventsSecretsConfig as OwnbackupAccountEventsSecretsConfig
-from monad.models.ownbackup_account_events_settings_config import OwnbackupAccountEventsSettingsConfig as OwnbackupAccountEventsSettingsConfig
 from monad.models.pagerduty_alerts_config import PagerdutyAlertsConfig as PagerdutyAlertsConfig
 from monad.models.pagerduty_event_type import PagerdutyEventType as PagerdutyEventType
 from monad.models.pagerduty_secrets_config import PagerdutySecretsConfig as PagerdutySecretsConfig
