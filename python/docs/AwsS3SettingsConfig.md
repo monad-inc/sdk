@@ -6,7 +6,7 @@ AWS S3 settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backfill_start_time** | **str** | Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental. | [optional] 
+**backfill_start_time** | **str** | Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. All syncs thereafter are incremental. | [optional] 
 **bucket** | **str** | Name of the S3 bucket. | 
 **compression** | **str** | Compression format of the S3 objects. | 
 **format** | **str** | File format of the S3 objects. | 

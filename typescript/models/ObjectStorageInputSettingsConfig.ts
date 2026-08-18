@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class ObjectStorageInputSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
+    */
+    'backfillStartTime'?: string;
+    /**
     * Name of the storage bucket
     */
     'bucket': string;
@@ -62,6 +66,12 @@ export class ObjectStorageInputSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "bucket",
             "baseName": "bucket",

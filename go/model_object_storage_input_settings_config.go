@@ -22,6 +22,8 @@ var _ MappedNullable = &ObjectStorageInputSettingsConfig{}
 
 // ObjectStorageInputSettingsConfig Object storage settings
 type ObjectStorageInputSettingsConfig struct {
+	// Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// Name of the storage bucket
 	Bucket string `json:"bucket"`
 	// Compression format of the objects
@@ -65,6 +67,38 @@ func NewObjectStorageInputSettingsConfig(bucket string, compression string, endp
 func NewObjectStorageInputSettingsConfigWithDefaults() *ObjectStorageInputSettingsConfig {
 	this := ObjectStorageInputSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *ObjectStorageInputSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ObjectStorageInputSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *ObjectStorageInputSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *ObjectStorageInputSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetBucket returns the Bucket field value
@@ -365,6 +399,9 @@ func (o ObjectStorageInputSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ObjectStorageInputSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	toSerialize["bucket"] = o.Bucket
 	toSerialize["compression"] = o.Compression
 	toSerialize["endpoint"] = o.Endpoint

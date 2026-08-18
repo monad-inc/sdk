@@ -981,7 +981,7 @@ import { MutateValueWhereKeyEqArgumentsConfig } from '../models/MutateValueWhere
 import { NextGenSiemSecretsConfig } from '../models/NextGenSiemSecretsConfig';
 import { NextGenSiemSettingsConfig } from '../models/NextGenSiemSettingsConfig';
 import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
-import { ObjectStorageInputSettingsConfig , ObjectStorageInputSettingsConfigCompressionEnum   , ObjectStorageInputSettingsConfigFormatEnum  , ObjectStorageInputSettingsConfigPartitionFormatEnum        } from '../models/ObjectStorageInputSettingsConfig';
+import { ObjectStorageInputSettingsConfig  , ObjectStorageInputSettingsConfigCompressionEnum   , ObjectStorageInputSettingsConfigFormatEnum  , ObjectStorageInputSettingsConfigPartitionFormatEnum        } from '../models/ObjectStorageInputSettingsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
 import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';

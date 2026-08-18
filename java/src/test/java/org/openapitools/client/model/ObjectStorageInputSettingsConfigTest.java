@@ -38,6 +38,14 @@ public class ObjectStorageInputSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'bucket'
      */
     @Test

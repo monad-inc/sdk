@@ -8,6 +8,7 @@ Google Cloud Storage settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. |  [optional] |
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
 |**compression** | **String** | Compression format of the Google Cloud Storage objects. |  [optional] |
 |**format** | **String** | The format of the files in the bucket, e.g., \&quot;json\&quot;, \&quot;csv\&quot;, etc. |  [optional] |

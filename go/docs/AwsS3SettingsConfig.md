@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental. | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. All syncs thereafter are incremental. | [optional] 
 **Bucket** | **string** | Name of the S3 bucket. | 
 **Compression** | **string** | Compression format of the S3 objects. | 
 **Format** | **string** | File format of the S3 objects. | 

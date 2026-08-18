@@ -28,6 +28,7 @@ class ObjectStorageInputSettingsConfig(BaseModel):
     """
     Object storage settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.")
     bucket: StrictStr = Field(description="Name of the storage bucket")
     compression: StrictStr = Field(description="Compression format of the objects")
     endpoint: StrictStr = Field(description="Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com)")
@@ -38,7 +39,7 @@ class ObjectStorageInputSettingsConfig(BaseModel):
     region: Optional[StrictStr] = Field(default=None, description="Optional region for the object storage service. This is often required for services like AWS S3.")
     skip_ssl_verification: Optional[StrictBool] = Field(default=None, description="Skip SSL verification for self-signed certificates")
     use_path_style: Optional[StrictBool] = Field(default=None, description="Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true.")
-    __properties: ClassVar[List[str]] = ["bucket", "compression", "endpoint", "format", "partition_format", "prefix", "record_location", "region", "skip_ssl_verification", "use_path_style"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket", "compression", "endpoint", "format", "partition_format", "prefix", "record_location", "region", "skip_ssl_verification", "use_path_style"]
 
     @field_validator('compression')
     def compression_validate_enum(cls, value):
@@ -115,6 +116,7 @@ class ObjectStorageInputSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "bucket": obj.get("bucket"),
             "compression": obj.get("compression"),
             "endpoint": obj.get("endpoint"),

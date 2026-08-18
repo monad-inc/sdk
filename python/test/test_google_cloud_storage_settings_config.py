@@ -36,6 +36,7 @@ class TestGoogleCloudStorageSettingsConfig(unittest.TestCase):
         model = GoogleCloudStorageSettingsConfig()
         if include_optional:
             return GoogleCloudStorageSettingsConfig(
+                backfill_start_time = '',
                 bucket_name = '',
                 compression = '',
                 format = '',

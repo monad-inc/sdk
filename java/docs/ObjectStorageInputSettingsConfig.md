@@ -8,6 +8,7 @@ Object storage settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**backfillStartTime** | **String** | Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. |  [optional] |
 |**bucket** | **String** | Name of the storage bucket |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  |

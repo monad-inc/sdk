@@ -38,6 +38,14 @@ public class GoogleCloudStorageSettingsConfigTest {
     }
 
     /**
+     * Test the property 'backfillStartTime'
+     */
+    @Test
+    public void backfillStartTimeTest() {
+        // TODO: test backfillStartTime
+    }
+
+    /**
      * Test the property 'bucketName'
      */
     @Test

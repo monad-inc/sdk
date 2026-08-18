@@ -50,6 +50,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class GoogleCloudStorageSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_BUCKET_NAME = "bucket_name";
   @SerializedName(SERIALIZED_NAME_BUCKET_NAME)
   @javax.annotation.Nullable
@@ -87,6 +92,25 @@ public class GoogleCloudStorageSettingsConfig {
 
   public GoogleCloudStorageSettingsConfig() {
   }
+
+  public GoogleCloudStorageSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
 
   public GoogleCloudStorageSettingsConfig bucketName(@javax.annotation.Nullable String bucketName) {
     this.bucketName = bucketName;
@@ -231,7 +255,8 @@ public class GoogleCloudStorageSettingsConfig {
       return false;
     }
     GoogleCloudStorageSettingsConfig googleCloudStorageSettingsConfig = (GoogleCloudStorageSettingsConfig) o;
-    return Objects.equals(this.bucketName, googleCloudStorageSettingsConfig.bucketName) &&
+    return Objects.equals(this.backfillStartTime, googleCloudStorageSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.bucketName, googleCloudStorageSettingsConfig.bucketName) &&
         Objects.equals(this.compression, googleCloudStorageSettingsConfig.compression) &&
         Objects.equals(this.format, googleCloudStorageSettingsConfig.format) &&
         Objects.equals(this.partitionFormat, googleCloudStorageSettingsConfig.partitionFormat) &&
@@ -242,13 +267,14 @@ public class GoogleCloudStorageSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucketName, compression, format, partitionFormat, prefix, projectId, recordLocation);
+    return Objects.hash(backfillStartTime, bucketName, compression, format, partitionFormat, prefix, projectId, recordLocation);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GoogleCloudStorageSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
@@ -274,7 +300,7 @@ public class GoogleCloudStorageSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bucket_name", "compression", "format", "partition_format", "prefix", "project_id", "record_location"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "bucket_name", "compression", "format", "partition_format", "prefix", "project_id", "record_location"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -301,6 +327,9 @@ public class GoogleCloudStorageSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if ((jsonObj.get("bucket_name") != null && !jsonObj.get("bucket_name").isJsonNull()) && !jsonObj.get("bucket_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_name").toString()));
       }

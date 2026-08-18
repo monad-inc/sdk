@@ -28,6 +28,7 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
     """
     Google Cloud Storage settings
     """ # noqa: E501
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.")
     bucket_name: Optional[StrictStr] = Field(default=None, description="The name of the Google Cloud Storage bucket to use")
     compression: Optional[StrictStr] = Field(default=None, description="Compression format of the Google Cloud Storage objects.")
     format: Optional[StrictStr] = Field(default=None, description="The format of the files in the bucket, e.g., \"json\", \"csv\", etc.")
@@ -35,7 +36,7 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
     prefix: Optional[StrictStr] = Field(default=None, description="The prefix to use when reading from the bucket. This is used to filter objects in the bucket.")
     project_id: Optional[StrictStr] = Field(default=None, description="The Google Cloud project ID to use")
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
-    __properties: ClassVar[List[str]] = ["bucket_name", "compression", "format", "partition_format", "prefix", "project_id", "record_location"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket_name", "compression", "format", "partition_format", "prefix", "project_id", "record_location"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,6 +89,7 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "backfill_start_time": obj.get("backfill_start_time"),
             "bucket_name": obj.get("bucket_name"),
             "compression": obj.get("compression"),
             "format": obj.get("format"),

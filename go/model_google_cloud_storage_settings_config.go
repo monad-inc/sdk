@@ -20,6 +20,8 @@ var _ MappedNullable = &GoogleCloudStorageSettingsConfig{}
 
 // GoogleCloudStorageSettingsConfig Google Cloud Storage settings
 type GoogleCloudStorageSettingsConfig struct {
+	// Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
+	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The name of the Google Cloud Storage bucket to use
 	BucketName *string `json:"bucket_name,omitempty"`
 	// Compression format of the Google Cloud Storage objects.
@@ -51,6 +53,38 @@ func NewGoogleCloudStorageSettingsConfig() *GoogleCloudStorageSettingsConfig {
 func NewGoogleCloudStorageSettingsConfigWithDefaults() *GoogleCloudStorageSettingsConfig {
 	this := GoogleCloudStorageSettingsConfig{}
 	return &this
+}
+
+// GetBackfillStartTime returns the BackfillStartTime field value if set, zero value otherwise.
+func (o *GoogleCloudStorageSettingsConfig) GetBackfillStartTime() string {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		var ret string
+		return ret
+	}
+	return *o.BackfillStartTime
+}
+
+// GetBackfillStartTimeOk returns a tuple with the BackfillStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GoogleCloudStorageSettingsConfig) GetBackfillStartTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.BackfillStartTime) {
+		return nil, false
+	}
+	return o.BackfillStartTime, true
+}
+
+// HasBackfillStartTime returns a boolean if a field has been set.
+func (o *GoogleCloudStorageSettingsConfig) HasBackfillStartTime() bool {
+	if o != nil && !IsNil(o.BackfillStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackfillStartTime gets a reference to the given string and assigns it to the BackfillStartTime field.
+func (o *GoogleCloudStorageSettingsConfig) SetBackfillStartTime(v string) {
+	o.BackfillStartTime = &v
 }
 
 // GetBucketName returns the BucketName field value if set, zero value otherwise.
@@ -287,6 +321,9 @@ func (o GoogleCloudStorageSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o GoogleCloudStorageSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BackfillStartTime) {
+		toSerialize["backfill_start_time"] = o.BackfillStartTime
+	}
 	if !IsNil(o.BucketName) {
 		toSerialize["bucket_name"] = o.BucketName
 	}

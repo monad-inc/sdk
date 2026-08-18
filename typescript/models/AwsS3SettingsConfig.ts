@@ -18,7 +18,7 @@ import { HttpFile } from '../http/http';
 */
 export class AwsS3SettingsConfig {
     /**
-    * Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.
+    * Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. All syncs thereafter are incremental.
     */
     'backfillStartTime'?: string;
     /**

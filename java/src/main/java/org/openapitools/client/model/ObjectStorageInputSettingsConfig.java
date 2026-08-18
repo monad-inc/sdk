@@ -50,6 +50,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class ObjectStorageInputSettingsConfig {
+  public static final String SERIALIZED_NAME_BACKFILL_START_TIME = "backfill_start_time";
+  @SerializedName(SERIALIZED_NAME_BACKFILL_START_TIME)
+  @javax.annotation.Nullable
+  private String backfillStartTime;
+
   public static final String SERIALIZED_NAME_BUCKET = "bucket";
   @SerializedName(SERIALIZED_NAME_BUCKET)
   @javax.annotation.Nonnull
@@ -265,6 +270,25 @@ public class ObjectStorageInputSettingsConfig {
   public ObjectStorageInputSettingsConfig() {
   }
 
+  public ObjectStorageInputSettingsConfig backfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+    return this;
+  }
+
+  /**
+   * Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
+   * @return backfillStartTime
+   */
+  @javax.annotation.Nullable
+  public String getBackfillStartTime() {
+    return backfillStartTime;
+  }
+
+  public void setBackfillStartTime(@javax.annotation.Nullable String backfillStartTime) {
+    this.backfillStartTime = backfillStartTime;
+  }
+
+
   public ObjectStorageInputSettingsConfig bucket(@javax.annotation.Nonnull String bucket) {
     this.bucket = bucket;
     return this;
@@ -465,7 +489,8 @@ public class ObjectStorageInputSettingsConfig {
       return false;
     }
     ObjectStorageInputSettingsConfig objectStorageInputSettingsConfig = (ObjectStorageInputSettingsConfig) o;
-    return Objects.equals(this.bucket, objectStorageInputSettingsConfig.bucket) &&
+    return Objects.equals(this.backfillStartTime, objectStorageInputSettingsConfig.backfillStartTime) &&
+        Objects.equals(this.bucket, objectStorageInputSettingsConfig.bucket) &&
         Objects.equals(this.compression, objectStorageInputSettingsConfig.compression) &&
         Objects.equals(this.endpoint, objectStorageInputSettingsConfig.endpoint) &&
         Objects.equals(this.format, objectStorageInputSettingsConfig.format) &&
@@ -479,13 +504,14 @@ public class ObjectStorageInputSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucket, compression, endpoint, format, partitionFormat, prefix, recordLocation, region, skipSslVerification, usePathStyle);
+    return Objects.hash(backfillStartTime, bucket, compression, endpoint, format, partitionFormat, prefix, recordLocation, region, skipSslVerification, usePathStyle);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ObjectStorageInputSettingsConfig {\n");
+    sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
@@ -514,7 +540,7 @@ public class ObjectStorageInputSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("bucket", "compression", "endpoint", "format", "partition_format", "prefix", "record_location", "region", "skip_ssl_verification", "use_path_style"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "bucket", "compression", "endpoint", "format", "partition_format", "prefix", "record_location", "region", "skip_ssl_verification", "use_path_style"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("bucket", "compression", "endpoint", "format"));
@@ -548,6 +574,9 @@ public class ObjectStorageInputSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
+      }
       if (!jsonObj.get("bucket").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket").toString()));
       }

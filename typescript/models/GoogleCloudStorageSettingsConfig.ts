@@ -17,6 +17,10 @@ import { HttpFile } from '../http/http';
 */
 export class GoogleCloudStorageSettingsConfig {
     /**
+    * Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
+    */
+    'backfillStartTime'?: string;
+    /**
     * The name of the Google Cloud Storage bucket to use
     */
     'bucketName'?: string;
@@ -50,6 +54,12 @@ export class GoogleCloudStorageSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "backfillStartTime",
+            "baseName": "backfill_start_time",
+            "type": "string",
+            "format": ""
+        },
         {
             "name": "bucketName",
             "baseName": "bucket_name",

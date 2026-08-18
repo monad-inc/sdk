@@ -367,7 +367,7 @@
                 "description": "AWS S3 settings",
                 "properties": {
                     "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.",
+                        "description": "Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. All syncs thereafter are incremental.",
                         "type": "string"
                     },
                     "bucket": {
@@ -3103,6 +3103,10 @@
             "google_cloud_storage.SettingsConfig": {
                 "description": "Google Cloud Storage settings",
                 "properties": {
+                    "backfill_start_time": {
+                        "description": "Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.",
+                        "type": "string"
+                    },
                     "bucket_name": {
                         "description": "The name of the Google Cloud Storage bucket to use",
                         "type": "string"
@@ -7116,6 +7120,10 @@
             "object_storage_input.SettingsConfig": {
                 "description": "Object storage settings",
                 "properties": {
+                    "backfill_start_time": {
+                        "description": "Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.",
+                        "type": "string"
+                    },
                     "bucket": {
                         "description": "Name of the storage bucket",
                         "type": "string"

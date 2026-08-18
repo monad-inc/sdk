@@ -29,7 +29,7 @@ class AwsS3SettingsConfig(BaseModel):
     """
     AWS S3 settings
     """ # noqa: E501
-    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, a full sync of data upto now would be performed on the first sync. All syncs thereafter will be incremental.")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. All syncs thereafter are incremental.")
     bucket: StrictStr = Field(description="Name of the S3 bucket.")
     compression: StrictStr = Field(description="Compression format of the S3 objects.")
     format: StrictStr = Field(description="File format of the S3 objects.")

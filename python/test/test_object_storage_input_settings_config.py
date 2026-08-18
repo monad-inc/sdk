@@ -36,6 +36,7 @@ class TestObjectStorageInputSettingsConfig(unittest.TestCase):
         model = ObjectStorageInputSettingsConfig()
         if include_optional:
             return ObjectStorageInputSettingsConfig(
+                backfill_start_time = '',
                 bucket = '',
                 compression = 'auto',
                 endpoint = '',
