@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Host** | **string** | The API hostname for your Duo Security integration. | 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**BackfillStartTime** | Pointer to **string** | Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental. | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **Region** | **string** | AWS Region of your bucket. | 

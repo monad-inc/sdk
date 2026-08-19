@@ -22,7 +22,7 @@ var _ MappedNullable = &WizAuditLogsSettingsConfig{}
 
 // WizAuditLogsSettingsConfig Wiz Audit Logs settings
 type WizAuditLogsSettingsConfig struct {
-	// Date to start fetching data from up to 180 days. If not specified, a sync of 180 days back is fetched on the first sync. All syncs thereafter will be incremental.
+	// Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// DataCenter represents the tenant's data center location. Enter a tenant data center, e.g., \"us1\", \"us2\", \"us3\"
