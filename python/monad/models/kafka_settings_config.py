@@ -24,6 +24,7 @@ from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from monad.models.kafka_acks import KafkaAcks
 from monad.models.kafka_compression_type import KafkaCompressionType
 from monad.models.kafka_kafka_header import KafkaKafkaHeader
+from monad.models.kafka_payload_format import KafkaPayloadFormat
 from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism
 from monad.models.kafka_security_protocol import KafkaSecurityProtocol
 from typing import Optional, Set
@@ -40,12 +41,13 @@ class KafkaSettingsConfig(BaseModel):
     compression_type: Optional[KafkaCompressionType] = None
     headers: Optional[List[KafkaKafkaHeader]] = Field(default=None, description="Static headers to add to each Kafka message")
     message_key_field: Optional[StrictStr] = Field(default=None, description="JSON field path to extract as the Kafka message key (uses gjson syntax)")
+    payload_format: Optional[KafkaPayloadFormat] = None
     retries: Optional[StrictInt] = Field(default=None, description="Number of retry attempts for failed writes")
     sasl_mechanism: Optional[KafkaSaslMechanism] = None
     security_protocol: Optional[KafkaSecurityProtocol] = None
     topic: Optional[StrictStr] = Field(default=None, description="The Kafka topic to publish messages to")
     username: Optional[StrictStr] = Field(default=None, description="Username for SASL authentication")
-    __properties: ClassVar[List[str]] = ["acks", "batch_config", "bootstrap_servers", "compression_type", "headers", "message_key_field", "retries", "sasl_mechanism", "security_protocol", "topic", "username"]
+    __properties: ClassVar[List[str]] = ["acks", "batch_config", "bootstrap_servers", "compression_type", "headers", "message_key_field", "payload_format", "retries", "sasl_mechanism", "security_protocol", "topic", "username"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -114,6 +116,7 @@ class KafkaSettingsConfig(BaseModel):
             "compression_type": obj.get("compression_type"),
             "headers": [KafkaKafkaHeader.from_dict(_item) for _item in obj["headers"]] if obj.get("headers") is not None else None,
             "message_key_field": obj.get("message_key_field"),
+            "payload_format": obj.get("payload_format"),
             "retries": obj.get("retries"),
             "sasl_mechanism": obj.get("sasl_mechanism"),
             "security_protocol": obj.get("security_protocol"),

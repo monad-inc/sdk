@@ -584,6 +584,7 @@ Class | Method | HTTP request | Description
  - [KafkaAcks](docs/KafkaAcks.md)
  - [KafkaCompressionType](docs/KafkaCompressionType.md)
  - [KafkaKafkaHeader](docs/KafkaKafkaHeader.md)
+ - [KafkaPayloadFormat](docs/KafkaPayloadFormat.md)
  - [KafkaSaslMechanism](docs/KafkaSaslMechanism.md)
  - [KafkaSecretsConfig](docs/KafkaSecretsConfig.md)
  - [KafkaSecurityProtocol](docs/KafkaSecurityProtocol.md)

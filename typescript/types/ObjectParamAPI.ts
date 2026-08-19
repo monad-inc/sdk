@@ -208,6 +208,7 @@ import { JsonJsonFormatter } from '../models/JsonJsonFormatter';
 import { KafkaAcks } from '../models/KafkaAcks';
 import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaPayloadFormat } from '../models/KafkaPayloadFormat';
 import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
 import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';

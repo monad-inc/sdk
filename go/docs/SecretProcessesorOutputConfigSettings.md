@@ -61,6 +61,7 @@ Name | Type | Description | Notes
 **BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
 **CompressionType** | Pointer to [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
 **MessageKeyField** | Pointer to **string** | JSON field path to extract as the Kafka message key (uses gjson syntax) | [optional] 
+**PayloadFormat** | Pointer to [**KafkaPayloadFormat**](KafkaPayloadFormat.md) |  | [optional] 
 **Retries** | Pointer to **int32** | Number of retry attempts for failed writes | [optional] 
 **SaslMechanism** | Pointer to [**KafkaSaslMechanism**](KafkaSaslMechanism.md) |  | [optional] 
 **SecurityProtocol** | Pointer to [**KafkaSecurityProtocol**](KafkaSecurityProtocol.md) |  | [optional] 
@@ -1456,6 +1457,31 @@ SetMessageKeyField sets MessageKeyField field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasMessageKeyField() bool`
 
 HasMessageKeyField returns a boolean if a field has been set.
+
+### GetPayloadFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPayloadFormat() KafkaPayloadFormat`
+
+GetPayloadFormat returns the PayloadFormat field if non-nil, zero value otherwise.
+
+### GetPayloadFormatOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetPayloadFormatOk() (*KafkaPayloadFormat, bool)`
+
+GetPayloadFormatOk returns a tuple with the PayloadFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPayloadFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) SetPayloadFormat(v KafkaPayloadFormat)`
+
+SetPayloadFormat sets PayloadFormat field to given value.
+
+### HasPayloadFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) HasPayloadFormat() bool`
+
+HasPayloadFormat returns a boolean if a field has been set.
 
 ### GetRetries
 

@@ -276,6 +276,7 @@ __all__ = [
     "KafkaAcks",
     "KafkaCompressionType",
     "KafkaKafkaHeader",
+    "KafkaPayloadFormat",
     "KafkaSaslMechanism",
     "KafkaSecretsConfig",
     "KafkaSecurityProtocol",
@@ -958,6 +959,7 @@ from monad.models.json_json_formatter import JsonJsonFormatter as JsonJsonFormat
 from monad.models.kafka_acks import KafkaAcks as KafkaAcks
 from monad.models.kafka_compression_type import KafkaCompressionType as KafkaCompressionType
 from monad.models.kafka_kafka_header import KafkaKafkaHeader as KafkaKafkaHeader
+from monad.models.kafka_payload_format import KafkaPayloadFormat as KafkaPayloadFormat
 from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism as KafkaSaslMechanism
 from monad.models.kafka_secrets_config import KafkaSecretsConfig as KafkaSecretsConfig
 from monad.models.kafka_security_protocol import KafkaSecurityProtocol as KafkaSecurityProtocol

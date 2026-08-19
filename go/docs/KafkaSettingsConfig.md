@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CompressionType** | Pointer to [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **MessageKeyField** | Pointer to **string** | JSON field path to extract as the Kafka message key (uses gjson syntax) | [optional] 
+**PayloadFormat** | Pointer to [**KafkaPayloadFormat**](KafkaPayloadFormat.md) |  | [optional] 
 **Retries** | Pointer to **int32** | Number of retry attempts for failed writes | [optional] 
 **SaslMechanism** | Pointer to [**KafkaSaslMechanism**](KafkaSaslMechanism.md) |  | [optional] 
 **SecurityProtocol** | Pointer to [**KafkaSecurityProtocol**](KafkaSecurityProtocol.md) |  | [optional] 
@@ -184,6 +185,31 @@ SetMessageKeyField sets MessageKeyField field to given value.
 `func (o *KafkaSettingsConfig) HasMessageKeyField() bool`
 
 HasMessageKeyField returns a boolean if a field has been set.
+
+### GetPayloadFormat
+
+`func (o *KafkaSettingsConfig) GetPayloadFormat() KafkaPayloadFormat`
+
+GetPayloadFormat returns the PayloadFormat field if non-nil, zero value otherwise.
+
+### GetPayloadFormatOk
+
+`func (o *KafkaSettingsConfig) GetPayloadFormatOk() (*KafkaPayloadFormat, bool)`
+
+GetPayloadFormatOk returns a tuple with the PayloadFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPayloadFormat
+
+`func (o *KafkaSettingsConfig) SetPayloadFormat(v KafkaPayloadFormat)`
+
+SetPayloadFormat sets PayloadFormat field to given value.
+
+### HasPayloadFormat
+
+`func (o *KafkaSettingsConfig) HasPayloadFormat() bool`
+
+HasPayloadFormat returns a boolean if a field has been set.
 
 ### GetRetries
 

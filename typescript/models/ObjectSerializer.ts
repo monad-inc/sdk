@@ -204,6 +204,7 @@ export * from '../models/JsonJsonFormatter';
 export * from '../models/KafkaAcks';
 export * from '../models/KafkaCompressionType';
 export * from '../models/KafkaKafkaHeader';
+export * from '../models/KafkaPayloadFormat';
 export * from '../models/KafkaSaslMechanism';
 export * from '../models/KafkaSecretsConfig';
 export * from '../models/KafkaSecurityProtocol';
@@ -829,10 +830,11 @@ import { JsonJsonFormatter   } from '../models/JsonJsonFormatter';
 import { KafkaAcks } from '../models/KafkaAcks';
 import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaPayloadFormat } from '../models/KafkaPayloadFormat';
 import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
 import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
-import { KafkaSettingsConfig            } from '../models/KafkaSettingsConfig';
+import { KafkaSettingsConfig             } from '../models/KafkaSettingsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
@@ -1286,6 +1288,7 @@ let enumsMap: Set<string> = new Set<string>([
     "JsonFormatType",
     "KafkaAcks",
     "KafkaCompressionType",
+    "KafkaPayloadFormat",
     "KafkaSaslMechanism",
     "KafkaSecurityProtocol",
     "ModelsAlertState",

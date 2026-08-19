@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.kafka_settings_config import KafkaSettingsConfig
+from monad.models.kafka_payload_format import KafkaPayloadFormat
 
-class TestKafkaSettingsConfig(unittest.TestCase):
-    """KafkaSettingsConfig unit test stubs"""
+class TestKafkaPayloadFormat(unittest.TestCase):
+    """KafkaPayloadFormat unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,45 +26,9 @@ class TestKafkaSettingsConfig(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> KafkaSettingsConfig:
-        """Test KafkaSettingsConfig
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `KafkaSettingsConfig`
-        """
-        model = KafkaSettingsConfig()
-        if include_optional:
-            return KafkaSettingsConfig(
-                acks = '0',
-                batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
-                    batch_data_size = 56, 
-                    batch_record_count = 56, 
-                    publish_rate = 56, ),
-                bootstrap_servers = '',
-                compression_type = 'none',
-                headers = [
-                    monad.models.kafka/kafka_header.kafka.kafkaHeader(
-                        key = '', 
-                        value = '', )
-                    ],
-                message_key_field = '',
-                payload_format = 'individual',
-                retries = 56,
-                sasl_mechanism = 'PLAIN',
-                security_protocol = 'NONE',
-                topic = '',
-                username = ''
-            )
-        else:
-            return KafkaSettingsConfig(
-        )
-        """
-
-    def testKafkaSettingsConfig(self):
-        """Test KafkaSettingsConfig"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+    def testKafkaPayloadFormat(self):
+        """Test KafkaPayloadFormat"""
+        # inst = KafkaPayloadFormat()
 
 if __name__ == '__main__':
     unittest.main()

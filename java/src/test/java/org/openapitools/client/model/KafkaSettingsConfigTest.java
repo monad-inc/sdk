@@ -26,6 +26,7 @@ import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.KafkaAcks;
 import org.openapitools.client.model.KafkaCompressionType;
 import org.openapitools.client.model.KafkaKafkaHeader;
+import org.openapitools.client.model.KafkaPayloadFormat;
 import org.openapitools.client.model.KafkaSaslMechanism;
 import org.openapitools.client.model.KafkaSecurityProtocol;
 import org.junit.jupiter.api.Disabled;
@@ -91,6 +92,14 @@ public class KafkaSettingsConfigTest {
     @Test
     public void messageKeyFieldTest() {
         // TODO: test messageKeyField
+    }
+
+    /**
+     * Test the property 'payloadFormat'
+     */
+    @Test
+    public void payloadFormatTest() {
+        // TODO: test payloadFormat
     }
 
     /**

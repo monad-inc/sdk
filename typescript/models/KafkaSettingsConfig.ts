@@ -14,6 +14,7 @@ import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { KafkaAcks } from '../models/KafkaAcks';
 import { KafkaCompressionType } from '../models/KafkaCompressionType';
 import { KafkaKafkaHeader } from '../models/KafkaKafkaHeader';
+import { KafkaPayloadFormat } from '../models/KafkaPayloadFormat';
 import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
 import { HttpFile } from '../http/http';
@@ -37,6 +38,7 @@ export class KafkaSettingsConfig {
     * JSON field path to extract as the Kafka message key (uses gjson syntax)
     */
     'messageKeyField'?: string;
+    'payloadFormat'?: KafkaPayloadFormat;
     /**
     * Number of retry attempts for failed writes
     */
@@ -91,6 +93,12 @@ export class KafkaSettingsConfig {
             "name": "messageKeyField",
             "baseName": "message_key_field",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "payloadFormat",
+            "baseName": "payload_format",
+            "type": "KafkaPayloadFormat",
             "format": ""
         },
         {

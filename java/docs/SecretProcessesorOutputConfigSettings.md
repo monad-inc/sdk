@@ -64,6 +64,7 @@
 |**bootstrapServers** | **String** | Comma-separated list of Kafka broker addresses (host:port) |  [optional] |
 |**compressionType** | **KafkaCompressionType** |  |  [optional] |
 |**messageKeyField** | **String** | JSON field path to extract as the Kafka message key (uses gjson syntax) |  [optional] |
+|**payloadFormat** | **KafkaPayloadFormat** |  |  [optional] |
 |**retries** | **Integer** | Number of retry attempts for failed writes |  [optional] |
 |**saslMechanism** | **KafkaSaslMechanism** |  |  [optional] |
 |**securityProtocol** | **KafkaSecurityProtocol** |  |  [optional] |

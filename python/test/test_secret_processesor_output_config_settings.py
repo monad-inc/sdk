@@ -217,6 +217,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 bootstrap_servers = '',
                 compression_type = 'none',
                 message_key_field = '',
+                payload_format = 'individual',
                 retries = 56,
                 sasl_mechanism = 'PLAIN',
                 security_protocol = 'NONE',

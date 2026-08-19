@@ -220,6 +220,7 @@ from monad.models.json_json_formatter import JsonJsonFormatter
 from monad.models.kafka_acks import KafkaAcks
 from monad.models.kafka_compression_type import KafkaCompressionType
 from monad.models.kafka_kafka_header import KafkaKafkaHeader
+from monad.models.kafka_payload_format import KafkaPayloadFormat
 from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism
 from monad.models.kafka_secrets_config import KafkaSecretsConfig
 from monad.models.kafka_security_protocol import KafkaSecurityProtocol

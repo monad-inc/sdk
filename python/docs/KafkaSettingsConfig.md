@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **compression_type** | [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
 **headers** | [**List[KafkaKafkaHeader]**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **message_key_field** | **str** | JSON field path to extract as the Kafka message key (uses gjson syntax) | [optional] 
+**payload_format** | [**KafkaPayloadFormat**](KafkaPayloadFormat.md) |  | [optional] 
 **retries** | **int** | Number of retry attempts for failed writes | [optional] 
 **sasl_mechanism** | [**KafkaSaslMechanism**](KafkaSaslMechanism.md) |  | [optional] 
 **security_protocol** | [**KafkaSecurityProtocol**](KafkaSecurityProtocol.md) |  | [optional] 

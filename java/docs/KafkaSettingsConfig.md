@@ -14,6 +14,7 @@ Kafka Output Settings
 |**compressionType** | **KafkaCompressionType** |  |  [optional] |
 |**headers** | [**List&lt;KafkaKafkaHeader&gt;**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message |  [optional] |
 |**messageKeyField** | **String** | JSON field path to extract as the Kafka message key (uses gjson syntax) |  [optional] |
+|**payloadFormat** | **KafkaPayloadFormat** |  |  [optional] |
 |**retries** | **Integer** | Number of retry attempts for failed writes |  [optional] |
 |**saslMechanism** | **KafkaSaslMechanism** |  |  [optional] |
 |**securityProtocol** | **KafkaSecurityProtocol** |  |  [optional] |

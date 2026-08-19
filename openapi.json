@@ -3740,6 +3740,9 @@
                         "description": "JSON field path to extract as the Kafka message key (uses gjson syntax)",
                         "type": "string"
                     },
+                    "payload_format": {
+                        "$ref": "#/components/schemas/kafka.payloadFormat"
+                    },
                     "retries": {
                         "description": "Number of retry attempts for failed writes",
                         "type": "integer"
@@ -3808,6 +3811,19 @@
                     }
                 },
                 "type": "object"
+            },
+            "kafka.payloadFormat": {
+                "description": "How records map onto Kafka messages: individual (one message per record)\nor json_array (bundle the whole batch into a single JSON-array message)",
+                "enum": [
+                    "individual",
+                    "json_array"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "defaultPayloadFormat",
+                    "payloadFormatIndividual",
+                    "payloadFormatJSONArray"
+                ]
             },
             "kafka.saslMechanism": {
                 "description": "SASL authentication mechanism (PLAIN, SCRAM-SHA-256, SCRAM-SHA-512)",

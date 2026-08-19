@@ -29,6 +29,7 @@ type KafkaSettingsConfig struct {
 	Headers []KafkaKafkaHeader `json:"headers,omitempty"`
 	// JSON field path to extract as the Kafka message key (uses gjson syntax)
 	MessageKeyField *string `json:"message_key_field,omitempty"`
+	PayloadFormat *KafkaPayloadFormat `json:"payload_format,omitempty"`
 	// Number of retry attempts for failed writes
 	Retries *int32 `json:"retries,omitempty"`
 	SaslMechanism *KafkaSaslMechanism `json:"sasl_mechanism,omitempty"`
@@ -248,6 +249,38 @@ func (o *KafkaSettingsConfig) SetMessageKeyField(v string) {
 	o.MessageKeyField = &v
 }
 
+// GetPayloadFormat returns the PayloadFormat field value if set, zero value otherwise.
+func (o *KafkaSettingsConfig) GetPayloadFormat() KafkaPayloadFormat {
+	if o == nil || IsNil(o.PayloadFormat) {
+		var ret KafkaPayloadFormat
+		return ret
+	}
+	return *o.PayloadFormat
+}
+
+// GetPayloadFormatOk returns a tuple with the PayloadFormat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaSettingsConfig) GetPayloadFormatOk() (*KafkaPayloadFormat, bool) {
+	if o == nil || IsNil(o.PayloadFormat) {
+		return nil, false
+	}
+	return o.PayloadFormat, true
+}
+
+// HasPayloadFormat returns a boolean if a field has been set.
+func (o *KafkaSettingsConfig) HasPayloadFormat() bool {
+	if o != nil && !IsNil(o.PayloadFormat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPayloadFormat gets a reference to the given KafkaPayloadFormat and assigns it to the PayloadFormat field.
+func (o *KafkaSettingsConfig) SetPayloadFormat(v KafkaPayloadFormat) {
+	o.PayloadFormat = &v
+}
+
 // GetRetries returns the Retries field value if set, zero value otherwise.
 func (o *KafkaSettingsConfig) GetRetries() int32 {
 	if o == nil || IsNil(o.Retries) {
@@ -435,6 +468,9 @@ func (o KafkaSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MessageKeyField) {
 		toSerialize["message_key_field"] = o.MessageKeyField
+	}
+	if !IsNil(o.PayloadFormat) {
+		toSerialize["payload_format"] = o.PayloadFormat
 	}
 	if !IsNil(o.Retries) {
 		toSerialize["retries"] = o.Retries

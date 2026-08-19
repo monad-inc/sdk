@@ -27,6 +27,7 @@ import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.KafkaAcks;
 import org.openapitools.client.model.KafkaCompressionType;
 import org.openapitools.client.model.KafkaKafkaHeader;
+import org.openapitools.client.model.KafkaPayloadFormat;
 import org.openapitools.client.model.KafkaSaslMechanism;
 import org.openapitools.client.model.KafkaSecurityProtocol;
 
@@ -87,6 +88,11 @@ public class KafkaSettingsConfig {
   @SerializedName(SERIALIZED_NAME_MESSAGE_KEY_FIELD)
   @javax.annotation.Nullable
   private String messageKeyField;
+
+  public static final String SERIALIZED_NAME_PAYLOAD_FORMAT = "payload_format";
+  @SerializedName(SERIALIZED_NAME_PAYLOAD_FORMAT)
+  @javax.annotation.Nullable
+  private KafkaPayloadFormat payloadFormat;
 
   public static final String SERIALIZED_NAME_RETRIES = "retries";
   @SerializedName(SERIALIZED_NAME_RETRIES)
@@ -238,6 +244,25 @@ public class KafkaSettingsConfig {
   }
 
 
+  public KafkaSettingsConfig payloadFormat(@javax.annotation.Nullable KafkaPayloadFormat payloadFormat) {
+    this.payloadFormat = payloadFormat;
+    return this;
+  }
+
+  /**
+   * Get payloadFormat
+   * @return payloadFormat
+   */
+  @javax.annotation.Nullable
+  public KafkaPayloadFormat getPayloadFormat() {
+    return payloadFormat;
+  }
+
+  public void setPayloadFormat(@javax.annotation.Nullable KafkaPayloadFormat payloadFormat) {
+    this.payloadFormat = payloadFormat;
+  }
+
+
   public KafkaSettingsConfig retries(@javax.annotation.Nullable Integer retries) {
     this.retries = retries;
     return this;
@@ -349,6 +374,7 @@ public class KafkaSettingsConfig {
         Objects.equals(this.compressionType, kafkaSettingsConfig.compressionType) &&
         Objects.equals(this.headers, kafkaSettingsConfig.headers) &&
         Objects.equals(this.messageKeyField, kafkaSettingsConfig.messageKeyField) &&
+        Objects.equals(this.payloadFormat, kafkaSettingsConfig.payloadFormat) &&
         Objects.equals(this.retries, kafkaSettingsConfig.retries) &&
         Objects.equals(this.saslMechanism, kafkaSettingsConfig.saslMechanism) &&
         Objects.equals(this.securityProtocol, kafkaSettingsConfig.securityProtocol) &&
@@ -358,7 +384,7 @@ public class KafkaSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(acks, batchConfig, bootstrapServers, compressionType, headers, messageKeyField, retries, saslMechanism, securityProtocol, topic, username);
+    return Objects.hash(acks, batchConfig, bootstrapServers, compressionType, headers, messageKeyField, payloadFormat, retries, saslMechanism, securityProtocol, topic, username);
   }
 
   @Override
@@ -371,6 +397,7 @@ public class KafkaSettingsConfig {
     sb.append("    compressionType: ").append(toIndentedString(compressionType)).append("\n");
     sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
     sb.append("    messageKeyField: ").append(toIndentedString(messageKeyField)).append("\n");
+    sb.append("    payloadFormat: ").append(toIndentedString(payloadFormat)).append("\n");
     sb.append("    retries: ").append(toIndentedString(retries)).append("\n");
     sb.append("    saslMechanism: ").append(toIndentedString(saslMechanism)).append("\n");
     sb.append("    securityProtocol: ").append(toIndentedString(securityProtocol)).append("\n");
@@ -394,7 +421,7 @@ public class KafkaSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("acks", "batch_config", "bootstrap_servers", "compression_type", "headers", "message_key_field", "retries", "sasl_mechanism", "security_protocol", "topic", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("acks", "batch_config", "bootstrap_servers", "compression_type", "headers", "message_key_field", "payload_format", "retries", "sasl_mechanism", "security_protocol", "topic", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -452,6 +479,10 @@ public class KafkaSettingsConfig {
       }
       if ((jsonObj.get("message_key_field") != null && !jsonObj.get("message_key_field").isJsonNull()) && !jsonObj.get("message_key_field").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `message_key_field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_key_field").toString()));
+      }
+      // validate the optional field `payload_format`
+      if (jsonObj.get("payload_format") != null && !jsonObj.get("payload_format").isJsonNull()) {
+        KafkaPayloadFormat.validateJsonElement(jsonObj.get("payload_format"));
       }
       // validate the optional field `sasl_mechanism`
       if (jsonObj.get("sasl_mechanism") != null && !jsonObj.get("sasl_mechanism").isJsonNull()) {
