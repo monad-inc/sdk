@@ -414,6 +414,7 @@ import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -5771,6 +5772,48 @@ export class ObservablePipelinesApi {
      */
     public getMetricsForPipelines(organizationId: string, pipelineIds: string, resolution?: string, _options?: ConfigurationOptions): Observable<RoutesV2MetricsResponse> {
         return this.getMetricsForPipelinesWithHttpInfo(organizationId, pipelineIds, resolution, _options).pipe(map((apiResponse: HttpInfo<RoutesV2MetricsResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param [limit] Max records to return (1-10, default 10)
+     * @param [metaOnly] Omit record payloads — a cheap presence check
+     */
+    public getNodeRetryQueueWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, limit?: number, metaOnly?: boolean, _options?: ConfigurationOptions): Observable<HttpInfo<Array<RoutesRetryQueueMessage>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.getNodeRetryQueue(organizationId, pipelineId, nodeId, limit, metaOnly, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.getNodeRetryQueueWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param [limit] Max records to return (1-10, default 10)
+     * @param [metaOnly] Omit record payloads — a cheap presence check
+     */
+    public getNodeRetryQueue(organizationId: string, pipelineId: string, nodeId: string, limit?: number, metaOnly?: boolean, _options?: ConfigurationOptions): Observable<Array<RoutesRetryQueueMessage>> {
+        return this.getNodeRetryQueueWithHttpInfo(organizationId, pipelineId, nodeId, limit, metaOnly, _options).pipe(map((apiResponse: HttpInfo<Array<RoutesRetryQueueMessage>>) => apiResponse.data));
     }
 
     /**

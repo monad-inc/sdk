@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**DeletePipelineV1**](PipelinesAPI.md#DeletePipelineV1) | **Delete** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**ForceGraduateSchemaState**](PipelinesAPI.md#ForceGraduateSchemaState) | **Post** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state
 [**GetMetricsForPipelines**](PipelinesAPI.md#GetMetricsForPipelines) | **Get** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
+[**GetNodeRetryQueue**](PipelinesAPI.md#GetNodeRetryQueue) | **Get** /v1/{organization_id}/data/retry/{pipeline_id}/{node_id} | Get node retry queue
 [**GetOrganizationSummary**](PipelinesAPI.md#GetOrganizationSummary) | **Get** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**GetPipeline**](PipelinesAPI.md#GetPipeline) | **Get** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 [**GetPipelineConfig**](PipelinesAPI.md#GetPipelineConfig) | **Get** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
@@ -386,6 +387,86 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RoutesV2MetricsResponse**](RoutesV2MetricsResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetNodeRetryQueue
+
+> []RoutesRetryQueueMessage GetNodeRetryQueue(ctx, organizationId, pipelineId, nodeId).Limit(limit).MetaOnly(metaOnly).Execute()
+
+Get node retry queue
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	pipelineId := "pipelineId_example" // string | Pipeline ID
+	nodeId := "nodeId_example" // string | Node ID
+	limit := int32(56) // int32 | Max records to return (1-10, default 10) (optional)
+	metaOnly := true // bool | Omit record payloads — a cheap presence check (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PipelinesAPI.GetNodeRetryQueue(context.Background(), organizationId, pipelineId, nodeId).Limit(limit).MetaOnly(metaOnly).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PipelinesAPI.GetNodeRetryQueue``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetNodeRetryQueue`: []RoutesRetryQueueMessage
+	fmt.Fprintf(os.Stdout, "Response from `PipelinesAPI.GetNodeRetryQueue`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**pipelineId** | **string** | Pipeline ID | 
+**nodeId** | **string** | Node ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetNodeRetryQueueRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **limit** | **int32** | Max records to return (1-10, default 10) | 
+ **metaOnly** | **bool** | Omit record payloads — a cheap presence check | 
+
+### Return type
+
+[**[]RoutesRetryQueueMessage**](RoutesRetryQueueMessage.md)
 
 ### Authorization
 

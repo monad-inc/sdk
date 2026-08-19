@@ -3820,9 +3820,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -8067,6 +8067,47 @@
                     },
                     "type_id": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "routes.RetryQueueMessage": {
+                "properties": {
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "items": {
+                            "type": "integer"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "data_bytes": {
+                        "description": "DataBytes is the payload size in bytes. Omitted is set when the payload was\nleft out for exceeding maxRetryRecordBytes. (meta_only leaves out every\npayload without setting Omitted — it isn't a size decision.)",
+                        "type": "integer"
+                    },
+                    "eligible_at": {
+                        "description": "EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt),\nnot an authoritative floor — it under-estimates output/enrichment nodes.",
+                        "type": "string"
+                    },
+                    "error_node_id": {
+                        "type": "string"
+                    },
+                    "last_error": {
+                        "type": "string"
+                    },
+                    "last_seen_at": {
+                        "type": "string"
+                    },
+                    "omitted": {
+                        "type": "boolean"
+                    },
+                    "retry_count": {
+                        "type": "integer"
+                    },
+                    "stream_seq": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -13410,6 +13451,97 @@
                     "Users"
                 ],
                 "x-required-permissions": []
+            }
+        },
+        "/v1/{organization_id}/data/retry/{pipeline_id}/{node_id}": {
+            "get": {
+                "description": "Return records currently queued for retry on a pipeline node",
+                "operationId": "GetNodeRetryQueue",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Pipeline ID",
+                        "in": "path",
+                        "name": "pipeline_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Node ID",
+                        "in": "path",
+                        "name": "node_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Max records to return (1-10, default 10)",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Omit record payloads — a cheap presence check",
+                        "in": "query",
+                        "name": "meta_only",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/routes.RetryQueueMessage"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        },
+                        "description": "Records queued for retry"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Failed to read retry queue"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Get node retry queue",
+                "tags": [
+                    "Pipelines"
+                ],
+                "x-required-permissions": [
+                    "pipeline:data:read"
+                ]
             }
         },
         "/v1/{organization_id}/data/{node_id}": {

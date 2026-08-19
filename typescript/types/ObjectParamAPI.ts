@@ -413,6 +413,7 @@ import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -5673,6 +5674,44 @@ export interface PipelinesApiGetMetricsForPipelinesRequest {
     resolution?: string
 }
 
+export interface PipelinesApiGetNodeRetryQueueRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetNodeRetryQueue
+     */
+    organizationId: string
+    /**
+     * Pipeline ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetNodeRetryQueue
+     */
+    pipelineId: string
+    /**
+     * Node ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof PipelinesApigetNodeRetryQueue
+     */
+    nodeId: string
+    /**
+     * Max records to return (1-10, default 10)
+     * Defaults to: undefined
+     * @type number
+     * @memberof PipelinesApigetNodeRetryQueue
+     */
+    limit?: number
+    /**
+     * Omit record payloads — a cheap presence check
+     * Defaults to: undefined
+     * @type boolean
+     * @memberof PipelinesApigetNodeRetryQueue
+     */
+    metaOnly?: boolean
+}
+
 export interface PipelinesApiGetOrganizationSummaryRequest {
     /**
      * Organization ID
@@ -6393,6 +6432,24 @@ export class ObjectPipelinesApi {
      */
     public getMetricsForPipelines(param: PipelinesApiGetMetricsForPipelinesRequest, options?: ConfigurationOptions): Promise<RoutesV2MetricsResponse> {
         return this.api.getMetricsForPipelines(param.organizationId, param.pipelineIds, param.resolution,  options).toPromise();
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param param the request object
+     */
+    public getNodeRetryQueueWithHttpInfo(param: PipelinesApiGetNodeRetryQueueRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesRetryQueueMessage>>> {
+        return this.api.getNodeRetryQueueWithHttpInfo(param.organizationId, param.pipelineId, param.nodeId, param.limit, param.metaOnly,  options).toPromise();
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param param the request object
+     */
+    public getNodeRetryQueue(param: PipelinesApiGetNodeRetryQueueRequest, options?: ConfigurationOptions): Promise<Array<RoutesRetryQueueMessage>> {
+        return this.api.getNodeRetryQueue(param.organizationId, param.pipelineId, param.nodeId, param.limit, param.metaOnly,  options).toPromise();
     }
 
     /**

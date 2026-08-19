@@ -413,6 +413,7 @@ import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArguments } from '../models/RoutesTransformOperationArguments';
@@ -4321,6 +4322,36 @@ export class PromisePipelinesApi {
     public getMetricsForPipelines(organizationId: string, pipelineIds: string, resolution?: string, _options?: PromiseConfigurationOptions): Promise<RoutesV2MetricsResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getMetricsForPipelines(organizationId, pipelineIds, resolution, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param [limit] Max records to return (1-10, default 10)
+     * @param [metaOnly] Omit record payloads — a cheap presence check
+     */
+    public getNodeRetryQueueWithHttpInfo(organizationId: string, pipelineId: string, nodeId: string, limit?: number, metaOnly?: boolean, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<RoutesRetryQueueMessage>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getNodeRetryQueueWithHttpInfo(organizationId, pipelineId, nodeId, limit, metaOnly, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param [limit] Max records to return (1-10, default 10)
+     * @param [metaOnly] Omit record payloads — a cheap presence check
+     */
+    public getNodeRetryQueue(organizationId: string, pipelineId: string, nodeId: string, limit?: number, metaOnly?: boolean, _options?: PromiseConfigurationOptions): Promise<Array<RoutesRetryQueueMessage>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getNodeRetryQueue(organizationId, pipelineId, nodeId, limit, metaOnly, observableOptions);
         return result.toPromise();
     }
 

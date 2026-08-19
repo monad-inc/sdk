@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**delete_pipeline_v1**](PipelinesApi.md#delete_pipeline_v1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 [**force_graduate_schema_state**](PipelinesApi.md#force_graduate_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state
 [**get_metrics_for_pipelines**](PipelinesApi.md#get_metrics_for_pipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
+[**get_node_retry_queue**](PipelinesApi.md#get_node_retry_queue) | **GET** /v1/{organization_id}/data/retry/{pipeline_id}/{node_id} | Get node retry queue
 [**get_organization_summary**](PipelinesApi.md#get_organization_summary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 [**get_pipeline**](PipelinesApi.md#get_pipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 [**get_pipeline_config**](PipelinesApi.md#get_pipeline_config) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
@@ -481,6 +482,101 @@ Name | Type | Description  | Notes
 **200** | Pipeline metrics data |  -  |
 **400** | Bad request error |  -  |
 **500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_node_retry_queue**
+> List[RoutesRetryQueueMessage] get_node_retry_queue(organization_id, pipeline_id, node_id, limit=limit, meta_only=meta_only)
+
+Get node retry queue
+
+Return records currently queued for retry on a pipeline node
+
+### Example
+
+* Api Key Authentication (ApiKeyAuth):
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_retry_queue_message import RoutesRetryQueueMessage
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuth
+configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.PipelinesApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    pipeline_id = 'pipeline_id_example' # str | Pipeline ID
+    node_id = 'node_id_example' # str | Node ID
+    limit = 56 # int | Max records to return (1-10, default 10) (optional)
+    meta_only = True # bool | Omit record payloads — a cheap presence check (optional)
+
+    try:
+        # Get node retry queue
+        api_response = api_instance.get_node_retry_queue(organization_id, pipeline_id, node_id, limit=limit, meta_only=meta_only)
+        print("The response of PipelinesApi->get_node_retry_queue:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PipelinesApi->get_node_retry_queue: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **pipeline_id** | **str**| Pipeline ID | 
+ **node_id** | **str**| Node ID | 
+ **limit** | **int**| Max records to return (1-10, default 10) | [optional] 
+ **meta_only** | **bool**| Omit record payloads — a cheap presence check | [optional] 
+
+### Return type
+
+[**List[RoutesRetryQueueMessage]**](RoutesRetryQueueMessage.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Records queued for retry |  -  |
+**500** | Failed to read retry queue |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

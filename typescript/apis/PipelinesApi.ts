@@ -17,6 +17,7 @@ import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsPipelinePurgeResponse } from '../models/ModelsPipelinePurgeResponse';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
+import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesV2GetOrganizationSummaryResponse } from '../models/RoutesV2GetOrganizationSummaryResponse';
 import { RoutesV2MetricsResponse } from '../models/RoutesV2MetricsResponse';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
@@ -294,6 +295,79 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (resolution !== undefined) {
             requestContext.setQueryParam("resolution", ObjectSerializer.serialize(resolution, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["ApiKeyAuth"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Return records currently queued for retry on a pipeline node
+     * Get node retry queue
+     * @param organizationId Organization ID
+     * @param pipelineId Pipeline ID
+     * @param nodeId Node ID
+     * @param limit Max records to return (1-10, default 10)
+     * @param metaOnly Omit record payloads — a cheap presence check
+     */
+    public async getNodeRetryQueue(organizationId: string, pipelineId: string, nodeId: string, limit?: number, metaOnly?: boolean, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("PipelinesApi", "getNodeRetryQueue", "organizationId");
+        }
+
+
+        // verify required parameter 'pipelineId' is not null or undefined
+        if (pipelineId === null || pipelineId === undefined) {
+            throw new RequiredError("PipelinesApi", "getNodeRetryQueue", "pipelineId");
+        }
+
+
+        // verify required parameter 'nodeId' is not null or undefined
+        if (nodeId === null || nodeId === undefined) {
+            throw new RequiredError("PipelinesApi", "getNodeRetryQueue", "nodeId");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v1/{organization_id}/data/retry/{pipeline_id}/{node_id}'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{pipeline_id}', encodeURIComponent(String(pipelineId)))
+            .replace('{node_id}', encodeURIComponent(String(nodeId)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (metaOnly !== undefined) {
+            requestContext.setQueryParam("meta_only", ObjectSerializer.serialize(metaOnly, "boolean", ""));
         }
 
 
@@ -2010,6 +2084,42 @@ export class PipelinesApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "RoutesV2MetricsResponse", ""
             ) as RoutesV2MetricsResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getNodeRetryQueue
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getNodeRetryQueueWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<RoutesRetryQueueMessage> >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: Array<RoutesRetryQueueMessage> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<RoutesRetryQueueMessage>", ""
+            ) as Array<RoutesRetryQueueMessage>;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Failed to read retry queue", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: Array<RoutesRetryQueueMessage> = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "Array<RoutesRetryQueueMessage>", ""
+            ) as Array<RoutesRetryQueueMessage>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

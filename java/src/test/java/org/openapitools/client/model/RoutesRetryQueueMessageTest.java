@@ -13,66 +13,110 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
+ * Model tests for RoutesRetryQueueMessage
  */
-@JsonAdapter(KafkaPayloadFormat.Adapter.class)
-public enum KafkaPayloadFormat {
-  
-  payloadFormatIndividual("individual"),
-  
-  payloadFormatJSONArray("json_array");
+public class RoutesRetryQueueMessageTest {
+    private final RoutesRetryQueueMessage model = new RoutesRetryQueueMessage();
 
-  private String value;
-
-  KafkaPayloadFormat(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static KafkaPayloadFormat fromValue(String value) {
-    for (KafkaPayloadFormat b : KafkaPayloadFormat.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<KafkaPayloadFormat> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final KafkaPayloadFormat enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+    /**
+     * Model tests for RoutesRetryQueueMessage
+     */
+    @Test
+    public void testRoutesRetryQueueMessage() {
+        // TODO: test RoutesRetryQueueMessage
     }
 
-    @Override
-    public KafkaPayloadFormat read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return KafkaPayloadFormat.fromValue(value);
+    /**
+     * Test the property 'createdAt'
+     */
+    @Test
+    public void createdAtTest() {
+        // TODO: test createdAt
     }
-  }
 
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    KafkaPayloadFormat.fromValue(value);
-  }
+    /**
+     * Test the property 'data'
+     */
+    @Test
+    public void dataTest() {
+        // TODO: test data
+    }
+
+    /**
+     * Test the property 'dataBytes'
+     */
+    @Test
+    public void dataBytesTest() {
+        // TODO: test dataBytes
+    }
+
+    /**
+     * Test the property 'eligibleAt'
+     */
+    @Test
+    public void eligibleAtTest() {
+        // TODO: test eligibleAt
+    }
+
+    /**
+     * Test the property 'errorNodeId'
+     */
+    @Test
+    public void errorNodeIdTest() {
+        // TODO: test errorNodeId
+    }
+
+    /**
+     * Test the property 'lastError'
+     */
+    @Test
+    public void lastErrorTest() {
+        // TODO: test lastError
+    }
+
+    /**
+     * Test the property 'lastSeenAt'
+     */
+    @Test
+    public void lastSeenAtTest() {
+        // TODO: test lastSeenAt
+    }
+
+    /**
+     * Test the property 'omitted'
+     */
+    @Test
+    public void omittedTest() {
+        // TODO: test omitted
+    }
+
+    /**
+     * Test the property 'retryCount'
+     */
+    @Test
+    public void retryCountTest() {
+        // TODO: test retryCount
+    }
+
+    /**
+     * Test the property 'streamSeq'
+     */
+    @Test
+    public void streamSeqTest() {
+        // TODO: test streamSeq
+    }
+
 }
-

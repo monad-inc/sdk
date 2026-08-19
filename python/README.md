@@ -288,6 +288,7 @@ Class | Method | HTTP request | Description
 *PipelinesApi* | [**delete_pipeline_v1**](docs/PipelinesApi.md#delete_pipeline_v1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline
 *PipelinesApi* | [**force_graduate_schema_state**](docs/PipelinesApi.md#force_graduate_schema_state) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state
 *PipelinesApi* | [**get_metrics_for_pipelines**](docs/PipelinesApi.md#get_metrics_for_pipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines
+*PipelinesApi* | [**get_node_retry_queue**](docs/PipelinesApi.md#get_node_retry_queue) | **GET** /v1/{organization_id}/data/retry/{pipeline_id}/{node_id} | Get node retry queue
 *PipelinesApi* | [**get_organization_summary**](docs/PipelinesApi.md#get_organization_summary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization
 *PipelinesApi* | [**get_pipeline**](docs/PipelinesApi.md#get_pipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline
 *PipelinesApi* | [**get_pipeline_config**](docs/PipelinesApi.md#get_pipeline_config) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration
@@ -763,6 +764,7 @@ Class | Method | HTTP request | Description
  - [RoutesInviteUserToOrganizationRequest](docs/RoutesInviteUserToOrganizationRequest.md)
  - [RoutesLoginRequest](docs/RoutesLoginRequest.md)
  - [RoutesResourceMetadata](docs/RoutesResourceMetadata.md)
+ - [RoutesRetryQueueMessage](docs/RoutesRetryQueueMessage.md)
  - [RoutesTransformConfig](docs/RoutesTransformConfig.md)
  - [RoutesTransformOperation](docs/RoutesTransformOperation.md)
  - [RoutesTransformOperationArguments](docs/RoutesTransformOperationArguments.md)

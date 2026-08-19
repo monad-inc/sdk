@@ -9,6 +9,7 @@ All URIs are relative to *https://monad.com/api*
 | [**deletePipelineV1**](PipelinesApi.md#deletePipelineV1) | **DELETE** /v1/{organization_id}/pipelines/{pipeline_id} | Delete pipeline |
 | [**forceGraduateSchemaState**](PipelinesApi.md#forceGraduateSchemaState) | **POST** /v2/{organization_id}/pipelines/{pipeline_id}/edges/{edge_id}/schema/graduate | Force graduate schema state |
 | [**getMetricsForPipelines**](PipelinesApi.md#getMetricsForPipelines) | **GET** /v2/{organization_id}/pipelines/metrics | Get metrics for specific pipelines |
+| [**getNodeRetryQueue**](PipelinesApi.md#getNodeRetryQueue) | **GET** /v1/{organization_id}/data/retry/{pipeline_id}/{node_id} | Get node retry queue |
 | [**getOrganizationSummary**](PipelinesApi.md#getOrganizationSummary) | **GET** /v2/{organization_id}/pipeline_summary | Get status of all pipelines for an organization |
 | [**getPipeline**](PipelinesApi.md#getPipeline) | **GET** /v1/{organization_id}/pipelines/{pipeline_id} | Get pipeline |
 | [**getPipelineConfig**](PipelinesApi.md#getPipelineConfig) | **GET** /v2/{organization_id}/pipelines/{pipeline_id} | Get pipeline configuration |
@@ -431,6 +432,90 @@ public class Example {
 | **200** | Pipeline metrics data |  -  |
 | **400** | Bad request error |  -  |
 | **500** | Internal server error |  -  |
+
+<a id="getNodeRetryQueue"></a>
+# **getNodeRetryQueue**
+> List&lt;RoutesRetryQueueMessage&gt; getNodeRetryQueue(organizationId, pipelineId, nodeId, limit, metaOnly)
+
+Get node retry queue
+
+Return records currently queued for retry on a pipeline node
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.PipelinesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: ApiKeyAuth
+    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKeyAuth.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    PipelinesApi apiInstance = new PipelinesApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String pipelineId = "pipelineId_example"; // String | Pipeline ID
+    String nodeId = "nodeId_example"; // String | Node ID
+    Integer limit = 56; // Integer | Max records to return (1-10, default 10)
+    Boolean metaOnly = true; // Boolean | Omit record payloads — a cheap presence check
+    try {
+      List<RoutesRetryQueueMessage> result = apiInstance.getNodeRetryQueue(organizationId, pipelineId, nodeId, limit, metaOnly);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PipelinesApi#getNodeRetryQueue");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **pipelineId** | **String**| Pipeline ID | |
+| **nodeId** | **String**| Node ID | |
+| **limit** | **Integer**| Max records to return (1-10, default 10) | [optional] |
+| **metaOnly** | **Boolean**| Omit record payloads — a cheap presence check | [optional] |
+
+### Return type
+
+[**List&lt;RoutesRetryQueueMessage&gt;**](RoutesRetryQueueMessage.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth), [Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Records queued for retry |  -  |
+| **500** | Failed to read retry queue |  -  |
 
 <a id="getOrganizationSummary"></a>
 # **getOrganizationSummary**

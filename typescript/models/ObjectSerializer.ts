@@ -409,6 +409,7 @@ export * from '../models/RoutesGetTransformResponse';
 export * from '../models/RoutesInviteUserToOrganizationRequest';
 export * from '../models/RoutesLoginRequest';
 export * from '../models/RoutesResourceMetadata';
+export * from '../models/RoutesRetryQueueMessage';
 export * from '../models/RoutesTransformConfig';
 export * from '../models/RoutesTransformOperation';
 export * from '../models/RoutesTransformOperationArguments';
@@ -1035,6 +1036,7 @@ import { RoutesGetTransformResponse             } from '../models/RoutesGetTrans
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
 import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
 import { RoutesTransformOperationArgumentsClass } from '../models/RoutesTransformOperationArguments';
@@ -1726,6 +1728,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesInviteUserToOrganizationRequest": RoutesInviteUserToOrganizationRequest,
     "RoutesLoginRequest": RoutesLoginRequest,
     "RoutesResourceMetadata": RoutesResourceMetadata,
+    "RoutesRetryQueueMessage": RoutesRetryQueueMessage,
     "RoutesTransformConfig": RoutesTransformConfig,
     "RoutesTransformOperation": RoutesTransformOperation,
     "RoutesTransformOperationArguments": RoutesTransformOperationArgumentsClass,
