@@ -597,8 +597,6 @@ export * from '../models/UpdateRoleRequest';
 export * from '../models/UpdateSecretRequest';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/UtcTimestampTimestampFormat';
-export * from '../models/VercelUserEventsSecretsConfig';
-export * from '../models/VercelUserEventsSettingsConfig';
 export * from '../models/VoltioAuditLogsSecretsConfig';
 export * from '../models/VoltioAuditLogsSettingsConfig';
 export * from '../models/VulnerabilityFindingsSecretsConfig';
@@ -1224,8 +1222,6 @@ import { UpdateRoleRequestClass } from '../models/UpdateRoleRequest';
 import { UpdateSecretRequestClass } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig   } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
-import { VercelUserEventsSecretsConfig } from '../models/VercelUserEventsSecretsConfig';
-import { VercelUserEventsSettingsConfig } from '../models/VercelUserEventsSettingsConfig';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
 import { VoltioAuditLogsSettingsConfig } from '../models/VoltioAuditLogsSettingsConfig';
 import { VulnerabilityFindingsSecretsConfig } from '../models/VulnerabilityFindingsSecretsConfig';
@@ -1911,8 +1907,6 @@ let typeMap: {[index: string]: any} = {
     "UpdateRoleRequest": UpdateRoleRequestClass,
     "UpdateSecretRequest": UpdateSecretRequestClass,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
-    "VercelUserEventsSecretsConfig": VercelUserEventsSecretsConfig,
-    "VercelUserEventsSettingsConfig": VercelUserEventsSettingsConfig,
     "VoltioAuditLogsSecretsConfig": VoltioAuditLogsSecretsConfig,
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,
     "VulnerabilityFindingsSecretsConfig": VulnerabilityFindingsSecretsConfig,

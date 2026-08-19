@@ -142,7 +142,6 @@
 |**eventType** | **String** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types |  [optional] |
 |**replicationStartTime** | **String** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; |  [optional] |
 |**resourceSid** | **String** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. |  [optional] |
-|**withPayload** | **Boolean** | Whether to include detailed payload information in the events. |  [optional] |
 |**customerId** | **String** | Optional: Filter audit logs by specific customer ID |  [optional] |
 |**assetStatus** | **List&lt;WizAssetStatus&gt;** | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. |  [optional] |
 |**assetTypes** | **List&lt;WizAssetType&gt;** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. |  |

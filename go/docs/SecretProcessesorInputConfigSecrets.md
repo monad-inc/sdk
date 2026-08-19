@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**AccessToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, accessToken ModelsSecret, apiSecret ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, apiSecret ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -341,6 +341,11 @@ and a boolean to check if the value has been set.
 
 SetAccessToken sets AccessToken field to given value.
 
+### HasAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasAccessToken() bool`
+
+HasAccessToken returns a boolean if a field has been set.
 
 ### GetApiSecret
 

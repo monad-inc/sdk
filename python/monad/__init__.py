@@ -669,8 +669,6 @@ __all__ = [
     "UpdateSecretRequest",
     "UtcTimestampArgumentsConfig",
     "UtcTimestampTimestampFormat",
-    "VercelUserEventsSecretsConfig",
-    "VercelUserEventsSettingsConfig",
     "VoltioAuditLogsSecretsConfig",
     "VoltioAuditLogsSettingsConfig",
     "VulnerabilityFindingsSecretsConfig",
@@ -1353,8 +1351,6 @@ from monad.models.update_role_request import UpdateRoleRequest as UpdateRoleRequ
 from monad.models.update_secret_request import UpdateSecretRequest as UpdateSecretRequest
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig as UtcTimestampArgumentsConfig
 from monad.models.utc_timestamp_timestamp_format import UtcTimestampTimestampFormat as UtcTimestampTimestampFormat
-from monad.models.vercel_user_events_secrets_config import VercelUserEventsSecretsConfig as VercelUserEventsSecretsConfig
-from monad.models.vercel_user_events_settings_config import VercelUserEventsSettingsConfig as VercelUserEventsSettingsConfig
 from monad.models.voltio_audit_logs_secrets_config import VoltioAuditLogsSecretsConfig as VoltioAuditLogsSecretsConfig
 from monad.models.voltio_audit_logs_settings_config import VoltioAuditLogsSettingsConfig as VoltioAuditLogsSettingsConfig
 from monad.models.vulnerability_findings_secrets_config import VulnerabilityFindingsSecretsConfig as VulnerabilityFindingsSecretsConfig

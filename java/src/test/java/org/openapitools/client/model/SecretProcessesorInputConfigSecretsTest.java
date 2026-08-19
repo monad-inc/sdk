@@ -81,7 +81,6 @@ import org.openapitools.client.model.TinesAuditLogsSecretsConfig;
 import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
 import org.openapitools.client.model.TwilioEventsSecretsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySecretsConfig;
-import org.openapitools.client.model.VercelUserEventsSecretsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSecretsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSecretsConfig;
 import org.openapitools.client.model.WizAuditLogsSecretsConfig;

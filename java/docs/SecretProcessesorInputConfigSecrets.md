@@ -20,7 +20,7 @@
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**username** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

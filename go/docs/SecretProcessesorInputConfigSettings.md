@@ -139,7 +139,6 @@ Name | Type | Description | Notes
 **EventType** | Pointer to **string** | Only includes events of a specific event type: https://www.twilio.com/docs/usage/monitor-events#event-types | [optional] 
 **ReplicationStartTime** | Pointer to **string** | Only include events after this time for the initial sync. If not specified, returns all events from the start. Must be a valid ISO 8601 formatted datetime string: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; | [optional] 
 **ResourceSid** | Pointer to **string** | Only include events that refer to this resource. Useful for discovering the history of a specific resource. | [optional] 
-**WithPayload** | Pointer to **bool** | Whether to include detailed payload information in the events. | [optional] 
 **CustomerId** | Pointer to **string** | Optional: Filter audit logs by specific customer ID | [optional] 
 **AssetStatus** | Pointer to [**[]WizAssetStatus**](WizAssetStatus.md) | Asset status types for Wiz. Ex: &#39;ACTIVE&#39;, &#39;INACTIVE&#39;. | [optional] 
 **AssetTypes** | [**[]WizAssetType**](WizAssetType.md) | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. | 
@@ -3389,31 +3388,6 @@ SetResourceSid sets ResourceSid field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasResourceSid() bool`
 
 HasResourceSid returns a boolean if a field has been set.
-
-### GetWithPayload
-
-`func (o *SecretProcessesorInputConfigSettings) GetWithPayload() bool`
-
-GetWithPayload returns the WithPayload field if non-nil, zero value otherwise.
-
-### GetWithPayloadOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetWithPayloadOk() (*bool, bool)`
-
-GetWithPayloadOk returns a tuple with the WithPayload field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWithPayload
-
-`func (o *SecretProcessesorInputConfigSettings) SetWithPayload(v bool)`
-
-SetWithPayload sets WithPayload field to given value.
-
-### HasWithPayload
-
-`func (o *SecretProcessesorInputConfigSettings) HasWithPayload() bool`
-
-HasWithPayload returns a boolean if a field has been set.
 
 ### GetCustomerId
 

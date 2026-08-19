@@ -79,7 +79,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	TinesEventsLogsSecretsConfig *TinesEventsLogsSecretsConfig
 	TwilioEventsSecretsConfig *TwilioEventsSecretsConfig
 	TwilioSendgridEmailActivitySecretsConfig *TwilioSendgridEmailActivitySecretsConfig
-	VercelUserEventsSecretsConfig *VercelUserEventsSecretsConfig
 	VoltioAuditLogsSecretsConfig *VoltioAuditLogsSecretsConfig
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
 	WizAuditLogsSecretsConfig *WizAuditLogsSecretsConfig
@@ -503,13 +502,6 @@ func TwilioEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TwilioEve
 func TwilioSendgridEmailActivitySecretsConfigAsSecretProcessesorInputConfigSecrets(v *TwilioSendgridEmailActivitySecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		TwilioSendgridEmailActivitySecretsConfig: v,
-	}
-}
-
-// VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns VercelUserEventsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func VercelUserEventsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *VercelUserEventsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		VercelUserEventsSecretsConfig: v,
 	}
 }
 
@@ -1566,23 +1558,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TwilioSendgridEmailActivitySecretsConfig = nil
 	}
 
-	// try to unmarshal data into VercelUserEventsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSecretsConfig)
-	if err == nil {
-		jsonVercelUserEventsSecretsConfig, _ := json.Marshal(dst.VercelUserEventsSecretsConfig)
-		if string(jsonVercelUserEventsSecretsConfig) == "{}" { // empty struct
-			dst.VercelUserEventsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VercelUserEventsSecretsConfig); err != nil {
-				dst.VercelUserEventsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VercelUserEventsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into VoltioAuditLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.VoltioAuditLogsSecretsConfig)
 	if err == nil {
@@ -1713,7 +1688,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.TinesEventsLogsSecretsConfig = nil
 		dst.TwilioEventsSecretsConfig = nil
 		dst.TwilioSendgridEmailActivitySecretsConfig = nil
-		dst.VercelUserEventsSecretsConfig = nil
 		dst.VoltioAuditLogsSecretsConfig = nil
 		dst.VulnerabilityFindingsSecretsConfig = nil
 		dst.WizAuditLogsSecretsConfig = nil
@@ -1723,11 +1697,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
         } else {
@@ -2293,10 +2262,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TwilioSendgridEmailActivitySecretsConfig)
 	}
 
-	if src.VercelUserEventsSecretsConfig != nil {
-		return json.Marshal(&src.VercelUserEventsSecretsConfig)
-	}
-
 	if src.VoltioAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.VoltioAuditLogsSecretsConfig)
 	}
@@ -2561,10 +2526,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.TwilioSendgridEmailActivitySecretsConfig
 	}
 
-	if obj.VercelUserEventsSecretsConfig != nil {
-		return obj.VercelUserEventsSecretsConfig
-	}
-
 	if obj.VoltioAuditLogsSecretsConfig != nil {
 		return obj.VoltioAuditLogsSecretsConfig
 	}
@@ -2825,10 +2786,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.TwilioSendgridEmailActivitySecretsConfig != nil {
 		return *obj.TwilioSendgridEmailActivitySecretsConfig
-	}
-
-	if obj.VercelUserEventsSecretsConfig != nil {
-		return *obj.VercelUserEventsSecretsConfig
 	}
 
 	if obj.VoltioAuditLogsSecretsConfig != nil {

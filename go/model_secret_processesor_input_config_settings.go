@@ -88,7 +88,6 @@ type SecretProcessesorInputConfigSettings struct {
 	TinesEventsLogsSettingsConfig *TinesEventsLogsSettingsConfig
 	TwilioEventsSettingsConfig *TwilioEventsSettingsConfig
 	TwilioSendgridEmailActivitySettingsConfig *TwilioSendgridEmailActivitySettingsConfig
-	VercelUserEventsSettingsConfig *VercelUserEventsSettingsConfig
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
@@ -574,13 +573,6 @@ func TwilioEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *TwilioE
 func TwilioSendgridEmailActivitySettingsConfigAsSecretProcessesorInputConfigSettings(v *TwilioSendgridEmailActivitySettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		TwilioSendgridEmailActivitySettingsConfig: v,
-	}
-}
-
-// VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns VercelUserEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func VercelUserEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *VercelUserEventsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		VercelUserEventsSettingsConfig: v,
 	}
 }
 
@@ -1783,23 +1775,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TwilioSendgridEmailActivitySettingsConfig = nil
 	}
 
-	// try to unmarshal data into VercelUserEventsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.VercelUserEventsSettingsConfig)
-	if err == nil {
-		jsonVercelUserEventsSettingsConfig, _ := json.Marshal(dst.VercelUserEventsSettingsConfig)
-		if string(jsonVercelUserEventsSettingsConfig) == "{}" { // empty struct
-			dst.VercelUserEventsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.VercelUserEventsSettingsConfig); err != nil {
-				dst.VercelUserEventsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.VercelUserEventsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into VoltioAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.VoltioAuditLogsSettingsConfig)
 	if err == nil {
@@ -1922,7 +1897,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.TinesEventsLogsSettingsConfig = nil
 		dst.TwilioEventsSettingsConfig = nil
 		dst.TwilioSendgridEmailActivitySettingsConfig = nil
-		dst.VercelUserEventsSettingsConfig = nil
 		dst.VoltioAuditLogsSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.WizAuditLogsSettingsConfig = nil
@@ -1931,11 +1905,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
         if err != nil {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
         } else {
@@ -2577,10 +2546,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.TwilioSendgridEmailActivitySettingsConfig)
 	}
 
-	if src.VercelUserEventsSettingsConfig != nil {
-		return json.Marshal(&src.VercelUserEventsSettingsConfig)
-	}
-
 	if src.VoltioAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.VoltioAuditLogsSettingsConfig)
 	}
@@ -2877,10 +2842,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.TwilioSendgridEmailActivitySettingsConfig
 	}
 
-	if obj.VercelUserEventsSettingsConfig != nil {
-		return obj.VercelUserEventsSettingsConfig
-	}
-
 	if obj.VoltioAuditLogsSettingsConfig != nil {
 		return obj.VoltioAuditLogsSettingsConfig
 	}
@@ -3173,10 +3134,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.TwilioSendgridEmailActivitySettingsConfig != nil {
 		return *obj.TwilioSendgridEmailActivitySettingsConfig
-	}
-
-	if obj.VercelUserEventsSettingsConfig != nil {
-		return *obj.VercelUserEventsSettingsConfig
 	}
 
 	if obj.VoltioAuditLogsSettingsConfig != nil {

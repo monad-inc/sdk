@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **api_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

@@ -102,7 +102,6 @@ import org.openapitools.client.model.TinesEventsLogsSettingsConfig;
 import org.openapitools.client.model.TwilioEventsSettingsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySettingsConfig;
 import org.openapitools.client.model.TypesStringFilter;
-import org.openapitools.client.model.VercelUserEventsSettingsConfig;
 import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
 import org.openapitools.client.model.WizAssetStatus;
@@ -1217,14 +1216,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void resourceSidTest() {
         // TODO: test resourceSid
-    }
-
-    /**
-     * Test the property 'withPayload'
-     */
-    @Test
-    public void withPayloadTest() {
-        // TODO: test withPayload
     }
 
     /**

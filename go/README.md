@@ -926,8 +926,6 @@ Class | Method | HTTP request | Description
  - [UpdateSecretRequest](docs/UpdateSecretRequest.md)
  - [UtcTimestampArgumentsConfig](docs/UtcTimestampArgumentsConfig.md)
  - [UtcTimestampTimestampFormat](docs/UtcTimestampTimestampFormat.md)
- - [VercelUserEventsSecretsConfig](docs/VercelUserEventsSecretsConfig.md)
- - [VercelUserEventsSettingsConfig](docs/VercelUserEventsSettingsConfig.md)
  - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)
  - [VoltioAuditLogsSettingsConfig](docs/VoltioAuditLogsSettingsConfig.md)
  - [VulnerabilityFindingsSecretsConfig](docs/VulnerabilityFindingsSecretsConfig.md)
