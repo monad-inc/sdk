@@ -27,8 +27,8 @@ class KafkaPayloadFormat(str, Enum):
     """
     allowed enum values
     """
-    payloadFormatIndividual = 'individual'
-    payloadFormatJSONArray = 'json_array'
+    defaultPayloadFormat = 'individual'
+    payloadFormatIndividual = 'json_array'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
