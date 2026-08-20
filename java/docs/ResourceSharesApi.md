@@ -529,7 +529,7 @@ public class Example {
 
 <a id="updateResourceShares"></a>
 # **updateResourceShares**
-> ModelsResourceShareChangeSet updateResourceShares(organizationId, resourceType, resourceId, updateResourceSharesRequest)
+> ModelsResourceShareChangeSet updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest)
 
 Update a resource&#39;s shares
 
@@ -566,9 +566,9 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Owner organization ID
     String resourceType = "secret"; // String | Resource type
     String resourceId = "resourceId_example"; // String | Resource ID
-    UpdateResourceSharesRequest updateResourceSharesRequest = new UpdateResourceSharesRequest(); // UpdateResourceSharesRequest | Share delta request
+    CreateResourceSharesRequest createResourceSharesRequest = new CreateResourceSharesRequest(); // CreateResourceSharesRequest | Share delta request
     try {
-      ModelsResourceShareChangeSet result = apiInstance.updateResourceShares(organizationId, resourceType, resourceId, updateResourceSharesRequest);
+      ModelsResourceShareChangeSet result = apiInstance.updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ResourceSharesApi#updateResourceShares");
@@ -588,7 +588,7 @@ public class Example {
 | **organizationId** | **String**| Owner organization ID | |
 | **resourceType** | **String**| Resource type | [enum: secret, component] |
 | **resourceId** | **String**| Resource ID | |
-| **updateResourceSharesRequest** | [**UpdateResourceSharesRequest**](UpdateResourceSharesRequest.md)| Share delta request | |
+| **createResourceSharesRequest** | [**CreateResourceSharesRequest**](CreateResourceSharesRequest.md)| Share delta request | |
 
 ### Return type
 

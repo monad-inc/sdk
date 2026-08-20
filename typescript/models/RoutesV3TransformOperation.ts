@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV3TransformOperation {
-    'arguments'?: { [key: string]: any | null; };
+    'arguments'?: { [key: string]: any; };
     'operation'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -24,7 +24,7 @@ export class RoutesV3TransformOperation {
         {
             "name": "arguments",
             "baseName": "arguments",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

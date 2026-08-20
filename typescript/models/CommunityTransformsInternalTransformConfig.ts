@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class CommunityTransformsInternalTransformConfig {
     'author'?: string;
-    'config'?: { [key: string]: any | null; };
+    'config'?: { [key: string]: any; };
     'contributors'?: Array<string>;
     'description'?: string;
     'inputs'?: Array<string>;
@@ -35,7 +35,7 @@ export class CommunityTransformsInternalTransformConfig {
         {
             "name": "config",
             "baseName": "config",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

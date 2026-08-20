@@ -83,7 +83,7 @@ import com.google.gson.JsonParseException;
 
 import org.openapitools.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SecretProcessesorOutputConfigSecrets.class.getName());
 
@@ -107,6 +107,8 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             final TypeAdapter<HttpSecretsConfig> adapterHttpSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(HttpSecretsConfig.class));
             final TypeAdapter<KafkaSecretsConfig> adapterKafkaSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(KafkaSecretsConfig.class));
             final TypeAdapter<Object> adapterObject = gson.getDelegateAdapter(this, TypeToken.get(Object.class));
+            final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
+            final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
             final TypeAdapter<NextGenSiemSecretsConfig> adapterNextGenSiemSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(NextGenSiemSecretsConfig.class));
             final TypeAdapter<ObjectStorageSecretsConfig> adapterObjectStorageSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(ObjectStorageSecretsConfig.class));
             final TypeAdapter<OpensearchSecretsConfig> adapterOpensearchSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(OpensearchSecretsConfig.class));
@@ -200,6 +202,12 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, primitive);
                         return;
                     }
+                    // check if the actual instance is of the type `Map<String, Object>`
+                    if (value.getActualInstance() instanceof Map<?, ?>) {
+                        JsonObject object = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, object);
+                        return;
+                    }
                     // check if the actual instance is of the type `NextGenSiemSecretsConfig`
                     if (value.getActualInstance() instanceof NextGenSiemSecretsConfig) {
                         JsonElement element = adapterNextGenSiemSecretsConfig.toJsonTree((NextGenSiemSecretsConfig)value.getActualInstance());
@@ -272,7 +280,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
                 }
 
                 @Override
@@ -429,6 +437,21 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Object'", e);
+                    }
+                    // deserialize Map<String, Object>
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        if (!jsonElement.isJsonObject()) {
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+                        }
+
+                        actualAdapter = adapterMapStringObject;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'Map<String, Object>'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
                     // deserialize NextGenSiemSecretsConfig
                     try {
@@ -612,6 +635,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
         schemas.put("HttpSecretsConfig", HttpSecretsConfig.class);
         schemas.put("KafkaSecretsConfig", KafkaSecretsConfig.class);
         schemas.put("Object", Object.class);
+        schemas.put("Map<String, Object>", Map.class);
         schemas.put("NextGenSiemSecretsConfig", NextGenSiemSecretsConfig.class);
         schemas.put("ObjectStorageSecretsConfig", ObjectStorageSecretsConfig.class);
         schemas.put("OpensearchSecretsConfig", OpensearchSecretsConfig.class);
@@ -634,7 +658,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map&lt;String, Object&gt;, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -700,6 +724,11 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
+        if (instance instanceof Map<?, ?>) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof NextGenSiemSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -760,14 +789,14 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
+     * AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map&lt;String, Object&gt;, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig
      *
-     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig)
+     * @return The actual instance (AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map&lt;String, Object&gt;, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -917,6 +946,18 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
     @SuppressWarnings("unchecked")
     public Object getObject() throws ClassCastException {
         return (Object)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
+     */
+    @SuppressWarnings("unchecked")
+    public Map<String, Object> getMapStringObject() throws ClassCastException {
+        return (Map<String, Object>)super.getActualInstance();
     }
 
     /**
@@ -1171,6 +1212,17 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Object failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with Map<String, Object>
+        try {
+            if (!jsonElement.isJsonObject()) {
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a object type in the JSON string but got `%s`", jsonElement.toString()));
+            }
+
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with NextGenSiemSecretsConfig
         try {
             NextGenSiemSecretsConfig.validateJsonElement(jsonElement);
@@ -1268,7 +1320,7 @@ public class SecretProcessesorOutputConfigSecrets extends AbstractOpenApiSchema 
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, Map<String, Object>, NextGenSiemSecretsConfig, Object, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

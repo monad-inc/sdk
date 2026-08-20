@@ -25,7 +25,6 @@ from monad.models.models_resource_share_target_list import ModelsResourceShareTa
 from monad.models.models_resource_share_with_usage_list import ModelsResourceShareWithUsageList
 from monad.models.routes_v3_resource_usage_list_response import RoutesV3ResourceUsageListResponse
 from monad.models.routes_v3_shared_resource_list_response import RoutesV3SharedResourceListResponse
-from monad.models.update_resource_shares_request import UpdateResourceSharesRequest
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -2048,7 +2047,7 @@ class ResourceSharesApi:
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
         resource_type: Annotated[StrictStr, Field(description="Resource type")],
         resource_id: Annotated[StrictStr, Field(description="Resource ID")],
-        update_resource_shares_request: Annotated[UpdateResourceSharesRequest, Field(description="Share delta request")],
+        create_resource_shares_request: Annotated[CreateResourceSharesRequest, Field(description="Share delta request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2072,8 +2071,8 @@ class ResourceSharesApi:
         :type resource_type: str
         :param resource_id: Resource ID (required)
         :type resource_id: str
-        :param update_resource_shares_request: Share delta request (required)
-        :type update_resource_shares_request: UpdateResourceSharesRequest
+        :param create_resource_shares_request: Share delta request (required)
+        :type create_resource_shares_request: CreateResourceSharesRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2100,7 +2099,7 @@ class ResourceSharesApi:
             organization_id=organization_id,
             resource_type=resource_type,
             resource_id=resource_id,
-            update_resource_shares_request=update_resource_shares_request,
+            create_resource_shares_request=create_resource_shares_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2131,7 +2130,7 @@ class ResourceSharesApi:
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
         resource_type: Annotated[StrictStr, Field(description="Resource type")],
         resource_id: Annotated[StrictStr, Field(description="Resource ID")],
-        update_resource_shares_request: Annotated[UpdateResourceSharesRequest, Field(description="Share delta request")],
+        create_resource_shares_request: Annotated[CreateResourceSharesRequest, Field(description="Share delta request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2155,8 +2154,8 @@ class ResourceSharesApi:
         :type resource_type: str
         :param resource_id: Resource ID (required)
         :type resource_id: str
-        :param update_resource_shares_request: Share delta request (required)
-        :type update_resource_shares_request: UpdateResourceSharesRequest
+        :param create_resource_shares_request: Share delta request (required)
+        :type create_resource_shares_request: CreateResourceSharesRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2183,7 +2182,7 @@ class ResourceSharesApi:
             organization_id=organization_id,
             resource_type=resource_type,
             resource_id=resource_id,
-            update_resource_shares_request=update_resource_shares_request,
+            create_resource_shares_request=create_resource_shares_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2214,7 +2213,7 @@ class ResourceSharesApi:
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
         resource_type: Annotated[StrictStr, Field(description="Resource type")],
         resource_id: Annotated[StrictStr, Field(description="Resource ID")],
-        update_resource_shares_request: Annotated[UpdateResourceSharesRequest, Field(description="Share delta request")],
+        create_resource_shares_request: Annotated[CreateResourceSharesRequest, Field(description="Share delta request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2238,8 +2237,8 @@ class ResourceSharesApi:
         :type resource_type: str
         :param resource_id: Resource ID (required)
         :type resource_id: str
-        :param update_resource_shares_request: Share delta request (required)
-        :type update_resource_shares_request: UpdateResourceSharesRequest
+        :param create_resource_shares_request: Share delta request (required)
+        :type create_resource_shares_request: CreateResourceSharesRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2266,7 +2265,7 @@ class ResourceSharesApi:
             organization_id=organization_id,
             resource_type=resource_type,
             resource_id=resource_id,
-            update_resource_shares_request=update_resource_shares_request,
+            create_resource_shares_request=create_resource_shares_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2292,7 +2291,7 @@ class ResourceSharesApi:
         organization_id,
         resource_type,
         resource_id,
-        update_resource_shares_request,
+        create_resource_shares_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2324,8 +2323,8 @@ class ResourceSharesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if update_resource_shares_request is not None:
-            _body_params = update_resource_shares_request
+        if create_resource_shares_request is not None:
+            _body_params = create_resource_shares_request
 
 
         # set the HTTP header `Accept`

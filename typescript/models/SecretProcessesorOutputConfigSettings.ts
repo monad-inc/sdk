@@ -51,7 +51,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatabricksLakewatchSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | Sentinelv2SettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig;
+export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatabricksLakewatchSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | Sentinelv2SettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -62,6 +62,7 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

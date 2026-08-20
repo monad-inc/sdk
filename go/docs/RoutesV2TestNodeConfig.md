@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecrets
 
-`func (o *RoutesV2TestNodeConfig) GetSecrets() map[string]*interface{}`
+`func (o *RoutesV2TestNodeConfig) GetSecrets() map[string]interface{}`
 
 GetSecrets returns the Secrets field if non-nil, zero value otherwise.
 
 ### GetSecretsOk
 
-`func (o *RoutesV2TestNodeConfig) GetSecretsOk() (*map[string]*interface{}, bool)`
+`func (o *RoutesV2TestNodeConfig) GetSecretsOk() (*map[string]interface{}, bool)`
 
 GetSecretsOk returns a tuple with the Secrets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecrets
 
-`func (o *RoutesV2TestNodeConfig) SetSecrets(v map[string]*interface{})`
+`func (o *RoutesV2TestNodeConfig) SetSecrets(v map[string]interface{})`
 
 SetSecrets sets Secrets field to given value.
 
@@ -53,20 +53,20 @@ HasSecrets returns a boolean if a field has been set.
 
 ### GetSettings
 
-`func (o *RoutesV2TestNodeConfig) GetSettings() map[string]*interface{}`
+`func (o *RoutesV2TestNodeConfig) GetSettings() map[string]interface{}`
 
 GetSettings returns the Settings field if non-nil, zero value otherwise.
 
 ### GetSettingsOk
 
-`func (o *RoutesV2TestNodeConfig) GetSettingsOk() (*map[string]*interface{}, bool)`
+`func (o *RoutesV2TestNodeConfig) GetSettingsOk() (*map[string]interface{}, bool)`
 
 GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSettings
 
-`func (o *RoutesV2TestNodeConfig) SetSettings(v map[string]*interface{})`
+`func (o *RoutesV2TestNodeConfig) SetSettings(v map[string]interface{})`
 
 SetSettings sets Settings field to given value.
 

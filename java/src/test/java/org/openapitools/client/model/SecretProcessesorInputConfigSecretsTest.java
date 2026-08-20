@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
 import org.openapitools.client.model.AwsGuarddutySecretsConfig;
 import org.openapitools.client.model.AwsS3SecretsConfig;

@@ -582,9 +582,7 @@ import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
 import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
-import { UpdateResourceSharesRequest } from '../models/UpdateResourceSharesRequest';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -5209,11 +5207,11 @@ export class PromiseResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param updateResourceSharesRequest Share delta request
+     * @param createResourceSharesRequest Share delta request
      */
-    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
+    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, updateResourceSharesRequest, observableOptions);
+        const result = this.api.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5223,11 +5221,11 @@ export class PromiseResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param updateResourceSharesRequest Share delta request
+     * @param createResourceSharesRequest Share delta request
      */
-    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
+    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: PromiseConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateResourceShares(organizationId, resourceType, resourceId, updateResourceSharesRequest, observableOptions);
+        const result = this.api.updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5496,11 +5494,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, observableOptions);
+        const result = this.api.updateSecretWithHttpInfo(organizationId, secretId, createSecretRequest, observableOptions);
         return result.toPromise();
     }
 
@@ -5509,11 +5507,11 @@ export class PromiseSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
+    public updateSecret(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV2SecretResponse> {
         const observableOptions = wrapOptions(_options);
-        const result = this.api.updateSecret(organizationId, secretId, updateSecretRequest, observableOptions);
+        const result = this.api.updateSecret(organizationId, secretId, createSecretRequest, observableOptions);
         return result.toPromise();
     }
 

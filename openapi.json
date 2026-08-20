@@ -3727,9 +3727,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -6112,6 +6112,10 @@
                     "RatePerHour"
                 ]
             },
+            "models.RawConfig": {
+                "additionalProperties": {},
+                "type": "object"
+            },
             "models.Reference": {
                 "properties": {
                     "id": {
@@ -8046,6 +8050,9 @@
                                 "$ref": "#/components/schemas/math_multiply_with_value.ArgumentsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/models.RawConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/mutate_type.ArgumentsConfig"
                             },
                             {
@@ -8074,6 +8081,11 @@
                     },
                     "secrets": {
                         "additionalProperties": {},
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/models.RawConfig"
+                            }
+                        ],
                         "type": "object"
                     }
                 },
@@ -10103,6 +10115,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/kv_lookup.SecretsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/models.RawConfig"
                             }
                         ],
                         "type": "object"
@@ -10118,6 +10133,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/kv_lookup.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/models.RawConfig"
                             }
                         ],
                         "type": "object"
@@ -10252,6 +10270,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/models.RawConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/monad_log.SecretsConfig"
@@ -10449,6 +10470,9 @@
                                 "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/models.RawConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/monad_log.SettingsConfig"
                             },
                             {
@@ -10553,6 +10577,9 @@
                                 "$ref": "#/components/schemas/kv_lookup_output.SecretsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/models.RawConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/next_gen_siem.SecretsConfig"
                             },
                             {
@@ -10641,6 +10668,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/kv_lookup_output.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/models.RawConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/next_gen_siem.SettingsConfig"

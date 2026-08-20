@@ -85,16 +85,7 @@ func (dst *UpdateAlertRuleRequest) UnmarshalJSON(data []byte) error {
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateAlertRuleRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateAlertRuleRequest)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateAlertRuleRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateAlertRuleRequest)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(UpdateAlertRuleRequest)")
 	}
 }
 

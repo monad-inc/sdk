@@ -25,7 +25,7 @@ type RoutesV2PipelineRequestNode struct {
 	ComponentId string `json:"component_id"`
 	ComponentType ModelsComponentType `json:"component_type"`
 	// ConfigOverrides is the per-node override delta applied over the component's base config (RFC 0017). The save-time gate merges it and fully validates the effective config. A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
-	ConfigOverrides map[string]*interface{} `json:"config_overrides,omitempty"`
+	ConfigOverrides map[string]interface{} `json:"config_overrides,omitempty"`
 	// nil => enabled
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -102,9 +102,9 @@ func (o *RoutesV2PipelineRequestNode) SetComponentType(v ModelsComponentType) {
 }
 
 // GetConfigOverrides returns the ConfigOverrides field value if set, zero value otherwise.
-func (o *RoutesV2PipelineRequestNode) GetConfigOverrides() map[string]*interface{} {
+func (o *RoutesV2PipelineRequestNode) GetConfigOverrides() map[string]interface{} {
 	if o == nil || IsNil(o.ConfigOverrides) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.ConfigOverrides
@@ -112,9 +112,9 @@ func (o *RoutesV2PipelineRequestNode) GetConfigOverrides() map[string]*interface
 
 // GetConfigOverridesOk returns a tuple with the ConfigOverrides field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2PipelineRequestNode) GetConfigOverridesOk() (map[string]*interface{}, bool) {
+func (o *RoutesV2PipelineRequestNode) GetConfigOverridesOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ConfigOverrides) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.ConfigOverrides, true
 }
@@ -128,8 +128,8 @@ func (o *RoutesV2PipelineRequestNode) HasConfigOverrides() bool {
 	return false
 }
 
-// SetConfigOverrides gets a reference to the given map[string]*interface{} and assigns it to the ConfigOverrides field.
-func (o *RoutesV2PipelineRequestNode) SetConfigOverrides(v map[string]*interface{}) {
+// SetConfigOverrides gets a reference to the given map[string]interface{} and assigns it to the ConfigOverrides field.
+func (o *RoutesV2PipelineRequestNode) SetConfigOverrides(v map[string]interface{}) {
 	o.ConfigOverrides = v
 }
 

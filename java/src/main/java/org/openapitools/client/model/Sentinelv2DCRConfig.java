@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Sentinelv2DCRConfig {
   public static final String SERIALIZED_NAME_MANAGED = "managed";
   @SerializedName(SERIALIZED_NAME_MANAGED)

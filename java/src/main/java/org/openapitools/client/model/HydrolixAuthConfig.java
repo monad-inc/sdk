@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Authentication method. Either a static service-account bearer token or a username/password pair exchanged at Init time for a 24h access token.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class HydrolixAuthConfig {
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)

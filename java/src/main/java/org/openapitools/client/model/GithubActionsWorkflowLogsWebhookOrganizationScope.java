@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubActionsWorkflowLogsWebhookOrganizationScope
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class GithubActionsWorkflowLogsWebhookOrganizationScope {
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)

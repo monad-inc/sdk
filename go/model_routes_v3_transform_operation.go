@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV3TransformOperation{}
 
 // RoutesV3TransformOperation struct for RoutesV3TransformOperation
 type RoutesV3TransformOperation struct {
-	Arguments map[string]*interface{} `json:"arguments,omitempty"`
+	Arguments map[string]interface{} `json:"arguments,omitempty"`
 	Operation *string `json:"operation,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV3TransformOperationWithDefaults() *RoutesV3TransformOperation {
 }
 
 // GetArguments returns the Arguments field value if set, zero value otherwise.
-func (o *RoutesV3TransformOperation) GetArguments() map[string]*interface{} {
+func (o *RoutesV3TransformOperation) GetArguments() map[string]interface{} {
 	if o == nil || IsNil(o.Arguments) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Arguments
@@ -52,9 +52,9 @@ func (o *RoutesV3TransformOperation) GetArguments() map[string]*interface{} {
 
 // GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3TransformOperation) GetArgumentsOk() (map[string]*interface{}, bool) {
+func (o *RoutesV3TransformOperation) GetArgumentsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Arguments) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Arguments, true
 }
@@ -68,8 +68,8 @@ func (o *RoutesV3TransformOperation) HasArguments() bool {
 	return false
 }
 
-// SetArguments gets a reference to the given map[string]*interface{} and assigns it to the Arguments field.
-func (o *RoutesV3TransformOperation) SetArguments(v map[string]*interface{}) {
+// SetArguments gets a reference to the given map[string]interface{} and assigns it to the Arguments field.
+func (o *RoutesV3TransformOperation) SetArguments(v map[string]interface{}) {
 	o.Arguments = v
 }
 

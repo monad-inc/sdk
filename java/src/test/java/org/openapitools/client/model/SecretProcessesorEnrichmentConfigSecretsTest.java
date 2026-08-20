@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 import org.openapitools.client.model.CommunityEditionSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
 import org.junit.jupiter.api.Disabled;

@@ -18,18 +18,18 @@ export class ModelsNodeComponent {
     /**
     * The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig == Config.  BaseConfig is the component\'s config before the override delta is applied.
     */
-    'baseConfig'?: { [key: string]: any | null; };
+    'baseConfig'?: { [key: string]: any; };
     /**
     * Config is the node\'s effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component\'s base config unchanged.
     */
-    'config'?: { [key: string]: any | null; };
+    'config'?: { [key: string]: any; };
     'description'?: string;
     'id'?: string;
     'name'?: string;
     /**
     * Overrides is the node\'s sparse override delta (secrets as {id} refs only).
     */
-    'overrides'?: { [key: string]: any | null; };
+    'overrides'?: { [key: string]: any; };
     'references'?: ModelsReferences;
     'shareDetails'?: ModelsShareDetails;
     'type'?: string;
@@ -43,13 +43,13 @@ export class ModelsNodeComponent {
         {
             "name": "baseConfig",
             "baseName": "base_config",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {
             "name": "config",
             "baseName": "config",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {
@@ -73,7 +73,7 @@ export class ModelsNodeComponent {
         {
             "name": "overrides",
             "baseName": "overrides",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

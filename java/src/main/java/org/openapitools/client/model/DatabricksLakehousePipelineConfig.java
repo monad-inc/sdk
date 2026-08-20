@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Who manages the Auto Loader ingestion pipeline; omitted means self-managed
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakehousePipelineConfig {
   /**
    * Gets or Sets mode

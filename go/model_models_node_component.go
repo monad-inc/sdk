@@ -21,14 +21,14 @@ var _ MappedNullable = &ModelsNodeComponent{}
 // ModelsNodeComponent struct for ModelsNodeComponent
 type ModelsNodeComponent struct {
 	// The blocks below are populated only for a node carrying an override delta, so the UI can derive per-field overridden markers client-side without a server-built per-field structure (R-1). A node with no delta leaves them empty, and BaseConfig == Config.  BaseConfig is the component's config before the override delta is applied.
-	BaseConfig map[string]*interface{} `json:"base_config,omitempty"`
+	BaseConfig map[string]interface{} `json:"base_config,omitempty"`
 	// Config is the node's effective config: for a node carrying an override delta it is the base merged with that delta (RFC 0017 §3); otherwise it is the component's base config unchanged.
-	Config map[string]*interface{} `json:"config,omitempty"`
+	Config map[string]interface{} `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	// Overrides is the node's sparse override delta (secrets as {id} refs only).
-	Overrides map[string]*interface{} `json:"overrides,omitempty"`
+	Overrides map[string]interface{} `json:"overrides,omitempty"`
 	References *ModelsReferences `json:"references,omitempty"`
 	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -53,9 +53,9 @@ func NewModelsNodeComponentWithDefaults() *ModelsNodeComponent {
 }
 
 // GetBaseConfig returns the BaseConfig field value if set, zero value otherwise.
-func (o *ModelsNodeComponent) GetBaseConfig() map[string]*interface{} {
+func (o *ModelsNodeComponent) GetBaseConfig() map[string]interface{} {
 	if o == nil || IsNil(o.BaseConfig) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.BaseConfig
@@ -63,9 +63,9 @@ func (o *ModelsNodeComponent) GetBaseConfig() map[string]*interface{} {
 
 // GetBaseConfigOk returns a tuple with the BaseConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeComponent) GetBaseConfigOk() (map[string]*interface{}, bool) {
+func (o *ModelsNodeComponent) GetBaseConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.BaseConfig) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.BaseConfig, true
 }
@@ -79,15 +79,15 @@ func (o *ModelsNodeComponent) HasBaseConfig() bool {
 	return false
 }
 
-// SetBaseConfig gets a reference to the given map[string]*interface{} and assigns it to the BaseConfig field.
-func (o *ModelsNodeComponent) SetBaseConfig(v map[string]*interface{}) {
+// SetBaseConfig gets a reference to the given map[string]interface{} and assigns it to the BaseConfig field.
+func (o *ModelsNodeComponent) SetBaseConfig(v map[string]interface{}) {
 	o.BaseConfig = v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ModelsNodeComponent) GetConfig() map[string]*interface{} {
+func (o *ModelsNodeComponent) GetConfig() map[string]interface{} {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Config
@@ -95,9 +95,9 @@ func (o *ModelsNodeComponent) GetConfig() map[string]*interface{} {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeComponent) GetConfigOk() (map[string]*interface{}, bool) {
+func (o *ModelsNodeComponent) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Config, true
 }
@@ -111,8 +111,8 @@ func (o *ModelsNodeComponent) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]*interface{} and assigns it to the Config field.
-func (o *ModelsNodeComponent) SetConfig(v map[string]*interface{}) {
+// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
+func (o *ModelsNodeComponent) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 
@@ -213,9 +213,9 @@ func (o *ModelsNodeComponent) SetName(v string) {
 }
 
 // GetOverrides returns the Overrides field value if set, zero value otherwise.
-func (o *ModelsNodeComponent) GetOverrides() map[string]*interface{} {
+func (o *ModelsNodeComponent) GetOverrides() map[string]interface{} {
 	if o == nil || IsNil(o.Overrides) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Overrides
@@ -223,9 +223,9 @@ func (o *ModelsNodeComponent) GetOverrides() map[string]*interface{} {
 
 // GetOverridesOk returns a tuple with the Overrides field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsNodeComponent) GetOverridesOk() (map[string]*interface{}, bool) {
+func (o *ModelsNodeComponent) GetOverridesOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Overrides) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Overrides, true
 }
@@ -239,8 +239,8 @@ func (o *ModelsNodeComponent) HasOverrides() bool {
 	return false
 }
 
-// SetOverrides gets a reference to the given map[string]*interface{} and assigns it to the Overrides field.
-func (o *ModelsNodeComponent) SetOverrides(v map[string]*interface{}) {
+// SetOverrides gets a reference to the given map[string]interface{} and assigns it to the Overrides field.
+func (o *ModelsNodeComponent) SetOverrides(v map[string]interface{}) {
 	o.Overrides = v
 }
 

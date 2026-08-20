@@ -19,7 +19,7 @@ export class RoutesV2PipelineRequestNode {
     /**
     * ConfigOverrides is the per-node override delta applied over the component\'s base config (RFC 0017). The save-time gate merges it and fully validates the effective config. A non-empty delta requires the pipeline_node_config_overrides flag — see nodeOverridesDisallowed — so the column stays nil for every org until the feature is turned on.
     */
-    'configOverrides'?: { [key: string]: any | null; };
+    'configOverrides'?: { [key: string]: any; };
     /**
     * nil => enabled
     */
@@ -47,7 +47,7 @@ export class RoutesV2PipelineRequestNode {
         {
             "name": "configOverrides",
             "baseName": "config_overrides",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

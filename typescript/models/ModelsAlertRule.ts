@@ -26,7 +26,7 @@ export class ModelsAlertRule {
     'name'?: string;
     'organizationId'?: string;
     'pipelineIds'?: Array<string>;
-    'ruleConfig'?: { [key: string]: any | null; };
+    'ruleConfig'?: { [key: string]: any; };
     'severity'?: string;
     'type'?: string;
     'updatedAt'?: string;
@@ -93,7 +93,7 @@ export class ModelsAlertRule {
         {
             "name": "ruleConfig",
             "baseName": "rule_config",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

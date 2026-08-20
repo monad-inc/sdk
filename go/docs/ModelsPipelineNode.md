@@ -165,20 +165,20 @@ HasComponentType returns a boolean if a field has been set.
 
 ### GetConfigOverrides
 
-`func (o *ModelsPipelineNode) GetConfigOverrides() map[string]*interface{}`
+`func (o *ModelsPipelineNode) GetConfigOverrides() map[string]interface{}`
 
 GetConfigOverrides returns the ConfigOverrides field if non-nil, zero value otherwise.
 
 ### GetConfigOverridesOk
 
-`func (o *ModelsPipelineNode) GetConfigOverridesOk() (*map[string]*interface{}, bool)`
+`func (o *ModelsPipelineNode) GetConfigOverridesOk() (*map[string]interface{}, bool)`
 
 GetConfigOverridesOk returns a tuple with the ConfigOverrides field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigOverrides
 
-`func (o *ModelsPipelineNode) SetConfigOverrides(v map[string]*interface{})`
+`func (o *ModelsPipelineNode) SetConfigOverrides(v map[string]interface{})`
 
 SetConfigOverrides sets ConfigOverrides field to given value.
 

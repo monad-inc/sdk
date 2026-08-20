@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Sentinelv2ManagedDCRVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Sentinelv2ManagedDCRVariant {
   public static final String SERIALIZED_NAME_DCR_RESOURCE_ID = "dcr_resource_id";
   @SerializedName(SERIALIZED_NAME_DCR_RESOURCE_ID)

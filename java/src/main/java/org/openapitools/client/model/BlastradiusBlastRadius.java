@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * BlastradiusBlastRadius
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class BlastradiusBlastRadius {
   public static final String SERIALIZED_NAME_BLOCKING_COUNT = "blocking_count";
   @SerializedName(SERIALIZED_NAME_BLOCKING_COUNT)

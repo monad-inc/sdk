@@ -34,7 +34,6 @@ import org.openapitools.client.model.ModelsResourceShareWithUsageList;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3ResourceUsageListResponse;
 import org.openapitools.client.model.RoutesV3SharedResourceListResponse;
-import org.openapitools.client.model.UpdateResourceSharesRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1124,7 +1123,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param updateResourceSharesRequest Share delta request (required)
+     * @param createResourceSharesRequest Share delta request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1139,7 +1138,7 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateResourceSharesCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull UpdateResourceSharesRequest updateResourceSharesRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateResourceSharesCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull CreateResourceSharesRequest createResourceSharesRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1153,7 +1152,7 @@ public class ResourceSharesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = updateResourceSharesRequest;
+        Object localVarPostBody = createResourceSharesRequest;
 
         // create path and map variables
         String localVarPath = "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}"
@@ -1188,7 +1187,7 @@ public class ResourceSharesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateResourceSharesValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull UpdateResourceSharesRequest updateResourceSharesRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateResourceSharesValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull CreateResourceSharesRequest createResourceSharesRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateResourceShares(Async)");
@@ -1204,12 +1203,12 @@ public class ResourceSharesApi {
             throw new ApiException("Missing the required parameter 'resourceId' when calling updateResourceShares(Async)");
         }
 
-        // verify the required parameter 'updateResourceSharesRequest' is set
-        if (updateResourceSharesRequest == null) {
-            throw new ApiException("Missing the required parameter 'updateResourceSharesRequest' when calling updateResourceShares(Async)");
+        // verify the required parameter 'createResourceSharesRequest' is set
+        if (createResourceSharesRequest == null) {
+            throw new ApiException("Missing the required parameter 'createResourceSharesRequest' when calling updateResourceShares(Async)");
         }
 
-        return updateResourceSharesCall(organizationId, resourceType, resourceId, updateResourceSharesRequest, _callback);
+        return updateResourceSharesCall(organizationId, resourceType, resourceId, createResourceSharesRequest, _callback);
 
     }
 
@@ -1219,7 +1218,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param updateResourceSharesRequest Share delta request (required)
+     * @param createResourceSharesRequest Share delta request (required)
      * @return ModelsResourceShareChangeSet
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1233,8 +1232,8 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsResourceShareChangeSet updateResourceShares(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull UpdateResourceSharesRequest updateResourceSharesRequest) throws ApiException {
-        ApiResponse<ModelsResourceShareChangeSet> localVarResp = updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, updateResourceSharesRequest);
+    public ModelsResourceShareChangeSet updateResourceShares(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull CreateResourceSharesRequest createResourceSharesRequest) throws ApiException {
+        ApiResponse<ModelsResourceShareChangeSet> localVarResp = updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest);
         return localVarResp.getData();
     }
 
@@ -1244,7 +1243,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param updateResourceSharesRequest Share delta request (required)
+     * @param createResourceSharesRequest Share delta request (required)
      * @return ApiResponse&lt;ModelsResourceShareChangeSet&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1258,8 +1257,8 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsResourceShareChangeSet> updateResourceSharesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull UpdateResourceSharesRequest updateResourceSharesRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateResourceSharesValidateBeforeCall(organizationId, resourceType, resourceId, updateResourceSharesRequest, null);
+    public ApiResponse<ModelsResourceShareChangeSet> updateResourceSharesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull CreateResourceSharesRequest createResourceSharesRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateResourceSharesValidateBeforeCall(organizationId, resourceType, resourceId, createResourceSharesRequest, null);
         Type localVarReturnType = new TypeToken<ModelsResourceShareChangeSet>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1270,7 +1269,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param updateResourceSharesRequest Share delta request (required)
+     * @param createResourceSharesRequest Share delta request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1285,9 +1284,9 @@ public class ResourceSharesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateResourceSharesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull UpdateResourceSharesRequest updateResourceSharesRequest, final ApiCallback<ModelsResourceShareChangeSet> _callback) throws ApiException {
+    public okhttp3.Call updateResourceSharesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String resourceType, @javax.annotation.Nonnull String resourceId, @javax.annotation.Nonnull CreateResourceSharesRequest createResourceSharesRequest, final ApiCallback<ModelsResourceShareChangeSet> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateResourceSharesValidateBeforeCall(organizationId, resourceType, resourceId, updateResourceSharesRequest, _callback);
+        okhttp3.Call localVarCall = updateResourceSharesValidateBeforeCall(organizationId, resourceType, resourceId, createResourceSharesRequest, _callback);
         Type localVarReturnType = new TypeToken<ModelsResourceShareChangeSet>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

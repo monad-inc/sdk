@@ -83,6 +83,7 @@ type SecretProcessesorInputConfigSettings struct {
 	VoltioAuditLogsSettingsConfig *VoltioAuditLogsSettingsConfig
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
+	MapmapOfStringAny *map[string]interface{}
 }
 
 // ArizeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns ArizeAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
@@ -530,6 +531,13 @@ func VulnerabilityFindingsSettingsConfigAsSecretProcessesorInputConfigSettings(v
 func WizAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *WizAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		WizAuditLogsSettingsConfig: v,
+	}
+}
+
+// map[string]interface{}AsSecretProcessesorInputConfigSettings is a convenience function that returns map[string]interface{} wrapped in SecretProcessesorInputConfigSettings
+func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]interface{}) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		MapmapOfStringAny: v,
 	}
 }
 
@@ -1626,6 +1634,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.WizAuditLogsSettingsConfig = nil
 	}
 
+	// try to unmarshal data into MapmapOfStringAny
+	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
+				dst.MapmapOfStringAny = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.ArizeAuditLogsSettingsConfig = nil
@@ -1692,331 +1717,13 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.VoltioAuditLogsSettingsConfig = nil
 		dst.VulnerabilityFindingsSettingsConfig = nil
 		dst.WizAuditLogsSettingsConfig = nil
+		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorInputConfigSettings)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSettings)")
 	}
 }
 
@@ -2276,6 +1983,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.WizAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.WizAuditLogsSettingsConfig)
+	}
+
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -2542,6 +2253,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.WizAuditLogsSettingsConfig
 	}
 
+	if obj.MapmapOfStringAny != nil {
+		return obj.MapmapOfStringAny
+	}
+
 	// all schemas are nil
 	return nil
 }
@@ -2802,6 +2517,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.WizAuditLogsSettingsConfig != nil {
 		return *obj.WizAuditLogsSettingsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

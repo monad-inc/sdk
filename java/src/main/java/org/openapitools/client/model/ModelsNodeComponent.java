@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsNodeComponent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsNodeComponent {
   public static final String SERIALIZED_NAME_BASE_CONFIG = "base_config";
   @SerializedName(SERIALIZED_NAME_BASE_CONFIG)

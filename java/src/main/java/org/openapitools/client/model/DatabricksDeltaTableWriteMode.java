@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * The write mode controls how data is loaded.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksDeltaTableWriteMode {
   public static final String SERIALIZED_NAME_AUTO_LOADER = "auto_loader";
   @SerializedName(SERIALIZED_NAME_AUTO_LOADER)

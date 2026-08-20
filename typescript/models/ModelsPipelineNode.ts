@@ -25,7 +25,7 @@ export class ModelsPipelineNode {
     /**
     * ConfigOverrides is the node\'s sparse override delta over its component\'s base config (RFC 0017 §3). Nil when the node has no override.
     */
-    'configOverrides'?: { [key: string]: any | null; };
+    'configOverrides'?: { [key: string]: any; };
     'createdAt'?: string;
     'enabled'?: boolean;
     'id'?: string;
@@ -73,7 +73,7 @@ export class ModelsPipelineNode {
         {
             "name": "configOverrides",
             "baseName": "config_overrides",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

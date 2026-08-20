@@ -15,7 +15,6 @@ import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareW
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV3ResourceUsageListResponse } from '../models/RoutesV3ResourceUsageListResponse';
 import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedResourceListResponse';
-import { UpdateResourceSharesRequest } from '../models/UpdateResourceSharesRequest';
 
 /**
  * no description
@@ -461,9 +460,9 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param updateResourceSharesRequest Share delta request
+     * @param createResourceSharesRequest Share delta request
      */
-    public async updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -484,9 +483,9 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'updateResourceSharesRequest' is not null or undefined
-        if (updateResourceSharesRequest === null || updateResourceSharesRequest === undefined) {
-            throw new RequiredError("ResourceSharesApi", "updateResourceShares", "updateResourceSharesRequest");
+        // verify required parameter 'createResourceSharesRequest' is not null or undefined
+        if (createResourceSharesRequest === null || createResourceSharesRequest === undefined) {
+            throw new RequiredError("ResourceSharesApi", "updateResourceShares", "createResourceSharesRequest");
         }
 
 
@@ -507,7 +506,7 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(updateResourceSharesRequest, "UpdateResourceSharesRequest", ""),
+            ObjectSerializer.serialize(createResourceSharesRequest, "CreateResourceSharesRequest", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

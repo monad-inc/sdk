@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * The write mode: autoloader stages files for Databricks Autoloader to ingest; zerobus sends data via the ZeroBus streaming protocol
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakewatchWriteMode {
   public static final String SERIALIZED_NAME_AUTOLOADER = "autoloader";
   @SerializedName(SERIALIZED_NAME_AUTOLOADER)

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**arguments** | **Dict[str, Optional[object]]** |  | [optional] 
+**arguments** | **Dict[str, object]** |  | [optional] 
 **description** | **str** |  | [optional] 
 **operation** | **str** |  | [optional] 
 

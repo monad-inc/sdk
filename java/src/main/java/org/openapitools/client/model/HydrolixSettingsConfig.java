@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Hydrolix Output Settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class HydrolixSettingsConfig {
   public static final String SERIALIZED_NAME_AUTH = "auth";
   @SerializedName(SERIALIZED_NAME_AUTH)

@@ -578,9 +578,7 @@ export * from '../models/UpdateOutputRequest';
 export * from '../models/UpdatePipelineEdgeRequest';
 export * from '../models/UpdatePipelineRequest';
 export * from '../models/UpdatePipelineV1Request';
-export * from '../models/UpdateResourceSharesRequest';
 export * from '../models/UpdateRoleRequest';
-export * from '../models/UpdateSecretRequest';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/UtcTimestampTimestampFormat';
 export * from '../models/VoltioAuditLogsSecretsConfig';
@@ -1189,9 +1187,7 @@ import { UpdateOutputRequestClass } from '../models/UpdateOutputRequest';
 import { UpdatePipelineEdgeRequestClass } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequestClass } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1RequestClass } from '../models/UpdatePipelineV1Request';
-import { UpdateResourceSharesRequestClass } from '../models/UpdateResourceSharesRequest';
 import { UpdateRoleRequestClass } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequestClass } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig   } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -1861,9 +1857,7 @@ let typeMap: {[index: string]: any} = {
     "UpdatePipelineEdgeRequest": UpdatePipelineEdgeRequestClass,
     "UpdatePipelineRequest": UpdatePipelineRequestClass,
     "UpdatePipelineV1Request": UpdatePipelineV1RequestClass,
-    "UpdateResourceSharesRequest": UpdateResourceSharesRequestClass,
     "UpdateRoleRequest": UpdateRoleRequestClass,
-    "UpdateSecretRequest": UpdateSecretRequestClass,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VoltioAuditLogsSecretsConfig": VoltioAuditLogsSecretsConfig,
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,

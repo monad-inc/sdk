@@ -36,7 +36,7 @@ export class RoutesV3UpdateAlertRuleRequest {
     /**
     * RuleConfig contains the configuration for the alert rule
     */
-    'ruleConfig'?: { [key: string]: any | null; };
+    'ruleConfig'?: { [key: string]: any; };
     /**
     * Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".
     */
@@ -80,7 +80,7 @@ export class RoutesV3UpdateAlertRuleRequest {
         {
             "name": "ruleConfig",
             "baseName": "rule_config",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

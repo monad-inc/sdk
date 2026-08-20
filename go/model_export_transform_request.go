@@ -85,16 +85,7 @@ func (dst *ExportTransformRequest) UnmarshalJSON(data []byte) error {
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(ExportTransformRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(ExportTransformRequest)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(ExportTransformRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(ExportTransformRequest)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(ExportTransformRequest)")
 	}
 }
 

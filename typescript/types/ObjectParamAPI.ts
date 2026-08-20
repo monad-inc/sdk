@@ -582,9 +582,7 @@ import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
 import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
-import { UpdateResourceSharesRequest } from '../models/UpdateResourceSharesRequest';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -7159,10 +7157,10 @@ export interface ResourceSharesApiUpdateResourceSharesRequest {
     resourceId: string
     /**
      * Share delta request
-     * @type UpdateResourceSharesRequest
+     * @type CreateResourceSharesRequest
      * @memberof ResourceSharesApiupdateResourceShares
      */
-    updateResourceSharesRequest: UpdateResourceSharesRequest
+    createResourceSharesRequest: CreateResourceSharesRequest
 }
 
 export class ObjectResourceSharesApi {
@@ -7286,7 +7284,7 @@ export class ObjectResourceSharesApi {
      * @param param the request object
      */
     public updateResourceSharesWithHttpInfo(param: ResourceSharesApiUpdateResourceSharesRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsResourceShareChangeSet>> {
-        return this.api.updateResourceSharesWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.updateResourceSharesRequest,  options).toPromise();
+        return this.api.updateResourceSharesWithHttpInfo(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
     }
 
     /**
@@ -7295,7 +7293,7 @@ export class ObjectResourceSharesApi {
      * @param param the request object
      */
     public updateResourceShares(param: ResourceSharesApiUpdateResourceSharesRequest, options?: ConfigurationOptions): Promise<ModelsResourceShareChangeSet> {
-        return this.api.updateResourceShares(param.organizationId, param.resourceType, param.resourceId, param.updateResourceSharesRequest,  options).toPromise();
+        return this.api.updateResourceShares(param.organizationId, param.resourceType, param.resourceId, param.createResourceSharesRequest,  options).toPromise();
     }
 
 }
@@ -7593,10 +7591,10 @@ export interface SecretsApiUpdateSecretRequest {
     secretId: string
     /**
      * Secret updates
-     * @type UpdateSecretRequest
+     * @type CreateSecretRequest
      * @memberof SecretsApiupdateSecret
      */
-    updateSecretRequest: UpdateSecretRequest
+    createSecretRequest: CreateSecretRequest
 }
 
 export class ObjectSecretsApi {
@@ -7684,7 +7682,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public updateSecretWithHttpInfo(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV2SecretResponse>> {
-        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
+        return this.api.updateSecretWithHttpInfo(param.organizationId, param.secretId, param.createSecretRequest,  options).toPromise();
     }
 
     /**
@@ -7693,7 +7691,7 @@ export class ObjectSecretsApi {
      * @param param the request object
      */
     public updateSecret(param: SecretsApiUpdateSecretRequest, options?: ConfigurationOptions): Promise<RoutesV2SecretResponse> {
-        return this.api.updateSecret(param.organizationId, param.secretId, param.updateSecretRequest,  options).toPromise();
+        return this.api.updateSecret(param.organizationId, param.secretId, param.createSecretRequest,  options).toPromise();
     }
 
 }

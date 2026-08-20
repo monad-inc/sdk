@@ -22,7 +22,7 @@ var _ MappedNullable = &ModelsConditionEvaluatable{}
 type ModelsConditionEvaluatable struct {
 	Conditions []ModelsConditionEvaluatable `json:"conditions,omitempty"`
 	// leaf config
-	Config map[string]*interface{} `json:"config,omitempty"`
+	Config map[string]interface{} `json:"config,omitempty"`
 	Operator *ModelsConditionOperator `json:"operator,omitempty"`
 	// Only set for leaf nodes
 	TypeId *string `json:"type_id,omitempty"`
@@ -78,9 +78,9 @@ func (o *ModelsConditionEvaluatable) SetConditions(v []ModelsConditionEvaluatabl
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ModelsConditionEvaluatable) GetConfig() map[string]*interface{} {
+func (o *ModelsConditionEvaluatable) GetConfig() map[string]interface{} {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Config
@@ -88,9 +88,9 @@ func (o *ModelsConditionEvaluatable) GetConfig() map[string]*interface{} {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsConditionEvaluatable) GetConfigOk() (map[string]*interface{}, bool) {
+func (o *ModelsConditionEvaluatable) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Config, true
 }
@@ -104,8 +104,8 @@ func (o *ModelsConditionEvaluatable) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]*interface{} and assigns it to the Config field.
-func (o *ModelsConditionEvaluatable) SetConfig(v map[string]*interface{}) {
+// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
+func (o *ModelsConditionEvaluatable) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 

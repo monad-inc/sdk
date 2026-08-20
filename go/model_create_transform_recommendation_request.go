@@ -85,16 +85,7 @@ func (dst *CreateTransformRecommendationRequest) UnmarshalJSON(data []byte) erro
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateTransformRecommendationRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateTransformRecommendationRequest)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateTransformRecommendationRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateTransformRecommendationRequest)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(CreateTransformRecommendationRequest)")
 	}
 }
 

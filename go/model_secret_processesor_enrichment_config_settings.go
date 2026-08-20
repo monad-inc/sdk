@@ -22,6 +22,7 @@ type SecretProcessesorEnrichmentConfigSettings struct {
 	CommunityEditionSettingsConfig *CommunityEditionSettingsConfig
 	GeolocusSettingsConfig *GeolocusSettingsConfig
 	KvLookupSettingsConfig *KvLookupSettingsConfig
+	MapmapOfStringAny *map[string]interface{}
 }
 
 // CommunityEditionSettingsConfigAsSecretProcessesorEnrichmentConfigSettings is a convenience function that returns CommunityEditionSettingsConfig wrapped in SecretProcessesorEnrichmentConfigSettings
@@ -42,6 +43,13 @@ func GeolocusSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *Geoloc
 func KvLookupSettingsConfigAsSecretProcessesorEnrichmentConfigSettings(v *KvLookupSettingsConfig) SecretProcessesorEnrichmentConfigSettings {
 	return SecretProcessesorEnrichmentConfigSettings{
 		KvLookupSettingsConfig: v,
+	}
+}
+
+// map[string]interface{}AsSecretProcessesorEnrichmentConfigSettings is a convenience function that returns map[string]interface{} wrapped in SecretProcessesorEnrichmentConfigSettings
+func MapmapOfStringAnyAsSecretProcessesorEnrichmentConfigSettings(v *map[string]interface{}) SecretProcessesorEnrichmentConfigSettings {
+	return SecretProcessesorEnrichmentConfigSettings{
+		MapmapOfStringAny: v,
 	}
 }
 
@@ -101,31 +109,35 @@ func (dst *SecretProcessesorEnrichmentConfigSettings) UnmarshalJSON(data []byte)
 		dst.KvLookupSettingsConfig = nil
 	}
 
+	// try to unmarshal data into MapmapOfStringAny
+	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
+				dst.MapmapOfStringAny = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.CommunityEditionSettingsConfig = nil
 		dst.GeolocusSettingsConfig = nil
 		dst.KvLookupSettingsConfig = nil
+		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorEnrichmentConfigSettings)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorEnrichmentConfigSettings)")
 	}
 }
 
@@ -141,6 +153,10 @@ func (src SecretProcessesorEnrichmentConfigSettings) MarshalJSON() ([]byte, erro
 
 	if src.KvLookupSettingsConfig != nil {
 		return json.Marshal(&src.KvLookupSettingsConfig)
+	}
+
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -163,6 +179,10 @@ func (obj *SecretProcessesorEnrichmentConfigSettings) GetActualInstance() (inter
 		return obj.KvLookupSettingsConfig
 	}
 
+	if obj.MapmapOfStringAny != nil {
+		return obj.MapmapOfStringAny
+	}
+
 	// all schemas are nil
 	return nil
 }
@@ -179,6 +199,10 @@ func (obj SecretProcessesorEnrichmentConfigSettings) GetActualInstanceValue() (i
 
 	if obj.KvLookupSettingsConfig != nil {
 		return *obj.KvLookupSettingsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

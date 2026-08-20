@@ -158,20 +158,20 @@ HasPipelineIds returns a boolean if a field has been set.
 
 ### GetRuleConfig
 
-`func (o *UpdateAlertRuleRequest) GetRuleConfig() map[string]*interface{}`
+`func (o *UpdateAlertRuleRequest) GetRuleConfig() map[string]interface{}`
 
 GetRuleConfig returns the RuleConfig field if non-nil, zero value otherwise.
 
 ### GetRuleConfigOk
 
-`func (o *UpdateAlertRuleRequest) GetRuleConfigOk() (*map[string]*interface{}, bool)`
+`func (o *UpdateAlertRuleRequest) GetRuleConfigOk() (*map[string]interface{}, bool)`
 
 GetRuleConfigOk returns a tuple with the RuleConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleConfig
 
-`func (o *UpdateAlertRuleRequest) SetRuleConfig(v map[string]*interface{})`
+`func (o *UpdateAlertRuleRequest) SetRuleConfig(v map[string]interface{})`
 
 SetRuleConfig sets RuleConfig field to given value.
 

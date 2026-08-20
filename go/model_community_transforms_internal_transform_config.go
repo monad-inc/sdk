@@ -21,7 +21,7 @@ var _ MappedNullable = &CommunityTransformsInternalTransformConfig{}
 // CommunityTransformsInternalTransformConfig struct for CommunityTransformsInternalTransformConfig
 type CommunityTransformsInternalTransformConfig struct {
 	Author *string `json:"author,omitempty"`
-	Config map[string]*interface{} `json:"config,omitempty"`
+	Config map[string]interface{} `json:"config,omitempty"`
 	Contributors []string `json:"contributors,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Inputs []string `json:"inputs,omitempty"`
@@ -79,9 +79,9 @@ func (o *CommunityTransformsInternalTransformConfig) SetAuthor(v string) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CommunityTransformsInternalTransformConfig) GetConfig() map[string]*interface{} {
+func (o *CommunityTransformsInternalTransformConfig) GetConfig() map[string]interface{} {
 	if o == nil || IsNil(o.Config) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Config
@@ -89,9 +89,9 @@ func (o *CommunityTransformsInternalTransformConfig) GetConfig() map[string]*int
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CommunityTransformsInternalTransformConfig) GetConfigOk() (map[string]*interface{}, bool) {
+func (o *CommunityTransformsInternalTransformConfig) GetConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Config) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Config, true
 }
@@ -105,8 +105,8 @@ func (o *CommunityTransformsInternalTransformConfig) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]*interface{} and assigns it to the Config field.
-func (o *CommunityTransformsInternalTransformConfig) SetConfig(v map[string]*interface{}) {
+// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
+func (o *CommunityTransformsInternalTransformConfig) SetConfig(v map[string]interface{}) {
 	o.Config = v
 }
 

@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBaseConfig
 
-`func (o *ModelsNodeComponent) GetBaseConfig() map[string]*interface{}`
+`func (o *ModelsNodeComponent) GetBaseConfig() map[string]interface{}`
 
 GetBaseConfig returns the BaseConfig field if non-nil, zero value otherwise.
 
 ### GetBaseConfigOk
 
-`func (o *ModelsNodeComponent) GetBaseConfigOk() (*map[string]*interface{}, bool)`
+`func (o *ModelsNodeComponent) GetBaseConfigOk() (*map[string]interface{}, bool)`
 
 GetBaseConfigOk returns a tuple with the BaseConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBaseConfig
 
-`func (o *ModelsNodeComponent) SetBaseConfig(v map[string]*interface{})`
+`func (o *ModelsNodeComponent) SetBaseConfig(v map[string]interface{})`
 
 SetBaseConfig sets BaseConfig field to given value.
 
@@ -61,20 +61,20 @@ HasBaseConfig returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *ModelsNodeComponent) GetConfig() map[string]*interface{}`
+`func (o *ModelsNodeComponent) GetConfig() map[string]interface{}`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ModelsNodeComponent) GetConfigOk() (*map[string]*interface{}, bool)`
+`func (o *ModelsNodeComponent) GetConfigOk() (*map[string]interface{}, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ModelsNodeComponent) SetConfig(v map[string]*interface{})`
+`func (o *ModelsNodeComponent) SetConfig(v map[string]interface{})`
 
 SetConfig sets Config field to given value.
 
@@ -161,20 +161,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetOverrides
 
-`func (o *ModelsNodeComponent) GetOverrides() map[string]*interface{}`
+`func (o *ModelsNodeComponent) GetOverrides() map[string]interface{}`
 
 GetOverrides returns the Overrides field if non-nil, zero value otherwise.
 
 ### GetOverridesOk
 
-`func (o *ModelsNodeComponent) GetOverridesOk() (*map[string]*interface{}, bool)`
+`func (o *ModelsNodeComponent) GetOverridesOk() (*map[string]interface{}, bool)`
 
 GetOverridesOk returns a tuple with the Overrides field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOverrides
 
-`func (o *ModelsNodeComponent) SetOverrides(v map[string]*interface{})`
+`func (o *ModelsNodeComponent) SetOverrides(v map[string]interface{})`
 
 SetOverrides sets Overrides field to given value.
 

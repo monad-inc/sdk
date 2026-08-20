@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Sentinelv2ManualDCRVariant
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Sentinelv2ManualDCRVariant {
   public static final String SERIALIZED_NAME_RULE_ID = "rule_id";
   @SerializedName(SERIALIZED_NAME_RULE_ID)

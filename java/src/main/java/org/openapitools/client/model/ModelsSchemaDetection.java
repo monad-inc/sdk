@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ModelsSchemaDetection
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsSchemaDetection {
   public static final String SERIALIZED_NAME_DISABLE_ALERTING = "disable_alerting";
   @SerializedName(SERIALIZED_NAME_DISABLE_ALERTING)

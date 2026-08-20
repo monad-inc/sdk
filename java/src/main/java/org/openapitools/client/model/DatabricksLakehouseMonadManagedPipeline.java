@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DatabricksLakehouseMonadManagedPipeline
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakehouseMonadManagedPipeline {
   public static final String SERIALIZED_NAME_INTERVAL = "interval";
   @SerializedName(SERIALIZED_NAME_INTERVAL)

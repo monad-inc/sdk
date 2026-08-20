@@ -13,8 +13,8 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV2TestNodeConfig {
-    'secrets'?: { [key: string]: any | null; };
-    'settings'?: { [key: string]: any | null; };
+    'secrets'?: { [key: string]: any; };
+    'settings'?: { [key: string]: any; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -24,13 +24,13 @@ export class RoutesV2TestNodeConfig {
         {
             "name": "secrets",
             "baseName": "secrets",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {
             "name": "settings",
             "baseName": "settings",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         }    ];
 

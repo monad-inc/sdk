@@ -53,6 +53,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
 	WazuhSettingsConfig *WazuhSettingsConfig
+	MapmapOfStringAny *map[string]interface{}
 }
 
 // AbsSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns AbsSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
@@ -290,6 +291,13 @@ func SumologicSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Sumologic
 func WazuhSettingsConfigAsSecretProcessesorOutputConfigSettings(v *WazuhSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		WazuhSettingsConfig: v,
+	}
+}
+
+// map[string]interface{}AsSecretProcessesorOutputConfigSettings is a convenience function that returns map[string]interface{} wrapped in SecretProcessesorOutputConfigSettings
+func MapmapOfStringAnyAsSecretProcessesorOutputConfigSettings(v *map[string]interface{}) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		MapmapOfStringAny: v,
 	}
 }
 
@@ -876,6 +884,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.WazuhSettingsConfig = nil
 	}
 
+	// try to unmarshal data into MapmapOfStringAny
+	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
+				dst.MapmapOfStringAny = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AbsSettingsConfig = nil
@@ -912,181 +937,13 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
 		dst.WazuhSettingsConfig = nil
+		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorOutputConfigSettings)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorOutputConfigSettings)")
 	}
 }
 
@@ -1226,6 +1083,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.WazuhSettingsConfig != nil {
 		return json.Marshal(&src.WazuhSettingsConfig)
+	}
+
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -1372,6 +1233,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.WazuhSettingsConfig
 	}
 
+	if obj.MapmapOfStringAny != nil {
+		return obj.MapmapOfStringAny
+	}
+
 	// all schemas are nil
 	return nil
 }
@@ -1512,6 +1377,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.WazuhSettingsConfig != nil {
 		return *obj.WazuhSettingsConfig
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
 	}
 
 	// all schemas are nil

@@ -2,7 +2,7 @@
 
 Monad API
 - API version: 1.0
-  - Generator version: 7.24.0
+  - Generator version: 7.23.0
 
 Programmatically manage your security data pipelines, configure data sources and destinations, and automate your security operations.
 
@@ -959,9 +959,7 @@ Class | Method | HTTP request | Description
  - [UpdatePipelineEdgeRequest](docs/UpdatePipelineEdgeRequest.md)
  - [UpdatePipelineRequest](docs/UpdatePipelineRequest.md)
  - [UpdatePipelineV1Request](docs/UpdatePipelineV1Request.md)
- - [UpdateResourceSharesRequest](docs/UpdateResourceSharesRequest.md)
  - [UpdateRoleRequest](docs/UpdateRoleRequest.md)
- - [UpdateSecretRequest](docs/UpdateSecretRequest.md)
  - [UtcTimestampArgumentsConfig](docs/UtcTimestampArgumentsConfig.md)
  - [UtcTimestampTimestampFormat](docs/UtcTimestampTimestampFormat.md)
  - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)

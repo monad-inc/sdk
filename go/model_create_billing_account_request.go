@@ -85,16 +85,7 @@ func (dst *CreateBillingAccountRequest) UnmarshalJSON(data []byte) error {
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateBillingAccountRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateBillingAccountRequest)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateBillingAccountRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(CreateBillingAccountRequest)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(CreateBillingAccountRequest)")
 	}
 }
 

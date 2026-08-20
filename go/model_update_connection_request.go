@@ -85,16 +85,7 @@ func (dst *UpdateConnectionRequest) UnmarshalJSON(data []byte) error {
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateConnectionRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateConnectionRequest)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateConnectionRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdateConnectionRequest)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(UpdateConnectionRequest)")
 	}
 }
 

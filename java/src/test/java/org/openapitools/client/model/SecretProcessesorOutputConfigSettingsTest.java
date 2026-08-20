@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.client.model.AbsSettingsConfig;
 import org.openapitools.client.model.AwssqsoutputQueueType;
 import org.openapitools.client.model.AwssqsoutputSettingsConfig;

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **pipeline_ids** | **List[str]** |  | [optional] 
-**rule_config** | **Dict[str, Optional[object]]** |  | [optional] 
+**rule_config** | **Dict[str, object]** |  | [optional] 
 **severity** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 

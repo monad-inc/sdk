@@ -40,7 +40,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | Sentinelv2SecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | WazuhSecretsConfig | any;
+export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | Sentinelv2SecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | WazuhSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass
@@ -51,6 +51,7 @@ export class SecretProcessesorOutputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

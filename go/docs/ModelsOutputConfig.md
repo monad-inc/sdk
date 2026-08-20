@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecrets
 
-`func (o *ModelsOutputConfig) GetSecrets() map[string]*interface{}`
+`func (o *ModelsOutputConfig) GetSecrets() map[string]interface{}`
 
 GetSecrets returns the Secrets field if non-nil, zero value otherwise.
 
 ### GetSecretsOk
 
-`func (o *ModelsOutputConfig) GetSecretsOk() (*map[string]*interface{}, bool)`
+`func (o *ModelsOutputConfig) GetSecretsOk() (*map[string]interface{}, bool)`
 
 GetSecretsOk returns a tuple with the Secrets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecrets
 
-`func (o *ModelsOutputConfig) SetSecrets(v map[string]*interface{})`
+`func (o *ModelsOutputConfig) SetSecrets(v map[string]interface{})`
 
 SetSecrets sets Secrets field to given value.
 
@@ -53,20 +53,20 @@ HasSecrets returns a boolean if a field has been set.
 
 ### GetSettings
 
-`func (o *ModelsOutputConfig) GetSettings() map[string]*interface{}`
+`func (o *ModelsOutputConfig) GetSettings() map[string]interface{}`
 
 GetSettings returns the Settings field if non-nil, zero value otherwise.
 
 ### GetSettingsOk
 
-`func (o *ModelsOutputConfig) GetSettingsOk() (*map[string]*interface{}, bool)`
+`func (o *ModelsOutputConfig) GetSettingsOk() (*map[string]interface{}, bool)`
 
 GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSettings
 
-`func (o *ModelsOutputConfig) SetSettings(v map[string]*interface{})`
+`func (o *ModelsOutputConfig) SetSettings(v map[string]interface{})`
 
 SetSettings sets Settings field to given value.
 

@@ -18,7 +18,7 @@ export class ModelsConditionEvaluatable {
     /**
     * leaf config
     */
-    'config'?: { [key: string]: any | null; };
+    'config'?: { [key: string]: any; };
     'operator'?: ModelsConditionOperator;
     /**
     * Only set for leaf nodes
@@ -39,7 +39,7 @@ export class ModelsConditionEvaluatable {
         {
             "name": "config",
             "baseName": "config",
-            "type": "{ [key: string]: any | null; }",
+            "type": "{ [key: string]: any; }",
             "format": ""
         },
         {

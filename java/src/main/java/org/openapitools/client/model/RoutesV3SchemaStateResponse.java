@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * RoutesV3SchemaStateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class RoutesV3SchemaStateResponse {
   public static final String SERIALIZED_NAME_EDGE_ID = "edge_id";
   @SerializedName(SERIALIZED_NAME_EDGE_ID)

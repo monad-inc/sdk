@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * DatabricksLakewatchAutoLoaderPipelineWriteMode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakewatchAutoLoaderPipelineWriteMode {
   public static final String SERIALIZED_NAME_PIPELINE_INTERVAL = "pipeline_interval";
   @SerializedName(SERIALIZED_NAME_PIPELINE_INTERVAL)

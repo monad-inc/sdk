@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Wazuh Output Secrets
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class WazuhSecretsConfig {
   public static final String SERIALIZED_NAME_CA_CERTIFICATE = "ca_certificate";
   @SerializedName(SERIALIZED_NAME_CA_CERTIFICATE)

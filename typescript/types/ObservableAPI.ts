@@ -583,9 +583,7 @@ import { UpdateOutputRequest } from '../models/UpdateOutputRequest';
 import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
-import { UpdateResourceSharesRequest } from '../models/UpdateResourceSharesRequest';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
-import { UpdateSecretRequest } from '../models/UpdateSecretRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -7028,12 +7026,12 @@ export class ObservableResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param updateResourceSharesRequest Share delta request
+     * @param createResourceSharesRequest Share delta request
      */
-    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareChangeSet>> {
+    public updateResourceSharesWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareChangeSet>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateResourceShares(organizationId, resourceType, resourceId, updateResourceSharesRequest, _config);
+        const requestContextPromise = this.requestFactory.updateResourceShares(organizationId, resourceType, resourceId, createResourceSharesRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -7056,10 +7054,10 @@ export class ObservableResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param updateResourceSharesRequest Share delta request
+     * @param createResourceSharesRequest Share delta request
      */
-    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, updateResourceSharesRequest: UpdateResourceSharesRequest, _options?: ConfigurationOptions): Observable<ModelsResourceShareChangeSet> {
-        return this.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, updateResourceSharesRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareChangeSet>) => apiResponse.data));
+    public updateResourceShares(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, createResourceSharesRequest: CreateResourceSharesRequest, _options?: ConfigurationOptions): Observable<ModelsResourceShareChangeSet> {
+        return this.updateResourceSharesWithHttpInfo(organizationId, resourceType, resourceId, createResourceSharesRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsResourceShareChangeSet>) => apiResponse.data));
     }
 
 }
@@ -7433,12 +7431,12 @@ export class ObservableSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecretWithHttpInfo(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
+    public updateSecretWithHttpInfo(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateSecret(organizationId, secretId, updateSecretRequest, _config);
+        const requestContextPromise = this.requestFactory.updateSecret(organizationId, secretId, createSecretRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -7460,10 +7458,10 @@ export class ObservableSecretsApi {
      * Update secret
      * @param organizationId Organization ID
      * @param secretId Secret ID
-     * @param updateSecretRequest Secret updates
+     * @param createSecretRequest Secret updates
      */
-    public updateSecret(organizationId: string, secretId: string, updateSecretRequest: UpdateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
-        return this.updateSecretWithHttpInfo(organizationId, secretId, updateSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
+    public updateSecret(organizationId: string, secretId: string, createSecretRequest: CreateSecretRequest, _options?: ConfigurationOptions): Observable<RoutesV2SecretResponse> {
+        return this.updateSecretWithHttpInfo(organizationId, secretId, createSecretRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV2SecretResponse>) => apiResponse.data));
     }
 
 }

@@ -26,7 +26,7 @@ type ModelsPipelineNode struct {
 	ComponentSubType *string `json:"component_sub_type,omitempty"`
 	ComponentType *ModelsComponentType `json:"component_type,omitempty"`
 	// ConfigOverrides is the node's sparse override delta over its component's base config (RFC 0017 §3). Nil when the node has no override.
-	ConfigOverrides map[string]*interface{} `json:"config_overrides,omitempty"`
+	ConfigOverrides map[string]interface{} `json:"config_overrides,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -215,9 +215,9 @@ func (o *ModelsPipelineNode) SetComponentType(v ModelsComponentType) {
 }
 
 // GetConfigOverrides returns the ConfigOverrides field value if set, zero value otherwise.
-func (o *ModelsPipelineNode) GetConfigOverrides() map[string]*interface{} {
+func (o *ModelsPipelineNode) GetConfigOverrides() map[string]interface{} {
 	if o == nil || IsNil(o.ConfigOverrides) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.ConfigOverrides
@@ -225,9 +225,9 @@ func (o *ModelsPipelineNode) GetConfigOverrides() map[string]*interface{} {
 
 // GetConfigOverridesOk returns a tuple with the ConfigOverrides field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipelineNode) GetConfigOverridesOk() (map[string]*interface{}, bool) {
+func (o *ModelsPipelineNode) GetConfigOverridesOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.ConfigOverrides) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.ConfigOverrides, true
 }
@@ -241,8 +241,8 @@ func (o *ModelsPipelineNode) HasConfigOverrides() bool {
 	return false
 }
 
-// SetConfigOverrides gets a reference to the given map[string]*interface{} and assigns it to the ConfigOverrides field.
-func (o *ModelsPipelineNode) SetConfigOverrides(v map[string]*interface{}) {
+// SetConfigOverrides gets a reference to the given map[string]interface{} and assigns it to the ConfigOverrides field.
+func (o *ModelsPipelineNode) SetConfigOverrides(v map[string]interface{}) {
 	o.ConfigOverrides = v
 }
 

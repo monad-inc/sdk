@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * BlastradiusInstanceImpact
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class BlastradiusInstanceImpact {
   public static final String SERIALIZED_NAME_FINDINGS = "findings";
   @SerializedName(SERIALIZED_NAME_FINDINGS)

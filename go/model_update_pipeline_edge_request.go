@@ -85,16 +85,7 @@ func (dst *UpdatePipelineEdgeRequest) UnmarshalJSON(data []byte) error {
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdatePipelineEdgeRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdatePipelineEdgeRequest)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdatePipelineEdgeRequest): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(UpdatePipelineEdgeRequest)")
-        }
+		return fmt.Errorf("data failed to match schemas in oneOf(UpdatePipelineEdgeRequest)")
 	}
 }
 

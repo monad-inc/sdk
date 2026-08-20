@@ -161,7 +161,7 @@ with monad.ApiClient(configuration) as api_client:
     search = 'search_example' # str | Case-insensitive substring filter on child org name, slug, or id (optional)
     shared = True # bool | Filter by share state: true = only shared, false = only not shared (optional)
     sort_by = 'sort_by_example' # str | Column to sort by; default puts shared rows first (optional)
-    order = 'asc' # str | Sort direction (used with sort_by) (optional) (default to 'asc')
+    order = asc # str | Sort direction (used with sort_by) (optional) (default to asc)
     limit = 10 # int | Page size (optional) (default to 10)
     offset = 0 # int | Rows to skip (optional) (default to 0)
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
  **search** | **str**| Case-insensitive substring filter on child org name, slug, or id | [optional] 
  **shared** | **bool**| Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | [optional] 
  **sort_by** | **str**| Column to sort by; default puts shared rows first | [optional] 
- **order** | **str**| Sort direction (used with sort_by) | [optional] [default to &#39;asc&#39;]
+ **order** | **str**| Sort direction (used with sort_by) | [optional] [default to asc]
  **limit** | **int**| Page size | [optional] [default to 10]
  **offset** | **int**| Rows to skip | [optional] [default to 0]
 
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_resource_shares**
-> ModelsResourceShareChangeSet update_resource_shares(organization_id, resource_type, resource_id, update_resource_shares_request)
+> ModelsResourceShareChangeSet update_resource_shares(organization_id, resource_type, resource_id, create_resource_shares_request)
 
 Update a resource's shares
 
@@ -608,8 +608,8 @@ Apply per-child share additions and revocations to one resource in a single tran
 
 ```python
 import monad
+from monad.models.create_resource_shares_request import CreateResourceSharesRequest
 from monad.models.models_resource_share_change_set import ModelsResourceShareChangeSet
-from monad.models.update_resource_shares_request import UpdateResourceSharesRequest
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -643,11 +643,11 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Owner organization ID
     resource_type = 'resource_type_example' # str | Resource type
     resource_id = 'resource_id_example' # str | Resource ID
-    update_resource_shares_request = monad.UpdateResourceSharesRequest() # UpdateResourceSharesRequest | Share delta request
+    create_resource_shares_request = monad.CreateResourceSharesRequest() # CreateResourceSharesRequest | Share delta request
 
     try:
         # Update a resource's shares
-        api_response = api_instance.update_resource_shares(organization_id, resource_type, resource_id, update_resource_shares_request)
+        api_response = api_instance.update_resource_shares(organization_id, resource_type, resource_id, create_resource_shares_request)
         print("The response of ResourceSharesApi->update_resource_shares:\n")
         pprint(api_response)
     except Exception as e:
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Owner organization ID | 
  **resource_type** | **str**| Resource type | 
  **resource_id** | **str**| Resource ID | 
- **update_resource_shares_request** | [**UpdateResourceSharesRequest**](UpdateResourceSharesRequest.md)| Share delta request | 
+ **create_resource_shares_request** | [**CreateResourceSharesRequest**](CreateResourceSharesRequest.md)| Share delta request | 
 
 ### Return type
 

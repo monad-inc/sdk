@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsTransformOperation{}
 
 // ModelsTransformOperation struct for ModelsTransformOperation
 type ModelsTransformOperation struct {
-	Arguments map[string]*interface{} `json:"arguments,omitempty"`
+	Arguments map[string]interface{} `json:"arguments,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Operation *string `json:"operation,omitempty"`
 }
@@ -43,9 +43,9 @@ func NewModelsTransformOperationWithDefaults() *ModelsTransformOperation {
 }
 
 // GetArguments returns the Arguments field value if set, zero value otherwise.
-func (o *ModelsTransformOperation) GetArguments() map[string]*interface{} {
+func (o *ModelsTransformOperation) GetArguments() map[string]interface{} {
 	if o == nil || IsNil(o.Arguments) {
-		var ret map[string]*interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Arguments
@@ -53,9 +53,9 @@ func (o *ModelsTransformOperation) GetArguments() map[string]*interface{} {
 
 // GetArgumentsOk returns a tuple with the Arguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTransformOperation) GetArgumentsOk() (map[string]*interface{}, bool) {
+func (o *ModelsTransformOperation) GetArgumentsOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Arguments) {
-		return map[string]*interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Arguments, true
 }
@@ -69,8 +69,8 @@ func (o *ModelsTransformOperation) HasArguments() bool {
 	return false
 }
 
-// SetArguments gets a reference to the given map[string]*interface{} and assigns it to the Arguments field.
-func (o *ModelsTransformOperation) SetArguments(v map[string]*interface{}) {
+// SetArguments gets a reference to the given map[string]interface{} and assigns it to the Arguments field.
+func (o *ModelsTransformOperation) SetArguments(v map[string]interface{}) {
 	o.Arguments = v
 }
 
