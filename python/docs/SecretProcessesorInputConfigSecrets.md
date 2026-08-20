@@ -5,10 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **access_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**secret_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **tenant_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -24,10 +23,9 @@ Name | Type | Description | Notes
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**user_oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

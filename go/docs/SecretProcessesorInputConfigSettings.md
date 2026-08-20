@@ -4,11 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Host** | **string** | The API hostname for your Duo Security integration. | 
-**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **Region** | **string** | AWS Region of your bucket. | 
 **RoleArn** | Pointer to **string** | Role ARN to assume when reading from S3. | [optional] 
 **Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
@@ -149,7 +148,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(host string, region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -163,51 +162,6 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSettingsWithDefaults instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHost
-
-`func (o *SecretProcessesorInputConfigSettings) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *SecretProcessesorInputConfigSettings) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-
-### GetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
-
-GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
-
-### GetUseSyntheticDataOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
-
-GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
-
-SetUseSyntheticData sets UseSyntheticData field to given value.
-
-### HasUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
-
-HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetBackfillStartTime
 
@@ -283,6 +237,31 @@ SetRateLimit sets RateLimit field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRateLimit() bool`
 
 HasRateLimit returns a boolean if a field has been set.
+
+### GetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetRegion
 

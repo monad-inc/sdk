@@ -74,8 +74,6 @@ __all__ = [
     "AbsSettingsConfig",
     "AddArgumentsConfig",
     "AddIdArgumentsConfig",
-    "AdminLogsSecretsConfig",
-    "AdminLogsSettingsConfig",
     "AlertsAlertCategory",
     "AlertsAlertGranularity",
     "AlertsAlertHouse",
@@ -84,8 +82,6 @@ __all__ = [
     "ApplyTransformationV2Request",
     "ArizeAuditLogsSecretsConfig",
     "ArizeAuditLogsSettingsConfig",
-    "AuthLogsSecretsConfig",
-    "AuthLogsSettingsConfig",
     "AuthenticationtypesAuthenticationMethod",
     "AuthenticationtypesMFAEnrollmentTicket",
     "AuthenticationtypesTokenResponse",
@@ -209,8 +205,6 @@ __all__ = [
     "DropKeyArgumentsConfig",
     "DropKeyWhereValueEqArgumentsConfig",
     "DropRecordWhereValueEqArgumentsConfig",
-    "DuoSecurityActivityLogsSecretsConfig",
-    "DuoSecurityActivityLogsSettingsConfig",
     "DuplicateKeyValueToKeyArgumentsConfig",
     "EksAuditLogsSecretsConfig",
     "EksAuditLogsSettingsConfig",
@@ -430,8 +424,6 @@ __all__ = [
     "ObjectStorageInputSettingsConfig",
     "ObjectStorageSecretsConfig",
     "ObjectStorageSettingsConfig",
-    "OfflineenrollmentlogsSecretsConfig",
-    "OfflineenrollmentlogsSettingsConfig",
     "OpensearchAuthMode",
     "OpensearchSecretsConfig",
     "OpensearchSettingsConfig",
@@ -608,8 +600,6 @@ __all__ = [
     "SetStorageTypeCostRequest",
     "SlackAuthConfig",
     "SlackBotTokenVariant",
-    "SlackEnterpriseAuditLogsSecretsConfig",
-    "SlackEnterpriseAuditLogsSettingsConfig",
     "SlackSettingsConfig",
     "SlackWebhookVariant",
     "SnowflakeOutputSecretsConfig",
@@ -634,12 +624,6 @@ __all__ = [
     "SyntheticDataSettingsConfig",
     "TaniumGraphqlInputSecretsConfig",
     "TaniumGraphqlInputSettingsConfig",
-    "TeamAccessLogsSecretsConfig",
-    "TeamAccessLogsSettingsConfig",
-    "TeamIntegrationLogsSecretsConfig",
-    "TeamIntegrationLogsSettingsConfig",
-    "TelephonyLogsSecretsConfig",
-    "TelephonyLogsSettingsConfig",
     "TestEnrichmentConnectionRequest",
     "TestInputConnectionRequest",
     "TestOutputConnectionRequest",
@@ -758,8 +742,6 @@ from monad.models.abs_secrets_config import AbsSecretsConfig as AbsSecretsConfig
 from monad.models.abs_settings_config import AbsSettingsConfig as AbsSettingsConfig
 from monad.models.add_arguments_config import AddArgumentsConfig as AddArgumentsConfig
 from monad.models.add_id_arguments_config import AddIdArgumentsConfig as AddIdArgumentsConfig
-from monad.models.admin_logs_secrets_config import AdminLogsSecretsConfig as AdminLogsSecretsConfig
-from monad.models.admin_logs_settings_config import AdminLogsSettingsConfig as AdminLogsSettingsConfig
 from monad.models.alerts_alert_category import AlertsAlertCategory as AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity as AlertsAlertGranularity
 from monad.models.alerts_alert_house import AlertsAlertHouse as AlertsAlertHouse
@@ -768,8 +750,6 @@ from monad.models.apply_condition_v2_request import ApplyConditionV2Request as A
 from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request as ApplyTransformationV2Request
 from monad.models.arize_audit_logs_secrets_config import ArizeAuditLogsSecretsConfig as ArizeAuditLogsSecretsConfig
 from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettingsConfig as ArizeAuditLogsSettingsConfig
-from monad.models.auth_logs_secrets_config import AuthLogsSecretsConfig as AuthLogsSecretsConfig
-from monad.models.auth_logs_settings_config import AuthLogsSettingsConfig as AuthLogsSettingsConfig
 from monad.models.authenticationtypes_authentication_method import AuthenticationtypesAuthenticationMethod as AuthenticationtypesAuthenticationMethod
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket as AuthenticationtypesMFAEnrollmentTicket
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
@@ -893,8 +873,6 @@ from monad.models.delimited_delimiter_formatter import DelimitedDelimiterFormatt
 from monad.models.drop_key_arguments_config import DropKeyArgumentsConfig as DropKeyArgumentsConfig
 from monad.models.drop_key_where_value_eq_arguments_config import DropKeyWhereValueEqArgumentsConfig as DropKeyWhereValueEqArgumentsConfig
 from monad.models.drop_record_where_value_eq_arguments_config import DropRecordWhereValueEqArgumentsConfig as DropRecordWhereValueEqArgumentsConfig
-from monad.models.duo_security_activity_logs_secrets_config import DuoSecurityActivityLogsSecretsConfig as DuoSecurityActivityLogsSecretsConfig
-from monad.models.duo_security_activity_logs_settings_config import DuoSecurityActivityLogsSettingsConfig as DuoSecurityActivityLogsSettingsConfig
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig as DuplicateKeyValueToKeyArgumentsConfig
 from monad.models.eks_audit_logs_secrets_config import EksAuditLogsSecretsConfig as EksAuditLogsSecretsConfig
 from monad.models.eks_audit_logs_settings_config import EksAuditLogsSettingsConfig as EksAuditLogsSettingsConfig
@@ -1114,8 +1092,6 @@ from monad.models.object_storage_input_secrets_config import ObjectStorageInputS
 from monad.models.object_storage_input_settings_config import ObjectStorageInputSettingsConfig as ObjectStorageInputSettingsConfig
 from monad.models.object_storage_secrets_config import ObjectStorageSecretsConfig as ObjectStorageSecretsConfig
 from monad.models.object_storage_settings_config import ObjectStorageSettingsConfig as ObjectStorageSettingsConfig
-from monad.models.offlineenrollmentlogs_secrets_config import OfflineenrollmentlogsSecretsConfig as OfflineenrollmentlogsSecretsConfig
-from monad.models.offlineenrollmentlogs_settings_config import OfflineenrollmentlogsSettingsConfig as OfflineenrollmentlogsSettingsConfig
 from monad.models.opensearch_auth_mode import OpensearchAuthMode as OpensearchAuthMode
 from monad.models.opensearch_secrets_config import OpensearchSecretsConfig as OpensearchSecretsConfig
 from monad.models.opensearch_settings_config import OpensearchSettingsConfig as OpensearchSettingsConfig
@@ -1292,8 +1268,6 @@ from monad.models.sentinelv2_settings_config import Sentinelv2SettingsConfig as 
 from monad.models.set_storage_type_cost_request import SetStorageTypeCostRequest as SetStorageTypeCostRequest
 from monad.models.slack_auth_config import SlackAuthConfig as SlackAuthConfig
 from monad.models.slack_bot_token_variant import SlackBotTokenVariant as SlackBotTokenVariant
-from monad.models.slack_enterprise_audit_logs_secrets_config import SlackEnterpriseAuditLogsSecretsConfig as SlackEnterpriseAuditLogsSecretsConfig
-from monad.models.slack_enterprise_audit_logs_settings_config import SlackEnterpriseAuditLogsSettingsConfig as SlackEnterpriseAuditLogsSettingsConfig
 from monad.models.slack_settings_config import SlackSettingsConfig as SlackSettingsConfig
 from monad.models.slack_webhook_variant import SlackWebhookVariant as SlackWebhookVariant
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig as SnowflakeOutputSecretsConfig
@@ -1318,12 +1292,6 @@ from monad.models.synthetic_data_custom_settings_config import SyntheticDataCust
 from monad.models.synthetic_data_settings_config import SyntheticDataSettingsConfig as SyntheticDataSettingsConfig
 from monad.models.tanium_graphql_input_secrets_config import TaniumGraphqlInputSecretsConfig as TaniumGraphqlInputSecretsConfig
 from monad.models.tanium_graphql_input_settings_config import TaniumGraphqlInputSettingsConfig as TaniumGraphqlInputSettingsConfig
-from monad.models.team_access_logs_secrets_config import TeamAccessLogsSecretsConfig as TeamAccessLogsSecretsConfig
-from monad.models.team_access_logs_settings_config import TeamAccessLogsSettingsConfig as TeamAccessLogsSettingsConfig
-from monad.models.team_integration_logs_secrets_config import TeamIntegrationLogsSecretsConfig as TeamIntegrationLogsSecretsConfig
-from monad.models.team_integration_logs_settings_config import TeamIntegrationLogsSettingsConfig as TeamIntegrationLogsSettingsConfig
-from monad.models.telephony_logs_secrets_config import TelephonyLogsSecretsConfig as TelephonyLogsSecretsConfig
-from monad.models.telephony_logs_settings_config import TelephonyLogsSettingsConfig as TelephonyLogsSettingsConfig
 from monad.models.test_enrichment_connection_request import TestEnrichmentConnectionRequest as TestEnrichmentConnectionRequest
 from monad.models.test_input_connection_request import TestInputConnectionRequest as TestInputConnectionRequest
 from monad.models.test_output_connection_request import TestOutputConnectionRequest as TestOutputConnectionRequest

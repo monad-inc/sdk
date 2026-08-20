@@ -5,11 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**host** | **str** | The API hostname for your Duo Security integration. | 
-**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **backfill_start_time** | **str** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
 **interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **region** | **str** | AWS Region of your bucket. | 
 **role_arn** | **str** | Role ARN to assume when reading from S3. | [optional] 
 **severity** | **str** | Filter by alert severity (error, warning) | [optional] 

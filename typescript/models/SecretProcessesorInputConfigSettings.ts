@@ -10,9 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
-import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwsSqsS3CloudtrailSettingsConfig } from '../models/AwsSqsS3CloudtrailSettingsConfig';
@@ -40,7 +38,6 @@ import { ClumioAuditLogsSettingsConfig } from '../models/ClumioAuditLogsSettings
 import { ClumioConsolidatedAlertsSettingsConfig } from '../models/ClumioConsolidatedAlertsSettingsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
-import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
 import { EndorLabsAuditLogsSettingsConfig } from '../models/EndorLabsAuditLogsSettingsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
@@ -60,21 +57,16 @@ import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettin
 import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365GenericSettingsConfig';
 import { MonadLogSettingsConfig } from '../models/MonadLogSettingsConfig';
 import { ObjectStorageInputSettingsConfig } from '../models/ObjectStorageInputSettingsConfig';
-import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
 import { OrgAuditLogsSettingsConfig } from '../models/OrgAuditLogsSettingsConfig';
 import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { RedshiftAuditLogsSettingsConfig } from '../models/RedshiftAuditLogsSettingsConfig';
-import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
 import { SnykTargetsSettingsConfig } from '../models/SnykTargetsSettingsConfig';
 import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustomSettingsConfig';
 import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
 import { TaniumGraphqlInputSettingsConfig } from '../models/TaniumGraphqlInputSettingsConfig';
-import { TeamAccessLogsSettingsConfig } from '../models/TeamAccessLogsSettingsConfig';
-import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
-import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSettingsConfig } from '../models/TinesEventsLogsSettingsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
@@ -89,7 +81,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSettings = AdminLogsSettingsConfig | ArizeAuditLogsSettingsConfig | AuthLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwsSqsS3CloudtrailSettingsConfig | Awssqss3SettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureEventHubsSettingsConfig | AzureVnetFlowLogsSettingsConfig | BackblazeB2SettingsConfig | BigqueryInputSettingsConfig | BrinqaAuditLogsSettingsConfig | BuildkiteAuditLogsSettingsConfig | BuildkiteGraphqlInputSettingsConfig | CisaUserSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudflareDdosAttackAnalyticsSettingsConfig | CloudflareFirewallEventsSettingsConfig | CloudflareHttpRequestsSettingsConfig | CloudflareUrlScannerSettingsConfig | CloudflareZeroTrustAccessRequestsSettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CortexXsoarManagementLogsSettingsConfig | DefenderForEndpointAlertsSettingsConfig | DuoSecurityActivityLogsSettingsConfig | EksAuditLogsSettingsConfig | EndorLabsAuditLogsSettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | FullScansSettingsConfig | GithubActionsWorkflowLogsWebhookSettingsConfig | GkeAuditLogsSettingsConfig | GoogleCloudStorageSettingsConfig | GoogleWorkspaceSettingsConfig | IndividualAlertsSettingsConfig | InspectorSettingsConfig | IssuesSettingsConfig | KoiAuditLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LookerAuditLogsSettingsConfig | MerakiConfigLogsSettingsConfig | Microsoft365GenericSettingsConfig | MonadLogSettingsConfig | ObjectStorageInputSettingsConfig | OfflineenrollmentlogsSettingsConfig | OperationLogsSettingsConfig | OrgAuditLogsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | PlaidWebhooksSettingsConfig | RedshiftAuditLogsSettingsConfig | SlackEnterpriseAuditLogsSettingsConfig | SnykIssuesSettingsConfig | SnykTargetsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | TaniumGraphqlInputSettingsConfig | TeamAccessLogsSettingsConfig | TeamIntegrationLogsSettingsConfig | TelephonyLogsSettingsConfig | TinesAuditLogsSettingsConfig | TinesEventsLogsSettingsConfig | TwilioEventsSettingsConfig | TwilioSendgridEmailActivitySettingsConfig | VoltioAuditLogsSettingsConfig | VulnerabilityFindingsSettingsConfig | WizAuditLogsSettingsConfig;
+export type SecretProcessesorInputConfigSettings = ArizeAuditLogsSettingsConfig | AwsGuarddutySettingsConfig | AwsS3SettingsConfig | AwsSqsS3CloudtrailSettingsConfig | Awssqss3SettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureEventHubsSettingsConfig | AzureVnetFlowLogsSettingsConfig | BackblazeB2SettingsConfig | BigqueryInputSettingsConfig | BrinqaAuditLogsSettingsConfig | BuildkiteAuditLogsSettingsConfig | BuildkiteGraphqlInputSettingsConfig | CisaUserSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudflareDdosAttackAnalyticsSettingsConfig | CloudflareFirewallEventsSettingsConfig | CloudflareHttpRequestsSettingsConfig | CloudflareUrlScannerSettingsConfig | CloudflareZeroTrustAccessRequestsSettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CortexXsoarManagementLogsSettingsConfig | DefenderForEndpointAlertsSettingsConfig | EksAuditLogsSettingsConfig | EndorLabsAuditLogsSettingsConfig | EntraIdSettingsConfig | EventSettingsConfig | FullScansSettingsConfig | GithubActionsWorkflowLogsWebhookSettingsConfig | GkeAuditLogsSettingsConfig | GoogleCloudStorageSettingsConfig | GoogleWorkspaceSettingsConfig | IndividualAlertsSettingsConfig | InspectorSettingsConfig | IssuesSettingsConfig | KoiAuditLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LookerAuditLogsSettingsConfig | MerakiConfigLogsSettingsConfig | Microsoft365GenericSettingsConfig | MonadLogSettingsConfig | ObjectStorageInputSettingsConfig | OperationLogsSettingsConfig | OrgAuditLogsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | PlaidWebhooksSettingsConfig | RedshiftAuditLogsSettingsConfig | SnykIssuesSettingsConfig | SnykTargetsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | TaniumGraphqlInputSettingsConfig | TinesAuditLogsSettingsConfig | TinesEventsLogsSettingsConfig | TwilioEventsSettingsConfig | TwilioSendgridEmailActivitySettingsConfig | VoltioAuditLogsSettingsConfig | VulnerabilityFindingsSettingsConfig | WizAuditLogsSettingsConfig;
 
 /**
 * @type SecretProcessesorInputConfigSettingsClass
@@ -100,14 +92,6 @@ export class SecretProcessesorInputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
-
-
-
-
-
-
-
 
 
 

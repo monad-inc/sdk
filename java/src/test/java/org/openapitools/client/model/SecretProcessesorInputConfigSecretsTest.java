@@ -20,9 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.AdminLogsSecretsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
-import org.openapitools.client.model.AuthLogsSecretsConfig;
 import org.openapitools.client.model.AwsGuarddutySecretsConfig;
 import org.openapitools.client.model.AwsS3SecretsConfig;
 import org.openapitools.client.model.AzureActivityLogsSecretsConfig;
@@ -46,7 +44,6 @@ import org.openapitools.client.model.ClumioAuditLogsSecretsConfig;
 import org.openapitools.client.model.ClumioConsolidatedAlertsSecretsConfig;
 import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
-import org.openapitools.client.model.DuoSecurityActivityLogsSecretsConfig;
 import org.openapitools.client.model.EksAuditLogsSecretsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
@@ -65,18 +62,13 @@ import org.openapitools.client.model.MerakiConfigLogsSecretsConfig;
 import org.openapitools.client.model.Microsoft365GenericSecretsConfig;
 import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.ObjectStorageInputSecretsConfig;
-import org.openapitools.client.model.OfflineenrollmentlogsSecretsConfig;
 import org.openapitools.client.model.OperationLogsSecretsConfig;
 import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
 import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
-import org.openapitools.client.model.SlackEnterpriseAuditLogsSecretsConfig;
 import org.openapitools.client.model.SnykIssuesSecretsConfig;
 import org.openapitools.client.model.SnykTargetsSecretsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
-import org.openapitools.client.model.TeamAccessLogsSecretsConfig;
-import org.openapitools.client.model.TeamIntegrationLogsSecretsConfig;
-import org.openapitools.client.model.TelephonyLogsSecretsConfig;
 import org.openapitools.client.model.TinesAuditLogsSecretsConfig;
 import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
 import org.openapitools.client.model.TwilioEventsSecretsConfig;
@@ -102,22 +94,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'integrationKey'
-     */
-    @Test
-    public void integrationKeyTest() {
-        // TODO: test integrationKey
-    }
-
-    /**
-     * Test the property 'secretKey'
-     */
-    @Test
-    public void secretKeyTest() {
-        // TODO: test secretKey
-    }
-
-    /**
      * Test the property 'apiKey'
      */
     @Test
@@ -131,6 +107,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void accessKeyTest() {
         // TODO: test accessKey
+    }
+
+    /**
+     * Test the property 'secretKey'
+     */
+    @Test
+    public void secretKeyTest() {
+        // TODO: test secretKey
     }
 
     /**
@@ -254,22 +238,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     }
 
     /**
-     * Test the property 'userOauthToken'
-     */
-    @Test
-    public void userOauthTokenTest() {
-        // TODO: test userOauthToken
-    }
-
-    /**
-     * Test the property 'token'
-     */
-    @Test
-    public void tokenTest() {
-        // TODO: test token
-    }
-
-    /**
      * Test the property 'twilioAccountSid'
      */
     @Test
@@ -283,6 +251,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void twilioAuthTokenTest() {
         // TODO: test twilioAuthToken
+    }
+
+    /**
+     * Test the property 'token'
+     */
+    @Test
+    public void tokenTest() {
+        // TODO: test token
     }
 
 }

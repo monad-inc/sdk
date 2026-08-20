@@ -2,8 +2,6 @@ export * from '../models/AbsSecretsConfig';
 export * from '../models/AbsSettingsConfig';
 export * from '../models/AddArgumentsConfig';
 export * from '../models/AddIdArgumentsConfig';
-export * from '../models/AdminLogsSecretsConfig';
-export * from '../models/AdminLogsSettingsConfig';
 export * from '../models/AlertsAlertCategory';
 export * from '../models/AlertsAlertGranularity';
 export * from '../models/AlertsAlertHouse';
@@ -12,8 +10,6 @@ export * from '../models/ApplyConditionV2Request';
 export * from '../models/ApplyTransformationV2Request';
 export * from '../models/ArizeAuditLogsSecretsConfig';
 export * from '../models/ArizeAuditLogsSettingsConfig';
-export * from '../models/AuthLogsSecretsConfig';
-export * from '../models/AuthLogsSettingsConfig';
 export * from '../models/AuthenticationtypesAuthenticationMethod';
 export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
 export * from '../models/AuthenticationtypesTokenResponse';
@@ -137,8 +133,6 @@ export * from '../models/DelimitedDelimiterFormatter';
 export * from '../models/DropKeyArgumentsConfig';
 export * from '../models/DropKeyWhereValueEqArgumentsConfig';
 export * from '../models/DropRecordWhereValueEqArgumentsConfig';
-export * from '../models/DuoSecurityActivityLogsSecretsConfig';
-export * from '../models/DuoSecurityActivityLogsSettingsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 export * from '../models/EksAuditLogsSecretsConfig';
 export * from '../models/EksAuditLogsSettingsConfig';
@@ -358,8 +352,6 @@ export * from '../models/ObjectStorageInputSecretsConfig';
 export * from '../models/ObjectStorageInputSettingsConfig';
 export * from '../models/ObjectStorageSecretsConfig';
 export * from '../models/ObjectStorageSettingsConfig';
-export * from '../models/OfflineenrollmentlogsSecretsConfig';
-export * from '../models/OfflineenrollmentlogsSettingsConfig';
 export * from '../models/OpensearchAuthMode';
 export * from '../models/OpensearchSecretsConfig';
 export * from '../models/OpensearchSettingsConfig';
@@ -536,8 +528,6 @@ export * from '../models/Sentinelv2SettingsConfig';
 export * from '../models/SetStorageTypeCostRequest';
 export * from '../models/SlackAuthConfig';
 export * from '../models/SlackBotTokenVariant';
-export * from '../models/SlackEnterpriseAuditLogsSecretsConfig';
-export * from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 export * from '../models/SlackSettingsConfig';
 export * from '../models/SlackWebhookVariant';
 export * from '../models/SnowflakeOutputSecretsConfig';
@@ -562,12 +552,6 @@ export * from '../models/SyntheticDataCustomSettingsConfig';
 export * from '../models/SyntheticDataSettingsConfig';
 export * from '../models/TaniumGraphqlInputSecretsConfig';
 export * from '../models/TaniumGraphqlInputSettingsConfig';
-export * from '../models/TeamAccessLogsSecretsConfig';
-export * from '../models/TeamAccessLogsSettingsConfig';
-export * from '../models/TeamIntegrationLogsSecretsConfig';
-export * from '../models/TeamIntegrationLogsSettingsConfig';
-export * from '../models/TelephonyLogsSecretsConfig';
-export * from '../models/TelephonyLogsSettingsConfig';
 export * from '../models/TestEnrichmentConnectionRequest';
 export * from '../models/TestInputConnectionRequest';
 export * from '../models/TestOutputConnectionRequest';
@@ -629,8 +613,6 @@ import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
 import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
-import { AdminLogsSecretsConfig } from '../models/AdminLogsSecretsConfig';
-import { AdminLogsSettingsConfig } from '../models/AdminLogsSettingsConfig';
 import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
 import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
 import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
@@ -639,8 +621,6 @@ import { ApplyConditionV2RequestClass } from '../models/ApplyConditionV2Request'
 import { ApplyTransformationV2RequestClass } from '../models/ApplyTransformationV2Request';
 import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
 import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
-import { AuthLogsSecretsConfig } from '../models/AuthLogsSecretsConfig';
-import { AuthLogsSettingsConfig } from '../models/AuthLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
@@ -764,8 +744,6 @@ import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatt
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
-import { DuoSecurityActivityLogsSecretsConfig } from '../models/DuoSecurityActivityLogsSecretsConfig';
-import { DuoSecurityActivityLogsSettingsConfig } from '../models/DuoSecurityActivityLogsSettingsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
 import { EksAuditLogsSecretsConfig } from '../models/EksAuditLogsSecretsConfig';
 import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
@@ -985,8 +963,6 @@ import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSec
 import { ObjectStorageInputSettingsConfig  , ObjectStorageInputSettingsConfigCompressionEnum   , ObjectStorageInputSettingsConfigFormatEnum  , ObjectStorageInputSettingsConfigPartitionFormatEnum        } from '../models/ObjectStorageInputSettingsConfig';
 import { ObjectStorageSecretsConfig } from '../models/ObjectStorageSecretsConfig';
 import { ObjectStorageSettingsConfig } from '../models/ObjectStorageSettingsConfig';
-import { OfflineenrollmentlogsSecretsConfig } from '../models/OfflineenrollmentlogsSecretsConfig';
-import { OfflineenrollmentlogsSettingsConfig } from '../models/OfflineenrollmentlogsSettingsConfig';
 import { OpensearchAuthMode } from '../models/OpensearchAuthMode';
 import { OpensearchSecretsConfig } from '../models/OpensearchSecretsConfig';
 import { OpensearchSettingsConfig        } from '../models/OpensearchSettingsConfig';
@@ -1163,8 +1139,6 @@ import { Sentinelv2SettingsConfig } from '../models/Sentinelv2SettingsConfig';
 import { SetStorageTypeCostRequestClass } from '../models/SetStorageTypeCostRequest';
 import { SlackAuthConfig } from '../models/SlackAuthConfig';
 import { SlackBotTokenVariant } from '../models/SlackBotTokenVariant';
-import { SlackEnterpriseAuditLogsSecretsConfig } from '../models/SlackEnterpriseAuditLogsSecretsConfig';
-import { SlackEnterpriseAuditLogsSettingsConfig } from '../models/SlackEnterpriseAuditLogsSettingsConfig';
 import { SlackSettingsConfig } from '../models/SlackSettingsConfig';
 import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
@@ -1189,12 +1163,6 @@ import { SyntheticDataCustomSettingsConfig } from '../models/SyntheticDataCustom
 import { SyntheticDataSettingsConfig } from '../models/SyntheticDataSettingsConfig';
 import { TaniumGraphqlInputSecretsConfig } from '../models/TaniumGraphqlInputSecretsConfig';
 import { TaniumGraphqlInputSettingsConfig } from '../models/TaniumGraphqlInputSettingsConfig';
-import { TeamAccessLogsSecretsConfig } from '../models/TeamAccessLogsSecretsConfig';
-import { TeamAccessLogsSettingsConfig } from '../models/TeamAccessLogsSettingsConfig';
-import { TeamIntegrationLogsSecretsConfig } from '../models/TeamIntegrationLogsSecretsConfig';
-import { TeamIntegrationLogsSettingsConfig } from '../models/TeamIntegrationLogsSettingsConfig';
-import { TelephonyLogsSecretsConfig } from '../models/TelephonyLogsSecretsConfig';
-import { TelephonyLogsSettingsConfig } from '../models/TelephonyLogsSettingsConfig';
 import { TestEnrichmentConnectionRequestClass } from '../models/TestEnrichmentConnectionRequest';
 import { TestInputConnectionRequestClass } from '../models/TestInputConnectionRequest';
 import { TestOutputConnectionRequestClass } from '../models/TestOutputConnectionRequest';
@@ -1355,15 +1323,11 @@ let typeMap: {[index: string]: any} = {
     "AbsSettingsConfig": AbsSettingsConfig,
     "AddArgumentsConfig": AddArgumentsConfig,
     "AddIdArgumentsConfig": AddIdArgumentsConfig,
-    "AdminLogsSecretsConfig": AdminLogsSecretsConfig,
-    "AdminLogsSettingsConfig": AdminLogsSettingsConfig,
     "AlertsAlertMeta": AlertsAlertMeta,
     "ApplyConditionV2Request": ApplyConditionV2RequestClass,
     "ApplyTransformationV2Request": ApplyTransformationV2RequestClass,
     "ArizeAuditLogsSecretsConfig": ArizeAuditLogsSecretsConfig,
     "ArizeAuditLogsSettingsConfig": ArizeAuditLogsSettingsConfig,
-    "AuthLogsSecretsConfig": AuthLogsSecretsConfig,
-    "AuthLogsSettingsConfig": AuthLogsSettingsConfig,
     "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,
     "AuthenticationtypesMFAEnrollmentTicket": AuthenticationtypesMFAEnrollmentTicket,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
@@ -1482,8 +1446,6 @@ let typeMap: {[index: string]: any} = {
     "DropKeyArgumentsConfig": DropKeyArgumentsConfig,
     "DropKeyWhereValueEqArgumentsConfig": DropKeyWhereValueEqArgumentsConfig,
     "DropRecordWhereValueEqArgumentsConfig": DropRecordWhereValueEqArgumentsConfig,
-    "DuoSecurityActivityLogsSecretsConfig": DuoSecurityActivityLogsSecretsConfig,
-    "DuoSecurityActivityLogsSettingsConfig": DuoSecurityActivityLogsSettingsConfig,
     "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
     "EksAuditLogsSecretsConfig": EksAuditLogsSecretsConfig,
     "EksAuditLogsSettingsConfig": EksAuditLogsSettingsConfig,
@@ -1679,8 +1641,6 @@ let typeMap: {[index: string]: any} = {
     "ObjectStorageInputSettingsConfig": ObjectStorageInputSettingsConfig,
     "ObjectStorageSecretsConfig": ObjectStorageSecretsConfig,
     "ObjectStorageSettingsConfig": ObjectStorageSettingsConfig,
-    "OfflineenrollmentlogsSecretsConfig": OfflineenrollmentlogsSecretsConfig,
-    "OfflineenrollmentlogsSettingsConfig": OfflineenrollmentlogsSettingsConfig,
     "OpensearchSecretsConfig": OpensearchSecretsConfig,
     "OpensearchSettingsConfig": OpensearchSettingsConfig,
     "OperationInformation": OperationInformation,
@@ -1855,8 +1815,6 @@ let typeMap: {[index: string]: any} = {
     "SetStorageTypeCostRequest": SetStorageTypeCostRequestClass,
     "SlackAuthConfig": SlackAuthConfig,
     "SlackBotTokenVariant": SlackBotTokenVariant,
-    "SlackEnterpriseAuditLogsSecretsConfig": SlackEnterpriseAuditLogsSecretsConfig,
-    "SlackEnterpriseAuditLogsSettingsConfig": SlackEnterpriseAuditLogsSettingsConfig,
     "SlackSettingsConfig": SlackSettingsConfig,
     "SlackWebhookVariant": SlackWebhookVariant,
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
@@ -1878,12 +1836,6 @@ let typeMap: {[index: string]: any} = {
     "SyntheticDataSettingsConfig": SyntheticDataSettingsConfig,
     "TaniumGraphqlInputSecretsConfig": TaniumGraphqlInputSecretsConfig,
     "TaniumGraphqlInputSettingsConfig": TaniumGraphqlInputSettingsConfig,
-    "TeamAccessLogsSecretsConfig": TeamAccessLogsSecretsConfig,
-    "TeamAccessLogsSettingsConfig": TeamAccessLogsSettingsConfig,
-    "TeamIntegrationLogsSecretsConfig": TeamIntegrationLogsSecretsConfig,
-    "TeamIntegrationLogsSettingsConfig": TeamIntegrationLogsSettingsConfig,
-    "TelephonyLogsSecretsConfig": TelephonyLogsSecretsConfig,
-    "TelephonyLogsSettingsConfig": TelephonyLogsSettingsConfig,
     "TestEnrichmentConnectionRequest": TestEnrichmentConnectionRequestClass,
     "TestInputConnectionRequest": TestInputConnectionRequestClass,
     "TestOutputConnectionRequest": TestOutputConnectionRequestClass,

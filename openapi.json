@@ -72,36 +72,6 @@
                 },
                 "type": "object"
             },
-            "admin_logs.SecretsConfig": {
-                "properties": {
-                    "integration_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "integration_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "admin_logs.SettingsConfig": {
-                "properties": {
-                    "host": {
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "host"
-                ],
-                "type": "object"
-            },
             "alerts.AlertCategory": {
                 "enum": [
                     "Security",
@@ -204,36 +174,6 @@
                         "type": "boolean"
                     }
                 },
-                "type": "object"
-            },
-            "auth_logs.SecretsConfig": {
-                "properties": {
-                    "integration_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "integration_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "auth_logs.SettingsConfig": {
-                "properties": {
-                    "host": {
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "host"
-                ],
                 "type": "object"
             },
             "authenticationtypes.AuthenticationMethod": {
@@ -2447,39 +2387,6 @@
                         "description": "The value to compare with the record's value"
                     }
                 },
-                "type": "object"
-            },
-            "duo_security_activity_logs.SecretsConfig": {
-                "description": "Duo Security Activity Logs secrets",
-                "properties": {
-                    "integration_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "integration_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "duo_security_activity_logs.SettingsConfig": {
-                "description": "Duo Security Activity Logs settings",
-                "properties": {
-                    "host": {
-                        "description": "The API hostname for your Duo Security integration.",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "host"
-                ],
                 "type": "object"
             },
             "duplicate_key_value_to_key.ArgumentsConfig": {
@@ -7204,39 +7111,6 @@
                 ],
                 "type": "object"
             },
-            "offlineenrollmentlogs.SecretsConfig": {
-                "description": "Duo Security Offline Enrollment Logs secrets",
-                "properties": {
-                    "integration_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "integration_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "offlineenrollmentlogs.SettingsConfig": {
-                "description": "Duo Security Offline Enrollment Logs settings",
-                "properties": {
-                    "host": {
-                        "description": "The API hostname for your Duo Security integration.",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "host"
-                ],
-                "type": "object"
-            },
             "opensearch.AuthMode": {
                 "description": "The authentication mode (basic, aws_role)",
                 "enum": [
@@ -10257,13 +10131,7 @@
                         "additionalProperties": {},
                         "oneOf": [
                             {
-                                "$ref": "#/components/schemas/admin_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/arize_audit_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/auth_logs.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/aws_guardduty.SecretsConfig"
@@ -10338,9 +10206,6 @@
                                 "$ref": "#/components/schemas/defender_for_endpoint_alerts.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/duo_security_activity_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/eks_audit_logs.SecretsConfig"
                             },
                             {
@@ -10395,9 +10260,6 @@
                                 "$ref": "#/components/schemas/object_storage_input.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/offlineenrollmentlogs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/operation_logs.SecretsConfig"
                             },
                             {
@@ -10408,9 +10270,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/plaid_webhooks.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/slack_enterprise_audit_logs.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/snyk_issues.SecretsConfig"
@@ -10426,15 +10285,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/tanium_graphql_input.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/team_access_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/team_integration_logs.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/telephony_logs.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/tines_audit_logs.SecretsConfig"
@@ -10464,13 +10314,7 @@
                         "additionalProperties": {},
                         "oneOf": [
                             {
-                                "$ref": "#/components/schemas/admin_logs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/arize_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/auth_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/aws_guardduty.SettingsConfig"
@@ -10554,9 +10398,6 @@
                                 "$ref": "#/components/schemas/defender_for_endpoint_alerts.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/duo_security_activity_logs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/eks_audit_logs.SettingsConfig"
                             },
                             {
@@ -10614,9 +10455,6 @@
                                 "$ref": "#/components/schemas/object_storage_input.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/offlineenrollmentlogs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/operation_logs.SettingsConfig"
                             },
                             {
@@ -10632,9 +10470,6 @@
                                 "$ref": "#/components/schemas/redshift_audit_logs.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/slack_enterprise_audit_logs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/snyk_issues.SettingsConfig"
                             },
                             {
@@ -10648,15 +10483,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/tanium_graphql_input.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/team_access_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/team_integration_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/telephony_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/tines_audit_logs.SettingsConfig"
@@ -11045,33 +10871,6 @@
                 "properties": {
                     "webhook_url": {
                         "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "slack_enterprise_audit_logs.SecretsConfig": {
-                "properties": {
-                    "user_oauth_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "user_oauth_token"
-                ],
-                "type": "object"
-            },
-            "slack_enterprise_audit_logs.SettingsConfig": {
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. Dates before March 2018 are valid but will result in an error during validation.",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -11499,97 +11298,6 @@
                         "uniqueItems": false
                     }
                 },
-                "type": "object"
-            },
-            "team_access_logs.SecretsConfig": {
-                "description": "Slack Team Access Logs secrets",
-                "properties": {
-                    "token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "token"
-                ],
-                "type": "object"
-            },
-            "team_access_logs.SettingsConfig": {
-                "description": "Slack Team Access Logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Start time for backfilling data",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "team_integration_logs.SecretsConfig": {
-                "description": "Slack Team Integration Logs secrets",
-                "properties": {
-                    "token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "token"
-                ],
-                "type": "object"
-            },
-            "team_integration_logs.SettingsConfig": {
-                "description": "Slack Team Integration Logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Start time for backfilling data",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "telephony_logs.SecretsConfig": {
-                "description": "Duo Security Telephony Logs secrets",
-                "properties": {
-                    "integration_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "required": [
-                    "integration_key",
-                    "secret_key"
-                ],
-                "type": "object"
-            },
-            "telephony_logs.SettingsConfig": {
-                "description": "Duo Security Telephony Logs settings",
-                "properties": {
-                    "host": {
-                        "description": "The API hostname for your Duo Security integration.",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "host"
-                ],
                 "type": "object"
             },
             "tines_audit_logs.SecretsConfig": {

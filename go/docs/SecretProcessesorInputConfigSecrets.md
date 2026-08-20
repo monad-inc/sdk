@@ -4,10 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IntegrationKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -23,16 +22,15 @@ Name | Type | Description | Notes
 **GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Secret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**UserOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**Token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TwilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(integrationKey ModelsSecret, secretKey ModelsSecret, apiKey ModelsSecret, accessKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, apiSecret ModelsSecret, userOauthToken ModelsSecret, token ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(apiKey ModelsSecret, accessKey ModelsSecret, secretKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, apiSecret ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -46,46 +44,6 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSecretsWithDefaults instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetIntegrationKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetIntegrationKey() ModelsSecret`
-
-GetIntegrationKey returns the IntegrationKey field if non-nil, zero value otherwise.
-
-### GetIntegrationKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetIntegrationKeyOk() (*ModelsSecret, bool)`
-
-GetIntegrationKeyOk returns a tuple with the IntegrationKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntegrationKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetIntegrationKey(v ModelsSecret)`
-
-SetIntegrationKey sets IntegrationKey field to given value.
-
-
-### GetSecretKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetSecretKey() ModelsSecret`
-
-GetSecretKey returns the SecretKey field if non-nil, zero value otherwise.
-
-### GetSecretKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetSecretKeyOk() (*ModelsSecret, bool)`
-
-GetSecretKeyOk returns a tuple with the SecretKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecretKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetSecretKey(v ModelsSecret)`
-
-SetSecretKey sets SecretKey field to given value.
-
 
 ### GetApiKey
 
@@ -125,6 +83,26 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorInputConfigSecrets) SetAccessKey(v ModelsSecret)`
 
 SetAccessKey sets AccessKey field to given value.
+
+
+### GetSecretKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecretKey() ModelsSecret`
+
+GetSecretKey returns the SecretKey field if non-nil, zero value otherwise.
+
+### GetSecretKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecretKeyOk() (*ModelsSecret, bool)`
+
+GetSecretKeyOk returns a tuple with the SecretKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecretKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetSecretKey(v ModelsSecret)`
+
+SetSecretKey sets SecretKey field to given value.
 
 
 ### GetClientId
@@ -467,46 +445,6 @@ SetSecret sets Secret field to given value.
 
 HasSecret returns a boolean if a field has been set.
 
-### GetUserOauthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetUserOauthToken() ModelsSecret`
-
-GetUserOauthToken returns the UserOauthToken field if non-nil, zero value otherwise.
-
-### GetUserOauthTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetUserOauthTokenOk() (*ModelsSecret, bool)`
-
-GetUserOauthTokenOk returns a tuple with the UserOauthToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserOauthToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetUserOauthToken(v ModelsSecret)`
-
-SetUserOauthToken sets UserOauthToken field to given value.
-
-
-### GetToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetTokenOk() (*ModelsSecret, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetToken(v ModelsSecret)`
-
-SetToken sets Token field to given value.
-
-
 ### GetTwilioAccountSid
 
 `func (o *SecretProcessesorInputConfigSecrets) GetTwilioAccountSid() ModelsSecret`
@@ -546,6 +484,31 @@ and a boolean to check if the value has been set.
 
 SetTwilioAuthToken sets TwilioAuthToken field to given value.
 
+
+### GetToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTokenOk() (*ModelsSecret, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetToken(v ModelsSecret)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

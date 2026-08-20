@@ -36,13 +36,12 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
         model = SecretProcessesorInputConfigSettings()
         if include_optional:
             return SecretProcessesorInputConfigSettings(
-                host = '',
-                use_synthetic_data = True,
                 backfill_start_time = '',
                 interval_seconds = 56,
                 rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
                     rate = 1.337, 
                     unit = 'per_second', ),
+                use_synthetic_data = True,
                 region = '',
                 role_arn = '',
                 severity = '',
@@ -288,7 +287,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
             )
         else:
             return SecretProcessesorInputConfigSettings(
-                host = '',
                 region = '',
                 bucket = '',
                 compression = 'auto',

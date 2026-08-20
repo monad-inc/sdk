@@ -24,9 +24,7 @@ import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import org.openapitools.client.model.AdminLogsSettingsConfig;
 import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
-import org.openapitools.client.model.AuthLogsSettingsConfig;
 import org.openapitools.client.model.AwsGuarddutySettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AwsSqsS3CloudtrailChunkingMode;
@@ -57,7 +55,6 @@ import org.openapitools.client.model.CommonAuthConfig;
 import org.openapitools.client.model.CommonAuthType;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
-import org.openapitools.client.model.DuoSecurityActivityLogsSettingsConfig;
 import org.openapitools.client.model.EksAuditLogsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
@@ -81,22 +78,17 @@ import org.openapitools.client.model.ModelsSecret;
 import org.openapitools.client.model.MonadGraphqlInputVariable;
 import org.openapitools.client.model.MonadLogSettingsConfig;
 import org.openapitools.client.model.ObjectStorageInputSettingsConfig;
-import org.openapitools.client.model.OfflineenrollmentlogsSettingsConfig;
 import org.openapitools.client.model.OperationLogsSettingsConfig;
 import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
 import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
-import org.openapitools.client.model.SlackEnterpriseAuditLogsSettingsConfig;
 import org.openapitools.client.model.SnykIssuesSettingsConfig;
 import org.openapitools.client.model.SnykTargetsSettingsConfig;
 import org.openapitools.client.model.SqsS3BaseKeyFilter;
 import org.openapitools.client.model.SyntheticDataCustomSettingsConfig;
 import org.openapitools.client.model.SyntheticDataSettingsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSettingsConfig;
-import org.openapitools.client.model.TeamAccessLogsSettingsConfig;
-import org.openapitools.client.model.TeamIntegrationLogsSettingsConfig;
-import org.openapitools.client.model.TelephonyLogsSettingsConfig;
 import org.openapitools.client.model.TinesAuditLogsSettingsConfig;
 import org.openapitools.client.model.TinesEventsLogsSettingsConfig;
 import org.openapitools.client.model.TwilioEventsSettingsConfig;
@@ -139,22 +131,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'host'
-     */
-    @Test
-    public void hostTest() {
-        // TODO: test host
-    }
-
-    /**
-     * Test the property 'useSyntheticData'
-     */
-    @Test
-    public void useSyntheticDataTest() {
-        // TODO: test useSyntheticData
-    }
-
-    /**
      * Test the property 'backfillStartTime'
      */
     @Test
@@ -176,6 +152,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void rateLimitTest() {
         // TODO: test rateLimit
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
     /**

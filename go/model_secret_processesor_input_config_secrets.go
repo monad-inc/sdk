@@ -19,9 +19,7 @@ import (
 
 // SecretProcessesorInputConfigSecrets - struct for SecretProcessesorInputConfigSecrets
 type SecretProcessesorInputConfigSecrets struct {
-	AdminLogsSecretsConfig *AdminLogsSecretsConfig
 	ArizeAuditLogsSecretsConfig *ArizeAuditLogsSecretsConfig
-	AuthLogsSecretsConfig *AuthLogsSecretsConfig
 	AwsGuarddutySecretsConfig *AwsGuarddutySecretsConfig
 	AwsS3SecretsConfig *AwsS3SecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
@@ -45,7 +43,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	ClumioConsolidatedAlertsSecretsConfig *ClumioConsolidatedAlertsSecretsConfig
 	CortexXsoarManagementLogsSecretsConfig *CortexXsoarManagementLogsSecretsConfig
 	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
-	DuoSecurityActivityLogsSecretsConfig *DuoSecurityActivityLogsSecretsConfig
 	EksAuditLogsSecretsConfig *EksAuditLogsSecretsConfig
 	EndorLabsAuditLogsSecretsConfig *EndorLabsAuditLogsSecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
@@ -63,18 +60,13 @@ type SecretProcessesorInputConfigSecrets struct {
 	MerakiConfigLogsSecretsConfig *MerakiConfigLogsSecretsConfig
 	Microsoft365GenericSecretsConfig *Microsoft365GenericSecretsConfig
 	ObjectStorageInputSecretsConfig *ObjectStorageInputSecretsConfig
-	OfflineenrollmentlogsSecretsConfig *OfflineenrollmentlogsSecretsConfig
 	OperationLogsSecretsConfig *OperationLogsSecretsConfig
 	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
 	PlaidWebhooksSecretsConfig *PlaidWebhooksSecretsConfig
-	SlackEnterpriseAuditLogsSecretsConfig *SlackEnterpriseAuditLogsSecretsConfig
 	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
 	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
 	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
-	TeamAccessLogsSecretsConfig *TeamAccessLogsSecretsConfig
-	TeamIntegrationLogsSecretsConfig *TeamIntegrationLogsSecretsConfig
-	TelephonyLogsSecretsConfig *TelephonyLogsSecretsConfig
 	TinesAuditLogsSecretsConfig *TinesAuditLogsSecretsConfig
 	TinesEventsLogsSecretsConfig *TinesEventsLogsSecretsConfig
 	TwilioEventsSecretsConfig *TwilioEventsSecretsConfig
@@ -85,24 +77,10 @@ type SecretProcessesorInputConfigSecrets struct {
 	MapmapOfStringAny *map[string]interface{}
 }
 
-// AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AdminLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func AdminLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AdminLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		AdminLogsSecretsConfig: v,
-	}
-}
-
 // ArizeAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ArizeAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func ArizeAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ArizeAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		ArizeAuditLogsSecretsConfig: v,
-	}
-}
-
-// AuthLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AuthLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func AuthLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *AuthLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		AuthLogsSecretsConfig: v,
 	}
 }
 
@@ -267,13 +245,6 @@ func DefenderForEndpointAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets
 	}
 }
 
-// DuoSecurityActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns DuoSecurityActivityLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func DuoSecurityActivityLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *DuoSecurityActivityLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		DuoSecurityActivityLogsSecretsConfig: v,
-	}
-}
-
 // EksAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns EksAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func EksAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EksAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -393,13 +364,6 @@ func ObjectStorageInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *Obj
 	}
 }
 
-// OfflineenrollmentlogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OfflineenrollmentlogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func OfflineenrollmentlogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OfflineenrollmentlogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		OfflineenrollmentlogsSecretsConfig: v,
-	}
-}
-
 // OperationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns OperationLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func OperationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OperationLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -428,13 +392,6 @@ func PlaidWebhooksSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PlaidWeb
 	}
 }
 
-// SlackEnterpriseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SlackEnterpriseAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SlackEnterpriseAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SlackEnterpriseAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SlackEnterpriseAuditLogsSecretsConfig: v,
-	}
-}
-
 // SnykIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnykIssuesSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
 func SnykIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykIssuesSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
@@ -453,27 +410,6 @@ func SnykTargetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykTarget
 func TaniumGraphqlInputSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TaniumGraphqlInputSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		TaniumGraphqlInputSecretsConfig: v,
-	}
-}
-
-// TeamAccessLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TeamAccessLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func TeamAccessLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TeamAccessLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		TeamAccessLogsSecretsConfig: v,
-	}
-}
-
-// TeamIntegrationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TeamIntegrationLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func TeamIntegrationLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TeamIntegrationLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		TeamIntegrationLogsSecretsConfig: v,
-	}
-}
-
-// TelephonyLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns TelephonyLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func TelephonyLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *TelephonyLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		TelephonyLogsSecretsConfig: v,
 	}
 }
 
@@ -538,23 +474,6 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSecrets(v *map[string]interf
 func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AdminLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.AdminLogsSecretsConfig)
-	if err == nil {
-		jsonAdminLogsSecretsConfig, _ := json.Marshal(dst.AdminLogsSecretsConfig)
-		if string(jsonAdminLogsSecretsConfig) == "{}" { // empty struct
-			dst.AdminLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AdminLogsSecretsConfig); err != nil {
-				dst.AdminLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AdminLogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into ArizeAuditLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.ArizeAuditLogsSecretsConfig)
 	if err == nil {
@@ -570,23 +489,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.ArizeAuditLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into AuthLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.AuthLogsSecretsConfig)
-	if err == nil {
-		jsonAuthLogsSecretsConfig, _ := json.Marshal(dst.AuthLogsSecretsConfig)
-		if string(jsonAuthLogsSecretsConfig) == "{}" { // empty struct
-			dst.AuthLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AuthLogsSecretsConfig); err != nil {
-				dst.AuthLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AuthLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into AwsGuarddutySecretsConfig
@@ -980,23 +882,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into DuoSecurityActivityLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.DuoSecurityActivityLogsSecretsConfig)
-	if err == nil {
-		jsonDuoSecurityActivityLogsSecretsConfig, _ := json.Marshal(dst.DuoSecurityActivityLogsSecretsConfig)
-		if string(jsonDuoSecurityActivityLogsSecretsConfig) == "{}" { // empty struct
-			dst.DuoSecurityActivityLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.DuoSecurityActivityLogsSecretsConfig); err != nil {
-				dst.DuoSecurityActivityLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.DuoSecurityActivityLogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into EksAuditLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.EksAuditLogsSecretsConfig)
 	if err == nil {
@@ -1286,23 +1171,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ObjectStorageInputSecretsConfig = nil
 	}
 
-	// try to unmarshal data into OfflineenrollmentlogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.OfflineenrollmentlogsSecretsConfig)
-	if err == nil {
-		jsonOfflineenrollmentlogsSecretsConfig, _ := json.Marshal(dst.OfflineenrollmentlogsSecretsConfig)
-		if string(jsonOfflineenrollmentlogsSecretsConfig) == "{}" { // empty struct
-			dst.OfflineenrollmentlogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.OfflineenrollmentlogsSecretsConfig); err != nil {
-				dst.OfflineenrollmentlogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.OfflineenrollmentlogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into OperationLogsSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.OperationLogsSecretsConfig)
 	if err == nil {
@@ -1371,23 +1239,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PlaidWebhooksSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SlackEnterpriseAuditLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SlackEnterpriseAuditLogsSecretsConfig)
-	if err == nil {
-		jsonSlackEnterpriseAuditLogsSecretsConfig, _ := json.Marshal(dst.SlackEnterpriseAuditLogsSecretsConfig)
-		if string(jsonSlackEnterpriseAuditLogsSecretsConfig) == "{}" { // empty struct
-			dst.SlackEnterpriseAuditLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SlackEnterpriseAuditLogsSecretsConfig); err != nil {
-				dst.SlackEnterpriseAuditLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into SnykIssuesSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSecretsConfig)
 	if err == nil {
@@ -1437,57 +1288,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.TaniumGraphqlInputSecretsConfig = nil
-	}
-
-	// try to unmarshal data into TeamAccessLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.TeamAccessLogsSecretsConfig)
-	if err == nil {
-		jsonTeamAccessLogsSecretsConfig, _ := json.Marshal(dst.TeamAccessLogsSecretsConfig)
-		if string(jsonTeamAccessLogsSecretsConfig) == "{}" { // empty struct
-			dst.TeamAccessLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TeamAccessLogsSecretsConfig); err != nil {
-				dst.TeamAccessLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TeamAccessLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into TeamIntegrationLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.TeamIntegrationLogsSecretsConfig)
-	if err == nil {
-		jsonTeamIntegrationLogsSecretsConfig, _ := json.Marshal(dst.TeamIntegrationLogsSecretsConfig)
-		if string(jsonTeamIntegrationLogsSecretsConfig) == "{}" { // empty struct
-			dst.TeamIntegrationLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TeamIntegrationLogsSecretsConfig); err != nil {
-				dst.TeamIntegrationLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TeamIntegrationLogsSecretsConfig = nil
-	}
-
-	// try to unmarshal data into TelephonyLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.TelephonyLogsSecretsConfig)
-	if err == nil {
-		jsonTelephonyLogsSecretsConfig, _ := json.Marshal(dst.TelephonyLogsSecretsConfig)
-		if string(jsonTelephonyLogsSecretsConfig) == "{}" { // empty struct
-			dst.TelephonyLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.TelephonyLogsSecretsConfig); err != nil {
-				dst.TelephonyLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.TelephonyLogsSecretsConfig = nil
 	}
 
 	// try to unmarshal data into TinesAuditLogsSecretsConfig
@@ -1628,9 +1428,7 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AdminLogsSecretsConfig = nil
 		dst.ArizeAuditLogsSecretsConfig = nil
-		dst.AuthLogsSecretsConfig = nil
 		dst.AwsGuarddutySecretsConfig = nil
 		dst.AwsS3SecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
@@ -1654,7 +1452,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.ClumioConsolidatedAlertsSecretsConfig = nil
 		dst.CortexXsoarManagementLogsSecretsConfig = nil
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
-		dst.DuoSecurityActivityLogsSecretsConfig = nil
 		dst.EksAuditLogsSecretsConfig = nil
 		dst.EndorLabsAuditLogsSecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
@@ -1672,18 +1469,13 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.MerakiConfigLogsSecretsConfig = nil
 		dst.Microsoft365GenericSecretsConfig = nil
 		dst.ObjectStorageInputSecretsConfig = nil
-		dst.OfflineenrollmentlogsSecretsConfig = nil
 		dst.OperationLogsSecretsConfig = nil
 		dst.OrgAuditLogsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 		dst.PlaidWebhooksSecretsConfig = nil
-		dst.SlackEnterpriseAuditLogsSecretsConfig = nil
 		dst.SnykIssuesSecretsConfig = nil
 		dst.SnykTargetsSecretsConfig = nil
 		dst.TaniumGraphqlInputSecretsConfig = nil
-		dst.TeamAccessLogsSecretsConfig = nil
-		dst.TeamIntegrationLogsSecretsConfig = nil
-		dst.TelephonyLogsSecretsConfig = nil
 		dst.TinesAuditLogsSecretsConfig = nil
 		dst.TinesEventsLogsSecretsConfig = nil
 		dst.TwilioEventsSecretsConfig = nil
@@ -1977,61 +1769,13 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
         } else {
             return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
         }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
-        if err != nil {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets): %v", err)
-        } else {
-            return fmt.Errorf("data failed to match schemas in oneOf(SecretProcessesorInputConfigSecrets)")
-        }
 	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
-	if src.AdminLogsSecretsConfig != nil {
-		return json.Marshal(&src.AdminLogsSecretsConfig)
-	}
-
 	if src.ArizeAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.ArizeAuditLogsSecretsConfig)
-	}
-
-	if src.AuthLogsSecretsConfig != nil {
-		return json.Marshal(&src.AuthLogsSecretsConfig)
 	}
 
 	if src.AwsGuarddutySecretsConfig != nil {
@@ -2126,10 +1870,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DefenderForEndpointAlertsSecretsConfig)
 	}
 
-	if src.DuoSecurityActivityLogsSecretsConfig != nil {
-		return json.Marshal(&src.DuoSecurityActivityLogsSecretsConfig)
-	}
-
 	if src.EksAuditLogsSecretsConfig != nil {
 		return json.Marshal(&src.EksAuditLogsSecretsConfig)
 	}
@@ -2198,10 +1938,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ObjectStorageInputSecretsConfig)
 	}
 
-	if src.OfflineenrollmentlogsSecretsConfig != nil {
-		return json.Marshal(&src.OfflineenrollmentlogsSecretsConfig)
-	}
-
 	if src.OperationLogsSecretsConfig != nil {
 		return json.Marshal(&src.OperationLogsSecretsConfig)
 	}
@@ -2218,10 +1954,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PlaidWebhooksSecretsConfig)
 	}
 
-	if src.SlackEnterpriseAuditLogsSecretsConfig != nil {
-		return json.Marshal(&src.SlackEnterpriseAuditLogsSecretsConfig)
-	}
-
 	if src.SnykIssuesSecretsConfig != nil {
 		return json.Marshal(&src.SnykIssuesSecretsConfig)
 	}
@@ -2232,18 +1964,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.TaniumGraphqlInputSecretsConfig != nil {
 		return json.Marshal(&src.TaniumGraphqlInputSecretsConfig)
-	}
-
-	if src.TeamAccessLogsSecretsConfig != nil {
-		return json.Marshal(&src.TeamAccessLogsSecretsConfig)
-	}
-
-	if src.TeamIntegrationLogsSecretsConfig != nil {
-		return json.Marshal(&src.TeamIntegrationLogsSecretsConfig)
-	}
-
-	if src.TelephonyLogsSecretsConfig != nil {
-		return json.Marshal(&src.TelephonyLogsSecretsConfig)
 	}
 
 	if src.TinesAuditLogsSecretsConfig != nil {
@@ -2286,16 +2006,8 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 	if obj == nil {
 		return nil
 	}
-	if obj.AdminLogsSecretsConfig != nil {
-		return obj.AdminLogsSecretsConfig
-	}
-
 	if obj.ArizeAuditLogsSecretsConfig != nil {
 		return obj.ArizeAuditLogsSecretsConfig
-	}
-
-	if obj.AuthLogsSecretsConfig != nil {
-		return obj.AuthLogsSecretsConfig
 	}
 
 	if obj.AwsGuarddutySecretsConfig != nil {
@@ -2390,10 +2102,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.DefenderForEndpointAlertsSecretsConfig
 	}
 
-	if obj.DuoSecurityActivityLogsSecretsConfig != nil {
-		return obj.DuoSecurityActivityLogsSecretsConfig
-	}
-
 	if obj.EksAuditLogsSecretsConfig != nil {
 		return obj.EksAuditLogsSecretsConfig
 	}
@@ -2462,10 +2170,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.ObjectStorageInputSecretsConfig
 	}
 
-	if obj.OfflineenrollmentlogsSecretsConfig != nil {
-		return obj.OfflineenrollmentlogsSecretsConfig
-	}
-
 	if obj.OperationLogsSecretsConfig != nil {
 		return obj.OperationLogsSecretsConfig
 	}
@@ -2482,10 +2186,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.PlaidWebhooksSecretsConfig
 	}
 
-	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {
-		return obj.SlackEnterpriseAuditLogsSecretsConfig
-	}
-
 	if obj.SnykIssuesSecretsConfig != nil {
 		return obj.SnykIssuesSecretsConfig
 	}
@@ -2496,18 +2196,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 	if obj.TaniumGraphqlInputSecretsConfig != nil {
 		return obj.TaniumGraphqlInputSecretsConfig
-	}
-
-	if obj.TeamAccessLogsSecretsConfig != nil {
-		return obj.TeamAccessLogsSecretsConfig
-	}
-
-	if obj.TeamIntegrationLogsSecretsConfig != nil {
-		return obj.TeamIntegrationLogsSecretsConfig
-	}
-
-	if obj.TelephonyLogsSecretsConfig != nil {
-		return obj.TelephonyLogsSecretsConfig
 	}
 
 	if obj.TinesAuditLogsSecretsConfig != nil {
@@ -2548,16 +2236,8 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interface{}) {
-	if obj.AdminLogsSecretsConfig != nil {
-		return *obj.AdminLogsSecretsConfig
-	}
-
 	if obj.ArizeAuditLogsSecretsConfig != nil {
 		return *obj.ArizeAuditLogsSecretsConfig
-	}
-
-	if obj.AuthLogsSecretsConfig != nil {
-		return *obj.AuthLogsSecretsConfig
 	}
 
 	if obj.AwsGuarddutySecretsConfig != nil {
@@ -2652,10 +2332,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.DefenderForEndpointAlertsSecretsConfig
 	}
 
-	if obj.DuoSecurityActivityLogsSecretsConfig != nil {
-		return *obj.DuoSecurityActivityLogsSecretsConfig
-	}
-
 	if obj.EksAuditLogsSecretsConfig != nil {
 		return *obj.EksAuditLogsSecretsConfig
 	}
@@ -2724,10 +2400,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.ObjectStorageInputSecretsConfig
 	}
 
-	if obj.OfflineenrollmentlogsSecretsConfig != nil {
-		return *obj.OfflineenrollmentlogsSecretsConfig
-	}
-
 	if obj.OperationLogsSecretsConfig != nil {
 		return *obj.OperationLogsSecretsConfig
 	}
@@ -2744,10 +2416,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 		return *obj.PlaidWebhooksSecretsConfig
 	}
 
-	if obj.SlackEnterpriseAuditLogsSecretsConfig != nil {
-		return *obj.SlackEnterpriseAuditLogsSecretsConfig
-	}
-
 	if obj.SnykIssuesSecretsConfig != nil {
 		return *obj.SnykIssuesSecretsConfig
 	}
@@ -2758,18 +2426,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.TaniumGraphqlInputSecretsConfig != nil {
 		return *obj.TaniumGraphqlInputSecretsConfig
-	}
-
-	if obj.TeamAccessLogsSecretsConfig != nil {
-		return *obj.TeamAccessLogsSecretsConfig
-	}
-
-	if obj.TeamIntegrationLogsSecretsConfig != nil {
-		return *obj.TeamIntegrationLogsSecretsConfig
-	}
-
-	if obj.TelephonyLogsSecretsConfig != nil {
-		return *obj.TelephonyLogsSecretsConfig
 	}
 
 	if obj.TinesAuditLogsSecretsConfig != nil {

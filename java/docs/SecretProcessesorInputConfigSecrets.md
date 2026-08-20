@@ -7,10 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**integrationKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**tenantId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
@@ -26,10 +25,9 @@
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**secret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**userOauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**token** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 
