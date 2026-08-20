@@ -13,26 +13,68 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import json
-from enum import Enum
-from typing_extensions import Self
+import unittest
 
+from monad.models.convert_cef_arguments_config import ConvertCefArgumentsConfig
 
-class KafkaPayloadFormat(str, Enum):
-    """
-    How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-    """
+class TestConvertCefArgumentsConfig(unittest.TestCase):
+    """ConvertCefArgumentsConfig unit test stubs"""
 
-    """
-    allowed enum values
-    """
-    defaultPayloadFormat = 'individual'
-    payloadFormatIndividual = 'json_array'
+    def setUp(self):
+        pass
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Create an instance of KafkaPayloadFormat from a JSON string"""
-        return cls(json.loads(json_str))
+    def tearDown(self):
+        pass
 
+    def make_instance(self, include_optional) -> ConvertCefArgumentsConfig:
+        """Test ConvertCefArgumentsConfig
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `ConvertCefArgumentsConfig`
+        """
+        model = ConvertCefArgumentsConfig()
+        if include_optional:
+            return ConvertCefArgumentsConfig(
+                columns = {
+                    'key' : ''
+                    },
+                continuation_marker = '',
+                continuation_mode = '',
+                dialect = '',
+                empty_to_null = True,
+                envelope = {
+                    'key' : ''
+                    },
+                header_fields = [
+                    ''
+                    ],
+                iso_date_columns = [
+                    ''
+                    ],
+                key = '',
+                numeric_columns = [
+                    ''
+                    ],
+                output_key = '',
+                output_mode = '',
+                overflow_field = '',
+                overflow_separator = '',
+                preset = '',
+                resolve_labels = True,
+                strict = True,
+                strip_quotes = True,
+                warnings_key = ''
+            )
+        else:
+            return ConvertCefArgumentsConfig(
+        )
+        """
 
+    def testConvertCefArgumentsConfig(self):
+        """Test ConvertCefArgumentsConfig"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()

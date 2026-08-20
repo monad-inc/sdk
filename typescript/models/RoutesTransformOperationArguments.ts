@@ -12,6 +12,7 @@
 
 import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
+import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
@@ -37,7 +38,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | EncryptArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | JqArgumentsConfig | MaskArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
+export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertCefArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | EncryptArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | JqArgumentsConfig | MaskArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass
@@ -48,6 +49,7 @@ export class RoutesTransformOperationArgumentsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

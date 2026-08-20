@@ -438,6 +438,7 @@ Class | Method | HTTP request | Description
  - [CommunityTransformsInternalTransformMetadata](docs/CommunityTransformsInternalTransformMetadata.md)
  - [CommunityTransformsInternalTransformsIndex](docs/CommunityTransformsInternalTransformsIndex.md)
  - [ComponentpreviewResponse](docs/ComponentpreviewResponse.md)
+ - [ConvertCefArgumentsConfig](docs/ConvertCefArgumentsConfig.md)
  - [ConvertTimestampArgumentsConfig](docs/ConvertTimestampArgumentsConfig.md)
  - [ConvertTimestampTimestampFormat](docs/ConvertTimestampTimestampFormat.md)
  - [CortexXsoarManagementLogsSecretsConfig](docs/CortexXsoarManagementLogsSecretsConfig.md)

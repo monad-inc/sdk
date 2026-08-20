@@ -21,6 +21,7 @@ import (
 type RoutesTransformOperationArguments struct {
 	AddArgumentsConfig *AddArgumentsConfig
 	AddIdArgumentsConfig *AddIdArgumentsConfig
+	ConvertCefArgumentsConfig *ConvertCefArgumentsConfig
 	ConvertTimestampArgumentsConfig *ConvertTimestampArgumentsConfig
 	CreateKeyValueIfKeyValueArgumentsConfig *CreateKeyValueIfKeyValueArgumentsConfig
 	DropKeyArgumentsConfig *DropKeyArgumentsConfig
@@ -53,6 +54,13 @@ func AddArgumentsConfigAsRoutesTransformOperationArguments(v *AddArgumentsConfig
 func AddIdArgumentsConfigAsRoutesTransformOperationArguments(v *AddIdArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		AddIdArgumentsConfig: v,
+	}
+}
+
+// ConvertCefArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns ConvertCefArgumentsConfig wrapped in RoutesTransformOperationArguments
+func ConvertCefArgumentsConfigAsRoutesTransformOperationArguments(v *ConvertCefArgumentsConfig) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		ConvertCefArgumentsConfig: v,
 	}
 }
 
@@ -226,6 +234,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddIdArgumentsConfig = nil
+	}
+
+	// try to unmarshal data into ConvertCefArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.ConvertCefArgumentsConfig)
+	if err == nil {
+		jsonConvertCefArgumentsConfig, _ := json.Marshal(dst.ConvertCefArgumentsConfig)
+		if string(jsonConvertCefArgumentsConfig) == "{}" { // empty struct
+			dst.ConvertCefArgumentsConfig = nil
+		} else {
+			if err = validator.Validate(dst.ConvertCefArgumentsConfig); err != nil {
+				dst.ConvertCefArgumentsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.ConvertCefArgumentsConfig = nil
 	}
 
 	// try to unmarshal data into ConvertTimestampArgumentsConfig
@@ -555,6 +580,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.AddArgumentsConfig = nil
 		dst.AddIdArgumentsConfig = nil
+		dst.ConvertCefArgumentsConfig = nil
 		dst.ConvertTimestampArgumentsConfig = nil
 		dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
 		dst.DropKeyArgumentsConfig = nil
@@ -591,6 +617,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 
 	if src.AddIdArgumentsConfig != nil {
 		return json.Marshal(&src.AddIdArgumentsConfig)
+	}
+
+	if src.ConvertCefArgumentsConfig != nil {
+		return json.Marshal(&src.ConvertCefArgumentsConfig)
 	}
 
 	if src.ConvertTimestampArgumentsConfig != nil {
@@ -685,6 +715,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.AddIdArgumentsConfig
 	}
 
+	if obj.ConvertCefArgumentsConfig != nil {
+		return obj.ConvertCefArgumentsConfig
+	}
+
 	if obj.ConvertTimestampArgumentsConfig != nil {
 		return obj.ConvertTimestampArgumentsConfig
 	}
@@ -773,6 +807,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 
 	if obj.AddIdArgumentsConfig != nil {
 		return *obj.AddIdArgumentsConfig
+	}
+
+	if obj.ConvertCefArgumentsConfig != nil {
+		return *obj.ConvertCefArgumentsConfig
 	}
 
 	if obj.ConvertTimestampArgumentsConfig != nil {

@@ -24,71 +24,21 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.client.model.AddArgumentsConfig;
-import org.openapitools.client.model.AddIdArgumentsConfig;
-import org.openapitools.client.model.ConvertCefArgumentsConfig;
-import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
-import org.openapitools.client.model.ConvertTimestampTimestampFormat;
-import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
-import org.openapitools.client.model.DropKeyArgumentsConfig;
-import org.openapitools.client.model.DropKeyWhereValueEqArgumentsConfig;
-import org.openapitools.client.model.DropRecordWhereValueEqArgumentsConfig;
-import org.openapitools.client.model.DuplicateKeyValueToKeyArgumentsConfig;
-import org.openapitools.client.model.EncryptAlgorithmConfig;
-import org.openapitools.client.model.EncryptArgumentsConfig;
-import org.openapitools.client.model.FlattenArgumentsConfig;
-import org.openapitools.client.model.FlattenallArgumentsConfig;
-import org.openapitools.client.model.JqArgumentsConfig;
-import org.openapitools.client.model.MaskArgumentsConfig;
-import org.openapitools.client.model.MaskModeConfig;
-import org.openapitools.client.model.MathMultiplyWithValueArgumentsConfig;
-import org.openapitools.client.model.MutateTypeArgumentsConfig;
-import org.openapitools.client.model.MutateValueWhereKeyEqAndValueEqArgumentsConfig;
-import org.openapitools.client.model.MutateValueWhereKeyEqArgumentsConfig;
-import org.openapitools.client.model.RenameKeyArgumentsConfig;
-import org.openapitools.client.model.RenameKeyWhereValueEqArgumentsConfig;
-import org.openapitools.client.model.UtcTimestampArgumentsConfig;
-import org.openapitools.client.model.UtcTimestampTimestampFormat;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesTransformOperationArguments
+ * Model tests for ConvertCefArgumentsConfig
  */
-public class RoutesTransformOperationArgumentsTest {
-    private final RoutesTransformOperationArguments model = new RoutesTransformOperationArguments();
+public class ConvertCefArgumentsConfigTest {
+    private final ConvertCefArgumentsConfig model = new ConvertCefArgumentsConfig();
 
     /**
-     * Model tests for RoutesTransformOperationArguments
+     * Model tests for ConvertCefArgumentsConfig
      */
     @Test
-    public void testRoutesTransformOperationArguments() {
-        // TODO: test RoutesTransformOperationArguments
-    }
-
-    /**
-     * Test the property 'key'
-     */
-    @Test
-    public void keyTest() {
-        // TODO: test key
-    }
-
-    /**
-     * Test the property 'value'
-     */
-    @Test
-    public void valueTest() {
-        // TODO: test value
-    }
-
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
+    public void testConvertCefArgumentsConfig() {
+        // TODO: test ConvertCefArgumentsConfig
     }
 
     /**
@@ -153,6 +103,14 @@ public class RoutesTransformOperationArgumentsTest {
     @Test
     public void isoDateColumnsTest() {
         // TODO: test isoDateColumns
+    }
+
+    /**
+     * Test the property 'key'
+     */
+    @Test
+    public void keyTest() {
+        // TODO: test key
     }
 
     /**
@@ -233,150 +191,6 @@ public class RoutesTransformOperationArgumentsTest {
     @Test
     public void warningsKeyTest() {
         // TODO: test warningsKey
-    }
-
-    /**
-     * Test the property 'sourceFormat'
-     */
-    @Test
-    public void sourceFormatTest() {
-        // TODO: test sourceFormat
-    }
-
-    /**
-     * Test the property 'sourceFormatCustom'
-     */
-    @Test
-    public void sourceFormatCustomTest() {
-        // TODO: test sourceFormatCustom
-    }
-
-    /**
-     * Test the property 'sourceKey'
-     */
-    @Test
-    public void sourceKeyTest() {
-        // TODO: test sourceKey
-    }
-
-    /**
-     * Test the property 'sourceTimezone'
-     */
-    @Test
-    public void sourceTimezoneTest() {
-        // TODO: test sourceTimezone
-    }
-
-    /**
-     * Test the property 'targetFormat'
-     */
-    @Test
-    public void targetFormatTest() {
-        // TODO: test targetFormat
-    }
-
-    /**
-     * Test the property 'targetFormatCustom'
-     */
-    @Test
-    public void targetFormatCustomTest() {
-        // TODO: test targetFormatCustom
-    }
-
-    /**
-     * Test the property 'targetKey'
-     */
-    @Test
-    public void targetKeyTest() {
-        // TODO: test targetKey
-    }
-
-    /**
-     * Test the property 'targetTimezone'
-     */
-    @Test
-    public void targetTimezoneTest() {
-        // TODO: test targetTimezone
-    }
-
-    /**
-     * Test the property 'keyToWatch'
-     */
-    @Test
-    public void keyToWatchTest() {
-        // TODO: test keyToWatch
-    }
-
-    /**
-     * Test the property 'valueToWatch'
-     */
-    @Test
-    public void valueToWatchTest() {
-        // TODO: test valueToWatch
-    }
-
-    /**
-     * Test the property 'newKey'
-     */
-    @Test
-    public void newKeyTest() {
-        // TODO: test newKey
-    }
-
-    /**
-     * Test the property 'algorithm'
-     */
-    @Test
-    public void algorithmTest() {
-        // TODO: test algorithm
-    }
-
-    /**
-     * Test the property 'delimiter'
-     */
-    @Test
-    public void delimiterTest() {
-        // TODO: test delimiter
-    }
-
-    /**
-     * Test the property 'preventDataDropping'
-     */
-    @Test
-    public void preventDataDroppingTest() {
-        // TODO: test preventDataDropping
-    }
-
-    /**
-     * Test the property 'query'
-     */
-    @Test
-    public void queryTest() {
-        // TODO: test query
-    }
-
-    /**
-     * Test the property 'mode'
-     */
-    @Test
-    public void modeTest() {
-        // TODO: test mode
-    }
-
-    /**
-     * Test the property 'valueToSet'
-     */
-    @Test
-    public void valueToSetTest() {
-        // TODO: test valueToSet
-    }
-
-    /**
-     * Test the property 'format'
-     */
-    @Test
-    public void formatTest() {
-        // TODO: test format
     }
 
 }

@@ -155,6 +155,7 @@ __all__ = [
     "CommunityTransformsInternalTransformMetadata",
     "CommunityTransformsInternalTransformsIndex",
     "ComponentpreviewResponse",
+    "ConvertCefArgumentsConfig",
     "ConvertTimestampArgumentsConfig",
     "ConvertTimestampTimestampFormat",
     "CortexXsoarManagementLogsSecretsConfig",
@@ -821,6 +822,7 @@ from monad.models.community_transforms_internal_transform_config import Communit
 from monad.models.community_transforms_internal_transform_metadata import CommunityTransformsInternalTransformMetadata as CommunityTransformsInternalTransformMetadata
 from monad.models.community_transforms_internal_transforms_index import CommunityTransformsInternalTransformsIndex as CommunityTransformsInternalTransformsIndex
 from monad.models.componentpreview_response import ComponentpreviewResponse as ComponentpreviewResponse
+from monad.models.convert_cef_arguments_config import ConvertCefArgumentsConfig as ConvertCefArgumentsConfig
 from monad.models.convert_timestamp_arguments_config import ConvertTimestampArgumentsConfig as ConvertTimestampArgumentsConfig
 from monad.models.convert_timestamp_timestamp_format import ConvertTimestampTimestampFormat as ConvertTimestampTimestampFormat
 from monad.models.cortex_xsoar_management_logs_secrets_config import CortexXsoarManagementLogsSecretsConfig as CortexXsoarManagementLogsSecretsConfig

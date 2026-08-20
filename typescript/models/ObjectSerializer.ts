@@ -83,6 +83,7 @@ export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
 export * from '../models/ComponentpreviewResponse';
+export * from '../models/ConvertCefArgumentsConfig';
 export * from '../models/ConvertTimestampArgumentsConfig';
 export * from '../models/ConvertTimestampTimestampFormat';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
@@ -692,6 +693,7 @@ import { CommunityTransformsInternalTransformConfig } from '../models/CommunityT
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
+import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig         } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
@@ -1393,6 +1395,7 @@ let typeMap: {[index: string]: any} = {
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
     "ComponentpreviewResponse": ComponentpreviewResponse,
+    "ConvertCefArgumentsConfig": ConvertCefArgumentsConfig,
     "ConvertTimestampArgumentsConfig": ConvertTimestampArgumentsConfig,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,

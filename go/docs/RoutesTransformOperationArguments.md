@@ -7,6 +7,24 @@ Name | Type | Description | Notes
 **Key** | Pointer to **string** | The key to store the timestamp in | [optional] 
 **Value** | Pointer to **interface{}** |  | [optional] 
 **Type** | Pointer to **string** | The new type of the key | [optional] 
+**Columns** | Pointer to **map[string]string** | Custom CEF-key -&gt; output-column map; entries override the preset. | [optional] 
+**ContinuationMarker** | Pointer to **string** | Collector continuation marker, e.g. \&quot;#LF#\&quot; or \&quot;#012\&quot;; \&quot;\&quot; disables continuation handling. | [optional] 
+**ContinuationMode** | Pointer to **string** | \&quot;spill\&quot; (default), \&quot;keep\&quot;, or \&quot;newline\&quot;. | [optional] 
+**Dialect** | Pointer to **string** | \&quot;cef\&quot; (spec-faithful, default) or \&quot;legacy_kv\&quot; (bug-compat with jq CEF parsers). | [optional] 
+**EmptyToNull** | Pointer to **bool** | Write empty-string values as null. Default false. | [optional] 
+**Envelope** | Pointer to **map[string]string** | Output field -&gt; record path (JSONPath), copied verbatim; missing -&gt; null. | [optional] 
+**HeaderFields** | Pointer to **[]string** | Exactly 7 output names for the header slots; default per preset. | [optional] 
+**IsoDateColumns** | Pointer to **[]string** | Output columns rewritten \&quot;YYYY/MM/DD HH:MM:SS\&quot; -&gt; \&quot;YYYY-MM-DDTHH:MM:SSZ\&quot;. | [optional] 
+**NumericColumns** | Pointer to **[]string** | Output columns coerced to number (invalid -&gt; null); unset &#x3D; preset default, [] &#x3D; off. | [optional] 
+**OutputKey** | Pointer to **string** | Target key when output_mode is \&quot;under_key\&quot;. | [optional] 
+**OutputMode** | Pointer to **string** | \&quot;replace\&quot; (default), \&quot;merge\&quot;, or \&quot;under_key\&quot;. | [optional] 
+**OverflowField** | Pointer to **string** | Unmapped keys joined into this field; \&quot;\&quot; emits unmapped keys as individual fields. | [optional] 
+**OverflowSeparator** | Pointer to **string** | Separator between overflow entries. Default \&quot;;\&quot;. | [optional] 
+**Preset** | Pointer to **string** | \&quot;\&quot; (none), \&quot;cef_full_names\&quot;, or \&quot;common_security_log\&quot;. | [optional] 
+**ResolveLabels** | Pointer to **bool** | Promote csN/csNLabel-style pairs into fields named by the label. Default false. | [optional] 
+**Strict** | Pointer to **bool** | Fail the record on structural problems instead of best-effort parsing. Default false. | [optional] 
+**StripQuotes** | Pointer to **bool** | Remove one leading+trailing double-quote from values that carry both. Default false. | [optional] 
+**WarningsKey** | Pointer to **string** | Write parse warnings as a string array under this key; \&quot;\&quot; (default) omits them. | [optional] 
 **SourceFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **SourceFormatCustom** | Pointer to **string** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **SourceKey** | Pointer to **string** | Required: JSONPath to source timestamp field | [optional] 
@@ -129,6 +147,456 @@ SetType sets Type field to given value.
 `func (o *RoutesTransformOperationArguments) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetColumns
+
+`func (o *RoutesTransformOperationArguments) GetColumns() map[string]string`
+
+GetColumns returns the Columns field if non-nil, zero value otherwise.
+
+### GetColumnsOk
+
+`func (o *RoutesTransformOperationArguments) GetColumnsOk() (*map[string]string, bool)`
+
+GetColumnsOk returns a tuple with the Columns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColumns
+
+`func (o *RoutesTransformOperationArguments) SetColumns(v map[string]string)`
+
+SetColumns sets Columns field to given value.
+
+### HasColumns
+
+`func (o *RoutesTransformOperationArguments) HasColumns() bool`
+
+HasColumns returns a boolean if a field has been set.
+
+### GetContinuationMarker
+
+`func (o *RoutesTransformOperationArguments) GetContinuationMarker() string`
+
+GetContinuationMarker returns the ContinuationMarker field if non-nil, zero value otherwise.
+
+### GetContinuationMarkerOk
+
+`func (o *RoutesTransformOperationArguments) GetContinuationMarkerOk() (*string, bool)`
+
+GetContinuationMarkerOk returns a tuple with the ContinuationMarker field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContinuationMarker
+
+`func (o *RoutesTransformOperationArguments) SetContinuationMarker(v string)`
+
+SetContinuationMarker sets ContinuationMarker field to given value.
+
+### HasContinuationMarker
+
+`func (o *RoutesTransformOperationArguments) HasContinuationMarker() bool`
+
+HasContinuationMarker returns a boolean if a field has been set.
+
+### GetContinuationMode
+
+`func (o *RoutesTransformOperationArguments) GetContinuationMode() string`
+
+GetContinuationMode returns the ContinuationMode field if non-nil, zero value otherwise.
+
+### GetContinuationModeOk
+
+`func (o *RoutesTransformOperationArguments) GetContinuationModeOk() (*string, bool)`
+
+GetContinuationModeOk returns a tuple with the ContinuationMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContinuationMode
+
+`func (o *RoutesTransformOperationArguments) SetContinuationMode(v string)`
+
+SetContinuationMode sets ContinuationMode field to given value.
+
+### HasContinuationMode
+
+`func (o *RoutesTransformOperationArguments) HasContinuationMode() bool`
+
+HasContinuationMode returns a boolean if a field has been set.
+
+### GetDialect
+
+`func (o *RoutesTransformOperationArguments) GetDialect() string`
+
+GetDialect returns the Dialect field if non-nil, zero value otherwise.
+
+### GetDialectOk
+
+`func (o *RoutesTransformOperationArguments) GetDialectOk() (*string, bool)`
+
+GetDialectOk returns a tuple with the Dialect field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDialect
+
+`func (o *RoutesTransformOperationArguments) SetDialect(v string)`
+
+SetDialect sets Dialect field to given value.
+
+### HasDialect
+
+`func (o *RoutesTransformOperationArguments) HasDialect() bool`
+
+HasDialect returns a boolean if a field has been set.
+
+### GetEmptyToNull
+
+`func (o *RoutesTransformOperationArguments) GetEmptyToNull() bool`
+
+GetEmptyToNull returns the EmptyToNull field if non-nil, zero value otherwise.
+
+### GetEmptyToNullOk
+
+`func (o *RoutesTransformOperationArguments) GetEmptyToNullOk() (*bool, bool)`
+
+GetEmptyToNullOk returns a tuple with the EmptyToNull field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmptyToNull
+
+`func (o *RoutesTransformOperationArguments) SetEmptyToNull(v bool)`
+
+SetEmptyToNull sets EmptyToNull field to given value.
+
+### HasEmptyToNull
+
+`func (o *RoutesTransformOperationArguments) HasEmptyToNull() bool`
+
+HasEmptyToNull returns a boolean if a field has been set.
+
+### GetEnvelope
+
+`func (o *RoutesTransformOperationArguments) GetEnvelope() map[string]string`
+
+GetEnvelope returns the Envelope field if non-nil, zero value otherwise.
+
+### GetEnvelopeOk
+
+`func (o *RoutesTransformOperationArguments) GetEnvelopeOk() (*map[string]string, bool)`
+
+GetEnvelopeOk returns a tuple with the Envelope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvelope
+
+`func (o *RoutesTransformOperationArguments) SetEnvelope(v map[string]string)`
+
+SetEnvelope sets Envelope field to given value.
+
+### HasEnvelope
+
+`func (o *RoutesTransformOperationArguments) HasEnvelope() bool`
+
+HasEnvelope returns a boolean if a field has been set.
+
+### GetHeaderFields
+
+`func (o *RoutesTransformOperationArguments) GetHeaderFields() []string`
+
+GetHeaderFields returns the HeaderFields field if non-nil, zero value otherwise.
+
+### GetHeaderFieldsOk
+
+`func (o *RoutesTransformOperationArguments) GetHeaderFieldsOk() (*[]string, bool)`
+
+GetHeaderFieldsOk returns a tuple with the HeaderFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHeaderFields
+
+`func (o *RoutesTransformOperationArguments) SetHeaderFields(v []string)`
+
+SetHeaderFields sets HeaderFields field to given value.
+
+### HasHeaderFields
+
+`func (o *RoutesTransformOperationArguments) HasHeaderFields() bool`
+
+HasHeaderFields returns a boolean if a field has been set.
+
+### GetIsoDateColumns
+
+`func (o *RoutesTransformOperationArguments) GetIsoDateColumns() []string`
+
+GetIsoDateColumns returns the IsoDateColumns field if non-nil, zero value otherwise.
+
+### GetIsoDateColumnsOk
+
+`func (o *RoutesTransformOperationArguments) GetIsoDateColumnsOk() (*[]string, bool)`
+
+GetIsoDateColumnsOk returns a tuple with the IsoDateColumns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsoDateColumns
+
+`func (o *RoutesTransformOperationArguments) SetIsoDateColumns(v []string)`
+
+SetIsoDateColumns sets IsoDateColumns field to given value.
+
+### HasIsoDateColumns
+
+`func (o *RoutesTransformOperationArguments) HasIsoDateColumns() bool`
+
+HasIsoDateColumns returns a boolean if a field has been set.
+
+### GetNumericColumns
+
+`func (o *RoutesTransformOperationArguments) GetNumericColumns() []string`
+
+GetNumericColumns returns the NumericColumns field if non-nil, zero value otherwise.
+
+### GetNumericColumnsOk
+
+`func (o *RoutesTransformOperationArguments) GetNumericColumnsOk() (*[]string, bool)`
+
+GetNumericColumnsOk returns a tuple with the NumericColumns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumericColumns
+
+`func (o *RoutesTransformOperationArguments) SetNumericColumns(v []string)`
+
+SetNumericColumns sets NumericColumns field to given value.
+
+### HasNumericColumns
+
+`func (o *RoutesTransformOperationArguments) HasNumericColumns() bool`
+
+HasNumericColumns returns a boolean if a field has been set.
+
+### GetOutputKey
+
+`func (o *RoutesTransformOperationArguments) GetOutputKey() string`
+
+GetOutputKey returns the OutputKey field if non-nil, zero value otherwise.
+
+### GetOutputKeyOk
+
+`func (o *RoutesTransformOperationArguments) GetOutputKeyOk() (*string, bool)`
+
+GetOutputKeyOk returns a tuple with the OutputKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputKey
+
+`func (o *RoutesTransformOperationArguments) SetOutputKey(v string)`
+
+SetOutputKey sets OutputKey field to given value.
+
+### HasOutputKey
+
+`func (o *RoutesTransformOperationArguments) HasOutputKey() bool`
+
+HasOutputKey returns a boolean if a field has been set.
+
+### GetOutputMode
+
+`func (o *RoutesTransformOperationArguments) GetOutputMode() string`
+
+GetOutputMode returns the OutputMode field if non-nil, zero value otherwise.
+
+### GetOutputModeOk
+
+`func (o *RoutesTransformOperationArguments) GetOutputModeOk() (*string, bool)`
+
+GetOutputModeOk returns a tuple with the OutputMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputMode
+
+`func (o *RoutesTransformOperationArguments) SetOutputMode(v string)`
+
+SetOutputMode sets OutputMode field to given value.
+
+### HasOutputMode
+
+`func (o *RoutesTransformOperationArguments) HasOutputMode() bool`
+
+HasOutputMode returns a boolean if a field has been set.
+
+### GetOverflowField
+
+`func (o *RoutesTransformOperationArguments) GetOverflowField() string`
+
+GetOverflowField returns the OverflowField field if non-nil, zero value otherwise.
+
+### GetOverflowFieldOk
+
+`func (o *RoutesTransformOperationArguments) GetOverflowFieldOk() (*string, bool)`
+
+GetOverflowFieldOk returns a tuple with the OverflowField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverflowField
+
+`func (o *RoutesTransformOperationArguments) SetOverflowField(v string)`
+
+SetOverflowField sets OverflowField field to given value.
+
+### HasOverflowField
+
+`func (o *RoutesTransformOperationArguments) HasOverflowField() bool`
+
+HasOverflowField returns a boolean if a field has been set.
+
+### GetOverflowSeparator
+
+`func (o *RoutesTransformOperationArguments) GetOverflowSeparator() string`
+
+GetOverflowSeparator returns the OverflowSeparator field if non-nil, zero value otherwise.
+
+### GetOverflowSeparatorOk
+
+`func (o *RoutesTransformOperationArguments) GetOverflowSeparatorOk() (*string, bool)`
+
+GetOverflowSeparatorOk returns a tuple with the OverflowSeparator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverflowSeparator
+
+`func (o *RoutesTransformOperationArguments) SetOverflowSeparator(v string)`
+
+SetOverflowSeparator sets OverflowSeparator field to given value.
+
+### HasOverflowSeparator
+
+`func (o *RoutesTransformOperationArguments) HasOverflowSeparator() bool`
+
+HasOverflowSeparator returns a boolean if a field has been set.
+
+### GetPreset
+
+`func (o *RoutesTransformOperationArguments) GetPreset() string`
+
+GetPreset returns the Preset field if non-nil, zero value otherwise.
+
+### GetPresetOk
+
+`func (o *RoutesTransformOperationArguments) GetPresetOk() (*string, bool)`
+
+GetPresetOk returns a tuple with the Preset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreset
+
+`func (o *RoutesTransformOperationArguments) SetPreset(v string)`
+
+SetPreset sets Preset field to given value.
+
+### HasPreset
+
+`func (o *RoutesTransformOperationArguments) HasPreset() bool`
+
+HasPreset returns a boolean if a field has been set.
+
+### GetResolveLabels
+
+`func (o *RoutesTransformOperationArguments) GetResolveLabels() bool`
+
+GetResolveLabels returns the ResolveLabels field if non-nil, zero value otherwise.
+
+### GetResolveLabelsOk
+
+`func (o *RoutesTransformOperationArguments) GetResolveLabelsOk() (*bool, bool)`
+
+GetResolveLabelsOk returns a tuple with the ResolveLabels field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResolveLabels
+
+`func (o *RoutesTransformOperationArguments) SetResolveLabels(v bool)`
+
+SetResolveLabels sets ResolveLabels field to given value.
+
+### HasResolveLabels
+
+`func (o *RoutesTransformOperationArguments) HasResolveLabels() bool`
+
+HasResolveLabels returns a boolean if a field has been set.
+
+### GetStrict
+
+`func (o *RoutesTransformOperationArguments) GetStrict() bool`
+
+GetStrict returns the Strict field if non-nil, zero value otherwise.
+
+### GetStrictOk
+
+`func (o *RoutesTransformOperationArguments) GetStrictOk() (*bool, bool)`
+
+GetStrictOk returns a tuple with the Strict field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStrict
+
+`func (o *RoutesTransformOperationArguments) SetStrict(v bool)`
+
+SetStrict sets Strict field to given value.
+
+### HasStrict
+
+`func (o *RoutesTransformOperationArguments) HasStrict() bool`
+
+HasStrict returns a boolean if a field has been set.
+
+### GetStripQuotes
+
+`func (o *RoutesTransformOperationArguments) GetStripQuotes() bool`
+
+GetStripQuotes returns the StripQuotes field if non-nil, zero value otherwise.
+
+### GetStripQuotesOk
+
+`func (o *RoutesTransformOperationArguments) GetStripQuotesOk() (*bool, bool)`
+
+GetStripQuotesOk returns a tuple with the StripQuotes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStripQuotes
+
+`func (o *RoutesTransformOperationArguments) SetStripQuotes(v bool)`
+
+SetStripQuotes sets StripQuotes field to given value.
+
+### HasStripQuotes
+
+`func (o *RoutesTransformOperationArguments) HasStripQuotes() bool`
+
+HasStripQuotes returns a boolean if a field has been set.
+
+### GetWarningsKey
+
+`func (o *RoutesTransformOperationArguments) GetWarningsKey() string`
+
+GetWarningsKey returns the WarningsKey field if non-nil, zero value otherwise.
+
+### GetWarningsKeyOk
+
+`func (o *RoutesTransformOperationArguments) GetWarningsKeyOk() (*string, bool)`
+
+GetWarningsKeyOk returns a tuple with the WarningsKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWarningsKey
+
+`func (o *RoutesTransformOperationArguments) SetWarningsKey(v string)`
+
+SetWarningsKey sets WarningsKey field to given value.
+
+### HasWarningsKey
+
+`func (o *RoutesTransformOperationArguments) HasWarningsKey() bool`
+
+HasWarningsKey returns a boolean if a field has been set.
 
 ### GetSourceFormat
 

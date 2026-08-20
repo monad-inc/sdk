@@ -20,10 +20,14 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.openapitools.client.model.AddArgumentsConfig;
 import org.openapitools.client.model.AddIdArgumentsConfig;
+import org.openapitools.client.model.ConvertCefArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampTimestampFormat;
 import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
@@ -97,6 +101,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<AddArgumentsConfig> adapterAddArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(AddArgumentsConfig.class));
             final TypeAdapter<AddIdArgumentsConfig> adapterAddIdArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(AddIdArgumentsConfig.class));
+            final TypeAdapter<ConvertCefArgumentsConfig> adapterConvertCefArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(ConvertCefArgumentsConfig.class));
             final TypeAdapter<ConvertTimestampArgumentsConfig> adapterConvertTimestampArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(ConvertTimestampArgumentsConfig.class));
             final TypeAdapter<CreateKeyValueIfKeyValueArgumentsConfig> adapterCreateKeyValueIfKeyValueArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(CreateKeyValueIfKeyValueArgumentsConfig.class));
             final TypeAdapter<DropKeyArgumentsConfig> adapterDropKeyArgumentsConfig = gson.getDelegateAdapter(this, TypeToken.get(DropKeyArgumentsConfig.class));
@@ -135,6 +140,12 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `AddIdArgumentsConfig`
                     if (value.getActualInstance() instanceof AddIdArgumentsConfig) {
                         JsonElement element = adapterAddIdArgumentsConfig.toJsonTree((AddIdArgumentsConfig)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `ConvertCefArgumentsConfig`
+                    if (value.getActualInstance() instanceof ConvertCefArgumentsConfig) {
+                        JsonElement element = adapterConvertCefArgumentsConfig.toJsonTree((ConvertCefArgumentsConfig)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -252,7 +263,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertCefArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
                 }
 
                 @Override
@@ -287,6 +298,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdArgumentsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'AddIdArgumentsConfig'", e);
+                    }
+                    // deserialize ConvertCefArgumentsConfig
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ConvertCefArgumentsConfig.validateJsonElement(jsonElement);
+                        actualAdapter = adapterConvertCefArgumentsConfig;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ConvertCefArgumentsConfig'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertCefArgumentsConfig failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ConvertCefArgumentsConfig'", e);
                     }
                     // deserialize ConvertTimestampArgumentsConfig
                     try {
@@ -547,6 +570,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     static {
         schemas.put("AddArgumentsConfig", AddArgumentsConfig.class);
         schemas.put("AddIdArgumentsConfig", AddIdArgumentsConfig.class);
+        schemas.put("ConvertCefArgumentsConfig", ConvertCefArgumentsConfig.class);
         schemas.put("ConvertTimestampArgumentsConfig", ConvertTimestampArgumentsConfig.class);
         schemas.put("CreateKeyValueIfKeyValueArgumentsConfig", CreateKeyValueIfKeyValueArgumentsConfig.class);
         schemas.put("DropKeyArgumentsConfig", DropKeyArgumentsConfig.class);
@@ -576,7 +600,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertCefArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -588,6 +612,11 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
         }
 
         if (instance instanceof AddIdArgumentsConfig) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ConvertCefArgumentsConfig) {
             super.setActualInstance(instance);
             return;
         }
@@ -687,14 +716,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AddArgumentsConfig, AddIdArgumentsConfig, ConvertCefArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
+     * AddArgumentsConfig, AddIdArgumentsConfig, ConvertCefArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig
      *
-     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
+     * @return The actual instance (AddArgumentsConfig, AddIdArgumentsConfig, ConvertCefArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map&lt;String, Object&gt;, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -724,6 +753,18 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public AddIdArgumentsConfig getAddIdArgumentsConfig() throws ClassCastException {
         return (AddIdArgumentsConfig)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ConvertCefArgumentsConfig`. If the actual instance is not `ConvertCefArgumentsConfig`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ConvertCefArgumentsConfig`
+     * @throws ClassCastException if the instance is not `ConvertCefArgumentsConfig`
+     */
+    @SuppressWarnings("unchecked")
+    public ConvertCefArgumentsConfig getConvertCefArgumentsConfig() throws ClassCastException {
+        return (ConvertCefArgumentsConfig)super.getActualInstance();
     }
 
     /**
@@ -980,6 +1021,14 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for AddIdArgumentsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with ConvertCefArgumentsConfig
+        try {
+            ConvertCefArgumentsConfig.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for ConvertCefArgumentsConfig failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with ConvertTimestampArgumentsConfig
         try {
             ConvertTimestampArgumentsConfig.validateJsonElement(jsonElement);
@@ -1136,7 +1185,7 @@ public class RoutesTransformOperationArguments extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for RoutesTransformOperationArguments with oneOf schemas: AddArgumentsConfig, AddIdArgumentsConfig, ConvertCefArgumentsConfig, ConvertTimestampArgumentsConfig, CreateKeyValueIfKeyValueArgumentsConfig, DropKeyArgumentsConfig, DropKeyWhereValueEqArgumentsConfig, DropRecordWhereValueEqArgumentsConfig, DuplicateKeyValueToKeyArgumentsConfig, EncryptArgumentsConfig, FlattenArgumentsConfig, FlattenallArgumentsConfig, JqArgumentsConfig, Map<String, Object>, MaskArgumentsConfig, MathMultiplyWithValueArgumentsConfig, MutateTypeArgumentsConfig, MutateValueWhereKeyEqAndValueEqArgumentsConfig, MutateValueWhereKeyEqArgumentsConfig, RenameKeyArgumentsConfig, RenameKeyWhereValueEqArgumentsConfig, UtcTimestampArgumentsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

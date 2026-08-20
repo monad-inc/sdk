@@ -1734,6 +1734,105 @@
                 },
                 "type": "object"
             },
+            "convert_cef.ArgumentsConfig": {
+                "properties": {
+                    "columns": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Custom CEF-key -\u003e output-column map; entries override the preset.",
+                        "type": "object"
+                    },
+                    "continuation_marker": {
+                        "description": "Collector continuation marker, e.g. \"#LF#\" or \"#012\"; \"\" disables continuation handling.",
+                        "type": "string"
+                    },
+                    "continuation_mode": {
+                        "description": "\"spill\" (default), \"keep\", or \"newline\".",
+                        "type": "string"
+                    },
+                    "dialect": {
+                        "description": "\"cef\" (spec-faithful, default) or \"legacy_kv\" (bug-compat with jq CEF parsers).",
+                        "type": "string"
+                    },
+                    "empty_to_null": {
+                        "description": "Write empty-string values as null. Default false.",
+                        "type": "boolean"
+                    },
+                    "envelope": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Output field -\u003e record path (JSONPath), copied verbatim; missing -\u003e null.",
+                        "type": "object"
+                    },
+                    "header_fields": {
+                        "description": "Exactly 7 output names for the header slots; default per preset.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "iso_date_columns": {
+                        "description": "Output columns rewritten \"YYYY/MM/DD HH:MM:SS\" -\u003e \"YYYY-MM-DDTHH:MM:SSZ\".",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "key": {
+                        "description": "Source key holding the CEF line (JSONPath). Default \"message\".",
+                        "type": "string"
+                    },
+                    "numeric_columns": {
+                        "description": "Output columns coerced to number (invalid -\u003e null); unset = preset default, [] = off.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "output_key": {
+                        "description": "Target key when output_mode is \"under_key\".",
+                        "type": "string"
+                    },
+                    "output_mode": {
+                        "description": "\"replace\" (default), \"merge\", or \"under_key\".",
+                        "type": "string"
+                    },
+                    "overflow_field": {
+                        "description": "Unmapped keys joined into this field; \"\" emits unmapped keys as individual fields.",
+                        "type": "string"
+                    },
+                    "overflow_separator": {
+                        "description": "Separator between overflow entries. Default \";\".",
+                        "type": "string"
+                    },
+                    "preset": {
+                        "description": "\"\" (none), \"cef_full_names\", or \"common_security_log\".",
+                        "type": "string"
+                    },
+                    "resolve_labels": {
+                        "description": "Promote csN/csNLabel-style pairs into fields named by the label. Default false.",
+                        "type": "boolean"
+                    },
+                    "strict": {
+                        "description": "Fail the record on structural problems instead of best-effort parsing. Default false.",
+                        "type": "boolean"
+                    },
+                    "strip_quotes": {
+                        "description": "Remove one leading+trailing double-quote from values that carry both. Default false.",
+                        "type": "boolean"
+                    },
+                    "warnings_key": {
+                        "description": "Write parse warnings as a string array under this key; \"\" (default) omits them.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "convert_timestamp.ArgumentsConfig": {
                 "properties": {
                     "source_format": {
@@ -3727,9 +3826,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -8012,6 +8111,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/add_id.ArgumentsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/convert_cef.ArgumentsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/convert_timestamp.ArgumentsConfig"

@@ -39,6 +39,34 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                 key = '',
                 value = None,
                 type = '',
+                columns = {
+                    'key' : ''
+                    },
+                continuation_marker = '',
+                continuation_mode = '',
+                dialect = '',
+                empty_to_null = True,
+                envelope = {
+                    'key' : ''
+                    },
+                header_fields = [
+                    ''
+                    ],
+                iso_date_columns = [
+                    ''
+                    ],
+                numeric_columns = [
+                    ''
+                    ],
+                output_key = '',
+                output_mode = '',
+                overflow_field = '',
+                overflow_separator = '',
+                preset = '',
+                resolve_labels = True,
+                strict = True,
+                strip_quotes = True,
+                warnings_key = '',
                 source_format = 'auto',
                 source_format_custom = '',
                 source_key = '',
