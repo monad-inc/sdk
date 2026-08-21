@@ -20,6 +20,7 @@
 |**supportedFeatures** | [**ModelsSupportedFeatures**](ModelsSupportedFeatures.md) |  |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |
+|**version** | **Integer** |  |  [optional] |
 
 
 

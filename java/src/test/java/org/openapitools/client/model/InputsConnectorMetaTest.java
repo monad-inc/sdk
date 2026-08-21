@@ -145,4 +145,12 @@ public class InputsConnectorMetaTest {
         // TODO: test typeId
     }
 
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
+    }
+
 }

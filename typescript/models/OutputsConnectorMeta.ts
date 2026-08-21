@@ -28,6 +28,7 @@ export class OutputsConnectorMeta {
     'supportedFeatures'?: ModelsSupportedFeatures;
     'tier'?: number;
     'typeId'?: string;
+    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -104,6 +105,12 @@ export class OutputsConnectorMeta {
             "name": "typeId",
             "baseName": "type_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "version",
+            "baseName": "version",
+            "type": "number",
             "format": ""
         }    ];
 

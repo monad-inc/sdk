@@ -44,7 +44,8 @@ class InputsConnectorMeta(BaseModel):
     supported_features: Optional[ModelsSupportedFeatures] = None
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "supported_features", "tier", "type_id"]
+    version: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["billing_type", "category", "config", "description", "house", "in_beta", "internal", "is_default", "name", "release_date", "supported_features", "tier", "type_id", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -117,7 +118,8 @@ class InputsConnectorMeta(BaseModel):
             "release_date": obj.get("release_date"),
             "supported_features": ModelsSupportedFeatures.from_dict(obj["supported_features"]) if obj.get("supported_features") is not None else None,
             "tier": obj.get("tier"),
-            "type_id": obj.get("type_id")
+            "type_id": obj.get("type_id"),
+            "version": obj.get("version")
         })
         return _obj
 

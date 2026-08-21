@@ -798,7 +798,7 @@ import { HydrolixServiceAccountAuth } from '../models/HydrolixServiceAccountAuth
 import { HydrolixSettingsConfig } from '../models/HydrolixSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
-import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
+import { InputsConnectorMeta               } from '../models/InputsConnectorMeta';
 import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
 import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
@@ -971,7 +971,7 @@ import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig         } from '../models/OrgAuditLogsSettingsConfig';
-import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
+import { OutputsConnectorMeta              } from '../models/OutputsConnectorMeta';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';

@@ -33,6 +33,7 @@ type InputsConnectorMeta struct {
 	SupportedFeatures *ModelsSupportedFeatures `json:"supported_features,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
+	Version *int32 `json:"version,omitempty"`
 }
 
 // NewInputsConnectorMeta instantiates a new InputsConnectorMeta object
@@ -469,6 +470,38 @@ func (o *InputsConnectorMeta) SetTypeId(v string) {
 	o.TypeId = &v
 }
 
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *InputsConnectorMeta) GetVersion() int32 {
+	if o == nil || IsNil(o.Version) {
+		var ret int32
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InputsConnectorMeta) GetVersionOk() (*int32, bool) {
+	if o == nil || IsNil(o.Version) {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *InputsConnectorMeta) HasVersion() bool {
+	if o != nil && !IsNil(o.Version) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given int32 and assigns it to the Version field.
+func (o *InputsConnectorMeta) SetVersion(v int32) {
+	o.Version = &v
+}
+
 func (o InputsConnectorMeta) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -517,6 +550,9 @@ func (o InputsConnectorMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TypeId) {
 		toSerialize["type_id"] = o.TypeId
+	}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
 	}
 	return toSerialize, nil
 }

@@ -3463,6 +3463,9 @@
                     },
                     "type_id": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -7406,6 +7409,9 @@
                     },
                     "type_id": {
                         "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"

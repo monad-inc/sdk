@@ -114,6 +114,11 @@ public class OutputsConnectorMeta {
   @javax.annotation.Nullable
   private String typeId;
 
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  @javax.annotation.Nullable
+  private Integer version;
+
   public OutputsConnectorMeta() {
   }
 
@@ -345,6 +350,25 @@ public class OutputsConnectorMeta {
   }
 
 
+  public OutputsConnectorMeta version(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * Get version
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public Integer getVersion() {
+    return version;
+  }
+
+  public void setVersion(@javax.annotation.Nullable Integer version) {
+    this.version = version;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -366,7 +390,8 @@ public class OutputsConnectorMeta {
         Objects.equals(this.releaseDate, outputsConnectorMeta.releaseDate) &&
         Objects.equals(this.supportedFeatures, outputsConnectorMeta.supportedFeatures) &&
         Objects.equals(this.tier, outputsConnectorMeta.tier) &&
-        Objects.equals(this.typeId, outputsConnectorMeta.typeId);
+        Objects.equals(this.typeId, outputsConnectorMeta.typeId) &&
+        Objects.equals(this.version, outputsConnectorMeta.version);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -375,7 +400,7 @@ public class OutputsConnectorMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingType, category, config, description, house, inBeta, internal, name, releaseDate, supportedFeatures, tier, typeId);
+    return Objects.hash(billingType, category, config, description, house, inBeta, internal, name, releaseDate, supportedFeatures, tier, typeId, version);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -401,6 +426,7 @@ public class OutputsConnectorMeta {
     sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -419,7 +445,7 @@ public class OutputsConnectorMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("billing_type", "category", "config", "description", "house", "in_beta", "internal", "name", "release_date", "supported_features", "tier", "type_id", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
