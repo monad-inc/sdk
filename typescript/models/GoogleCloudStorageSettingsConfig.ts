@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { HttpFile } from '../http/http';
 
 /**
@@ -23,19 +24,23 @@ export class GoogleCloudStorageSettingsConfig {
     /**
     * The name of the Google Cloud Storage bucket to use
     */
-    'bucketName'?: string;
+    'bucketName': string;
     /**
     * Compression format of the Google Cloud Storage objects.
     */
-    'compression'?: string;
+    'compression': string;
+    /**
+    * Optional cron schedule to control polling cadence. Blank keeps the default continuous polling.
+    */
+    'cron'?: string;
     /**
     * The format of the files in the bucket, e.g., \"json\", \"csv\", etc.
     */
-    'format'?: string;
+    'format': string;
     /**
     * Partition format of your bucket. Options: hive compliant (\'year=2024/month=01/day=01\'), flat hive compliant (\'dt=2024-01-01\'), or simple date (\'2024/01/01\').
     */
-    'partitionFormat'?: string;
+    'partitionFormat': string;
     /**
     * The prefix to use when reading from the bucket. This is used to filter objects in the bucket.
     */
@@ -43,7 +48,8 @@ export class GoogleCloudStorageSettingsConfig {
     /**
     * The Google Cloud project ID to use
     */
-    'projectId'?: string;
+    'projectId': string;
+    'rateLimit'?: ModelsInputRateLimit;
     /**
     * Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
     */
@@ -73,6 +79,12 @@ export class GoogleCloudStorageSettingsConfig {
             "format": ""
         },
         {
+            "name": "cron",
+            "baseName": "cron",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "format",
             "baseName": "format",
             "type": "string",
@@ -94,6 +106,12 @@ export class GoogleCloudStorageSettingsConfig {
             "name": "projectId",
             "baseName": "project_id",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "rateLimit",
+            "baseName": "rate_limit",
+            "type": "ModelsInputRateLimit",
             "format": ""
         },
         {

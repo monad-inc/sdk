@@ -5,19 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now. | [optional] 
-**BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
-**Compression** | Pointer to **string** | Compression format of the Google Cloud Storage objects. | [optional] 
-**Format** | Pointer to **string** | The format of the files in the bucket, e.g., \&quot;json\&quot;, \&quot;csv\&quot;, etc. | [optional] 
-**PartitionFormat** | Pointer to **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | [optional] 
+**BucketName** | **string** | The name of the Google Cloud Storage bucket to use | 
+**Compression** | **string** | Compression format of the Google Cloud Storage objects. | 
+**Cron** | Pointer to **string** | Optional cron schedule to control polling cadence. Blank keeps the default continuous polling. | [optional] 
+**Format** | **string** | The format of the files in the bucket, e.g., \&quot;json\&quot;, \&quot;csv\&quot;, etc. | 
+**PartitionFormat** | **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **Prefix** | Pointer to **string** | The prefix to use when reading from the bucket. This is used to filter objects in the bucket. | [optional] 
-**ProjectId** | Pointer to **string** | The Google Cloud project ID to use | [optional] 
+**ProjectId** | **string** | The Google Cloud project ID to use | 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **RecordLocation** | Pointer to **string** | Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record. | [optional] 
 
 ## Methods
 
 ### NewGoogleCloudStorageSettingsConfig
 
-`func NewGoogleCloudStorageSettingsConfig() *GoogleCloudStorageSettingsConfig`
+`func NewGoogleCloudStorageSettingsConfig(bucketName string, compression string, format string, partitionFormat string, projectId string, ) *GoogleCloudStorageSettingsConfig`
 
 NewGoogleCloudStorageSettingsConfig instantiates a new GoogleCloudStorageSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -76,11 +78,6 @@ and a boolean to check if the value has been set.
 
 SetBucketName sets BucketName field to given value.
 
-### HasBucketName
-
-`func (o *GoogleCloudStorageSettingsConfig) HasBucketName() bool`
-
-HasBucketName returns a boolean if a field has been set.
 
 ### GetCompression
 
@@ -101,11 +98,31 @@ and a boolean to check if the value has been set.
 
 SetCompression sets Compression field to given value.
 
-### HasCompression
 
-`func (o *GoogleCloudStorageSettingsConfig) HasCompression() bool`
+### GetCron
 
-HasCompression returns a boolean if a field has been set.
+`func (o *GoogleCloudStorageSettingsConfig) GetCron() string`
+
+GetCron returns the Cron field if non-nil, zero value otherwise.
+
+### GetCronOk
+
+`func (o *GoogleCloudStorageSettingsConfig) GetCronOk() (*string, bool)`
+
+GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCron
+
+`func (o *GoogleCloudStorageSettingsConfig) SetCron(v string)`
+
+SetCron sets Cron field to given value.
+
+### HasCron
+
+`func (o *GoogleCloudStorageSettingsConfig) HasCron() bool`
+
+HasCron returns a boolean if a field has been set.
 
 ### GetFormat
 
@@ -126,11 +143,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *GoogleCloudStorageSettingsConfig) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetPartitionFormat
 
@@ -151,11 +163,6 @@ and a boolean to check if the value has been set.
 
 SetPartitionFormat sets PartitionFormat field to given value.
 
-### HasPartitionFormat
-
-`func (o *GoogleCloudStorageSettingsConfig) HasPartitionFormat() bool`
-
-HasPartitionFormat returns a boolean if a field has been set.
 
 ### GetPrefix
 
@@ -201,11 +208,31 @@ and a boolean to check if the value has been set.
 
 SetProjectId sets ProjectId field to given value.
 
-### HasProjectId
 
-`func (o *GoogleCloudStorageSettingsConfig) HasProjectId() bool`
+### GetRateLimit
 
-HasProjectId returns a boolean if a field has been set.
+`func (o *GoogleCloudStorageSettingsConfig) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *GoogleCloudStorageSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *GoogleCloudStorageSettingsConfig) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *GoogleCloudStorageSettingsConfig) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
 
 ### GetRecordLocation
 

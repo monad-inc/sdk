@@ -85,7 +85,8 @@ Name | Type | Description | Notes
 **WebhookSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Location** | **string** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. | 
 **ProjectId** | **string** | The Google Cloud project ID to use | 
-**BucketName** | Pointer to **string** | The name of the Google Cloud Storage bucket to use | [optional] 
+**BucketName** | **string** | The name of the Google Cloud Storage bucket to use | 
+**Cron** | Pointer to **string** | Optional cron schedule to control polling cadence. Blank keeps the default continuous polling. | [optional] 
 **AuthType** | Pointer to [**CommonAuthType**](CommonAuthType.md) |  | [optional] 
 **Email** | Pointer to **string** | Email address to use for authenticating with Google Cloud (required for service_account auth). | [optional] 
 **AlertType** | Pointer to **string** | Filter by alert type (e.g., policy_violated, tag_conflict) | [optional] 
@@ -148,7 +149,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2102,11 +2103,31 @@ and a boolean to check if the value has been set.
 
 SetBucketName sets BucketName field to given value.
 
-### HasBucketName
 
-`func (o *SecretProcessesorInputConfigSettings) HasBucketName() bool`
+### GetCron
 
-HasBucketName returns a boolean if a field has been set.
+`func (o *SecretProcessesorInputConfigSettings) GetCron() string`
+
+GetCron returns the Cron field if non-nil, zero value otherwise.
+
+### GetCronOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetCronOk() (*string, bool)`
+
+GetCronOk returns a tuple with the Cron field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCron
+
+`func (o *SecretProcessesorInputConfigSettings) SetCron(v string)`
+
+SetCron sets Cron field to given value.
+
+### HasCron
+
+`func (o *SecretProcessesorInputConfigSettings) HasCron() bool`
+
+HasCron returns a boolean if a field has been set.
 
 ### GetAuthType
 

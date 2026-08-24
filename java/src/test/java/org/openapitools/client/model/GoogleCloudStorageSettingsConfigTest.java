@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -62,6 +63,14 @@ public class GoogleCloudStorageSettingsConfigTest {
     }
 
     /**
+     * Test the property 'cron'
+     */
+    @Test
+    public void cronTest() {
+        // TODO: test cron
+    }
+
+    /**
      * Test the property 'format'
      */
     @Test
@@ -91,6 +100,14 @@ public class GoogleCloudStorageSettingsConfigTest {
     @Test
     public void projectIdTest() {
         // TODO: test projectId
+    }
+
+    /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
     }
 
     /**

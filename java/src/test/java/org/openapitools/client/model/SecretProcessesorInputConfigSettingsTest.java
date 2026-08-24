@@ -788,6 +788,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'cron'
+     */
+    @Test
+    public void cronTest() {
+        // TODO: test cron
+    }
+
+    /**
      * Test the property 'authType'
      */
     @Test

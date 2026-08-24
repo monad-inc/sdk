@@ -88,7 +88,8 @@
 |**webhookSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**location** | **String** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. |  |
 |**projectId** | **String** | The Google Cloud project ID to use |  |
-|**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  [optional] |
+|**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  |
+|**cron** | **String** | Optional cron schedule to control polling cadence. Blank keeps the default continuous polling. |  [optional] |
 |**authType** | **CommonAuthType** |  |  [optional] |
 |**email** | **String** | Email address to use for authenticating with Google Cloud (required for service_account auth). |  [optional] |
 |**alertType** | **String** | Filter by alert type (e.g., policy_violated, tag_conflict) |  [optional] |

@@ -187,6 +187,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 location = '',
                 project_id = '',
                 bucket_name = '',
+                cron = '',
                 auth_type = 'personal_access_token',
                 email = '',
                 alert_type = '',
@@ -324,6 +325,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     value = '', ),
                 location = '',
                 project_id = '',
+                bucket_name = '',
                 project_ids = [
                     ''
                     ],

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_input_rate_limit import ModelsInputRateLimit
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,14 +30,16 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
     Google Cloud Storage settings
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.")
-    bucket_name: Optional[StrictStr] = Field(default=None, description="The name of the Google Cloud Storage bucket to use")
-    compression: Optional[StrictStr] = Field(default=None, description="Compression format of the Google Cloud Storage objects.")
-    format: Optional[StrictStr] = Field(default=None, description="The format of the files in the bucket, e.g., \"json\", \"csv\", etc.")
-    partition_format: Optional[StrictStr] = Field(default=None, description="Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
+    bucket_name: StrictStr = Field(description="The name of the Google Cloud Storage bucket to use")
+    compression: StrictStr = Field(description="Compression format of the Google Cloud Storage objects.")
+    cron: Optional[StrictStr] = Field(default=None, description="Optional cron schedule to control polling cadence. Blank keeps the default continuous polling.")
+    format: StrictStr = Field(description="The format of the files in the bucket, e.g., \"json\", \"csv\", etc.")
+    partition_format: StrictStr = Field(description="Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').")
     prefix: Optional[StrictStr] = Field(default=None, description="The prefix to use when reading from the bucket. This is used to filter objects in the bucket.")
-    project_id: Optional[StrictStr] = Field(default=None, description="The Google Cloud project ID to use")
+    project_id: StrictStr = Field(description="The Google Cloud project ID to use")
+    rate_limit: Optional[ModelsInputRateLimit] = None
     record_location: Optional[StrictStr] = Field(default=None, description="Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket_name", "compression", "format", "partition_format", "prefix", "project_id", "record_location"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "bucket_name", "compression", "cron", "format", "partition_format", "prefix", "project_id", "rate_limit", "record_location"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,6 +80,9 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of rate_limit
+        if self.rate_limit:
+            _dict['rate_limit'] = self.rate_limit.to_dict()
         return _dict
 
     @classmethod
@@ -92,10 +98,12 @@ class GoogleCloudStorageSettingsConfig(BaseModel):
             "backfill_start_time": obj.get("backfill_start_time"),
             "bucket_name": obj.get("bucket_name"),
             "compression": obj.get("compression"),
+            "cron": obj.get("cron"),
             "format": obj.get("format"),
             "partition_format": obj.get("partition_format"),
             "prefix": obj.get("prefix"),
             "project_id": obj.get("project_id"),
+            "rate_limit": ModelsInputRateLimit.from_dict(obj["rate_limit"]) if obj.get("rate_limit") is not None else None,
             "record_location": obj.get("record_location")
         })
         return _obj

@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the GoogleCloudStorageSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -23,27 +25,37 @@ type GoogleCloudStorageSettingsConfig struct {
 	// Date to start fetching data from. If not specified, no past objects are fetched and ingestion starts from now.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// The name of the Google Cloud Storage bucket to use
-	BucketName *string `json:"bucket_name,omitempty"`
+	BucketName string `json:"bucket_name"`
 	// Compression format of the Google Cloud Storage objects.
-	Compression *string `json:"compression,omitempty"`
+	Compression string `json:"compression"`
+	// Optional cron schedule to control polling cadence. Blank keeps the default continuous polling.
+	Cron *string `json:"cron,omitempty"`
 	// The format of the files in the bucket, e.g., \"json\", \"csv\", etc.
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// Partition format of your bucket. Options: hive compliant ('year=2024/month=01/day=01'), flat hive compliant ('dt=2024-01-01'), or simple date ('2024/01/01').
-	PartitionFormat *string `json:"partition_format,omitempty"`
+	PartitionFormat string `json:"partition_format"`
 	// The prefix to use when reading from the bucket. This is used to filter objects in the bucket.
 	Prefix *string `json:"prefix,omitempty"`
 	// The Google Cloud project ID to use
-	ProjectId *string `json:"project_id,omitempty"`
+	ProjectId string `json:"project_id"`
+	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.
 	RecordLocation *string `json:"record_location,omitempty"`
 }
+
+type _GoogleCloudStorageSettingsConfig GoogleCloudStorageSettingsConfig
 
 // NewGoogleCloudStorageSettingsConfig instantiates a new GoogleCloudStorageSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGoogleCloudStorageSettingsConfig() *GoogleCloudStorageSettingsConfig {
+func NewGoogleCloudStorageSettingsConfig(bucketName string, compression string, format string, partitionFormat string, projectId string) *GoogleCloudStorageSettingsConfig {
 	this := GoogleCloudStorageSettingsConfig{}
+	this.BucketName = bucketName
+	this.Compression = compression
+	this.Format = format
+	this.PartitionFormat = partitionFormat
+	this.ProjectId = projectId
 	return &this
 }
 
@@ -87,132 +99,132 @@ func (o *GoogleCloudStorageSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetBucketName returns the BucketName field value if set, zero value otherwise.
+// GetBucketName returns the BucketName field value
 func (o *GoogleCloudStorageSettingsConfig) GetBucketName() string {
-	if o == nil || IsNil(o.BucketName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BucketName
+
+	return o.BucketName
 }
 
-// GetBucketNameOk returns a tuple with the BucketName field value if set, nil otherwise
+// GetBucketNameOk returns a tuple with the BucketName field value
 // and a boolean to check if the value has been set.
 func (o *GoogleCloudStorageSettingsConfig) GetBucketNameOk() (*string, bool) {
-	if o == nil || IsNil(o.BucketName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BucketName, true
+	return &o.BucketName, true
 }
 
-// HasBucketName returns a boolean if a field has been set.
-func (o *GoogleCloudStorageSettingsConfig) HasBucketName() bool {
-	if o != nil && !IsNil(o.BucketName) {
-		return true
-	}
-
-	return false
-}
-
-// SetBucketName gets a reference to the given string and assigns it to the BucketName field.
+// SetBucketName sets field value
 func (o *GoogleCloudStorageSettingsConfig) SetBucketName(v string) {
-	o.BucketName = &v
+	o.BucketName = v
 }
 
-// GetCompression returns the Compression field value if set, zero value otherwise.
+// GetCompression returns the Compression field value
 func (o *GoogleCloudStorageSettingsConfig) GetCompression() string {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Compression
+
+	return o.Compression
 }
 
-// GetCompressionOk returns a tuple with the Compression field value if set, nil otherwise
+// GetCompressionOk returns a tuple with the Compression field value
 // and a boolean to check if the value has been set.
 func (o *GoogleCloudStorageSettingsConfig) GetCompressionOk() (*string, bool) {
-	if o == nil || IsNil(o.Compression) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Compression, true
+	return &o.Compression, true
 }
 
-// HasCompression returns a boolean if a field has been set.
-func (o *GoogleCloudStorageSettingsConfig) HasCompression() bool {
-	if o != nil && !IsNil(o.Compression) {
+// SetCompression sets field value
+func (o *GoogleCloudStorageSettingsConfig) SetCompression(v string) {
+	o.Compression = v
+}
+
+// GetCron returns the Cron field value if set, zero value otherwise.
+func (o *GoogleCloudStorageSettingsConfig) GetCron() string {
+	if o == nil || IsNil(o.Cron) {
+		var ret string
+		return ret
+	}
+	return *o.Cron
+}
+
+// GetCronOk returns a tuple with the Cron field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GoogleCloudStorageSettingsConfig) GetCronOk() (*string, bool) {
+	if o == nil || IsNil(o.Cron) {
+		return nil, false
+	}
+	return o.Cron, true
+}
+
+// HasCron returns a boolean if a field has been set.
+func (o *GoogleCloudStorageSettingsConfig) HasCron() bool {
+	if o != nil && !IsNil(o.Cron) {
 		return true
 	}
 
 	return false
 }
 
-// SetCompression gets a reference to the given string and assigns it to the Compression field.
-func (o *GoogleCloudStorageSettingsConfig) SetCompression(v string) {
-	o.Compression = &v
+// SetCron gets a reference to the given string and assigns it to the Cron field.
+func (o *GoogleCloudStorageSettingsConfig) SetCron(v string) {
+	o.Cron = &v
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
+// GetFormat returns the Format field value
 func (o *GoogleCloudStorageSettingsConfig) GetFormat() string {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Format
+
+	return o.Format
 }
 
-// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// GetFormatOk returns a tuple with the Format field value
 // and a boolean to check if the value has been set.
 func (o *GoogleCloudStorageSettingsConfig) GetFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.Format) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Format, true
+	return &o.Format, true
 }
 
-// HasFormat returns a boolean if a field has been set.
-func (o *GoogleCloudStorageSettingsConfig) HasFormat() bool {
-	if o != nil && !IsNil(o.Format) {
-		return true
-	}
-
-	return false
-}
-
-// SetFormat gets a reference to the given string and assigns it to the Format field.
+// SetFormat sets field value
 func (o *GoogleCloudStorageSettingsConfig) SetFormat(v string) {
-	o.Format = &v
+	o.Format = v
 }
 
-// GetPartitionFormat returns the PartitionFormat field value if set, zero value otherwise.
+// GetPartitionFormat returns the PartitionFormat field value
 func (o *GoogleCloudStorageSettingsConfig) GetPartitionFormat() string {
-	if o == nil || IsNil(o.PartitionFormat) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.PartitionFormat
+
+	return o.PartitionFormat
 }
 
-// GetPartitionFormatOk returns a tuple with the PartitionFormat field value if set, nil otherwise
+// GetPartitionFormatOk returns a tuple with the PartitionFormat field value
 // and a boolean to check if the value has been set.
 func (o *GoogleCloudStorageSettingsConfig) GetPartitionFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.PartitionFormat) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PartitionFormat, true
+	return &o.PartitionFormat, true
 }
 
-// HasPartitionFormat returns a boolean if a field has been set.
-func (o *GoogleCloudStorageSettingsConfig) HasPartitionFormat() bool {
-	if o != nil && !IsNil(o.PartitionFormat) {
-		return true
-	}
-
-	return false
-}
-
-// SetPartitionFormat gets a reference to the given string and assigns it to the PartitionFormat field.
+// SetPartitionFormat sets field value
 func (o *GoogleCloudStorageSettingsConfig) SetPartitionFormat(v string) {
-	o.PartitionFormat = &v
+	o.PartitionFormat = v
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
@@ -247,36 +259,60 @@ func (o *GoogleCloudStorageSettingsConfig) SetPrefix(v string) {
 	o.Prefix = &v
 }
 
-// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+// GetProjectId returns the ProjectId field value
 func (o *GoogleCloudStorageSettingsConfig) GetProjectId() string {
-	if o == nil || IsNil(o.ProjectId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectId
+
+	return o.ProjectId
 }
 
-// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
+// GetProjectIdOk returns a tuple with the ProjectId field value
 // and a boolean to check if the value has been set.
 func (o *GoogleCloudStorageSettingsConfig) GetProjectIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProjectId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ProjectId, true
+	return &o.ProjectId, true
 }
 
-// HasProjectId returns a boolean if a field has been set.
-func (o *GoogleCloudStorageSettingsConfig) HasProjectId() bool {
-	if o != nil && !IsNil(o.ProjectId) {
+// SetProjectId sets field value
+func (o *GoogleCloudStorageSettingsConfig) SetProjectId(v string) {
+	o.ProjectId = v
+}
+
+// GetRateLimit returns the RateLimit field value if set, zero value otherwise.
+func (o *GoogleCloudStorageSettingsConfig) GetRateLimit() ModelsInputRateLimit {
+	if o == nil || IsNil(o.RateLimit) {
+		var ret ModelsInputRateLimit
+		return ret
+	}
+	return *o.RateLimit
+}
+
+// GetRateLimitOk returns a tuple with the RateLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GoogleCloudStorageSettingsConfig) GetRateLimitOk() (*ModelsInputRateLimit, bool) {
+	if o == nil || IsNil(o.RateLimit) {
+		return nil, false
+	}
+	return o.RateLimit, true
+}
+
+// HasRateLimit returns a boolean if a field has been set.
+func (o *GoogleCloudStorageSettingsConfig) HasRateLimit() bool {
+	if o != nil && !IsNil(o.RateLimit) {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
-func (o *GoogleCloudStorageSettingsConfig) SetProjectId(v string) {
-	o.ProjectId = &v
+// SetRateLimit gets a reference to the given ModelsInputRateLimit and assigns it to the RateLimit field.
+func (o *GoogleCloudStorageSettingsConfig) SetRateLimit(v ModelsInputRateLimit) {
+	o.RateLimit = &v
 }
 
 // GetRecordLocation returns the RecordLocation field value if set, zero value otherwise.
@@ -324,28 +360,65 @@ func (o GoogleCloudStorageSettingsConfig) ToMap() (map[string]interface{}, error
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.BucketName) {
-		toSerialize["bucket_name"] = o.BucketName
+	toSerialize["bucket_name"] = o.BucketName
+	toSerialize["compression"] = o.Compression
+	if !IsNil(o.Cron) {
+		toSerialize["cron"] = o.Cron
 	}
-	if !IsNil(o.Compression) {
-		toSerialize["compression"] = o.Compression
-	}
-	if !IsNil(o.Format) {
-		toSerialize["format"] = o.Format
-	}
-	if !IsNil(o.PartitionFormat) {
-		toSerialize["partition_format"] = o.PartitionFormat
-	}
+	toSerialize["format"] = o.Format
+	toSerialize["partition_format"] = o.PartitionFormat
 	if !IsNil(o.Prefix) {
 		toSerialize["prefix"] = o.Prefix
 	}
-	if !IsNil(o.ProjectId) {
-		toSerialize["project_id"] = o.ProjectId
+	toSerialize["project_id"] = o.ProjectId
+	if !IsNil(o.RateLimit) {
+		toSerialize["rate_limit"] = o.RateLimit
 	}
 	if !IsNil(o.RecordLocation) {
 		toSerialize["record_location"] = o.RecordLocation
 	}
 	return toSerialize, nil
+}
+
+func (o *GoogleCloudStorageSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"bucket_name",
+		"compression",
+		"format",
+		"partition_format",
+		"project_id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGoogleCloudStorageSettingsConfig := _GoogleCloudStorageSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varGoogleCloudStorageSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GoogleCloudStorageSettingsConfig(varGoogleCloudStorageSettingsConfig)
+
+	return err
 }
 
 type NullableGoogleCloudStorageSettingsConfig struct {

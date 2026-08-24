@@ -39,14 +39,23 @@ class TestGoogleCloudStorageSettingsConfig(unittest.TestCase):
                 backfill_start_time = '',
                 bucket_name = '',
                 compression = '',
+                cron = '',
                 format = '',
                 partition_format = '',
                 prefix = '',
                 project_id = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 record_location = ''
             )
         else:
             return GoogleCloudStorageSettingsConfig(
+                bucket_name = '',
+                compression = '',
+                format = '',
+                partition_format = '',
+                project_id = '',
         )
         """
 

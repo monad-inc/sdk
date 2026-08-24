@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsInputRateLimit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,22 +58,27 @@ public class GoogleCloudStorageSettingsConfig {
 
   public static final String SERIALIZED_NAME_BUCKET_NAME = "bucket_name";
   @SerializedName(SERIALIZED_NAME_BUCKET_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String bucketName;
 
   public static final String SERIALIZED_NAME_COMPRESSION = "compression";
   @SerializedName(SERIALIZED_NAME_COMPRESSION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String compression;
+
+  public static final String SERIALIZED_NAME_CRON = "cron";
+  @SerializedName(SERIALIZED_NAME_CRON)
+  @javax.annotation.Nullable
+  private String cron;
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String format;
 
   public static final String SERIALIZED_NAME_PARTITION_FORMAT = "partition_format";
   @SerializedName(SERIALIZED_NAME_PARTITION_FORMAT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String partitionFormat;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
@@ -82,8 +88,13 @@ public class GoogleCloudStorageSettingsConfig {
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String projectId;
+
+  public static final String SERIALIZED_NAME_RATE_LIMIT = "rate_limit";
+  @SerializedName(SERIALIZED_NAME_RATE_LIMIT)
+  @javax.annotation.Nullable
+  private ModelsInputRateLimit rateLimit;
 
   public static final String SERIALIZED_NAME_RECORD_LOCATION = "record_location";
   @SerializedName(SERIALIZED_NAME_RECORD_LOCATION)
@@ -112,7 +123,7 @@ public class GoogleCloudStorageSettingsConfig {
   }
 
 
-  public GoogleCloudStorageSettingsConfig bucketName(@javax.annotation.Nullable String bucketName) {
+  public GoogleCloudStorageSettingsConfig bucketName(@javax.annotation.Nonnull String bucketName) {
     this.bucketName = bucketName;
     return this;
   }
@@ -121,17 +132,17 @@ public class GoogleCloudStorageSettingsConfig {
    * The name of the Google Cloud Storage bucket to use
    * @return bucketName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getBucketName() {
     return bucketName;
   }
 
-  public void setBucketName(@javax.annotation.Nullable String bucketName) {
+  public void setBucketName(@javax.annotation.Nonnull String bucketName) {
     this.bucketName = bucketName;
   }
 
 
-  public GoogleCloudStorageSettingsConfig compression(@javax.annotation.Nullable String compression) {
+  public GoogleCloudStorageSettingsConfig compression(@javax.annotation.Nonnull String compression) {
     this.compression = compression;
     return this;
   }
@@ -140,17 +151,36 @@ public class GoogleCloudStorageSettingsConfig {
    * Compression format of the Google Cloud Storage objects.
    * @return compression
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getCompression() {
     return compression;
   }
 
-  public void setCompression(@javax.annotation.Nullable String compression) {
+  public void setCompression(@javax.annotation.Nonnull String compression) {
     this.compression = compression;
   }
 
 
-  public GoogleCloudStorageSettingsConfig format(@javax.annotation.Nullable String format) {
+  public GoogleCloudStorageSettingsConfig cron(@javax.annotation.Nullable String cron) {
+    this.cron = cron;
+    return this;
+  }
+
+  /**
+   * Optional cron schedule to control polling cadence. Blank keeps the default continuous polling.
+   * @return cron
+   */
+  @javax.annotation.Nullable
+  public String getCron() {
+    return cron;
+  }
+
+  public void setCron(@javax.annotation.Nullable String cron) {
+    this.cron = cron;
+  }
+
+
+  public GoogleCloudStorageSettingsConfig format(@javax.annotation.Nonnull String format) {
     this.format = format;
     return this;
   }
@@ -159,17 +189,17 @@ public class GoogleCloudStorageSettingsConfig {
    * The format of the files in the bucket, e.g., \&quot;json\&quot;, \&quot;csv\&quot;, etc.
    * @return format
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable String format) {
+  public void setFormat(@javax.annotation.Nonnull String format) {
     this.format = format;
   }
 
 
-  public GoogleCloudStorageSettingsConfig partitionFormat(@javax.annotation.Nullable String partitionFormat) {
+  public GoogleCloudStorageSettingsConfig partitionFormat(@javax.annotation.Nonnull String partitionFormat) {
     this.partitionFormat = partitionFormat;
     return this;
   }
@@ -178,12 +208,12 @@ public class GoogleCloudStorageSettingsConfig {
    * Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;).
    * @return partitionFormat
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getPartitionFormat() {
     return partitionFormat;
   }
 
-  public void setPartitionFormat(@javax.annotation.Nullable String partitionFormat) {
+  public void setPartitionFormat(@javax.annotation.Nonnull String partitionFormat) {
     this.partitionFormat = partitionFormat;
   }
 
@@ -207,7 +237,7 @@ public class GoogleCloudStorageSettingsConfig {
   }
 
 
-  public GoogleCloudStorageSettingsConfig projectId(@javax.annotation.Nullable String projectId) {
+  public GoogleCloudStorageSettingsConfig projectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
     return this;
   }
@@ -216,13 +246,32 @@ public class GoogleCloudStorageSettingsConfig {
    * The Google Cloud project ID to use
    * @return projectId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getProjectId() {
     return projectId;
   }
 
-  public void setProjectId(@javax.annotation.Nullable String projectId) {
+  public void setProjectId(@javax.annotation.Nonnull String projectId) {
     this.projectId = projectId;
+  }
+
+
+  public GoogleCloudStorageSettingsConfig rateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
+    return this;
+  }
+
+  /**
+   * Get rateLimit
+   * @return rateLimit
+   */
+  @javax.annotation.Nullable
+  public ModelsInputRateLimit getRateLimit() {
+    return rateLimit;
+  }
+
+  public void setRateLimit(@javax.annotation.Nullable ModelsInputRateLimit rateLimit) {
+    this.rateLimit = rateLimit;
   }
 
 
@@ -258,16 +307,18 @@ public class GoogleCloudStorageSettingsConfig {
     return Objects.equals(this.backfillStartTime, googleCloudStorageSettingsConfig.backfillStartTime) &&
         Objects.equals(this.bucketName, googleCloudStorageSettingsConfig.bucketName) &&
         Objects.equals(this.compression, googleCloudStorageSettingsConfig.compression) &&
+        Objects.equals(this.cron, googleCloudStorageSettingsConfig.cron) &&
         Objects.equals(this.format, googleCloudStorageSettingsConfig.format) &&
         Objects.equals(this.partitionFormat, googleCloudStorageSettingsConfig.partitionFormat) &&
         Objects.equals(this.prefix, googleCloudStorageSettingsConfig.prefix) &&
         Objects.equals(this.projectId, googleCloudStorageSettingsConfig.projectId) &&
+        Objects.equals(this.rateLimit, googleCloudStorageSettingsConfig.rateLimit) &&
         Objects.equals(this.recordLocation, googleCloudStorageSettingsConfig.recordLocation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, bucketName, compression, format, partitionFormat, prefix, projectId, recordLocation);
+    return Objects.hash(backfillStartTime, bucketName, compression, cron, format, partitionFormat, prefix, projectId, rateLimit, recordLocation);
   }
 
   @Override
@@ -277,10 +328,12 @@ public class GoogleCloudStorageSettingsConfig {
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
     sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
+    sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    partitionFormat: ").append(toIndentedString(partitionFormat)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+    sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
     sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -300,10 +353,10 @@ public class GoogleCloudStorageSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "bucket_name", "compression", "format", "partition_format", "prefix", "project_id", "record_location"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "bucket_name", "compression", "cron", "format", "partition_format", "prefix", "project_id", "rate_limit", "record_location"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("bucket_name", "compression", "format", "partition_format", "project_id"));
   }
 
   /**
@@ -326,27 +379,41 @@ public class GoogleCloudStorageSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GoogleCloudStorageSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GoogleCloudStorageSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("bucket_name") != null && !jsonObj.get("bucket_name").isJsonNull()) && !jsonObj.get("bucket_name").isJsonPrimitive()) {
+      if (!jsonObj.get("bucket_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_name").toString()));
       }
-      if ((jsonObj.get("compression") != null && !jsonObj.get("compression").isJsonNull()) && !jsonObj.get("compression").isJsonPrimitive()) {
+      if (!jsonObj.get("compression").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `compression` to be a primitive type in the JSON string but got `%s`", jsonObj.get("compression").toString()));
       }
-      if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull()) && !jsonObj.get("format").isJsonPrimitive()) {
+      if ((jsonObj.get("cron") != null && !jsonObj.get("cron").isJsonNull()) && !jsonObj.get("cron").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cron` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cron").toString()));
+      }
+      if (!jsonObj.get("format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("format").toString()));
       }
-      if ((jsonObj.get("partition_format") != null && !jsonObj.get("partition_format").isJsonNull()) && !jsonObj.get("partition_format").isJsonPrimitive()) {
+      if (!jsonObj.get("partition_format").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partition_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partition_format").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
-      if ((jsonObj.get("project_id") != null && !jsonObj.get("project_id").isJsonNull()) && !jsonObj.get("project_id").isJsonPrimitive()) {
+      if (!jsonObj.get("project_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `project_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("project_id").toString()));
+      }
+      // validate the optional field `rate_limit`
+      if (jsonObj.get("rate_limit") != null && !jsonObj.get("rate_limit").isJsonNull()) {
+        ModelsInputRateLimit.validateJsonElement(jsonObj.get("rate_limit"));
       }
       if ((jsonObj.get("record_location") != null && !jsonObj.get("record_location").isJsonNull()) && !jsonObj.get("record_location").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record_location` to be a primitive type in the JSON string but got `%s`", jsonObj.get("record_location").toString()));

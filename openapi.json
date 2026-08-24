@@ -3121,6 +3121,10 @@
                         "description": "Compression format of the Google Cloud Storage objects.",
                         "type": "string"
                     },
+                    "cron": {
+                        "description": "Optional cron schedule to control polling cadence. Blank keeps the default continuous polling.",
+                        "type": "string"
+                    },
                     "format": {
                         "description": "The format of the files in the bucket, e.g., \"json\", \"csv\", etc.",
                         "type": "string"
@@ -3137,11 +3141,21 @@
                         "description": "The Google Cloud project ID to use",
                         "type": "string"
                     },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
                     "record_location": {
                         "description": "Location of the record in the object. Applies only for JSON objects. Leave empty for the entire record.",
                         "type": "string"
                     }
                 },
+                "required": [
+                    "bucket_name",
+                    "compression",
+                    "format",
+                    "partition_format",
+                    "project_id"
+                ],
                 "type": "object"
             },
             "google_cloud_storage_output.SecretsConfig": {
