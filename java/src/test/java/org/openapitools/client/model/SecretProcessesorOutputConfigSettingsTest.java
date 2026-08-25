@@ -43,6 +43,9 @@ import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
 import org.openapitools.client.model.HttpPayloadStructure;
 import org.openapitools.client.model.HttpSettingsConfig;
 import org.openapitools.client.model.HydrolixSettingsConfig;
+import org.openapitools.client.model.IbmQradarCommunicationConfig;
+import org.openapitools.client.model.IbmQradarEventFormatConfig;
+import org.openapitools.client.model.IbmQradarSettingsConfig;
 import org.openapitools.client.model.KafkaAcks;
 import org.openapitools.client.model.KafkaCompressionType;
 import org.openapitools.client.model.KafkaKafkaHeader;
@@ -520,6 +523,22 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void transformTest() {
         // TODO: test transform
+    }
+
+    /**
+     * Test the property 'communication'
+     */
+    @Test
+    public void communicationTest() {
+        // TODO: test communication
+    }
+
+    /**
+     * Test the property 'eventFormat'
+     */
+    @Test
+    public void eventFormatTest() {
+        // TODO: test eventFormat
     }
 
     /**

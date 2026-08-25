@@ -258,6 +258,14 @@ __all__ = [
     "HydrolixPasswordAuth",
     "HydrolixServiceAccountAuth",
     "HydrolixSettingsConfig",
+    "IbmQradarAuthConfig",
+    "IbmQradarBasicAuthVariant",
+    "IbmQradarCommunicationConfig",
+    "IbmQradarEventFormatConfig",
+    "IbmQradarHTTPSMTLSVariant",
+    "IbmQradarHTTPSVariant",
+    "IbmQradarHeaderAuthVariant",
+    "IbmQradarSettingsConfig",
     "IndividualAlertsSecretsConfig",
     "IndividualAlertsSettingsConfig",
     "InputsConnectorMeta",
@@ -925,6 +933,14 @@ from monad.models.hydrolix_auth_config import HydrolixAuthConfig as HydrolixAuth
 from monad.models.hydrolix_password_auth import HydrolixPasswordAuth as HydrolixPasswordAuth
 from monad.models.hydrolix_service_account_auth import HydrolixServiceAccountAuth as HydrolixServiceAccountAuth
 from monad.models.hydrolix_settings_config import HydrolixSettingsConfig as HydrolixSettingsConfig
+from monad.models.ibm_qradar_auth_config import IbmQradarAuthConfig as IbmQradarAuthConfig
+from monad.models.ibm_qradar_basic_auth_variant import IbmQradarBasicAuthVariant as IbmQradarBasicAuthVariant
+from monad.models.ibm_qradar_communication_config import IbmQradarCommunicationConfig as IbmQradarCommunicationConfig
+from monad.models.ibm_qradar_event_format_config import IbmQradarEventFormatConfig as IbmQradarEventFormatConfig
+from monad.models.ibm_qradar_httpsmtls_variant import IbmQradarHTTPSMTLSVariant as IbmQradarHTTPSMTLSVariant
+from monad.models.ibm_qradar_https_variant import IbmQradarHTTPSVariant as IbmQradarHTTPSVariant
+from monad.models.ibm_qradar_header_auth_variant import IbmQradarHeaderAuthVariant as IbmQradarHeaderAuthVariant
+from monad.models.ibm_qradar_settings_config import IbmQradarSettingsConfig as IbmQradarSettingsConfig
 from monad.models.individual_alerts_secrets_config import IndividualAlertsSecretsConfig as IndividualAlertsSecretsConfig
 from monad.models.individual_alerts_settings_config import IndividualAlertsSettingsConfig as IndividualAlertsSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta

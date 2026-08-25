@@ -33,6 +33,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
 	HydrolixSettingsConfig *HydrolixSettingsConfig
+	IbmQradarSettingsConfig *IbmQradarSettingsConfig
 	KafkaSettingsConfig *KafkaSettingsConfig
 	KvLookupOutputSettingsConfig *KvLookupOutputSettingsConfig
 	NextGenSiemSettingsConfig *NextGenSiemSettingsConfig
@@ -151,6 +152,13 @@ func HttpSettingsConfigAsSecretProcessesorOutputConfigSettings(v *HttpSettingsCo
 func HydrolixSettingsConfigAsSecretProcessesorOutputConfigSettings(v *HydrolixSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		HydrolixSettingsConfig: v,
+	}
+}
+
+// IbmQradarSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns IbmQradarSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func IbmQradarSettingsConfigAsSecretProcessesorOutputConfigSettings(v *IbmQradarSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		IbmQradarSettingsConfig: v,
 	}
 }
 
@@ -544,6 +552,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.HydrolixSettingsConfig = nil
 	}
 
+	// try to unmarshal data into IbmQradarSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.IbmQradarSettingsConfig)
+	if err == nil {
+		jsonIbmQradarSettingsConfig, _ := json.Marshal(dst.IbmQradarSettingsConfig)
+		if string(jsonIbmQradarSettingsConfig) == "{}" { // empty struct
+			dst.IbmQradarSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.IbmQradarSettingsConfig); err != nil {
+				dst.IbmQradarSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.IbmQradarSettingsConfig = nil
+	}
+
 	// try to unmarshal data into KafkaSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.KafkaSettingsConfig)
 	if err == nil {
@@ -917,6 +942,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
 		dst.HydrolixSettingsConfig = nil
+		dst.IbmQradarSettingsConfig = nil
 		dst.KafkaSettingsConfig = nil
 		dst.KvLookupOutputSettingsConfig = nil
 		dst.NextGenSiemSettingsConfig = nil
@@ -1003,6 +1029,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.HydrolixSettingsConfig != nil {
 		return json.Marshal(&src.HydrolixSettingsConfig)
+	}
+
+	if src.IbmQradarSettingsConfig != nil {
+		return json.Marshal(&src.IbmQradarSettingsConfig)
 	}
 
 	if src.KafkaSettingsConfig != nil {
@@ -1153,6 +1183,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.HydrolixSettingsConfig
 	}
 
+	if obj.IbmQradarSettingsConfig != nil {
+		return obj.IbmQradarSettingsConfig
+	}
+
 	if obj.KafkaSettingsConfig != nil {
 		return obj.KafkaSettingsConfig
 	}
@@ -1297,6 +1331,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.HydrolixSettingsConfig != nil {
 		return *obj.HydrolixSettingsConfig
+	}
+
+	if obj.IbmQradarSettingsConfig != nil {
+		return *obj.IbmQradarSettingsConfig
 	}
 
 	if obj.KafkaSettingsConfig != nil {

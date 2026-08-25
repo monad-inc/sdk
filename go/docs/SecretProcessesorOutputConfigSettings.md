@@ -57,6 +57,8 @@ Name | Type | Description | Notes
 **Host** | **string** | The host of the PostgreSQL database | 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Transform** | Pointer to **string** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
+**Communication** | Pointer to [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
+**EventFormat** | Pointer to [**IbmQradarEventFormatConfig**](IbmQradarEventFormatConfig.md) |  | [optional] 
 **Acks** | Pointer to [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
 **CompressionType** | Pointer to [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 
@@ -1357,6 +1359,56 @@ SetTransform sets Transform field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasTransform() bool`
 
 HasTransform returns a boolean if a field has been set.
+
+### GetCommunication
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCommunication() IbmQradarCommunicationConfig`
+
+GetCommunication returns the Communication field if non-nil, zero value otherwise.
+
+### GetCommunicationOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCommunicationOk() (*IbmQradarCommunicationConfig, bool)`
+
+GetCommunicationOk returns a tuple with the Communication field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCommunication
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCommunication(v IbmQradarCommunicationConfig)`
+
+SetCommunication sets Communication field to given value.
+
+### HasCommunication
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCommunication() bool`
+
+HasCommunication returns a boolean if a field has been set.
+
+### GetEventFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) GetEventFormat() IbmQradarEventFormatConfig`
+
+GetEventFormat returns the EventFormat field if non-nil, zero value otherwise.
+
+### GetEventFormatOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetEventFormatOk() (*IbmQradarEventFormatConfig, bool)`
+
+GetEventFormatOk returns a tuple with the EventFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEventFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) SetEventFormat(v IbmQradarEventFormatConfig)`
+
+SetEventFormat sets EventFormat field to given value.
+
+### HasEventFormat
+
+`func (o *SecretProcessesorOutputConfigSettings) HasEventFormat() bool`
+
+HasEventFormat returns a boolean if a field has been set.
 
 ### GetAcks
 

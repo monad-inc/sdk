@@ -50,7 +50,7 @@ class TestMaskModeConfig(unittest.TestCase):
                             shared_with_me = True, ), 
                         updated_at = '', 
                         value = '', ), ),
-                simple = monad.models.mask/simple_variant.mask.SimpleVariant(),
+                simple = monad.models.array.array(),
                 type = ''
             )
         else:

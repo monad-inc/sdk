@@ -3388,6 +3388,175 @@
                 ],
                 "type": "object"
             },
+            "ibm_qradar.ArrayFormatVariant": {
+                "type": "object"
+            },
+            "ibm_qradar.AuthConfig": {
+                "description": "Optional authentication for the HTTP Receiver. Leave unset for an unauthenticated log source.",
+                "properties": {
+                    "basic": {
+                        "$ref": "#/components/schemas/ibm_qradar.BasicAuthVariant"
+                    },
+                    "header": {
+                        "$ref": "#/components/schemas/ibm_qradar.HeaderAuthVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "basic",
+                            "header"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "ibm_qradar.BasicAuthVariant": {
+                "properties": {
+                    "password": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "username": {
+                        "description": "Username for HTTP Basic authentication.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "password",
+                    "username"
+                ],
+                "type": "object"
+            },
+            "ibm_qradar.CommunicationConfig": {
+                "description": "Transport mode: plain HTTP, HTTPS, or HTTPS with mutual TLS.",
+                "properties": {
+                    "https": {
+                        "$ref": "#/components/schemas/ibm_qradar.HTTPSVariant"
+                    },
+                    "https_mtls": {
+                        "$ref": "#/components/schemas/ibm_qradar.HTTPSMTLSVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "http",
+                            "https",
+                            "https_mtls"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "ibm_qradar.EventFormatConfig": {
+                "description": "How events are framed in the request body. Must match the QRadar log source's Event Parsing Method.",
+                "properties": {
+                    "array": {
+                        "$ref": "#/components/schemas/ibm_qradar.ArrayFormatVariant"
+                    },
+                    "line": {
+                        "$ref": "#/components/schemas/ibm_qradar.LineFormatVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "line",
+                            "array"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "ibm_qradar.HTTPSMTLSVariant": {
+                "properties": {
+                    "ca_certificate": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "client_certificate": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "client_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "insecure_skip_verify": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "client_certificate",
+                    "client_key"
+                ],
+                "type": "object"
+            },
+            "ibm_qradar.HTTPSVariant": {
+                "properties": {
+                    "ca_certificate": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "insecure_skip_verify": {
+                        "description": "Whether to skip TLS certificate verification (not recommended for production).",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "ibm_qradar.HeaderAuthVariant": {
+                "properties": {
+                    "header_name": {
+                        "description": "Header name to send (e.g. 'Authorization' or 'X-Api-Key').",
+                        "type": "string"
+                    },
+                    "header_value": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "header_name",
+                    "header_value"
+                ],
+                "type": "object"
+            },
+            "ibm_qradar.LineFormatVariant": {
+                "type": "object"
+            },
+            "ibm_qradar.SettingsConfig": {
+                "description": "IBM QRadar Output Settings",
+                "properties": {
+                    "auth": {
+                        "$ref": "#/components/schemas/ibm_qradar.AuthConfig"
+                    },
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "communication": {
+                        "$ref": "#/components/schemas/ibm_qradar.CommunicationConfig"
+                    },
+                    "event_format": {
+                        "$ref": "#/components/schemas/ibm_qradar.EventFormatConfig"
+                    },
+                    "host": {
+                        "description": "Hostname or IP of the QRadar HTTP Receiver log source. Do not include a scheme or a port here.",
+                        "type": "string"
+                    },
+                    "port": {
+                        "description": "TCP port the HTTP Receiver log source listens on (configured on the QRadar log source).",
+                        "maximum": 65535,
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "host",
+                    "port"
+                ],
+                "type": "object"
+            },
             "individual_alerts.SecretsConfig": {
                 "description": "Clumio Alerts secrets",
                 "properties": {
@@ -3843,9 +4012,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -10784,6 +10953,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/hydrolix.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/ibm_qradar.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/kafka.SettingsConfig"

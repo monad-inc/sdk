@@ -58,6 +58,8 @@ Name | Type | Description | Notes
 **host** | **str** | The host of the PostgreSQL database | 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **transform** | **str** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
+**communication** | [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
+**event_format** | [**IbmQradarEventFormatConfig**](IbmQradarEventFormatConfig.md) |  | [optional] 
 **acks** | [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **bootstrap_servers** | **str** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
 **compression_type** | [**KafkaCompressionType**](KafkaCompressionType.md) |  | [optional] 

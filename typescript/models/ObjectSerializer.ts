@@ -186,6 +186,14 @@ export * from '../models/HydrolixAuthConfig';
 export * from '../models/HydrolixPasswordAuth';
 export * from '../models/HydrolixServiceAccountAuth';
 export * from '../models/HydrolixSettingsConfig';
+export * from '../models/IbmQradarAuthConfig';
+export * from '../models/IbmQradarBasicAuthVariant';
+export * from '../models/IbmQradarCommunicationConfig';
+export * from '../models/IbmQradarEventFormatConfig';
+export * from '../models/IbmQradarHTTPSMTLSVariant';
+export * from '../models/IbmQradarHTTPSVariant';
+export * from '../models/IbmQradarHeaderAuthVariant';
+export * from '../models/IbmQradarSettingsConfig';
 export * from '../models/IndividualAlertsSecretsConfig';
 export * from '../models/IndividualAlertsSettingsConfig';
 export * from '../models/InputsConnectorMeta';
@@ -796,6 +804,14 @@ import { HydrolixAuthConfig  , HydrolixAuthConfigTypeEnum   } from '../models/Hy
 import { HydrolixPasswordAuth } from '../models/HydrolixPasswordAuth';
 import { HydrolixServiceAccountAuth } from '../models/HydrolixServiceAccountAuth';
 import { HydrolixSettingsConfig } from '../models/HydrolixSettingsConfig';
+import { IbmQradarAuthConfig  , IbmQradarAuthConfigTypeEnum   } from '../models/IbmQradarAuthConfig';
+import { IbmQradarBasicAuthVariant } from '../models/IbmQradarBasicAuthVariant';
+import { IbmQradarCommunicationConfig  , IbmQradarCommunicationConfigTypeEnum   } from '../models/IbmQradarCommunicationConfig';
+import { IbmQradarEventFormatConfig  , IbmQradarEventFormatConfigTypeEnum   } from '../models/IbmQradarEventFormatConfig';
+import { IbmQradarHTTPSMTLSVariant } from '../models/IbmQradarHTTPSMTLSVariant';
+import { IbmQradarHTTPSVariant } from '../models/IbmQradarHTTPSVariant';
+import { IbmQradarHeaderAuthVariant } from '../models/IbmQradarHeaderAuthVariant';
+import { IbmQradarSettingsConfig } from '../models/IbmQradarSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta               } from '../models/InputsConnectorMeta';
@@ -1253,6 +1269,9 @@ let enumsMap: Set<string> = new Set<string>([
     "GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum",
     "HttpPayloadStructure",
     "HydrolixAuthConfigTypeEnum",
+    "IbmQradarAuthConfigTypeEnum",
+    "IbmQradarCommunicationConfigTypeEnum",
+    "IbmQradarEventFormatConfigTypeEnum",
     "JsonFormatType",
     "KafkaAcks",
     "KafkaCompressionType",
@@ -1495,6 +1514,14 @@ let typeMap: {[index: string]: any} = {
     "HydrolixPasswordAuth": HydrolixPasswordAuth,
     "HydrolixServiceAccountAuth": HydrolixServiceAccountAuth,
     "HydrolixSettingsConfig": HydrolixSettingsConfig,
+    "IbmQradarAuthConfig": IbmQradarAuthConfig,
+    "IbmQradarBasicAuthVariant": IbmQradarBasicAuthVariant,
+    "IbmQradarCommunicationConfig": IbmQradarCommunicationConfig,
+    "IbmQradarEventFormatConfig": IbmQradarEventFormatConfig,
+    "IbmQradarHTTPSMTLSVariant": IbmQradarHTTPSMTLSVariant,
+    "IbmQradarHTTPSVariant": IbmQradarHTTPSVariant,
+    "IbmQradarHeaderAuthVariant": IbmQradarHeaderAuthVariant,
+    "IbmQradarSettingsConfig": IbmQradarSettingsConfig,
     "IndividualAlertsSecretsConfig": IndividualAlertsSecretsConfig,
     "IndividualAlertsSettingsConfig": IndividualAlertsSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
