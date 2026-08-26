@@ -56,7 +56,6 @@ from monad.models.issues_secrets_config import IssuesSecretsConfig
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig
 from monad.models.log_analytics_query_secrets_config import LogAnalyticsQuerySecretsConfig
 from monad.models.looker_audit_logs_secrets_config import LookerAuditLogsSecretsConfig
-from monad.models.meraki_config_logs_secrets_config import MerakiConfigLogsSecretsConfig
 from monad.models.microsoft365_generic_secrets_config import Microsoft365GenericSecretsConfig
 from monad.models.object_storage_input_secrets_config import ObjectStorageInputSecretsConfig
 from monad.models.operation_logs_secrets_config import OperationLogsSecretsConfig
@@ -77,7 +76,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESORINPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["ArizeAuditLogsSecretsConfig", "AwsGuarddutySecretsConfig", "AwsS3SecretsConfig", "AzureActivityLogsSecretsConfig", "AzureBlobStorageSecretsConfig", "AzureEventHubsSecretsConfig", "AzureVnetFlowLogsSecretsConfig", "BackblazeB2SecretsConfig", "BigqueryInputSecretsConfig", "BrinqaAuditLogsSecretsConfig", "BuildkiteAuditLogsSecretsConfig", "BuildkiteGraphqlInputSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "CloudflareDdosAttackAnalyticsSecretsConfig", "CloudflareFirewallEventsSecretsConfig", "CloudflareHttpRequestsSecretsConfig", "CloudflareUrlScannerSecretsConfig", "CloudflareZeroTrustAccessRequestsSecretsConfig", "ClumioAuditLogsSecretsConfig", "ClumioConsolidatedAlertsSecretsConfig", "CortexXsoarManagementLogsSecretsConfig", "DefenderForEndpointAlertsSecretsConfig", "Dict[str, object]", "EksAuditLogsSecretsConfig", "EndorLabsAuditLogsSecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "FullScansSecretsConfig", "GkeAuditLogsSecretsConfig", "GoogleCloudStorageSecretsConfig", "GoogleWorkspaceSecretsConfig", "IndividualAlertsSecretsConfig", "InspectorSecretsConfig", "IssuesSecretsConfig", "KoiAuditLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LookerAuditLogsSecretsConfig", "MerakiConfigLogsSecretsConfig", "Microsoft365GenericSecretsConfig", "ObjectStorageInputSecretsConfig", "OperationLogsSecretsConfig", "OrgAuditLogsSecretsConfig", "PaloAltoDataSecurityAlertsSecretsConfig", "PlaidWebhooksSecretsConfig", "SnykIssuesSecretsConfig", "SnykTargetsSecretsConfig", "TaniumGraphqlInputSecretsConfig", "TinesAuditLogsSecretsConfig", "TinesEventsLogsSecretsConfig", "TwilioEventsSecretsConfig", "TwilioSendgridEmailActivitySecretsConfig", "VoltioAuditLogsSecretsConfig", "VulnerabilityFindingsSecretsConfig", "WizAuditLogsSecretsConfig", "object"]
+SECRETPROCESSESORINPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["ArizeAuditLogsSecretsConfig", "AwsGuarddutySecretsConfig", "AwsS3SecretsConfig", "AzureActivityLogsSecretsConfig", "AzureBlobStorageSecretsConfig", "AzureEventHubsSecretsConfig", "AzureVnetFlowLogsSecretsConfig", "BackblazeB2SecretsConfig", "BigqueryInputSecretsConfig", "BrinqaAuditLogsSecretsConfig", "BuildkiteAuditLogsSecretsConfig", "BuildkiteGraphqlInputSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "CloudflareDdosAttackAnalyticsSecretsConfig", "CloudflareFirewallEventsSecretsConfig", "CloudflareHttpRequestsSecretsConfig", "CloudflareUrlScannerSecretsConfig", "CloudflareZeroTrustAccessRequestsSecretsConfig", "ClumioAuditLogsSecretsConfig", "ClumioConsolidatedAlertsSecretsConfig", "CortexXsoarManagementLogsSecretsConfig", "DefenderForEndpointAlertsSecretsConfig", "Dict[str, object]", "EksAuditLogsSecretsConfig", "EndorLabsAuditLogsSecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "FullScansSecretsConfig", "GkeAuditLogsSecretsConfig", "GoogleCloudStorageSecretsConfig", "GoogleWorkspaceSecretsConfig", "IndividualAlertsSecretsConfig", "InspectorSecretsConfig", "IssuesSecretsConfig", "KoiAuditLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LookerAuditLogsSecretsConfig", "Microsoft365GenericSecretsConfig", "ObjectStorageInputSecretsConfig", "OperationLogsSecretsConfig", "OrgAuditLogsSecretsConfig", "PaloAltoDataSecurityAlertsSecretsConfig", "PlaidWebhooksSecretsConfig", "SnykIssuesSecretsConfig", "SnykTargetsSecretsConfig", "TaniumGraphqlInputSecretsConfig", "TinesAuditLogsSecretsConfig", "TinesEventsLogsSecretsConfig", "TwilioEventsSecretsConfig", "TwilioSendgridEmailActivitySecretsConfig", "VoltioAuditLogsSecretsConfig", "VulnerabilityFindingsSecretsConfig", "WizAuditLogsSecretsConfig", "object"]
 
 class SecretProcessesorInputConfigSecrets(BaseModel):
     """
@@ -161,50 +160,48 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
     oneof_schema_38_validator: Optional[LogAnalyticsQuerySecretsConfig] = None
     # data type: LookerAuditLogsSecretsConfig
     oneof_schema_39_validator: Optional[LookerAuditLogsSecretsConfig] = None
-    # data type: MerakiConfigLogsSecretsConfig
-    oneof_schema_40_validator: Optional[MerakiConfigLogsSecretsConfig] = None
     # data type: Microsoft365GenericSecretsConfig
-    oneof_schema_41_validator: Optional[Microsoft365GenericSecretsConfig] = None
+    oneof_schema_40_validator: Optional[Microsoft365GenericSecretsConfig] = None
     # data type: Dict[str, object]
-    oneof_schema_42_validator: Optional[Dict[str, Any]] = None
+    oneof_schema_41_validator: Optional[Dict[str, Any]] = None
     # data type: object
-    oneof_schema_43_validator: Optional[Dict[str, Any]] = Field(default=None, description="Monad Log secrets")
+    oneof_schema_42_validator: Optional[Dict[str, Any]] = Field(default=None, description="Monad Log secrets")
     # data type: ObjectStorageInputSecretsConfig
-    oneof_schema_44_validator: Optional[ObjectStorageInputSecretsConfig] = None
+    oneof_schema_43_validator: Optional[ObjectStorageInputSecretsConfig] = None
     # data type: OperationLogsSecretsConfig
-    oneof_schema_45_validator: Optional[OperationLogsSecretsConfig] = None
+    oneof_schema_44_validator: Optional[OperationLogsSecretsConfig] = None
     # data type: OrgAuditLogsSecretsConfig
-    oneof_schema_46_validator: Optional[OrgAuditLogsSecretsConfig] = None
+    oneof_schema_45_validator: Optional[OrgAuditLogsSecretsConfig] = None
     # data type: PaloAltoDataSecurityAlertsSecretsConfig
-    oneof_schema_47_validator: Optional[PaloAltoDataSecurityAlertsSecretsConfig] = None
+    oneof_schema_46_validator: Optional[PaloAltoDataSecurityAlertsSecretsConfig] = None
     # data type: PlaidWebhooksSecretsConfig
-    oneof_schema_48_validator: Optional[PlaidWebhooksSecretsConfig] = None
+    oneof_schema_47_validator: Optional[PlaidWebhooksSecretsConfig] = None
     # data type: SnykIssuesSecretsConfig
-    oneof_schema_49_validator: Optional[SnykIssuesSecretsConfig] = None
+    oneof_schema_48_validator: Optional[SnykIssuesSecretsConfig] = None
     # data type: SnykTargetsSecretsConfig
-    oneof_schema_50_validator: Optional[SnykTargetsSecretsConfig] = None
+    oneof_schema_49_validator: Optional[SnykTargetsSecretsConfig] = None
     # data type: object
-    oneof_schema_51_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo secrets")
+    oneof_schema_50_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo secrets")
     # data type: object
-    oneof_schema_52_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo Custom secrets")
+    oneof_schema_51_validator: Optional[Dict[str, Any]] = Field(default=None, description="Demo Custom secrets")
     # data type: TaniumGraphqlInputSecretsConfig
-    oneof_schema_53_validator: Optional[TaniumGraphqlInputSecretsConfig] = None
+    oneof_schema_52_validator: Optional[TaniumGraphqlInputSecretsConfig] = None
     # data type: TinesAuditLogsSecretsConfig
-    oneof_schema_54_validator: Optional[TinesAuditLogsSecretsConfig] = None
+    oneof_schema_53_validator: Optional[TinesAuditLogsSecretsConfig] = None
     # data type: TinesEventsLogsSecretsConfig
-    oneof_schema_55_validator: Optional[TinesEventsLogsSecretsConfig] = None
+    oneof_schema_54_validator: Optional[TinesEventsLogsSecretsConfig] = None
     # data type: TwilioEventsSecretsConfig
-    oneof_schema_56_validator: Optional[TwilioEventsSecretsConfig] = None
+    oneof_schema_55_validator: Optional[TwilioEventsSecretsConfig] = None
     # data type: TwilioSendgridEmailActivitySecretsConfig
-    oneof_schema_57_validator: Optional[TwilioSendgridEmailActivitySecretsConfig] = None
+    oneof_schema_56_validator: Optional[TwilioSendgridEmailActivitySecretsConfig] = None
     # data type: VoltioAuditLogsSecretsConfig
-    oneof_schema_58_validator: Optional[VoltioAuditLogsSecretsConfig] = None
+    oneof_schema_57_validator: Optional[VoltioAuditLogsSecretsConfig] = None
     # data type: VulnerabilityFindingsSecretsConfig
-    oneof_schema_59_validator: Optional[VulnerabilityFindingsSecretsConfig] = None
+    oneof_schema_58_validator: Optional[VulnerabilityFindingsSecretsConfig] = None
     # data type: WizAuditLogsSecretsConfig
-    oneof_schema_60_validator: Optional[WizAuditLogsSecretsConfig] = None
-    actual_instance: Optional[Union[ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object]] = None
-    one_of_schemas: Set[str] = { "ArizeAuditLogsSecretsConfig", "AwsGuarddutySecretsConfig", "AwsS3SecretsConfig", "AzureActivityLogsSecretsConfig", "AzureBlobStorageSecretsConfig", "AzureEventHubsSecretsConfig", "AzureVnetFlowLogsSecretsConfig", "BackblazeB2SecretsConfig", "BigqueryInputSecretsConfig", "BrinqaAuditLogsSecretsConfig", "BuildkiteAuditLogsSecretsConfig", "BuildkiteGraphqlInputSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "CloudflareDdosAttackAnalyticsSecretsConfig", "CloudflareFirewallEventsSecretsConfig", "CloudflareHttpRequestsSecretsConfig", "CloudflareUrlScannerSecretsConfig", "CloudflareZeroTrustAccessRequestsSecretsConfig", "ClumioAuditLogsSecretsConfig", "ClumioConsolidatedAlertsSecretsConfig", "CortexXsoarManagementLogsSecretsConfig", "DefenderForEndpointAlertsSecretsConfig", "Dict[str, object]", "EksAuditLogsSecretsConfig", "EndorLabsAuditLogsSecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "FullScansSecretsConfig", "GkeAuditLogsSecretsConfig", "GoogleCloudStorageSecretsConfig", "GoogleWorkspaceSecretsConfig", "IndividualAlertsSecretsConfig", "InspectorSecretsConfig", "IssuesSecretsConfig", "KoiAuditLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LookerAuditLogsSecretsConfig", "MerakiConfigLogsSecretsConfig", "Microsoft365GenericSecretsConfig", "ObjectStorageInputSecretsConfig", "OperationLogsSecretsConfig", "OrgAuditLogsSecretsConfig", "PaloAltoDataSecurityAlertsSecretsConfig", "PlaidWebhooksSecretsConfig", "SnykIssuesSecretsConfig", "SnykTargetsSecretsConfig", "TaniumGraphqlInputSecretsConfig", "TinesAuditLogsSecretsConfig", "TinesEventsLogsSecretsConfig", "TwilioEventsSecretsConfig", "TwilioSendgridEmailActivitySecretsConfig", "VoltioAuditLogsSecretsConfig", "VulnerabilityFindingsSecretsConfig", "WizAuditLogsSecretsConfig", "object" }
+    oneof_schema_59_validator: Optional[WizAuditLogsSecretsConfig] = None
+    actual_instance: Optional[Union[ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object]] = None
+    one_of_schemas: Set[str] = { "ArizeAuditLogsSecretsConfig", "AwsGuarddutySecretsConfig", "AwsS3SecretsConfig", "AzureActivityLogsSecretsConfig", "AzureBlobStorageSecretsConfig", "AzureEventHubsSecretsConfig", "AzureVnetFlowLogsSecretsConfig", "BackblazeB2SecretsConfig", "BigqueryInputSecretsConfig", "BrinqaAuditLogsSecretsConfig", "BuildkiteAuditLogsSecretsConfig", "BuildkiteGraphqlInputSecretsConfig", "CloudConfigurationFindingsSecretsConfig", "CloudLogsSecretsConfig", "CloudResourceInventorySecretsConfig", "CloudflareDdosAttackAnalyticsSecretsConfig", "CloudflareFirewallEventsSecretsConfig", "CloudflareHttpRequestsSecretsConfig", "CloudflareUrlScannerSecretsConfig", "CloudflareZeroTrustAccessRequestsSecretsConfig", "ClumioAuditLogsSecretsConfig", "ClumioConsolidatedAlertsSecretsConfig", "CortexXsoarManagementLogsSecretsConfig", "DefenderForEndpointAlertsSecretsConfig", "Dict[str, object]", "EksAuditLogsSecretsConfig", "EndorLabsAuditLogsSecretsConfig", "EntraIdSecretsConfig", "EventSecretsConfig", "FullScansSecretsConfig", "GkeAuditLogsSecretsConfig", "GoogleCloudStorageSecretsConfig", "GoogleWorkspaceSecretsConfig", "IndividualAlertsSecretsConfig", "InspectorSecretsConfig", "IssuesSecretsConfig", "KoiAuditLogsSecretsConfig", "LogAnalyticsQuerySecretsConfig", "LookerAuditLogsSecretsConfig", "Microsoft365GenericSecretsConfig", "ObjectStorageInputSecretsConfig", "OperationLogsSecretsConfig", "OrgAuditLogsSecretsConfig", "PaloAltoDataSecurityAlertsSecretsConfig", "PlaidWebhooksSecretsConfig", "SnykIssuesSecretsConfig", "SnykTargetsSecretsConfig", "TaniumGraphqlInputSecretsConfig", "TinesAuditLogsSecretsConfig", "TinesEventsLogsSecretsConfig", "TwilioEventsSecretsConfig", "TwilioSendgridEmailActivitySecretsConfig", "VoltioAuditLogsSecretsConfig", "VulnerabilityFindingsSecretsConfig", "WizAuditLogsSecretsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -423,11 +420,6 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `LookerAuditLogsSecretsConfig`")
         else:
             match += 1
-        # validate data type: MerakiConfigLogsSecretsConfig
-        if not isinstance(v, MerakiConfigLogsSecretsConfig):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `MerakiConfigLogsSecretsConfig`")
-        else:
-            match += 1
         # validate data type: Microsoft365GenericSecretsConfig
         if not isinstance(v, Microsoft365GenericSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `Microsoft365GenericSecretsConfig`")
@@ -435,13 +427,13 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         # validate data type: Dict[str, object]
         try:
-            instance.oneof_schema_42_validator = v
+            instance.oneof_schema_41_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # validate data type: object
         try:
-            instance.oneof_schema_43_validator = v
+            instance.oneof_schema_42_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -482,13 +474,13 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         # validate data type: object
         try:
-            instance.oneof_schema_51_validator = v
+            instance.oneof_schema_50_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # validate data type: object
         try:
-            instance.oneof_schema_52_validator = v
+            instance.oneof_schema_51_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -534,10 +526,10 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -789,12 +781,6 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into MerakiConfigLogsSecretsConfig
-        try:
-            instance.actual_instance = MerakiConfigLogsSecretsConfig.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
         # deserialize data into Microsoft365GenericSecretsConfig
         try:
             instance.actual_instance = Microsoft365GenericSecretsConfig.from_json(json_str)
@@ -804,18 +790,18 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
         # deserialize data into Dict[str, object]
         try:
             # validation
-            instance.oneof_schema_42_validator = json.loads(json_str)
+            instance.oneof_schema_41_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_42_validator
+            instance.actual_instance = instance.oneof_schema_41_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_43_validator = json.loads(json_str)
+            instance.oneof_schema_42_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_43_validator
+            instance.actual_instance = instance.oneof_schema_42_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -864,18 +850,18 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_51_validator = json.loads(json_str)
+            instance.oneof_schema_50_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_51_validator
+            instance.actual_instance = instance.oneof_schema_50_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
         # deserialize data into object
         try:
             # validation
-            instance.oneof_schema_52_validator = json.loads(json_str)
+            instance.oneof_schema_51_validator = json.loads(json_str)
             # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_52_validator
+            instance.actual_instance = instance.oneof_schema_51_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -930,10 +916,10 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorInputConfigSecrets with oneOf schemas: ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -947,7 +933,7 @@ class SecretProcessesorInputConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, MerakiConfigLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ArizeAuditLogsSecretsConfig, AwsGuarddutySecretsConfig, AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, Dict[str, object], EksAuditLogsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, InspectorSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Microsoft365GenericSecretsConfig, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, PlaidWebhooksSecretsConfig, SnykIssuesSecretsConfig, SnykTargetsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

@@ -113,7 +113,6 @@ Name | Type | Description | Notes
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
 **BaseUrl** | **string** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) | 
 **LogCategories** | **[]string** | The audit log categories to ingest. | 
-**OrgId** | Pointer to **string** | URL of the organization | [optional] 
 **LogType** | **string** | Which Redshift audit log to ingest. Must be one of the supported log types (connectionlog, userlog). | 
 **Endpoint** | **string** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) | 
 **SkipSslVerification** | Pointer to **bool** | Skip SSL verification for self-signed certificates | [optional] 
@@ -2758,31 +2757,6 @@ and a boolean to check if the value has been set.
 
 SetLogCategories sets LogCategories field to given value.
 
-
-### GetOrgId
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgId() string`
-
-GetOrgId returns the OrgId field if non-nil, zero value otherwise.
-
-### GetOrgIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgIdOk() (*string, bool)`
-
-GetOrgIdOk returns a tuple with the OrgId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrgId
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrgId(v string)`
-
-SetOrgId sets OrgId field to given value.
-
-### HasOrgId
-
-`func (o *SecretProcessesorInputConfigSettings) HasOrgId() bool`
-
-HasOrgId returns a boolean if a field has been set.
 
 ### GetLogType
 

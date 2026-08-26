@@ -4012,9 +4012,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -4337,35 +4337,6 @@
                     },
                     "value": {
                         "description": "The value to multiply with"
-                    }
-                },
-                "type": "object"
-            },
-            "meraki_config_logs.SecretsConfig": {
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "meraki_config_logs.SettingsConfig": {
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of data from google workspace is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "org_id": {
-                        "description": "URL of the organization",
-                        "type": "string"
-                    },
-                    "region": {
-                        "description": "api.meraki.com/api/v1 for most parts of the world. Different countries may have different base URIs",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -10557,9 +10528,6 @@
                                 "$ref": "#/components/schemas/looker_audit_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/meraki_config_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/microsoft_365_generic.SecretsConfig"
                             },
                             {
@@ -10753,9 +10721,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/looker_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/meraki_config_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/microsoft_365_generic.SettingsConfig"

@@ -227,8 +227,6 @@ export * from '../models/MaskArgumentsConfig';
 export * from '../models/MaskDeterministicVariant';
 export * from '../models/MaskModeConfig';
 export * from '../models/MathMultiplyWithValueArgumentsConfig';
-export * from '../models/MerakiConfigLogsSecretsConfig';
-export * from '../models/MerakiConfigLogsSettingsConfig';
 export * from '../models/Microsoft365GenericSecretsConfig';
 export * from '../models/Microsoft365GenericSettingsConfig';
 export * from '../models/ModelsAPIKey';
@@ -845,8 +843,6 @@ import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
 import { MaskDeterministicVariant } from '../models/MaskDeterministicVariant';
 import { MaskModeConfig } from '../models/MaskModeConfig';
 import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
-import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
-import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
 import { Microsoft365GenericSecretsConfig } from '../models/Microsoft365GenericSecretsConfig';
 import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365GenericSettingsConfig';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
@@ -1549,8 +1545,6 @@ let typeMap: {[index: string]: any} = {
     "MaskDeterministicVariant": MaskDeterministicVariant,
     "MaskModeConfig": MaskModeConfig,
     "MathMultiplyWithValueArgumentsConfig": MathMultiplyWithValueArgumentsConfig,
-    "MerakiConfigLogsSecretsConfig": MerakiConfigLogsSecretsConfig,
-    "MerakiConfigLogsSettingsConfig": MerakiConfigLogsSettingsConfig,
     "Microsoft365GenericSecretsConfig": Microsoft365GenericSecretsConfig,
     "Microsoft365GenericSettingsConfig": Microsoft365GenericSettingsConfig,
     "ModelsAPIKey": ModelsAPIKey,

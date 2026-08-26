@@ -116,7 +116,6 @@
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |
 |**baseUrl** | **String** | Base URL of your Volt.io API instance (e.g., https://api.volt.io) |  |
 |**logCategories** | **List&lt;String&gt;** | The audit log categories to ingest. |  |
-|**orgId** | **String** | URL of the organization |  [optional] |
 |**logType** | [**LogTypeEnum**](#LogTypeEnum) | Which Redshift audit log to ingest. Must be one of the supported log types (connectionlog, userlog). |  |
 |**endpoint** | **String** | Endpoint URL for the object storage service (e.g., https://minio.example.com, https://s3.amazonaws.com) |  |
 |**skipSslVerification** | **Boolean** | Skip SSL verification for self-signed certificates |  [optional] |

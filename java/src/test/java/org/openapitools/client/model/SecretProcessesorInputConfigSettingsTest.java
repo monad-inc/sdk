@@ -72,7 +72,6 @@ import org.openapitools.client.model.IssuesSettingsConfig;
 import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
 import org.openapitools.client.model.LookerAuditLogsSettingsConfig;
-import org.openapitools.client.model.MerakiConfigLogsSettingsConfig;
 import org.openapitools.client.model.Microsoft365GenericSettingsConfig;
 import org.openapitools.client.model.ModelsInputRateLimit;
 import org.openapitools.client.model.ModelsSecret;
@@ -1001,14 +1000,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void logCategoriesTest() {
         // TODO: test logCategories
-    }
-
-    /**
-     * Test the property 'orgId'
-     */
-    @Test
-    public void orgIdTest() {
-        // TODO: test orgId
     }
 
     /**

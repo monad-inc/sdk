@@ -240,7 +240,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 log_categories = [
                     ''
                     ],
-                org_id = '',
                 log_type = 'connectionlog',
                 endpoint = '',
                 skip_ssl_verification = True,

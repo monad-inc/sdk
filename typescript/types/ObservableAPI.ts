@@ -232,8 +232,6 @@ import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
 import { MaskDeterministicVariant } from '../models/MaskDeterministicVariant';
 import { MaskModeConfig } from '../models/MaskModeConfig';
 import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
-import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
-import { MerakiConfigLogsSettingsConfig } from '../models/MerakiConfigLogsSettingsConfig';
 import { Microsoft365GenericSecretsConfig } from '../models/Microsoft365GenericSecretsConfig';
 import { Microsoft365GenericSettingsConfig } from '../models/Microsoft365GenericSettingsConfig';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';

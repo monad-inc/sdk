@@ -48,7 +48,6 @@ import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LookerAuditLogsSecretsConfig } from '../models/LookerAuditLogsSecretsConfig';
-import { MerakiConfigLogsSecretsConfig } from '../models/MerakiConfigLogsSecretsConfig';
 import { Microsoft365GenericSecretsConfig } from '../models/Microsoft365GenericSecretsConfig';
 import { ObjectStorageInputSecretsConfig } from '../models/ObjectStorageInputSecretsConfig';
 import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig';
@@ -72,7 +71,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSecrets = ArizeAuditLogsSecretsConfig | AwsGuarddutySecretsConfig | AwsS3SecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureEventHubsSecretsConfig | AzureVnetFlowLogsSecretsConfig | BackblazeB2SecretsConfig | BigqueryInputSecretsConfig | BrinqaAuditLogsSecretsConfig | BuildkiteAuditLogsSecretsConfig | BuildkiteGraphqlInputSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CloudflareDdosAttackAnalyticsSecretsConfig | CloudflareFirewallEventsSecretsConfig | CloudflareHttpRequestsSecretsConfig | CloudflareUrlScannerSecretsConfig | CloudflareZeroTrustAccessRequestsSecretsConfig | ClumioAuditLogsSecretsConfig | ClumioConsolidatedAlertsSecretsConfig | CortexXsoarManagementLogsSecretsConfig | DefenderForEndpointAlertsSecretsConfig | EksAuditLogsSecretsConfig | EndorLabsAuditLogsSecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | FullScansSecretsConfig | GkeAuditLogsSecretsConfig | GoogleCloudStorageSecretsConfig | GoogleWorkspaceSecretsConfig | IndividualAlertsSecretsConfig | InspectorSecretsConfig | IssuesSecretsConfig | KoiAuditLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LookerAuditLogsSecretsConfig | MerakiConfigLogsSecretsConfig | Microsoft365GenericSecretsConfig | ObjectStorageInputSecretsConfig | OperationLogsSecretsConfig | OrgAuditLogsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | PlaidWebhooksSecretsConfig | SnykIssuesSecretsConfig | SnykTargetsSecretsConfig | TaniumGraphqlInputSecretsConfig | TinesAuditLogsSecretsConfig | TinesEventsLogsSecretsConfig | TwilioEventsSecretsConfig | TwilioSendgridEmailActivitySecretsConfig | VoltioAuditLogsSecretsConfig | VulnerabilityFindingsSecretsConfig | WizAuditLogsSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSecrets = ArizeAuditLogsSecretsConfig | AwsGuarddutySecretsConfig | AwsS3SecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureEventHubsSecretsConfig | AzureVnetFlowLogsSecretsConfig | BackblazeB2SecretsConfig | BigqueryInputSecretsConfig | BrinqaAuditLogsSecretsConfig | BuildkiteAuditLogsSecretsConfig | BuildkiteGraphqlInputSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CloudflareDdosAttackAnalyticsSecretsConfig | CloudflareFirewallEventsSecretsConfig | CloudflareHttpRequestsSecretsConfig | CloudflareUrlScannerSecretsConfig | CloudflareZeroTrustAccessRequestsSecretsConfig | ClumioAuditLogsSecretsConfig | ClumioConsolidatedAlertsSecretsConfig | CortexXsoarManagementLogsSecretsConfig | DefenderForEndpointAlertsSecretsConfig | EksAuditLogsSecretsConfig | EndorLabsAuditLogsSecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | FullScansSecretsConfig | GkeAuditLogsSecretsConfig | GoogleCloudStorageSecretsConfig | GoogleWorkspaceSecretsConfig | IndividualAlertsSecretsConfig | InspectorSecretsConfig | IssuesSecretsConfig | KoiAuditLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LookerAuditLogsSecretsConfig | Microsoft365GenericSecretsConfig | ObjectStorageInputSecretsConfig | OperationLogsSecretsConfig | OrgAuditLogsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | PlaidWebhooksSecretsConfig | SnykIssuesSecretsConfig | SnykTargetsSecretsConfig | TaniumGraphqlInputSecretsConfig | TinesAuditLogsSecretsConfig | TinesEventsLogsSecretsConfig | TwilioEventsSecretsConfig | TwilioSendgridEmailActivitySecretsConfig | VoltioAuditLogsSecretsConfig | VulnerabilityFindingsSecretsConfig | WizAuditLogsSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSecretsClass
@@ -83,7 +82,6 @@ export class SecretProcessesorInputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
 
 
 

@@ -309,8 +309,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.MaskDeterministicVariant.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.MaskModeConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.MathMultiplyWithValueArgumentsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.MerakiConfigLogsSecretsConfig.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.MerakiConfigLogsSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.Microsoft365GenericSecretsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.Microsoft365GenericSettingsConfig.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new org.openapitools.client.model.ModelsAPIKey.CustomTypeAdapterFactory());

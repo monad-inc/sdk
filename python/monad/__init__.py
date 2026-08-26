@@ -299,8 +299,6 @@ __all__ = [
     "MaskDeterministicVariant",
     "MaskModeConfig",
     "MathMultiplyWithValueArgumentsConfig",
-    "MerakiConfigLogsSecretsConfig",
-    "MerakiConfigLogsSettingsConfig",
     "Microsoft365GenericSecretsConfig",
     "Microsoft365GenericSettingsConfig",
     "ModelsAPIKey",
@@ -974,8 +972,6 @@ from monad.models.mask_arguments_config import MaskArgumentsConfig as MaskArgume
 from monad.models.mask_deterministic_variant import MaskDeterministicVariant as MaskDeterministicVariant
 from monad.models.mask_mode_config import MaskModeConfig as MaskModeConfig
 from monad.models.math_multiply_with_value_arguments_config import MathMultiplyWithValueArgumentsConfig as MathMultiplyWithValueArgumentsConfig
-from monad.models.meraki_config_logs_secrets_config import MerakiConfigLogsSecretsConfig as MerakiConfigLogsSecretsConfig
-from monad.models.meraki_config_logs_settings_config import MerakiConfigLogsSettingsConfig as MerakiConfigLogsSettingsConfig
 from monad.models.microsoft365_generic_secrets_config import Microsoft365GenericSecretsConfig as Microsoft365GenericSecretsConfig
 from monad.models.microsoft365_generic_settings_config import Microsoft365GenericSettingsConfig as Microsoft365GenericSettingsConfig
 from monad.models.models_api_key import ModelsAPIKey as ModelsAPIKey

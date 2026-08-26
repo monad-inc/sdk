@@ -557,8 +557,6 @@ Class | Method | HTTP request | Description
  - [MaskDeterministicVariant](docs/MaskDeterministicVariant.md)
  - [MaskModeConfig](docs/MaskModeConfig.md)
  - [MathMultiplyWithValueArgumentsConfig](docs/MathMultiplyWithValueArgumentsConfig.md)
- - [MerakiConfigLogsSecretsConfig](docs/MerakiConfigLogsSecretsConfig.md)
- - [MerakiConfigLogsSettingsConfig](docs/MerakiConfigLogsSettingsConfig.md)
  - [Microsoft365GenericSecretsConfig](docs/Microsoft365GenericSecretsConfig.md)
  - [Microsoft365GenericSettingsConfig](docs/Microsoft365GenericSettingsConfig.md)
  - [ModelsAPIKey](docs/ModelsAPIKey.md)
