@@ -300,6 +300,9 @@ Class | Method | HTTP request | Description
 *RolesAPI* | [**GetRole**](docs/RolesAPI.md#getrole) | **Get** /v2/{organization_id}/roles/{role_id} | Get role
 *RolesAPI* | [**ListRoles**](docs/RolesAPI.md#listroles) | **Get** /v2/{organization_id}/roles | List roles
 *RolesAPI* | [**UpdateRole**](docs/RolesAPI.md#updaterole) | **Patch** /v2/{organization_id}/roles/{role_id} | Update role
+*SchemaDetectionAPI* | [**GetOrganizationSchemaTrackingSummary**](docs/SchemaDetectionAPI.md#getorganizationschematrackingsummary) | **Get** /v3/{organization_id}/schema_detection/summary | Schema tracking summary
+*SchemaDetectionAPI* | [**ListOrganizationPipelinesWithSchema**](docs/SchemaDetectionAPI.md#listorganizationpipelineswithschema) | **Get** /v3/{organization_id}/schema_detection/pipelines | List pipelines with tracked schema
+*SchemaDetectionAPI* | [**ListOrganizationSchemaChangeEvents**](docs/SchemaDetectionAPI.md#listorganizationschemachangeevents) | **Get** /v3/{organization_id}/schema_detection/events | List organization schema change events
 *SecretsAPI* | [**CreateSecret**](docs/SecretsAPI.md#createsecret) | **Post** /v2/{organization_id}/secrets | Create secret
 *SecretsAPI* | [**DeleteSecret**](docs/SecretsAPI.md#deletesecret) | **Delete** /v2/{organization_id}/secrets/{secret_id} | Delete secret
 *SecretsAPI* | [**GetSecret**](docs/SecretsAPI.md#getsecret) | **Get** /v2/{organization_id}/secrets/{secret_id} | Get secret with components
@@ -633,6 +636,7 @@ Class | Method | HTTP request | Description
  - [ModelsPipelineStatus](docs/ModelsPipelineStatus.md)
  - [ModelsPipelineStatusValue](docs/ModelsPipelineStatusValue.md)
  - [ModelsPipelineStreamInfo](docs/ModelsPipelineStreamInfo.md)
+ - [ModelsPipelineWithSchemaTracked](docs/ModelsPipelineWithSchemaTracked.md)
  - [ModelsProgressEntries](docs/ModelsProgressEntries.md)
  - [ModelsProgressEntry](docs/ModelsProgressEntry.md)
  - [ModelsProgressLabel](docs/ModelsProgressLabel.md)
@@ -655,6 +659,9 @@ Class | Method | HTTP request | Description
  - [ModelsRoleWithPermissions](docs/ModelsRoleWithPermissions.md)
  - [ModelsRoleWithPermissionsList](docs/ModelsRoleWithPermissionsList.md)
  - [ModelsSchemaDetection](docs/ModelsSchemaDetection.md)
+ - [ModelsSchemaHistory](docs/ModelsSchemaHistory.md)
+ - [ModelsSchemaHistoryList](docs/ModelsSchemaHistoryList.md)
+ - [ModelsSchemaTrackingSummary](docs/ModelsSchemaTrackingSummary.md)
  - [ModelsSecret](docs/ModelsSecret.md)
  - [ModelsShareDetails](docs/ModelsShareDetails.md)
  - [ModelsStorageTypeCostConfig](docs/ModelsStorageTypeCostConfig.md)

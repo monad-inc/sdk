@@ -54,6 +54,7 @@ __all__ = [
     "QuotasApi",
     "ResourceSharesApi",
     "RolesApi",
+    "SchemaDetectionApi",
     "SecretsApi",
     "SessionsApi",
     "TransformSandboxApi",
@@ -375,6 +376,7 @@ __all__ = [
     "ModelsPipelineStatus",
     "ModelsPipelineStatusValue",
     "ModelsPipelineStreamInfo",
+    "ModelsPipelineWithSchemaTracked",
     "ModelsProgressEntries",
     "ModelsProgressEntry",
     "ModelsProgressLabel",
@@ -397,6 +399,9 @@ __all__ = [
     "ModelsRoleWithPermissions",
     "ModelsRoleWithPermissionsList",
     "ModelsSchemaDetection",
+    "ModelsSchemaHistory",
+    "ModelsSchemaHistoryList",
+    "ModelsSchemaTrackingSummary",
     "ModelsSecret",
     "ModelsShareDetails",
     "ModelsStorageTypeCostConfig",
@@ -723,6 +728,7 @@ from monad.api.pipelines_api import PipelinesApi as PipelinesApi
 from monad.api.quotas_api import QuotasApi as QuotasApi
 from monad.api.resource_shares_api import ResourceSharesApi as ResourceSharesApi
 from monad.api.roles_api import RolesApi as RolesApi
+from monad.api.schema_detection_api import SchemaDetectionApi as SchemaDetectionApi
 from monad.api.secrets_api import SecretsApi as SecretsApi
 from monad.api.sessions_api import SessionsApi as SessionsApi
 from monad.api.transform_sandbox_api import TransformSandboxApi as TransformSandboxApi
@@ -1048,6 +1054,7 @@ from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentio
 from monad.models.models_pipeline_status import ModelsPipelineStatus as ModelsPipelineStatus
 from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue as ModelsPipelineStatusValue
 from monad.models.models_pipeline_stream_info import ModelsPipelineStreamInfo as ModelsPipelineStreamInfo
+from monad.models.models_pipeline_with_schema_tracked import ModelsPipelineWithSchemaTracked as ModelsPipelineWithSchemaTracked
 from monad.models.models_progress_entries import ModelsProgressEntries as ModelsProgressEntries
 from monad.models.models_progress_entry import ModelsProgressEntry as ModelsProgressEntry
 from monad.models.models_progress_label import ModelsProgressLabel as ModelsProgressLabel
@@ -1070,6 +1077,9 @@ from monad.models.models_resource_share_with_usage_list import ModelsResourceSha
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions as ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList as ModelsRoleWithPermissionsList
 from monad.models.models_schema_detection import ModelsSchemaDetection as ModelsSchemaDetection
+from monad.models.models_schema_history import ModelsSchemaHistory as ModelsSchemaHistory
+from monad.models.models_schema_history_list import ModelsSchemaHistoryList as ModelsSchemaHistoryList
+from monad.models.models_schema_tracking_summary import ModelsSchemaTrackingSummary as ModelsSchemaTrackingSummary
 from monad.models.models_secret import ModelsSecret as ModelsSecret
 from monad.models.models_share_details import ModelsShareDetails as ModelsShareDetails
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig as ModelsStorageTypeCostConfig

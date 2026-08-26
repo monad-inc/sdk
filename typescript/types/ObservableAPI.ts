@@ -308,6 +308,7 @@ import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetention
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
+import { ModelsPipelineWithSchemaTracked } from '../models/ModelsPipelineWithSchemaTracked';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
@@ -330,6 +331,9 @@ import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareW
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
+import { ModelsSchemaHistory } from '../models/ModelsSchemaHistory';
+import { ModelsSchemaHistoryList } from '../models/ModelsSchemaHistoryList';
+import { ModelsSchemaTrackingSummary } from '../models/ModelsSchemaTrackingSummary';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
@@ -7267,6 +7271,132 @@ export class ObservableRolesApi {
      */
     public updateRole(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: ConfigurationOptions): Observable<ModelsRoleWithPermissions> {
         return this.updateRoleWithHttpInfo(organizationId, roleId, updateRoleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsRoleWithPermissions>) => apiResponse.data));
+    }
+
+}
+
+import { SchemaDetectionApiRequestFactory, SchemaDetectionApiResponseProcessor} from "../apis/SchemaDetectionApi";
+export class ObservableSchemaDetectionApi {
+    private requestFactory: SchemaDetectionApiRequestFactory;
+    private responseProcessor: SchemaDetectionApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SchemaDetectionApiRequestFactory,
+        responseProcessor?: SchemaDetectionApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new SchemaDetectionApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new SchemaDetectionApiResponseProcessor();
+    }
+
+    /**
+     * Counts of the organization\'s tracked edges by mode (learning / detection).
+     * Schema tracking summary
+     * @param organizationId Organization ID
+     */
+    public getOrganizationSchemaTrackingSummaryWithHttpInfo(organizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsSchemaTrackingSummary>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.getOrganizationSchemaTrackingSummary(organizationId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.getOrganizationSchemaTrackingSummaryWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Counts of the organization\'s tracked edges by mode (learning / detection).
+     * Schema tracking summary
+     * @param organizationId Organization ID
+     */
+    public getOrganizationSchemaTrackingSummary(organizationId: string, _options?: ConfigurationOptions): Observable<ModelsSchemaTrackingSummary> {
+        return this.getOrganizationSchemaTrackingSummaryWithHttpInfo(organizationId, _options).pipe(map((apiResponse: HttpInfo<ModelsSchemaTrackingSummary>) => apiResponse.data));
+    }
+
+    /**
+     * List the id and name of every pipeline in the organization that has any edge with a tracked schema state, for populating pipeline pickers.
+     * List pipelines with tracked schema
+     * @param organizationId Organization ID
+     */
+    public listOrganizationPipelinesWithSchemaWithHttpInfo(organizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<Array<ModelsPipelineWithSchemaTracked>>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listOrganizationPipelinesWithSchema(organizationId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listOrganizationPipelinesWithSchemaWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List the id and name of every pipeline in the organization that has any edge with a tracked schema state, for populating pipeline pickers.
+     * List pipelines with tracked schema
+     * @param organizationId Organization ID
+     */
+    public listOrganizationPipelinesWithSchema(organizationId: string, _options?: ConfigurationOptions): Observable<Array<ModelsPipelineWithSchemaTracked>> {
+        return this.listOrganizationPipelinesWithSchemaWithHttpInfo(organizationId, _options).pipe(map((apiResponse: HttpInfo<Array<ModelsPipelineWithSchemaTracked>>) => apiResponse.data));
+    }
+
+    /**
+     * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
+     * List organization schema change events
+     * @param organizationId Organization ID
+     * @param [limit] Page size (default 10)
+     * @param [offset] Row offset for pagination (default 0)
+     * @param [_from] Only events strictly after this RFC3339 timestamp
+     */
+    public listOrganizationSchemaChangeEventsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _from?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsSchemaHistoryList>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listOrganizationSchemaChangeEvents(organizationId, limit, offset, _from, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listOrganizationSchemaChangeEventsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
+     * List organization schema change events
+     * @param organizationId Organization ID
+     * @param [limit] Page size (default 10)
+     * @param [offset] Row offset for pagination (default 0)
+     * @param [_from] Only events strictly after this RFC3339 timestamp
+     */
+    public listOrganizationSchemaChangeEvents(organizationId: string, limit?: number, offset?: number, _from?: string, _options?: ConfigurationOptions): Observable<ModelsSchemaHistoryList> {
+        return this.listOrganizationSchemaChangeEventsWithHttpInfo(organizationId, limit, offset, _from, _options).pipe(map((apiResponse: HttpInfo<ModelsSchemaHistoryList>) => apiResponse.data));
     }
 
 }

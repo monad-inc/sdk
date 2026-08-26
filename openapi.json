@@ -6206,6 +6206,17 @@
                 },
                 "type": "object"
             },
+            "models.PipelineWithSchemaTracked": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "models.ProgressEntries": {
                 "properties": {
                     "entries": {
@@ -6640,6 +6651,74 @@
                     },
                     "enabled": {
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "models.SchemaHistory": {
+                "properties": {
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "edge_id": {
+                        "type": "string"
+                    },
+                    "event_tags": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "from_node_name": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "pipeline_id": {
+                        "type": "string"
+                    },
+                    "pipeline_name": {
+                        "type": "string"
+                    },
+                    "schema": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/models.FieldState"
+                        },
+                        "type": "object"
+                    },
+                    "to_node_name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "models.SchemaHistoryList": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "schema_history": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.SchemaHistory"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "models.SchemaTrackingSummary": {
+                "properties": {
+                    "in_detection": {
+                        "type": "integer"
+                    },
+                    "in_learning": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -26692,6 +26771,226 @@
                 ],
                 "x-required-permissions": [
                     "resource_sharing:read"
+                ]
+            }
+        },
+        "/v3/{organization_id}/schema_detection/events": {
+            "get": {
+                "description": "List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.",
+                "operationId": "ListOrganizationSchemaChangeEvents",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Page size (default 10)",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Row offset for pagination (default 0)",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Only events strictly after this RFC3339 timestamp",
+                        "in": "query",
+                        "name": "from",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.SchemaHistoryList"
+                                }
+                            }
+                        },
+                        "description": "One page of schema change events"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid query parameters"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing pipeline:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List organization schema change events",
+                "tags": [
+                    "Schema Detection"
+                ]
+            }
+        },
+        "/v3/{organization_id}/schema_detection/pipelines": {
+            "get": {
+                "description": "List the id and name of every pipeline in the organization that has any edge with a tracked schema state, for populating pipeline pickers.",
+                "operationId": "ListOrganizationPipelinesWithSchema",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/models.PipelineWithSchemaTracked"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        },
+                        "description": "Pipelines with tracked schema"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing pipeline:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "List pipelines with tracked schema",
+                "tags": [
+                    "Schema Detection"
+                ]
+            }
+        },
+        "/v3/{organization_id}/schema_detection/summary": {
+            "get": {
+                "description": "Counts of the organization's tracked edges by mode (learning / detection).",
+                "operationId": "GetOrganizationSchemaTrackingSummary",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/models.SchemaTrackingSummary"
+                                }
+                            }
+                        },
+                        "description": "Learning / detection counts"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Missing pipeline:read permission"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    },
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "summary": "Schema tracking summary",
+                "tags": [
+                    "Schema Detection"
                 ]
             }
         },

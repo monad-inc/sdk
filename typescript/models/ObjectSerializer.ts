@@ -303,6 +303,7 @@ export * from '../models/ModelsPipelineRetentionPolicy';
 export * from '../models/ModelsPipelineStatus';
 export * from '../models/ModelsPipelineStatusValue';
 export * from '../models/ModelsPipelineStreamInfo';
+export * from '../models/ModelsPipelineWithSchemaTracked';
 export * from '../models/ModelsProgressEntries';
 export * from '../models/ModelsProgressEntry';
 export * from '../models/ModelsProgressLabel';
@@ -325,6 +326,9 @@ export * from '../models/ModelsResourceShareWithUsageList';
 export * from '../models/ModelsRoleWithPermissions';
 export * from '../models/ModelsRoleWithPermissionsList';
 export * from '../models/ModelsSchemaDetection';
+export * from '../models/ModelsSchemaHistory';
+export * from '../models/ModelsSchemaHistoryList';
+export * from '../models/ModelsSchemaTrackingSummary';
 export * from '../models/ModelsSecret';
 export * from '../models/ModelsShareDetails';
 export * from '../models/ModelsStorageTypeCostConfig';
@@ -919,6 +923,7 @@ import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetention
 import { ModelsPipelineStatus                } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
+import { ModelsPipelineWithSchemaTracked } from '../models/ModelsPipelineWithSchemaTracked';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry    } from '../models/ModelsProgressEntry';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
@@ -941,6 +946,9 @@ import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareW
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
+import { ModelsSchemaHistory } from '../models/ModelsSchemaHistory';
+import { ModelsSchemaHistoryList } from '../models/ModelsSchemaHistoryList';
+import { ModelsSchemaTrackingSummary } from '../models/ModelsSchemaTrackingSummary';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
@@ -1611,6 +1619,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsPipelineRetentionPolicy": ModelsPipelineRetentionPolicy,
     "ModelsPipelineStatus": ModelsPipelineStatus,
     "ModelsPipelineStreamInfo": ModelsPipelineStreamInfo,
+    "ModelsPipelineWithSchemaTracked": ModelsPipelineWithSchemaTracked,
     "ModelsProgressEntries": ModelsProgressEntries,
     "ModelsProgressEntry": ModelsProgressEntry,
     "ModelsQuota": ModelsQuota,
@@ -1627,6 +1636,9 @@ let typeMap: {[index: string]: any} = {
     "ModelsRoleWithPermissions": ModelsRoleWithPermissions,
     "ModelsRoleWithPermissionsList": ModelsRoleWithPermissionsList,
     "ModelsSchemaDetection": ModelsSchemaDetection,
+    "ModelsSchemaHistory": ModelsSchemaHistory,
+    "ModelsSchemaHistoryList": ModelsSchemaHistoryList,
+    "ModelsSchemaTrackingSummary": ModelsSchemaTrackingSummary,
     "ModelsSecret": ModelsSecret,
     "ModelsShareDetails": ModelsShareDetails,
     "ModelsStorageTypeCostConfig": ModelsStorageTypeCostConfig,

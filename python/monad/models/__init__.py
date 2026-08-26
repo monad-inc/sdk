@@ -319,6 +319,7 @@ from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentio
 from monad.models.models_pipeline_status import ModelsPipelineStatus
 from monad.models.models_pipeline_status_value import ModelsPipelineStatusValue
 from monad.models.models_pipeline_stream_info import ModelsPipelineStreamInfo
+from monad.models.models_pipeline_with_schema_tracked import ModelsPipelineWithSchemaTracked
 from monad.models.models_progress_entries import ModelsProgressEntries
 from monad.models.models_progress_entry import ModelsProgressEntry
 from monad.models.models_progress_label import ModelsProgressLabel
@@ -341,6 +342,9 @@ from monad.models.models_resource_share_with_usage_list import ModelsResourceSha
 from monad.models.models_role_with_permissions import ModelsRoleWithPermissions
 from monad.models.models_role_with_permissions_list import ModelsRoleWithPermissionsList
 from monad.models.models_schema_detection import ModelsSchemaDetection
+from monad.models.models_schema_history import ModelsSchemaHistory
+from monad.models.models_schema_history_list import ModelsSchemaHistoryList
+from monad.models.models_schema_tracking_summary import ModelsSchemaTrackingSummary
 from monad.models.models_secret import ModelsSecret
 from monad.models.models_share_details import ModelsShareDetails
 from monad.models.models_storage_type_cost_config import ModelsStorageTypeCostConfig

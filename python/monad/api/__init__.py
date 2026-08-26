@@ -36,6 +36,7 @@ from monad.api.pipelines_api import PipelinesApi
 from monad.api.quotas_api import QuotasApi
 from monad.api.resource_shares_api import ResourceSharesApi
 from monad.api.roles_api import RolesApi
+from monad.api.schema_detection_api import SchemaDetectionApi
 from monad.api.secrets_api import SecretsApi
 from monad.api.sessions_api import SessionsApi
 from monad.api.transform_sandbox_api import TransformSandboxApi

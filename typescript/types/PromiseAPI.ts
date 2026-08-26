@@ -307,6 +307,7 @@ import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetention
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
 import { ModelsPipelineStatusValue } from '../models/ModelsPipelineStatusValue';
 import { ModelsPipelineStreamInfo } from '../models/ModelsPipelineStreamInfo';
+import { ModelsPipelineWithSchemaTracked } from '../models/ModelsPipelineWithSchemaTracked';
 import { ModelsProgressEntries } from '../models/ModelsProgressEntries';
 import { ModelsProgressEntry } from '../models/ModelsProgressEntry';
 import { ModelsProgressLabel } from '../models/ModelsProgressLabel';
@@ -329,6 +330,9 @@ import { ModelsResourceShareWithUsageList } from '../models/ModelsResourceShareW
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
 import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
+import { ModelsSchemaHistory } from '../models/ModelsSchemaHistory';
+import { ModelsSchemaHistoryList } from '../models/ModelsSchemaHistoryList';
+import { ModelsSchemaTrackingSummary } from '../models/ModelsSchemaTrackingSummary';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { ModelsShareDetails } from '../models/ModelsShareDetails';
 import { ModelsStorageTypeCostConfig } from '../models/ModelsStorageTypeCostConfig';
@@ -5376,6 +5380,97 @@ export class PromiseRolesApi {
     public updateRole(organizationId: string, roleId: string, updateRoleRequest: UpdateRoleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsRoleWithPermissions> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateRole(organizationId, roleId, updateRoleRequest, observableOptions);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableSchemaDetectionApi } from './ObservableAPI';
+
+import { SchemaDetectionApiRequestFactory, SchemaDetectionApiResponseProcessor} from "../apis/SchemaDetectionApi";
+export class PromiseSchemaDetectionApi {
+    private api: ObservableSchemaDetectionApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: SchemaDetectionApiRequestFactory,
+        responseProcessor?: SchemaDetectionApiResponseProcessor
+    ) {
+        this.api = new ObservableSchemaDetectionApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Counts of the organization\'s tracked edges by mode (learning / detection).
+     * Schema tracking summary
+     * @param organizationId Organization ID
+     */
+    public getOrganizationSchemaTrackingSummaryWithHttpInfo(organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSchemaTrackingSummary>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getOrganizationSchemaTrackingSummaryWithHttpInfo(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * Counts of the organization\'s tracked edges by mode (learning / detection).
+     * Schema tracking summary
+     * @param organizationId Organization ID
+     */
+    public getOrganizationSchemaTrackingSummary(organizationId: string, _options?: PromiseConfigurationOptions): Promise<ModelsSchemaTrackingSummary> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.getOrganizationSchemaTrackingSummary(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List the id and name of every pipeline in the organization that has any edge with a tracked schema state, for populating pipeline pickers.
+     * List pipelines with tracked schema
+     * @param organizationId Organization ID
+     */
+    public listOrganizationPipelinesWithSchemaWithHttpInfo(organizationId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<ModelsPipelineWithSchemaTracked>>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listOrganizationPipelinesWithSchemaWithHttpInfo(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List the id and name of every pipeline in the organization that has any edge with a tracked schema state, for populating pipeline pickers.
+     * List pipelines with tracked schema
+     * @param organizationId Organization ID
+     */
+    public listOrganizationPipelinesWithSchema(organizationId: string, _options?: PromiseConfigurationOptions): Promise<Array<ModelsPipelineWithSchemaTracked>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listOrganizationPipelinesWithSchema(organizationId, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
+     * List organization schema change events
+     * @param organizationId Organization ID
+     * @param [limit] Page size (default 10)
+     * @param [offset] Row offset for pagination (default 0)
+     * @param [_from] Only events strictly after this RFC3339 timestamp
+     */
+    public listOrganizationSchemaChangeEventsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _from?: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsSchemaHistoryList>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listOrganizationSchemaChangeEventsWithHttpInfo(organizationId, limit, offset, _from, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
+     * List organization schema change events
+     * @param organizationId Organization ID
+     * @param [limit] Page size (default 10)
+     * @param [offset] Row offset for pagination (default 0)
+     * @param [_from] Only events strictly after this RFC3339 timestamp
+     */
+    public listOrganizationSchemaChangeEvents(organizationId: string, limit?: number, offset?: number, _from?: string, _options?: PromiseConfigurationOptions): Promise<ModelsSchemaHistoryList> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listOrganizationSchemaChangeEvents(organizationId, limit, offset, _from, observableOptions);
         return result.toPromise();
     }
 
