@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **Catalog** | **string** | The Unity Catalog name | 
 **Schema** | **string** | The schema within the database that contains the target pipe. | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
-**WriteMode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  | 
+**WriteMode** | [**DatabricksLakehouseWriteMode**](DatabricksLakehouseWriteMode.md) |  | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
@@ -110,7 +110,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakewatchWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -632,20 +632,20 @@ SetServerHostname sets ServerHostname field to given value.
 
 ### GetWriteMode
 
-`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksLakewatchWriteMode`
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteMode() DatabricksLakehouseWriteMode`
 
 GetWriteMode returns the WriteMode field if non-nil, zero value otherwise.
 
 ### GetWriteModeOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksLakewatchWriteMode, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetWriteModeOk() (*DatabricksLakehouseWriteMode, bool)`
 
 GetWriteModeOk returns a tuple with the WriteMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWriteMode
 
-`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksLakewatchWriteMode)`
+`func (o *SecretProcessesorOutputConfigSettings) SetWriteMode(v DatabricksLakehouseWriteMode)`
 
 SetWriteMode sets WriteMode field to given value.
 

@@ -125,11 +125,6 @@ import { DatabricksLakehousePipelineConfig } from '../models/DatabricksLakehouse
 import { DatabricksLakehouseSettingsConfig } from '../models/DatabricksLakehouseSettingsConfig';
 import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWriteMode';
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
-import { DatabricksLakewatchAutoLoaderPipelineWriteMode } from '../models/DatabricksLakewatchAutoLoaderPipelineWriteMode';
-import { DatabricksLakewatchAutoLoaderWriteMode } from '../models/DatabricksLakewatchAutoLoaderWriteMode';
-import { DatabricksLakewatchSettingsConfig } from '../models/DatabricksLakewatchSettingsConfig';
-import { DatabricksLakewatchWriteMode } from '../models/DatabricksLakewatchWriteMode';
-import { DatabricksLakewatchZeroBusWriteMode } from '../models/DatabricksLakewatchZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';

@@ -194,11 +194,6 @@ __all__ = [
     "DatabricksLakehouseSettingsConfig",
     "DatabricksLakehouseWriteMode",
     "DatabricksLakehouseZeroBusWriteMode",
-    "DatabricksLakewatchAutoLoaderPipelineWriteMode",
-    "DatabricksLakewatchAutoLoaderWriteMode",
-    "DatabricksLakewatchSettingsConfig",
-    "DatabricksLakewatchWriteMode",
-    "DatabricksLakewatchZeroBusWriteMode",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
@@ -872,11 +867,6 @@ from monad.models.databricks_lakehouse_pipeline_config import DatabricksLakehous
 from monad.models.databricks_lakehouse_settings_config import DatabricksLakehouseSettingsConfig as DatabricksLakehouseSettingsConfig
 from monad.models.databricks_lakehouse_write_mode import DatabricksLakehouseWriteMode as DatabricksLakehouseWriteMode
 from monad.models.databricks_lakehouse_zero_bus_write_mode import DatabricksLakehouseZeroBusWriteMode as DatabricksLakehouseZeroBusWriteMode
-from monad.models.databricks_lakewatch_auto_loader_pipeline_write_mode import DatabricksLakewatchAutoLoaderPipelineWriteMode as DatabricksLakewatchAutoLoaderPipelineWriteMode
-from monad.models.databricks_lakewatch_auto_loader_write_mode import DatabricksLakewatchAutoLoaderWriteMode as DatabricksLakewatchAutoLoaderWriteMode
-from monad.models.databricks_lakewatch_settings_config import DatabricksLakewatchSettingsConfig as DatabricksLakewatchSettingsConfig
-from monad.models.databricks_lakewatch_write_mode import DatabricksLakewatchWriteMode as DatabricksLakewatchWriteMode
-from monad.models.databricks_lakewatch_zero_bus_write_mode import DatabricksLakewatchZeroBusWriteMode as DatabricksLakewatchZeroBusWriteMode
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig

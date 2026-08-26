@@ -121,11 +121,6 @@ export * from '../models/DatabricksLakehousePipelineConfig';
 export * from '../models/DatabricksLakehouseSettingsConfig';
 export * from '../models/DatabricksLakehouseWriteMode';
 export * from '../models/DatabricksLakehouseZeroBusWriteMode';
-export * from '../models/DatabricksLakewatchAutoLoaderPipelineWriteMode';
-export * from '../models/DatabricksLakewatchAutoLoaderWriteMode';
-export * from '../models/DatabricksLakewatchSettingsConfig';
-export * from '../models/DatabricksLakewatchWriteMode';
-export * from '../models/DatabricksLakewatchZeroBusWriteMode';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -741,11 +736,6 @@ import { DatabricksLakehousePipelineConfig, DatabricksLakehousePipelineConfigMod
 import { DatabricksLakehouseSettingsConfig } from '../models/DatabricksLakehouseSettingsConfig';
 import { DatabricksLakehouseWriteMode , DatabricksLakehouseWriteModeWriteModeEnum    } from '../models/DatabricksLakehouseWriteMode';
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
-import { DatabricksLakewatchAutoLoaderPipelineWriteMode } from '../models/DatabricksLakewatchAutoLoaderPipelineWriteMode';
-import { DatabricksLakewatchAutoLoaderWriteMode } from '../models/DatabricksLakewatchAutoLoaderWriteMode';
-import { DatabricksLakewatchSettingsConfig } from '../models/DatabricksLakewatchSettingsConfig';
-import { DatabricksLakewatchWriteMode  , DatabricksLakewatchWriteModeWriteModeEnum    } from '../models/DatabricksLakewatchWriteMode';
-import { DatabricksLakewatchZeroBusWriteMode } from '../models/DatabricksLakewatchZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
@@ -1265,7 +1255,6 @@ let enumsMap: Set<string> = new Set<string>([
     "DatabricksDeltaTableWriteModeWriteModeEnum",
     "DatabricksLakehousePipelineConfigModeEnum",
     "DatabricksLakehouseWriteModeWriteModeEnum",
-    "DatabricksLakewatchWriteModeWriteModeEnum",
     "ElasticsearchAuthConfigTypeEnum",
     "ElasticsearchConnectionConfigTypeEnum",
     "EntraIdSettingsConfigCategoryEnum",
@@ -1455,11 +1444,6 @@ let typeMap: {[index: string]: any} = {
     "DatabricksLakehouseSettingsConfig": DatabricksLakehouseSettingsConfig,
     "DatabricksLakehouseWriteMode": DatabricksLakehouseWriteMode,
     "DatabricksLakehouseZeroBusWriteMode": DatabricksLakehouseZeroBusWriteMode,
-    "DatabricksLakewatchAutoLoaderPipelineWriteMode": DatabricksLakewatchAutoLoaderPipelineWriteMode,
-    "DatabricksLakewatchAutoLoaderWriteMode": DatabricksLakewatchAutoLoaderWriteMode,
-    "DatabricksLakewatchSettingsConfig": DatabricksLakewatchSettingsConfig,
-    "DatabricksLakewatchWriteMode": DatabricksLakewatchWriteMode,
-    "DatabricksLakewatchZeroBusWriteMode": DatabricksLakewatchZeroBusWriteMode,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,

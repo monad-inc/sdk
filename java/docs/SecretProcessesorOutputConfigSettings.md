@@ -29,7 +29,7 @@
 |**catalog** | **String** | The Unity Catalog name |  |
 |**schema** | **String** | The schema within the database that contains the target pipe. |  |
 |**serverHostname** | **String** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) |  |
-|**writeMode** | [**DatabricksLakewatchWriteMode**](DatabricksLakewatchWriteMode.md) |  |  |
+|**writeMode** | [**DatabricksLakehouseWriteMode**](DatabricksLakehouseWriteMode.md) |  |  |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**ddsource** | **String** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. |  [optional] |
