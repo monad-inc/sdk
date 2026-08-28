@@ -36,7 +36,18 @@ class TestUpdatePipelineEdgeRequest(unittest.TestCase):
         model = UpdatePipelineEdgeRequest()
         if include_optional:
             return UpdatePipelineEdgeRequest(
-                disabled = True
+                conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                    config = {
+                        'key' : null
+                        }, 
+                    operator = 'always', 
+                    type_id = '', ),
+                description = '',
+                disabled = True,
+                name = '',
+                schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                    disable_alerting = True, 
+                    enabled = True, )
             )
         else:
             return UpdatePipelineEdgeRequest(

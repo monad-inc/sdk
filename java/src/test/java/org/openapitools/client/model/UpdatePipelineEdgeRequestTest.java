@@ -20,6 +20,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsConditionEvaluatable;
+import org.openapitools.client.model.ModelsSchemaDetection;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -38,11 +40,43 @@ public class UpdatePipelineEdgeRequestTest {
     }
 
     /**
+     * Test the property 'conditions'
+     */
+    @Test
+    public void conditionsTest() {
+        // TODO: test conditions
+    }
+
+    /**
+     * Test the property 'description'
+     */
+    @Test
+    public void descriptionTest() {
+        // TODO: test description
+    }
+
+    /**
      * Test the property 'disabled'
      */
     @Test
     public void disabledTest() {
         // TODO: test disabled
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
+     * Test the property 'schemaDetectionSpec'
+     */
+    @Test
+    public void schemaDetectionSpecTest() {
+        // TODO: test schemaDetectionSpec
     }
 
 }

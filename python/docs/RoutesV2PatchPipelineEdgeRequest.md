@@ -5,7 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**conditions** | [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
+**description** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
+**name** | **str** |  | [optional] 
+**schema_detection_spec** | [**ModelsSchemaDetection**](ModelsSchemaDetection.md) |  | [optional] 
 
 ## Example
 

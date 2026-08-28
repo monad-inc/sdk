@@ -10,10 +10,16 @@
  * Do not edit the class manually.
  */
 
+import { ModelsConditionEvaluatable } from '../models/ModelsConditionEvaluatable';
+import { ModelsSchemaDetection } from '../models/ModelsSchemaDetection';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2PatchPipelineEdgeRequest {
+    'conditions'?: ModelsConditionEvaluatable;
+    'description'?: string;
     'disabled'?: boolean;
+    'name'?: string;
+    'schemaDetectionSpec'?: ModelsSchemaDetection;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -21,9 +27,33 @@ export class RoutesV2PatchPipelineEdgeRequest {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "conditions",
+            "baseName": "conditions",
+            "type": "ModelsConditionEvaluatable",
+            "format": ""
+        },
+        {
+            "name": "description",
+            "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "disabled",
             "baseName": "disabled",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "name",
+            "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "schemaDetectionSpec",
+            "baseName": "schema_detection_spec",
+            "type": "ModelsSchemaDetection",
             "format": ""
         }    ];
 

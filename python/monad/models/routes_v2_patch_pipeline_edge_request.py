@@ -18,8 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_condition_evaluatable import ModelsConditionEvaluatable
+from monad.models.models_schema_detection import ModelsSchemaDetection
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,8 +30,12 @@ class RoutesV2PatchPipelineEdgeRequest(BaseModel):
     """
     RoutesV2PatchPipelineEdgeRequest
     """ # noqa: E501
+    conditions: Optional[ModelsConditionEvaluatable] = None
+    description: Optional[StrictStr] = None
     disabled: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["disabled"]
+    name: Optional[StrictStr] = None
+    schema_detection_spec: Optional[ModelsSchemaDetection] = None
+    __properties: ClassVar[List[str]] = ["conditions", "description", "disabled", "name", "schema_detection_spec"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -70,6 +76,12 @@ class RoutesV2PatchPipelineEdgeRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of conditions
+        if self.conditions:
+            _dict['conditions'] = self.conditions.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of schema_detection_spec
+        if self.schema_detection_spec:
+            _dict['schema_detection_spec'] = self.schema_detection_spec.to_dict()
         return _dict
 
     @classmethod
@@ -82,7 +94,11 @@ class RoutesV2PatchPipelineEdgeRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "disabled": obj.get("disabled")
+            "conditions": ModelsConditionEvaluatable.from_dict(obj["conditions"]) if obj.get("conditions") is not None else None,
+            "description": obj.get("description"),
+            "disabled": obj.get("disabled"),
+            "name": obj.get("name"),
+            "schema_detection_spec": ModelsSchemaDetection.from_dict(obj["schema_detection_spec"]) if obj.get("schema_detection_spec") is not None else None
         })
         return _obj
 

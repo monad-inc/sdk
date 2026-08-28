@@ -20,7 +20,11 @@ var _ MappedNullable = &RoutesV2PatchPipelineEdgeRequest{}
 
 // RoutesV2PatchPipelineEdgeRequest struct for RoutesV2PatchPipelineEdgeRequest
 type RoutesV2PatchPipelineEdgeRequest struct {
+	Conditions *ModelsConditionEvaluatable `json:"conditions,omitempty"`
+	Description *string `json:"description,omitempty"`
 	Disabled *bool `json:"disabled,omitempty"`
+	Name *string `json:"name,omitempty"`
+	SchemaDetectionSpec *ModelsSchemaDetection `json:"schema_detection_spec,omitempty"`
 }
 
 // NewRoutesV2PatchPipelineEdgeRequest instantiates a new RoutesV2PatchPipelineEdgeRequest object
@@ -38,6 +42,70 @@ func NewRoutesV2PatchPipelineEdgeRequest() *RoutesV2PatchPipelineEdgeRequest {
 func NewRoutesV2PatchPipelineEdgeRequestWithDefaults() *RoutesV2PatchPipelineEdgeRequest {
 	this := RoutesV2PatchPipelineEdgeRequest{}
 	return &this
+}
+
+// GetConditions returns the Conditions field value if set, zero value otherwise.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetConditions() ModelsConditionEvaluatable {
+	if o == nil || IsNil(o.Conditions) {
+		var ret ModelsConditionEvaluatable
+		return ret
+	}
+	return *o.Conditions
+}
+
+// GetConditionsOk returns a tuple with the Conditions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetConditionsOk() (*ModelsConditionEvaluatable, bool) {
+	if o == nil || IsNil(o.Conditions) {
+		return nil, false
+	}
+	return o.Conditions, true
+}
+
+// HasConditions returns a boolean if a field has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) HasConditions() bool {
+	if o != nil && !IsNil(o.Conditions) {
+		return true
+	}
+
+	return false
+}
+
+// SetConditions gets a reference to the given ModelsConditionEvaluatable and assigns it to the Conditions field.
+func (o *RoutesV2PatchPipelineEdgeRequest) SetConditions(v ModelsConditionEvaluatable) {
+	o.Conditions = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *RoutesV2PatchPipelineEdgeRequest) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetDisabled returns the Disabled field value if set, zero value otherwise.
@@ -72,6 +140,70 @@ func (o *RoutesV2PatchPipelineEdgeRequest) SetDisabled(v bool) {
 	o.Disabled = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *RoutesV2PatchPipelineEdgeRequest) SetName(v string) {
+	o.Name = &v
+}
+
+// GetSchemaDetectionSpec returns the SchemaDetectionSpec field value if set, zero value otherwise.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetSchemaDetectionSpec() ModelsSchemaDetection {
+	if o == nil || IsNil(o.SchemaDetectionSpec) {
+		var ret ModelsSchemaDetection
+		return ret
+	}
+	return *o.SchemaDetectionSpec
+}
+
+// GetSchemaDetectionSpecOk returns a tuple with the SchemaDetectionSpec field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) GetSchemaDetectionSpecOk() (*ModelsSchemaDetection, bool) {
+	if o == nil || IsNil(o.SchemaDetectionSpec) {
+		return nil, false
+	}
+	return o.SchemaDetectionSpec, true
+}
+
+// HasSchemaDetectionSpec returns a boolean if a field has been set.
+func (o *RoutesV2PatchPipelineEdgeRequest) HasSchemaDetectionSpec() bool {
+	if o != nil && !IsNil(o.SchemaDetectionSpec) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemaDetectionSpec gets a reference to the given ModelsSchemaDetection and assigns it to the SchemaDetectionSpec field.
+func (o *RoutesV2PatchPipelineEdgeRequest) SetSchemaDetectionSpec(v ModelsSchemaDetection) {
+	o.SchemaDetectionSpec = &v
+}
+
 func (o RoutesV2PatchPipelineEdgeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -82,8 +214,20 @@ func (o RoutesV2PatchPipelineEdgeRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV2PatchPipelineEdgeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Conditions) {
+		toSerialize["conditions"] = o.Conditions
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if !IsNil(o.Disabled) {
 		toSerialize["disabled"] = o.Disabled
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.SchemaDetectionSpec) {
+		toSerialize["schema_detection_spec"] = o.SchemaDetectionSpec
 	}
 	return toSerialize, nil
 }

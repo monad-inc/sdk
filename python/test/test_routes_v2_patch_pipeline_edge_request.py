@@ -36,7 +36,26 @@ class TestRoutesV2PatchPipelineEdgeRequest(unittest.TestCase):
         model = RoutesV2PatchPipelineEdgeRequest()
         if include_optional:
             return RoutesV2PatchPipelineEdgeRequest(
-                disabled = True
+                conditions = monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                    conditions = [
+                        monad.models.models/condition_evaluatable.models.ConditionEvaluatable(
+                            config = {
+                                'key' : null
+                                }, 
+                            operator = 'always', 
+                            type_id = '', )
+                        ], 
+                    config = {
+                        'key' : null
+                        }, 
+                    operator = 'always', 
+                    type_id = '', ),
+                description = '',
+                disabled = True,
+                name = '',
+                schema_detection_spec = monad.models.models/schema_detection.models.SchemaDetection(
+                    disable_alerting = True, 
+                    enabled = True, )
             )
         else:
             return RoutesV2PatchPipelineEdgeRequest(

@@ -3892,9 +3892,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -8742,8 +8742,20 @@
             },
             "routesV2.PatchPipelineEdgeRequest": {
                 "properties": {
+                    "conditions": {
+                        "$ref": "#/components/schemas/models.ConditionEvaluatable"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
                     "disabled": {
                         "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "schema_detection_spec": {
+                        "$ref": "#/components/schemas/models.SchemaDetection"
                     }
                 },
                 "type": "object"

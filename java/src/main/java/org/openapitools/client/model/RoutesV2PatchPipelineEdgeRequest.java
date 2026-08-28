@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsConditionEvaluatable;
+import org.openapitools.client.model.ModelsSchemaDetection;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,13 +52,71 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class RoutesV2PatchPipelineEdgeRequest {
+  public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
+  @SerializedName(SERIALIZED_NAME_CONDITIONS)
+  @javax.annotation.Nullable
+  private ModelsConditionEvaluatable conditions;
+
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String description;
+
   public static final String SERIALIZED_NAME_DISABLED = "disabled";
   @SerializedName(SERIALIZED_NAME_DISABLED)
   @javax.annotation.Nullable
   private Boolean disabled;
 
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
+  private String name;
+
+  public static final String SERIALIZED_NAME_SCHEMA_DETECTION_SPEC = "schema_detection_spec";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_DETECTION_SPEC)
+  @javax.annotation.Nullable
+  private ModelsSchemaDetection schemaDetectionSpec;
+
   public RoutesV2PatchPipelineEdgeRequest() {
   }
+
+  public RoutesV2PatchPipelineEdgeRequest conditions(@javax.annotation.Nullable ModelsConditionEvaluatable conditions) {
+    this.conditions = conditions;
+    return this;
+  }
+
+  /**
+   * Get conditions
+   * @return conditions
+   */
+  @javax.annotation.Nullable
+  public ModelsConditionEvaluatable getConditions() {
+    return conditions;
+  }
+
+  public void setConditions(@javax.annotation.Nullable ModelsConditionEvaluatable conditions) {
+    this.conditions = conditions;
+  }
+
+
+  public RoutesV2PatchPipelineEdgeRequest description(@javax.annotation.Nullable String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * Get description
+   * @return description
+   */
+  @javax.annotation.Nullable
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
+  }
+
 
   public RoutesV2PatchPipelineEdgeRequest disabled(@javax.annotation.Nullable Boolean disabled) {
     this.disabled = disabled;
@@ -77,6 +137,44 @@ public class RoutesV2PatchPipelineEdgeRequest {
   }
 
 
+  public RoutesV2PatchPipelineEdgeRequest name(@javax.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
+  public RoutesV2PatchPipelineEdgeRequest schemaDetectionSpec(@javax.annotation.Nullable ModelsSchemaDetection schemaDetectionSpec) {
+    this.schemaDetectionSpec = schemaDetectionSpec;
+    return this;
+  }
+
+  /**
+   * Get schemaDetectionSpec
+   * @return schemaDetectionSpec
+   */
+  @javax.annotation.Nullable
+  public ModelsSchemaDetection getSchemaDetectionSpec() {
+    return schemaDetectionSpec;
+  }
+
+  public void setSchemaDetectionSpec(@javax.annotation.Nullable ModelsSchemaDetection schemaDetectionSpec) {
+    this.schemaDetectionSpec = schemaDetectionSpec;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,19 +185,27 @@ public class RoutesV2PatchPipelineEdgeRequest {
       return false;
     }
     RoutesV2PatchPipelineEdgeRequest routesV2PatchPipelineEdgeRequest = (RoutesV2PatchPipelineEdgeRequest) o;
-    return Objects.equals(this.disabled, routesV2PatchPipelineEdgeRequest.disabled);
+    return Objects.equals(this.conditions, routesV2PatchPipelineEdgeRequest.conditions) &&
+        Objects.equals(this.description, routesV2PatchPipelineEdgeRequest.description) &&
+        Objects.equals(this.disabled, routesV2PatchPipelineEdgeRequest.disabled) &&
+        Objects.equals(this.name, routesV2PatchPipelineEdgeRequest.name) &&
+        Objects.equals(this.schemaDetectionSpec, routesV2PatchPipelineEdgeRequest.schemaDetectionSpec);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(disabled);
+    return Objects.hash(conditions, description, disabled, name, schemaDetectionSpec);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2PatchPipelineEdgeRequest {\n");
+    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    schemaDetectionSpec: ").append(toIndentedString(schemaDetectionSpec)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,7 +224,7 @@ public class RoutesV2PatchPipelineEdgeRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("disabled"));
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "description", "disabled", "name", "schema_detection_spec"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -145,6 +251,20 @@ public class RoutesV2PatchPipelineEdgeRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `conditions`
+      if (jsonObj.get("conditions") != null && !jsonObj.get("conditions").isJsonNull()) {
+        ModelsConditionEvaluatable.validateJsonElement(jsonObj.get("conditions"));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // validate the optional field `schema_detection_spec`
+      if (jsonObj.get("schema_detection_spec") != null && !jsonObj.get("schema_detection_spec").isJsonNull()) {
+        ModelsSchemaDetection.validateJsonElement(jsonObj.get("schema_detection_spec"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
