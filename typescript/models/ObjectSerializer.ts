@@ -212,7 +212,6 @@ export * from '../models/KoiAuditLogsSettingsConfig';
 export * from '../models/KvLookupOutputSettingsConfig';
 export * from '../models/KvLookupSettingsConfig';
 export * from '../models/KvlookupGetMetadataResponse';
-export * from '../models/KvlookupKVEntry';
 export * from '../models/LeafconditionsInfo';
 export * from '../models/LogAnalyticsQuerySecretsConfig';
 export * from '../models/LogAnalyticsQuerySettingsConfig';
@@ -481,6 +480,7 @@ export * from '../models/RoutesV3FieldUpdation';
 export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3GetFeatureFlagResponse';
 export * from '../models/RoutesV3ImportTransformResponse';
+export * from '../models/RoutesV3KvEntryResponse';
 export * from '../models/RoutesV3MFAStatusResponse';
 export * from '../models/RoutesV3OptimizerType';
 export * from '../models/RoutesV3PutEnrichmentRequest';
@@ -827,7 +827,6 @@ import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
-import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -1096,6 +1095,7 @@ import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse              } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
@@ -1527,7 +1527,6 @@ let typeMap: {[index: string]: any} = {
     "KvLookupOutputSettingsConfig": KvLookupOutputSettingsConfig,
     "KvLookupSettingsConfig": KvLookupSettingsConfig,
     "KvlookupGetMetadataResponse": KvlookupGetMetadataResponse,
-    "KvlookupKVEntry": KvlookupKVEntry,
     "LeafconditionsInfo": LeafconditionsInfo,
     "LogAnalyticsQuerySecretsConfig": LogAnalyticsQuerySecretsConfig,
     "LogAnalyticsQuerySettingsConfig": LogAnalyticsQuerySettingsConfig,
@@ -1778,6 +1777,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,
     "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
+    "RoutesV3KvEntryResponse": RoutesV3KvEntryResponse,
     "RoutesV3MFAStatusResponse": RoutesV3MFAStatusResponse,
     "RoutesV3OptimizerType": RoutesV3OptimizerType,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,

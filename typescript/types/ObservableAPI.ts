@@ -217,7 +217,6 @@ import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
-import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -486,6 +485,7 @@ import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
@@ -2561,7 +2561,7 @@ export class ObservableKeyValueStoreApi {
      * @param componentId Component ID
      * @param numEntries Number of sample entries to return
      */
-    public getKVLookupSampleEntriesWithHttpInfo(organizationId: string, componentId: string, numEntries: number, _options?: ConfigurationOptions): Observable<HttpInfo<Array<KvlookupKVEntry>>> {
+    public getKVLookupSampleEntriesWithHttpInfo(organizationId: string, componentId: string, numEntries: number, _options?: ConfigurationOptions): Observable<HttpInfo<Array<RoutesV3KvEntryResponse>>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.getKVLookupSampleEntries(organizationId, componentId, numEntries, _config);
@@ -2588,8 +2588,8 @@ export class ObservableKeyValueStoreApi {
      * @param componentId Component ID
      * @param numEntries Number of sample entries to return
      */
-    public getKVLookupSampleEntries(organizationId: string, componentId: string, numEntries: number, _options?: ConfigurationOptions): Observable<Array<KvlookupKVEntry>> {
-        return this.getKVLookupSampleEntriesWithHttpInfo(organizationId, componentId, numEntries, _options).pipe(map((apiResponse: HttpInfo<Array<KvlookupKVEntry>>) => apiResponse.data));
+    public getKVLookupSampleEntries(organizationId: string, componentId: string, numEntries: number, _options?: ConfigurationOptions): Observable<Array<RoutesV3KvEntryResponse>> {
+        return this.getKVLookupSampleEntriesWithHttpInfo(organizationId, componentId, numEntries, _options).pipe(map((apiResponse: HttpInfo<Array<RoutesV3KvEntryResponse>>) => apiResponse.data));
     }
 
     /**
@@ -2599,7 +2599,7 @@ export class ObservableKeyValueStoreApi {
      * @param componentId Component ID
      * @param key Key to look up
      */
-    public getValueFromKvStoreWithHttpInfo(organizationId: string, componentId: string, key: string, _options?: ConfigurationOptions): Observable<HttpInfo<KvlookupKVEntry>> {
+    public getValueFromKvStoreWithHttpInfo(organizationId: string, componentId: string, key: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3KvEntryResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.getValueFromKvStore(organizationId, componentId, key, _config);
@@ -2626,8 +2626,8 @@ export class ObservableKeyValueStoreApi {
      * @param componentId Component ID
      * @param key Key to look up
      */
-    public getValueFromKvStore(organizationId: string, componentId: string, key: string, _options?: ConfigurationOptions): Observable<KvlookupKVEntry> {
-        return this.getValueFromKvStoreWithHttpInfo(organizationId, componentId, key, _options).pipe(map((apiResponse: HttpInfo<KvlookupKVEntry>) => apiResponse.data));
+    public getValueFromKvStore(organizationId: string, componentId: string, key: string, _options?: ConfigurationOptions): Observable<RoutesV3KvEntryResponse> {
+        return this.getValueFromKvStoreWithHttpInfo(organizationId, componentId, key, _options).pipe(map((apiResponse: HttpInfo<RoutesV3KvEntryResponse>) => apiResponse.data));
     }
 
 }

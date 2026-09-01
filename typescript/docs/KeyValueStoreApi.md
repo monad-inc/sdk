@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **getKVLookupSampleEntries**
-> Array<KvlookupKVEntry> getKVLookupSampleEntries()
+> Array<RoutesV3KvEntryResponse> getKVLookupSampleEntries()
 
 Get a sample of entries from the NATS KV lookup bucket for a given organization and component
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Array<KvlookupKVEntry>**
+**Array<RoutesV3KvEntryResponse>**
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **getValueFromKvStore**
-> KvlookupKVEntry getValueFromKvStore()
+> RoutesV3KvEntryResponse getValueFromKvStore()
 
 Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**KvlookupKVEntry**
+**RoutesV3KvEntryResponse**
 
 ### Authorization
 

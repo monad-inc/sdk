@@ -15,34 +15,34 @@ import (
 	"encoding/json"
 )
 
-// checks if the KvlookupKVEntry type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &KvlookupKVEntry{}
+// checks if the RoutesV3KvEntryResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RoutesV3KvEntryResponse{}
 
-// KvlookupKVEntry struct for KvlookupKVEntry
-type KvlookupKVEntry struct {
+// RoutesV3KvEntryResponse struct for RoutesV3KvEntryResponse
+type RoutesV3KvEntryResponse struct {
 	LastUpdatedAt *string `json:"last_updated_at,omitempty"`
-	Value []int32 `json:"value,omitempty"`
+	Value map[string]interface{} `json:"value,omitempty"`
 }
 
-// NewKvlookupKVEntry instantiates a new KvlookupKVEntry object
+// NewRoutesV3KvEntryResponse instantiates a new RoutesV3KvEntryResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKvlookupKVEntry() *KvlookupKVEntry {
-	this := KvlookupKVEntry{}
+func NewRoutesV3KvEntryResponse() *RoutesV3KvEntryResponse {
+	this := RoutesV3KvEntryResponse{}
 	return &this
 }
 
-// NewKvlookupKVEntryWithDefaults instantiates a new KvlookupKVEntry object
+// NewRoutesV3KvEntryResponseWithDefaults instantiates a new RoutesV3KvEntryResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewKvlookupKVEntryWithDefaults() *KvlookupKVEntry {
-	this := KvlookupKVEntry{}
+func NewRoutesV3KvEntryResponseWithDefaults() *RoutesV3KvEntryResponse {
+	this := RoutesV3KvEntryResponse{}
 	return &this
 }
 
 // GetLastUpdatedAt returns the LastUpdatedAt field value if set, zero value otherwise.
-func (o *KvlookupKVEntry) GetLastUpdatedAt() string {
+func (o *RoutesV3KvEntryResponse) GetLastUpdatedAt() string {
 	if o == nil || IsNil(o.LastUpdatedAt) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *KvlookupKVEntry) GetLastUpdatedAt() string {
 
 // GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KvlookupKVEntry) GetLastUpdatedAtOk() (*string, bool) {
+func (o *RoutesV3KvEntryResponse) GetLastUpdatedAtOk() (*string, bool) {
 	if o == nil || IsNil(o.LastUpdatedAt) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *KvlookupKVEntry) GetLastUpdatedAtOk() (*string, bool) {
 }
 
 // HasLastUpdatedAt returns a boolean if a field has been set.
-func (o *KvlookupKVEntry) HasLastUpdatedAt() bool {
+func (o *RoutesV3KvEntryResponse) HasLastUpdatedAt() bool {
 	if o != nil && !IsNil(o.LastUpdatedAt) {
 		return true
 	}
@@ -69,14 +69,14 @@ func (o *KvlookupKVEntry) HasLastUpdatedAt() bool {
 }
 
 // SetLastUpdatedAt gets a reference to the given string and assigns it to the LastUpdatedAt field.
-func (o *KvlookupKVEntry) SetLastUpdatedAt(v string) {
+func (o *RoutesV3KvEntryResponse) SetLastUpdatedAt(v string) {
 	o.LastUpdatedAt = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *KvlookupKVEntry) GetValue() []int32 {
+func (o *RoutesV3KvEntryResponse) GetValue() map[string]interface{} {
 	if o == nil || IsNil(o.Value) {
-		var ret []int32
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Value
@@ -84,15 +84,15 @@ func (o *KvlookupKVEntry) GetValue() []int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KvlookupKVEntry) GetValueOk() ([]int32, bool) {
+func (o *RoutesV3KvEntryResponse) GetValueOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Value) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *KvlookupKVEntry) HasValue() bool {
+func (o *RoutesV3KvEntryResponse) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -100,12 +100,12 @@ func (o *KvlookupKVEntry) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given []int32 and assigns it to the Value field.
-func (o *KvlookupKVEntry) SetValue(v []int32) {
+// SetValue gets a reference to the given map[string]interface{} and assigns it to the Value field.
+func (o *RoutesV3KvEntryResponse) SetValue(v map[string]interface{}) {
 	o.Value = v
 }
 
-func (o KvlookupKVEntry) MarshalJSON() ([]byte, error) {
+func (o RoutesV3KvEntryResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -113,7 +113,7 @@ func (o KvlookupKVEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o KvlookupKVEntry) ToMap() (map[string]interface{}, error) {
+func (o RoutesV3KvEntryResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.LastUpdatedAt) {
 		toSerialize["last_updated_at"] = o.LastUpdatedAt
@@ -124,38 +124,38 @@ func (o KvlookupKVEntry) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableKvlookupKVEntry struct {
-	value *KvlookupKVEntry
+type NullableRoutesV3KvEntryResponse struct {
+	value *RoutesV3KvEntryResponse
 	isSet bool
 }
 
-func (v NullableKvlookupKVEntry) Get() *KvlookupKVEntry {
+func (v NullableRoutesV3KvEntryResponse) Get() *RoutesV3KvEntryResponse {
 	return v.value
 }
 
-func (v *NullableKvlookupKVEntry) Set(val *KvlookupKVEntry) {
+func (v *NullableRoutesV3KvEntryResponse) Set(val *RoutesV3KvEntryResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableKvlookupKVEntry) IsSet() bool {
+func (v NullableRoutesV3KvEntryResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableKvlookupKVEntry) Unset() {
+func (v *NullableRoutesV3KvEntryResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableKvlookupKVEntry(val *KvlookupKVEntry) *NullableKvlookupKVEntry {
-	return &NullableKvlookupKVEntry{value: val, isSet: true}
+func NewNullableRoutesV3KvEntryResponse(val *RoutesV3KvEntryResponse) *NullableRoutesV3KvEntryResponse {
+	return &NullableRoutesV3KvEntryResponse{value: val, isSet: true}
 }
 
-func (v NullableKvlookupKVEntry) MarshalJSON() ([]byte, error) {
+func (v NullableRoutesV3KvEntryResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableKvlookupKVEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableRoutesV3KvEntryResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

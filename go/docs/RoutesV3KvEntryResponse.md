@@ -1,78 +1,78 @@
-# KvlookupKVEntry
+# RoutesV3KvEntryResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LastUpdatedAt** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **[]int32** |  | [optional] 
+**Value** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
-### NewKvlookupKVEntry
+### NewRoutesV3KvEntryResponse
 
-`func NewKvlookupKVEntry() *KvlookupKVEntry`
+`func NewRoutesV3KvEntryResponse() *RoutesV3KvEntryResponse`
 
-NewKvlookupKVEntry instantiates a new KvlookupKVEntry object
+NewRoutesV3KvEntryResponse instantiates a new RoutesV3KvEntryResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewKvlookupKVEntryWithDefaults
+### NewRoutesV3KvEntryResponseWithDefaults
 
-`func NewKvlookupKVEntryWithDefaults() *KvlookupKVEntry`
+`func NewRoutesV3KvEntryResponseWithDefaults() *RoutesV3KvEntryResponse`
 
-NewKvlookupKVEntryWithDefaults instantiates a new KvlookupKVEntry object
+NewRoutesV3KvEntryResponseWithDefaults instantiates a new RoutesV3KvEntryResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLastUpdatedAt
 
-`func (o *KvlookupKVEntry) GetLastUpdatedAt() string`
+`func (o *RoutesV3KvEntryResponse) GetLastUpdatedAt() string`
 
 GetLastUpdatedAt returns the LastUpdatedAt field if non-nil, zero value otherwise.
 
 ### GetLastUpdatedAtOk
 
-`func (o *KvlookupKVEntry) GetLastUpdatedAtOk() (*string, bool)`
+`func (o *RoutesV3KvEntryResponse) GetLastUpdatedAtOk() (*string, bool)`
 
 GetLastUpdatedAtOk returns a tuple with the LastUpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastUpdatedAt
 
-`func (o *KvlookupKVEntry) SetLastUpdatedAt(v string)`
+`func (o *RoutesV3KvEntryResponse) SetLastUpdatedAt(v string)`
 
 SetLastUpdatedAt sets LastUpdatedAt field to given value.
 
 ### HasLastUpdatedAt
 
-`func (o *KvlookupKVEntry) HasLastUpdatedAt() bool`
+`func (o *RoutesV3KvEntryResponse) HasLastUpdatedAt() bool`
 
 HasLastUpdatedAt returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *KvlookupKVEntry) GetValue() []int32`
+`func (o *RoutesV3KvEntryResponse) GetValue() map[string]interface{}`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *KvlookupKVEntry) GetValueOk() (*[]int32, bool)`
+`func (o *RoutesV3KvEntryResponse) GetValueOk() (*map[string]interface{}, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *KvlookupKVEntry) SetValue(v []int32)`
+`func (o *RoutesV3KvEntryResponse) SetValue(v map[string]interface{})`
 
 SetValue sets Value field to given value.
 
 ### HasValue
 
-`func (o *KvlookupKVEntry) HasValue() bool`
+`func (o *RoutesV3KvEntryResponse) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
 

@@ -12,9 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
-export class KvlookupKVEntry {
+export class RoutesV3KvEntryResponse {
     'lastUpdatedAt'?: string;
-    'value'?: Array<number>;
+    'value'?: any;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,12 +30,12 @@ export class KvlookupKVEntry {
         {
             "name": "value",
             "baseName": "value",
-            "type": "Array<number>",
+            "type": "any",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return KvlookupKVEntry.attributeTypeMap;
+        return RoutesV3KvEntryResponse.attributeTypeMap;
     }
 
     public constructor() {

@@ -89,7 +89,7 @@ public class Example {
 
 <a id="getKVLookupSampleEntries"></a>
 # **getKVLookupSampleEntries**
-> List&lt;KvlookupKVEntry&gt; getKVLookupSampleEntries(organizationId, componentId, numEntries)
+> List&lt;RoutesV3KvEntryResponse&gt; getKVLookupSampleEntries(organizationId, componentId, numEntries)
 
 Get KV lookup sample entries
 
@@ -127,7 +127,7 @@ public class Example {
     String componentId = "componentId_example"; // String | Component ID
     Integer numEntries = 56; // Integer | Number of sample entries to return
     try {
-      List<KvlookupKVEntry> result = apiInstance.getKVLookupSampleEntries(organizationId, componentId, numEntries);
+      List<RoutesV3KvEntryResponse> result = apiInstance.getKVLookupSampleEntries(organizationId, componentId, numEntries);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KeyValueStoreApi#getKVLookupSampleEntries");
@@ -150,7 +150,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;KvlookupKVEntry&gt;**](KvlookupKVEntry.md)
+[**List&lt;RoutesV3KvEntryResponse&gt;**](RoutesV3KvEntryResponse.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ public class Example {
 
 <a id="getValueFromKvStore"></a>
 # **getValueFromKvStore**
-> KvlookupKVEntry getValueFromKvStore(organizationId, componentId, key)
+> RoutesV3KvEntryResponse getValueFromKvStore(organizationId, componentId, key)
 
 Get value by key from KV lookup
 
@@ -208,7 +208,7 @@ public class Example {
     String componentId = "componentId_example"; // String | Component ID
     String key = "key_example"; // String | Key to look up
     try {
-      KvlookupKVEntry result = apiInstance.getValueFromKvStore(organizationId, componentId, key);
+      RoutesV3KvEntryResponse result = apiInstance.getValueFromKvStore(organizationId, componentId, key);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KeyValueStoreApi#getValueFromKvStore");
@@ -231,7 +231,7 @@ public class Example {
 
 ### Return type
 
-[**KvlookupKVEntry**](KvlookupKVEntry.md)
+[**RoutesV3KvEntryResponse**](RoutesV3KvEntryResponse.md)
 
 ### Authorization
 

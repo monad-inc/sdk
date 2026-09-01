@@ -19,24 +19,22 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for KvlookupKVEntry
+ * Model tests for RoutesV3KvEntryResponse
  */
-public class KvlookupKVEntryTest {
-    private final KvlookupKVEntry model = new KvlookupKVEntry();
+public class RoutesV3KvEntryResponseTest {
+    private final RoutesV3KvEntryResponse model = new RoutesV3KvEntryResponse();
 
     /**
-     * Model tests for KvlookupKVEntry
+     * Model tests for RoutesV3KvEntryResponse
      */
     @Test
-    public void testKvlookupKVEntry() {
-        // TODO: test KvlookupKVEntry
+    public void testRoutesV3KvEntryResponse() {
+        // TODO: test RoutesV3KvEntryResponse
     }
 
     /**

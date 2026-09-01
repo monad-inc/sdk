@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## GetKVLookupSampleEntries
 
-> []KvlookupKVEntry GetKVLookupSampleEntries(ctx, organizationId).ComponentId(componentId).NumEntries(numEntries).Execute()
+> []RoutesV3KvEntryResponse GetKVLookupSampleEntries(ctx, organizationId).ComponentId(componentId).NumEntries(numEntries).Execute()
 
 Get KV lookup sample entries
 
@@ -114,7 +114,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `KeyValueStoreAPI.GetKVLookupSampleEntries``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetKVLookupSampleEntries`: []KvlookupKVEntry
+	// response from `GetKVLookupSampleEntries`: []RoutesV3KvEntryResponse
 	fmt.Fprintf(os.Stdout, "Response from `KeyValueStoreAPI.GetKVLookupSampleEntries`: %v\n", resp)
 }
 ```
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]KvlookupKVEntry**](KvlookupKVEntry.md)
+[**[]RoutesV3KvEntryResponse**](RoutesV3KvEntryResponse.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## GetValueFromKvStore
 
-> KvlookupKVEntry GetValueFromKvStore(ctx, organizationId).ComponentId(componentId).Key(key).Execute()
+> RoutesV3KvEntryResponse GetValueFromKvStore(ctx, organizationId).ComponentId(componentId).Key(key).Execute()
 
 Get value by key from KV lookup
 
@@ -188,7 +188,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `KeyValueStoreAPI.GetValueFromKvStore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetValueFromKvStore`: KvlookupKVEntry
+	// response from `GetValueFromKvStore`: RoutesV3KvEntryResponse
 	fmt.Fprintf(os.Stdout, "Response from `KeyValueStoreAPI.GetValueFromKvStore`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KvlookupKVEntry**](KvlookupKVEntry.md)
+[**RoutesV3KvEntryResponse**](RoutesV3KvEntryResponse.md)
 
 ### Authorization
 

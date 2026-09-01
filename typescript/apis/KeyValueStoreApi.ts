@@ -9,7 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
-import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
+import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
 
 /**
  * no description
@@ -252,13 +252,13 @@ export class KeyValueStoreApiResponseProcessor {
      * @params response Response returned by the server for a request to getKVLookupSampleEntries
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async getKVLookupSampleEntriesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<KvlookupKVEntry> >> {
+     public async getKVLookupSampleEntriesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<RoutesV3KvEntryResponse> >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<KvlookupKVEntry> = ObjectSerializer.deserialize(
+            const body: Array<RoutesV3KvEntryResponse> = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<KvlookupKVEntry>", ""
-            ) as Array<KvlookupKVEntry>;
+                "Array<RoutesV3KvEntryResponse>", ""
+            ) as Array<RoutesV3KvEntryResponse>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -278,10 +278,10 @@ export class KeyValueStoreApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<KvlookupKVEntry> = ObjectSerializer.deserialize(
+            const body: Array<RoutesV3KvEntryResponse> = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<KvlookupKVEntry>", ""
-            ) as Array<KvlookupKVEntry>;
+                "Array<RoutesV3KvEntryResponse>", ""
+            ) as Array<RoutesV3KvEntryResponse>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -295,13 +295,13 @@ export class KeyValueStoreApiResponseProcessor {
      * @params response Response returned by the server for a request to getValueFromKvStore
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async getValueFromKvStoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<KvlookupKVEntry >> {
+     public async getValueFromKvStoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3KvEntryResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: KvlookupKVEntry = ObjectSerializer.deserialize(
+            const body: RoutesV3KvEntryResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "KvlookupKVEntry", ""
-            ) as KvlookupKVEntry;
+                "RoutesV3KvEntryResponse", ""
+            ) as RoutesV3KvEntryResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
@@ -314,10 +314,10 @@ export class KeyValueStoreApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: KvlookupKVEntry = ObjectSerializer.deserialize(
+            const body: RoutesV3KvEntryResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "KvlookupKVEntry", ""
-            ) as KvlookupKVEntry;
+                "RoutesV3KvEntryResponse", ""
+            ) as RoutesV3KvEntryResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

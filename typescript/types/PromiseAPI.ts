@@ -216,7 +216,6 @@ import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
-import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -485,6 +484,7 @@ import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
@@ -2019,7 +2019,7 @@ export class PromiseKeyValueStoreApi {
      * @param componentId Component ID
      * @param numEntries Number of sample entries to return
      */
-    public getKVLookupSampleEntriesWithHttpInfo(organizationId: string, componentId: string, numEntries: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<KvlookupKVEntry>>> {
+    public getKVLookupSampleEntriesWithHttpInfo(organizationId: string, componentId: string, numEntries: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<Array<RoutesV3KvEntryResponse>>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getKVLookupSampleEntriesWithHttpInfo(organizationId, componentId, numEntries, observableOptions);
         return result.toPromise();
@@ -2032,7 +2032,7 @@ export class PromiseKeyValueStoreApi {
      * @param componentId Component ID
      * @param numEntries Number of sample entries to return
      */
-    public getKVLookupSampleEntries(organizationId: string, componentId: string, numEntries: number, _options?: PromiseConfigurationOptions): Promise<Array<KvlookupKVEntry>> {
+    public getKVLookupSampleEntries(organizationId: string, componentId: string, numEntries: number, _options?: PromiseConfigurationOptions): Promise<Array<RoutesV3KvEntryResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getKVLookupSampleEntries(organizationId, componentId, numEntries, observableOptions);
         return result.toPromise();
@@ -2045,7 +2045,7 @@ export class PromiseKeyValueStoreApi {
      * @param componentId Component ID
      * @param key Key to look up
      */
-    public getValueFromKvStoreWithHttpInfo(organizationId: string, componentId: string, key: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<KvlookupKVEntry>> {
+    public getValueFromKvStoreWithHttpInfo(organizationId: string, componentId: string, key: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3KvEntryResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getValueFromKvStoreWithHttpInfo(organizationId, componentId, key, observableOptions);
         return result.toPromise();
@@ -2058,7 +2058,7 @@ export class PromiseKeyValueStoreApi {
      * @param componentId Component ID
      * @param key Key to look up
      */
-    public getValueFromKvStore(organizationId: string, componentId: string, key: string, _options?: PromiseConfigurationOptions): Promise<KvlookupKVEntry> {
+    public getValueFromKvStore(organizationId: string, componentId: string, key: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3KvEntryResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getValueFromKvStore(organizationId, componentId, key, observableOptions);
         return result.toPromise();

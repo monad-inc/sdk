@@ -4043,21 +4043,6 @@
                 },
                 "type": "object"
             },
-            "kvlookup.KVEntry": {
-                "properties": {
-                    "last_updated_at": {
-                        "type": "string"
-                    },
-                    "value": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    }
-                },
-                "type": "object"
-            },
             "leafconditions.Info": {
                 "properties": {
                     "config_meta": {},
@@ -9991,6 +9976,17 @@
                     },
                     "type": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.kvEntryResponse": {
+                "properties": {
+                    "last_updated_at": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "object"
                     }
                 },
                 "type": "object"
@@ -25029,7 +25025,7 @@
                             "application/json": {
                                 "schema": {
                                     "items": {
-                                        "$ref": "#/components/schemas/kvlookup.KVEntry"
+                                        "$ref": "#/components/schemas/routesV3.kvEntryResponse"
                                     },
                                     "type": "array"
                                 }
@@ -25113,7 +25109,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/kvlookup.KVEntry"
+                                    "$ref": "#/components/schemas/routesV3.kvEntryResponse"
                                 }
                             }
                         },

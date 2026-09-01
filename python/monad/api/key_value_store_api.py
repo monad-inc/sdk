@@ -20,7 +20,7 @@ from pydantic import Field, StrictInt, StrictStr
 from typing import List
 from typing_extensions import Annotated
 from monad.models.kvlookup_get_metadata_response import KvlookupGetMetadataResponse
-from monad.models.kvlookup_kv_entry import KvlookupKVEntry
+from monad.models.routes_v3_kv_entry_response import RoutesV3KvEntryResponse
 
 from monad.api_client import ApiClient, RequestSerialized
 from monad.api_response import ApiResponse
@@ -340,7 +340,7 @@ class KeyValueStoreApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[KvlookupKVEntry]:
+    ) -> List[RoutesV3KvEntryResponse]:
         """Get KV lookup sample entries
 
         Get a sample of entries from the NATS KV lookup bucket for a given organization and component
@@ -384,7 +384,7 @@ class KeyValueStoreApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[KvlookupKVEntry]",
+            '200': "List[RoutesV3KvEntryResponse]",
             '400': "str",
             '500': "str",
         }
@@ -417,7 +417,7 @@ class KeyValueStoreApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[KvlookupKVEntry]]:
+    ) -> ApiResponse[List[RoutesV3KvEntryResponse]]:
         """Get KV lookup sample entries
 
         Get a sample of entries from the NATS KV lookup bucket for a given organization and component
@@ -461,7 +461,7 @@ class KeyValueStoreApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[KvlookupKVEntry]",
+            '200': "List[RoutesV3KvEntryResponse]",
             '400': "str",
             '500': "str",
         }
@@ -538,7 +538,7 @@ class KeyValueStoreApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[KvlookupKVEntry]",
+            '200': "List[RoutesV3KvEntryResponse]",
             '400': "str",
             '500': "str",
         }
@@ -642,7 +642,7 @@ class KeyValueStoreApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> KvlookupKVEntry:
+    ) -> RoutesV3KvEntryResponse:
         """Get value by key from KV lookup
 
         Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
@@ -686,7 +686,7 @@ class KeyValueStoreApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "KvlookupKVEntry",
+            '200': "RoutesV3KvEntryResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -718,7 +718,7 @@ class KeyValueStoreApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[KvlookupKVEntry]:
+    ) -> ApiResponse[RoutesV3KvEntryResponse]:
         """Get value by key from KV lookup
 
         Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
@@ -762,7 +762,7 @@ class KeyValueStoreApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "KvlookupKVEntry",
+            '200': "RoutesV3KvEntryResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -838,7 +838,7 @@ class KeyValueStoreApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "KvlookupKVEntry",
+            '200': "RoutesV3KvEntryResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

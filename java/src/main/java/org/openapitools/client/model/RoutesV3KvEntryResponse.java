@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,10 +46,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * KvlookupKVEntry
+ * RoutesV3KvEntryResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class KvlookupKVEntry {
+public class RoutesV3KvEntryResponse {
   public static final String SERIALIZED_NAME_LAST_UPDATED_AT = "last_updated_at";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATED_AT)
   @javax.annotation.Nullable
@@ -60,12 +58,12 @@ public class KvlookupKVEntry {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
   @javax.annotation.Nullable
-  private List<Integer> value = new ArrayList<>();
+  private Object value;
 
-  public KvlookupKVEntry() {
+  public RoutesV3KvEntryResponse() {
   }
 
-  public KvlookupKVEntry lastUpdatedAt(@javax.annotation.Nullable String lastUpdatedAt) {
+  public RoutesV3KvEntryResponse lastUpdatedAt(@javax.annotation.Nullable String lastUpdatedAt) {
     this.lastUpdatedAt = lastUpdatedAt;
     return this;
   }
@@ -84,16 +82,8 @@ public class KvlookupKVEntry {
   }
 
 
-  public KvlookupKVEntry value(@javax.annotation.Nullable List<Integer> value) {
+  public RoutesV3KvEntryResponse value(@javax.annotation.Nullable Object value) {
     this.value = value;
-    return this;
-  }
-
-  public KvlookupKVEntry addValueItem(Integer valueItem) {
-    if (this.value == null) {
-      this.value = new ArrayList<>();
-    }
-    this.value.add(valueItem);
     return this;
   }
 
@@ -102,11 +92,11 @@ public class KvlookupKVEntry {
    * @return value
    */
   @javax.annotation.Nullable
-  public List<Integer> getValue() {
+  public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable List<Integer> value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 
@@ -120,9 +110,9 @@ public class KvlookupKVEntry {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    KvlookupKVEntry kvlookupKVEntry = (KvlookupKVEntry) o;
-    return Objects.equals(this.lastUpdatedAt, kvlookupKVEntry.lastUpdatedAt) &&
-        Objects.equals(this.value, kvlookupKVEntry.value);
+    RoutesV3KvEntryResponse routesV3KvEntryResponse = (RoutesV3KvEntryResponse) o;
+    return Objects.equals(this.lastUpdatedAt, routesV3KvEntryResponse.lastUpdatedAt) &&
+        Objects.equals(this.value, routesV3KvEntryResponse.value);
   }
 
   @Override
@@ -133,7 +123,7 @@ public class KvlookupKVEntry {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class KvlookupKVEntry {\n");
+    sb.append("class RoutesV3KvEntryResponse {\n");
     sb.append("    lastUpdatedAt: ").append(toIndentedString(lastUpdatedAt)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
@@ -164,29 +154,25 @@ public class KvlookupKVEntry {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to KvlookupKVEntry
+   * @throws IOException if the JSON Element is invalid with respect to RoutesV3KvEntryResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!KvlookupKVEntry.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in KvlookupKVEntry is not found in the empty JSON string", KvlookupKVEntry.openapiRequiredFields.toString()));
+        if (!RoutesV3KvEntryResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV3KvEntryResponse is not found in the empty JSON string", RoutesV3KvEntryResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!KvlookupKVEntry.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `KvlookupKVEntry` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RoutesV3KvEntryResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3KvEntryResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("last_updated_at") != null && !jsonObj.get("last_updated_at").isJsonNull()) && !jsonObj.get("last_updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_updated_at").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull() && !jsonObj.get("value").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be an array in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
   }
 
@@ -194,22 +180,22 @@ public class KvlookupKVEntry {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!KvlookupKVEntry.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'KvlookupKVEntry' and its subtypes
+       if (!RoutesV3KvEntryResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RoutesV3KvEntryResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<KvlookupKVEntry> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(KvlookupKVEntry.class));
+       final TypeAdapter<RoutesV3KvEntryResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RoutesV3KvEntryResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<KvlookupKVEntry>() {
+       return (TypeAdapter<T>) new TypeAdapter<RoutesV3KvEntryResponse>() {
            @Override
-           public void write(JsonWriter out, KvlookupKVEntry value) throws IOException {
+           public void write(JsonWriter out, RoutesV3KvEntryResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public KvlookupKVEntry read(JsonReader in) throws IOException {
+           public RoutesV3KvEntryResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -220,18 +206,18 @@ public class KvlookupKVEntry {
   }
 
   /**
-   * Create an instance of KvlookupKVEntry given an JSON string
+   * Create an instance of RoutesV3KvEntryResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of KvlookupKVEntry
-   * @throws IOException if the JSON string is invalid with respect to KvlookupKVEntry
+   * @return An instance of RoutesV3KvEntryResponse
+   * @throws IOException if the JSON string is invalid with respect to RoutesV3KvEntryResponse
    */
-  public static KvlookupKVEntry fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, KvlookupKVEntry.class);
+  public static RoutesV3KvEntryResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RoutesV3KvEntryResponse.class);
   }
 
   /**
-   * Convert an instance of KvlookupKVEntry to an JSON string
+   * Convert an instance of RoutesV3KvEntryResponse to an JSON string
    *
    * @return JSON string
    */

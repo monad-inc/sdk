@@ -196,7 +196,7 @@ func (r ApiGetKVLookupSampleEntriesRequest) NumEntries(numEntries int32) ApiGetK
 	return r
 }
 
-func (r ApiGetKVLookupSampleEntriesRequest) Execute() ([]KvlookupKVEntry, *http.Response, error) {
+func (r ApiGetKVLookupSampleEntriesRequest) Execute() ([]RoutesV3KvEntryResponse, *http.Response, error) {
 	return r.ApiService.GetKVLookupSampleEntriesExecute(r)
 }
 
@@ -218,13 +218,13 @@ func (a *KeyValueStoreAPIService) GetKVLookupSampleEntries(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return []KvlookupKVEntry
-func (a *KeyValueStoreAPIService) GetKVLookupSampleEntriesExecute(r ApiGetKVLookupSampleEntriesRequest) ([]KvlookupKVEntry, *http.Response, error) {
+//  @return []RoutesV3KvEntryResponse
+func (a *KeyValueStoreAPIService) GetKVLookupSampleEntriesExecute(r ApiGetKVLookupSampleEntriesRequest) ([]RoutesV3KvEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []KvlookupKVEntry
+		localVarReturnValue  []RoutesV3KvEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyValueStoreAPIService.GetKVLookupSampleEntries")
@@ -370,7 +370,7 @@ func (r ApiGetValueFromKvStoreRequest) Key(key string) ApiGetValueFromKvStoreReq
 	return r
 }
 
-func (r ApiGetValueFromKvStoreRequest) Execute() (*KvlookupKVEntry, *http.Response, error) {
+func (r ApiGetValueFromKvStoreRequest) Execute() (*RoutesV3KvEntryResponse, *http.Response, error) {
 	return r.ApiService.GetValueFromKvStoreExecute(r)
 }
 
@@ -392,13 +392,13 @@ func (a *KeyValueStoreAPIService) GetValueFromKvStore(ctx context.Context, organ
 }
 
 // Execute executes the request
-//  @return KvlookupKVEntry
-func (a *KeyValueStoreAPIService) GetValueFromKvStoreExecute(r ApiGetValueFromKvStoreRequest) (*KvlookupKVEntry, *http.Response, error) {
+//  @return RoutesV3KvEntryResponse
+func (a *KeyValueStoreAPIService) GetValueFromKvStoreExecute(r ApiGetValueFromKvStoreRequest) (*RoutesV3KvEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *KvlookupKVEntry
+		localVarReturnValue  *RoutesV3KvEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyValueStoreAPIService.GetValueFromKvStore")

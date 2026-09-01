@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_kv_lookup_sample_entries**
-> List[KvlookupKVEntry] get_kv_lookup_sample_entries(organization_id, component_id, num_entries)
+> List[RoutesV3KvEntryResponse] get_kv_lookup_sample_entries(organization_id, component_id, num_entries)
 
 Get KV lookup sample entries
 
@@ -112,7 +112,7 @@ Get a sample of entries from the NATS KV lookup bucket for a given organization 
 
 ```python
 import monad
-from monad.models.kvlookup_kv_entry import KvlookupKVEntry
+from monad.models.routes_v3_kv_entry_response import RoutesV3KvEntryResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[KvlookupKVEntry]**](KvlookupKVEntry.md)
+[**List[RoutesV3KvEntryResponse]**](RoutesV3KvEntryResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_value_from_kv_store**
-> KvlookupKVEntry get_value_from_kv_store(organization_id, component_id, key)
+> RoutesV3KvEntryResponse get_value_from_kv_store(organization_id, component_id, key)
 
 Get value by key from KV lookup
 
@@ -204,7 +204,7 @@ Get the value associated with a specific key from the NATS KV lookup bucket for 
 
 ```python
 import monad
-from monad.models.kvlookup_kv_entry import KvlookupKVEntry
+from monad.models.routes_v3_kv_entry_response import RoutesV3KvEntryResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KvlookupKVEntry**](KvlookupKVEntry.md)
+[**RoutesV3KvEntryResponse**](RoutesV3KvEntryResponse.md)
 
 ### Authorization
 

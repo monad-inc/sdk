@@ -13,79 +13,41 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import pprint
-import re  # noqa: F401
-import json
+import unittest
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from typing import Optional, Set
-from typing_extensions import Self
-from pydantic_core import to_jsonable_python
+from monad.models.routes_v3_kv_entry_response import RoutesV3KvEntryResponse
 
-class KvlookupKVEntry(BaseModel):
-    """
-    KvlookupKVEntry
-    """ # noqa: E501
-    last_updated_at: Optional[StrictStr] = None
-    value: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["last_updated_at", "value"]
+class TestRoutesV3KvEntryResponse(unittest.TestCase):
+    """RoutesV3KvEntryResponse unit test stubs"""
 
-    model_config = ConfigDict(
-        validate_by_name=True,
-        validate_by_alias=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
+    def setUp(self):
+        pass
 
+    def tearDown(self):
+        pass
 
-    def to_str(self) -> str:
-        """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
-
-    def to_json(self) -> str:
-        """Returns the JSON representation of the model using alias"""
-        return json.dumps(to_jsonable_python(self.to_dict()))
-
-    @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of KvlookupKVEntry from a JSON string"""
-        return cls.from_dict(json.loads(json_str))
-
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
+    def make_instance(self, include_optional) -> RoutesV3KvEntryResponse:
+        """Test RoutesV3KvEntryResponse
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `RoutesV3KvEntryResponse`
         """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
+        model = RoutesV3KvEntryResponse()
+        if include_optional:
+            return RoutesV3KvEntryResponse(
+                last_updated_at = '',
+                value = None
+            )
+        else:
+            return RoutesV3KvEntryResponse(
         )
-        return _dict
+        """
 
-    @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of KvlookupKVEntry from a dict"""
-        if obj is None:
-            return None
+    def testRoutesV3KvEntryResponse(self):
+        """Test RoutesV3KvEntryResponse"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
 
-        if not isinstance(obj, dict):
-            return cls.model_validate(obj)
-
-        _obj = cls.model_validate({
-            "last_updated_at": obj.get("last_updated_at"),
-            "value": obj.get("value")
-        })
-        return _obj
-
-
+if __name__ == '__main__':
+    unittest.main()

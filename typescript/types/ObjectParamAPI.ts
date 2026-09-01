@@ -216,7 +216,6 @@ import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
 import { KvLookupSettingsConfig } from '../models/KvLookupSettingsConfig';
 import { KvlookupGetMetadataResponse } from '../models/KvlookupGetMetadataResponse';
-import { KvlookupKVEntry } from '../models/KvlookupKVEntry';
 import { LeafconditionsInfo } from '../models/LeafconditionsInfo';
 import { LogAnalyticsQuerySecretsConfig } from '../models/LogAnalyticsQuerySecretsConfig';
 import { LogAnalyticsQuerySettingsConfig } from '../models/LogAnalyticsQuerySettingsConfig';
@@ -485,6 +484,7 @@ import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
+import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
@@ -2487,7 +2487,7 @@ export class ObjectKeyValueStoreApi {
      * Get KV lookup sample entries
      * @param param the request object
      */
-    public getKVLookupSampleEntriesWithHttpInfo(param: KeyValueStoreApiGetKVLookupSampleEntriesRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<KvlookupKVEntry>>> {
+    public getKVLookupSampleEntriesWithHttpInfo(param: KeyValueStoreApiGetKVLookupSampleEntriesRequest, options?: ConfigurationOptions): Promise<HttpInfo<Array<RoutesV3KvEntryResponse>>> {
         return this.api.getKVLookupSampleEntriesWithHttpInfo(param.organizationId, param.componentId, param.numEntries,  options).toPromise();
     }
 
@@ -2496,7 +2496,7 @@ export class ObjectKeyValueStoreApi {
      * Get KV lookup sample entries
      * @param param the request object
      */
-    public getKVLookupSampleEntries(param: KeyValueStoreApiGetKVLookupSampleEntriesRequest, options?: ConfigurationOptions): Promise<Array<KvlookupKVEntry>> {
+    public getKVLookupSampleEntries(param: KeyValueStoreApiGetKVLookupSampleEntriesRequest, options?: ConfigurationOptions): Promise<Array<RoutesV3KvEntryResponse>> {
         return this.api.getKVLookupSampleEntries(param.organizationId, param.componentId, param.numEntries,  options).toPromise();
     }
 
@@ -2505,7 +2505,7 @@ export class ObjectKeyValueStoreApi {
      * Get value by key from KV lookup
      * @param param the request object
      */
-    public getValueFromKvStoreWithHttpInfo(param: KeyValueStoreApiGetValueFromKvStoreRequest, options?: ConfigurationOptions): Promise<HttpInfo<KvlookupKVEntry>> {
+    public getValueFromKvStoreWithHttpInfo(param: KeyValueStoreApiGetValueFromKvStoreRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3KvEntryResponse>> {
         return this.api.getValueFromKvStoreWithHttpInfo(param.organizationId, param.componentId, param.key,  options).toPromise();
     }
 
@@ -2514,7 +2514,7 @@ export class ObjectKeyValueStoreApi {
      * Get value by key from KV lookup
      * @param param the request object
      */
-    public getValueFromKvStore(param: KeyValueStoreApiGetValueFromKvStoreRequest, options?: ConfigurationOptions): Promise<KvlookupKVEntry> {
+    public getValueFromKvStore(param: KeyValueStoreApiGetValueFromKvStoreRequest, options?: ConfigurationOptions): Promise<RoutesV3KvEntryResponse> {
         return this.api.getValueFromKvStore(param.organizationId, param.componentId, param.key,  options).toPromise();
     }
 

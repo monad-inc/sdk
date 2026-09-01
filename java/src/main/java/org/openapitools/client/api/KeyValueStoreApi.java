@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.KvlookupGetMetadataResponse;
-import org.openapitools.client.model.KvlookupKVEntry;
+import org.openapitools.client.model.RoutesV3KvEntryResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -314,7 +314,7 @@ public class KeyValueStoreApi {
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param numEntries Number of sample entries to return (required)
-     * @return List&lt;KvlookupKVEntry&gt;
+     * @return List&lt;RoutesV3KvEntryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -325,8 +325,8 @@ public class KeyValueStoreApi {
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
-    public List<KvlookupKVEntry> getKVLookupSampleEntries(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull Integer numEntries) throws ApiException {
-        ApiResponse<List<KvlookupKVEntry>> localVarResp = getKVLookupSampleEntriesWithHttpInfo(organizationId, componentId, numEntries);
+    public List<RoutesV3KvEntryResponse> getKVLookupSampleEntries(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull Integer numEntries) throws ApiException {
+        ApiResponse<List<RoutesV3KvEntryResponse>> localVarResp = getKVLookupSampleEntriesWithHttpInfo(organizationId, componentId, numEntries);
         return localVarResp.getData();
     }
 
@@ -336,7 +336,7 @@ public class KeyValueStoreApi {
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param numEntries Number of sample entries to return (required)
-     * @return ApiResponse&lt;List&lt;KvlookupKVEntry&gt;&gt;
+     * @return ApiResponse&lt;List&lt;RoutesV3KvEntryResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -347,9 +347,9 @@ public class KeyValueStoreApi {
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<KvlookupKVEntry>> getKVLookupSampleEntriesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull Integer numEntries) throws ApiException {
+    public ApiResponse<List<RoutesV3KvEntryResponse>> getKVLookupSampleEntriesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull Integer numEntries) throws ApiException {
         okhttp3.Call localVarCall = getKVLookupSampleEntriesValidateBeforeCall(organizationId, componentId, numEntries, null);
-        Type localVarReturnType = new TypeToken<List<KvlookupKVEntry>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<RoutesV3KvEntryResponse>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -371,10 +371,10 @@ public class KeyValueStoreApi {
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getKVLookupSampleEntriesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull Integer numEntries, final ApiCallback<List<KvlookupKVEntry>> _callback) throws ApiException {
+    public okhttp3.Call getKVLookupSampleEntriesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull Integer numEntries, final ApiCallback<List<RoutesV3KvEntryResponse>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getKVLookupSampleEntriesValidateBeforeCall(organizationId, componentId, numEntries, _callback);
-        Type localVarReturnType = new TypeToken<List<KvlookupKVEntry>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<RoutesV3KvEntryResponse>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -474,7 +474,7 @@ public class KeyValueStoreApi {
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param key Key to look up (required)
-     * @return KvlookupKVEntry
+     * @return RoutesV3KvEntryResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -484,8 +484,8 @@ public class KeyValueStoreApi {
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */
-    public KvlookupKVEntry getValueFromKvStore(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull String key) throws ApiException {
-        ApiResponse<KvlookupKVEntry> localVarResp = getValueFromKvStoreWithHttpInfo(organizationId, componentId, key);
+    public RoutesV3KvEntryResponse getValueFromKvStore(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull String key) throws ApiException {
+        ApiResponse<RoutesV3KvEntryResponse> localVarResp = getValueFromKvStoreWithHttpInfo(organizationId, componentId, key);
         return localVarResp.getData();
     }
 
@@ -495,7 +495,7 @@ public class KeyValueStoreApi {
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param key Key to look up (required)
-     * @return ApiResponse&lt;KvlookupKVEntry&gt;
+     * @return ApiResponse&lt;RoutesV3KvEntryResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -505,9 +505,9 @@ public class KeyValueStoreApi {
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<KvlookupKVEntry> getValueFromKvStoreWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull String key) throws ApiException {
+    public ApiResponse<RoutesV3KvEntryResponse> getValueFromKvStoreWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull String key) throws ApiException {
         okhttp3.Call localVarCall = getValueFromKvStoreValidateBeforeCall(organizationId, componentId, key, null);
-        Type localVarReturnType = new TypeToken<KvlookupKVEntry>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3KvEntryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -528,10 +528,10 @@ public class KeyValueStoreApi {
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getValueFromKvStoreAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull String key, final ApiCallback<KvlookupKVEntry> _callback) throws ApiException {
+    public okhttp3.Call getValueFromKvStoreAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String componentId, @javax.annotation.Nonnull String key, final ApiCallback<RoutesV3KvEntryResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValueFromKvStoreValidateBeforeCall(organizationId, componentId, key, _callback);
-        Type localVarReturnType = new TypeToken<KvlookupKVEntry>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3KvEntryResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
