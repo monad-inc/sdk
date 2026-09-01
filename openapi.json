@@ -9600,6 +9600,23 @@
                 },
                 "type": "object"
             },
+            "routesV3.CreateTagRequest": {
+                "properties": {
+                    "color": {
+                        "description": "Color is an optional hex color (e.g. \"#1a2b3c\").",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description is an optional free-text description.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the tag: lowercase letters, numbers, hyphens, underscores; \u003c=128 chars.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routesV3.EnrichmentSandboxRequest": {
                 "properties": {
                     "config": {
@@ -9933,6 +9950,41 @@
                 },
                 "type": "object"
             },
+            "routesV3.TagListResponse": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "tags": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV3.TagResponse"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.TagResponse": {
+                "properties": {
+                    "color": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routesV3.TestEnrichmentConnectionRequest": {
                 "properties": {
                     "config": {
@@ -10080,6 +10132,20 @@
                         "type": "string"
                     },
                     "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.UpdateTagRequest": {
+                "properties": {
+                    "color": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "name": {
                         "type": "string"
                     }
                 },
@@ -26959,6 +27025,341 @@
                 "summary": "Schema tracking summary",
                 "tags": [
                     "Schema Detection"
+                ]
+            }
+        },
+        "/v3/{organization_id}/tags": {
+            "get": {
+                "description": "List the organization's customer tags, optionally prefix-filtered by name.",
+                "operationId": "ListTags",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Prefix match on tag name",
+                        "in": "query",
+                        "name": "search",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Limit",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Offset",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.TagListResponse"
+                                }
+                            }
+                        },
+                        "description": "List of tags"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "List tags",
+                "tags": [
+                    "Tags"
+                ],
+                "x-required-permissions": [
+                    "tag:read"
+                ]
+            },
+            "post": {
+                "description": "Create a customer tag. managed_by is always \"customer\".",
+                "operationId": "CreateTag",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV3.CreateTagRequest",
+                                        "description": "Request body for creating a tag",
+                                        "summary": "createTagRequest"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Request body for creating a tag",
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.TagResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag created"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request body"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A tag with this name already exists"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Create a tag",
+                "tags": [
+                    "Tags"
+                ],
+                "x-required-permissions": [
+                    "tag:write"
+                ]
+            }
+        },
+        "/v3/{organization_id}/tags/{tag_id}": {
+            "delete": {
+                "description": "Delete a customer tag. Reserved tags return 404. Taggings cascade.",
+                "operationId": "DeleteTag",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Tag ID",
+                        "in": "path",
+                        "name": "tag_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Tag deleted"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Delete a tag",
+                "tags": [
+                    "Tags"
+                ],
+                "x-required-permissions": [
+                    "tag:delete"
+                ]
+            },
+            "patch": {
+                "description": "Partially update a customer tag. Reserved tags return 404.",
+                "operationId": "UpdateTag",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Tag ID",
+                        "in": "path",
+                        "name": "tag_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "$ref": "#/components/schemas/routesV3.UpdateTagRequest",
+                                        "description": "Request body for updating a tag",
+                                        "summary": "updateTagRequest"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Request body for updating a tag",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.TagResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag updated"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid request body"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag not found"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A tag with this name already exists"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Update a tag",
+                "tags": [
+                    "Tags"
+                ],
+                "x-required-permissions": [
+                    "tag:write"
                 ]
             }
         },

@@ -114,6 +114,7 @@ import { CreateResourceSharesRequest } from '../models/CreateResourceSharesReque
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
 import { CreateSessionRequest } from '../models/CreateSessionRequest';
+import { CreateTagRequest } from '../models/CreateTagRequest';
 import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
 import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -483,6 +484,7 @@ import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateCon
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionRequest';
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
+import { RoutesV3CreateTagRequest } from '../models/RoutesV3CreateTagRequest';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
@@ -503,6 +505,8 @@ import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedReso
 import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedResourceWithMetadata';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
+import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
@@ -513,6 +517,7 @@ import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3Update
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { RoutesV3UpdateTagRequest } from '../models/RoutesV3UpdateTagRequest';
 import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
@@ -594,6 +599,7 @@ import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
+import { UpdateTagRequest } from '../models/UpdateTagRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -7650,6 +7656,174 @@ export class ObservableSessionsApi {
      */
     public createSession(createSessionRequest?: CreateSessionRequest, _options?: ConfigurationOptions): Observable<RoutesV3CreateSessionResponse> {
         return this.createSessionWithHttpInfo(createSessionRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3CreateSessionResponse>) => apiResponse.data));
+    }
+
+}
+
+import { TagsApiRequestFactory, TagsApiResponseProcessor} from "../apis/TagsApi";
+export class ObservableTagsApi {
+    private requestFactory: TagsApiRequestFactory;
+    private responseProcessor: TagsApiResponseProcessor;
+    private configuration: Configuration;
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: TagsApiRequestFactory,
+        responseProcessor?: TagsApiResponseProcessor
+    ) {
+        this.configuration = configuration;
+        this.requestFactory = requestFactory || new TagsApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new TagsApiResponseProcessor();
+    }
+
+    /**
+     * Create a customer tag. managed_by is always \"customer\".
+     * Create a tag
+     * @param organizationId Organization ID
+     * @param createTagRequest Request body for creating a tag
+     */
+    public createTagWithHttpInfo(organizationId: string, createTagRequest: CreateTagRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.createTag(organizationId, createTagRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.createTagWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Create a customer tag. managed_by is always \"customer\".
+     * Create a tag
+     * @param organizationId Organization ID
+     * @param createTagRequest Request body for creating a tag
+     */
+    public createTag(organizationId: string, createTagRequest: CreateTagRequest, _options?: ConfigurationOptions): Observable<RoutesV3TagResponse> {
+        return this.createTagWithHttpInfo(organizationId, createTagRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a tag
+     * @param organizationId Organization ID
+     * @param tagId Tag ID
+     */
+    public deleteTagWithHttpInfo(organizationId: string, tagId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.deleteTag(organizationId, tagId, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.deleteTagWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a tag
+     * @param organizationId Organization ID
+     * @param tagId Tag ID
+     */
+    public deleteTag(organizationId: string, tagId: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.deleteTagWithHttpInfo(organizationId, tagId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * List the organization\'s customer tags, optionally prefix-filtered by name.
+     * List tags
+     * @param organizationId Organization ID
+     * @param [search] Prefix match on tag name
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public listTagsWithHttpInfo(organizationId: string, search?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagListResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listTags(organizationId, search, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listTagsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List the organization\'s customer tags, optionally prefix-filtered by name.
+     * List tags
+     * @param organizationId Organization ID
+     * @param [search] Prefix match on tag name
+     * @param [limit] Limit
+     * @param [offset] Offset
+     */
+    public listTags(organizationId: string, search?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV3TagListResponse> {
+        return this.listTagsWithHttpInfo(organizationId, search, limit, offset, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagListResponse>) => apiResponse.data));
+    }
+
+    /**
+     * Partially update a customer tag. Reserved tags return 404.
+     * Update a tag
+     * @param organizationId Organization ID
+     * @param tagId Tag ID
+     * @param updateTagRequest Request body for updating a tag
+     */
+    public updateTagWithHttpInfo(organizationId: string, tagId: string, updateTagRequest: UpdateTagRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.updateTag(organizationId, tagId, updateTagRequest, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.updateTagWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Partially update a customer tag. Reserved tags return 404.
+     * Update a tag
+     * @param organizationId Organization ID
+     * @param tagId Tag ID
+     * @param updateTagRequest Request body for updating a tag
+     */
+    public updateTag(organizationId: string, tagId: string, updateTagRequest: UpdateTagRequest, _options?: ConfigurationOptions): Observable<RoutesV3TagResponse> {
+        return this.updateTagWithHttpInfo(organizationId, tagId, updateTagRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResponse>) => apiResponse.data));
     }
 
 }

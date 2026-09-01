@@ -309,6 +309,10 @@ Class | Method | HTTP request | Description
 *SecretsAPI* | [**ListSecrets**](docs/SecretsAPI.md#listsecrets) | **Get** /v2/{organization_id}/secrets | List secrets with components
 *SecretsAPI* | [**UpdateSecret**](docs/SecretsAPI.md#updatesecret) | **Patch** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *SessionsAPI* | [**CreateSession**](docs/SessionsAPI.md#createsession) | **Post** /v3/sessions | Mint a short-lived API token, optionally scoped to a single org
+*TagsAPI* | [**CreateTag**](docs/TagsAPI.md#createtag) | **Post** /v3/{organization_id}/tags | Create a tag
+*TagsAPI* | [**DeleteTag**](docs/TagsAPI.md#deletetag) | **Delete** /v3/{organization_id}/tags/{tag_id} | Delete a tag
+*TagsAPI* | [**ListTags**](docs/TagsAPI.md#listtags) | **Get** /v3/{organization_id}/tags | List tags
+*TagsAPI* | [**UpdateTag**](docs/TagsAPI.md#updatetag) | **Patch** /v3/{organization_id}/tags/{tag_id} | Update a tag
 *TransformSandboxAPI* | [**ApplyTransformation**](docs/TransformSandboxAPI.md#applytransformation) | **Post** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 *TransformSandboxAPI* | [**ApplyTransformationV2**](docs/TransformSandboxAPI.md#applytransformationv2) | **Post** /v2/sandbox/transform | Apply transformation to record
 *TransformSandboxAPI* | [**GenerateRecord**](docs/TransformSandboxAPI.md#generaterecord) | **Post** /v2/sandbox/template | Generate sample record
@@ -442,6 +446,7 @@ Class | Method | HTTP request | Description
  - [CreateRoleRequest](docs/CreateRoleRequest.md)
  - [CreateSecretRequest](docs/CreateSecretRequest.md)
  - [CreateSessionRequest](docs/CreateSessionRequest.md)
+ - [CreateTagRequest](docs/CreateTagRequest.md)
  - [CreateTransformRecommendationRequest](docs/CreateTransformRecommendationRequest.md)
  - [CreateTransformRequest](docs/CreateTransformRequest.md)
  - [CriblHttpSecretsConfig](docs/CriblHttpSecretsConfig.md)
@@ -811,6 +816,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3CreateEnrichmentRequest](docs/RoutesV3CreateEnrichmentRequest.md)
  - [RoutesV3CreateSessionRequest](docs/RoutesV3CreateSessionRequest.md)
  - [RoutesV3CreateSessionResponse](docs/RoutesV3CreateSessionResponse.md)
+ - [RoutesV3CreateTagRequest](docs/RoutesV3CreateTagRequest.md)
  - [RoutesV3EnrichmentSandboxRequest](docs/RoutesV3EnrichmentSandboxRequest.md)
  - [RoutesV3EnrichmentSandboxResponse](docs/RoutesV3EnrichmentSandboxResponse.md)
  - [RoutesV3FieldUpdation](docs/RoutesV3FieldUpdation.md)
@@ -831,6 +837,8 @@ Class | Method | HTTP request | Description
  - [RoutesV3SharedResourceWithMetadata](docs/RoutesV3SharedResourceWithMetadata.md)
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3Summary](docs/RoutesV3Summary.md)
+ - [RoutesV3TagListResponse](docs/RoutesV3TagListResponse.md)
+ - [RoutesV3TagResponse](docs/RoutesV3TagResponse.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
  - [RoutesV3TransformConfig](docs/RoutesV3TransformConfig.md)
  - [RoutesV3TransformOperation](docs/RoutesV3TransformOperation.md)
@@ -841,6 +849,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3UpdateConnectionRequest](docs/RoutesV3UpdateConnectionRequest.md)
  - [RoutesV3UpdateConnectionRequestSaml](docs/RoutesV3UpdateConnectionRequestSaml.md)
  - [RoutesV3UpdateEnrichmentRequest](docs/RoutesV3UpdateEnrichmentRequest.md)
+ - [RoutesV3UpdateTagRequest](docs/RoutesV3UpdateTagRequest.md)
  - [RunrevealSettingsConfig](docs/RunrevealSettingsConfig.md)
  - [S3SecretsConfig](docs/S3SecretsConfig.md)
  - [S3SettingsConfig](docs/S3SettingsConfig.md)
@@ -922,6 +931,7 @@ Class | Method | HTTP request | Description
  - [UpdatePipelineRequest](docs/UpdatePipelineRequest.md)
  - [UpdatePipelineV1Request](docs/UpdatePipelineV1Request.md)
  - [UpdateRoleRequest](docs/UpdateRoleRequest.md)
+ - [UpdateTagRequest](docs/UpdateTagRequest.md)
  - [UtcTimestampArgumentsConfig](docs/UtcTimestampArgumentsConfig.md)
  - [UtcTimestampTimestampFormat](docs/UtcTimestampTimestampFormat.md)
  - [VoltioAuditLogsSecretsConfig](docs/VoltioAuditLogsSecretsConfig.md)

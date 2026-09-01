@@ -113,6 +113,7 @@ import { CreateResourceSharesRequest } from '../models/CreateResourceSharesReque
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { CreateSecretRequest } from '../models/CreateSecretRequest';
 import { CreateSessionRequest } from '../models/CreateSessionRequest';
+import { CreateTagRequest } from '../models/CreateTagRequest';
 import { CreateTransformRecommendationRequest } from '../models/CreateTransformRecommendationRequest';
 import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -482,6 +483,7 @@ import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateCon
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionRequest';
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
+import { RoutesV3CreateTagRequest } from '../models/RoutesV3CreateTagRequest';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
@@ -502,6 +504,8 @@ import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedReso
 import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedResourceWithMetadata';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
+import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
@@ -512,6 +516,7 @@ import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3Update
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { RoutesV3UpdateTagRequest } from '../models/RoutesV3UpdateTagRequest';
 import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
@@ -593,6 +598,7 @@ import { UpdatePipelineEdgeRequest } from '../models/UpdatePipelineEdgeRequest';
 import { UpdatePipelineRequest } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1Request } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
+import { UpdateTagRequest } from '../models/UpdateTagRequest';
 import { UtcTimestampArgumentsConfig } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -7858,6 +7864,177 @@ export class ObjectSessionsApi {
      */
     public createSession(param: SessionsApiCreateSessionRequest = {}, options?: ConfigurationOptions): Promise<RoutesV3CreateSessionResponse> {
         return this.api.createSession(param.createSessionRequest,  options).toPromise();
+    }
+
+}
+
+import { ObservableTagsApi } from "./ObservableAPI";
+import { TagsApiRequestFactory, TagsApiResponseProcessor} from "../apis/TagsApi";
+
+export interface TagsApiCreateTagRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApicreateTag
+     */
+    organizationId: string
+    /**
+     * Request body for creating a tag
+     * @type CreateTagRequest
+     * @memberof TagsApicreateTag
+     */
+    createTagRequest: CreateTagRequest
+}
+
+export interface TagsApiDeleteTagRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApideleteTag
+     */
+    organizationId: string
+    /**
+     * Tag ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApideleteTag
+     */
+    tagId: string
+}
+
+export interface TagsApiListTagsRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApilistTags
+     */
+    organizationId: string
+    /**
+     * Prefix match on tag name
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApilistTags
+     */
+    search?: string
+    /**
+     * Limit
+     * Defaults to: undefined
+     * @type number
+     * @memberof TagsApilistTags
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof TagsApilistTags
+     */
+    offset?: number
+}
+
+export interface TagsApiUpdateTagRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApiupdateTag
+     */
+    organizationId: string
+    /**
+     * Tag ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApiupdateTag
+     */
+    tagId: string
+    /**
+     * Request body for updating a tag
+     * @type UpdateTagRequest
+     * @memberof TagsApiupdateTag
+     */
+    updateTagRequest: UpdateTagRequest
+}
+
+export class ObjectTagsApi {
+    private api: ObservableTagsApi
+
+    public constructor(configuration: Configuration, requestFactory?: TagsApiRequestFactory, responseProcessor?: TagsApiResponseProcessor) {
+        this.api = new ObservableTagsApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Create a customer tag. managed_by is always \"customer\".
+     * Create a tag
+     * @param param the request object
+     */
+    public createTagWithHttpInfo(param: TagsApiCreateTagRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3TagResponse>> {
+        return this.api.createTagWithHttpInfo(param.organizationId, param.createTagRequest,  options).toPromise();
+    }
+
+    /**
+     * Create a customer tag. managed_by is always \"customer\".
+     * Create a tag
+     * @param param the request object
+     */
+    public createTag(param: TagsApiCreateTagRequest, options?: ConfigurationOptions): Promise<RoutesV3TagResponse> {
+        return this.api.createTag(param.organizationId, param.createTagRequest,  options).toPromise();
+    }
+
+    /**
+     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a tag
+     * @param param the request object
+     */
+    public deleteTagWithHttpInfo(param: TagsApiDeleteTagRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
+        return this.api.deleteTagWithHttpInfo(param.organizationId, param.tagId,  options).toPromise();
+    }
+
+    /**
+     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a tag
+     * @param param the request object
+     */
+    public deleteTag(param: TagsApiDeleteTagRequest, options?: ConfigurationOptions): Promise<void> {
+        return this.api.deleteTag(param.organizationId, param.tagId,  options).toPromise();
+    }
+
+    /**
+     * List the organization\'s customer tags, optionally prefix-filtered by name.
+     * List tags
+     * @param param the request object
+     */
+    public listTagsWithHttpInfo(param: TagsApiListTagsRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3TagListResponse>> {
+        return this.api.listTagsWithHttpInfo(param.organizationId, param.search, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List the organization\'s customer tags, optionally prefix-filtered by name.
+     * List tags
+     * @param param the request object
+     */
+    public listTags(param: TagsApiListTagsRequest, options?: ConfigurationOptions): Promise<RoutesV3TagListResponse> {
+        return this.api.listTags(param.organizationId, param.search, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * Partially update a customer tag. Reserved tags return 404.
+     * Update a tag
+     * @param param the request object
+     */
+    public updateTagWithHttpInfo(param: TagsApiUpdateTagRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3TagResponse>> {
+        return this.api.updateTagWithHttpInfo(param.organizationId, param.tagId, param.updateTagRequest,  options).toPromise();
+    }
+
+    /**
+     * Partially update a customer tag. Reserved tags return 404.
+     * Update a tag
+     * @param param the request object
+     */
+    public updateTag(param: TagsApiUpdateTagRequest, options?: ConfigurationOptions): Promise<RoutesV3TagResponse> {
+        return this.api.updateTag(param.organizationId, param.tagId, param.updateTagRequest,  options).toPromise();
     }
 
 }

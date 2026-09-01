@@ -109,6 +109,7 @@ export * from '../models/CreateResourceSharesRequest';
 export * from '../models/CreateRoleRequest';
 export * from '../models/CreateSecretRequest';
 export * from '../models/CreateSessionRequest';
+export * from '../models/CreateTagRequest';
 export * from '../models/CreateTransformRecommendationRequest';
 export * from '../models/CreateTransformRequest';
 export * from '../models/CriblHttpSecretsConfig';
@@ -478,6 +479,7 @@ export * from '../models/RoutesV3CreateConnectionRequestSaml';
 export * from '../models/RoutesV3CreateEnrichmentRequest';
 export * from '../models/RoutesV3CreateSessionRequest';
 export * from '../models/RoutesV3CreateSessionResponse';
+export * from '../models/RoutesV3CreateTagRequest';
 export * from '../models/RoutesV3EnrichmentSandboxRequest';
 export * from '../models/RoutesV3EnrichmentSandboxResponse';
 export * from '../models/RoutesV3FieldUpdation';
@@ -498,6 +500,8 @@ export * from '../models/RoutesV3SharedResourceListResponse';
 export * from '../models/RoutesV3SharedResourceWithMetadata';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3Summary';
+export * from '../models/RoutesV3TagListResponse';
+export * from '../models/RoutesV3TagResponse';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
 export * from '../models/RoutesV3TransformConfig';
 export * from '../models/RoutesV3TransformOperation';
@@ -508,6 +512,7 @@ export * from '../models/RoutesV3UpdateChildOrganizationRequest';
 export * from '../models/RoutesV3UpdateConnectionRequest';
 export * from '../models/RoutesV3UpdateConnectionRequestSaml';
 export * from '../models/RoutesV3UpdateEnrichmentRequest';
+export * from '../models/RoutesV3UpdateTagRequest';
 export * from '../models/RunrevealSettingsConfig';
 export * from '../models/S3SecretsConfig';
 export * from '../models/S3SettingsConfig';
@@ -589,6 +594,7 @@ export * from '../models/UpdatePipelineEdgeRequest';
 export * from '../models/UpdatePipelineRequest';
 export * from '../models/UpdatePipelineV1Request';
 export * from '../models/UpdateRoleRequest';
+export * from '../models/UpdateTagRequest';
 export * from '../models/UtcTimestampArgumentsConfig';
 export * from '../models/UtcTimestampTimestampFormat';
 export * from '../models/VoltioAuditLogsSecretsConfig';
@@ -728,6 +734,7 @@ import { CreateResourceSharesRequestClass } from '../models/CreateResourceShares
 import { CreateRoleRequestClass } from '../models/CreateRoleRequest';
 import { CreateSecretRequestClass } from '../models/CreateSecretRequest';
 import { CreateSessionRequestClass } from '../models/CreateSessionRequest';
+import { CreateTagRequestClass } from '../models/CreateTagRequest';
 import { CreateTransformRecommendationRequestClass } from '../models/CreateTransformRecommendationRequest';
 import { CreateTransformRequestClass } from '../models/CreateTransformRequest';
 import { CriblHttpSecretsConfig } from '../models/CriblHttpSecretsConfig';
@@ -1097,6 +1104,7 @@ import { RoutesV3CreateConnectionRequestSaml } from '../models/RoutesV3CreateCon
 import { RoutesV3CreateEnrichmentRequest } from '../models/RoutesV3CreateEnrichmentRequest';
 import { RoutesV3CreateSessionRequest } from '../models/RoutesV3CreateSessionRequest';
 import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionResponse';
+import { RoutesV3CreateTagRequest } from '../models/RoutesV3CreateTagRequest';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
@@ -1117,6 +1125,8 @@ import { RoutesV3SharedResourceListResponse } from '../models/RoutesV3SharedReso
 import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedResourceWithMetadata';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
+import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
 import { RoutesV3TransformOperation } from '../models/RoutesV3TransformOperation';
@@ -1127,6 +1137,7 @@ import { RoutesV3UpdateChildOrganizationRequest } from '../models/RoutesV3Update
 import { RoutesV3UpdateConnectionRequest } from '../models/RoutesV3UpdateConnectionRequest';
 import { RoutesV3UpdateConnectionRequestSaml } from '../models/RoutesV3UpdateConnectionRequestSaml';
 import { RoutesV3UpdateEnrichmentRequest } from '../models/RoutesV3UpdateEnrichmentRequest';
+import { RoutesV3UpdateTagRequest } from '../models/RoutesV3UpdateTagRequest';
 import { RunrevealSettingsConfig } from '../models/RunrevealSettingsConfig';
 import { S3SecretsConfig } from '../models/S3SecretsConfig';
 import { S3SettingsConfig } from '../models/S3SettingsConfig';
@@ -1208,6 +1219,7 @@ import { UpdatePipelineEdgeRequestClass } from '../models/UpdatePipelineEdgeRequ
 import { UpdatePipelineRequestClass } from '../models/UpdatePipelineRequest';
 import { UpdatePipelineV1RequestClass } from '../models/UpdatePipelineV1Request';
 import { UpdateRoleRequestClass } from '../models/UpdateRoleRequest';
+import { UpdateTagRequestClass } from '../models/UpdateTagRequest';
 import { UtcTimestampArgumentsConfig   } from '../models/UtcTimestampArgumentsConfig';
 import { UtcTimestampTimestampFormat } from '../models/UtcTimestampTimestampFormat';
 import { VoltioAuditLogsSecretsConfig } from '../models/VoltioAuditLogsSecretsConfig';
@@ -1442,6 +1454,7 @@ let typeMap: {[index: string]: any} = {
     "CreateRoleRequest": CreateRoleRequestClass,
     "CreateSecretRequest": CreateSecretRequestClass,
     "CreateSessionRequest": CreateSessionRequestClass,
+    "CreateTagRequest": CreateTagRequestClass,
     "CreateTransformRecommendationRequest": CreateTransformRecommendationRequestClass,
     "CreateTransformRequest": CreateTransformRequestClass,
     "CriblHttpSecretsConfig": CriblHttpSecretsConfig,
@@ -1785,6 +1798,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3CreateEnrichmentRequest": RoutesV3CreateEnrichmentRequest,
     "RoutesV3CreateSessionRequest": RoutesV3CreateSessionRequest,
     "RoutesV3CreateSessionResponse": RoutesV3CreateSessionResponse,
+    "RoutesV3CreateTagRequest": RoutesV3CreateTagRequest,
     "RoutesV3EnrichmentSandboxRequest": RoutesV3EnrichmentSandboxRequest,
     "RoutesV3EnrichmentSandboxResponse": RoutesV3EnrichmentSandboxResponse,
     "RoutesV3FieldUpdation": RoutesV3FieldUpdation,
@@ -1805,6 +1819,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3SharedResourceWithMetadata": RoutesV3SharedResourceWithMetadata,
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3Summary": RoutesV3Summary,
+    "RoutesV3TagListResponse": RoutesV3TagListResponse,
+    "RoutesV3TagResponse": RoutesV3TagResponse,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,
     "RoutesV3TransformConfig": RoutesV3TransformConfig,
     "RoutesV3TransformOperation": RoutesV3TransformOperation,
@@ -1815,6 +1831,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3UpdateConnectionRequest": RoutesV3UpdateConnectionRequest,
     "RoutesV3UpdateConnectionRequestSaml": RoutesV3UpdateConnectionRequestSaml,
     "RoutesV3UpdateEnrichmentRequest": RoutesV3UpdateEnrichmentRequest,
+    "RoutesV3UpdateTagRequest": RoutesV3UpdateTagRequest,
     "RunrevealSettingsConfig": RunrevealSettingsConfig,
     "S3SecretsConfig": S3SecretsConfig,
     "S3SettingsConfig": S3SettingsConfig,
@@ -1892,6 +1909,7 @@ let typeMap: {[index: string]: any} = {
     "UpdatePipelineRequest": UpdatePipelineRequestClass,
     "UpdatePipelineV1Request": UpdatePipelineV1RequestClass,
     "UpdateRoleRequest": UpdateRoleRequestClass,
+    "UpdateTagRequest": UpdateTagRequestClass,
     "UtcTimestampArgumentsConfig": UtcTimestampArgumentsConfig,
     "VoltioAuditLogsSecretsConfig": VoltioAuditLogsSecretsConfig,
     "VoltioAuditLogsSettingsConfig": VoltioAuditLogsSettingsConfig,

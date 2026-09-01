@@ -57,6 +57,7 @@ __all__ = [
     "SchemaDetectionApi",
     "SecretsApi",
     "SessionsApi",
+    "TagsApi",
     "TransformSandboxApi",
     "TransformsApi",
     "TransformsRecommendationsApi",
@@ -182,6 +183,7 @@ __all__ = [
     "CreateRoleRequest",
     "CreateSecretRequest",
     "CreateSessionRequest",
+    "CreateTagRequest",
     "CreateTransformRecommendationRequest",
     "CreateTransformRequest",
     "CriblHttpSecretsConfig",
@@ -551,6 +553,7 @@ __all__ = [
     "RoutesV3CreateEnrichmentRequest",
     "RoutesV3CreateSessionRequest",
     "RoutesV3CreateSessionResponse",
+    "RoutesV3CreateTagRequest",
     "RoutesV3EnrichmentSandboxRequest",
     "RoutesV3EnrichmentSandboxResponse",
     "RoutesV3FieldUpdation",
@@ -571,6 +574,8 @@ __all__ = [
     "RoutesV3SharedResourceWithMetadata",
     "RoutesV3SuccessResponse",
     "RoutesV3Summary",
+    "RoutesV3TagListResponse",
+    "RoutesV3TagResponse",
     "RoutesV3TestEnrichmentConnectionRequest",
     "RoutesV3TransformConfig",
     "RoutesV3TransformOperation",
@@ -581,6 +586,7 @@ __all__ = [
     "RoutesV3UpdateConnectionRequest",
     "RoutesV3UpdateConnectionRequestSaml",
     "RoutesV3UpdateEnrichmentRequest",
+    "RoutesV3UpdateTagRequest",
     "RunrevealSettingsConfig",
     "S3SecretsConfig",
     "S3SettingsConfig",
@@ -662,6 +668,7 @@ __all__ = [
     "UpdatePipelineRequest",
     "UpdatePipelineV1Request",
     "UpdateRoleRequest",
+    "UpdateTagRequest",
     "UtcTimestampArgumentsConfig",
     "UtcTimestampTimestampFormat",
     "VoltioAuditLogsSecretsConfig",
@@ -730,6 +737,7 @@ from monad.api.roles_api import RolesApi as RolesApi
 from monad.api.schema_detection_api import SchemaDetectionApi as SchemaDetectionApi
 from monad.api.secrets_api import SecretsApi as SecretsApi
 from monad.api.sessions_api import SessionsApi as SessionsApi
+from monad.api.tags_api import TagsApi as TagsApi
 from monad.api.transform_sandbox_api import TransformSandboxApi as TransformSandboxApi
 from monad.api.transforms_api import TransformsApi as TransformsApi
 from monad.api.transforms_recommendations_api import TransformsRecommendationsApi as TransformsRecommendationsApi
@@ -859,6 +867,7 @@ from monad.models.create_resource_shares_request import CreateResourceSharesRequ
 from monad.models.create_role_request import CreateRoleRequest as CreateRoleRequest
 from monad.models.create_secret_request import CreateSecretRequest as CreateSecretRequest
 from monad.models.create_session_request import CreateSessionRequest as CreateSessionRequest
+from monad.models.create_tag_request import CreateTagRequest as CreateTagRequest
 from monad.models.create_transform_recommendation_request import CreateTransformRecommendationRequest as CreateTransformRecommendationRequest
 from monad.models.create_transform_request import CreateTransformRequest as CreateTransformRequest
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig as CriblHttpSecretsConfig
@@ -1228,6 +1237,7 @@ from monad.models.routes_v3_create_connection_request_saml import RoutesV3Create
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest as RoutesV3CreateEnrichmentRequest
 from monad.models.routes_v3_create_session_request import RoutesV3CreateSessionRequest as RoutesV3CreateSessionRequest
 from monad.models.routes_v3_create_session_response import RoutesV3CreateSessionResponse as RoutesV3CreateSessionResponse
+from monad.models.routes_v3_create_tag_request import RoutesV3CreateTagRequest as RoutesV3CreateTagRequest
 from monad.models.routes_v3_enrichment_sandbox_request import RoutesV3EnrichmentSandboxRequest as RoutesV3EnrichmentSandboxRequest
 from monad.models.routes_v3_enrichment_sandbox_response import RoutesV3EnrichmentSandboxResponse as RoutesV3EnrichmentSandboxResponse
 from monad.models.routes_v3_field_updation import RoutesV3FieldUpdation as RoutesV3FieldUpdation
@@ -1248,6 +1258,8 @@ from monad.models.routes_v3_shared_resource_list_response import RoutesV3SharedR
 from monad.models.routes_v3_shared_resource_with_metadata import RoutesV3SharedResourceWithMetadata as RoutesV3SharedResourceWithMetadata
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse as RoutesV3SuccessResponse
 from monad.models.routes_v3_summary import RoutesV3Summary as RoutesV3Summary
+from monad.models.routes_v3_tag_list_response import RoutesV3TagListResponse as RoutesV3TagListResponse
+from monad.models.routes_v3_tag_response import RoutesV3TagResponse as RoutesV3TagResponse
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest as RoutesV3TestEnrichmentConnectionRequest
 from monad.models.routes_v3_transform_config import RoutesV3TransformConfig as RoutesV3TransformConfig
 from monad.models.routes_v3_transform_operation import RoutesV3TransformOperation as RoutesV3TransformOperation
@@ -1258,6 +1270,7 @@ from monad.models.routes_v3_update_child_organization_request import RoutesV3Upd
 from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest as RoutesV3UpdateConnectionRequest
 from monad.models.routes_v3_update_connection_request_saml import RoutesV3UpdateConnectionRequestSaml as RoutesV3UpdateConnectionRequestSaml
 from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest as RoutesV3UpdateEnrichmentRequest
+from monad.models.routes_v3_update_tag_request import RoutesV3UpdateTagRequest as RoutesV3UpdateTagRequest
 from monad.models.runreveal_settings_config import RunrevealSettingsConfig as RunrevealSettingsConfig
 from monad.models.s3_secrets_config import S3SecretsConfig as S3SecretsConfig
 from monad.models.s3_settings_config import S3SettingsConfig as S3SettingsConfig
@@ -1339,6 +1352,7 @@ from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest 
 from monad.models.update_pipeline_request import UpdatePipelineRequest as UpdatePipelineRequest
 from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request as UpdatePipelineV1Request
 from monad.models.update_role_request import UpdateRoleRequest as UpdateRoleRequest
+from monad.models.update_tag_request import UpdateTagRequest as UpdateTagRequest
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig as UtcTimestampArgumentsConfig
 from monad.models.utc_timestamp_timestamp_format import UtcTimestampTimestampFormat as UtcTimestampTimestampFormat
 from monad.models.voltio_audit_logs_secrets_config import VoltioAuditLogsSecretsConfig as VoltioAuditLogsSecretsConfig

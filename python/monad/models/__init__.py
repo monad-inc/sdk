@@ -125,6 +125,7 @@ from monad.models.create_resource_shares_request import CreateResourceSharesRequ
 from monad.models.create_role_request import CreateRoleRequest
 from monad.models.create_secret_request import CreateSecretRequest
 from monad.models.create_session_request import CreateSessionRequest
+from monad.models.create_tag_request import CreateTagRequest
 from monad.models.create_transform_recommendation_request import CreateTransformRecommendationRequest
 from monad.models.create_transform_request import CreateTransformRequest
 from monad.models.cribl_http_secrets_config import CriblHttpSecretsConfig
@@ -494,6 +495,7 @@ from monad.models.routes_v3_create_connection_request_saml import RoutesV3Create
 from monad.models.routes_v3_create_enrichment_request import RoutesV3CreateEnrichmentRequest
 from monad.models.routes_v3_create_session_request import RoutesV3CreateSessionRequest
 from monad.models.routes_v3_create_session_response import RoutesV3CreateSessionResponse
+from monad.models.routes_v3_create_tag_request import RoutesV3CreateTagRequest
 from monad.models.routes_v3_enrichment_sandbox_request import RoutesV3EnrichmentSandboxRequest
 from monad.models.routes_v3_enrichment_sandbox_response import RoutesV3EnrichmentSandboxResponse
 from monad.models.routes_v3_field_updation import RoutesV3FieldUpdation
@@ -514,6 +516,8 @@ from monad.models.routes_v3_shared_resource_list_response import RoutesV3SharedR
 from monad.models.routes_v3_shared_resource_with_metadata import RoutesV3SharedResourceWithMetadata
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse
 from monad.models.routes_v3_summary import RoutesV3Summary
+from monad.models.routes_v3_tag_list_response import RoutesV3TagListResponse
+from monad.models.routes_v3_tag_response import RoutesV3TagResponse
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest
 from monad.models.routes_v3_transform_config import RoutesV3TransformConfig
 from monad.models.routes_v3_transform_operation import RoutesV3TransformOperation
@@ -524,6 +528,7 @@ from monad.models.routes_v3_update_child_organization_request import RoutesV3Upd
 from monad.models.routes_v3_update_connection_request import RoutesV3UpdateConnectionRequest
 from monad.models.routes_v3_update_connection_request_saml import RoutesV3UpdateConnectionRequestSaml
 from monad.models.routes_v3_update_enrichment_request import RoutesV3UpdateEnrichmentRequest
+from monad.models.routes_v3_update_tag_request import RoutesV3UpdateTagRequest
 from monad.models.runreveal_settings_config import RunrevealSettingsConfig
 from monad.models.s3_secrets_config import S3SecretsConfig
 from monad.models.s3_settings_config import S3SettingsConfig
@@ -605,6 +610,7 @@ from monad.models.update_pipeline_edge_request import UpdatePipelineEdgeRequest
 from monad.models.update_pipeline_request import UpdatePipelineRequest
 from monad.models.update_pipeline_v1_request import UpdatePipelineV1Request
 from monad.models.update_role_request import UpdateRoleRequest
+from monad.models.update_tag_request import UpdateTagRequest
 from monad.models.utc_timestamp_arguments_config import UtcTimestampArgumentsConfig
 from monad.models.utc_timestamp_timestamp_format import UtcTimestampTimestampFormat
 from monad.models.voltio_audit_logs_secrets_config import VoltioAuditLogsSecretsConfig
