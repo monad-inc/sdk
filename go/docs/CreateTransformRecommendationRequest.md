@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OptimizerType** | Pointer to **string** |  | [optional] 
-**SecurityData** | Pointer to **[]int32** |  | [optional] 
+**SecurityData** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasOptimizerType returns a boolean if a field has been set.
 
 ### GetSecurityData
 
-`func (o *CreateTransformRecommendationRequest) GetSecurityData() []int32`
+`func (o *CreateTransformRecommendationRequest) GetSecurityData() map[string]interface{}`
 
 GetSecurityData returns the SecurityData field if non-nil, zero value otherwise.
 
 ### GetSecurityDataOk
 
-`func (o *CreateTransformRecommendationRequest) GetSecurityDataOk() (*[]int32, bool)`
+`func (o *CreateTransformRecommendationRequest) GetSecurityDataOk() (*map[string]interface{}, bool)`
 
 GetSecurityDataOk returns a tuple with the SecurityData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityData
 
-`func (o *CreateTransformRecommendationRequest) SetSecurityData(v []int32)`
+`func (o *CreateTransformRecommendationRequest) SetSecurityData(v map[string]interface{})`
 
 SetSecurityData sets SecurityData field to given value.
 

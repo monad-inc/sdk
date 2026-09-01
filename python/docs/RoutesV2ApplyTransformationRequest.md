@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**ModelsTransformConfig**](ModelsTransformConfig.md) |  | [optional] 
-**record** | **List[int]** |  | [optional] 
+**record** | **object** |  | [optional] 
 
 ## Example
 

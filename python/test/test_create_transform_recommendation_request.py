@@ -37,9 +37,7 @@ class TestCreateTransformRecommendationRequest(unittest.TestCase):
         if include_optional:
             return CreateTransformRecommendationRequest(
                 optimizer_type = '',
-                security_data = [
-                    56
-                    ]
+                security_data = monad.models.security_data.security_data()
             )
         else:
             return CreateTransformRecommendationRequest(

@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV2ApplyConditionRequest {
     'condition'?: ModelsConditionEvaluatable;
-    'record'?: Array<number>;
+    'record'?: any;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -31,7 +31,7 @@ export class RoutesV2ApplyConditionRequest {
         {
             "name": "record",
             "baseName": "record",
-            "type": "Array<number>",
+            "type": "any",
             "format": ""
         }    ];
 

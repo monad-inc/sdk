@@ -13,7 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV3EnrichmentSandboxResponse {
-    'record'?: Array<number>;
+    'record'?: any;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -23,7 +23,7 @@ export class RoutesV3EnrichmentSandboxResponse {
         {
             "name": "record",
             "baseName": "record",
-            "type": "Array<number>",
+            "type": "any",
             "format": ""
         }    ];
 

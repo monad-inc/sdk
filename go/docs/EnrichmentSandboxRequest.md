@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Config** | Pointer to [**SecretProcessesorEnrichmentConfig**](SecretProcessesorEnrichmentConfig.md) |  | [optional] 
-**Record** | Pointer to **[]int32** |  | [optional] 
+**Record** | Pointer to **map[string]interface{}** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
 **UseMockedData** | Pointer to **bool** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetRecord
 
-`func (o *EnrichmentSandboxRequest) GetRecord() []int32`
+`func (o *EnrichmentSandboxRequest) GetRecord() map[string]interface{}`
 
 GetRecord returns the Record field if non-nil, zero value otherwise.
 
 ### GetRecordOk
 
-`func (o *EnrichmentSandboxRequest) GetRecordOk() (*[]int32, bool)`
+`func (o *EnrichmentSandboxRequest) GetRecordOk() (*map[string]interface{}, bool)`
 
 GetRecordOk returns a tuple with the Record field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecord
 
-`func (o *EnrichmentSandboxRequest) SetRecord(v []int32)`
+`func (o *EnrichmentSandboxRequest) SetRecord(v map[string]interface{})`
 
 SetRecord sets Record field to given value.
 

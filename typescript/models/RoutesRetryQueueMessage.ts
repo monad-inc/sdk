@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesRetryQueueMessage {
     'createdAt'?: string;
-    'data'?: Array<number>;
+    'data'?: any;
     /**
     * DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn\'t a size decision.)
     */
@@ -44,7 +44,7 @@ export class RoutesRetryQueueMessage {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<number>",
+            "type": "any",
             "format": ""
         },
         {

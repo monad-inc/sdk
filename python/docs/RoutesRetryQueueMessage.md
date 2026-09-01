@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str** |  | [optional] 
-**data** | **List[int]** |  | [optional] 
+**data** | **object** |  | [optional] 
 **data_bytes** | **int** | DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn&#39;t a size decision.) | [optional] 
 **eligible_at** | **str** | EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt), not an authoritative floor — it under-estimates output/enrichment nodes. | [optional] 
 **error_node_id** | **str** |  | [optional] 

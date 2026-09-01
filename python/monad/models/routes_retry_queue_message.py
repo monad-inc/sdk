@@ -29,7 +29,7 @@ class RoutesRetryQueueMessage(BaseModel):
     RoutesRetryQueueMessage
     """ # noqa: E501
     created_at: Optional[StrictStr] = None
-    data: Optional[List[StrictInt]] = None
+    data: Optional[Dict[str, Any]] = None
     data_bytes: Optional[StrictInt] = Field(default=None, description="DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn't a size decision.)")
     eligible_at: Optional[StrictStr] = Field(default=None, description="EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt), not an authoritative floor — it under-estimates output/enrichment nodes.")
     error_node_id: Optional[StrictStr] = None

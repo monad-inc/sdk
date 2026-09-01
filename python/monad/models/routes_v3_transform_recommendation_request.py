@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +29,7 @@ class RoutesV3TransformRecommendationRequest(BaseModel):
     RoutesV3TransformRecommendationRequest
     """ # noqa: E501
     optimizer_type: Optional[StrictStr] = None
-    security_data: Optional[List[StrictInt]] = None
+    security_data: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["optimizer_type", "security_data"]
 
     model_config = ConfigDict(

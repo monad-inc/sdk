@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutesV2ApplyConditionRequest{}
 // RoutesV2ApplyConditionRequest struct for RoutesV2ApplyConditionRequest
 type RoutesV2ApplyConditionRequest struct {
 	Condition *ModelsConditionEvaluatable `json:"condition,omitempty"`
-	Record []int32 `json:"record,omitempty"`
+	Record map[string]interface{} `json:"record,omitempty"`
 }
 
 // NewRoutesV2ApplyConditionRequest instantiates a new RoutesV2ApplyConditionRequest object
@@ -74,9 +74,9 @@ func (o *RoutesV2ApplyConditionRequest) SetCondition(v ModelsConditionEvaluatabl
 }
 
 // GetRecord returns the Record field value if set, zero value otherwise.
-func (o *RoutesV2ApplyConditionRequest) GetRecord() []int32 {
+func (o *RoutesV2ApplyConditionRequest) GetRecord() map[string]interface{} {
 	if o == nil || IsNil(o.Record) {
-		var ret []int32
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Record
@@ -84,9 +84,9 @@ func (o *RoutesV2ApplyConditionRequest) GetRecord() []int32 {
 
 // GetRecordOk returns a tuple with the Record field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2ApplyConditionRequest) GetRecordOk() ([]int32, bool) {
+func (o *RoutesV2ApplyConditionRequest) GetRecordOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Record) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Record, true
 }
@@ -100,8 +100,8 @@ func (o *RoutesV2ApplyConditionRequest) HasRecord() bool {
 	return false
 }
 
-// SetRecord gets a reference to the given []int32 and assigns it to the Record field.
-func (o *RoutesV2ApplyConditionRequest) SetRecord(v []int32) {
+// SetRecord gets a reference to the given map[string]interface{} and assigns it to the Record field.
+func (o *RoutesV2ApplyConditionRequest) SetRecord(v map[string]interface{}) {
 	o.Record = v
 }
 

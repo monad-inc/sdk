@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV3EnrichmentSandboxResponse{}
 
 // RoutesV3EnrichmentSandboxResponse struct for RoutesV3EnrichmentSandboxResponse
 type RoutesV3EnrichmentSandboxResponse struct {
-	Record []int32 `json:"record,omitempty"`
+	Record map[string]interface{} `json:"record,omitempty"`
 }
 
 // NewRoutesV3EnrichmentSandboxResponse instantiates a new RoutesV3EnrichmentSandboxResponse object
@@ -41,9 +41,9 @@ func NewRoutesV3EnrichmentSandboxResponseWithDefaults() *RoutesV3EnrichmentSandb
 }
 
 // GetRecord returns the Record field value if set, zero value otherwise.
-func (o *RoutesV3EnrichmentSandboxResponse) GetRecord() []int32 {
+func (o *RoutesV3EnrichmentSandboxResponse) GetRecord() map[string]interface{} {
 	if o == nil || IsNil(o.Record) {
-		var ret []int32
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Record
@@ -51,9 +51,9 @@ func (o *RoutesV3EnrichmentSandboxResponse) GetRecord() []int32 {
 
 // GetRecordOk returns a tuple with the Record field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3EnrichmentSandboxResponse) GetRecordOk() ([]int32, bool) {
+func (o *RoutesV3EnrichmentSandboxResponse) GetRecordOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Record) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Record, true
 }
@@ -67,8 +67,8 @@ func (o *RoutesV3EnrichmentSandboxResponse) HasRecord() bool {
 	return false
 }
 
-// SetRecord gets a reference to the given []int32 and assigns it to the Record field.
-func (o *RoutesV3EnrichmentSandboxResponse) SetRecord(v []int32) {
+// SetRecord gets a reference to the given map[string]interface{} and assigns it to the Record field.
+func (o *RoutesV3EnrichmentSandboxResponse) SetRecord(v map[string]interface{}) {
 	o.Record = v
 }
 

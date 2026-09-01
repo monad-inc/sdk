@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutesV2ApplyTransformationRequest{}
 // RoutesV2ApplyTransformationRequest struct for RoutesV2ApplyTransformationRequest
 type RoutesV2ApplyTransformationRequest struct {
 	Config *ModelsTransformConfig `json:"config,omitempty"`
-	Record []int32 `json:"record,omitempty"`
+	Record map[string]interface{} `json:"record,omitempty"`
 }
 
 // NewRoutesV2ApplyTransformationRequest instantiates a new RoutesV2ApplyTransformationRequest object
@@ -74,9 +74,9 @@ func (o *RoutesV2ApplyTransformationRequest) SetConfig(v ModelsTransformConfig) 
 }
 
 // GetRecord returns the Record field value if set, zero value otherwise.
-func (o *RoutesV2ApplyTransformationRequest) GetRecord() []int32 {
+func (o *RoutesV2ApplyTransformationRequest) GetRecord() map[string]interface{} {
 	if o == nil || IsNil(o.Record) {
-		var ret []int32
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Record
@@ -84,9 +84,9 @@ func (o *RoutesV2ApplyTransformationRequest) GetRecord() []int32 {
 
 // GetRecordOk returns a tuple with the Record field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2ApplyTransformationRequest) GetRecordOk() ([]int32, bool) {
+func (o *RoutesV2ApplyTransformationRequest) GetRecordOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Record) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Record, true
 }
@@ -100,8 +100,8 @@ func (o *RoutesV2ApplyTransformationRequest) HasRecord() bool {
 	return false
 }
 
-// SetRecord gets a reference to the given []int32 and assigns it to the Record field.
-func (o *RoutesV2ApplyTransformationRequest) SetRecord(v []int32) {
+// SetRecord gets a reference to the given map[string]interface{} and assigns it to the Record field.
+func (o *RoutesV2ApplyTransformationRequest) SetRecord(v map[string]interface{}) {
 	o.Record = v
 }
 

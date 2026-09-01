@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **string** |  | [optional] 
-**Data** | Pointer to **[]int32** |  | [optional] 
+**Data** | Pointer to **map[string]interface{}** |  | [optional] 
 **DataBytes** | Pointer to **int32** | DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn&#39;t a size decision.) | [optional] 
 **EligibleAt** | Pointer to **string** | EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt), not an authoritative floor — it under-estimates output/enrichment nodes. | [optional] 
 **ErrorNodeId** | Pointer to **string** |  | [optional] 
@@ -61,20 +61,20 @@ HasCreatedAt returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *RoutesRetryQueueMessage) GetData() []int32`
+`func (o *RoutesRetryQueueMessage) GetData() map[string]interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *RoutesRetryQueueMessage) GetDataOk() (*[]int32, bool)`
+`func (o *RoutesRetryQueueMessage) GetDataOk() (*map[string]interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *RoutesRetryQueueMessage) SetData(v []int32)`
+`func (o *RoutesRetryQueueMessage) SetData(v map[string]interface{})`
 
 SetData sets Data field to given value.
 

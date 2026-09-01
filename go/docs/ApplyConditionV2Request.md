@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Condition** | Pointer to [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
-**Record** | Pointer to **[]int32** |  | [optional] 
+**Record** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasCondition returns a boolean if a field has been set.
 
 ### GetRecord
 
-`func (o *ApplyConditionV2Request) GetRecord() []int32`
+`func (o *ApplyConditionV2Request) GetRecord() map[string]interface{}`
 
 GetRecord returns the Record field if non-nil, zero value otherwise.
 
 ### GetRecordOk
 
-`func (o *ApplyConditionV2Request) GetRecordOk() (*[]int32, bool)`
+`func (o *ApplyConditionV2Request) GetRecordOk() (*map[string]interface{}, bool)`
 
 GetRecordOk returns a tuple with the Record field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecord
 
-`func (o *ApplyConditionV2Request) SetRecord(v []int32)`
+`func (o *ApplyConditionV2Request) SetRecord(v map[string]interface{})`
 
 SetRecord sets Record field to given value.
 

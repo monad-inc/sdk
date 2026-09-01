@@ -45,9 +45,7 @@ class TestRoutesV2ApplyTransformationRequest(unittest.TestCase):
                             description = '', 
                             operation = '', )
                         ], ),
-                record = [
-                    56
-                    ]
+                record = None
             )
         else:
             return RoutesV2ApplyTransformationRequest(

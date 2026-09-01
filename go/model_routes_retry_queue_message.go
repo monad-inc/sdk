@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutesRetryQueueMessage{}
 // RoutesRetryQueueMessage struct for RoutesRetryQueueMessage
 type RoutesRetryQueueMessage struct {
 	CreatedAt *string `json:"created_at,omitempty"`
-	Data []int32 `json:"data,omitempty"`
+	Data map[string]interface{} `json:"data,omitempty"`
 	// DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn't a size decision.)
 	DataBytes *int32 `json:"data_bytes,omitempty"`
 	// EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt), not an authoritative floor — it under-estimates output/enrichment nodes.
@@ -84,9 +84,9 @@ func (o *RoutesRetryQueueMessage) SetCreatedAt(v string) {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *RoutesRetryQueueMessage) GetData() []int32 {
+func (o *RoutesRetryQueueMessage) GetData() map[string]interface{} {
 	if o == nil || IsNil(o.Data) {
-		var ret []int32
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Data
@@ -94,9 +94,9 @@ func (o *RoutesRetryQueueMessage) GetData() []int32 {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesRetryQueueMessage) GetDataOk() ([]int32, bool) {
+func (o *RoutesRetryQueueMessage) GetDataOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Data) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.Data, true
 }
@@ -110,8 +110,8 @@ func (o *RoutesRetryQueueMessage) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []int32 and assigns it to the Data field.
-func (o *RoutesRetryQueueMessage) SetData(v []int32) {
+// SetData gets a reference to the given map[string]interface{} and assigns it to the Data field.
+func (o *RoutesRetryQueueMessage) SetData(v map[string]interface{}) {
 	o.Data = v
 }
 

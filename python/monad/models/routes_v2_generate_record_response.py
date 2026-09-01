@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class RoutesV2GenerateRecordResponse(BaseModel):
     """
     RoutesV2GenerateRecordResponse
     """ # noqa: E501
-    record: Optional[List[StrictInt]] = None
+    record: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["record"]
 
     model_config = ConfigDict(

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **optimizer_type** | **str** |  | [optional] 
-**security_data** | **List[int]** |  | [optional] 
+**security_data** | **object** |  | [optional] 
 
 ## Example
 

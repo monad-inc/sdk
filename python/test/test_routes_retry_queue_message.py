@@ -37,9 +37,7 @@ class TestRoutesRetryQueueMessage(unittest.TestCase):
         if include_optional:
             return RoutesRetryQueueMessage(
                 created_at = '',
-                data = [
-                    56
-                    ],
+                data = None,
                 data_bytes = 56,
                 eligible_at = '',
                 error_node_id = '',

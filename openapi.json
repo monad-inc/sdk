@@ -8173,11 +8173,7 @@
                         "type": "string"
                     },
                     "data": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     },
                     "data_bytes": {
                         "description": "DataBytes is the payload size in bytes. Omitted is set when the payload was\nleft out for exceeding maxRetryRecordBytes. (meta_only leaves out every\npayload without setting Omitted — it isn't a size decision.)",
@@ -8408,11 +8404,7 @@
                         "$ref": "#/components/schemas/models.ConditionEvaluatable"
                     },
                     "record": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     }
                 },
                 "type": "object"
@@ -8431,11 +8423,7 @@
                         "$ref": "#/components/schemas/models.TransformConfig"
                     },
                     "record": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     }
                 },
                 "type": "object"
@@ -8689,11 +8677,7 @@
             "routesV2.GenerateRecordResponse": {
                 "properties": {
                     "record": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     }
                 },
                 "type": "object"
@@ -9532,11 +9516,7 @@
                         "$ref": "#/components/schemas/secret_processesor.EnrichmentConfig"
                     },
                     "record": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     },
                     "type_id": {
                         "type": "string"
@@ -9550,11 +9530,7 @@
             "routesV3.EnrichmentSandboxResponse": {
                 "properties": {
                     "record": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     }
                 },
                 "type": "object"
@@ -9919,11 +9895,7 @@
                         "type": "string"
                     },
                     "security_data": {
-                        "items": {
-                            "type": "integer"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
+                        "type": "object"
                     }
                 },
                 "type": "object"

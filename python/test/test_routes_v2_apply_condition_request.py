@@ -50,9 +50,7 @@ class TestRoutesV2ApplyConditionRequest(unittest.TestCase):
                         }, 
                     operator = 'always', 
                     type_id = '', ),
-                record = [
-                    56
-                    ]
+                record = None
             )
         else:
             return RoutesV2ApplyConditionRequest(

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.secret_processesor_enrichment_config import SecretProcessesorEnrichmentConfig
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class RoutesV3EnrichmentSandboxRequest(BaseModel):
     RoutesV3EnrichmentSandboxRequest
     """ # noqa: E501
     config: Optional[SecretProcessesorEnrichmentConfig] = None
-    record: Optional[List[StrictInt]] = None
+    record: Optional[Dict[str, Any]] = None
     type_id: Optional[StrictStr] = None
     use_mocked_data: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ["config", "record", "type_id", "use_mocked_data"]

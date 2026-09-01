@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV3EnrichmentSandboxRequest {
     'config'?: SecretProcessesorEnrichmentConfig;
-    'record'?: Array<number>;
+    'record'?: any;
     'typeId'?: string;
     'useMockedData'?: boolean;
 
@@ -33,7 +33,7 @@ export class RoutesV3EnrichmentSandboxRequest {
         {
             "name": "record",
             "baseName": "record",
-            "type": "Array<number>",
+            "type": "any",
             "format": ""
         },
         {

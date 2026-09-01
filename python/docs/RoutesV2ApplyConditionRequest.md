@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **condition** | [**ModelsConditionEvaluatable**](ModelsConditionEvaluatable.md) |  | [optional] 
-**record** | **List[int]** |  | [optional] 
+**record** | **object** |  | [optional] 
 
 ## Example
 

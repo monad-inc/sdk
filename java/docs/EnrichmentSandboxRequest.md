@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**config** | [**SecretProcessesorEnrichmentConfig**](SecretProcessesorEnrichmentConfig.md) |  |  [optional] |
-|**record** | **List&lt;Integer&gt;** |  |  [optional] |
+|**record** | **Object** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |
 |**useMockedData** | **Boolean** |  |  [optional] |
 

@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**optimizerType** | **String** |  |  [optional] |
-|**securityData** | **List&lt;Integer&gt;** |  |  [optional] |
+|**securityData** | **Object** |  |  [optional] |
 
 
 

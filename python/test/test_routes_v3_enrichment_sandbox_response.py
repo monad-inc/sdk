@@ -36,9 +36,7 @@ class TestRoutesV3EnrichmentSandboxResponse(unittest.TestCase):
         model = RoutesV3EnrichmentSandboxResponse()
         if include_optional:
             return RoutesV3EnrichmentSandboxResponse(
-                record = [
-                    56
-                    ]
+                record = monad.models.array.array()
             )
         else:
             return RoutesV3EnrichmentSandboxResponse(

@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutesV3TransformRecommendationRequest{}
 // RoutesV3TransformRecommendationRequest struct for RoutesV3TransformRecommendationRequest
 type RoutesV3TransformRecommendationRequest struct {
 	OptimizerType *string `json:"optimizer_type,omitempty"`
-	SecurityData []int32 `json:"security_data,omitempty"`
+	SecurityData map[string]interface{} `json:"security_data,omitempty"`
 }
 
 // NewRoutesV3TransformRecommendationRequest instantiates a new RoutesV3TransformRecommendationRequest object
@@ -74,9 +74,9 @@ func (o *RoutesV3TransformRecommendationRequest) SetOptimizerType(v string) {
 }
 
 // GetSecurityData returns the SecurityData field value if set, zero value otherwise.
-func (o *RoutesV3TransformRecommendationRequest) GetSecurityData() []int32 {
+func (o *RoutesV3TransformRecommendationRequest) GetSecurityData() map[string]interface{} {
 	if o == nil || IsNil(o.SecurityData) {
-		var ret []int32
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.SecurityData
@@ -84,9 +84,9 @@ func (o *RoutesV3TransformRecommendationRequest) GetSecurityData() []int32 {
 
 // GetSecurityDataOk returns a tuple with the SecurityData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3TransformRecommendationRequest) GetSecurityDataOk() ([]int32, bool) {
+func (o *RoutesV3TransformRecommendationRequest) GetSecurityDataOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.SecurityData) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.SecurityData, true
 }
@@ -100,8 +100,8 @@ func (o *RoutesV3TransformRecommendationRequest) HasSecurityData() bool {
 	return false
 }
 
-// SetSecurityData gets a reference to the given []int32 and assigns it to the SecurityData field.
-func (o *RoutesV3TransformRecommendationRequest) SetSecurityData(v []int32) {
+// SetSecurityData gets a reference to the given map[string]interface{} and assigns it to the SecurityData field.
+func (o *RoutesV3TransformRecommendationRequest) SetSecurityData(v map[string]interface{}) {
 	o.SecurityData = v
 }
 

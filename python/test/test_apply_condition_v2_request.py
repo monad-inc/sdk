@@ -50,9 +50,7 @@ class TestApplyConditionV2Request(unittest.TestCase):
                         }, 
                     operator = 'always', 
                     type_id = '', ),
-                record = [
-                    56
-                    ]
+                record = monad.models.record.record()
             )
         else:
             return ApplyConditionV2Request(

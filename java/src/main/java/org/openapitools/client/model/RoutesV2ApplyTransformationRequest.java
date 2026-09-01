@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.client.model.ModelsTransformConfig;
 
 import com.google.gson.Gson;
@@ -61,7 +59,7 @@ public class RoutesV2ApplyTransformationRequest {
   public static final String SERIALIZED_NAME_RECORD = "record";
   @SerializedName(SERIALIZED_NAME_RECORD)
   @javax.annotation.Nullable
-  private List<Integer> record = new ArrayList<>();
+  private Object record;
 
   public RoutesV2ApplyTransformationRequest() {
   }
@@ -85,16 +83,8 @@ public class RoutesV2ApplyTransformationRequest {
   }
 
 
-  public RoutesV2ApplyTransformationRequest record(@javax.annotation.Nullable List<Integer> record) {
+  public RoutesV2ApplyTransformationRequest record(@javax.annotation.Nullable Object record) {
     this.record = record;
-    return this;
-  }
-
-  public RoutesV2ApplyTransformationRequest addRecordItem(Integer recordItem) {
-    if (this.record == null) {
-      this.record = new ArrayList<>();
-    }
-    this.record.add(recordItem);
     return this;
   }
 
@@ -103,11 +93,11 @@ public class RoutesV2ApplyTransformationRequest {
    * @return record
    */
   @javax.annotation.Nullable
-  public List<Integer> getRecord() {
+  public Object getRecord() {
     return record;
   }
 
-  public void setRecord(@javax.annotation.Nullable List<Integer> record) {
+  public void setRecord(@javax.annotation.Nullable Object record) {
     this.record = record;
   }
 
@@ -185,10 +175,6 @@ public class RoutesV2ApplyTransformationRequest {
       // validate the optional field `config`
       if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
         ModelsTransformConfig.validateJsonElement(jsonObj.get("config"));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("record") != null && !jsonObj.get("record").isJsonNull() && !jsonObj.get("record").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `record` to be an array in the JSON string but got `%s`", jsonObj.get("record").toString()));
       }
   }
 

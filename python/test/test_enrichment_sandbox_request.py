@@ -43,9 +43,7 @@ class TestEnrichmentSandboxRequest(unittest.TestCase):
                     settings = {
                         'key' : null
                         }, ),
-                record = [
-                    56
-                    ],
+                record = monad.models.record.record(),
                 type_id = '',
                 use_mocked_data = True
             )

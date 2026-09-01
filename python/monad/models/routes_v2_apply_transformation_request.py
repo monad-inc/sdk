@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_transform_config import ModelsTransformConfig
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class RoutesV2ApplyTransformationRequest(BaseModel):
     RoutesV2ApplyTransformationRequest
     """ # noqa: E501
     config: Optional[ModelsTransformConfig] = None
-    record: Optional[List[StrictInt]] = None
+    record: Optional[Dict[str, Any]] = None
     __properties: ClassVar[List[str]] = ["config", "record"]
 
     model_config = ConfigDict(

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | [**SecretProcessesorEnrichmentConfig**](SecretProcessesorEnrichmentConfig.md) |  | [optional] 
-**record** | **List[int]** |  | [optional] 
+**record** | **object** |  | [optional] 
 **type_id** | **str** |  | [optional] 
 **use_mocked_data** | **bool** |  | [optional] 
 

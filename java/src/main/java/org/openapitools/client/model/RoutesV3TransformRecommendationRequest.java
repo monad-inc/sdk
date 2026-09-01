@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -60,7 +58,7 @@ public class RoutesV3TransformRecommendationRequest {
   public static final String SERIALIZED_NAME_SECURITY_DATA = "security_data";
   @SerializedName(SERIALIZED_NAME_SECURITY_DATA)
   @javax.annotation.Nullable
-  private List<Integer> securityData = new ArrayList<>();
+  private Object securityData;
 
   public RoutesV3TransformRecommendationRequest() {
   }
@@ -84,16 +82,8 @@ public class RoutesV3TransformRecommendationRequest {
   }
 
 
-  public RoutesV3TransformRecommendationRequest securityData(@javax.annotation.Nullable List<Integer> securityData) {
+  public RoutesV3TransformRecommendationRequest securityData(@javax.annotation.Nullable Object securityData) {
     this.securityData = securityData;
-    return this;
-  }
-
-  public RoutesV3TransformRecommendationRequest addSecurityDataItem(Integer securityDataItem) {
-    if (this.securityData == null) {
-      this.securityData = new ArrayList<>();
-    }
-    this.securityData.add(securityDataItem);
     return this;
   }
 
@@ -102,11 +92,11 @@ public class RoutesV3TransformRecommendationRequest {
    * @return securityData
    */
   @javax.annotation.Nullable
-  public List<Integer> getSecurityData() {
+  public Object getSecurityData() {
     return securityData;
   }
 
-  public void setSecurityData(@javax.annotation.Nullable List<Integer> securityData) {
+  public void setSecurityData(@javax.annotation.Nullable Object securityData) {
     this.securityData = securityData;
   }
 
@@ -183,10 +173,6 @@ public class RoutesV3TransformRecommendationRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("optimizer_type") != null && !jsonObj.get("optimizer_type").isJsonNull()) && !jsonObj.get("optimizer_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `optimizer_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("optimizer_type").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("security_data") != null && !jsonObj.get("security_data").isJsonNull() && !jsonObj.get("security_data").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `security_data` to be an array in the JSON string but got `%s`", jsonObj.get("security_data").toString()));
       }
   }
 

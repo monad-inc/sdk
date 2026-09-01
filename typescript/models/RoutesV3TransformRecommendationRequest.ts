@@ -14,7 +14,7 @@ import { HttpFile } from '../http/http';
 
 export class RoutesV3TransformRecommendationRequest {
     'optimizerType'?: string;
-    'securityData'?: Array<number>;
+    'securityData'?: any;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,7 +30,7 @@ export class RoutesV3TransformRecommendationRequest {
         {
             "name": "securityData",
             "baseName": "security_data",
-            "type": "Array<number>",
+            "type": "any",
             "format": ""
         }    ];
 

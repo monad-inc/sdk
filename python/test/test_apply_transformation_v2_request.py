@@ -45,9 +45,7 @@ class TestApplyTransformationV2Request(unittest.TestCase):
                             description = '', 
                             operation = '', )
                         ], ),
-                record = [
-                    56
-                    ]
+                record = monad.models.record.record()
             )
         else:
             return ApplyTransformationV2Request(

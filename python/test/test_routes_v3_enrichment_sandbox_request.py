@@ -43,9 +43,7 @@ class TestRoutesV3EnrichmentSandboxRequest(unittest.TestCase):
                     settings = {
                         'key' : null
                         }, ),
-                record = [
-                    56
-                    ],
+                record = None,
                 type_id = '',
                 use_mocked_data = True
             )

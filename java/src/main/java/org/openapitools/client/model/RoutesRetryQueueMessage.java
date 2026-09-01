@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -60,7 +58,7 @@ public class RoutesRetryQueueMessage {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private List<Integer> data = new ArrayList<>();
+  private Object data;
 
   public static final String SERIALIZED_NAME_DATA_BYTES = "data_bytes";
   @SerializedName(SERIALIZED_NAME_DATA_BYTES)
@@ -124,16 +122,8 @@ public class RoutesRetryQueueMessage {
   }
 
 
-  public RoutesRetryQueueMessage data(@javax.annotation.Nullable List<Integer> data) {
+  public RoutesRetryQueueMessage data(@javax.annotation.Nullable Object data) {
     this.data = data;
-    return this;
-  }
-
-  public RoutesRetryQueueMessage addDataItem(Integer dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<>();
-    }
-    this.data.add(dataItem);
     return this;
   }
 
@@ -142,11 +132,11 @@ public class RoutesRetryQueueMessage {
    * @return data
    */
   @javax.annotation.Nullable
-  public List<Integer> getData() {
+  public Object getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable List<Integer> data) {
+  public void setData(@javax.annotation.Nullable Object data) {
     this.data = data;
   }
 
@@ -391,10 +381,6 @@ public class RoutesRetryQueueMessage {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull() && !jsonObj.get("data").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
       }
       if ((jsonObj.get("eligible_at") != null && !jsonObj.get("eligible_at").isJsonNull()) && !jsonObj.get("eligible_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `eligible_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("eligible_at").toString()));

@@ -37,9 +37,7 @@ class TestRoutesV3TransformRecommendationRequest(unittest.TestCase):
         if include_optional:
             return RoutesV3TransformRecommendationRequest(
                 optimizer_type = '',
-                security_data = [
-                    56
-                    ]
+                security_data = None
             )
         else:
             return RoutesV3TransformRecommendationRequest(
