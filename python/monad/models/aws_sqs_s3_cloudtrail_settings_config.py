@@ -34,9 +34,10 @@ class AwsSqsS3CloudtrailSettingsConfig(BaseModel):
     queue_url: StrictStr
     region: StrictStr
     role_arn: Optional[StrictStr] = None
+    use_fips: Optional[StrictBool] = None
     uses_sns: Optional[StrictBool] = None
     with_metadata: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["chunking_mode", "exclude_digest_files", "queue_url", "region", "role_arn", "uses_sns", "with_metadata"]
+    __properties: ClassVar[List[str]] = ["chunking_mode", "exclude_digest_files", "queue_url", "region", "role_arn", "use_fips", "uses_sns", "with_metadata"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,6 +95,7 @@ class AwsSqsS3CloudtrailSettingsConfig(BaseModel):
             "queue_url": obj.get("queue_url"),
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
+            "use_fips": obj.get("use_fips"),
             "uses_sns": obj.get("uses_sns"),
             "with_metadata": obj.get("with_metadata")
         })

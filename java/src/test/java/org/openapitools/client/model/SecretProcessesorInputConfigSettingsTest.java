@@ -30,6 +30,7 @@ import org.openapitools.client.model.AwsGuarddutySettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AwsSqsS3CloudtrailChunkingMode;
 import org.openapitools.client.model.AwsSqsS3CloudtrailSettingsConfig;
+import org.openapitools.client.model.AwsSqsS3GuarddutySettingsConfig;
 import org.openapitools.client.model.Awssqss3SettingsConfig;
 import org.openapitools.client.model.AzureActivityLogsSettingsConfig;
 import org.openapitools.client.model.AzureBlobStorageSettingsConfig;
@@ -272,6 +273,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void queueUrlTest() {
         // TODO: test queueUrl
+    }
+
+    /**
+     * Test the property 'useFips'
+     */
+    @Test
+    public void useFipsTest() {
+        // TODO: test useFips
     }
 
     /**

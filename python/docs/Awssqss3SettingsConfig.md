@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **record_location** | **str** | Record location within each parsed object. JSON only; empty &#x3D; whole record. | [optional] 
 **region** | **str** |  | 
 **role_arn** | **str** |  | [optional] 
+**use_fips** | **bool** |  | [optional] 
 **uses_sns** | **bool** |  | [optional] 
 **with_metadata** | **bool** |  | [optional] 
 

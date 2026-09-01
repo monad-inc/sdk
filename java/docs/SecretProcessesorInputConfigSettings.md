@@ -25,6 +25,7 @@
 |**chunkingMode** | **AwsSqsS3CloudtrailChunkingMode** |  |  [optional] |
 |**excludeDigestFiles** | **Boolean** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). |  [optional] |
 |**queueUrl** | **String** |  |  |
+|**useFips** | **Boolean** |  |  [optional] |
 |**usesSns** | **Boolean** |  |  [optional] |
 |**withMetadata** | **Boolean** |  |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |

@@ -48,6 +48,7 @@ class TestAwssqss3SettingsConfig(unittest.TestCase):
                 record_location = '',
                 region = '',
                 role_arn = '',
+                use_fips = True,
                 uses_sns = True,
                 with_metadata = True
             )

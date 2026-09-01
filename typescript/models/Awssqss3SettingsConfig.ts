@@ -33,6 +33,7 @@ export class Awssqss3SettingsConfig {
     'recordLocation'?: string;
     'region': string;
     'roleArn'?: string;
+    'useFips'?: boolean;
     'usesSns'?: boolean;
     'withMetadata'?: boolean;
 
@@ -81,6 +82,12 @@ export class Awssqss3SettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useFips",
+            "baseName": "use_fips",
+            "type": "boolean",
             "format": ""
         },
         {

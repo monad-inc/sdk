@@ -13,6 +13,7 @@ AWS SQS S3 CloudTrail settings
 |**queueUrl** | **String** |  |  |
 |**region** | **String** |  |  |
 |**roleArn** | **String** |  |  [optional] |
+|**useFips** | **Boolean** |  |  [optional] |
 |**usesSns** | **Boolean** |  |  [optional] |
 |**withMetadata** | **Boolean** |  |  [optional] |
 

@@ -25,6 +25,7 @@ export class AwsSqsS3CloudtrailSettingsConfig {
     'queueUrl': string;
     'region': string;
     'roleArn'?: string;
+    'useFips'?: boolean;
     'usesSns'?: boolean;
     'withMetadata'?: boolean;
 
@@ -61,6 +62,12 @@ export class AwsSqsS3CloudtrailSettingsConfig {
             "name": "roleArn",
             "baseName": "role_arn",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "useFips",
+            "baseName": "use_fips",
+            "type": "boolean",
             "format": ""
         },
         {

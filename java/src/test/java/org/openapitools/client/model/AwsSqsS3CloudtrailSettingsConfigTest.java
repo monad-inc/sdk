@@ -79,6 +79,14 @@ public class AwsSqsS3CloudtrailSettingsConfigTest {
     }
 
     /**
+     * Test the property 'useFips'
+     */
+    @Test
+    public void useFipsTest() {
+        // TODO: test useFips
+    }
+
+    /**
      * Test the property 'usesSns'
      */
     @Test

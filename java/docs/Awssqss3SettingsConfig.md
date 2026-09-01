@@ -15,6 +15,7 @@ AWS SQS S3 settings
 |**recordLocation** | **String** | Record location within each parsed object. JSON only; empty &#x3D; whole record. |  [optional] |
 |**region** | **String** |  |  |
 |**roleArn** | **String** |  |  [optional] |
+|**useFips** | **Boolean** |  |  [optional] |
 |**usesSns** | **Boolean** |  |  [optional] |
 |**withMetadata** | **Boolean** |  |  [optional] |
 

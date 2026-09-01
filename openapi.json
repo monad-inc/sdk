@@ -394,6 +394,37 @@
                     "role_arn": {
                         "type": "string"
                     },
+                    "use_fips": {
+                        "type": "boolean"
+                    },
+                    "uses_sns": {
+                        "type": "boolean"
+                    },
+                    "with_metadata": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "queue_url",
+                    "region"
+                ],
+                "type": "object"
+            },
+            "aws_sqs_s3_guardduty.SettingsConfig": {
+                "description": "AWS SQS S3 GuardDuty settings",
+                "properties": {
+                    "queue_url": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    },
+                    "role_arn": {
+                        "type": "string"
+                    },
+                    "use_fips": {
+                        "type": "boolean"
+                    },
                     "uses_sns": {
                         "type": "boolean"
                     },
@@ -482,6 +513,9 @@
                     },
                     "role_arn": {
                         "type": "string"
+                    },
+                    "use_fips": {
+                        "type": "boolean"
                     },
                     "uses_sns": {
                         "type": "boolean"
@@ -1903,6 +1937,77 @@
                     "FormatDateTime",
                     "FormatCustom"
                 ]
+            },
+            "coralogix.CommunicationConfig": {
+                "properties": {
+                    "rest": {
+                        "$ref": "#/components/schemas/coralogix.RESTVariant"
+                    },
+                    "type": {
+                        "enum": [
+                            "rest"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
+            "coralogix.RESTVariant": {
+                "properties": {
+                    "send_your_data_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "send_your_data_key"
+                ],
+                "type": "object"
+            },
+            "coralogix.SettingsConfig": {
+                "description": "Coralogix Output Settings",
+                "properties": {
+                    "application_name": {
+                        "description": "ApplicationName is stamped on every record. Coralogix uses this to\nseparate environments/tenants.",
+                        "type": "string"
+                    },
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "communication": {
+                        "$ref": "#/components/schemas/coralogix.CommunicationConfig"
+                    },
+                    "region": {
+                        "description": "Coralogix region (e.g. us1, eu2). Determines which regional ingress\nhostname is used. See https://coralogix.com/docs/integrations/coralogix-endpoints/.",
+                        "enum": [
+                            "us1",
+                            "us2",
+                            "us3",
+                            "eu1",
+                            "eu2",
+                            "ap1",
+                            "ap2",
+                            "ap3"
+                        ],
+                        "type": "string"
+                    },
+                    "subsystem_name": {
+                        "description": "SubsystemName is stamped on every record. Coralogix uses this to\nseparate components within an application.",
+                        "type": "string"
+                    },
+                    "timestamp_record_location": {
+                        "description": "TimestampRecordLocation is an optional JSONPath (`$.event.time`) or\ngjson path pointing at the timestamp field inside each incoming record.\nWhen unset the connector stamps the current time on every record; when\nset the connector reads the field and fails the batch if the value is\nnot a parseable timestamp.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "application_name",
+                    "region",
+                    "subsystem_name"
+                ],
+                "type": "object"
             },
             "cortex_xsoar_management_logs.SecretsConfig": {
                 "description": "Palo Alto Cortex Xsoar Management Logs secrets",
@@ -10545,6 +10650,9 @@
                                 "$ref": "#/components/schemas/aws_sqs_s3_cloudtrail.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/aws_sqs_s3_guardduty.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/awssqss3.SettingsConfig"
                             },
                             {
@@ -10830,6 +10938,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/bigquery.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/coralogix.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/cribl_http.SettingsConfig"

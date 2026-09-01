@@ -19,6 +19,7 @@ export * from '../models/AwsS3SecretsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AwsSqsS3CloudtrailChunkingMode';
 export * from '../models/AwsSqsS3CloudtrailSettingsConfig';
+export * from '../models/AwsSqsS3GuarddutySettingsConfig';
 export * from '../models/AwssqsoutputQueueType';
 export * from '../models/AwssqsoutputSettingsConfig';
 export * from '../models/Awssqss3SettingsConfig';
@@ -86,6 +87,9 @@ export * from '../models/ComponentpreviewResponse';
 export * from '../models/ConvertCefArgumentsConfig';
 export * from '../models/ConvertTimestampArgumentsConfig';
 export * from '../models/ConvertTimestampTimestampFormat';
+export * from '../models/CoralogixCommunicationConfig';
+export * from '../models/CoralogixRESTVariant';
+export * from '../models/CoralogixSettingsConfig';
 export * from '../models/CortexXsoarManagementLogsSecretsConfig';
 export * from '../models/CortexXsoarManagementLogsSettingsConfig';
 export * from '../models/CreateAPIKeyRequest';
@@ -633,10 +637,11 @@ import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwsSqsS3CloudtrailChunkingMode } from '../models/AwsSqsS3CloudtrailChunkingMode';
-import { AwsSqsS3CloudtrailSettingsConfig        } from '../models/AwsSqsS3CloudtrailSettingsConfig';
+import { AwsSqsS3CloudtrailSettingsConfig         } from '../models/AwsSqsS3CloudtrailSettingsConfig';
+import { AwsSqsS3GuarddutySettingsConfig } from '../models/AwsSqsS3GuarddutySettingsConfig';
 import { AwssqsoutputQueueType } from '../models/AwssqsoutputQueueType';
 import { AwssqsoutputSettingsConfig      } from '../models/AwssqsoutputSettingsConfig';
-import { Awssqss3SettingsConfig, Awssqss3SettingsConfigCompressionEnum  , Awssqss3SettingsConfigFormatEnum          } from '../models/Awssqss3SettingsConfig';
+import { Awssqss3SettingsConfig, Awssqss3SettingsConfigCompressionEnum  , Awssqss3SettingsConfigFormatEnum           } from '../models/Awssqss3SettingsConfig';
 import { AxiomSecretsConfig } from '../models/AxiomSecretsConfig';
 import { AxiomSettingsConfig } from '../models/AxiomSettingsConfig';
 import { AzureActivityLogsSecretsConfig } from '../models/AzureActivityLogsSecretsConfig';
@@ -701,6 +706,9 @@ import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig         } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
+import { CoralogixCommunicationConfig , CoralogixCommunicationConfigTypeEnum   } from '../models/CoralogixCommunicationConfig';
+import { CoralogixRESTVariant } from '../models/CoralogixRESTVariant';
+import { CoralogixSettingsConfig   , CoralogixSettingsConfigRegionEnum     } from '../models/CoralogixSettingsConfig';
 import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarManagementLogsSecretsConfig';
 import { CortexXsoarManagementLogsSettingsConfig } from '../models/CortexXsoarManagementLogsSettingsConfig';
 import { CreateAPIKeyRequestClass } from '../models/CreateAPIKeyRequest';
@@ -1252,6 +1260,8 @@ let enumsMap: Set<string> = new Set<string>([
     "CommonAuthConfigTypeEnum",
     "CommonAuthType",
     "ConvertTimestampTimestampFormat",
+    "CoralogixCommunicationConfigTypeEnum",
+    "CoralogixSettingsConfigRegionEnum",
     "DatabricksDeltaTableWriteModeWriteModeEnum",
     "DatabricksLakehousePipelineConfigModeEnum",
     "DatabricksLakehouseWriteModeWriteModeEnum",
@@ -1346,6 +1356,7 @@ let typeMap: {[index: string]: any} = {
     "AwsS3SecretsConfig": AwsS3SecretsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AwsSqsS3CloudtrailSettingsConfig": AwsSqsS3CloudtrailSettingsConfig,
+    "AwsSqsS3GuarddutySettingsConfig": AwsSqsS3GuarddutySettingsConfig,
     "AwssqsoutputSettingsConfig": AwssqsoutputSettingsConfig,
     "Awssqss3SettingsConfig": Awssqss3SettingsConfig,
     "AxiomSecretsConfig": AxiomSecretsConfig,
@@ -1409,6 +1420,9 @@ let typeMap: {[index: string]: any} = {
     "ComponentpreviewResponse": ComponentpreviewResponse,
     "ConvertCefArgumentsConfig": ConvertCefArgumentsConfig,
     "ConvertTimestampArgumentsConfig": ConvertTimestampArgumentsConfig,
+    "CoralogixCommunicationConfig": CoralogixCommunicationConfig,
+    "CoralogixRESTVariant": CoralogixRESTVariant,
+    "CoralogixSettingsConfig": CoralogixSettingsConfig,
     "CortexXsoarManagementLogsSecretsConfig": CortexXsoarManagementLogsSecretsConfig,
     "CortexXsoarManagementLogsSettingsConfig": CortexXsoarManagementLogsSettingsConfig,
     "CreateAPIKeyRequest": CreateAPIKeyRequestClass,

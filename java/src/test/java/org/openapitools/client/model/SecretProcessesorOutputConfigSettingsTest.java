@@ -30,6 +30,7 @@ import org.openapitools.client.model.AxiomSettingsConfig;
 import org.openapitools.client.model.BackblazeSettingsConfig;
 import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.BigquerySettingsConfig;
+import org.openapitools.client.model.CoralogixSettingsConfig;
 import org.openapitools.client.model.CriblHttpSettingsConfig;
 import org.openapitools.client.model.DatabricksDeltaTableSettingsConfig;
 import org.openapitools.client.model.DatabricksLakehouseSettingsConfig;
@@ -226,6 +227,38 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void tableTest() {
         // TODO: test table
+    }
+
+    /**
+     * Test the property 'applicationName'
+     */
+    @Test
+    public void applicationNameTest() {
+        // TODO: test applicationName
+    }
+
+    /**
+     * Test the property 'communication'
+     */
+    @Test
+    public void communicationTest() {
+        // TODO: test communication
+    }
+
+    /**
+     * Test the property 'subsystemName'
+     */
+    @Test
+    public void subsystemNameTest() {
+        // TODO: test subsystemName
+    }
+
+    /**
+     * Test the property 'timestampRecordLocation'
+     */
+    @Test
+    public void timestampRecordLocationTest() {
+        // TODO: test timestampRecordLocation
     }
 
     /**
@@ -522,14 +555,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void transformTest() {
         // TODO: test transform
-    }
-
-    /**
-     * Test the property 'communication'
-     */
-    @Test
-    public void communicationTest() {
-        // TODO: test communication
     }
 
     /**

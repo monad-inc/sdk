@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ChunkingMode** | Pointer to [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
 **ExcludeDigestFiles** | Pointer to **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
 **QueueUrl** | **string** |  | 
+**UseFips** | Pointer to **bool** |  | [optional] 
 **UsesSns** | Pointer to **bool** |  | [optional] 
 **WithMetadata** | Pointer to **bool** |  | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
@@ -577,6 +578,31 @@ and a boolean to check if the value has been set.
 
 SetQueueUrl sets QueueUrl field to given value.
 
+
+### GetUseFips
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseFips() bool`
+
+GetUseFips returns the UseFips field if non-nil, zero value otherwise.
+
+### GetUseFipsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseFipsOk() (*bool, bool)`
+
+GetUseFipsOk returns a tuple with the UseFips field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseFips
+
+`func (o *SecretProcessesorInputConfigSettings) SetUseFips(v bool)`
+
+SetUseFips sets UseFips field to given value.
+
+### HasUseFips
+
+`func (o *SecretProcessesorInputConfigSettings) HasUseFips() bool`
+
+HasUseFips returns a boolean if a field has been set.
 
 ### GetUsesSns
 

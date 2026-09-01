@@ -198,6 +198,11 @@ public class Awssqss3SettingsConfig {
   @javax.annotation.Nullable
   private String roleArn;
 
+  public static final String SERIALIZED_NAME_USE_FIPS = "use_fips";
+  @SerializedName(SERIALIZED_NAME_USE_FIPS)
+  @javax.annotation.Nullable
+  private Boolean useFips;
+
   public static final String SERIALIZED_NAME_USES_SNS = "uses_sns";
   @SerializedName(SERIALIZED_NAME_USES_SNS)
   @javax.annotation.Nullable
@@ -344,6 +349,25 @@ public class Awssqss3SettingsConfig {
   }
 
 
+  public Awssqss3SettingsConfig useFips(@javax.annotation.Nullable Boolean useFips) {
+    this.useFips = useFips;
+    return this;
+  }
+
+  /**
+   * Get useFips
+   * @return useFips
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseFips() {
+    return useFips;
+  }
+
+  public void setUseFips(@javax.annotation.Nullable Boolean useFips) {
+    this.useFips = useFips;
+  }
+
+
   public Awssqss3SettingsConfig usesSns(@javax.annotation.Nullable Boolean usesSns) {
     this.usesSns = usesSns;
     return this;
@@ -399,13 +423,14 @@ public class Awssqss3SettingsConfig {
         Objects.equals(this.recordLocation, awssqss3SettingsConfig.recordLocation) &&
         Objects.equals(this.region, awssqss3SettingsConfig.region) &&
         Objects.equals(this.roleArn, awssqss3SettingsConfig.roleArn) &&
+        Objects.equals(this.useFips, awssqss3SettingsConfig.useFips) &&
         Objects.equals(this.usesSns, awssqss3SettingsConfig.usesSns) &&
         Objects.equals(this.withMetadata, awssqss3SettingsConfig.withMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(compression, format, keyFilter, queueUrl, recordLocation, region, roleArn, usesSns, withMetadata);
+    return Objects.hash(compression, format, keyFilter, queueUrl, recordLocation, region, roleArn, useFips, usesSns, withMetadata);
   }
 
   @Override
@@ -419,6 +444,7 @@ public class Awssqss3SettingsConfig {
     sb.append("    recordLocation: ").append(toIndentedString(recordLocation)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    useFips: ").append(toIndentedString(useFips)).append("\n");
     sb.append("    usesSns: ").append(toIndentedString(usesSns)).append("\n");
     sb.append("    withMetadata: ").append(toIndentedString(withMetadata)).append("\n");
     sb.append("}");
@@ -439,7 +465,7 @@ public class Awssqss3SettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("compression", "format", "key_filter", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"));
+    openapiFields = new HashSet<String>(Arrays.asList("compression", "format", "key_filter", "queue_url", "record_location", "region", "role_arn", "use_fips", "uses_sns", "with_metadata"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("compression", "format", "queue_url", "region"));

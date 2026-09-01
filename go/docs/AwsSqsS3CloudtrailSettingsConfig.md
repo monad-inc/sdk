@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **QueueUrl** | **string** |  | 
 **Region** | **string** |  | 
 **RoleArn** | Pointer to **string** |  | [optional] 
+**UseFips** | Pointer to **bool** |  | [optional] 
 **UsesSns** | Pointer to **bool** |  | [optional] 
 **WithMetadata** | Pointer to **bool** |  | [optional] 
 
@@ -145,6 +146,31 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *AwsSqsS3CloudtrailSettingsConfig) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetUseFips
+
+`func (o *AwsSqsS3CloudtrailSettingsConfig) GetUseFips() bool`
+
+GetUseFips returns the UseFips field if non-nil, zero value otherwise.
+
+### GetUseFipsOk
+
+`func (o *AwsSqsS3CloudtrailSettingsConfig) GetUseFipsOk() (*bool, bool)`
+
+GetUseFipsOk returns a tuple with the UseFips field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseFips
+
+`func (o *AwsSqsS3CloudtrailSettingsConfig) SetUseFips(v bool)`
+
+SetUseFips sets UseFips field to given value.
+
+### HasUseFips
+
+`func (o *AwsSqsS3CloudtrailSettingsConfig) HasUseFips() bool`
+
+HasUseFips returns a boolean if a field has been set.
 
 ### GetUsesSns
 

@@ -95,6 +95,14 @@ public class Awssqss3SettingsConfigTest {
     }
 
     /**
+     * Test the property 'useFips'
+     */
+    @Test
+    public void useFipsTest() {
+        // TODO: test useFips
+    }
+
+    /**
      * Test the property 'usesSns'
      */
     @Test

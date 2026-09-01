@@ -76,6 +76,11 @@ public class AwsSqsS3CloudtrailSettingsConfig {
   @javax.annotation.Nullable
   private String roleArn;
 
+  public static final String SERIALIZED_NAME_USE_FIPS = "use_fips";
+  @SerializedName(SERIALIZED_NAME_USE_FIPS)
+  @javax.annotation.Nullable
+  private Boolean useFips;
+
   public static final String SERIALIZED_NAME_USES_SNS = "uses_sns";
   @SerializedName(SERIALIZED_NAME_USES_SNS)
   @javax.annotation.Nullable
@@ -184,6 +189,25 @@ public class AwsSqsS3CloudtrailSettingsConfig {
   }
 
 
+  public AwsSqsS3CloudtrailSettingsConfig useFips(@javax.annotation.Nullable Boolean useFips) {
+    this.useFips = useFips;
+    return this;
+  }
+
+  /**
+   * Get useFips
+   * @return useFips
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseFips() {
+    return useFips;
+  }
+
+  public void setUseFips(@javax.annotation.Nullable Boolean useFips) {
+    this.useFips = useFips;
+  }
+
+
   public AwsSqsS3CloudtrailSettingsConfig usesSns(@javax.annotation.Nullable Boolean usesSns) {
     this.usesSns = usesSns;
     return this;
@@ -237,13 +261,14 @@ public class AwsSqsS3CloudtrailSettingsConfig {
         Objects.equals(this.queueUrl, awsSqsS3CloudtrailSettingsConfig.queueUrl) &&
         Objects.equals(this.region, awsSqsS3CloudtrailSettingsConfig.region) &&
         Objects.equals(this.roleArn, awsSqsS3CloudtrailSettingsConfig.roleArn) &&
+        Objects.equals(this.useFips, awsSqsS3CloudtrailSettingsConfig.useFips) &&
         Objects.equals(this.usesSns, awsSqsS3CloudtrailSettingsConfig.usesSns) &&
         Objects.equals(this.withMetadata, awsSqsS3CloudtrailSettingsConfig.withMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chunkingMode, excludeDigestFiles, queueUrl, region, roleArn, usesSns, withMetadata);
+    return Objects.hash(chunkingMode, excludeDigestFiles, queueUrl, region, roleArn, useFips, usesSns, withMetadata);
   }
 
   @Override
@@ -255,6 +280,7 @@ public class AwsSqsS3CloudtrailSettingsConfig {
     sb.append("    queueUrl: ").append(toIndentedString(queueUrl)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
+    sb.append("    useFips: ").append(toIndentedString(useFips)).append("\n");
     sb.append("    usesSns: ").append(toIndentedString(usesSns)).append("\n");
     sb.append("    withMetadata: ").append(toIndentedString(withMetadata)).append("\n");
     sb.append("}");
@@ -275,7 +301,7 @@ public class AwsSqsS3CloudtrailSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("chunking_mode", "exclude_digest_files", "queue_url", "region", "role_arn", "uses_sns", "with_metadata"));
+    openapiFields = new HashSet<String>(Arrays.asList("chunking_mode", "exclude_digest_files", "queue_url", "region", "role_arn", "use_fips", "uses_sns", "with_metadata"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("queue_url", "region"));

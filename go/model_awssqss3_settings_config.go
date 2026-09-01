@@ -32,6 +32,7 @@ type Awssqss3SettingsConfig struct {
 	RecordLocation *string `json:"record_location,omitempty"`
 	Region string `json:"region"`
 	RoleArn *string `json:"role_arn,omitempty"`
+	UseFips *bool `json:"use_fips,omitempty"`
 	UsesSns *bool `json:"uses_sns,omitempty"`
 	WithMetadata *bool `json:"with_metadata,omitempty"`
 }
@@ -251,6 +252,38 @@ func (o *Awssqss3SettingsConfig) SetRoleArn(v string) {
 	o.RoleArn = &v
 }
 
+// GetUseFips returns the UseFips field value if set, zero value otherwise.
+func (o *Awssqss3SettingsConfig) GetUseFips() bool {
+	if o == nil || IsNil(o.UseFips) {
+		var ret bool
+		return ret
+	}
+	return *o.UseFips
+}
+
+// GetUseFipsOk returns a tuple with the UseFips field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Awssqss3SettingsConfig) GetUseFipsOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseFips) {
+		return nil, false
+	}
+	return o.UseFips, true
+}
+
+// HasUseFips returns a boolean if a field has been set.
+func (o *Awssqss3SettingsConfig) HasUseFips() bool {
+	if o != nil && !IsNil(o.UseFips) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseFips gets a reference to the given bool and assigns it to the UseFips field.
+func (o *Awssqss3SettingsConfig) SetUseFips(v bool) {
+	o.UseFips = &v
+}
+
 // GetUsesSns returns the UsesSns field value if set, zero value otherwise.
 func (o *Awssqss3SettingsConfig) GetUsesSns() bool {
 	if o == nil || IsNil(o.UsesSns) {
@@ -337,6 +370,9 @@ func (o Awssqss3SettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize["region"] = o.Region
 	if !IsNil(o.RoleArn) {
 		toSerialize["role_arn"] = o.RoleArn
+	}
+	if !IsNil(o.UseFips) {
+		toSerialize["use_fips"] = o.UseFips
 	}
 	if !IsNil(o.UsesSns) {
 		toSerialize["uses_sns"] = o.UsesSns

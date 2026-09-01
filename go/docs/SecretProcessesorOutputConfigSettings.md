@@ -20,6 +20,10 @@ Name | Type | Description | Notes
 **Bucket** | **string** | The S3 bucket in your AWS account that Scanner indexes. | 
 **ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
 **Table** | **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | 
+**ApplicationName** | **string** | ApplicationName is stamped on every record. Coralogix uses this to separate environments/tenants. | 
+**Communication** | Pointer to [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
+**SubsystemName** | **string** | SubsystemName is stamped on every record. Coralogix uses this to separate components within an application. | 
+**TimestampRecordLocation** | Pointer to **string** | TimestampRecordLocation is an optional JSONPath (&#x60;$.event.time&#x60;) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field and fails the batch if the value is not a parseable timestamp. | [optional] 
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
 **Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
 **Port** | **string** | The port of the Splunk instance. | 
@@ -57,7 +61,6 @@ Name | Type | Description | Notes
 **Host** | **string** | The host of the PostgreSQL database | 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Transform** | Pointer to **string** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
-**Communication** | Pointer to [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
 **EventFormat** | Pointer to [**IbmQradarEventFormatConfig**](IbmQradarEventFormatConfig.md) |  | [optional] 
 **Acks** | Pointer to [**KafkaAcks**](KafkaAcks.md) |  | [optional] 
 **BootstrapServers** | Pointer to **string** | Comma-separated list of Kafka broker addresses (host:port) | [optional] 
@@ -110,7 +113,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -499,6 +502,96 @@ and a boolean to check if the value has been set.
 
 SetTable sets Table field to given value.
 
+
+### GetApplicationName
+
+`func (o *SecretProcessesorOutputConfigSettings) GetApplicationName() string`
+
+GetApplicationName returns the ApplicationName field if non-nil, zero value otherwise.
+
+### GetApplicationNameOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetApplicationNameOk() (*string, bool)`
+
+GetApplicationNameOk returns a tuple with the ApplicationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationName
+
+`func (o *SecretProcessesorOutputConfigSettings) SetApplicationName(v string)`
+
+SetApplicationName sets ApplicationName field to given value.
+
+
+### GetCommunication
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCommunication() IbmQradarCommunicationConfig`
+
+GetCommunication returns the Communication field if non-nil, zero value otherwise.
+
+### GetCommunicationOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCommunicationOk() (*IbmQradarCommunicationConfig, bool)`
+
+GetCommunicationOk returns a tuple with the Communication field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCommunication
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCommunication(v IbmQradarCommunicationConfig)`
+
+SetCommunication sets Communication field to given value.
+
+### HasCommunication
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCommunication() bool`
+
+HasCommunication returns a boolean if a field has been set.
+
+### GetSubsystemName
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSubsystemName() string`
+
+GetSubsystemName returns the SubsystemName field if non-nil, zero value otherwise.
+
+### GetSubsystemNameOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSubsystemNameOk() (*string, bool)`
+
+GetSubsystemNameOk returns a tuple with the SubsystemName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubsystemName
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSubsystemName(v string)`
+
+SetSubsystemName sets SubsystemName field to given value.
+
+
+### GetTimestampRecordLocation
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTimestampRecordLocation() string`
+
+GetTimestampRecordLocation returns the TimestampRecordLocation field if non-nil, zero value otherwise.
+
+### GetTimestampRecordLocationOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTimestampRecordLocationOk() (*string, bool)`
+
+GetTimestampRecordLocationOk returns a tuple with the TimestampRecordLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampRecordLocation
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTimestampRecordLocation(v string)`
+
+SetTimestampRecordLocation sets TimestampRecordLocation field to given value.
+
+### HasTimestampRecordLocation
+
+`func (o *SecretProcessesorOutputConfigSettings) HasTimestampRecordLocation() bool`
+
+HasTimestampRecordLocation returns a boolean if a field has been set.
 
 ### GetIngressAddress
 
@@ -1359,31 +1452,6 @@ SetTransform sets Transform field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasTransform() bool`
 
 HasTransform returns a boolean if a field has been set.
-
-### GetCommunication
-
-`func (o *SecretProcessesorOutputConfigSettings) GetCommunication() IbmQradarCommunicationConfig`
-
-GetCommunication returns the Communication field if non-nil, zero value otherwise.
-
-### GetCommunicationOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetCommunicationOk() (*IbmQradarCommunicationConfig, bool)`
-
-GetCommunicationOk returns a tuple with the Communication field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCommunication
-
-`func (o *SecretProcessesorOutputConfigSettings) SetCommunication(v IbmQradarCommunicationConfig)`
-
-SetCommunication sets Communication field to given value.
-
-### HasCommunication
-
-`func (o *SecretProcessesorOutputConfigSettings) HasCommunication() bool`
-
-HasCommunication returns a boolean if a field has been set.
 
 ### GetEventFormat
 

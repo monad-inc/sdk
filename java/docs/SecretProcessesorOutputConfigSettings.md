@@ -23,6 +23,10 @@
 |**bucket** | **String** | The S3 bucket in your AWS account that Scanner indexes. |  |
 |**projectId** | **String** | The Google Cloud Project ID where the BigQuery instance is located |  [optional] |
 |**table** | **String** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. |  |
+|**applicationName** | **String** | ApplicationName is stamped on every record. Coralogix uses this to separate environments/tenants. |  |
+|**communication** | [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  |  [optional] |
+|**subsystemName** | **String** | SubsystemName is stamped on every record. Coralogix uses this to separate components within an application. |  |
+|**timestampRecordLocation** | **String** | TimestampRecordLocation is an optional JSONPath (&#x60;$.event.time&#x60;) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field and fails the batch if the value is not a parseable timestamp. |  [optional] |
 |**ingressAddress** | **String** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. |  [optional] |
 |**path** | **String** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. |  [optional] |
 |**port** | **String** | The port of the Splunk instance. |  |
@@ -60,7 +64,6 @@
 |**host** | **String** | The host of the PostgreSQL database |  |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**transform** | **String** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. |  [optional] |
-|**communication** | [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  |  [optional] |
 |**eventFormat** | [**IbmQradarEventFormatConfig**](IbmQradarEventFormatConfig.md) |  |  [optional] |
 |**acks** | **KafkaAcks** |  |  [optional] |
 |**bootstrapServers** | **String** | Comma-separated list of Kafka broker addresses (host:port) |  [optional] |

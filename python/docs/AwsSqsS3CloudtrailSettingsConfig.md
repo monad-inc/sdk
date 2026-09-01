@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **queue_url** | **str** |  | 
 **region** | **str** |  | 
 **role_arn** | **str** |  | [optional] 
+**use_fips** | **bool** |  | [optional] 
 **uses_sns** | **bool** |  | [optional] 
 **with_metadata** | **bool** |  | [optional] 
 

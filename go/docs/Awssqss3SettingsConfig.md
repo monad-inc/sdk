@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **RecordLocation** | Pointer to **string** | Record location within each parsed object. JSON only; empty &#x3D; whole record. | [optional] 
 **Region** | **string** |  | 
 **RoleArn** | Pointer to **string** |  | [optional] 
+**UseFips** | Pointer to **bool** |  | [optional] 
 **UsesSns** | Pointer to **bool** |  | [optional] 
 **WithMetadata** | Pointer to **bool** |  | [optional] 
 
@@ -187,6 +188,31 @@ SetRoleArn sets RoleArn field to given value.
 `func (o *Awssqss3SettingsConfig) HasRoleArn() bool`
 
 HasRoleArn returns a boolean if a field has been set.
+
+### GetUseFips
+
+`func (o *Awssqss3SettingsConfig) GetUseFips() bool`
+
+GetUseFips returns the UseFips field if non-nil, zero value otherwise.
+
+### GetUseFipsOk
+
+`func (o *Awssqss3SettingsConfig) GetUseFipsOk() (*bool, bool)`
+
+GetUseFipsOk returns a tuple with the UseFips field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseFips
+
+`func (o *Awssqss3SettingsConfig) SetUseFips(v bool)`
+
+SetUseFips sets UseFips field to given value.
+
+### HasUseFips
+
+`func (o *Awssqss3SettingsConfig) HasUseFips() bool`
+
+HasUseFips returns a boolean if a field has been set.
 
 ### GetUsesSns
 

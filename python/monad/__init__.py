@@ -92,6 +92,7 @@ __all__ = [
     "AwsS3SettingsConfig",
     "AwsSqsS3CloudtrailChunkingMode",
     "AwsSqsS3CloudtrailSettingsConfig",
+    "AwsSqsS3GuarddutySettingsConfig",
     "AwssqsoutputQueueType",
     "AwssqsoutputSettingsConfig",
     "Awssqss3SettingsConfig",
@@ -159,6 +160,9 @@ __all__ = [
     "ConvertCefArgumentsConfig",
     "ConvertTimestampArgumentsConfig",
     "ConvertTimestampTimestampFormat",
+    "CoralogixCommunicationConfig",
+    "CoralogixRESTVariant",
+    "CoralogixSettingsConfig",
     "CortexXsoarManagementLogsSecretsConfig",
     "CortexXsoarManagementLogsSettingsConfig",
     "CreateAPIKeyRequest",
@@ -765,6 +769,7 @@ from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig as AwsS3Secret
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
 from monad.models.aws_sqs_s3_cloudtrail_chunking_mode import AwsSqsS3CloudtrailChunkingMode as AwsSqsS3CloudtrailChunkingMode
 from monad.models.aws_sqs_s3_cloudtrail_settings_config import AwsSqsS3CloudtrailSettingsConfig as AwsSqsS3CloudtrailSettingsConfig
+from monad.models.aws_sqs_s3_guardduty_settings_config import AwsSqsS3GuarddutySettingsConfig as AwsSqsS3GuarddutySettingsConfig
 from monad.models.awssqsoutput_queue_type import AwssqsoutputQueueType as AwssqsoutputQueueType
 from monad.models.awssqsoutput_settings_config import AwssqsoutputSettingsConfig as AwssqsoutputSettingsConfig
 from monad.models.awssqss3_settings_config import Awssqss3SettingsConfig as Awssqss3SettingsConfig
@@ -832,6 +837,9 @@ from monad.models.componentpreview_response import ComponentpreviewResponse as C
 from monad.models.convert_cef_arguments_config import ConvertCefArgumentsConfig as ConvertCefArgumentsConfig
 from monad.models.convert_timestamp_arguments_config import ConvertTimestampArgumentsConfig as ConvertTimestampArgumentsConfig
 from monad.models.convert_timestamp_timestamp_format import ConvertTimestampTimestampFormat as ConvertTimestampTimestampFormat
+from monad.models.coralogix_communication_config import CoralogixCommunicationConfig as CoralogixCommunicationConfig
+from monad.models.coralogix_rest_variant import CoralogixRESTVariant as CoralogixRESTVariant
+from monad.models.coralogix_settings_config import CoralogixSettingsConfig as CoralogixSettingsConfig
 from monad.models.cortex_xsoar_management_logs_secrets_config import CortexXsoarManagementLogsSecretsConfig as CortexXsoarManagementLogsSecretsConfig
 from monad.models.cortex_xsoar_management_logs_settings_config import CortexXsoarManagementLogsSettingsConfig as CortexXsoarManagementLogsSettingsConfig
 from monad.models.create_api_key_request import CreateAPIKeyRequest as CreateAPIKeyRequest

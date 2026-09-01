@@ -36,9 +36,10 @@ class Awssqss3SettingsConfig(BaseModel):
     record_location: Optional[StrictStr] = Field(default=None, description="Record location within each parsed object. JSON only; empty = whole record.")
     region: StrictStr
     role_arn: Optional[StrictStr] = None
+    use_fips: Optional[StrictBool] = None
     uses_sns: Optional[StrictBool] = None
     with_metadata: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["compression", "format", "key_filter", "queue_url", "record_location", "region", "role_arn", "uses_sns", "with_metadata"]
+    __properties: ClassVar[List[str]] = ["compression", "format", "key_filter", "queue_url", "record_location", "region", "role_arn", "use_fips", "uses_sns", "with_metadata"]
 
     @field_validator('compression')
     def compression_validate_enum(cls, value):
@@ -115,6 +116,7 @@ class Awssqss3SettingsConfig(BaseModel):
             "record_location": obj.get("record_location"),
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
+            "use_fips": obj.get("use_fips"),
             "uses_sns": obj.get("uses_sns"),
             "with_metadata": obj.get("with_metadata")
         })

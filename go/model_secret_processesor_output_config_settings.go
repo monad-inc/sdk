@@ -24,6 +24,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	AxiomSettingsConfig *AxiomSettingsConfig
 	BackblazeSettingsConfig *BackblazeSettingsConfig
 	BigquerySettingsConfig *BigquerySettingsConfig
+	CoralogixSettingsConfig *CoralogixSettingsConfig
 	CriblHttpSettingsConfig *CriblHttpSettingsConfig
 	DatabricksDeltaTableSettingsConfig *DatabricksDeltaTableSettingsConfig
 	DatabricksLakehouseSettingsConfig *DatabricksLakehouseSettingsConfig
@@ -88,6 +89,13 @@ func BackblazeSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Backblaze
 func BigquerySettingsConfigAsSecretProcessesorOutputConfigSettings(v *BigquerySettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		BigquerySettingsConfig: v,
+	}
+}
+
+// CoralogixSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns CoralogixSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func CoralogixSettingsConfigAsSecretProcessesorOutputConfigSettings(v *CoralogixSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		CoralogixSettingsConfig: v,
 	}
 }
 
@@ -389,6 +397,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.BigquerySettingsConfig = nil
+	}
+
+	// try to unmarshal data into CoralogixSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CoralogixSettingsConfig)
+	if err == nil {
+		jsonCoralogixSettingsConfig, _ := json.Marshal(dst.CoralogixSettingsConfig)
+		if string(jsonCoralogixSettingsConfig) == "{}" { // empty struct
+			dst.CoralogixSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CoralogixSettingsConfig); err != nil {
+				dst.CoralogixSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CoralogixSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CriblHttpSettingsConfig
@@ -908,6 +933,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.AxiomSettingsConfig = nil
 		dst.BackblazeSettingsConfig = nil
 		dst.BigquerySettingsConfig = nil
+		dst.CoralogixSettingsConfig = nil
 		dst.CriblHttpSettingsConfig = nil
 		dst.DatabricksDeltaTableSettingsConfig = nil
 		dst.DatabricksLakehouseSettingsConfig = nil
@@ -967,6 +993,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BigquerySettingsConfig != nil {
 		return json.Marshal(&src.BigquerySettingsConfig)
+	}
+
+	if src.CoralogixSettingsConfig != nil {
+		return json.Marshal(&src.CoralogixSettingsConfig)
 	}
 
 	if src.CriblHttpSettingsConfig != nil {
@@ -1117,6 +1147,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.BigquerySettingsConfig
 	}
 
+	if obj.CoralogixSettingsConfig != nil {
+		return obj.CoralogixSettingsConfig
+	}
+
 	if obj.CriblHttpSettingsConfig != nil {
 		return obj.CriblHttpSettingsConfig
 	}
@@ -1261,6 +1295,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.BigquerySettingsConfig != nil {
 		return *obj.BigquerySettingsConfig
+	}
+
+	if obj.CoralogixSettingsConfig != nil {
+		return *obj.CoralogixSettingsConfig
 	}
 
 	if obj.CriblHttpSettingsConfig != nil {

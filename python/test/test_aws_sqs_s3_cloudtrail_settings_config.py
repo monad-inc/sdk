@@ -41,6 +41,7 @@ class TestAwsSqsS3CloudtrailSettingsConfig(unittest.TestCase):
                 queue_url = '',
                 region = '',
                 role_arn = '',
+                use_fips = True,
                 uses_sns = True,
                 with_metadata = True
             )

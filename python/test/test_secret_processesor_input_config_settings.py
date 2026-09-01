@@ -63,6 +63,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 chunking_mode = 'by_size',
                 exclude_digest_files = True,
                 queue_url = '',
+                use_fips = True,
                 uses_sns = True,
                 with_metadata = True,
                 correlation_id = '',
