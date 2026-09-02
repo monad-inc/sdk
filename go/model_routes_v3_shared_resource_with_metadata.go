@@ -32,7 +32,7 @@ type RoutesV3SharedResourceWithMetadata struct {
 	Name *string `json:"name,omitempty"`
 	// Identifier of the shared secret or component.
 	ResourceId *string `json:"resource_id,omitempty"`
-	ResourceMetadata *RoutesResourceMetadata `json:"resource_metadata,omitempty"`
+	ResourceMetadata *ConnectormetaResourceMetadata `json:"resource_metadata,omitempty"`
 	// Type of the shared resource: \"secret\" or \"component\".
 	ResourceType *string `json:"resource_type,omitempty"`
 	// Whether the resource's policy auto-shares it with new direct children.
@@ -251,9 +251,9 @@ func (o *RoutesV3SharedResourceWithMetadata) SetResourceId(v string) {
 }
 
 // GetResourceMetadata returns the ResourceMetadata field value if set, zero value otherwise.
-func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadata() RoutesResourceMetadata {
+func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadata() ConnectormetaResourceMetadata {
 	if o == nil || IsNil(o.ResourceMetadata) {
-		var ret RoutesResourceMetadata
+		var ret ConnectormetaResourceMetadata
 		return ret
 	}
 	return *o.ResourceMetadata
@@ -261,7 +261,7 @@ func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadata() RoutesResourc
 
 // GetResourceMetadataOk returns a tuple with the ResourceMetadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadataOk() (*RoutesResourceMetadata, bool) {
+func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool) {
 	if o == nil || IsNil(o.ResourceMetadata) {
 		return nil, false
 	}
@@ -277,8 +277,8 @@ func (o *RoutesV3SharedResourceWithMetadata) HasResourceMetadata() bool {
 	return false
 }
 
-// SetResourceMetadata gets a reference to the given RoutesResourceMetadata and assigns it to the ResourceMetadata field.
-func (o *RoutesV3SharedResourceWithMetadata) SetResourceMetadata(v RoutesResourceMetadata) {
+// SetResourceMetadata gets a reference to the given ConnectormetaResourceMetadata and assigns it to the ResourceMetadata field.
+func (o *RoutesV3SharedResourceWithMetadata) SetResourceMetadata(v ConnectormetaResourceMetadata) {
 	o.ResourceMetadata = &v
 }
 

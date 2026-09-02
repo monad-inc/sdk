@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **getAlertRuleByID**
-> ModelsAlertRule getAlertRuleByID()
+> RoutesV3AlertRuleWithMetadata getAlertRuleByID()
 
 Retrieve an alert rule by its ID
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsAlertRule**
+**RoutesV3AlertRuleWithMetadata**
 
 ### Authorization
 
@@ -290,7 +290,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **listAlertRules**
-> ModelsAlertRuleList listAlertRules()
+> RoutesV3AlertRuleListResponse listAlertRules()
 
 Retrieve all alert rules for an organization
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsAlertRuleList**
+**RoutesV3AlertRuleListResponse**
 
 ### Authorization
 

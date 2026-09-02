@@ -1768,6 +1768,32 @@
                 },
                 "type": "object"
             },
+            "connectormeta.ResourceMetadata": {
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "house": {
+                        "type": "string"
+                    },
+                    "in_beta": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "tier": {
+                        "type": "integer"
+                    },
+                    "type_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "convert_cef.ArgumentsConfig": {
                 "properties": {
                     "columns": {
@@ -4564,21 +4590,6 @@
                 },
                 "type": "object"
             },
-            "models.AlertRuleList": {
-                "properties": {
-                    "alert_rules": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.AlertRule"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    }
-                },
-                "type": "object"
-            },
             "models.AlertState": {
                 "enum": [
                     "FIRING",
@@ -5128,21 +5139,6 @@
                 },
                 "type": "object"
             },
-            "models.EnrichmentList": {
-                "properties": {
-                    "enrichments": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.Enrichment"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    }
-                },
-                "type": "object"
-            },
             "models.FeatureFlag": {
                 "properties": {
                     "Enabled": {
@@ -5284,21 +5280,6 @@
                     "VulnerabilityManagement",
                     "WebApplicationSecurity"
                 ]
-            },
-            "models.InputList": {
-                "properties": {
-                    "inputs": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.Input"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    }
-                },
-                "type": "object"
             },
             "models.InputRateLimit": {
                 "description": "Optional outbound request rate limit. Falls back to the Wiz default when unset.",
@@ -5683,21 +5664,6 @@
                     "Warehouses",
                     "WebServices"
                 ]
-            },
-            "models.OutputList": {
-                "properties": {
-                    "outputs": {
-                        "items": {
-                            "$ref": "#/components/schemas/models.Output"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "pagination": {
-                        "$ref": "#/components/schemas/models.Pagination"
-                    }
-                },
-                "type": "object"
             },
             "models.Pagination": {
                 "description": "Pagination metadata.",
@@ -8097,6 +8063,9 @@
                     "references": {
                         "$ref": "#/components/schemas/models.References"
                     },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
+                    },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
                     },
@@ -8144,6 +8113,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
@@ -8205,6 +8177,50 @@
                 },
                 "type": "object"
             },
+            "routes.InputWithMetadata": {
+                "properties": {
+                    "config": {
+                        "$ref": "#/components/schemas/models.InputConfig"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "managed_by": {
+                        "$ref": "#/components/schemas/models.ManagedBy"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
             "routes.InviteUserToOrganizationRequest": {
                 "properties": {
                     "email": {
@@ -8220,6 +8236,36 @@
                 ],
                 "type": "object"
             },
+            "routes.ListInputsResponse": {
+                "properties": {
+                    "inputs": {
+                        "items": {
+                            "$ref": "#/components/schemas/routes.InputWithMetadata"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    }
+                },
+                "type": "object"
+            },
+            "routes.ListOutputsResponse": {
+                "properties": {
+                    "outputs": {
+                        "items": {
+                            "$ref": "#/components/schemas/routes.OutputWithMetadata"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    }
+                },
+                "type": "object"
+            },
             "routes.LoginRequest": {
                 "properties": {
                     "password": {
@@ -8231,28 +8277,46 @@
                 },
                 "type": "object"
             },
-            "routes.ResourceMetadata": {
+            "routes.OutputWithMetadata": {
                 "properties": {
-                    "category": {
+                    "config": {
+                        "$ref": "#/components/schemas/models.OutputConfig"
+                    },
+                    "created_at": {
                         "type": "string"
                     },
                     "description": {
                         "type": "string"
                     },
-                    "house": {
+                    "id": {
                         "type": "string"
                     },
-                    "in_beta": {
-                        "type": "boolean"
+                    "managed_by": {
+                        "$ref": "#/components/schemas/models.ManagedBy"
                     },
                     "name": {
                         "type": "string"
                     },
-                    "tier": {
-                        "type": "integer"
-                    },
-                    "type_id": {
+                    "organization_id": {
                         "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9448,6 +9512,74 @@
                 },
                 "type": "object"
             },
+            "routesV3.AlertRuleListResponse": {
+                "properties": {
+                    "alert_rules": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV3.AlertRuleWithMetadata"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.AlertRuleWithMetadata": {
+                "properties": {
+                    "active": {
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "invert_selection": {
+                        "description": "InvertSelection flips the meaning of PipelineIDs from an include-list to an\nexclude-list, so the rule monitors every pipeline except those listed. It only\napplies to pipeline-granularity rule types; billing- and organization-scoped\ntypes never consult PipelineIDs.",
+                        "type": "boolean"
+                    },
+                    "managed_by": {
+                        "$ref": "#/components/schemas/models.ManagedBy"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "pipeline_ids": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
+                    },
+                    "rule_config": {
+                        "additionalProperties": {},
+                        "type": "object"
+                    },
+                    "severity": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routesV3.CreateAlertRuleRequest": {
                 "properties": {
                     "active": {
@@ -9642,6 +9774,50 @@
                 },
                 "type": "object"
             },
+            "routesV3.EnrichmentWithMetadata": {
+                "properties": {
+                    "config": {
+                        "$ref": "#/components/schemas/models.EnrichmentConfig"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "managed_by": {
+                        "$ref": "#/components/schemas/models.ManagedBy"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organization_id": {
+                        "type": "string"
+                    },
+                    "references": {
+                        "$ref": "#/components/schemas/models.References"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
+                    },
+                    "share_details": {
+                        "$ref": "#/components/schemas/models.ShareDetails"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
             "routesV3.FieldUpdation": {
                 "properties": {
                     "change_reason": {
@@ -9688,6 +9864,9 @@
                     },
                     "references": {
                         "$ref": "#/components/schemas/models.References"
+                    },
+                    "resource_metadata": {
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
                     },
                     "share_details": {
                         "$ref": "#/components/schemas/models.ShareDetails"
@@ -9740,6 +9919,21 @@
                 "required": [
                     "name"
                 ],
+                "type": "object"
+            },
+            "routesV3.ListEnrichmentsResponse": {
+                "properties": {
+                    "enrichments": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV3.EnrichmentWithMetadata"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    }
+                },
                 "type": "object"
             },
             "routesV3.MFAStatusResponse": {
@@ -9807,7 +10001,7 @@
                         "type": "string"
                     },
                     "resource_metadata": {
-                        "$ref": "#/components/schemas/routes.ResourceMetadata"
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
                     },
                     "resource_type": {
                         "type": "string"
@@ -9911,7 +10105,7 @@
                         "type": "string"
                     },
                     "resource_metadata": {
-                        "$ref": "#/components/schemas/routes.ResourceMetadata"
+                        "$ref": "#/components/schemas/connectormeta.ResourceMetadata"
                     },
                     "resource_type": {
                         "description": "Type of the shared resource: \"secret\" or \"component\".",
@@ -13763,7 +13957,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.InputList"
+                                    "$ref": "#/components/schemas/routes.ListInputsResponse"
                                 }
                             }
                         },
@@ -14435,7 +14629,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.OutputList"
+                                    "$ref": "#/components/schemas/routes.ListOutputsResponse"
                                 }
                             }
                         },
@@ -23072,7 +23266,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.AlertRuleList"
+                                    "$ref": "#/components/schemas/routesV3.AlertRuleListResponse"
                                 }
                             }
                         },
@@ -23282,7 +23476,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.AlertRule"
+                                    "$ref": "#/components/schemas/routesV3.AlertRuleWithMetadata"
                                 }
                             }
                         },
@@ -24330,7 +24524,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.EnrichmentList"
+                                    "$ref": "#/components/schemas/routesV3.ListEnrichmentsResponse"
                                 }
                             }
                         },

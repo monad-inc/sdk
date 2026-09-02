@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ConnectormetaResourceMetadata;
 import org.openapitools.client.model.ModelsInputConfig;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipeline;
@@ -101,6 +102,11 @@ public class RoutesGetInputResponse {
   @SerializedName(SERIALIZED_NAME_REFERENCES)
   @javax.annotation.Nullable
   private ModelsReferences references;
+
+  public static final String SERIALIZED_NAME_RESOURCE_METADATA = "resource_metadata";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_METADATA)
+  @javax.annotation.Nullable
+  private ConnectormetaResourceMetadata resourceMetadata;
 
   public static final String SERIALIZED_NAME_SHARE_DETAILS = "share_details";
   @SerializedName(SERIALIZED_NAME_SHARE_DETAILS)
@@ -304,6 +310,25 @@ public class RoutesGetInputResponse {
   }
 
 
+  public RoutesGetInputResponse resourceMetadata(@javax.annotation.Nullable ConnectormetaResourceMetadata resourceMetadata) {
+    this.resourceMetadata = resourceMetadata;
+    return this;
+  }
+
+  /**
+   * Get resourceMetadata
+   * @return resourceMetadata
+   */
+  @javax.annotation.Nullable
+  public ConnectormetaResourceMetadata getResourceMetadata() {
+    return resourceMetadata;
+  }
+
+  public void setResourceMetadata(@javax.annotation.Nullable ConnectormetaResourceMetadata resourceMetadata) {
+    this.resourceMetadata = resourceMetadata;
+  }
+
+
   public RoutesGetInputResponse shareDetails(@javax.annotation.Nullable ModelsShareDetails shareDetails) {
     this.shareDetails = shareDetails;
     return this;
@@ -399,6 +424,7 @@ public class RoutesGetInputResponse {
         Objects.equals(this.name, routesGetInputResponse.name) &&
         Objects.equals(this.organizationId, routesGetInputResponse.organizationId) &&
         Objects.equals(this.references, routesGetInputResponse.references) &&
+        Objects.equals(this.resourceMetadata, routesGetInputResponse.resourceMetadata) &&
         Objects.equals(this.shareDetails, routesGetInputResponse.shareDetails) &&
         Objects.equals(this.type, routesGetInputResponse.type) &&
         Objects.equals(this.updatedAt, routesGetInputResponse.updatedAt) &&
@@ -407,7 +433,7 @@ public class RoutesGetInputResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, shareDetails, type, updatedAt, version);
+    return Objects.hash(componentOf, config, createdAt, description, id, managedBy, name, organizationId, references, resourceMetadata, shareDetails, type, updatedAt, version);
   }
 
   @Override
@@ -423,6 +449,7 @@ public class RoutesGetInputResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    references: ").append(toIndentedString(references)).append("\n");
+    sb.append("    resourceMetadata: ").append(toIndentedString(resourceMetadata)).append("\n");
     sb.append("    shareDetails: ").append(toIndentedString(shareDetails)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -445,7 +472,7 @@ public class RoutesGetInputResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at", "version"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "resource_metadata", "share_details", "type", "updated_at", "version"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -512,6 +539,10 @@ public class RoutesGetInputResponse {
       // validate the optional field `references`
       if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
         ModelsReferences.validateJsonElement(jsonObj.get("references"));
+      }
+      // validate the optional field `resource_metadata`
+      if (jsonObj.get("resource_metadata") != null && !jsonObj.get("resource_metadata").isJsonNull()) {
+        ConnectormetaResourceMetadata.validateJsonElement(jsonObj.get("resource_metadata"));
       }
       // validate the optional field `share_details`
       if (jsonObj.get("share_details") != null && !jsonObj.get("share_details").isJsonNull()) {

@@ -530,7 +530,7 @@ func (r ApiListEnrichmentsRequest) Offset(offset int32) ApiListEnrichmentsReques
 	return r
 }
 
-func (r ApiListEnrichmentsRequest) Execute() (*ModelsEnrichmentList, *http.Response, error) {
+func (r ApiListEnrichmentsRequest) Execute() (*RoutesV3ListEnrichmentsResponse, *http.Response, error) {
 	return r.ApiService.ListEnrichmentsExecute(r)
 }
 
@@ -552,13 +552,13 @@ func (a *OrganizationEnrichmentsAPIService) ListEnrichments(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ModelsEnrichmentList
-func (a *OrganizationEnrichmentsAPIService) ListEnrichmentsExecute(r ApiListEnrichmentsRequest) (*ModelsEnrichmentList, *http.Response, error) {
+//  @return RoutesV3ListEnrichmentsResponse
+func (a *OrganizationEnrichmentsAPIService) ListEnrichmentsExecute(r ApiListEnrichmentsRequest) (*RoutesV3ListEnrichmentsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrichmentList
+		localVarReturnValue  *RoutesV3ListEnrichmentsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationEnrichmentsAPIService.ListEnrichments")

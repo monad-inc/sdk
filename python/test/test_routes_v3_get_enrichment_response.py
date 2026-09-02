@@ -114,6 +114,14 @@ class TestRoutesV3GetEnrichmentResponse(unittest.TestCase):
                             organization_id = '', 
                             shared = True, )
                         ], ),
+                resource_metadata = monad.models.connectormeta/resource_metadata.connectormeta.ResourceMetadata(
+                    category = '', 
+                    description = '', 
+                    house = '', 
+                    in_beta = True, 
+                    name = '', 
+                    tier = 56, 
+                    type_id = '', ),
                 share_details = monad.models.models/share_details.models.ShareDetails(
                     owner_organization_id = '', 
                     owner_organization_name = '', 

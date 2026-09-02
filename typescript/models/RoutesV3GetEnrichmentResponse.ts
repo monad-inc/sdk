@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipeline } from '../models/ModelsPipeline';
@@ -27,6 +28,7 @@ export class RoutesV3GetEnrichmentResponse {
     'name'?: string;
     'organizationId'?: string;
     'references'?: ModelsReferences;
+    'resourceMetadata'?: ConnectormetaResourceMetadata;
     'shareDetails'?: ModelsShareDetails;
     'type'?: string;
     'updatedAt'?: string;
@@ -89,6 +91,12 @@ export class RoutesV3GetEnrichmentResponse {
             "name": "references",
             "baseName": "references",
             "type": "ModelsReferences",
+            "format": ""
+        },
+        {
+            "name": "resourceMetadata",
+            "baseName": "resource_metadata",
+            "type": "ConnectormetaResourceMetadata",
             "format": ""
         },
         {

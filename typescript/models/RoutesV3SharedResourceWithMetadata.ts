@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3SharedResourceWithMetadata {
@@ -38,7 +38,7 @@ export class RoutesV3SharedResourceWithMetadata {
     * Identifier of the shared secret or component.
     */
     'resourceId'?: string;
-    'resourceMetadata'?: RoutesResourceMetadata;
+    'resourceMetadata'?: ConnectormetaResourceMetadata;
     /**
     * Type of the shared resource: \"secret\" or \"component\".
     */
@@ -96,7 +96,7 @@ export class RoutesV3SharedResourceWithMetadata {
         {
             "name": "resourceMetadata",
             "baseName": "resource_metadata",
-            "type": "RoutesResourceMetadata",
+            "type": "ConnectormetaResourceMetadata",
             "format": ""
         },
         {

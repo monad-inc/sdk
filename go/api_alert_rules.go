@@ -323,7 +323,7 @@ type ApiGetAlertRuleByIDRequest struct {
 	alertRuleId string
 }
 
-func (r ApiGetAlertRuleByIDRequest) Execute() (*ModelsAlertRule, *http.Response, error) {
+func (r ApiGetAlertRuleByIDRequest) Execute() (*RoutesV3AlertRuleWithMetadata, *http.Response, error) {
 	return r.ApiService.GetAlertRuleByIDExecute(r)
 }
 
@@ -347,13 +347,13 @@ func (a *AlertRulesAPIService) GetAlertRuleByID(ctx context.Context, organizatio
 }
 
 // Execute executes the request
-//  @return ModelsAlertRule
-func (a *AlertRulesAPIService) GetAlertRuleByIDExecute(r ApiGetAlertRuleByIDRequest) (*ModelsAlertRule, *http.Response, error) {
+//  @return RoutesV3AlertRuleWithMetadata
+func (a *AlertRulesAPIService) GetAlertRuleByIDExecute(r ApiGetAlertRuleByIDRequest) (*RoutesV3AlertRuleWithMetadata, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsAlertRule
+		localVarReturnValue  *RoutesV3AlertRuleWithMetadata
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertRulesAPIService.GetAlertRuleByID")
@@ -757,7 +757,7 @@ func (r ApiListAlertRulesRequest) Offset(offset int32) ApiListAlertRulesRequest 
 	return r
 }
 
-func (r ApiListAlertRulesRequest) Execute() (*ModelsAlertRuleList, *http.Response, error) {
+func (r ApiListAlertRulesRequest) Execute() (*RoutesV3AlertRuleListResponse, *http.Response, error) {
 	return r.ApiService.ListAlertRulesExecute(r)
 }
 
@@ -779,13 +779,13 @@ func (a *AlertRulesAPIService) ListAlertRules(ctx context.Context, organizationI
 }
 
 // Execute executes the request
-//  @return ModelsAlertRuleList
-func (a *AlertRulesAPIService) ListAlertRulesExecute(r ApiListAlertRulesRequest) (*ModelsAlertRuleList, *http.Response, error) {
+//  @return RoutesV3AlertRuleListResponse
+func (a *AlertRulesAPIService) ListAlertRulesExecute(r ApiListAlertRulesRequest) (*RoutesV3AlertRuleListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsAlertRuleList
+		localVarReturnValue  *RoutesV3AlertRuleListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertRulesAPIService.ListAlertRules")

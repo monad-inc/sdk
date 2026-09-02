@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3ResourceUsageWithMetadata {
@@ -19,7 +19,7 @@ export class RoutesV3ResourceUsageWithMetadata {
     'organizationId'?: string;
     'organizationName'?: string;
     'resourceId'?: string;
-    'resourceMetadata'?: RoutesResourceMetadata;
+    'resourceMetadata'?: ConnectormetaResourceMetadata;
     'resourceType'?: string;
     'subType'?: string;
 
@@ -61,7 +61,7 @@ export class RoutesV3ResourceUsageWithMetadata {
         {
             "name": "resourceMetadata",
             "baseName": "resource_metadata",
-            "type": "RoutesResourceMetadata",
+            "type": "ConnectormetaResourceMetadata",
             "format": ""
         },
         {

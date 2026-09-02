@@ -29,10 +29,10 @@ import java.io.IOException;
 
 import org.openapitools.client.model.CreateEnrichmentRequest;
 import org.openapitools.client.model.ModelsEnrichment;
-import org.openapitools.client.model.ModelsEnrichmentList;
 import org.openapitools.client.model.ReplaceEnrichmentRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3GetEnrichmentResponse;
+import org.openapitools.client.model.RoutesV3ListEnrichmentsResponse;
 import org.openapitools.client.model.RoutesV3SuccessResponse;
 import org.openapitools.client.model.TestEnrichmentConnectionRequest;
 import org.openapitools.client.model.UpdateEnrichmentRequest;
@@ -610,7 +610,7 @@ public class OrganizationEnrichmentsApi {
      * @param organizationId Organization ID (required)
      * @param limit Number of results to return (default 100) (optional)
      * @param offset Number of results to skip (default 0) (optional)
-     * @return ModelsEnrichmentList
+     * @return RoutesV3ListEnrichmentsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -621,8 +621,8 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsEnrichmentList listEnrichments(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsEnrichmentList> localVarResp = listEnrichmentsWithHttpInfo(organizationId, limit, offset);
+    public RoutesV3ListEnrichmentsResponse listEnrichments(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<RoutesV3ListEnrichmentsResponse> localVarResp = listEnrichmentsWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
 
@@ -632,7 +632,7 @@ public class OrganizationEnrichmentsApi {
      * @param organizationId Organization ID (required)
      * @param limit Number of results to return (default 100) (optional)
      * @param offset Number of results to skip (default 0) (optional)
-     * @return ApiResponse&lt;ModelsEnrichmentList&gt;
+     * @return ApiResponse&lt;RoutesV3ListEnrichmentsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -643,9 +643,9 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsEnrichmentList> listEnrichmentsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public ApiResponse<RoutesV3ListEnrichmentsResponse> listEnrichmentsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = listEnrichmentsValidateBeforeCall(organizationId, limit, offset, null);
-        Type localVarReturnType = new TypeToken<ModelsEnrichmentList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3ListEnrichmentsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -667,10 +667,10 @@ public class OrganizationEnrichmentsApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listEnrichmentsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsEnrichmentList> _callback) throws ApiException {
+    public okhttp3.Call listEnrichmentsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<RoutesV3ListEnrichmentsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listEnrichmentsValidateBeforeCall(organizationId, limit, offset, _callback);
-        Type localVarReturnType = new TypeToken<ModelsEnrichmentList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3ListEnrichmentsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

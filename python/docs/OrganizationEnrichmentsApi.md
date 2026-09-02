@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_enrichments**
-> ModelsEnrichmentList list_enrichments(organization_id, limit=limit, offset=offset)
+> RoutesV3ListEnrichmentsResponse list_enrichments(organization_id, limit=limit, offset=offset)
 
 List enrichments
 
@@ -300,7 +300,7 @@ List all enrichments for an organization
 
 ```python
 import monad
-from monad.models.models_enrichment_list import ModelsEnrichmentList
+from monad.models.routes_v3_list_enrichments_response import RoutesV3ListEnrichmentsResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsEnrichmentList**](ModelsEnrichmentList.md)
+[**RoutesV3ListEnrichmentsResponse**](RoutesV3ListEnrichmentsResponse.md)
 
 ### Authorization
 

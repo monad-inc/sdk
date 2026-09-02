@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
+**ResourceMetadata** | Pointer to [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
@@ -261,6 +262,31 @@ SetReferences sets References field to given value.
 `func (o *RoutesGetOutputResponse) HasReferences() bool`
 
 HasReferences returns a boolean if a field has been set.
+
+### GetResourceMetadata
+
+`func (o *RoutesGetOutputResponse) GetResourceMetadata() ConnectormetaResourceMetadata`
+
+GetResourceMetadata returns the ResourceMetadata field if non-nil, zero value otherwise.
+
+### GetResourceMetadataOk
+
+`func (o *RoutesGetOutputResponse) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool)`
+
+GetResourceMetadataOk returns a tuple with the ResourceMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceMetadata
+
+`func (o *RoutesGetOutputResponse) SetResourceMetadata(v ConnectormetaResourceMetadata)`
+
+SetResourceMetadata sets ResourceMetadata field to given value.
+
+### HasResourceMetadata
+
+`func (o *RoutesGetOutputResponse) HasResourceMetadata() bool`
+
+HasResourceMetadata returns a boolean if a field has been set.
 
 ### GetShareDetails
 

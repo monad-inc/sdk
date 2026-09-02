@@ -21,9 +21,9 @@ from typing import Optional
 from typing_extensions import Annotated
 from monad.models.create_enrichment_request import CreateEnrichmentRequest
 from monad.models.models_enrichment import ModelsEnrichment
-from monad.models.models_enrichment_list import ModelsEnrichmentList
 from monad.models.replace_enrichment_request import ReplaceEnrichmentRequest
 from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse
+from monad.models.routes_v3_list_enrichments_response import RoutesV3ListEnrichmentsResponse
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse
 from monad.models.test_enrichment_connection_request import TestEnrichmentConnectionRequest
 from monad.models.update_enrichment_request import UpdateEnrichmentRequest
@@ -943,7 +943,7 @@ class OrganizationEnrichmentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsEnrichmentList:
+    ) -> RoutesV3ListEnrichmentsResponse:
         """List enrichments
 
         List all enrichments for an organization
@@ -987,7 +987,7 @@ class OrganizationEnrichmentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsEnrichmentList",
+            '200': "RoutesV3ListEnrichmentsResponse",
             '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -1020,7 +1020,7 @@ class OrganizationEnrichmentsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsEnrichmentList]:
+    ) -> ApiResponse[RoutesV3ListEnrichmentsResponse]:
         """List enrichments
 
         List all enrichments for an organization
@@ -1064,7 +1064,7 @@ class OrganizationEnrichmentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsEnrichmentList",
+            '200': "RoutesV3ListEnrichmentsResponse",
             '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -1141,7 +1141,7 @@ class OrganizationEnrichmentsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsEnrichmentList",
+            '200': "RoutesV3ListEnrichmentsResponse",
             '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }

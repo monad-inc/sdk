@@ -47,7 +47,7 @@ class TestRoutesV3ResourceUsageListResponse(unittest.TestCase):
                         organization_id = '', 
                         organization_name = '', 
                         resource_id = '', 
-                        resource_metadata = monad.models.routes/resource_metadata.routes.ResourceMetadata(
+                        resource_metadata = monad.models.connectormeta/resource_metadata.connectormeta.ResourceMetadata(
                             category = '', 
                             description = '', 
                             house = '', 

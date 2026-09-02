@@ -252,7 +252,7 @@ public class Example {
 
 <a id="listOrganizationInputs"></a>
 # **listOrganizationInputs**
-> ModelsInputList listOrganizationInputs(organizationId, limit, offset)
+> RoutesListInputsResponse listOrganizationInputs(organizationId, limit, offset)
 
 List organization inputs
 
@@ -290,7 +290,7 @@ public class Example {
     Integer limit = 56; // Integer | Limit the number of organizations returned (default: DefaultLimit)
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
     try {
-      ModelsInputList result = apiInstance.listOrganizationInputs(organizationId, limit, offset);
+      RoutesListInputsResponse result = apiInstance.listOrganizationInputs(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationInputsApi#listOrganizationInputs");
@@ -313,7 +313,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsInputList**](ModelsInputList.md)
+[**RoutesListInputsResponse**](RoutesListInputsResponse.md)
 
 ### Authorization
 

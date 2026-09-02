@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ## ListOrganizationInputs
 
-> ModelsInputList ListOrganizationInputs(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> RoutesListInputsResponse ListOrganizationInputs(ctx, organizationId).Limit(limit).Offset(offset).Execute()
 
 List organization inputs
 
@@ -267,7 +267,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationInputsAPI.ListOrganizationInputs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOrganizationInputs`: ModelsInputList
+	// response from `ListOrganizationInputs`: RoutesListInputsResponse
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationInputsAPI.ListOrganizationInputs`: %v\n", resp)
 }
 ```
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsInputList**](ModelsInputList.md)
+[**RoutesListInputsResponse**](RoutesListInputsResponse.md)
 
 ### Authorization
 

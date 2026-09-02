@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ConnectormetaResourceMetadata;
 import org.openapitools.client.model.ModelsEnrichmentConfig;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipeline;
@@ -114,6 +115,14 @@ public class RoutesV3GetEnrichmentResponseTest {
     @Test
     public void referencesTest() {
         // TODO: test references
+    }
+
+    /**
+     * Test the property 'resourceMetadata'
+     */
+    @Test
+    public void resourceMetadataTest() {
+        // TODO: test resourceMetadata
     }
 
     /**

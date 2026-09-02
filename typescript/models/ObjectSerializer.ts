@@ -84,6 +84,7 @@ export * from '../models/CommunityTransformsInternalTransformConfig';
 export * from '../models/CommunityTransformsInternalTransformMetadata';
 export * from '../models/CommunityTransformsInternalTransformsIndex';
 export * from '../models/ComponentpreviewResponse';
+export * from '../models/ConnectormetaResourceMetadata';
 export * from '../models/ConvertCefArgumentsConfig';
 export * from '../models/ConvertTimestampArgumentsConfig';
 export * from '../models/ConvertTimestampTimestampFormat';
@@ -235,7 +236,6 @@ export * from '../models/ModelsAPILogActor';
 export * from '../models/ModelsAPILogActorRole';
 export * from '../models/ModelsAlert';
 export * from '../models/ModelsAlertRule';
-export * from '../models/ModelsAlertRuleList';
 export * from '../models/ModelsAlertState';
 export * from '../models/ModelsAlertStatus';
 export * from '../models/ModelsAuditAction';
@@ -262,13 +262,11 @@ export * from '../models/ModelsCursorPagination';
 export * from '../models/ModelsDataUsage';
 export * from '../models/ModelsEnrichment';
 export * from '../models/ModelsEnrichmentConfig';
-export * from '../models/ModelsEnrichmentList';
 export * from '../models/ModelsFeatureFlag';
 export * from '../models/ModelsFieldState';
 export * from '../models/ModelsInput';
 export * from '../models/ModelsInputConfig';
 export * from '../models/ModelsInputConnectorCategory';
-export * from '../models/ModelsInputList';
 export * from '../models/ModelsInputRateLimit';
 export * from '../models/ModelsMCPClientRegistration';
 export * from '../models/ModelsMCPClientRegistrationList';
@@ -285,7 +283,6 @@ export * from '../models/ModelsOrganizationUserList';
 export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputConnectorCategory';
-export * from '../models/ModelsOutputList';
 export * from '../models/ModelsPagination';
 export * from '../models/ModelsPermission';
 export * from '../models/ModelsPermissionList';
@@ -408,9 +405,12 @@ export * from '../models/RoutesCreateTransformRequest';
 export * from '../models/RoutesGetInputResponse';
 export * from '../models/RoutesGetOutputResponse';
 export * from '../models/RoutesGetTransformResponse';
+export * from '../models/RoutesInputWithMetadata';
 export * from '../models/RoutesInviteUserToOrganizationRequest';
+export * from '../models/RoutesListInputsResponse';
+export * from '../models/RoutesListOutputsResponse';
 export * from '../models/RoutesLoginRequest';
-export * from '../models/RoutesResourceMetadata';
+export * from '../models/RoutesOutputWithMetadata';
 export * from '../models/RoutesRetryQueueMessage';
 export * from '../models/RoutesTransformConfig';
 export * from '../models/RoutesTransformOperation';
@@ -472,6 +472,8 @@ export * from '../models/RoutesV2UpdateOutputRequest';
 export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3AlertList';
+export * from '../models/RoutesV3AlertRuleListResponse';
+export * from '../models/RoutesV3AlertRuleWithMetadata';
 export * from '../models/RoutesV3CreateAlertRuleRequest';
 export * from '../models/RoutesV3CreateChildOrganizationRequest';
 export * from '../models/RoutesV3CreateConnectionRequest';
@@ -482,11 +484,13 @@ export * from '../models/RoutesV3CreateSessionResponse';
 export * from '../models/RoutesV3CreateTagRequest';
 export * from '../models/RoutesV3EnrichmentSandboxRequest';
 export * from '../models/RoutesV3EnrichmentSandboxResponse';
+export * from '../models/RoutesV3EnrichmentWithMetadata';
 export * from '../models/RoutesV3FieldUpdation';
 export * from '../models/RoutesV3GetEnrichmentResponse';
 export * from '../models/RoutesV3GetFeatureFlagResponse';
 export * from '../models/RoutesV3ImportTransformResponse';
 export * from '../models/RoutesV3KvEntryResponse';
+export * from '../models/RoutesV3ListEnrichmentsResponse';
 export * from '../models/RoutesV3MFAStatusResponse';
 export * from '../models/RoutesV3OptimizerType';
 export * from '../models/RoutesV3PutEnrichmentRequest';
@@ -709,6 +713,7 @@ import { CommunityTransformsInternalTransformConfig } from '../models/CommunityT
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
+import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig         } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
@@ -860,7 +865,6 @@ import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlert } from '../models/ModelsAlert';
 import { ModelsAlertRule              } from '../models/ModelsAlertRule';
-import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAlertStatus    } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
@@ -887,13 +891,11 @@ import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment             } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
-import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { ModelsFieldState } from '../models/ModelsFieldState';
 import { ModelsInput             } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
-import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsInputRateLimit   } from '../models/ModelsInputRateLimit';
 import { ModelsMCPClientRegistration } from '../models/ModelsMCPClientRegistration';
 import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
@@ -910,7 +912,6 @@ import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList
 import { ModelsOutput             } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
-import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
@@ -1030,12 +1031,15 @@ import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
-import { RoutesGetInputResponse              } from '../models/RoutesGetInputResponse';
-import { RoutesGetOutputResponse              } from '../models/RoutesGetOutputResponse';
+import { RoutesGetInputResponse               } from '../models/RoutesGetInputResponse';
+import { RoutesGetOutputResponse               } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse             } from '../models/RoutesGetTransformResponse';
+import { RoutesInputWithMetadata              } from '../models/RoutesInputWithMetadata';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesListInputsResponse } from '../models/RoutesListInputsResponse';
+import { RoutesListOutputsResponse } from '../models/RoutesListOutputsResponse';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { RoutesOutputWithMetadata              } from '../models/RoutesOutputWithMetadata';
 import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
@@ -1097,6 +1101,8 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
+import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
+import { RoutesV3AlertRuleWithMetadata               } from '../models/RoutesV3AlertRuleWithMetadata';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
@@ -1107,11 +1113,13 @@ import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionRe
 import { RoutesV3CreateTagRequest } from '../models/RoutesV3CreateTagRequest';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3EnrichmentWithMetadata              } from '../models/RoutesV3EnrichmentWithMetadata';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
-import { RoutesV3GetEnrichmentResponse              } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetEnrichmentResponse               } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
+import { RoutesV3ListEnrichmentsResponse } from '../models/RoutesV3ListEnrichmentsResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
@@ -1430,6 +1438,7 @@ let typeMap: {[index: string]: any} = {
     "CommunityTransformsInternalTransformMetadata": CommunityTransformsInternalTransformMetadata,
     "CommunityTransformsInternalTransformsIndex": CommunityTransformsInternalTransformsIndex,
     "ComponentpreviewResponse": ComponentpreviewResponse,
+    "ConnectormetaResourceMetadata": ConnectormetaResourceMetadata,
     "ConvertCefArgumentsConfig": ConvertCefArgumentsConfig,
     "ConvertTimestampArgumentsConfig": ConvertTimestampArgumentsConfig,
     "CoralogixCommunicationConfig": CoralogixCommunicationConfig,
@@ -1572,7 +1581,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPILogActorRole": ModelsAPILogActorRole,
     "ModelsAlert": ModelsAlert,
     "ModelsAlertRule": ModelsAlertRule,
-    "ModelsAlertRuleList": ModelsAlertRuleList,
     "ModelsAlertStatus": ModelsAlertStatus,
     "ModelsAuditLogHistogramBucket": ModelsAuditLogHistogramBucket,
     "ModelsAuditResource": ModelsAuditResource,
@@ -1593,12 +1601,10 @@ let typeMap: {[index: string]: any} = {
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsEnrichment": ModelsEnrichment,
     "ModelsEnrichmentConfig": ModelsEnrichmentConfig,
-    "ModelsEnrichmentList": ModelsEnrichmentList,
     "ModelsFeatureFlag": ModelsFeatureFlag,
     "ModelsFieldState": ModelsFieldState,
     "ModelsInput": ModelsInput,
     "ModelsInputConfig": ModelsInputConfig,
-    "ModelsInputList": ModelsInputList,
     "ModelsInputRateLimit": ModelsInputRateLimit,
     "ModelsMCPClientRegistration": ModelsMCPClientRegistration,
     "ModelsMCPClientRegistrationList": ModelsMCPClientRegistrationList,
@@ -1613,7 +1619,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsOrganizationUserList": ModelsOrganizationUserList,
     "ModelsOutput": ModelsOutput,
     "ModelsOutputConfig": ModelsOutputConfig,
-    "ModelsOutputList": ModelsOutputList,
     "ModelsPagination": ModelsPagination,
     "ModelsPermission": ModelsPermission,
     "ModelsPermissionList": ModelsPermissionList,
@@ -1727,9 +1732,12 @@ let typeMap: {[index: string]: any} = {
     "RoutesGetInputResponse": RoutesGetInputResponse,
     "RoutesGetOutputResponse": RoutesGetOutputResponse,
     "RoutesGetTransformResponse": RoutesGetTransformResponse,
+    "RoutesInputWithMetadata": RoutesInputWithMetadata,
     "RoutesInviteUserToOrganizationRequest": RoutesInviteUserToOrganizationRequest,
+    "RoutesListInputsResponse": RoutesListInputsResponse,
+    "RoutesListOutputsResponse": RoutesListOutputsResponse,
     "RoutesLoginRequest": RoutesLoginRequest,
-    "RoutesResourceMetadata": RoutesResourceMetadata,
+    "RoutesOutputWithMetadata": RoutesOutputWithMetadata,
     "RoutesRetryQueueMessage": RoutesRetryQueueMessage,
     "RoutesTransformConfig": RoutesTransformConfig,
     "RoutesTransformOperation": RoutesTransformOperation,
@@ -1791,6 +1799,8 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdatePipelineRequest": RoutesV2UpdatePipelineRequest,
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3AlertList": RoutesV3AlertList,
+    "RoutesV3AlertRuleListResponse": RoutesV3AlertRuleListResponse,
+    "RoutesV3AlertRuleWithMetadata": RoutesV3AlertRuleWithMetadata,
     "RoutesV3CreateAlertRuleRequest": RoutesV3CreateAlertRuleRequest,
     "RoutesV3CreateChildOrganizationRequest": RoutesV3CreateChildOrganizationRequest,
     "RoutesV3CreateConnectionRequest": RoutesV3CreateConnectionRequest,
@@ -1801,11 +1811,13 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3CreateTagRequest": RoutesV3CreateTagRequest,
     "RoutesV3EnrichmentSandboxRequest": RoutesV3EnrichmentSandboxRequest,
     "RoutesV3EnrichmentSandboxResponse": RoutesV3EnrichmentSandboxResponse,
+    "RoutesV3EnrichmentWithMetadata": RoutesV3EnrichmentWithMetadata,
     "RoutesV3FieldUpdation": RoutesV3FieldUpdation,
     "RoutesV3GetEnrichmentResponse": RoutesV3GetEnrichmentResponse,
     "RoutesV3GetFeatureFlagResponse": RoutesV3GetFeatureFlagResponse,
     "RoutesV3ImportTransformResponse": RoutesV3ImportTransformResponse,
     "RoutesV3KvEntryResponse": RoutesV3KvEntryResponse,
+    "RoutesV3ListEnrichmentsResponse": RoutesV3ListEnrichmentsResponse,
     "RoutesV3MFAStatusResponse": RoutesV3MFAStatusResponse,
     "RoutesV3OptimizerType": RoutesV3OptimizerType,
     "RoutesV3PutEnrichmentRequest": RoutesV3PutEnrichmentRequest,

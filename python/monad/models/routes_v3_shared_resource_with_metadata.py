@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_resource_metadata import RoutesResourceMetadata
+from monad.models.connectormeta_resource_metadata import ConnectormetaResourceMetadata
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -35,7 +35,7 @@ class RoutesV3SharedResourceWithMetadata(BaseModel):
     last_shared_at: Optional[StrictStr] = Field(default=None, description="Most recent time any share row for this resource was created.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the resource.")
     resource_id: Optional[StrictStr] = Field(default=None, description="Identifier of the shared secret or component.")
-    resource_metadata: Optional[RoutesResourceMetadata] = None
+    resource_metadata: Optional[ConnectormetaResourceMetadata] = None
     resource_type: Optional[StrictStr] = Field(default=None, description="Type of the shared resource: \"secret\" or \"component\".")
     share_with_all_new_children: Optional[StrictBool] = Field(default=None, description="Whether the resource's policy auto-shares it with new direct children.")
     sub_type: Optional[StrictStr] = Field(default=None, description="Concrete connector kind; components only.")
@@ -101,7 +101,7 @@ class RoutesV3SharedResourceWithMetadata(BaseModel):
             "last_shared_at": obj.get("last_shared_at"),
             "name": obj.get("name"),
             "resource_id": obj.get("resource_id"),
-            "resource_metadata": RoutesResourceMetadata.from_dict(obj["resource_metadata"]) if obj.get("resource_metadata") is not None else None,
+            "resource_metadata": ConnectormetaResourceMetadata.from_dict(obj["resource_metadata"]) if obj.get("resource_metadata") is not None else None,
             "resource_type": obj.get("resource_type"),
             "share_with_all_new_children": obj.get("share_with_all_new_children"),
             "sub_type": obj.get("sub_type")

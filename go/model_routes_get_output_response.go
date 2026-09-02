@@ -29,6 +29,7 @@ type RoutesGetOutputResponse struct {
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	References *ModelsReferences `json:"references,omitempty"`
+	ResourceMetadata *ConnectormetaResourceMetadata `json:"resource_metadata,omitempty"`
 	ShareDetails *ModelsShareDetails `json:"share_details,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
@@ -340,6 +341,38 @@ func (o *RoutesGetOutputResponse) SetReferences(v ModelsReferences) {
 	o.References = &v
 }
 
+// GetResourceMetadata returns the ResourceMetadata field value if set, zero value otherwise.
+func (o *RoutesGetOutputResponse) GetResourceMetadata() ConnectormetaResourceMetadata {
+	if o == nil || IsNil(o.ResourceMetadata) {
+		var ret ConnectormetaResourceMetadata
+		return ret
+	}
+	return *o.ResourceMetadata
+}
+
+// GetResourceMetadataOk returns a tuple with the ResourceMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesGetOutputResponse) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool) {
+	if o == nil || IsNil(o.ResourceMetadata) {
+		return nil, false
+	}
+	return o.ResourceMetadata, true
+}
+
+// HasResourceMetadata returns a boolean if a field has been set.
+func (o *RoutesGetOutputResponse) HasResourceMetadata() bool {
+	if o != nil && !IsNil(o.ResourceMetadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceMetadata gets a reference to the given ConnectormetaResourceMetadata and assigns it to the ResourceMetadata field.
+func (o *RoutesGetOutputResponse) SetResourceMetadata(v ConnectormetaResourceMetadata) {
+	o.ResourceMetadata = &v
+}
+
 // GetShareDetails returns the ShareDetails field value if set, zero value otherwise.
 func (o *RoutesGetOutputResponse) GetShareDetails() ModelsShareDetails {
 	if o == nil || IsNil(o.ShareDetails) {
@@ -504,6 +537,9 @@ func (o RoutesGetOutputResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.References) {
 		toSerialize["references"] = o.References
+	}
+	if !IsNil(o.ResourceMetadata) {
+		toSerialize["resource_metadata"] = o.ResourceMetadata
 	}
 	if !IsNil(o.ShareDetails) {
 		toSerialize["share_details"] = o.ShareDetails

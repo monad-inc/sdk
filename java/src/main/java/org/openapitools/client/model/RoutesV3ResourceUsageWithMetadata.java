@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.RoutesResourceMetadata;
+import org.openapitools.client.model.ConnectormetaResourceMetadata;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -79,7 +79,7 @@ public class RoutesV3ResourceUsageWithMetadata {
   public static final String SERIALIZED_NAME_RESOURCE_METADATA = "resource_metadata";
   @SerializedName(SERIALIZED_NAME_RESOURCE_METADATA)
   @javax.annotation.Nullable
-  private RoutesResourceMetadata resourceMetadata;
+  private ConnectormetaResourceMetadata resourceMetadata;
 
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
@@ -189,7 +189,7 @@ public class RoutesV3ResourceUsageWithMetadata {
   }
 
 
-  public RoutesV3ResourceUsageWithMetadata resourceMetadata(@javax.annotation.Nullable RoutesResourceMetadata resourceMetadata) {
+  public RoutesV3ResourceUsageWithMetadata resourceMetadata(@javax.annotation.Nullable ConnectormetaResourceMetadata resourceMetadata) {
     this.resourceMetadata = resourceMetadata;
     return this;
   }
@@ -199,11 +199,11 @@ public class RoutesV3ResourceUsageWithMetadata {
    * @return resourceMetadata
    */
   @javax.annotation.Nullable
-  public RoutesResourceMetadata getResourceMetadata() {
+  public ConnectormetaResourceMetadata getResourceMetadata() {
     return resourceMetadata;
   }
 
-  public void setResourceMetadata(@javax.annotation.Nullable RoutesResourceMetadata resourceMetadata) {
+  public void setResourceMetadata(@javax.annotation.Nullable ConnectormetaResourceMetadata resourceMetadata) {
     this.resourceMetadata = resourceMetadata;
   }
 
@@ -345,7 +345,7 @@ public class RoutesV3ResourceUsageWithMetadata {
       }
       // validate the optional field `resource_metadata`
       if (jsonObj.get("resource_metadata") != null && !jsonObj.get("resource_metadata").isJsonNull()) {
-        RoutesResourceMetadata.validateJsonElement(jsonObj.get("resource_metadata"));
+        ConnectormetaResourceMetadata.validateJsonElement(jsonObj.get("resource_metadata"));
       }
       if ((jsonObj.get("resource_type") != null && !jsonObj.get("resource_type").isJsonNull()) && !jsonObj.get("resource_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_type").toString()));

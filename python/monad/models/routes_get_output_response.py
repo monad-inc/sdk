@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.connectormeta_resource_metadata import ConnectormetaResourceMetadata
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_output_config import ModelsOutputConfig
 from monad.models.models_pipeline import ModelsPipeline
@@ -42,11 +43,12 @@ class RoutesGetOutputResponse(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     references: Optional[ModelsReferences] = None
+    resource_metadata: Optional[ConnectormetaResourceMetadata] = None
     share_details: Optional[ModelsShareDetails] = None
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
     version: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "share_details", "type", "updated_at", "version"]
+    __properties: ClassVar[List[str]] = ["component_of", "config", "created_at", "description", "id", "managed_by", "name", "organization_id", "references", "resource_metadata", "share_details", "type", "updated_at", "version"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -100,6 +102,9 @@ class RoutesGetOutputResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of references
         if self.references:
             _dict['references'] = self.references.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of resource_metadata
+        if self.resource_metadata:
+            _dict['resource_metadata'] = self.resource_metadata.to_dict()
         # override the default output from pydantic by calling `to_dict()` of share_details
         if self.share_details:
             _dict['share_details'] = self.share_details.to_dict()
@@ -124,6 +129,7 @@ class RoutesGetOutputResponse(BaseModel):
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
+            "resource_metadata": ConnectormetaResourceMetadata.from_dict(obj["resource_metadata"]) if obj.get("resource_metadata") is not None else None,
             "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
             "type": obj.get("type"),
             "updated_at": obj.get("updated_at"),

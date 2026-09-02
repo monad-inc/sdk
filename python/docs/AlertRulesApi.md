@@ -179,7 +179,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_alert_rule_by_id**
-> ModelsAlertRule get_alert_rule_by_id(organization_id, alert_rule_id)
+> RoutesV3AlertRuleWithMetadata get_alert_rule_by_id(organization_id, alert_rule_id)
 
 Get alert rule by ID
 
@@ -191,7 +191,7 @@ Retrieve an alert rule by its ID
 
 ```python
 import monad
-from monad.models.models_alert_rule import ModelsAlertRule
+from monad.models.routes_v3_alert_rule_with_metadata import RoutesV3AlertRuleWithMetadata
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_alert_rules**
-> ModelsAlertRuleList list_alert_rules(organization_id, limit=limit, offset=offset)
+> RoutesV3AlertRuleListResponse list_alert_rules(organization_id, limit=limit, offset=offset)
 
 Get all alert rules
 
@@ -444,7 +444,7 @@ Retrieve all alert rules for an organization
 
 ```python
 import monad
-from monad.models.models_alert_rule_list import ModelsAlertRuleList
+from monad.models.routes_v3_alert_rule_list_response import RoutesV3AlertRuleListResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRuleList**](ModelsAlertRuleList.md)
+[**RoutesV3AlertRuleListResponse**](RoutesV3AlertRuleListResponse.md)
 
 ### Authorization
 

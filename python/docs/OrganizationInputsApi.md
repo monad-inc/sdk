@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_organization_inputs**
-> ModelsInputList list_organization_inputs(organization_id, limit=limit, offset=offset)
+> RoutesListInputsResponse list_organization_inputs(organization_id, limit=limit, offset=offset)
 
 List organization inputs
 
@@ -297,7 +297,7 @@ List configured inputs in organization
 
 ```python
 import monad
-from monad.models.models_input_list import ModelsInputList
+from monad.models.routes_list_inputs_response import RoutesListInputsResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsInputList**](ModelsInputList.md)
+[**RoutesListInputsResponse**](RoutesListInputsResponse.md)
 
 ### Authorization
 

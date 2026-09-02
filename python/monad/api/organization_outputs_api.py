@@ -22,10 +22,10 @@ from typing_extensions import Annotated
 from monad.models.componentpreview_response import ComponentpreviewResponse
 from monad.models.create_output_request import CreateOutputRequest
 from monad.models.models_output import ModelsOutput
-from monad.models.models_output_list import ModelsOutputList
 from monad.models.preview_output_request import PreviewOutputRequest
 from monad.models.replace_output_request import ReplaceOutputRequest
 from monad.models.routes_get_output_response import RoutesGetOutputResponse
+from monad.models.routes_list_outputs_response import RoutesListOutputsResponse
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
 from monad.models.test_output_connection_request import TestOutputConnectionRequest
 from monad.models.update_output_request import UpdateOutputRequest
@@ -939,7 +939,7 @@ class OrganizationOutputsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsOutputList:
+    ) -> RoutesListOutputsResponse:
         """List configured outputs in organization
 
         List outputs
@@ -983,7 +983,7 @@ class OrganizationOutputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsOutputList",
+            '200': "RoutesListOutputsResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1015,7 +1015,7 @@ class OrganizationOutputsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsOutputList]:
+    ) -> ApiResponse[RoutesListOutputsResponse]:
         """List configured outputs in organization
 
         List outputs
@@ -1059,7 +1059,7 @@ class OrganizationOutputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsOutputList",
+            '200': "RoutesListOutputsResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1135,7 +1135,7 @@ class OrganizationOutputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsOutputList",
+            '200': "RoutesListOutputsResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

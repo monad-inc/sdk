@@ -11,11 +11,11 @@ import {SecurityAuthentication} from '../auth/auth';
 import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { CreateInputRequest } from '../models/CreateInputRequest';
 import { ModelsInput } from '../models/ModelsInput';
-import { ModelsInputList } from '../models/ModelsInputList';
 import { PreviewInputRequest } from '../models/PreviewInputRequest';
 import { ReplaceInputRequest } from '../models/ReplaceInputRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
+import { RoutesListInputsResponse } from '../models/RoutesListInputsResponse';
 import { RoutesV2SuccessResponse } from '../models/RoutesV2SuccessResponse';
 import { TestInputConnectionRequest } from '../models/TestInputConnectionRequest';
 import { UpdateInputRequest } from '../models/UpdateInputRequest';
@@ -660,22 +660,22 @@ export class OrganizationInputsApiResponseProcessor {
      * @params response Response returned by the server for a request to listOrganizationInputs
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async listOrganizationInputsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsInputList >> {
+     public async listOrganizationInputsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesListInputsResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsInputList = ObjectSerializer.deserialize(
+            const body: RoutesListInputsResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInputList", ""
-            ) as ModelsInputList;
+                "RoutesListInputsResponse", ""
+            ) as RoutesListInputsResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsInputList = ObjectSerializer.deserialize(
+            const body: RoutesListInputsResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsInputList", ""
-            ) as ModelsInputList;
+                "RoutesListInputsResponse", ""
+            ) as RoutesListInputsResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

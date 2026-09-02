@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
 **ResourceId** | Pointer to **string** |  | [optional] 
-**ResourceMetadata** | Pointer to [**RoutesResourceMetadata**](RoutesResourceMetadata.md) |  | [optional] 
+**ResourceMetadata** | Pointer to [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **SubType** | Pointer to **string** |  | [optional] 
 
@@ -159,20 +159,20 @@ HasResourceId returns a boolean if a field has been set.
 
 ### GetResourceMetadata
 
-`func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadata() RoutesResourceMetadata`
+`func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadata() ConnectormetaResourceMetadata`
 
 GetResourceMetadata returns the ResourceMetadata field if non-nil, zero value otherwise.
 
 ### GetResourceMetadataOk
 
-`func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadataOk() (*RoutesResourceMetadata, bool)`
+`func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool)`
 
 GetResourceMetadataOk returns a tuple with the ResourceMetadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourceMetadata
 
-`func (o *RoutesV3ResourceUsageWithMetadata) SetResourceMetadata(v RoutesResourceMetadata)`
+`func (o *RoutesV3ResourceUsageWithMetadata) SetResourceMetadata(v ConnectormetaResourceMetadata)`
 
 SetResourceMetadata sets ResourceMetadata field to given value.
 

@@ -10,10 +10,10 @@ import {SecurityAuthentication} from '../auth/auth';
 
 import { CreateEnrichmentRequest } from '../models/CreateEnrichmentRequest';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
-import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ReplaceEnrichmentRequest } from '../models/ReplaceEnrichmentRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3ListEnrichmentsResponse } from '../models/RoutesV3ListEnrichmentsResponse';
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { TestEnrichmentConnectionRequest } from '../models/TestEnrichmentConnectionRequest';
 import { UpdateEnrichmentRequest } from '../models/UpdateEnrichmentRequest';
@@ -603,13 +603,13 @@ export class OrganizationEnrichmentsApiResponseProcessor {
      * @params response Response returned by the server for a request to listEnrichments
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async listEnrichmentsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsEnrichmentList >> {
+     public async listEnrichmentsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3ListEnrichmentsResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsEnrichmentList = ObjectSerializer.deserialize(
+            const body: RoutesV3ListEnrichmentsResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsEnrichmentList", ""
-            ) as ModelsEnrichmentList;
+                "RoutesV3ListEnrichmentsResponse", ""
+            ) as RoutesV3ListEnrichmentsResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -629,10 +629,10 @@ export class OrganizationEnrichmentsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsEnrichmentList = ObjectSerializer.deserialize(
+            const body: RoutesV3ListEnrichmentsResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsEnrichmentList", ""
-            ) as ModelsEnrichmentList;
+                "RoutesV3ListEnrichmentsResponse", ""
+            ) as RoutesV3ListEnrichmentsResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

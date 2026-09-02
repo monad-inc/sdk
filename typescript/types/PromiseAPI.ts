@@ -88,6 +88,7 @@ import { CommunityTransformsInternalTransformConfig } from '../models/CommunityT
 import { CommunityTransformsInternalTransformMetadata } from '../models/CommunityTransformsInternalTransformMetadata';
 import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityTransformsInternalTransformsIndex';
 import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
+import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
@@ -239,7 +240,6 @@ import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlert } from '../models/ModelsAlert';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
-import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAlertStatus } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
@@ -266,13 +266,11 @@ import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
-import { ModelsEnrichmentList } from '../models/ModelsEnrichmentList';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { ModelsFieldState } from '../models/ModelsFieldState';
 import { ModelsInput } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
-import { ModelsInputList } from '../models/ModelsInputList';
 import { ModelsInputRateLimit } from '../models/ModelsInputRateLimit';
 import { ModelsMCPClientRegistration } from '../models/ModelsMCPClientRegistration';
 import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
@@ -289,7 +287,6 @@ import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
-import { ModelsOutputList } from '../models/ModelsOutputList';
 import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
@@ -412,9 +409,12 @@ import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformReq
 import { RoutesGetInputResponse } from '../models/RoutesGetInputResponse';
 import { RoutesGetOutputResponse } from '../models/RoutesGetOutputResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
+import { RoutesInputWithMetadata } from '../models/RoutesInputWithMetadata';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
+import { RoutesListInputsResponse } from '../models/RoutesListInputsResponse';
+import { RoutesListOutputsResponse } from '../models/RoutesListOutputsResponse';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesResourceMetadata } from '../models/RoutesResourceMetadata';
+import { RoutesOutputWithMetadata } from '../models/RoutesOutputWithMetadata';
 import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
@@ -476,6 +476,8 @@ import { RoutesV2UpdateOutputRequest } from '../models/RoutesV2UpdateOutputReque
 import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineRequest';
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
+import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
+import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
@@ -486,11 +488,13 @@ import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionRe
 import { RoutesV3CreateTagRequest } from '../models/RoutesV3CreateTagRequest';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
+import { RoutesV3EnrichmentWithMetadata } from '../models/RoutesV3EnrichmentWithMetadata';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
 import { RoutesV3GetEnrichmentResponse } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
+import { RoutesV3ListEnrichmentsResponse } from '../models/RoutesV3ListEnrichmentsResponse';
 import { RoutesV3MFAStatusResponse } from '../models/RoutesV3MFAStatusResponse';
 import { RoutesV3OptimizerType } from '../models/RoutesV3OptimizerType';
 import { RoutesV3PutEnrichmentRequest } from '../models/RoutesV3PutEnrichmentRequest';
@@ -694,7 +698,7 @@ export class PromiseAlertRulesApi {
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to retrieve
      */
-    public getAlertRuleByIDWithHttpInfo(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public getAlertRuleByIDWithHttpInfo(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleWithMetadata>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getAlertRuleByIDWithHttpInfo(organizationId, alertRuleId, observableOptions);
         return result.toPromise();
@@ -706,7 +710,7 @@ export class PromiseAlertRulesApi {
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to retrieve
      */
-    public getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
+    public getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertRuleWithMetadata> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getAlertRuleByID(organizationId, alertRuleId, observableOptions);
         return result.toPromise();
@@ -761,7 +765,7 @@ export class PromiseAlertRulesApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public listAlertRulesWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRuleList>> {
+    public listAlertRulesWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleListResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listAlertRulesWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -774,7 +778,7 @@ export class PromiseAlertRulesApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public listAlertRules(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRuleList> {
+    public listAlertRules(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertRuleListResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listAlertRules(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -2583,7 +2587,7 @@ export class PromiseOrganizationEnrichmentsApi {
      * @param [limit] Number of results to return (default 100)
      * @param [offset] Number of results to skip (default 0)
      */
-    public listEnrichmentsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsEnrichmentList>> {
+    public listEnrichmentsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3ListEnrichmentsResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listEnrichmentsWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -2596,7 +2600,7 @@ export class PromiseOrganizationEnrichmentsApi {
      * @param [limit] Number of results to return (default 100)
      * @param [offset] Number of results to skip (default 0)
      */
-    public listEnrichments(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsEnrichmentList> {
+    public listEnrichments(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesV3ListEnrichmentsResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listEnrichments(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -2782,7 +2786,7 @@ export class PromiseOrganizationInputsApi {
      * @param [limit] Limit the number of organizations returned (default: DefaultLimit)
      * @param [offset] Offset the organizations returned (default: 0)
      */
-    public listOrganizationInputsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsInputList>> {
+    public listOrganizationInputsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesListInputsResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listOrganizationInputsWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -2795,7 +2799,7 @@ export class PromiseOrganizationInputsApi {
      * @param [limit] Limit the number of organizations returned (default: DefaultLimit)
      * @param [offset] Offset the organizations returned (default: 0)
      */
-    public listOrganizationInputs(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsInputList> {
+    public listOrganizationInputs(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesListInputsResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listOrganizationInputs(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -3123,7 +3127,7 @@ export class PromiseOrganizationOutputsApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public listOrganizationOutputsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsOutputList>> {
+    public listOrganizationOutputsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesListOutputsResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listOrganizationOutputsWithHttpInfo(organizationId, limit, offset, observableOptions);
         return result.toPromise();
@@ -3136,7 +3140,7 @@ export class PromiseOrganizationOutputsApi {
      * @param [limit] Limit
      * @param [offset] Offset
      */
-    public listOrganizationOutputs(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<ModelsOutputList> {
+    public listOrganizationOutputs(organizationId: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesListOutputsResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.listOrganizationOutputs(organizationId, limit, offset, observableOptions);
         return result.toPromise();

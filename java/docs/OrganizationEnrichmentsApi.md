@@ -254,7 +254,7 @@ public class Example {
 
 <a id="listEnrichments"></a>
 # **listEnrichments**
-> ModelsEnrichmentList listEnrichments(organizationId, limit, offset)
+> RoutesV3ListEnrichmentsResponse listEnrichments(organizationId, limit, offset)
 
 List enrichments
 
@@ -292,7 +292,7 @@ public class Example {
     Integer limit = 56; // Integer | Number of results to return (default 100)
     Integer offset = 56; // Integer | Number of results to skip (default 0)
     try {
-      ModelsEnrichmentList result = apiInstance.listEnrichments(organizationId, limit, offset);
+      RoutesV3ListEnrichmentsResponse result = apiInstance.listEnrichments(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationEnrichmentsApi#listEnrichments");
@@ -315,7 +315,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsEnrichmentList**](ModelsEnrichmentList.md)
+[**RoutesV3ListEnrichmentsResponse**](RoutesV3ListEnrichmentsResponse.md)
 
 ### Authorization
 

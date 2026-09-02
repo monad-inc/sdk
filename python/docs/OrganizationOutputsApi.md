@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_organization_outputs**
-> ModelsOutputList list_organization_outputs(organization_id, limit=limit, offset=offset)
+> RoutesListOutputsResponse list_organization_outputs(organization_id, limit=limit, offset=offset)
 
 List configured outputs in organization
 
@@ -298,7 +298,7 @@ List outputs
 
 ```python
 import monad
-from monad.models.models_output_list import ModelsOutputList
+from monad.models.routes_list_outputs_response import RoutesListOutputsResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsOutputList**](ModelsOutputList.md)
+[**RoutesListOutputsResponse**](RoutesListOutputsResponse.md)
 
 ### Authorization
 

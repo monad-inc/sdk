@@ -11,8 +11,9 @@ import {SecurityAuthentication} from '../auth/auth';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
 import { CreateAlertRuleRequest } from '../models/CreateAlertRuleRequest';
 import { ModelsAlertRule } from '../models/ModelsAlertRule';
-import { ModelsAlertRuleList } from '../models/ModelsAlertRuleList';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
+import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
+import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
 import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
 
 /**
@@ -462,13 +463,13 @@ export class AlertRulesApiResponseProcessor {
      * @params response Response returned by the server for a request to getAlertRuleByID
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async getAlertRuleByIDWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRule >> {
+     public async getAlertRuleByIDWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3AlertRuleWithMetadata >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsAlertRule = ObjectSerializer.deserialize(
+            const body: RoutesV3AlertRuleWithMetadata = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsAlertRule", ""
-            ) as ModelsAlertRule;
+                "RoutesV3AlertRuleWithMetadata", ""
+            ) as RoutesV3AlertRuleWithMetadata;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -495,10 +496,10 @@ export class AlertRulesApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsAlertRule = ObjectSerializer.deserialize(
+            const body: RoutesV3AlertRuleWithMetadata = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsAlertRule", ""
-            ) as ModelsAlertRule;
+                "RoutesV3AlertRuleWithMetadata", ""
+            ) as RoutesV3AlertRuleWithMetadata;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -577,13 +578,13 @@ export class AlertRulesApiResponseProcessor {
      * @params response Response returned by the server for a request to listAlertRules
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async listAlertRulesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ModelsAlertRuleList >> {
+     public async listAlertRulesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3AlertRuleListResponse >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ModelsAlertRuleList = ObjectSerializer.deserialize(
+            const body: RoutesV3AlertRuleListResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsAlertRuleList", ""
-            ) as ModelsAlertRuleList;
+                "RoutesV3AlertRuleListResponse", ""
+            ) as RoutesV3AlertRuleListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
@@ -596,10 +597,10 @@ export class AlertRulesApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ModelsAlertRuleList = ObjectSerializer.deserialize(
+            const body: RoutesV3AlertRuleListResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ModelsAlertRuleList", ""
-            ) as ModelsAlertRuleList;
+                "RoutesV3AlertRuleListResponse", ""
+            ) as RoutesV3AlertRuleListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

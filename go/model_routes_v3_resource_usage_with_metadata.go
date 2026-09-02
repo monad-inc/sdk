@@ -25,7 +25,7 @@ type RoutesV3ResourceUsageWithMetadata struct {
 	OrganizationId *string `json:"organization_id,omitempty"`
 	OrganizationName *string `json:"organization_name,omitempty"`
 	ResourceId *string `json:"resource_id,omitempty"`
-	ResourceMetadata *RoutesResourceMetadata `json:"resource_metadata,omitempty"`
+	ResourceMetadata *ConnectormetaResourceMetadata `json:"resource_metadata,omitempty"`
 	ResourceType *string `json:"resource_type,omitempty"`
 	SubType *string `json:"sub_type,omitempty"`
 }
@@ -208,9 +208,9 @@ func (o *RoutesV3ResourceUsageWithMetadata) SetResourceId(v string) {
 }
 
 // GetResourceMetadata returns the ResourceMetadata field value if set, zero value otherwise.
-func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadata() RoutesResourceMetadata {
+func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadata() ConnectormetaResourceMetadata {
 	if o == nil || IsNil(o.ResourceMetadata) {
-		var ret RoutesResourceMetadata
+		var ret ConnectormetaResourceMetadata
 		return ret
 	}
 	return *o.ResourceMetadata
@@ -218,7 +218,7 @@ func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadata() RoutesResource
 
 // GetResourceMetadataOk returns a tuple with the ResourceMetadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadataOk() (*RoutesResourceMetadata, bool) {
+func (o *RoutesV3ResourceUsageWithMetadata) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool) {
 	if o == nil || IsNil(o.ResourceMetadata) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *RoutesV3ResourceUsageWithMetadata) HasResourceMetadata() bool {
 	return false
 }
 
-// SetResourceMetadata gets a reference to the given RoutesResourceMetadata and assigns it to the ResourceMetadata field.
-func (o *RoutesV3ResourceUsageWithMetadata) SetResourceMetadata(v RoutesResourceMetadata) {
+// SetResourceMetadata gets a reference to the given ConnectormetaResourceMetadata and assigns it to the ResourceMetadata field.
+func (o *RoutesV3ResourceUsageWithMetadata) SetResourceMetadata(v ConnectormetaResourceMetadata) {
 	o.ResourceMetadata = &v
 }
 

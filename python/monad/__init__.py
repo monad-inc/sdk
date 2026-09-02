@@ -158,6 +158,7 @@ __all__ = [
     "CommunityTransformsInternalTransformMetadata",
     "CommunityTransformsInternalTransformsIndex",
     "ComponentpreviewResponse",
+    "ConnectormetaResourceMetadata",
     "ConvertCefArgumentsConfig",
     "ConvertTimestampArgumentsConfig",
     "ConvertTimestampTimestampFormat",
@@ -309,7 +310,6 @@ __all__ = [
     "ModelsAPILogActorRole",
     "ModelsAlert",
     "ModelsAlertRule",
-    "ModelsAlertRuleList",
     "ModelsAlertState",
     "ModelsAlertStatus",
     "ModelsAuditAction",
@@ -336,13 +336,11 @@ __all__ = [
     "ModelsDataUsage",
     "ModelsEnrichment",
     "ModelsEnrichmentConfig",
-    "ModelsEnrichmentList",
     "ModelsFeatureFlag",
     "ModelsFieldState",
     "ModelsInput",
     "ModelsInputConfig",
     "ModelsInputConnectorCategory",
-    "ModelsInputList",
     "ModelsInputRateLimit",
     "ModelsMCPClientRegistration",
     "ModelsMCPClientRegistrationList",
@@ -359,7 +357,6 @@ __all__ = [
     "ModelsOutput",
     "ModelsOutputConfig",
     "ModelsOutputConnectorCategory",
-    "ModelsOutputList",
     "ModelsPagination",
     "ModelsPermission",
     "ModelsPermissionList",
@@ -482,9 +479,12 @@ __all__ = [
     "RoutesGetInputResponse",
     "RoutesGetOutputResponse",
     "RoutesGetTransformResponse",
+    "RoutesInputWithMetadata",
     "RoutesInviteUserToOrganizationRequest",
+    "RoutesListInputsResponse",
+    "RoutesListOutputsResponse",
     "RoutesLoginRequest",
-    "RoutesResourceMetadata",
+    "RoutesOutputWithMetadata",
     "RoutesRetryQueueMessage",
     "RoutesTransformConfig",
     "RoutesTransformOperation",
@@ -546,6 +546,8 @@ __all__ = [
     "RoutesV2UpdatePipelineRequest",
     "RoutesV2UpdateRoleV2Request",
     "RoutesV3AlertList",
+    "RoutesV3AlertRuleListResponse",
+    "RoutesV3AlertRuleWithMetadata",
     "RoutesV3CreateAlertRuleRequest",
     "RoutesV3CreateChildOrganizationRequest",
     "RoutesV3CreateConnectionRequest",
@@ -556,11 +558,13 @@ __all__ = [
     "RoutesV3CreateTagRequest",
     "RoutesV3EnrichmentSandboxRequest",
     "RoutesV3EnrichmentSandboxResponse",
+    "RoutesV3EnrichmentWithMetadata",
     "RoutesV3FieldUpdation",
     "RoutesV3GetEnrichmentResponse",
     "RoutesV3GetFeatureFlagResponse",
     "RoutesV3ImportTransformResponse",
     "RoutesV3KvEntryResponse",
+    "RoutesV3ListEnrichmentsResponse",
     "RoutesV3MFAStatusResponse",
     "RoutesV3OptimizerType",
     "RoutesV3PutEnrichmentRequest",
@@ -842,6 +846,7 @@ from monad.models.community_transforms_internal_transform_config import Communit
 from monad.models.community_transforms_internal_transform_metadata import CommunityTransformsInternalTransformMetadata as CommunityTransformsInternalTransformMetadata
 from monad.models.community_transforms_internal_transforms_index import CommunityTransformsInternalTransformsIndex as CommunityTransformsInternalTransformsIndex
 from monad.models.componentpreview_response import ComponentpreviewResponse as ComponentpreviewResponse
+from monad.models.connectormeta_resource_metadata import ConnectormetaResourceMetadata as ConnectormetaResourceMetadata
 from monad.models.convert_cef_arguments_config import ConvertCefArgumentsConfig as ConvertCefArgumentsConfig
 from monad.models.convert_timestamp_arguments_config import ConvertTimestampArgumentsConfig as ConvertTimestampArgumentsConfig
 from monad.models.convert_timestamp_timestamp_format import ConvertTimestampTimestampFormat as ConvertTimestampTimestampFormat
@@ -993,7 +998,6 @@ from monad.models.models_api_log_actor import ModelsAPILogActor as ModelsAPILogA
 from monad.models.models_api_log_actor_role import ModelsAPILogActorRole as ModelsAPILogActorRole
 from monad.models.models_alert import ModelsAlert as ModelsAlert
 from monad.models.models_alert_rule import ModelsAlertRule as ModelsAlertRule
-from monad.models.models_alert_rule_list import ModelsAlertRuleList as ModelsAlertRuleList
 from monad.models.models_alert_state import ModelsAlertState as ModelsAlertState
 from monad.models.models_alert_status import ModelsAlertStatus as ModelsAlertStatus
 from monad.models.models_audit_action import ModelsAuditAction as ModelsAuditAction
@@ -1020,13 +1024,11 @@ from monad.models.models_cursor_pagination import ModelsCursorPagination as Mode
 from monad.models.models_data_usage import ModelsDataUsage as ModelsDataUsage
 from monad.models.models_enrichment import ModelsEnrichment as ModelsEnrichment
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig as ModelsEnrichmentConfig
-from monad.models.models_enrichment_list import ModelsEnrichmentList as ModelsEnrichmentList
 from monad.models.models_feature_flag import ModelsFeatureFlag as ModelsFeatureFlag
 from monad.models.models_field_state import ModelsFieldState as ModelsFieldState
 from monad.models.models_input import ModelsInput as ModelsInput
 from monad.models.models_input_config import ModelsInputConfig as ModelsInputConfig
 from monad.models.models_input_connector_category import ModelsInputConnectorCategory as ModelsInputConnectorCategory
-from monad.models.models_input_list import ModelsInputList as ModelsInputList
 from monad.models.models_input_rate_limit import ModelsInputRateLimit as ModelsInputRateLimit
 from monad.models.models_mcp_client_registration import ModelsMCPClientRegistration as ModelsMCPClientRegistration
 from monad.models.models_mcp_client_registration_list import ModelsMCPClientRegistrationList as ModelsMCPClientRegistrationList
@@ -1043,7 +1045,6 @@ from monad.models.models_organization_user_list import ModelsOrganizationUserLis
 from monad.models.models_output import ModelsOutput as ModelsOutput
 from monad.models.models_output_config import ModelsOutputConfig as ModelsOutputConfig
 from monad.models.models_output_connector_category import ModelsOutputConnectorCategory as ModelsOutputConnectorCategory
-from monad.models.models_output_list import ModelsOutputList as ModelsOutputList
 from monad.models.models_pagination import ModelsPagination as ModelsPagination
 from monad.models.models_permission import ModelsPermission as ModelsPermission
 from monad.models.models_permission_list import ModelsPermissionList as ModelsPermissionList
@@ -1166,9 +1167,12 @@ from monad.models.routes_create_transform_request import RoutesCreateTransformRe
 from monad.models.routes_get_input_response import RoutesGetInputResponse as RoutesGetInputResponse
 from monad.models.routes_get_output_response import RoutesGetOutputResponse as RoutesGetOutputResponse
 from monad.models.routes_get_transform_response import RoutesGetTransformResponse as RoutesGetTransformResponse
+from monad.models.routes_input_with_metadata import RoutesInputWithMetadata as RoutesInputWithMetadata
 from monad.models.routes_invite_user_to_organization_request import RoutesInviteUserToOrganizationRequest as RoutesInviteUserToOrganizationRequest
+from monad.models.routes_list_inputs_response import RoutesListInputsResponse as RoutesListInputsResponse
+from monad.models.routes_list_outputs_response import RoutesListOutputsResponse as RoutesListOutputsResponse
 from monad.models.routes_login_request import RoutesLoginRequest as RoutesLoginRequest
-from monad.models.routes_resource_metadata import RoutesResourceMetadata as RoutesResourceMetadata
+from monad.models.routes_output_with_metadata import RoutesOutputWithMetadata as RoutesOutputWithMetadata
 from monad.models.routes_retry_queue_message import RoutesRetryQueueMessage as RoutesRetryQueueMessage
 from monad.models.routes_transform_config import RoutesTransformConfig as RoutesTransformConfig
 from monad.models.routes_transform_operation import RoutesTransformOperation as RoutesTransformOperation
@@ -1230,6 +1234,8 @@ from monad.models.routes_v2_update_output_request import RoutesV2UpdateOutputReq
 from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelineRequest as RoutesV2UpdatePipelineRequest
 from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request as RoutesV2UpdateRoleV2Request
 from monad.models.routes_v3_alert_list import RoutesV3AlertList as RoutesV3AlertList
+from monad.models.routes_v3_alert_rule_list_response import RoutesV3AlertRuleListResponse as RoutesV3AlertRuleListResponse
+from monad.models.routes_v3_alert_rule_with_metadata import RoutesV3AlertRuleWithMetadata as RoutesV3AlertRuleWithMetadata
 from monad.models.routes_v3_create_alert_rule_request import RoutesV3CreateAlertRuleRequest as RoutesV3CreateAlertRuleRequest
 from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest as RoutesV3CreateChildOrganizationRequest
 from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest as RoutesV3CreateConnectionRequest
@@ -1240,11 +1246,13 @@ from monad.models.routes_v3_create_session_response import RoutesV3CreateSession
 from monad.models.routes_v3_create_tag_request import RoutesV3CreateTagRequest as RoutesV3CreateTagRequest
 from monad.models.routes_v3_enrichment_sandbox_request import RoutesV3EnrichmentSandboxRequest as RoutesV3EnrichmentSandboxRequest
 from monad.models.routes_v3_enrichment_sandbox_response import RoutesV3EnrichmentSandboxResponse as RoutesV3EnrichmentSandboxResponse
+from monad.models.routes_v3_enrichment_with_metadata import RoutesV3EnrichmentWithMetadata as RoutesV3EnrichmentWithMetadata
 from monad.models.routes_v3_field_updation import RoutesV3FieldUpdation as RoutesV3FieldUpdation
 from monad.models.routes_v3_get_enrichment_response import RoutesV3GetEnrichmentResponse as RoutesV3GetEnrichmentResponse
 from monad.models.routes_v3_get_feature_flag_response import RoutesV3GetFeatureFlagResponse as RoutesV3GetFeatureFlagResponse
 from monad.models.routes_v3_import_transform_response import RoutesV3ImportTransformResponse as RoutesV3ImportTransformResponse
 from monad.models.routes_v3_kv_entry_response import RoutesV3KvEntryResponse as RoutesV3KvEntryResponse
+from monad.models.routes_v3_list_enrichments_response import RoutesV3ListEnrichmentsResponse as RoutesV3ListEnrichmentsResponse
 from monad.models.routes_v3_mfa_status_response import RoutesV3MFAStatusResponse as RoutesV3MFAStatusResponse
 from monad.models.routes_v3_optimizer_type import RoutesV3OptimizerType as RoutesV3OptimizerType
 from monad.models.routes_v3_put_enrichment_request import RoutesV3PutEnrichmentRequest as RoutesV3PutEnrichmentRequest

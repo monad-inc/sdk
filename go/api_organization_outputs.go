@@ -508,7 +508,7 @@ func (r ApiListOrganizationOutputsRequest) Offset(offset int32) ApiListOrganizat
 	return r
 }
 
-func (r ApiListOrganizationOutputsRequest) Execute() (*ModelsOutputList, *http.Response, error) {
+func (r ApiListOrganizationOutputsRequest) Execute() (*RoutesListOutputsResponse, *http.Response, error) {
 	return r.ApiService.ListOrganizationOutputsExecute(r)
 }
 
@@ -530,13 +530,13 @@ func (a *OrganizationOutputsAPIService) ListOrganizationOutputs(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return ModelsOutputList
-func (a *OrganizationOutputsAPIService) ListOrganizationOutputsExecute(r ApiListOrganizationOutputsRequest) (*ModelsOutputList, *http.Response, error) {
+//  @return RoutesListOutputsResponse
+func (a *OrganizationOutputsAPIService) ListOrganizationOutputsExecute(r ApiListOrganizationOutputsRequest) (*RoutesListOutputsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsOutputList
+		localVarReturnValue  *RoutesListOutputsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationOutputsAPIService.ListOrganizationOutputs")

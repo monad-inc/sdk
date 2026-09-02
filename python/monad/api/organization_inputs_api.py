@@ -22,10 +22,10 @@ from typing_extensions import Annotated
 from monad.models.componentpreview_response import ComponentpreviewResponse
 from monad.models.create_input_request import CreateInputRequest
 from monad.models.models_input import ModelsInput
-from monad.models.models_input_list import ModelsInputList
 from monad.models.preview_input_request import PreviewInputRequest
 from monad.models.replace_input_request import ReplaceInputRequest
 from monad.models.routes_get_input_response import RoutesGetInputResponse
+from monad.models.routes_list_inputs_response import RoutesListInputsResponse
 from monad.models.routes_v2_success_response import RoutesV2SuccessResponse
 from monad.models.test_input_connection_request import TestInputConnectionRequest
 from monad.models.update_input_request import UpdateInputRequest
@@ -936,7 +936,7 @@ class OrganizationInputsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsInputList:
+    ) -> RoutesListInputsResponse:
         """List organization inputs
 
         List configured inputs in organization
@@ -980,7 +980,7 @@ class OrganizationInputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsInputList",
+            '200': "RoutesListInputsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1011,7 +1011,7 @@ class OrganizationInputsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsInputList]:
+    ) -> ApiResponse[RoutesListInputsResponse]:
         """List organization inputs
 
         List configured inputs in organization
@@ -1055,7 +1055,7 @@ class OrganizationInputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsInputList",
+            '200': "RoutesListInputsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1130,7 +1130,7 @@ class OrganizationInputsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsInputList",
+            '200': "RoutesListInputsResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

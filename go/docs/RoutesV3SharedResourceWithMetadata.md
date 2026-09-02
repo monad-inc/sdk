@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **LastSharedAt** | Pointer to **string** | Most recent time any share row for this resource was created. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ResourceId** | Pointer to **string** | Identifier of the shared secret or component. | [optional] 
-**ResourceMetadata** | Pointer to [**RoutesResourceMetadata**](RoutesResourceMetadata.md) |  | [optional] 
+**ResourceMetadata** | Pointer to [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **ResourceType** | Pointer to **string** | Type of the shared resource: \&quot;secret\&quot; or \&quot;component\&quot;. | [optional] 
 **ShareWithAllNewChildren** | Pointer to **bool** | Whether the resource&#39;s policy auto-shares it with new direct children. | [optional] 
 **SubType** | Pointer to **string** | Concrete connector kind; components only. | [optional] 
@@ -186,20 +186,20 @@ HasResourceId returns a boolean if a field has been set.
 
 ### GetResourceMetadata
 
-`func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadata() RoutesResourceMetadata`
+`func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadata() ConnectormetaResourceMetadata`
 
 GetResourceMetadata returns the ResourceMetadata field if non-nil, zero value otherwise.
 
 ### GetResourceMetadataOk
 
-`func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadataOk() (*RoutesResourceMetadata, bool)`
+`func (o *RoutesV3SharedResourceWithMetadata) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool)`
 
 GetResourceMetadataOk returns a tuple with the ResourceMetadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourceMetadata
 
-`func (o *RoutesV3SharedResourceWithMetadata) SetResourceMetadata(v RoutesResourceMetadata)`
+`func (o *RoutesV3SharedResourceWithMetadata) SetResourceMetadata(v ConnectormetaResourceMetadata)`
 
 SetResourceMetadata sets ResourceMetadata field to given value.
 

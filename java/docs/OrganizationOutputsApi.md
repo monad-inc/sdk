@@ -253,7 +253,7 @@ public class Example {
 
 <a id="listOrganizationOutputs"></a>
 # **listOrganizationOutputs**
-> ModelsOutputList listOrganizationOutputs(organizationId, limit, offset)
+> RoutesListOutputsResponse listOrganizationOutputs(organizationId, limit, offset)
 
 List configured outputs in organization
 
@@ -291,7 +291,7 @@ public class Example {
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
     try {
-      ModelsOutputList result = apiInstance.listOrganizationOutputs(organizationId, limit, offset);
+      RoutesListOutputsResponse result = apiInstance.listOrganizationOutputs(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationOutputsApi#listOrganizationOutputs");
@@ -314,7 +314,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsOutputList**](ModelsOutputList.md)
+[**RoutesListOutputsResponse**](RoutesListOutputsResponse.md)
 
 ### Authorization
 

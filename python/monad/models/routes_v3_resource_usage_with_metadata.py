@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_resource_metadata import RoutesResourceMetadata
+from monad.models.connectormeta_resource_metadata import ConnectormetaResourceMetadata
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -34,7 +34,7 @@ class RoutesV3ResourceUsageWithMetadata(BaseModel):
     organization_id: Optional[StrictStr] = None
     organization_name: Optional[StrictStr] = None
     resource_id: Optional[StrictStr] = None
-    resource_metadata: Optional[RoutesResourceMetadata] = None
+    resource_metadata: Optional[ConnectormetaResourceMetadata] = None
     resource_type: Optional[StrictStr] = None
     sub_type: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["component_type", "name", "organization_id", "organization_name", "resource_id", "resource_metadata", "resource_type", "sub_type"]
@@ -98,7 +98,7 @@ class RoutesV3ResourceUsageWithMetadata(BaseModel):
             "organization_id": obj.get("organization_id"),
             "organization_name": obj.get("organization_name"),
             "resource_id": obj.get("resource_id"),
-            "resource_metadata": RoutesResourceMetadata.from_dict(obj["resource_metadata"]) if obj.get("resource_metadata") is not None else None,
+            "resource_metadata": ConnectormetaResourceMetadata.from_dict(obj["resource_metadata"]) if obj.get("resource_metadata") is not None else None,
             "resource_type": obj.get("resource_type"),
             "sub_type": obj.get("sub_type")
         })

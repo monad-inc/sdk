@@ -161,7 +161,7 @@ null (empty response body)
 
 <a id="getAlertRuleByID"></a>
 # **getAlertRuleByID**
-> ModelsAlertRule getAlertRuleByID(organizationId, alertRuleId)
+> RoutesV3AlertRuleWithMetadata getAlertRuleByID(organizationId, alertRuleId)
 
 Get alert rule by ID
 
@@ -192,7 +192,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to retrieve
     try {
-      ModelsAlertRule result = apiInstance.getAlertRuleByID(organizationId, alertRuleId);
+      RoutesV3AlertRuleWithMetadata result = apiInstance.getAlertRuleByID(organizationId, alertRuleId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#getAlertRuleByID");
@@ -214,7 +214,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md)
 
 ### Authorization
 
@@ -382,7 +382,7 @@ This endpoint does not need any parameter.
 
 <a id="listAlertRules"></a>
 # **listAlertRules**
-> ModelsAlertRuleList listAlertRules(organizationId, limit, offset)
+> RoutesV3AlertRuleListResponse listAlertRules(organizationId, limit, offset)
 
 Get all alert rules
 
@@ -414,7 +414,7 @@ public class Example {
     Integer limit = 56; // Integer | Limit
     Integer offset = 56; // Integer | Offset
     try {
-      ModelsAlertRuleList result = apiInstance.listAlertRules(organizationId, limit, offset);
+      RoutesV3AlertRuleListResponse result = apiInstance.listAlertRules(organizationId, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#listAlertRules");
@@ -437,7 +437,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsAlertRuleList**](ModelsAlertRuleList.md)
+[**RoutesV3AlertRuleListResponse**](RoutesV3AlertRuleListResponse.md)
 
 ### Authorization
 

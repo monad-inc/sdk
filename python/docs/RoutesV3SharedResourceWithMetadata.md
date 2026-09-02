@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **last_shared_at** | **str** | Most recent time any share row for this resource was created. | [optional] 
 **name** | **str** | Name of the resource. | [optional] 
 **resource_id** | **str** | Identifier of the shared secret or component. | [optional] 
-**resource_metadata** | [**RoutesResourceMetadata**](RoutesResourceMetadata.md) |  | [optional] 
+**resource_metadata** | [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **resource_type** | **str** | Type of the shared resource: \&quot;secret\&quot; or \&quot;component\&quot;. | [optional] 
 **share_with_all_new_children** | **bool** | Whether the resource&#39;s policy auto-shares it with new direct children. | [optional] 
 **sub_type** | **str** | Concrete connector kind; components only. | [optional] 

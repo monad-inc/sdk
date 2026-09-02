@@ -1,0 +1,368 @@
+# RoutesOutputWithMetadata
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Config** | Pointer to [**ModelsOutputConfig**](ModelsOutputConfig.md) |  | [optional] 
+**CreatedAt** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**OrganizationId** | Pointer to **string** |  | [optional] 
+**References** | Pointer to [**ModelsReferences**](ModelsReferences.md) |  | [optional] 
+**ResourceMetadata** | Pointer to [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
+**ShareDetails** | Pointer to [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
+**UpdatedAt** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **int32** |  | [optional] 
+
+## Methods
+
+### NewRoutesOutputWithMetadata
+
+`func NewRoutesOutputWithMetadata() *RoutesOutputWithMetadata`
+
+NewRoutesOutputWithMetadata instantiates a new RoutesOutputWithMetadata object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewRoutesOutputWithMetadataWithDefaults
+
+`func NewRoutesOutputWithMetadataWithDefaults() *RoutesOutputWithMetadata`
+
+NewRoutesOutputWithMetadataWithDefaults instantiates a new RoutesOutputWithMetadata object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetConfig
+
+`func (o *RoutesOutputWithMetadata) GetConfig() ModelsOutputConfig`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *RoutesOutputWithMetadata) GetConfigOk() (*ModelsOutputConfig, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *RoutesOutputWithMetadata) SetConfig(v ModelsOutputConfig)`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *RoutesOutputWithMetadata) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *RoutesOutputWithMetadata) GetCreatedAt() string`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *RoutesOutputWithMetadata) GetCreatedAtOk() (*string, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *RoutesOutputWithMetadata) SetCreatedAt(v string)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *RoutesOutputWithMetadata) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *RoutesOutputWithMetadata) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *RoutesOutputWithMetadata) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *RoutesOutputWithMetadata) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *RoutesOutputWithMetadata) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *RoutesOutputWithMetadata) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *RoutesOutputWithMetadata) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *RoutesOutputWithMetadata) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *RoutesOutputWithMetadata) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetManagedBy
+
+`func (o *RoutesOutputWithMetadata) GetManagedBy() ModelsManagedBy`
+
+GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
+
+### GetManagedByOk
+
+`func (o *RoutesOutputWithMetadata) GetManagedByOk() (*ModelsManagedBy, bool)`
+
+GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagedBy
+
+`func (o *RoutesOutputWithMetadata) SetManagedBy(v ModelsManagedBy)`
+
+SetManagedBy sets ManagedBy field to given value.
+
+### HasManagedBy
+
+`func (o *RoutesOutputWithMetadata) HasManagedBy() bool`
+
+HasManagedBy returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *RoutesOutputWithMetadata) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *RoutesOutputWithMetadata) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *RoutesOutputWithMetadata) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *RoutesOutputWithMetadata) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetOrganizationId
+
+`func (o *RoutesOutputWithMetadata) GetOrganizationId() string`
+
+GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
+
+### GetOrganizationIdOk
+
+`func (o *RoutesOutputWithMetadata) GetOrganizationIdOk() (*string, bool)`
+
+GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationId
+
+`func (o *RoutesOutputWithMetadata) SetOrganizationId(v string)`
+
+SetOrganizationId sets OrganizationId field to given value.
+
+### HasOrganizationId
+
+`func (o *RoutesOutputWithMetadata) HasOrganizationId() bool`
+
+HasOrganizationId returns a boolean if a field has been set.
+
+### GetReferences
+
+`func (o *RoutesOutputWithMetadata) GetReferences() ModelsReferences`
+
+GetReferences returns the References field if non-nil, zero value otherwise.
+
+### GetReferencesOk
+
+`func (o *RoutesOutputWithMetadata) GetReferencesOk() (*ModelsReferences, bool)`
+
+GetReferencesOk returns a tuple with the References field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferences
+
+`func (o *RoutesOutputWithMetadata) SetReferences(v ModelsReferences)`
+
+SetReferences sets References field to given value.
+
+### HasReferences
+
+`func (o *RoutesOutputWithMetadata) HasReferences() bool`
+
+HasReferences returns a boolean if a field has been set.
+
+### GetResourceMetadata
+
+`func (o *RoutesOutputWithMetadata) GetResourceMetadata() ConnectormetaResourceMetadata`
+
+GetResourceMetadata returns the ResourceMetadata field if non-nil, zero value otherwise.
+
+### GetResourceMetadataOk
+
+`func (o *RoutesOutputWithMetadata) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool)`
+
+GetResourceMetadataOk returns a tuple with the ResourceMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceMetadata
+
+`func (o *RoutesOutputWithMetadata) SetResourceMetadata(v ConnectormetaResourceMetadata)`
+
+SetResourceMetadata sets ResourceMetadata field to given value.
+
+### HasResourceMetadata
+
+`func (o *RoutesOutputWithMetadata) HasResourceMetadata() bool`
+
+HasResourceMetadata returns a boolean if a field has been set.
+
+### GetShareDetails
+
+`func (o *RoutesOutputWithMetadata) GetShareDetails() ModelsShareDetails`
+
+GetShareDetails returns the ShareDetails field if non-nil, zero value otherwise.
+
+### GetShareDetailsOk
+
+`func (o *RoutesOutputWithMetadata) GetShareDetailsOk() (*ModelsShareDetails, bool)`
+
+GetShareDetailsOk returns a tuple with the ShareDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareDetails
+
+`func (o *RoutesOutputWithMetadata) SetShareDetails(v ModelsShareDetails)`
+
+SetShareDetails sets ShareDetails field to given value.
+
+### HasShareDetails
+
+`func (o *RoutesOutputWithMetadata) HasShareDetails() bool`
+
+HasShareDetails returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *RoutesOutputWithMetadata) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *RoutesOutputWithMetadata) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *RoutesOutputWithMetadata) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *RoutesOutputWithMetadata) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetUpdatedAt
+
+`func (o *RoutesOutputWithMetadata) GetUpdatedAt() string`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *RoutesOutputWithMetadata) GetUpdatedAtOk() (*string, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *RoutesOutputWithMetadata) SetUpdatedAt(v string)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *RoutesOutputWithMetadata) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *RoutesOutputWithMetadata) GetVersion() int32`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *RoutesOutputWithMetadata) GetVersionOk() (*int32, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *RoutesOutputWithMetadata) SetVersion(v int32)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *RoutesOutputWithMetadata) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

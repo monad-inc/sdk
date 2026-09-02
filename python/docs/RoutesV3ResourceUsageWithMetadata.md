@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **organization_id** | **str** |  | [optional] 
 **organization_name** | **str** |  | [optional] 
 **resource_id** | **str** |  | [optional] 
-**resource_metadata** | [**RoutesResourceMetadata**](RoutesResourceMetadata.md) |  | [optional] 
+**resource_metadata** | [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **resource_type** | **str** |  | [optional] 
 **sub_type** | **str** |  | [optional] 
 

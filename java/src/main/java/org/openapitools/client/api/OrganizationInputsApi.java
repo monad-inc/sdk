@@ -30,11 +30,11 @@ import java.io.IOException;
 import org.openapitools.client.model.ComponentpreviewResponse;
 import org.openapitools.client.model.CreateInputRequest;
 import org.openapitools.client.model.ModelsInput;
-import org.openapitools.client.model.ModelsInputList;
 import org.openapitools.client.model.PreviewInputRequest;
 import org.openapitools.client.model.ReplaceInputRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesGetInputResponse;
+import org.openapitools.client.model.RoutesListInputsResponse;
 import org.openapitools.client.model.RoutesV2SuccessResponse;
 import org.openapitools.client.model.TestInputConnectionRequest;
 import org.openapitools.client.model.UpdateInputRequest;
@@ -598,7 +598,7 @@ public class OrganizationInputsApi {
      * @param organizationId Organization ID (required)
      * @param limit Limit the number of organizations returned (default: DefaultLimit) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
-     * @return ModelsInputList
+     * @return RoutesListInputsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -607,8 +607,8 @@ public class OrganizationInputsApi {
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsInputList listOrganizationInputs(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
-        ApiResponse<ModelsInputList> localVarResp = listOrganizationInputsWithHttpInfo(organizationId, limit, offset);
+    public RoutesListInputsResponse listOrganizationInputs(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<RoutesListInputsResponse> localVarResp = listOrganizationInputsWithHttpInfo(organizationId, limit, offset);
         return localVarResp.getData();
     }
 
@@ -618,7 +618,7 @@ public class OrganizationInputsApi {
      * @param organizationId Organization ID (required)
      * @param limit Limit the number of organizations returned (default: DefaultLimit) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
-     * @return ApiResponse&lt;ModelsInputList&gt;
+     * @return ApiResponse&lt;RoutesListInputsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -627,9 +627,9 @@ public class OrganizationInputsApi {
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsInputList> listOrganizationInputsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+    public ApiResponse<RoutesListInputsResponse> listOrganizationInputsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
         okhttp3.Call localVarCall = listOrganizationInputsValidateBeforeCall(organizationId, limit, offset, null);
-        Type localVarReturnType = new TypeToken<ModelsInputList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesListInputsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -649,10 +649,10 @@ public class OrganizationInputsApi {
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationInputsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<ModelsInputList> _callback) throws ApiException {
+    public okhttp3.Call listOrganizationInputsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<RoutesListInputsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOrganizationInputsValidateBeforeCall(organizationId, limit, offset, _callback);
-        Type localVarReturnType = new TypeToken<ModelsInputList>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesListInputsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

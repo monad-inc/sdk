@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertRuleByID
 
-> ModelsAlertRule GetAlertRuleByID(ctx, organizationId, alertRuleId).Execute()
+> RoutesV3AlertRuleWithMetadata GetAlertRuleByID(ctx, organizationId, alertRuleId).Execute()
 
 Get alert rule by ID
 
@@ -188,7 +188,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.GetAlertRuleByID``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlertRuleByID`: ModelsAlertRule
+	// response from `GetAlertRuleByID`: RoutesV3AlertRuleWithMetadata
 	fmt.Fprintf(os.Stdout, "Response from `AlertRulesAPI.GetAlertRuleByID`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md)
 
 ### Authorization
 
@@ -363,7 +363,7 @@ Other parameters are passed through a pointer to a apiListAlertRuleTypesRequest 
 
 ## ListAlertRules
 
-> ModelsAlertRuleList ListAlertRules(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> RoutesV3AlertRuleListResponse ListAlertRules(ctx, organizationId).Limit(limit).Offset(offset).Execute()
 
 Get all alert rules
 
@@ -393,7 +393,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.ListAlertRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAlertRules`: ModelsAlertRuleList
+	// response from `ListAlertRules`: RoutesV3AlertRuleListResponse
 	fmt.Fprintf(os.Stdout, "Response from `AlertRulesAPI.ListAlertRules`: %v\n", resp)
 }
 ```
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRuleList**](ModelsAlertRuleList.md)
+[**RoutesV3AlertRuleListResponse**](RoutesV3AlertRuleListResponse.md)
 
 ### Authorization
 

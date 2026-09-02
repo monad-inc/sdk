@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ## ListEnrichments
 
-> ModelsEnrichmentList ListEnrichments(ctx, organizationId).Limit(limit).Offset(offset).Execute()
+> RoutesV3ListEnrichmentsResponse ListEnrichments(ctx, organizationId).Limit(limit).Offset(offset).Execute()
 
 List enrichments
 
@@ -266,7 +266,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrganizationEnrichmentsAPI.ListEnrichments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListEnrichments`: ModelsEnrichmentList
+	// response from `ListEnrichments`: RoutesV3ListEnrichmentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `OrganizationEnrichmentsAPI.ListEnrichments`: %v\n", resp)
 }
 ```
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsEnrichmentList**](ModelsEnrichmentList.md)
+[**RoutesV3ListEnrichmentsResponse**](RoutesV3ListEnrichmentsResponse.md)
 
 ### Authorization
 

@@ -22,7 +22,8 @@ from typing_extensions import Annotated
 from monad.models.alerts_alert_meta import AlertsAlertMeta
 from monad.models.create_alert_rule_request import CreateAlertRuleRequest
 from monad.models.models_alert_rule import ModelsAlertRule
-from monad.models.models_alert_rule_list import ModelsAlertRuleList
+from monad.models.routes_v3_alert_rule_list_response import RoutesV3AlertRuleListResponse
+from monad.models.routes_v3_alert_rule_with_metadata import RoutesV3AlertRuleWithMetadata
 from monad.models.update_alert_rule_request import UpdateAlertRuleRequest
 
 from monad.api_client import ApiClient, RequestSerialized
@@ -640,7 +641,7 @@ class AlertRulesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsAlertRule:
+    ) -> RoutesV3AlertRuleWithMetadata:
         """Get alert rule by ID
 
         Retrieve an alert rule by its ID
@@ -681,7 +682,7 @@ class AlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsAlertRule",
+            '200': "RoutesV3AlertRuleWithMetadata",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -714,7 +715,7 @@ class AlertRulesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsAlertRule]:
+    ) -> ApiResponse[RoutesV3AlertRuleWithMetadata]:
         """Get alert rule by ID
 
         Retrieve an alert rule by its ID
@@ -755,7 +756,7 @@ class AlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsAlertRule",
+            '200': "RoutesV3AlertRuleWithMetadata",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -829,7 +830,7 @@ class AlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsAlertRule",
+            '200': "RoutesV3AlertRuleWithMetadata",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -1438,7 +1439,7 @@ class AlertRulesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ModelsAlertRuleList:
+    ) -> RoutesV3AlertRuleListResponse:
         """Get all alert rules
 
         Retrieve all alert rules for an organization
@@ -1482,7 +1483,7 @@ class AlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsAlertRuleList",
+            '200': "RoutesV3AlertRuleListResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1514,7 +1515,7 @@ class AlertRulesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[ModelsAlertRuleList]:
+    ) -> ApiResponse[RoutesV3AlertRuleListResponse]:
         """Get all alert rules
 
         Retrieve all alert rules for an organization
@@ -1558,7 +1559,7 @@ class AlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsAlertRuleList",
+            '200': "RoutesV3AlertRuleListResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1634,7 +1635,7 @@ class AlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "ModelsAlertRuleList",
+            '200': "RoutesV3AlertRuleListResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
