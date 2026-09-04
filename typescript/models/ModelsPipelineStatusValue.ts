@@ -15,7 +15,6 @@ import { HttpFile } from '../http/http';
 export enum ModelsPipelineStatusValue {
     PipelineStatusUnknown = 'Unknown',
     PipelineStatusPending = 'Pending',
-    PipelineStatusInitializing = 'Initializing',
     PipelineStatusRunning = 'Running',
     PipelineStatusDisabled = 'Disabled',
     PipelineStatusErroring = 'Erroring',

@@ -29,7 +29,6 @@ class ModelsPipelineStatusValue(str, Enum):
     """
     PipelineStatusUnknown = 'Unknown'
     PipelineStatusPending = 'Pending'
-    PipelineStatusInitializing = 'Initializing'
     PipelineStatusRunning = 'Running'
     PipelineStatusDisabled = 'Disabled'
     PipelineStatusErroring = 'Erroring'

@@ -6114,7 +6114,6 @@
                 "enum": [
                     "Unknown",
                     "Pending",
-                    "Initializing",
                     "Running",
                     "Disabled",
                     "Erroring",
@@ -6124,7 +6123,6 @@
                 "x-enum-varnames": [
                     "PipelineStatusUnknown",
                     "PipelineStatusPending",
-                    "PipelineStatusInitializing",
                     "PipelineStatusRunning",
                     "PipelineStatusDisabled",
                     "PipelineStatusErroring",

@@ -33,8 +33,6 @@ public enum ModelsPipelineStatusValue {
   
   PipelineStatusPending("Pending"),
   
-  PipelineStatusInitializing("Initializing"),
-  
   PipelineStatusRunning("Running"),
   
   PipelineStatusDisabled("Disabled"),

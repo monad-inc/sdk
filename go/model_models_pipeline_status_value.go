@@ -23,7 +23,6 @@ type ModelsPipelineStatusValue string
 const (
 	PipelineStatusUnknown ModelsPipelineStatusValue = "Unknown"
 	PipelineStatusPending ModelsPipelineStatusValue = "Pending"
-	PipelineStatusInitializing ModelsPipelineStatusValue = "Initializing"
 	PipelineStatusRunning ModelsPipelineStatusValue = "Running"
 	PipelineStatusDisabled ModelsPipelineStatusValue = "Disabled"
 	PipelineStatusErroring ModelsPipelineStatusValue = "Erroring"
@@ -34,7 +33,6 @@ const (
 var AllowedModelsPipelineStatusValueEnumValues = []ModelsPipelineStatusValue{
 	"Unknown",
 	"Pending",
-	"Initializing",
 	"Running",
 	"Disabled",
 	"Erroring",

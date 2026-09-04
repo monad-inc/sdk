@@ -7,8 +7,6 @@
 
 * `PipelineStatusPending` (value: `'Pending'`)
 
-* `PipelineStatusInitializing` (value: `'Initializing'`)
-
 * `PipelineStatusRunning` (value: `'Running'`)
 
 * `PipelineStatusDisabled` (value: `'Disabled'`)
