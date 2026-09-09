@@ -48,8 +48,6 @@ export * from '../models/BlastradiusInstanceImpact';
 export * from '../models/BlastradiusSeverity';
 export * from '../models/BrinqaAuditLogsSecretsConfig';
 export * from '../models/BrinqaAuditLogsSettingsConfig';
-export * from '../models/BuildkiteAuditLogsSecretsConfig';
-export * from '../models/BuildkiteAuditLogsSettingsConfig';
 export * from '../models/BuildkiteGraphqlInputSecretsConfig';
 export * from '../models/BuildkiteGraphqlInputSettingsConfig';
 export * from '../models/CisaUserSettingsConfig';
@@ -677,8 +675,6 @@ import { BlastradiusInstanceImpact } from '../models/BlastradiusInstanceImpact';
 import { BlastradiusSeverity } from '../models/BlastradiusSeverity';
 import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsConfig';
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
-import { BuildkiteAuditLogsSecretsConfig } from '../models/BuildkiteAuditLogsSecretsConfig';
-import { BuildkiteAuditLogsSettingsConfig } from '../models/BuildkiteAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
 import { BuildkiteGraphqlInputSettingsConfig } from '../models/BuildkiteGraphqlInputSettingsConfig';
 import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
@@ -1403,8 +1399,6 @@ let typeMap: {[index: string]: any} = {
     "BlastradiusInstanceImpact": BlastradiusInstanceImpact,
     "BrinqaAuditLogsSecretsConfig": BrinqaAuditLogsSecretsConfig,
     "BrinqaAuditLogsSettingsConfig": BrinqaAuditLogsSettingsConfig,
-    "BuildkiteAuditLogsSecretsConfig": BuildkiteAuditLogsSecretsConfig,
-    "BuildkiteAuditLogsSettingsConfig": BuildkiteAuditLogsSettingsConfig,
     "BuildkiteGraphqlInputSecretsConfig": BuildkiteGraphqlInputSecretsConfig,
     "BuildkiteGraphqlInputSettingsConfig": BuildkiteGraphqlInputSettingsConfig,
     "CisaUserSettingsConfig": CisaUserSettingsConfig,

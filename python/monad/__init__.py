@@ -122,8 +122,6 @@ __all__ = [
     "BlastradiusSeverity",
     "BrinqaAuditLogsSecretsConfig",
     "BrinqaAuditLogsSettingsConfig",
-    "BuildkiteAuditLogsSecretsConfig",
-    "BuildkiteAuditLogsSettingsConfig",
     "BuildkiteGraphqlInputSecretsConfig",
     "BuildkiteGraphqlInputSettingsConfig",
     "CisaUserSettingsConfig",
@@ -810,8 +808,6 @@ from monad.models.blastradius_instance_impact import BlastradiusInstanceImpact a
 from monad.models.blastradius_severity import BlastradiusSeverity as BlastradiusSeverity
 from monad.models.brinqa_audit_logs_secrets_config import BrinqaAuditLogsSecretsConfig as BrinqaAuditLogsSecretsConfig
 from monad.models.brinqa_audit_logs_settings_config import BrinqaAuditLogsSettingsConfig as BrinqaAuditLogsSettingsConfig
-from monad.models.buildkite_audit_logs_secrets_config import BuildkiteAuditLogsSecretsConfig as BuildkiteAuditLogsSecretsConfig
-from monad.models.buildkite_audit_logs_settings_config import BuildkiteAuditLogsSettingsConfig as BuildkiteAuditLogsSettingsConfig
 from monad.models.buildkite_graphql_input_secrets_config import BuildkiteGraphqlInputSecretsConfig as BuildkiteGraphqlInputSecretsConfig
 from monad.models.buildkite_graphql_input_settings_config import BuildkiteGraphqlInputSettingsConfig as BuildkiteGraphqlInputSettingsConfig
 from monad.models.cisa_user_settings_config import CisaUserSettingsConfig as CisaUserSettingsConfig

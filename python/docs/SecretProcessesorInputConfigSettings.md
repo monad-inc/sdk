@@ -47,7 +47,6 @@ Name | Type | Description | Notes
 **table** | **str** | The BigQuery table ID to query data from | [optional] 
 **timestamp_column** | **str** | The column containing timestamp values used for incremental loading | [optional] 
 **hostname** | **str** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
-**org_slug** | **str** | Cron expression for scheduling the input | 
 **enable_pagination** | **bool** | Enable pagination support | [optional] 
 **graphql_query** | **str** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **has_next_page_path** | **str** | JSONPath location to check if there are more pages | [optional] 
@@ -81,6 +80,7 @@ Name | Type | Description | Notes
 **app_name** | **str** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **cloud** | **str** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **member_cid** | **str** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
+**org_slug** | **str** | Cron expression for scheduling the input | 
 **repo** | **str** | A repository slug to filter full-scans by. | [optional] 
 **auth_config** | [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
 **scope** | [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 

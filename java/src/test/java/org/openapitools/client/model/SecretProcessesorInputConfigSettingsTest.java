@@ -39,7 +39,6 @@ import org.openapitools.client.model.AzureVnetFlowLogsSettingsConfig;
 import org.openapitools.client.model.BackblazeB2SettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
-import org.openapitools.client.model.BuildkiteAuditLogsSettingsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
 import org.openapitools.client.model.CisaUserSettingsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSettingsConfig;
@@ -468,14 +467,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'orgSlug'
-     */
-    @Test
-    public void orgSlugTest() {
-        // TODO: test orgSlug
-    }
-
-    /**
      * Test the property 'enablePagination'
      */
     @Test
@@ -737,6 +728,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void memberCidTest() {
         // TODO: test memberCid
+    }
+
+    /**
+     * Test the property 'orgSlug'
+     */
+    @Test
+    public void orgSlugTest() {
+        // TODO: test orgSlug
     }
 
     /**

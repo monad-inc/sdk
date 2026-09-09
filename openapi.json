@@ -1043,30 +1043,6 @@
                 },
                 "type": "object"
             },
-            "buildkite_audit_logs.SecretsConfig": {
-                "properties": {
-                    "api_token": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "buildkite_audit_logs.SettingsConfig": {
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.\nUseSyntheticData bool `json:\"use_synthetic_data\"`\nDate to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "org_slug": {
-                        "description": "The URL slug of your Buildkite organizations",
-                        "type": "string"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    }
-                },
-                "type": "object"
-            },
             "buildkite_graphql_input.SecretsConfig": {
                 "properties": {
                     "api_token": {
@@ -4023,9 +3999,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -10743,9 +10719,6 @@
                                 "$ref": "#/components/schemas/brinqa_audit_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/buildkite_audit_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/buildkite_graphql_input.SecretsConfig"
                             },
                             {
@@ -10933,9 +10906,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/brinqa_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/buildkite_audit_logs.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/buildkite_graphql_input.SettingsConfig"

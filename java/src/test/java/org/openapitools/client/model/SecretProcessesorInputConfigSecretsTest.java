@@ -31,7 +31,6 @@ import org.openapitools.client.model.AzureVnetFlowLogsSecretsConfig;
 import org.openapitools.client.model.BackblazeB2SecretsConfig;
 import org.openapitools.client.model.BigqueryInputSecretsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSecretsConfig;
-import org.openapitools.client.model.BuildkiteAuditLogsSecretsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSecretsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSecretsConfig;
 import org.openapitools.client.model.CloudLogsSecretsConfig;

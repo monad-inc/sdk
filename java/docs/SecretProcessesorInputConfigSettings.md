@@ -49,7 +49,6 @@
 |**table** | **String** | The BigQuery table ID to query data from |  [optional] |
 |**timestampColumn** | **String** | The column containing timestamp values used for incremental loading |  [optional] |
 |**hostname** | **String** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) |  [optional] |
-|**orgSlug** | **String** | Cron expression for scheduling the input |  |
 |**enablePagination** | **Boolean** | Enable pagination support |  [optional] |
 |**graphqlQuery** | **String** | The GraphQL query to execute against the endpoint to fetch data |  [optional] |
 |**hasNextPagePath** | **String** | JSONPath location to check if there are more pages |  [optional] |
@@ -83,6 +82,7 @@
 |**appName** | **String** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. |  [optional] |
 |**cloud** | **String** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. |  [optional] |
 |**memberCid** | **String** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. |  [optional] |
+|**orgSlug** | **String** | Cron expression for scheduling the input |  |
 |**repo** | **String** | A repository slug to filter full-scans by. |  [optional] |
 |**authConfig** | [**CommonAuthConfig**](CommonAuthConfig.md) |  |  [optional] |
 |**scope** | [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  |  [optional] |

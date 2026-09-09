@@ -87,7 +87,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 table = '',
                 timestamp_column = '',
                 hostname = '',
-                org_slug = '',
                 enable_pagination = True,
                 graphql_query = '',
                 has_next_page_path = '',
@@ -137,6 +136,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 app_name = '',
                 cloud = '',
                 member_cid = '',
+                org_slug = '',
                 repo = '',
                 auth_config = monad.models.common/auth_config.common.AuthConfig(
                     github_app = monad.models.common/git_hub_app_variant.common.GitHubAppVariant(
@@ -299,7 +299,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 queue_url = '',
                 tenant_id = '',
                 query = '',
-                org_slug = '',
                 endpoint_url = '',
                 entity_type = [
                     'ACCESS_ROLE'
@@ -310,6 +309,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 cluster_name = '',
                 namespace = '',
                 workspace_id = '',
+                org_slug = '',
                 webhook_secret = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 

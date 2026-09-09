@@ -32,7 +32,6 @@ type SecretProcessesorInputConfigSettings struct {
 	BackblazeB2SettingsConfig *BackblazeB2SettingsConfig
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BrinqaAuditLogsSettingsConfig *BrinqaAuditLogsSettingsConfig
-	BuildkiteAuditLogsSettingsConfig *BuildkiteAuditLogsSettingsConfig
 	BuildkiteGraphqlInputSettingsConfig *BuildkiteGraphqlInputSettingsConfig
 	CisaUserSettingsConfig *CisaUserSettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
@@ -174,13 +173,6 @@ func BigqueryInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *Bigque
 func BrinqaAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BrinqaAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BrinqaAuditLogsSettingsConfig: v,
-	}
-}
-
-// BuildkiteAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns BuildkiteAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func BuildkiteAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *BuildkiteAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		BuildkiteAuditLogsSettingsConfig: v,
 	}
 }
 
@@ -765,23 +757,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BrinqaAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into BuildkiteAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.BuildkiteAuditLogsSettingsConfig)
-	if err == nil {
-		jsonBuildkiteAuditLogsSettingsConfig, _ := json.Marshal(dst.BuildkiteAuditLogsSettingsConfig)
-		if string(jsonBuildkiteAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.BuildkiteAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.BuildkiteAuditLogsSettingsConfig); err != nil {
-				dst.BuildkiteAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.BuildkiteAuditLogsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into BuildkiteGraphqlInputSettingsConfig
@@ -1666,7 +1641,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BackblazeB2SettingsConfig = nil
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BrinqaAuditLogsSettingsConfig = nil
-		dst.BuildkiteAuditLogsSettingsConfig = nil
 		dst.BuildkiteGraphqlInputSettingsConfig = nil
 		dst.CisaUserSettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
@@ -1779,10 +1753,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BrinqaAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.BrinqaAuditLogsSettingsConfig)
-	}
-
-	if src.BuildkiteAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.BuildkiteAuditLogsSettingsConfig)
 	}
 
 	if src.BuildkiteGraphqlInputSettingsConfig != nil {
@@ -2049,10 +2019,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.BrinqaAuditLogsSettingsConfig
 	}
 
-	if obj.BuildkiteAuditLogsSettingsConfig != nil {
-		return obj.BuildkiteAuditLogsSettingsConfig
-	}
-
 	if obj.BuildkiteGraphqlInputSettingsConfig != nil {
 		return obj.BuildkiteGraphqlInputSettingsConfig
 	}
@@ -2313,10 +2279,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BrinqaAuditLogsSettingsConfig != nil {
 		return *obj.BrinqaAuditLogsSettingsConfig
-	}
-
-	if obj.BuildkiteAuditLogsSettingsConfig != nil {
-		return *obj.BuildkiteAuditLogsSettingsConfig
 	}
 
 	if obj.BuildkiteGraphqlInputSettingsConfig != nil {

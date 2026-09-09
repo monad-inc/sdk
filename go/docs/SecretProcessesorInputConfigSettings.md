@@ -46,7 +46,6 @@ Name | Type | Description | Notes
 **Table** | Pointer to **string** | The BigQuery table ID to query data from | [optional] 
 **TimestampColumn** | Pointer to **string** | The column containing timestamp values used for incremental loading | [optional] 
 **Hostname** | Pointer to **string** | The Brinqa environment hostname (e.g., \&quot;ssb.brinqa.net\&quot;) | [optional] 
-**OrgSlug** | **string** | Cron expression for scheduling the input | 
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **HasNextPagePath** | Pointer to **string** | JSONPath location to check if there are more pages | [optional] 
@@ -80,6 +79,7 @@ Name | Type | Description | Notes
 **AppName** | Pointer to **string** | The application name monad uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named &#39;monad&#39;. | [optional] 
 **Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
 **MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
+**OrgSlug** | **string** | Cron expression for scheduling the input | 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **AuthConfig** | Pointer to [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
 **Scope** | Pointer to [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 
@@ -149,7 +149,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, orgSlug string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, webhookSecret ModelsSecret, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -1169,26 +1169,6 @@ SetHostname sets Hostname field to given value.
 
 HasHostname returns a boolean if a field has been set.
 
-### GetOrgSlug
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgSlug() string`
-
-GetOrgSlug returns the OrgSlug field if non-nil, zero value otherwise.
-
-### GetOrgSlugOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetOrgSlugOk() (*string, bool)`
-
-GetOrgSlugOk returns a tuple with the OrgSlug field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrgSlug
-
-`func (o *SecretProcessesorInputConfigSettings) SetOrgSlug(v string)`
-
-SetOrgSlug sets OrgSlug field to given value.
-
-
 ### GetEnablePagination
 
 `func (o *SecretProcessesorInputConfigSettings) GetEnablePagination() bool`
@@ -1973,6 +1953,26 @@ SetMemberCid sets MemberCid field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasMemberCid() bool`
 
 HasMemberCid returns a boolean if a field has been set.
+
+### GetOrgSlug
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgSlug() string`
+
+GetOrgSlug returns the OrgSlug field if non-nil, zero value otherwise.
+
+### GetOrgSlugOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetOrgSlugOk() (*string, bool)`
+
+GetOrgSlugOk returns a tuple with the OrgSlug field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrgSlug
+
+`func (o *SecretProcessesorInputConfigSettings) SetOrgSlug(v string)`
+
+SetOrgSlug sets OrgSlug field to given value.
+
 
 ### GetRepo
 

@@ -436,8 +436,6 @@ Class | Method | HTTP request | Description
  - [BlastradiusSeverity](docs/BlastradiusSeverity.md)
  - [BrinqaAuditLogsSecretsConfig](docs/BrinqaAuditLogsSecretsConfig.md)
  - [BrinqaAuditLogsSettingsConfig](docs/BrinqaAuditLogsSettingsConfig.md)
- - [BuildkiteAuditLogsSecretsConfig](docs/BuildkiteAuditLogsSecretsConfig.md)
- - [BuildkiteAuditLogsSettingsConfig](docs/BuildkiteAuditLogsSettingsConfig.md)
  - [BuildkiteGraphqlInputSecretsConfig](docs/BuildkiteGraphqlInputSecretsConfig.md)
  - [BuildkiteGraphqlInputSettingsConfig](docs/BuildkiteGraphqlInputSettingsConfig.md)
  - [CisaUserSettingsConfig](docs/CisaUserSettingsConfig.md)
