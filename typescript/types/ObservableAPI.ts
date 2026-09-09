@@ -450,6 +450,7 @@ import { RoutesV2PatchPipelineEdgeRequest } from '../models/RoutesV2PatchPipelin
 import { RoutesV2PipelineMetric } from '../models/RoutesV2PipelineMetric';
 import { RoutesV2PipelineRequestEdge } from '../models/RoutesV2PipelineRequestEdge';
 import { RoutesV2PipelineRequestNode } from '../models/RoutesV2PipelineRequestNode';
+import { RoutesV2PipelineRoutingDrop } from '../models/RoutesV2PipelineRoutingDrop';
 import { RoutesV2PipelineStatus } from '../models/RoutesV2PipelineStatus';
 import { RoutesV2PipelineWithStatus } from '../models/RoutesV2PipelineWithStatus';
 import { RoutesV2PutInputRequest } from '../models/RoutesV2PutInputRequest';
@@ -458,6 +459,7 @@ import { RoutesV2RegenerateAPIKeyRequest } from '../models/RoutesV2RegenerateAPI
 import { RoutesV2SecretResponse } from '../models/RoutesV2SecretResponse';
 import { RoutesV2SecretWithComponentsListResponse } from '../models/RoutesV2SecretWithComponentsListResponse';
 import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
+import { RoutesV2SetOutputCostEntry } from '../models/RoutesV2SetOutputCostEntry';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { RoutesV2SetStorageTypeCostRequest } from '../models/RoutesV2SetStorageTypeCostRequest';
 import { RoutesV2StorageTypeDetailsResponse } from '../models/RoutesV2StorageTypeDetailsResponse';

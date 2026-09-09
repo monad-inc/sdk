@@ -19,52 +19,47 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.openapitools.client.model.RoutesV2SetOutputCostEntry;
-import org.openapitools.client.model.RoutesV2SetStorageTypeCostEntry;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV2SetStorageTypeCostRequest
+ * Model tests for RoutesV2SetOutputCostEntry
  */
-public class RoutesV2SetStorageTypeCostRequestTest {
-    private final RoutesV2SetStorageTypeCostRequest model = new RoutesV2SetStorageTypeCostRequest();
+public class RoutesV2SetOutputCostEntryTest {
+    private final RoutesV2SetOutputCostEntry model = new RoutesV2SetOutputCostEntry();
 
     /**
-     * Model tests for RoutesV2SetStorageTypeCostRequest
+     * Model tests for RoutesV2SetOutputCostEntry
      */
     @Test
-    public void testRoutesV2SetStorageTypeCostRequest() {
-        // TODO: test RoutesV2SetStorageTypeCostRequest
+    public void testRoutesV2SetOutputCostEntry() {
+        // TODO: test RoutesV2SetOutputCostEntry
     }
 
     /**
-     * Test the property 'clearOutputCosts'
+     * Test the property 'costPerGb'
      */
     @Test
-    public void clearOutputCostsTest() {
-        // TODO: test clearOutputCosts
+    public void costPerGbTest() {
+        // TODO: test costPerGb
     }
 
     /**
-     * Test the property 'costs'
+     * Test the property 'outputId'
      */
     @Test
-    public void costsTest() {
-        // TODO: test costs
+    public void outputIdTest() {
+        // TODO: test outputId
     }
 
     /**
-     * Test the property 'outputCosts'
+     * Test the property 'storageType'
      */
     @Test
-    public void outputCostsTest() {
-        // TODO: test outputCosts
+    public void storageTypeTest() {
+        // TODO: test storageType
     }
 
 }

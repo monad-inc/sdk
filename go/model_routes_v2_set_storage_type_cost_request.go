@@ -20,7 +20,9 @@ var _ MappedNullable = &RoutesV2SetStorageTypeCostRequest{}
 
 // RoutesV2SetStorageTypeCostRequest struct for RoutesV2SetStorageTypeCostRequest
 type RoutesV2SetStorageTypeCostRequest struct {
+	ClearOutputCosts []string `json:"clear_output_costs,omitempty"`
 	Costs map[string]RoutesV2SetStorageTypeCostEntry `json:"costs,omitempty"`
+	OutputCosts []RoutesV2SetOutputCostEntry `json:"output_costs,omitempty"`
 }
 
 // NewRoutesV2SetStorageTypeCostRequest instantiates a new RoutesV2SetStorageTypeCostRequest object
@@ -38,6 +40,38 @@ func NewRoutesV2SetStorageTypeCostRequest() *RoutesV2SetStorageTypeCostRequest {
 func NewRoutesV2SetStorageTypeCostRequestWithDefaults() *RoutesV2SetStorageTypeCostRequest {
 	this := RoutesV2SetStorageTypeCostRequest{}
 	return &this
+}
+
+// GetClearOutputCosts returns the ClearOutputCosts field value if set, zero value otherwise.
+func (o *RoutesV2SetStorageTypeCostRequest) GetClearOutputCosts() []string {
+	if o == nil || IsNil(o.ClearOutputCosts) {
+		var ret []string
+		return ret
+	}
+	return o.ClearOutputCosts
+}
+
+// GetClearOutputCostsOk returns a tuple with the ClearOutputCosts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2SetStorageTypeCostRequest) GetClearOutputCostsOk() ([]string, bool) {
+	if o == nil || IsNil(o.ClearOutputCosts) {
+		return nil, false
+	}
+	return o.ClearOutputCosts, true
+}
+
+// HasClearOutputCosts returns a boolean if a field has been set.
+func (o *RoutesV2SetStorageTypeCostRequest) HasClearOutputCosts() bool {
+	if o != nil && !IsNil(o.ClearOutputCosts) {
+		return true
+	}
+
+	return false
+}
+
+// SetClearOutputCosts gets a reference to the given []string and assigns it to the ClearOutputCosts field.
+func (o *RoutesV2SetStorageTypeCostRequest) SetClearOutputCosts(v []string) {
+	o.ClearOutputCosts = v
 }
 
 // GetCosts returns the Costs field value if set, zero value otherwise.
@@ -72,6 +106,38 @@ func (o *RoutesV2SetStorageTypeCostRequest) SetCosts(v map[string]RoutesV2SetSto
 	o.Costs = v
 }
 
+// GetOutputCosts returns the OutputCosts field value if set, zero value otherwise.
+func (o *RoutesV2SetStorageTypeCostRequest) GetOutputCosts() []RoutesV2SetOutputCostEntry {
+	if o == nil || IsNil(o.OutputCosts) {
+		var ret []RoutesV2SetOutputCostEntry
+		return ret
+	}
+	return o.OutputCosts
+}
+
+// GetOutputCostsOk returns a tuple with the OutputCosts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2SetStorageTypeCostRequest) GetOutputCostsOk() ([]RoutesV2SetOutputCostEntry, bool) {
+	if o == nil || IsNil(o.OutputCosts) {
+		return nil, false
+	}
+	return o.OutputCosts, true
+}
+
+// HasOutputCosts returns a boolean if a field has been set.
+func (o *RoutesV2SetStorageTypeCostRequest) HasOutputCosts() bool {
+	if o != nil && !IsNil(o.OutputCosts) {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputCosts gets a reference to the given []RoutesV2SetOutputCostEntry and assigns it to the OutputCosts field.
+func (o *RoutesV2SetStorageTypeCostRequest) SetOutputCosts(v []RoutesV2SetOutputCostEntry) {
+	o.OutputCosts = v
+}
+
 func (o RoutesV2SetStorageTypeCostRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -82,8 +148,14 @@ func (o RoutesV2SetStorageTypeCostRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV2SetStorageTypeCostRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ClearOutputCosts) {
+		toSerialize["clear_output_costs"] = o.ClearOutputCosts
+	}
 	if !IsNil(o.Costs) {
 		toSerialize["costs"] = o.Costs
+	}
+	if !IsNil(o.OutputCosts) {
+		toSerialize["output_costs"] = o.OutputCosts
 	}
 	return toSerialize, nil
 }

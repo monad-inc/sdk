@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.RoutesV2PipelineRoutingDrop;
 import org.openapitools.client.model.RoutesV2StorageTypeOutputDetailResponse;
 
 import com.google.gson.Gson;
@@ -72,6 +73,11 @@ public class RoutesV2StorageTypeDetailsResponse {
   @SerializedName(SERIALIZED_NAME_OUTPUTS)
   @javax.annotation.Nullable
   private List<RoutesV2StorageTypeOutputDetailResponse> outputs = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ROUTING_DROPS = "routing_drops";
+  @SerializedName(SERIALIZED_NAME_ROUTING_DROPS)
+  @javax.annotation.Nullable
+  private List<RoutesV2PipelineRoutingDrop> routingDrops = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_START_AT = "start_at";
   @SerializedName(SERIALIZED_NAME_START_AT)
@@ -165,6 +171,33 @@ public class RoutesV2StorageTypeDetailsResponse {
   }
 
 
+  public RoutesV2StorageTypeDetailsResponse routingDrops(@javax.annotation.Nullable List<RoutesV2PipelineRoutingDrop> routingDrops) {
+    this.routingDrops = routingDrops;
+    return this;
+  }
+
+  public RoutesV2StorageTypeDetailsResponse addRoutingDropsItem(RoutesV2PipelineRoutingDrop routingDropsItem) {
+    if (this.routingDrops == null) {
+      this.routingDrops = new ArrayList<>();
+    }
+    this.routingDrops.add(routingDropsItem);
+    return this;
+  }
+
+  /**
+   * Pipelines that dropped records at routing over the window (matched no edge). Those bytes are in no output&#39;s baseline; this is where they can be seen.
+   * @return routingDrops
+   */
+  @javax.annotation.Nullable
+  public List<RoutesV2PipelineRoutingDrop> getRoutingDrops() {
+    return routingDrops;
+  }
+
+  public void setRoutingDrops(@javax.annotation.Nullable List<RoutesV2PipelineRoutingDrop> routingDrops) {
+    this.routingDrops = routingDrops;
+  }
+
+
   public RoutesV2StorageTypeDetailsResponse startAt(@javax.annotation.Nullable String startAt) {
     this.startAt = startAt;
     return this;
@@ -198,12 +231,13 @@ public class RoutesV2StorageTypeDetailsResponse {
         Objects.equals(this.organizationId, routesV2StorageTypeDetailsResponse.organizationId) &&
         Objects.equals(this.organizationName, routesV2StorageTypeDetailsResponse.organizationName) &&
         Objects.equals(this.outputs, routesV2StorageTypeDetailsResponse.outputs) &&
+        Objects.equals(this.routingDrops, routesV2StorageTypeDetailsResponse.routingDrops) &&
         Objects.equals(this.startAt, routesV2StorageTypeDetailsResponse.startAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endAt, organizationId, organizationName, outputs, startAt);
+    return Objects.hash(endAt, organizationId, organizationName, outputs, routingDrops, startAt);
   }
 
   @Override
@@ -214,6 +248,7 @@ public class RoutesV2StorageTypeDetailsResponse {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    outputs: ").append(toIndentedString(outputs)).append("\n");
+    sb.append("    routingDrops: ").append(toIndentedString(routingDrops)).append("\n");
     sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -233,7 +268,7 @@ public class RoutesV2StorageTypeDetailsResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("end_at", "organization_id", "organization_name", "outputs", "start_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("end_at", "organization_id", "organization_name", "outputs", "routing_drops", "start_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -280,6 +315,20 @@ public class RoutesV2StorageTypeDetailsResponse {
           // validate the optional field `outputs` (array)
           for (int i = 0; i < jsonArrayoutputs.size(); i++) {
             RoutesV2StorageTypeOutputDetailResponse.validateJsonElement(jsonArrayoutputs.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("routing_drops") != null && !jsonObj.get("routing_drops").isJsonNull()) {
+        JsonArray jsonArrayroutingDrops = jsonObj.getAsJsonArray("routing_drops");
+        if (jsonArrayroutingDrops != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("routing_drops").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `routing_drops` to be an array in the JSON string but got `%s`", jsonObj.get("routing_drops").toString()));
+          }
+
+          // validate the optional field `routing_drops` (array)
+          for (int i = 0; i < jsonArrayroutingDrops.size(); i++) {
+            RoutesV2PipelineRoutingDrop.validateJsonElement(jsonArrayroutingDrops.get(i));
           };
         }
       }

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
 **Outputs** | Pointer to [**[]RoutesV2StorageTypeOutputDetailResponse**](RoutesV2StorageTypeOutputDetailResponse.md) |  | [optional] 
+**RoutingDrops** | Pointer to [**[]RoutesV2PipelineRoutingDrop**](RoutesV2PipelineRoutingDrop.md) | Pipelines that dropped records at routing over the window (matched no edge). Those bytes are in no output&#39;s baseline; this is where they can be seen. | [optional] 
 **StartAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetOutputs sets Outputs field to given value.
 `func (o *RoutesV2StorageTypeDetailsResponse) HasOutputs() bool`
 
 HasOutputs returns a boolean if a field has been set.
+
+### GetRoutingDrops
+
+`func (o *RoutesV2StorageTypeDetailsResponse) GetRoutingDrops() []RoutesV2PipelineRoutingDrop`
+
+GetRoutingDrops returns the RoutingDrops field if non-nil, zero value otherwise.
+
+### GetRoutingDropsOk
+
+`func (o *RoutesV2StorageTypeDetailsResponse) GetRoutingDropsOk() (*[]RoutesV2PipelineRoutingDrop, bool)`
+
+GetRoutingDropsOk returns a tuple with the RoutingDrops field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutingDrops
+
+`func (o *RoutesV2StorageTypeDetailsResponse) SetRoutingDrops(v []RoutesV2PipelineRoutingDrop)`
+
+SetRoutingDrops sets RoutingDrops field to given value.
+
+### HasRoutingDrops
+
+`func (o *RoutesV2StorageTypeDetailsResponse) HasRoutingDrops() bool`
+
+HasRoutingDrops returns a boolean if a field has been set.
 
 ### GetStartAt
 

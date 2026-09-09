@@ -51,6 +51,16 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class RoutesV2StorageTypeOutputDetailResponse {
+  public static final String SERIALIZED_NAME_BASELINE_METHOD = "baseline_method";
+  @SerializedName(SERIALIZED_NAME_BASELINE_METHOD)
+  @javax.annotation.Nullable
+  private String baselineMethod;
+
+  public static final String SERIALIZED_NAME_COST_PER_GB = "cost_per_gb";
+  @SerializedName(SERIALIZED_NAME_COST_PER_GB)
+  @javax.annotation.Nullable
+  private BigDecimal costPerGb;
+
   public static final String SERIALIZED_NAME_EGRESS_BYTES = "egress_bytes";
   @SerializedName(SERIALIZED_NAME_EGRESS_BYTES)
   @javax.annotation.Nullable
@@ -60,6 +70,11 @@ public class RoutesV2StorageTypeOutputDetailResponse {
   @SerializedName(SERIALIZED_NAME_EGRESS_GB)
   @javax.annotation.Nullable
   private BigDecimal egressGb;
+
+  public static final String SERIALIZED_NAME_HAS_OWN_PRICE = "has_own_price";
+  @SerializedName(SERIALIZED_NAME_HAS_OWN_PRICE)
+  @javax.annotation.Nullable
+  private Boolean hasOwnPrice;
 
   public static final String SERIALIZED_NAME_INGRESS_BYTES = "ingress_bytes";
   @SerializedName(SERIALIZED_NAME_INGRESS_BYTES)
@@ -76,10 +91,25 @@ public class RoutesV2StorageTypeOutputDetailResponse {
   @javax.annotation.Nullable
   private String inputId;
 
+  public static final String SERIALIZED_NAME_NODE_ID = "node_id";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
+  @javax.annotation.Nullable
+  private String nodeId;
+
+  public static final String SERIALIZED_NAME_OUTPUT_DELETED = "output_deleted";
+  @SerializedName(SERIALIZED_NAME_OUTPUT_DELETED)
+  @javax.annotation.Nullable
+  private Boolean outputDeleted;
+
   public static final String SERIALIZED_NAME_OUTPUT_ID = "output_id";
   @SerializedName(SERIALIZED_NAME_OUTPUT_ID)
   @javax.annotation.Nullable
   private String outputId;
+
+  public static final String SERIALIZED_NAME_OUTPUT_NAME = "output_name";
+  @SerializedName(SERIALIZED_NAME_OUTPUT_NAME)
+  @javax.annotation.Nullable
+  private String outputName;
 
   public static final String SERIALIZED_NAME_PIPELINE_ID = "pipeline_id";
   @SerializedName(SERIALIZED_NAME_PIPELINE_ID)
@@ -91,8 +121,51 @@ public class RoutesV2StorageTypeOutputDetailResponse {
   @javax.annotation.Nullable
   private String storageType;
 
+  public static final String SERIALIZED_NAME_TOTAL_COST = "total_cost";
+  @SerializedName(SERIALIZED_NAME_TOTAL_COST)
+  @javax.annotation.Nullable
+  private BigDecimal totalCost;
+
   public RoutesV2StorageTypeOutputDetailResponse() {
   }
+
+  public RoutesV2StorageTypeOutputDetailResponse baselineMethod(@javax.annotation.Nullable String baselineMethod) {
+    this.baselineMethod = baselineMethod;
+    return this;
+  }
+
+  /**
+   * Get baselineMethod
+   * @return baselineMethod
+   */
+  @javax.annotation.Nullable
+  public String getBaselineMethod() {
+    return baselineMethod;
+  }
+
+  public void setBaselineMethod(@javax.annotation.Nullable String baselineMethod) {
+    this.baselineMethod = baselineMethod;
+  }
+
+
+  public RoutesV2StorageTypeOutputDetailResponse costPerGb(@javax.annotation.Nullable BigDecimal costPerGb) {
+    this.costPerGb = costPerGb;
+    return this;
+  }
+
+  /**
+   * Get costPerGb
+   * @return costPerGb
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getCostPerGb() {
+    return costPerGb;
+  }
+
+  public void setCostPerGb(@javax.annotation.Nullable BigDecimal costPerGb) {
+    this.costPerGb = costPerGb;
+  }
+
 
   public RoutesV2StorageTypeOutputDetailResponse egressBytes(@javax.annotation.Nullable Integer egressBytes) {
     this.egressBytes = egressBytes;
@@ -129,6 +202,25 @@ public class RoutesV2StorageTypeOutputDetailResponse {
 
   public void setEgressGb(@javax.annotation.Nullable BigDecimal egressGb) {
     this.egressGb = egressGb;
+  }
+
+
+  public RoutesV2StorageTypeOutputDetailResponse hasOwnPrice(@javax.annotation.Nullable Boolean hasOwnPrice) {
+    this.hasOwnPrice = hasOwnPrice;
+    return this;
+  }
+
+  /**
+   * Get hasOwnPrice
+   * @return hasOwnPrice
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasOwnPrice() {
+    return hasOwnPrice;
+  }
+
+  public void setHasOwnPrice(@javax.annotation.Nullable Boolean hasOwnPrice) {
+    this.hasOwnPrice = hasOwnPrice;
   }
 
 
@@ -189,6 +281,44 @@ public class RoutesV2StorageTypeOutputDetailResponse {
   }
 
 
+  public RoutesV2StorageTypeOutputDetailResponse nodeId(@javax.annotation.Nullable String nodeId) {
+    this.nodeId = nodeId;
+    return this;
+  }
+
+  /**
+   * Get nodeId
+   * @return nodeId
+   */
+  @javax.annotation.Nullable
+  public String getNodeId() {
+    return nodeId;
+  }
+
+  public void setNodeId(@javax.annotation.Nullable String nodeId) {
+    this.nodeId = nodeId;
+  }
+
+
+  public RoutesV2StorageTypeOutputDetailResponse outputDeleted(@javax.annotation.Nullable Boolean outputDeleted) {
+    this.outputDeleted = outputDeleted;
+    return this;
+  }
+
+  /**
+   * Get outputDeleted
+   * @return outputDeleted
+   */
+  @javax.annotation.Nullable
+  public Boolean getOutputDeleted() {
+    return outputDeleted;
+  }
+
+  public void setOutputDeleted(@javax.annotation.Nullable Boolean outputDeleted) {
+    this.outputDeleted = outputDeleted;
+  }
+
+
   public RoutesV2StorageTypeOutputDetailResponse outputId(@javax.annotation.Nullable String outputId) {
     this.outputId = outputId;
     return this;
@@ -205,6 +335,25 @@ public class RoutesV2StorageTypeOutputDetailResponse {
 
   public void setOutputId(@javax.annotation.Nullable String outputId) {
     this.outputId = outputId;
+  }
+
+
+  public RoutesV2StorageTypeOutputDetailResponse outputName(@javax.annotation.Nullable String outputName) {
+    this.outputName = outputName;
+    return this;
+  }
+
+  /**
+   * Get outputName
+   * @return outputName
+   */
+  @javax.annotation.Nullable
+  public String getOutputName() {
+    return outputName;
+  }
+
+  public void setOutputName(@javax.annotation.Nullable String outputName) {
+    this.outputName = outputName;
   }
 
 
@@ -246,6 +395,25 @@ public class RoutesV2StorageTypeOutputDetailResponse {
   }
 
 
+  public RoutesV2StorageTypeOutputDetailResponse totalCost(@javax.annotation.Nullable BigDecimal totalCost) {
+    this.totalCost = totalCost;
+    return this;
+  }
+
+  /**
+   * Get totalCost
+   * @return totalCost
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getTotalCost() {
+    return totalCost;
+  }
+
+  public void setTotalCost(@javax.annotation.Nullable BigDecimal totalCost) {
+    this.totalCost = totalCost;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -256,33 +424,47 @@ public class RoutesV2StorageTypeOutputDetailResponse {
       return false;
     }
     RoutesV2StorageTypeOutputDetailResponse routesV2StorageTypeOutputDetailResponse = (RoutesV2StorageTypeOutputDetailResponse) o;
-    return Objects.equals(this.egressBytes, routesV2StorageTypeOutputDetailResponse.egressBytes) &&
+    return Objects.equals(this.baselineMethod, routesV2StorageTypeOutputDetailResponse.baselineMethod) &&
+        Objects.equals(this.costPerGb, routesV2StorageTypeOutputDetailResponse.costPerGb) &&
+        Objects.equals(this.egressBytes, routesV2StorageTypeOutputDetailResponse.egressBytes) &&
         Objects.equals(this.egressGb, routesV2StorageTypeOutputDetailResponse.egressGb) &&
+        Objects.equals(this.hasOwnPrice, routesV2StorageTypeOutputDetailResponse.hasOwnPrice) &&
         Objects.equals(this.ingressBytes, routesV2StorageTypeOutputDetailResponse.ingressBytes) &&
         Objects.equals(this.ingressGb, routesV2StorageTypeOutputDetailResponse.ingressGb) &&
         Objects.equals(this.inputId, routesV2StorageTypeOutputDetailResponse.inputId) &&
+        Objects.equals(this.nodeId, routesV2StorageTypeOutputDetailResponse.nodeId) &&
+        Objects.equals(this.outputDeleted, routesV2StorageTypeOutputDetailResponse.outputDeleted) &&
         Objects.equals(this.outputId, routesV2StorageTypeOutputDetailResponse.outputId) &&
+        Objects.equals(this.outputName, routesV2StorageTypeOutputDetailResponse.outputName) &&
         Objects.equals(this.pipelineId, routesV2StorageTypeOutputDetailResponse.pipelineId) &&
-        Objects.equals(this.storageType, routesV2StorageTypeOutputDetailResponse.storageType);
+        Objects.equals(this.storageType, routesV2StorageTypeOutputDetailResponse.storageType) &&
+        Objects.equals(this.totalCost, routesV2StorageTypeOutputDetailResponse.totalCost);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(egressBytes, egressGb, ingressBytes, ingressGb, inputId, outputId, pipelineId, storageType);
+    return Objects.hash(baselineMethod, costPerGb, egressBytes, egressGb, hasOwnPrice, ingressBytes, ingressGb, inputId, nodeId, outputDeleted, outputId, outputName, pipelineId, storageType, totalCost);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2StorageTypeOutputDetailResponse {\n");
+    sb.append("    baselineMethod: ").append(toIndentedString(baselineMethod)).append("\n");
+    sb.append("    costPerGb: ").append(toIndentedString(costPerGb)).append("\n");
     sb.append("    egressBytes: ").append(toIndentedString(egressBytes)).append("\n");
     sb.append("    egressGb: ").append(toIndentedString(egressGb)).append("\n");
+    sb.append("    hasOwnPrice: ").append(toIndentedString(hasOwnPrice)).append("\n");
     sb.append("    ingressBytes: ").append(toIndentedString(ingressBytes)).append("\n");
     sb.append("    ingressGb: ").append(toIndentedString(ingressGb)).append("\n");
     sb.append("    inputId: ").append(toIndentedString(inputId)).append("\n");
+    sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
+    sb.append("    outputDeleted: ").append(toIndentedString(outputDeleted)).append("\n");
     sb.append("    outputId: ").append(toIndentedString(outputId)).append("\n");
+    sb.append("    outputName: ").append(toIndentedString(outputName)).append("\n");
     sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
     sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
+    sb.append("    totalCost: ").append(toIndentedString(totalCost)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -301,7 +483,7 @@ public class RoutesV2StorageTypeOutputDetailResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("egress_bytes", "egress_gb", "ingress_bytes", "ingress_gb", "input_id", "output_id", "pipeline_id", "storage_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("baseline_method", "cost_per_gb", "egress_bytes", "egress_gb", "has_own_price", "ingress_bytes", "ingress_gb", "input_id", "node_id", "output_deleted", "output_id", "output_name", "pipeline_id", "storage_type", "total_cost"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -328,11 +510,20 @@ public class RoutesV2StorageTypeOutputDetailResponse {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("baseline_method") != null && !jsonObj.get("baseline_method").isJsonNull()) && !jsonObj.get("baseline_method").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `baseline_method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("baseline_method").toString()));
+      }
       if ((jsonObj.get("input_id") != null && !jsonObj.get("input_id").isJsonNull()) && !jsonObj.get("input_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `input_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("input_id").toString()));
       }
+      if ((jsonObj.get("node_id") != null && !jsonObj.get("node_id").isJsonNull()) && !jsonObj.get("node_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `node_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("node_id").toString()));
+      }
       if ((jsonObj.get("output_id") != null && !jsonObj.get("output_id").isJsonNull()) && !jsonObj.get("output_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_id").toString()));
+      }
+      if ((jsonObj.get("output_name") != null && !jsonObj.get("output_name").isJsonNull()) && !jsonObj.get("output_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_name").toString()));
       }
       if ((jsonObj.get("pipeline_id") != null && !jsonObj.get("pipeline_id").isJsonNull()) && !jsonObj.get("pipeline_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pipeline_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pipeline_id").toString()));

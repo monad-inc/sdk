@@ -13,20 +13,39 @@
 import { HttpFile } from '../http/http';
 
 export class RoutesV2StorageTypeOutputDetailResponse {
+    'baselineMethod'?: string;
+    'costPerGb'?: number;
     'egressBytes'?: number;
     'egressGb'?: number;
+    'hasOwnPrice'?: boolean;
     'ingressBytes'?: number;
     'ingressGb'?: number;
     'inputId'?: string;
+    'nodeId'?: string;
+    'outputDeleted'?: boolean;
     'outputId'?: string;
+    'outputName'?: string;
     'pipelineId'?: string;
     'storageType'?: string;
+    'totalCost'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "baselineMethod",
+            "baseName": "baseline_method",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "costPerGb",
+            "baseName": "cost_per_gb",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "egressBytes",
             "baseName": "egress_bytes",
@@ -37,6 +56,12 @@ export class RoutesV2StorageTypeOutputDetailResponse {
             "name": "egressGb",
             "baseName": "egress_gb",
             "type": "number",
+            "format": ""
+        },
+        {
+            "name": "hasOwnPrice",
+            "baseName": "has_own_price",
+            "type": "boolean",
             "format": ""
         },
         {
@@ -58,8 +83,26 @@ export class RoutesV2StorageTypeOutputDetailResponse {
             "format": ""
         },
         {
+            "name": "nodeId",
+            "baseName": "node_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "outputDeleted",
+            "baseName": "output_deleted",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "outputId",
             "baseName": "output_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "outputName",
+            "baseName": "output_name",
             "type": "string",
             "format": ""
         },
@@ -73,6 +116,12 @@ export class RoutesV2StorageTypeOutputDetailResponse {
             "name": "storageType",
             "baseName": "storage_type",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "totalCost",
+            "baseName": "total_cost",
+            "type": "number",
             "format": ""
         }    ];
 

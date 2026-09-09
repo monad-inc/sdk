@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **organization_id** | **str** |  | [optional] 
 **organization_name** | **str** |  | [optional] 
 **outputs** | [**List[RoutesV2StorageTypeOutputDetailResponse]**](RoutesV2StorageTypeOutputDetailResponse.md) |  | [optional] 
+**routing_drops** | [**List[RoutesV2PipelineRoutingDrop]**](RoutesV2PipelineRoutingDrop.md) | Pipelines that dropped records at routing over the window (matched no edge). Those bytes are in no output&#39;s baseline; this is where they can be seen. | [optional] 
 **start_at** | **str** |  | [optional] 
 
 ## Example

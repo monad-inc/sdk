@@ -10,11 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { RoutesV2SetOutputCostEntry } from '../models/RoutesV2SetOutputCostEntry';
 import { RoutesV2SetStorageTypeCostEntry } from '../models/RoutesV2SetStorageTypeCostEntry';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2SetStorageTypeCostRequest {
+    'clearOutputCosts'?: Array<string>;
     'costs'?: { [key: string]: RoutesV2SetStorageTypeCostEntry; };
+    'outputCosts'?: Array<RoutesV2SetOutputCostEntry>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -22,9 +25,21 @@ export class RoutesV2SetStorageTypeCostRequest {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
+            "name": "clearOutputCosts",
+            "baseName": "clear_output_costs",
+            "type": "Array<string>",
+            "format": ""
+        },
+        {
             "name": "costs",
             "baseName": "costs",
             "type": "{ [key: string]: RoutesV2SetStorageTypeCostEntry; }",
+            "format": ""
+        },
+        {
+            "name": "outputCosts",
+            "baseName": "output_costs",
+            "type": "Array<RoutesV2SetOutputCostEntry>",
             "format": ""
         }    ];
 

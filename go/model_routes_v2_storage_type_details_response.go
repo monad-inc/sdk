@@ -24,6 +24,8 @@ type RoutesV2StorageTypeDetailsResponse struct {
 	OrganizationId *string `json:"organization_id,omitempty"`
 	OrganizationName *string `json:"organization_name,omitempty"`
 	Outputs []RoutesV2StorageTypeOutputDetailResponse `json:"outputs,omitempty"`
+	// Pipelines that dropped records at routing over the window (matched no edge). Those bytes are in no output's baseline; this is where they can be seen.
+	RoutingDrops []RoutesV2PipelineRoutingDrop `json:"routing_drops,omitempty"`
 	StartAt *string `json:"start_at,omitempty"`
 }
 
@@ -172,6 +174,38 @@ func (o *RoutesV2StorageTypeDetailsResponse) SetOutputs(v []RoutesV2StorageTypeO
 	o.Outputs = v
 }
 
+// GetRoutingDrops returns the RoutingDrops field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeDetailsResponse) GetRoutingDrops() []RoutesV2PipelineRoutingDrop {
+	if o == nil || IsNil(o.RoutingDrops) {
+		var ret []RoutesV2PipelineRoutingDrop
+		return ret
+	}
+	return o.RoutingDrops
+}
+
+// GetRoutingDropsOk returns a tuple with the RoutingDrops field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeDetailsResponse) GetRoutingDropsOk() ([]RoutesV2PipelineRoutingDrop, bool) {
+	if o == nil || IsNil(o.RoutingDrops) {
+		return nil, false
+	}
+	return o.RoutingDrops, true
+}
+
+// HasRoutingDrops returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeDetailsResponse) HasRoutingDrops() bool {
+	if o != nil && !IsNil(o.RoutingDrops) {
+		return true
+	}
+
+	return false
+}
+
+// SetRoutingDrops gets a reference to the given []RoutesV2PipelineRoutingDrop and assigns it to the RoutingDrops field.
+func (o *RoutesV2StorageTypeDetailsResponse) SetRoutingDrops(v []RoutesV2PipelineRoutingDrop) {
+	o.RoutingDrops = v
+}
+
 // GetStartAt returns the StartAt field value if set, zero value otherwise.
 func (o *RoutesV2StorageTypeDetailsResponse) GetStartAt() string {
 	if o == nil || IsNil(o.StartAt) {
@@ -225,6 +259,9 @@ func (o RoutesV2StorageTypeDetailsResponse) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.Outputs) {
 		toSerialize["outputs"] = o.Outputs
+	}
+	if !IsNil(o.RoutingDrops) {
+		toSerialize["routing_drops"] = o.RoutingDrops
 	}
 	if !IsNil(o.StartAt) {
 		toSerialize["start_at"] = o.StartAt

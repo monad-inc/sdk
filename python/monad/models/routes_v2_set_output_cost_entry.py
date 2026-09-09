@@ -18,22 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.routes_v2_set_output_cost_entry import RoutesV2SetOutputCostEntry
-from monad.models.routes_v2_set_storage_type_cost_entry import RoutesV2SetStorageTypeCostEntry
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class RoutesV2SetStorageTypeCostRequest(BaseModel):
+class RoutesV2SetOutputCostEntry(BaseModel):
     """
-    RoutesV2SetStorageTypeCostRequest
+    RoutesV2SetOutputCostEntry
     """ # noqa: E501
-    clear_output_costs: Optional[List[StrictStr]] = None
-    costs: Optional[Dict[str, RoutesV2SetStorageTypeCostEntry]] = None
-    output_costs: Optional[List[RoutesV2SetOutputCostEntry]] = None
-    __properties: ClassVar[List[str]] = ["clear_output_costs", "costs", "output_costs"]
+    cost_per_gb: Optional[Union[StrictFloat, StrictInt]] = None
+    output_id: Optional[StrictStr] = None
+    storage_type: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["cost_per_gb", "output_id", "storage_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -53,7 +51,7 @@ class RoutesV2SetStorageTypeCostRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of RoutesV2SetStorageTypeCostRequest from a JSON string"""
+        """Create an instance of RoutesV2SetOutputCostEntry from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,25 +72,11 @@ class RoutesV2SetStorageTypeCostRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each value in costs (dict)
-        _field_dict = {}
-        if self.costs:
-            for _key_costs in self.costs:
-                if self.costs[_key_costs]:
-                    _field_dict[_key_costs] = self.costs[_key_costs].to_dict()
-            _dict['costs'] = _field_dict
-        # override the default output from pydantic by calling `to_dict()` of each item in output_costs (list)
-        _items = []
-        if self.output_costs:
-            for _item_output_costs in self.output_costs:
-                if _item_output_costs:
-                    _items.append(_item_output_costs.to_dict())
-            _dict['output_costs'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of RoutesV2SetStorageTypeCostRequest from a dict"""
+        """Create an instance of RoutesV2SetOutputCostEntry from a dict"""
         if obj is None:
             return None
 
@@ -100,14 +84,9 @@ class RoutesV2SetStorageTypeCostRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "clear_output_costs": obj.get("clear_output_costs"),
-            "costs": dict(
-                (_k, RoutesV2SetStorageTypeCostEntry.from_dict(_v))
-                for _k, _v in obj["costs"].items()
-            )
-            if obj.get("costs") is not None
-            else None,
-            "output_costs": [RoutesV2SetOutputCostEntry.from_dict(_item) for _item in obj["output_costs"]] if obj.get("output_costs") is not None else None
+            "cost_per_gb": obj.get("cost_per_gb"),
+            "output_id": obj.get("output_id"),
+            "storage_type": obj.get("storage_type")
         })
         return _obj
 

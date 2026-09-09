@@ -519,6 +519,7 @@ __all__ = [
     "RoutesV2PipelineMetric",
     "RoutesV2PipelineRequestEdge",
     "RoutesV2PipelineRequestNode",
+    "RoutesV2PipelineRoutingDrop",
     "RoutesV2PipelineStatus",
     "RoutesV2PipelineWithStatus",
     "RoutesV2PutInputRequest",
@@ -527,6 +528,7 @@ __all__ = [
     "RoutesV2SecretResponse",
     "RoutesV2SecretWithComponentsListResponse",
     "RoutesV2SecretWithComponentsResponse",
+    "RoutesV2SetOutputCostEntry",
     "RoutesV2SetStorageTypeCostEntry",
     "RoutesV2SetStorageTypeCostRequest",
     "RoutesV2StorageTypeDetailsResponse",
@@ -1205,6 +1207,7 @@ from monad.models.routes_v2_patch_pipeline_edge_request import RoutesV2PatchPipe
 from monad.models.routes_v2_pipeline_metric import RoutesV2PipelineMetric as RoutesV2PipelineMetric
 from monad.models.routes_v2_pipeline_request_edge import RoutesV2PipelineRequestEdge as RoutesV2PipelineRequestEdge
 from monad.models.routes_v2_pipeline_request_node import RoutesV2PipelineRequestNode as RoutesV2PipelineRequestNode
+from monad.models.routes_v2_pipeline_routing_drop import RoutesV2PipelineRoutingDrop as RoutesV2PipelineRoutingDrop
 from monad.models.routes_v2_pipeline_status import RoutesV2PipelineStatus as RoutesV2PipelineStatus
 from monad.models.routes_v2_pipeline_with_status import RoutesV2PipelineWithStatus as RoutesV2PipelineWithStatus
 from monad.models.routes_v2_put_input_request import RoutesV2PutInputRequest as RoutesV2PutInputRequest
@@ -1213,6 +1216,7 @@ from monad.models.routes_v2_regenerate_api_key_request import RoutesV2Regenerate
 from monad.models.routes_v2_secret_response import RoutesV2SecretResponse as RoutesV2SecretResponse
 from monad.models.routes_v2_secret_with_components_list_response import RoutesV2SecretWithComponentsListResponse as RoutesV2SecretWithComponentsListResponse
 from monad.models.routes_v2_secret_with_components_response import RoutesV2SecretWithComponentsResponse as RoutesV2SecretWithComponentsResponse
+from monad.models.routes_v2_set_output_cost_entry import RoutesV2SetOutputCostEntry as RoutesV2SetOutputCostEntry
 from monad.models.routes_v2_set_storage_type_cost_entry import RoutesV2SetStorageTypeCostEntry as RoutesV2SetStorageTypeCostEntry
 from monad.models.routes_v2_set_storage_type_cost_request import RoutesV2SetStorageTypeCostRequest as RoutesV2SetStorageTypeCostRequest
 from monad.models.routes_v2_storage_type_details_response import RoutesV2StorageTypeDetailsResponse as RoutesV2StorageTypeDetailsResponse

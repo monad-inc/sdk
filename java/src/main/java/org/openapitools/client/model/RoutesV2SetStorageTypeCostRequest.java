@@ -20,9 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import org.openapitools.client.model.RoutesV2SetOutputCostEntry;
 import org.openapitools.client.model.RoutesV2SetStorageTypeCostEntry;
 
 import com.google.gson.Gson;
@@ -53,13 +56,50 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class RoutesV2SetStorageTypeCostRequest {
+  public static final String SERIALIZED_NAME_CLEAR_OUTPUT_COSTS = "clear_output_costs";
+  @SerializedName(SERIALIZED_NAME_CLEAR_OUTPUT_COSTS)
+  @javax.annotation.Nullable
+  private List<String> clearOutputCosts = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_COSTS = "costs";
   @SerializedName(SERIALIZED_NAME_COSTS)
   @javax.annotation.Nullable
   private Map<String, RoutesV2SetStorageTypeCostEntry> costs = new HashMap<>();
 
+  public static final String SERIALIZED_NAME_OUTPUT_COSTS = "output_costs";
+  @SerializedName(SERIALIZED_NAME_OUTPUT_COSTS)
+  @javax.annotation.Nullable
+  private List<RoutesV2SetOutputCostEntry> outputCosts = new ArrayList<>();
+
   public RoutesV2SetStorageTypeCostRequest() {
   }
+
+  public RoutesV2SetStorageTypeCostRequest clearOutputCosts(@javax.annotation.Nullable List<String> clearOutputCosts) {
+    this.clearOutputCosts = clearOutputCosts;
+    return this;
+  }
+
+  public RoutesV2SetStorageTypeCostRequest addClearOutputCostsItem(String clearOutputCostsItem) {
+    if (this.clearOutputCosts == null) {
+      this.clearOutputCosts = new ArrayList<>();
+    }
+    this.clearOutputCosts.add(clearOutputCostsItem);
+    return this;
+  }
+
+  /**
+   * Get clearOutputCosts
+   * @return clearOutputCosts
+   */
+  @javax.annotation.Nullable
+  public List<String> getClearOutputCosts() {
+    return clearOutputCosts;
+  }
+
+  public void setClearOutputCosts(@javax.annotation.Nullable List<String> clearOutputCosts) {
+    this.clearOutputCosts = clearOutputCosts;
+  }
+
 
   public RoutesV2SetStorageTypeCostRequest costs(@javax.annotation.Nullable Map<String, RoutesV2SetStorageTypeCostEntry> costs) {
     this.costs = costs;
@@ -88,6 +128,33 @@ public class RoutesV2SetStorageTypeCostRequest {
   }
 
 
+  public RoutesV2SetStorageTypeCostRequest outputCosts(@javax.annotation.Nullable List<RoutesV2SetOutputCostEntry> outputCosts) {
+    this.outputCosts = outputCosts;
+    return this;
+  }
+
+  public RoutesV2SetStorageTypeCostRequest addOutputCostsItem(RoutesV2SetOutputCostEntry outputCostsItem) {
+    if (this.outputCosts == null) {
+      this.outputCosts = new ArrayList<>();
+    }
+    this.outputCosts.add(outputCostsItem);
+    return this;
+  }
+
+  /**
+   * Get outputCosts
+   * @return outputCosts
+   */
+  @javax.annotation.Nullable
+  public List<RoutesV2SetOutputCostEntry> getOutputCosts() {
+    return outputCosts;
+  }
+
+  public void setOutputCosts(@javax.annotation.Nullable List<RoutesV2SetOutputCostEntry> outputCosts) {
+    this.outputCosts = outputCosts;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -98,19 +165,23 @@ public class RoutesV2SetStorageTypeCostRequest {
       return false;
     }
     RoutesV2SetStorageTypeCostRequest routesV2SetStorageTypeCostRequest = (RoutesV2SetStorageTypeCostRequest) o;
-    return Objects.equals(this.costs, routesV2SetStorageTypeCostRequest.costs);
+    return Objects.equals(this.clearOutputCosts, routesV2SetStorageTypeCostRequest.clearOutputCosts) &&
+        Objects.equals(this.costs, routesV2SetStorageTypeCostRequest.costs) &&
+        Objects.equals(this.outputCosts, routesV2SetStorageTypeCostRequest.outputCosts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(costs);
+    return Objects.hash(clearOutputCosts, costs, outputCosts);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2SetStorageTypeCostRequest {\n");
+    sb.append("    clearOutputCosts: ").append(toIndentedString(clearOutputCosts)).append("\n");
     sb.append("    costs: ").append(toIndentedString(costs)).append("\n");
+    sb.append("    outputCosts: ").append(toIndentedString(outputCosts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -129,7 +200,7 @@ public class RoutesV2SetStorageTypeCostRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("costs"));
+    openapiFields = new HashSet<String>(Arrays.asList("clear_output_costs", "costs", "output_costs"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -156,6 +227,24 @@ public class RoutesV2SetStorageTypeCostRequest {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("clear_output_costs") != null && !jsonObj.get("clear_output_costs").isJsonNull() && !jsonObj.get("clear_output_costs").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `clear_output_costs` to be an array in the JSON string but got `%s`", jsonObj.get("clear_output_costs").toString()));
+      }
+      if (jsonObj.get("output_costs") != null && !jsonObj.get("output_costs").isJsonNull()) {
+        JsonArray jsonArrayoutputCosts = jsonObj.getAsJsonArray("output_costs");
+        if (jsonArrayoutputCosts != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("output_costs").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_costs` to be an array in the JSON string but got `%s`", jsonObj.get("output_costs").toString()));
+          }
+
+          // validate the optional field `output_costs` (array)
+          for (int i = 0; i < jsonArrayoutputCosts.size(); i++) {
+            RoutesV2SetOutputCostEntry.validateJsonElement(jsonArrayoutputCosts.get(i));
+          };
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

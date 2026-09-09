@@ -36,14 +36,21 @@ class TestRoutesV2StorageTypeOutputDetailResponse(unittest.TestCase):
         model = RoutesV2StorageTypeOutputDetailResponse()
         if include_optional:
             return RoutesV2StorageTypeOutputDetailResponse(
+                baseline_method = '',
+                cost_per_gb = 1.337,
                 egress_bytes = 56,
                 egress_gb = 1.337,
+                has_own_price = True,
                 ingress_bytes = 56,
                 ingress_gb = 1.337,
                 input_id = '',
+                node_id = '',
+                output_deleted = True,
                 output_id = '',
+                output_name = '',
                 pipeline_id = '',
-                storage_type = ''
+                storage_type = '',
+                total_cost = 1.337
             )
         else:
             return RoutesV2StorageTypeOutputDetailResponse(

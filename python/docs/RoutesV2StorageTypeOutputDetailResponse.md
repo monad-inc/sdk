@@ -5,14 +5,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**baseline_method** | **str** |  | [optional] 
+**cost_per_gb** | **float** |  | [optional] 
 **egress_bytes** | **int** |  | [optional] 
 **egress_gb** | **float** |  | [optional] 
+**has_own_price** | **bool** |  | [optional] 
 **ingress_bytes** | **int** |  | [optional] 
 **ingress_gb** | **float** |  | [optional] 
 **input_id** | **str** |  | [optional] 
+**node_id** | **str** |  | [optional] 
+**output_deleted** | **bool** |  | [optional] 
 **output_id** | **str** |  | [optional] 
+**output_name** | **str** |  | [optional] 
 **pipeline_id** | **str** |  | [optional] 
 **storage_type** | **str** |  | [optional] 
+**total_cost** | **float** |  | [optional] 
 
 ## Example
 

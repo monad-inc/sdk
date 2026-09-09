@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,15 +28,22 @@ class RoutesV2StorageTypeOutputDetailResponse(BaseModel):
     """
     RoutesV2StorageTypeOutputDetailResponse
     """ # noqa: E501
+    baseline_method: Optional[StrictStr] = None
+    cost_per_gb: Optional[Union[StrictFloat, StrictInt]] = None
     egress_bytes: Optional[StrictInt] = None
     egress_gb: Optional[Union[StrictFloat, StrictInt]] = None
+    has_own_price: Optional[StrictBool] = None
     ingress_bytes: Optional[StrictInt] = None
     ingress_gb: Optional[Union[StrictFloat, StrictInt]] = None
     input_id: Optional[StrictStr] = None
+    node_id: Optional[StrictStr] = None
+    output_deleted: Optional[StrictBool] = None
     output_id: Optional[StrictStr] = None
+    output_name: Optional[StrictStr] = None
     pipeline_id: Optional[StrictStr] = None
     storage_type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["egress_bytes", "egress_gb", "ingress_bytes", "ingress_gb", "input_id", "output_id", "pipeline_id", "storage_type"]
+    total_cost: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["baseline_method", "cost_per_gb", "egress_bytes", "egress_gb", "has_own_price", "ingress_bytes", "ingress_gb", "input_id", "node_id", "output_deleted", "output_id", "output_name", "pipeline_id", "storage_type", "total_cost"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,14 +96,21 @@ class RoutesV2StorageTypeOutputDetailResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "baseline_method": obj.get("baseline_method"),
+            "cost_per_gb": obj.get("cost_per_gb"),
             "egress_bytes": obj.get("egress_bytes"),
             "egress_gb": obj.get("egress_gb"),
+            "has_own_price": obj.get("has_own_price"),
             "ingress_bytes": obj.get("ingress_bytes"),
             "ingress_gb": obj.get("ingress_gb"),
             "input_id": obj.get("input_id"),
+            "node_id": obj.get("node_id"),
+            "output_deleted": obj.get("output_deleted"),
             "output_id": obj.get("output_id"),
+            "output_name": obj.get("output_name"),
             "pipeline_id": obj.get("pipeline_id"),
-            "storage_type": obj.get("storage_type")
+            "storage_type": obj.get("storage_type"),
+            "total_cost": obj.get("total_cost")
         })
         return _obj
 

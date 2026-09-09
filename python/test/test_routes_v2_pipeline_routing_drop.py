@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.routes_v2_storage_type_details_response import RoutesV2StorageTypeDetailsResponse
+from monad.models.routes_v2_pipeline_routing_drop import RoutesV2PipelineRoutingDrop
 
-class TestRoutesV2StorageTypeDetailsResponse(unittest.TestCase):
-    """RoutesV2StorageTypeDetailsResponse unit test stubs"""
+class TestRoutesV2PipelineRoutingDrop(unittest.TestCase):
+    """RoutesV2PipelineRoutingDrop unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,53 +26,28 @@ class TestRoutesV2StorageTypeDetailsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RoutesV2StorageTypeDetailsResponse:
-        """Test RoutesV2StorageTypeDetailsResponse
+    def make_instance(self, include_optional) -> RoutesV2PipelineRoutingDrop:
+        """Test RoutesV2PipelineRoutingDrop
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RoutesV2StorageTypeDetailsResponse`
+        # uncomment below to create an instance of `RoutesV2PipelineRoutingDrop`
         """
-        model = RoutesV2StorageTypeDetailsResponse()
+        model = RoutesV2PipelineRoutingDrop()
         if include_optional:
-            return RoutesV2StorageTypeDetailsResponse(
-                end_at = '',
-                organization_id = '',
-                organization_name = '',
-                outputs = [
-                    monad.models.routes_v2/storage_type_output_detail_response.routesV2.StorageTypeOutputDetailResponse(
-                        baseline_method = '', 
-                        cost_per_gb = 1.337, 
-                        egress_bytes = 56, 
-                        egress_gb = 1.337, 
-                        has_own_price = True, 
-                        ingress_bytes = 56, 
-                        ingress_gb = 1.337, 
-                        input_id = '', 
-                        node_id = '', 
-                        output_deleted = True, 
-                        output_id = '', 
-                        output_name = '', 
-                        pipeline_id = '', 
-                        storage_type = '', 
-                        total_cost = 1.337, )
-                    ],
-                routing_drops = [
-                    monad.models.routes_v2/pipeline_routing_drop.routesV2.PipelineRoutingDrop(
-                        dropped_bytes = 56, 
-                        dropped_gb = 1.337, 
-                        input_id = '', 
-                        pipeline_id = '', )
-                    ],
-                start_at = ''
+            return RoutesV2PipelineRoutingDrop(
+                dropped_bytes = 56,
+                dropped_gb = 1.337,
+                input_id = '',
+                pipeline_id = ''
             )
         else:
-            return RoutesV2StorageTypeDetailsResponse(
+            return RoutesV2PipelineRoutingDrop(
         )
         """
 
-    def testRoutesV2StorageTypeDetailsResponse(self):
-        """Test RoutesV2StorageTypeDetailsResponse"""
+    def testRoutesV2PipelineRoutingDrop(self):
+        """Test RoutesV2PipelineRoutingDrop"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -8969,6 +8969,23 @@
                 ],
                 "type": "object"
             },
+            "routesV2.PipelineRoutingDrop": {
+                "properties": {
+                    "dropped_bytes": {
+                        "type": "integer"
+                    },
+                    "dropped_gb": {
+                        "type": "number"
+                    },
+                    "input_id": {
+                        "type": "string"
+                    },
+                    "pipeline_id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routesV2.PutInputRequest": {
                 "properties": {
                     "config": {
@@ -9108,6 +9125,20 @@
                 },
                 "type": "object"
             },
+            "routesV2.SetOutputCostEntry": {
+                "properties": {
+                    "cost_per_gb": {
+                        "type": "number"
+                    },
+                    "output_id": {
+                        "type": "string"
+                    },
+                    "storage_type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "routesV2.SetStorageTypeCostEntry": {
                 "properties": {
                     "cost_per_gb": {
@@ -9118,11 +9149,25 @@
             },
             "routesV2.SetStorageTypeCostRequest": {
                 "properties": {
+                    "clear_output_costs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
                     "costs": {
                         "additionalProperties": {
                             "$ref": "#/components/schemas/routesV2.SetStorageTypeCostEntry"
                         },
                         "type": "object"
+                    },
+                    "output_costs": {
+                        "items": {
+                            "$ref": "#/components/schemas/routesV2.SetOutputCostEntry"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -9145,6 +9190,14 @@
                         "type": "array",
                         "uniqueItems": false
                     },
+                    "routing_drops": {
+                        "description": "Pipelines that dropped records at routing over the window (matched no edge). Those\nbytes are in no output's baseline; this is where they can be seen.",
+                        "items": {
+                            "$ref": "#/components/schemas/routesV2.PipelineRoutingDrop"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
                     "start_at": {
                         "type": "string"
                     }
@@ -9153,11 +9206,20 @@
             },
             "routesV2.StorageTypeOutputDetailResponse": {
                 "properties": {
+                    "baseline_method": {
+                        "type": "string"
+                    },
+                    "cost_per_gb": {
+                        "type": "number"
+                    },
                     "egress_bytes": {
                         "type": "integer"
                     },
                     "egress_gb": {
                         "type": "number"
+                    },
+                    "has_own_price": {
+                        "type": "boolean"
                     },
                     "ingress_bytes": {
                         "type": "integer"
@@ -9168,7 +9230,16 @@
                     "input_id": {
                         "type": "string"
                     },
+                    "node_id": {
+                        "type": "string"
+                    },
+                    "output_deleted": {
+                        "type": "boolean"
+                    },
                     "output_id": {
+                        "type": "string"
+                    },
+                    "output_name": {
                         "type": "string"
                     },
                     "pipeline_id": {
@@ -9176,6 +9247,9 @@
                     },
                     "storage_type": {
                         "type": "string"
+                    },
+                    "total_cost": {
+                        "type": "number"
                     }
                 },
                 "type": "object"

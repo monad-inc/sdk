@@ -39,6 +39,22 @@ public class RoutesV2StorageTypeOutputDetailResponseTest {
     }
 
     /**
+     * Test the property 'baselineMethod'
+     */
+    @Test
+    public void baselineMethodTest() {
+        // TODO: test baselineMethod
+    }
+
+    /**
+     * Test the property 'costPerGb'
+     */
+    @Test
+    public void costPerGbTest() {
+        // TODO: test costPerGb
+    }
+
+    /**
      * Test the property 'egressBytes'
      */
     @Test
@@ -52,6 +68,14 @@ public class RoutesV2StorageTypeOutputDetailResponseTest {
     @Test
     public void egressGbTest() {
         // TODO: test egressGb
+    }
+
+    /**
+     * Test the property 'hasOwnPrice'
+     */
+    @Test
+    public void hasOwnPriceTest() {
+        // TODO: test hasOwnPrice
     }
 
     /**
@@ -79,11 +103,35 @@ public class RoutesV2StorageTypeOutputDetailResponseTest {
     }
 
     /**
+     * Test the property 'nodeId'
+     */
+    @Test
+    public void nodeIdTest() {
+        // TODO: test nodeId
+    }
+
+    /**
+     * Test the property 'outputDeleted'
+     */
+    @Test
+    public void outputDeletedTest() {
+        // TODO: test outputDeleted
+    }
+
+    /**
      * Test the property 'outputId'
      */
     @Test
     public void outputIdTest() {
         // TODO: test outputId
+    }
+
+    /**
+     * Test the property 'outputName'
+     */
+    @Test
+    public void outputNameTest() {
+        // TODO: test outputName
     }
 
     /**
@@ -100,6 +148,14 @@ public class RoutesV2StorageTypeOutputDetailResponseTest {
     @Test
     public void storageTypeTest() {
         // TODO: test storageType
+    }
+
+    /**
+     * Test the property 'totalCost'
+     */
+    @Test
+    public void totalCostTest() {
+        // TODO: test totalCost
     }
 
 }

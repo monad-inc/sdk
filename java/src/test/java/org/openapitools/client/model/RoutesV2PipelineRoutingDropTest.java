@@ -19,52 +19,55 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.openapitools.client.model.RoutesV2SetOutputCostEntry;
-import org.openapitools.client.model.RoutesV2SetStorageTypeCostEntry;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV2SetStorageTypeCostRequest
+ * Model tests for RoutesV2PipelineRoutingDrop
  */
-public class RoutesV2SetStorageTypeCostRequestTest {
-    private final RoutesV2SetStorageTypeCostRequest model = new RoutesV2SetStorageTypeCostRequest();
+public class RoutesV2PipelineRoutingDropTest {
+    private final RoutesV2PipelineRoutingDrop model = new RoutesV2PipelineRoutingDrop();
 
     /**
-     * Model tests for RoutesV2SetStorageTypeCostRequest
+     * Model tests for RoutesV2PipelineRoutingDrop
      */
     @Test
-    public void testRoutesV2SetStorageTypeCostRequest() {
-        // TODO: test RoutesV2SetStorageTypeCostRequest
+    public void testRoutesV2PipelineRoutingDrop() {
+        // TODO: test RoutesV2PipelineRoutingDrop
     }
 
     /**
-     * Test the property 'clearOutputCosts'
+     * Test the property 'droppedBytes'
      */
     @Test
-    public void clearOutputCostsTest() {
-        // TODO: test clearOutputCosts
+    public void droppedBytesTest() {
+        // TODO: test droppedBytes
     }
 
     /**
-     * Test the property 'costs'
+     * Test the property 'droppedGb'
      */
     @Test
-    public void costsTest() {
-        // TODO: test costs
+    public void droppedGbTest() {
+        // TODO: test droppedGb
     }
 
     /**
-     * Test the property 'outputCosts'
+     * Test the property 'inputId'
      */
     @Test
-    public void outputCostsTest() {
-        // TODO: test outputCosts
+    public void inputIdTest() {
+        // TODO: test inputId
+    }
+
+    /**
+     * Test the property 'pipelineId'
+     */
+    @Test
+    public void pipelineIdTest() {
+        // TODO: test pipelineId
     }
 
 }

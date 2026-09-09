@@ -19,9 +19,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import org.openapitools.client.model.RoutesV2SetOutputCostEntry;
 import org.openapitools.client.model.RoutesV2SetStorageTypeCostEntry;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -41,11 +44,27 @@ public class SetStorageTypeCostRequestTest {
     }
 
     /**
+     * Test the property 'clearOutputCosts'
+     */
+    @Test
+    public void clearOutputCostsTest() {
+        // TODO: test clearOutputCosts
+    }
+
+    /**
      * Test the property 'costs'
      */
     @Test
     public void costsTest() {
         // TODO: test costs
+    }
+
+    /**
+     * Test the property 'outputCosts'
+     */
+    @Test
+    public void outputCostsTest() {
+        // TODO: test outputCosts
     }
 
 }

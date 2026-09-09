@@ -10,20 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { RoutesV2PipelineRoutingDrop } from '../models/RoutesV2PipelineRoutingDrop';
-import { RoutesV2StorageTypeOutputDetailResponse } from '../models/RoutesV2StorageTypeOutputDetailResponse';
 import { HttpFile } from '../http/http';
 
-export class RoutesV2StorageTypeDetailsResponse {
-    'endAt'?: string;
-    'organizationId'?: string;
-    'organizationName'?: string;
-    'outputs'?: Array<RoutesV2StorageTypeOutputDetailResponse>;
-    /**
-    * Pipelines that dropped records at routing over the window (matched no edge). Those bytes are in no output\'s baseline; this is where they can be seen.
-    */
-    'routingDrops'?: Array<RoutesV2PipelineRoutingDrop>;
-    'startAt'?: string;
+export class RoutesV2PipelineRoutingDrop {
+    'droppedBytes'?: number;
+    'droppedGb'?: number;
+    'inputId'?: string;
+    'pipelineId'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -31,44 +24,32 @@ export class RoutesV2StorageTypeDetailsResponse {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "endAt",
-            "baseName": "end_at",
+            "name": "droppedBytes",
+            "baseName": "dropped_bytes",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "droppedGb",
+            "baseName": "dropped_gb",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "inputId",
+            "baseName": "input_id",
             "type": "string",
             "format": ""
         },
         {
-            "name": "organizationId",
-            "baseName": "organization_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "organizationName",
-            "baseName": "organization_name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "outputs",
-            "baseName": "outputs",
-            "type": "Array<RoutesV2StorageTypeOutputDetailResponse>",
-            "format": ""
-        },
-        {
-            "name": "routingDrops",
-            "baseName": "routing_drops",
-            "type": "Array<RoutesV2PipelineRoutingDrop>",
-            "format": ""
-        },
-        {
-            "name": "startAt",
-            "baseName": "start_at",
+            "name": "pipelineId",
+            "baseName": "pipeline_id",
             "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV2StorageTypeDetailsResponse.attributeTypeMap;
+        return RoutesV2PipelineRoutingDrop.attributeTypeMap;
     }
 
     public constructor() {

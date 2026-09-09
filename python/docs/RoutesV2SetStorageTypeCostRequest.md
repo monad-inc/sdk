@@ -5,7 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**clear_output_costs** | **List[str]** |  | [optional] 
 **costs** | [**Dict[str, RoutesV2SetStorageTypeCostEntry]**](RoutesV2SetStorageTypeCostEntry.md) |  | [optional] 
+**output_costs** | [**List[RoutesV2SetOutputCostEntry]**](RoutesV2SetOutputCostEntry.md) |  | [optional] 
 
 ## Example
 

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.routes_v2_pipeline_routing_drop import RoutesV2PipelineRoutingDrop
 from monad.models.routes_v2_storage_type_output_detail_response import RoutesV2StorageTypeOutputDetailResponse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,8 +34,9 @@ class RoutesV2StorageTypeDetailsResponse(BaseModel):
     organization_id: Optional[StrictStr] = None
     organization_name: Optional[StrictStr] = None
     outputs: Optional[List[RoutesV2StorageTypeOutputDetailResponse]] = None
+    routing_drops: Optional[List[RoutesV2PipelineRoutingDrop]] = Field(default=None, description="Pipelines that dropped records at routing over the window (matched no edge). Those bytes are in no output's baseline; this is where they can be seen.")
     start_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["end_at", "organization_id", "organization_name", "outputs", "start_at"]
+    __properties: ClassVar[List[str]] = ["end_at", "organization_id", "organization_name", "outputs", "routing_drops", "start_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -82,6 +84,13 @@ class RoutesV2StorageTypeDetailsResponse(BaseModel):
                 if _item_outputs:
                     _items.append(_item_outputs.to_dict())
             _dict['outputs'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in routing_drops (list)
+        _items = []
+        if self.routing_drops:
+            for _item_routing_drops in self.routing_drops:
+                if _item_routing_drops:
+                    _items.append(_item_routing_drops.to_dict())
+            _dict['routing_drops'] = _items
         return _dict
 
     @classmethod
@@ -98,6 +107,7 @@ class RoutesV2StorageTypeDetailsResponse(BaseModel):
             "organization_id": obj.get("organization_id"),
             "organization_name": obj.get("organization_name"),
             "outputs": [RoutesV2StorageTypeOutputDetailResponse.from_dict(_item) for _item in obj["outputs"]] if obj.get("outputs") is not None else None,
+            "routing_drops": [RoutesV2PipelineRoutingDrop.from_dict(_item) for _item in obj["routing_drops"]] if obj.get("routing_drops") is not None else None,
             "start_at": obj.get("start_at")
         })
         return _obj

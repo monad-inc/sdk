@@ -20,14 +20,21 @@ var _ MappedNullable = &RoutesV2StorageTypeOutputDetailResponse{}
 
 // RoutesV2StorageTypeOutputDetailResponse struct for RoutesV2StorageTypeOutputDetailResponse
 type RoutesV2StorageTypeOutputDetailResponse struct {
+	BaselineMethod *string `json:"baseline_method,omitempty"`
+	CostPerGb *float32 `json:"cost_per_gb,omitempty"`
 	EgressBytes *int32 `json:"egress_bytes,omitempty"`
 	EgressGb *float32 `json:"egress_gb,omitempty"`
+	HasOwnPrice *bool `json:"has_own_price,omitempty"`
 	IngressBytes *int32 `json:"ingress_bytes,omitempty"`
 	IngressGb *float32 `json:"ingress_gb,omitempty"`
 	InputId *string `json:"input_id,omitempty"`
+	NodeId *string `json:"node_id,omitempty"`
+	OutputDeleted *bool `json:"output_deleted,omitempty"`
 	OutputId *string `json:"output_id,omitempty"`
+	OutputName *string `json:"output_name,omitempty"`
 	PipelineId *string `json:"pipeline_id,omitempty"`
 	StorageType *string `json:"storage_type,omitempty"`
+	TotalCost *float32 `json:"total_cost,omitempty"`
 }
 
 // NewRoutesV2StorageTypeOutputDetailResponse instantiates a new RoutesV2StorageTypeOutputDetailResponse object
@@ -45,6 +52,70 @@ func NewRoutesV2StorageTypeOutputDetailResponse() *RoutesV2StorageTypeOutputDeta
 func NewRoutesV2StorageTypeOutputDetailResponseWithDefaults() *RoutesV2StorageTypeOutputDetailResponse {
 	this := RoutesV2StorageTypeOutputDetailResponse{}
 	return &this
+}
+
+// GetBaselineMethod returns the BaselineMethod field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetBaselineMethod() string {
+	if o == nil || IsNil(o.BaselineMethod) {
+		var ret string
+		return ret
+	}
+	return *o.BaselineMethod
+}
+
+// GetBaselineMethodOk returns a tuple with the BaselineMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetBaselineMethodOk() (*string, bool) {
+	if o == nil || IsNil(o.BaselineMethod) {
+		return nil, false
+	}
+	return o.BaselineMethod, true
+}
+
+// HasBaselineMethod returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasBaselineMethod() bool {
+	if o != nil && !IsNil(o.BaselineMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetBaselineMethod gets a reference to the given string and assigns it to the BaselineMethod field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetBaselineMethod(v string) {
+	o.BaselineMethod = &v
+}
+
+// GetCostPerGb returns the CostPerGb field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetCostPerGb() float32 {
+	if o == nil || IsNil(o.CostPerGb) {
+		var ret float32
+		return ret
+	}
+	return *o.CostPerGb
+}
+
+// GetCostPerGbOk returns a tuple with the CostPerGb field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetCostPerGbOk() (*float32, bool) {
+	if o == nil || IsNil(o.CostPerGb) {
+		return nil, false
+	}
+	return o.CostPerGb, true
+}
+
+// HasCostPerGb returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasCostPerGb() bool {
+	if o != nil && !IsNil(o.CostPerGb) {
+		return true
+	}
+
+	return false
+}
+
+// SetCostPerGb gets a reference to the given float32 and assigns it to the CostPerGb field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetCostPerGb(v float32) {
+	o.CostPerGb = &v
 }
 
 // GetEgressBytes returns the EgressBytes field value if set, zero value otherwise.
@@ -109,6 +180,38 @@ func (o *RoutesV2StorageTypeOutputDetailResponse) HasEgressGb() bool {
 // SetEgressGb gets a reference to the given float32 and assigns it to the EgressGb field.
 func (o *RoutesV2StorageTypeOutputDetailResponse) SetEgressGb(v float32) {
 	o.EgressGb = &v
+}
+
+// GetHasOwnPrice returns the HasOwnPrice field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetHasOwnPrice() bool {
+	if o == nil || IsNil(o.HasOwnPrice) {
+		var ret bool
+		return ret
+	}
+	return *o.HasOwnPrice
+}
+
+// GetHasOwnPriceOk returns a tuple with the HasOwnPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetHasOwnPriceOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasOwnPrice) {
+		return nil, false
+	}
+	return o.HasOwnPrice, true
+}
+
+// HasHasOwnPrice returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasHasOwnPrice() bool {
+	if o != nil && !IsNil(o.HasOwnPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasOwnPrice gets a reference to the given bool and assigns it to the HasOwnPrice field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetHasOwnPrice(v bool) {
+	o.HasOwnPrice = &v
 }
 
 // GetIngressBytes returns the IngressBytes field value if set, zero value otherwise.
@@ -207,6 +310,70 @@ func (o *RoutesV2StorageTypeOutputDetailResponse) SetInputId(v string) {
 	o.InputId = &v
 }
 
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetNodeId() string {
+	if o == nil || IsNil(o.NodeId) {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetNodeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NodeId) {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasNodeId() bool {
+	if o != nil && !IsNil(o.NodeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetNodeId(v string) {
+	o.NodeId = &v
+}
+
+// GetOutputDeleted returns the OutputDeleted field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetOutputDeleted() bool {
+	if o == nil || IsNil(o.OutputDeleted) {
+		var ret bool
+		return ret
+	}
+	return *o.OutputDeleted
+}
+
+// GetOutputDeletedOk returns a tuple with the OutputDeleted field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetOutputDeletedOk() (*bool, bool) {
+	if o == nil || IsNil(o.OutputDeleted) {
+		return nil, false
+	}
+	return o.OutputDeleted, true
+}
+
+// HasOutputDeleted returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasOutputDeleted() bool {
+	if o != nil && !IsNil(o.OutputDeleted) {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputDeleted gets a reference to the given bool and assigns it to the OutputDeleted field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetOutputDeleted(v bool) {
+	o.OutputDeleted = &v
+}
+
 // GetOutputId returns the OutputId field value if set, zero value otherwise.
 func (o *RoutesV2StorageTypeOutputDetailResponse) GetOutputId() string {
 	if o == nil || IsNil(o.OutputId) {
@@ -237,6 +404,38 @@ func (o *RoutesV2StorageTypeOutputDetailResponse) HasOutputId() bool {
 // SetOutputId gets a reference to the given string and assigns it to the OutputId field.
 func (o *RoutesV2StorageTypeOutputDetailResponse) SetOutputId(v string) {
 	o.OutputId = &v
+}
+
+// GetOutputName returns the OutputName field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetOutputName() string {
+	if o == nil || IsNil(o.OutputName) {
+		var ret string
+		return ret
+	}
+	return *o.OutputName
+}
+
+// GetOutputNameOk returns a tuple with the OutputName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetOutputNameOk() (*string, bool) {
+	if o == nil || IsNil(o.OutputName) {
+		return nil, false
+	}
+	return o.OutputName, true
+}
+
+// HasOutputName returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasOutputName() bool {
+	if o != nil && !IsNil(o.OutputName) {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputName gets a reference to the given string and assigns it to the OutputName field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetOutputName(v string) {
+	o.OutputName = &v
 }
 
 // GetPipelineId returns the PipelineId field value if set, zero value otherwise.
@@ -303,6 +502,38 @@ func (o *RoutesV2StorageTypeOutputDetailResponse) SetStorageType(v string) {
 	o.StorageType = &v
 }
 
+// GetTotalCost returns the TotalCost field value if set, zero value otherwise.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetTotalCost() float32 {
+	if o == nil || IsNil(o.TotalCost) {
+		var ret float32
+		return ret
+	}
+	return *o.TotalCost
+}
+
+// GetTotalCostOk returns a tuple with the TotalCost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) GetTotalCostOk() (*float32, bool) {
+	if o == nil || IsNil(o.TotalCost) {
+		return nil, false
+	}
+	return o.TotalCost, true
+}
+
+// HasTotalCost returns a boolean if a field has been set.
+func (o *RoutesV2StorageTypeOutputDetailResponse) HasTotalCost() bool {
+	if o != nil && !IsNil(o.TotalCost) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalCost gets a reference to the given float32 and assigns it to the TotalCost field.
+func (o *RoutesV2StorageTypeOutputDetailResponse) SetTotalCost(v float32) {
+	o.TotalCost = &v
+}
+
 func (o RoutesV2StorageTypeOutputDetailResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -313,11 +544,20 @@ func (o RoutesV2StorageTypeOutputDetailResponse) MarshalJSON() ([]byte, error) {
 
 func (o RoutesV2StorageTypeOutputDetailResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BaselineMethod) {
+		toSerialize["baseline_method"] = o.BaselineMethod
+	}
+	if !IsNil(o.CostPerGb) {
+		toSerialize["cost_per_gb"] = o.CostPerGb
+	}
 	if !IsNil(o.EgressBytes) {
 		toSerialize["egress_bytes"] = o.EgressBytes
 	}
 	if !IsNil(o.EgressGb) {
 		toSerialize["egress_gb"] = o.EgressGb
+	}
+	if !IsNil(o.HasOwnPrice) {
+		toSerialize["has_own_price"] = o.HasOwnPrice
 	}
 	if !IsNil(o.IngressBytes) {
 		toSerialize["ingress_bytes"] = o.IngressBytes
@@ -328,14 +568,26 @@ func (o RoutesV2StorageTypeOutputDetailResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.InputId) {
 		toSerialize["input_id"] = o.InputId
 	}
+	if !IsNil(o.NodeId) {
+		toSerialize["node_id"] = o.NodeId
+	}
+	if !IsNil(o.OutputDeleted) {
+		toSerialize["output_deleted"] = o.OutputDeleted
+	}
 	if !IsNil(o.OutputId) {
 		toSerialize["output_id"] = o.OutputId
+	}
+	if !IsNil(o.OutputName) {
+		toSerialize["output_name"] = o.OutputName
 	}
 	if !IsNil(o.PipelineId) {
 		toSerialize["pipeline_id"] = o.PipelineId
 	}
 	if !IsNil(o.StorageType) {
 		toSerialize["storage_type"] = o.StorageType
+	}
+	if !IsNil(o.TotalCost) {
+		toSerialize["total_cost"] = o.TotalCost
 	}
 	return toSerialize, nil
 }

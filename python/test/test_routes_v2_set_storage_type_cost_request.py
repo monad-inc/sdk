@@ -36,10 +36,19 @@ class TestRoutesV2SetStorageTypeCostRequest(unittest.TestCase):
         model = RoutesV2SetStorageTypeCostRequest()
         if include_optional:
             return RoutesV2SetStorageTypeCostRequest(
+                clear_output_costs = [
+                    ''
+                    ],
                 costs = {
                     'key' : monad.models.routes_v2/set_storage_type_cost_entry.routesV2.SetStorageTypeCostEntry(
                         cost_per_gb = 1.337, )
-                    }
+                    },
+                output_costs = [
+                    monad.models.routes_v2/set_output_cost_entry.routesV2.SetOutputCostEntry(
+                        cost_per_gb = 1.337, 
+                        output_id = '', 
+                        storage_type = '', )
+                    ]
             )
         else:
             return RoutesV2SetStorageTypeCostRequest(

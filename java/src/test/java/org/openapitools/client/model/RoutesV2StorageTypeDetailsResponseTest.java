@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.RoutesV2PipelineRoutingDrop;
 import org.openapitools.client.model.RoutesV2StorageTypeOutputDetailResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -70,6 +71,14 @@ public class RoutesV2StorageTypeDetailsResponseTest {
     @Test
     public void outputsTest() {
         // TODO: test outputs
+    }
+
+    /**
+     * Test the property 'routingDrops'
+     */
+    @Test
+    public void routingDropsTest() {
+        // TODO: test routingDrops
     }
 
     /**
