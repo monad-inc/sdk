@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cost_per_gb** | **float** |  | [optional] 
 **id** | **str** |  | [optional] 
+**output_id** | **str** |  | [optional] 
+**output_name** | **str** |  | [optional] 
 **storage_type** | **str** |  | [optional] 
 
 ## Example

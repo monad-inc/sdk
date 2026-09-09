@@ -86,4 +86,20 @@ public class ModelsStorageTypeCostSummaryTest {
         // TODO: test totalOrgOutputStorageGb
     }
 
+    /**
+     * Test the property 'totalOrgRoutingDroppedBytes'
+     */
+    @Test
+    public void totalOrgRoutingDroppedBytesTest() {
+        // TODO: test totalOrgRoutingDroppedBytes
+    }
+
+    /**
+     * Test the property 'totalOrgRoutingDroppedGb'
+     */
+    @Test
+    public void totalOrgRoutingDroppedGbTest() {
+        // TODO: test totalOrgRoutingDroppedGb
+    }
+
 }

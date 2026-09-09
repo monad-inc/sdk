@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **TotalOrgIngestGb** | Pointer to **float32** |  | [optional] 
 **TotalOrgOutputStorageBytes** | Pointer to **int32** |  | [optional] 
 **TotalOrgOutputStorageGb** | Pointer to **float32** |  | [optional] 
+**TotalOrgRoutingDroppedBytes** | Pointer to **int32** | Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output&#39;s baseline and reported here on their own, where a misrouted pipeline shows up. | [optional] 
+**TotalOrgRoutingDroppedGb** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -179,6 +181,56 @@ SetTotalOrgOutputStorageGb sets TotalOrgOutputStorageGb field to given value.
 `func (o *ModelsStorageTypeCostSummary) HasTotalOrgOutputStorageGb() bool`
 
 HasTotalOrgOutputStorageGb returns a boolean if a field has been set.
+
+### GetTotalOrgRoutingDroppedBytes
+
+`func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedBytes() int32`
+
+GetTotalOrgRoutingDroppedBytes returns the TotalOrgRoutingDroppedBytes field if non-nil, zero value otherwise.
+
+### GetTotalOrgRoutingDroppedBytesOk
+
+`func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedBytesOk() (*int32, bool)`
+
+GetTotalOrgRoutingDroppedBytesOk returns a tuple with the TotalOrgRoutingDroppedBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalOrgRoutingDroppedBytes
+
+`func (o *ModelsStorageTypeCostSummary) SetTotalOrgRoutingDroppedBytes(v int32)`
+
+SetTotalOrgRoutingDroppedBytes sets TotalOrgRoutingDroppedBytes field to given value.
+
+### HasTotalOrgRoutingDroppedBytes
+
+`func (o *ModelsStorageTypeCostSummary) HasTotalOrgRoutingDroppedBytes() bool`
+
+HasTotalOrgRoutingDroppedBytes returns a boolean if a field has been set.
+
+### GetTotalOrgRoutingDroppedGb
+
+`func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedGb() float32`
+
+GetTotalOrgRoutingDroppedGb returns the TotalOrgRoutingDroppedGb field if non-nil, zero value otherwise.
+
+### GetTotalOrgRoutingDroppedGbOk
+
+`func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedGbOk() (*float32, bool)`
+
+GetTotalOrgRoutingDroppedGbOk returns a tuple with the TotalOrgRoutingDroppedGb field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalOrgRoutingDroppedGb
+
+`func (o *ModelsStorageTypeCostSummary) SetTotalOrgRoutingDroppedGb(v float32)`
+
+SetTotalOrgRoutingDroppedGb sets TotalOrgRoutingDroppedGb field to given value.
+
+### HasTotalOrgRoutingDroppedGb
+
+`func (o *ModelsStorageTypeCostSummary) HasTotalOrgRoutingDroppedGb() bool`
+
+HasTotalOrgRoutingDroppedGb returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

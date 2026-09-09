@@ -41,7 +41,9 @@ class TestModelsStorageTypeCostSummary(unittest.TestCase):
                 total_org_ingest_bytes = 56,
                 total_org_ingest_gb = 1.337,
                 total_org_output_storage_bytes = 56,
-                total_org_output_storage_gb = 1.337
+                total_org_output_storage_gb = 1.337,
+                total_org_routing_dropped_bytes = 56,
+                total_org_routing_dropped_gb = 1.337
             )
         else:
             return ModelsStorageTypeCostSummary(

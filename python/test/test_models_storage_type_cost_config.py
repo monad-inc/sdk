@@ -40,6 +40,8 @@ class TestModelsStorageTypeCostConfig(unittest.TestCase):
                     monad.models.models/storage_type_cost_entry.models.StorageTypeCostEntry(
                         cost_per_gb = 1.337, 
                         id = '', 
+                        output_id = '', 
+                        output_name = '', 
                         storage_type = '', )
                     ],
                 organization_id = ''

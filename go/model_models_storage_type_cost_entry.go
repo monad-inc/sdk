@@ -22,6 +22,8 @@ var _ MappedNullable = &ModelsStorageTypeCostEntry{}
 type ModelsStorageTypeCostEntry struct {
 	CostPerGb *float32 `json:"cost_per_gb,omitempty"`
 	Id *string `json:"id,omitempty"`
+	OutputId *string `json:"output_id,omitempty"`
+	OutputName *string `json:"output_name,omitempty"`
 	StorageType *string `json:"storage_type,omitempty"`
 }
 
@@ -106,6 +108,70 @@ func (o *ModelsStorageTypeCostEntry) SetId(v string) {
 	o.Id = &v
 }
 
+// GetOutputId returns the OutputId field value if set, zero value otherwise.
+func (o *ModelsStorageTypeCostEntry) GetOutputId() string {
+	if o == nil || IsNil(o.OutputId) {
+		var ret string
+		return ret
+	}
+	return *o.OutputId
+}
+
+// GetOutputIdOk returns a tuple with the OutputId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsStorageTypeCostEntry) GetOutputIdOk() (*string, bool) {
+	if o == nil || IsNil(o.OutputId) {
+		return nil, false
+	}
+	return o.OutputId, true
+}
+
+// HasOutputId returns a boolean if a field has been set.
+func (o *ModelsStorageTypeCostEntry) HasOutputId() bool {
+	if o != nil && !IsNil(o.OutputId) {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputId gets a reference to the given string and assigns it to the OutputId field.
+func (o *ModelsStorageTypeCostEntry) SetOutputId(v string) {
+	o.OutputId = &v
+}
+
+// GetOutputName returns the OutputName field value if set, zero value otherwise.
+func (o *ModelsStorageTypeCostEntry) GetOutputName() string {
+	if o == nil || IsNil(o.OutputName) {
+		var ret string
+		return ret
+	}
+	return *o.OutputName
+}
+
+// GetOutputNameOk returns a tuple with the OutputName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsStorageTypeCostEntry) GetOutputNameOk() (*string, bool) {
+	if o == nil || IsNil(o.OutputName) {
+		return nil, false
+	}
+	return o.OutputName, true
+}
+
+// HasOutputName returns a boolean if a field has been set.
+func (o *ModelsStorageTypeCostEntry) HasOutputName() bool {
+	if o != nil && !IsNil(o.OutputName) {
+		return true
+	}
+
+	return false
+}
+
+// SetOutputName gets a reference to the given string and assigns it to the OutputName field.
+func (o *ModelsStorageTypeCostEntry) SetOutputName(v string) {
+	o.OutputName = &v
+}
+
 // GetStorageType returns the StorageType field value if set, zero value otherwise.
 func (o *ModelsStorageTypeCostEntry) GetStorageType() string {
 	if o == nil || IsNil(o.StorageType) {
@@ -153,6 +219,12 @@ func (o ModelsStorageTypeCostEntry) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.OutputId) {
+		toSerialize["output_id"] = o.OutputId
+	}
+	if !IsNil(o.OutputName) {
+		toSerialize["output_name"] = o.OutputName
 	}
 	if !IsNil(o.StorageType) {
 		toSerialize["storage_type"] = o.StorageType

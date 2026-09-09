@@ -26,6 +26,9 @@ type ModelsStorageTypeCostSummary struct {
 	TotalOrgIngestGb *float32 `json:"total_org_ingest_gb,omitempty"`
 	TotalOrgOutputStorageBytes *int32 `json:"total_org_output_storage_bytes,omitempty"`
 	TotalOrgOutputStorageGb *float32 `json:"total_org_output_storage_gb,omitempty"`
+	// Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output's baseline and reported here on their own, where a misrouted pipeline shows up.
+	TotalOrgRoutingDroppedBytes *int32 `json:"total_org_routing_dropped_bytes,omitempty"`
+	TotalOrgRoutingDroppedGb *float32 `json:"total_org_routing_dropped_gb,omitempty"`
 }
 
 // NewModelsStorageTypeCostSummary instantiates a new ModelsStorageTypeCostSummary object
@@ -237,6 +240,70 @@ func (o *ModelsStorageTypeCostSummary) SetTotalOrgOutputStorageGb(v float32) {
 	o.TotalOrgOutputStorageGb = &v
 }
 
+// GetTotalOrgRoutingDroppedBytes returns the TotalOrgRoutingDroppedBytes field value if set, zero value otherwise.
+func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedBytes() int32 {
+	if o == nil || IsNil(o.TotalOrgRoutingDroppedBytes) {
+		var ret int32
+		return ret
+	}
+	return *o.TotalOrgRoutingDroppedBytes
+}
+
+// GetTotalOrgRoutingDroppedBytesOk returns a tuple with the TotalOrgRoutingDroppedBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedBytesOk() (*int32, bool) {
+	if o == nil || IsNil(o.TotalOrgRoutingDroppedBytes) {
+		return nil, false
+	}
+	return o.TotalOrgRoutingDroppedBytes, true
+}
+
+// HasTotalOrgRoutingDroppedBytes returns a boolean if a field has been set.
+func (o *ModelsStorageTypeCostSummary) HasTotalOrgRoutingDroppedBytes() bool {
+	if o != nil && !IsNil(o.TotalOrgRoutingDroppedBytes) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalOrgRoutingDroppedBytes gets a reference to the given int32 and assigns it to the TotalOrgRoutingDroppedBytes field.
+func (o *ModelsStorageTypeCostSummary) SetTotalOrgRoutingDroppedBytes(v int32) {
+	o.TotalOrgRoutingDroppedBytes = &v
+}
+
+// GetTotalOrgRoutingDroppedGb returns the TotalOrgRoutingDroppedGb field value if set, zero value otherwise.
+func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedGb() float32 {
+	if o == nil || IsNil(o.TotalOrgRoutingDroppedGb) {
+		var ret float32
+		return ret
+	}
+	return *o.TotalOrgRoutingDroppedGb
+}
+
+// GetTotalOrgRoutingDroppedGbOk returns a tuple with the TotalOrgRoutingDroppedGb field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsStorageTypeCostSummary) GetTotalOrgRoutingDroppedGbOk() (*float32, bool) {
+	if o == nil || IsNil(o.TotalOrgRoutingDroppedGb) {
+		return nil, false
+	}
+	return o.TotalOrgRoutingDroppedGb, true
+}
+
+// HasTotalOrgRoutingDroppedGb returns a boolean if a field has been set.
+func (o *ModelsStorageTypeCostSummary) HasTotalOrgRoutingDroppedGb() bool {
+	if o != nil && !IsNil(o.TotalOrgRoutingDroppedGb) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalOrgRoutingDroppedGb gets a reference to the given float32 and assigns it to the TotalOrgRoutingDroppedGb field.
+func (o *ModelsStorageTypeCostSummary) SetTotalOrgRoutingDroppedGb(v float32) {
+	o.TotalOrgRoutingDroppedGb = &v
+}
+
 func (o ModelsStorageTypeCostSummary) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -264,6 +331,12 @@ func (o ModelsStorageTypeCostSummary) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TotalOrgOutputStorageGb) {
 		toSerialize["total_org_output_storage_gb"] = o.TotalOrgOutputStorageGb
+	}
+	if !IsNil(o.TotalOrgRoutingDroppedBytes) {
+		toSerialize["total_org_routing_dropped_bytes"] = o.TotalOrgRoutingDroppedBytes
+	}
+	if !IsNil(o.TotalOrgRoutingDroppedGb) {
+		toSerialize["total_org_routing_dropped_gb"] = o.TotalOrgRoutingDroppedGb
 	}
 	return toSerialize, nil
 }

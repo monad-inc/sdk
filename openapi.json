@@ -3999,9 +3999,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -6715,6 +6715,12 @@
                     "id": {
                         "type": "string"
                     },
+                    "output_id": {
+                        "type": "string"
+                    },
+                    "output_name": {
+                        "type": "string"
+                    },
                     "storage_type": {
                         "type": "string"
                     }
@@ -6739,6 +6745,13 @@
                         "type": "integer"
                     },
                     "total_org_output_storage_gb": {
+                        "type": "number"
+                    },
+                    "total_org_routing_dropped_bytes": {
+                        "description": "Bytes that reached a routing fan-out and matched none of its edges. They were\ndropped silently — no output ever saw them — so they are counted in no output's\nbaseline and reported here on their own, where a misrouted pipeline shows up.",
+                        "type": "integer"
+                    },
+                    "total_org_routing_dropped_gb": {
                         "type": "number"
                     }
                 },

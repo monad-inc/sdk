@@ -61,6 +61,16 @@ public class ModelsStorageTypeCostEntry {
   @javax.annotation.Nullable
   private String id;
 
+  public static final String SERIALIZED_NAME_OUTPUT_ID = "output_id";
+  @SerializedName(SERIALIZED_NAME_OUTPUT_ID)
+  @javax.annotation.Nullable
+  private String outputId;
+
+  public static final String SERIALIZED_NAME_OUTPUT_NAME = "output_name";
+  @SerializedName(SERIALIZED_NAME_OUTPUT_NAME)
+  @javax.annotation.Nullable
+  private String outputName;
+
   public static final String SERIALIZED_NAME_STORAGE_TYPE = "storage_type";
   @SerializedName(SERIALIZED_NAME_STORAGE_TYPE)
   @javax.annotation.Nullable
@@ -107,6 +117,44 @@ public class ModelsStorageTypeCostEntry {
   }
 
 
+  public ModelsStorageTypeCostEntry outputId(@javax.annotation.Nullable String outputId) {
+    this.outputId = outputId;
+    return this;
+  }
+
+  /**
+   * Get outputId
+   * @return outputId
+   */
+  @javax.annotation.Nullable
+  public String getOutputId() {
+    return outputId;
+  }
+
+  public void setOutputId(@javax.annotation.Nullable String outputId) {
+    this.outputId = outputId;
+  }
+
+
+  public ModelsStorageTypeCostEntry outputName(@javax.annotation.Nullable String outputName) {
+    this.outputName = outputName;
+    return this;
+  }
+
+  /**
+   * Get outputName
+   * @return outputName
+   */
+  @javax.annotation.Nullable
+  public String getOutputName() {
+    return outputName;
+  }
+
+  public void setOutputName(@javax.annotation.Nullable String outputName) {
+    this.outputName = outputName;
+  }
+
+
   public ModelsStorageTypeCostEntry storageType(@javax.annotation.Nullable String storageType) {
     this.storageType = storageType;
     return this;
@@ -138,12 +186,14 @@ public class ModelsStorageTypeCostEntry {
     ModelsStorageTypeCostEntry modelsStorageTypeCostEntry = (ModelsStorageTypeCostEntry) o;
     return Objects.equals(this.costPerGb, modelsStorageTypeCostEntry.costPerGb) &&
         Objects.equals(this.id, modelsStorageTypeCostEntry.id) &&
+        Objects.equals(this.outputId, modelsStorageTypeCostEntry.outputId) &&
+        Objects.equals(this.outputName, modelsStorageTypeCostEntry.outputName) &&
         Objects.equals(this.storageType, modelsStorageTypeCostEntry.storageType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(costPerGb, id, storageType);
+    return Objects.hash(costPerGb, id, outputId, outputName, storageType);
   }
 
   @Override
@@ -152,6 +202,8 @@ public class ModelsStorageTypeCostEntry {
     sb.append("class ModelsStorageTypeCostEntry {\n");
     sb.append("    costPerGb: ").append(toIndentedString(costPerGb)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    outputId: ").append(toIndentedString(outputId)).append("\n");
+    sb.append("    outputName: ").append(toIndentedString(outputName)).append("\n");
     sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -171,7 +223,7 @@ public class ModelsStorageTypeCostEntry {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cost_per_gb", "id", "storage_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("cost_per_gb", "id", "output_id", "output_name", "storage_type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -200,6 +252,12 @@ public class ModelsStorageTypeCostEntry {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
+      if ((jsonObj.get("output_id") != null && !jsonObj.get("output_id").isJsonNull()) && !jsonObj.get("output_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_id").toString()));
+      }
+      if ((jsonObj.get("output_name") != null && !jsonObj.get("output_name").isJsonNull()) && !jsonObj.get("output_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `output_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output_name").toString()));
       }
       if ((jsonObj.get("storage_type") != null && !jsonObj.get("storage_type").isJsonNull()) && !jsonObj.get("storage_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `storage_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("storage_type").toString()));

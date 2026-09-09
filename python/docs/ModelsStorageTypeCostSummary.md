@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **total_org_ingest_gb** | **float** |  | [optional] 
 **total_org_output_storage_bytes** | **int** |  | [optional] 
 **total_org_output_storage_gb** | **float** |  | [optional] 
+**total_org_routing_dropped_bytes** | **int** | Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output&#39;s baseline and reported here on their own, where a misrouted pipeline shows up. | [optional] 
+**total_org_routing_dropped_gb** | **float** |  | [optional] 
 
 ## Example
 

@@ -81,6 +81,16 @@ public class ModelsStorageTypeCostSummary {
   @javax.annotation.Nullable
   private BigDecimal totalOrgOutputStorageGb;
 
+  public static final String SERIALIZED_NAME_TOTAL_ORG_ROUTING_DROPPED_BYTES = "total_org_routing_dropped_bytes";
+  @SerializedName(SERIALIZED_NAME_TOTAL_ORG_ROUTING_DROPPED_BYTES)
+  @javax.annotation.Nullable
+  private Integer totalOrgRoutingDroppedBytes;
+
+  public static final String SERIALIZED_NAME_TOTAL_ORG_ROUTING_DROPPED_GB = "total_org_routing_dropped_gb";
+  @SerializedName(SERIALIZED_NAME_TOTAL_ORG_ROUTING_DROPPED_GB)
+  @javax.annotation.Nullable
+  private BigDecimal totalOrgRoutingDroppedGb;
+
   public ModelsStorageTypeCostSummary() {
   }
 
@@ -198,6 +208,44 @@ public class ModelsStorageTypeCostSummary {
   }
 
 
+  public ModelsStorageTypeCostSummary totalOrgRoutingDroppedBytes(@javax.annotation.Nullable Integer totalOrgRoutingDroppedBytes) {
+    this.totalOrgRoutingDroppedBytes = totalOrgRoutingDroppedBytes;
+    return this;
+  }
+
+  /**
+   * Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output&#39;s baseline and reported here on their own, where a misrouted pipeline shows up.
+   * @return totalOrgRoutingDroppedBytes
+   */
+  @javax.annotation.Nullable
+  public Integer getTotalOrgRoutingDroppedBytes() {
+    return totalOrgRoutingDroppedBytes;
+  }
+
+  public void setTotalOrgRoutingDroppedBytes(@javax.annotation.Nullable Integer totalOrgRoutingDroppedBytes) {
+    this.totalOrgRoutingDroppedBytes = totalOrgRoutingDroppedBytes;
+  }
+
+
+  public ModelsStorageTypeCostSummary totalOrgRoutingDroppedGb(@javax.annotation.Nullable BigDecimal totalOrgRoutingDroppedGb) {
+    this.totalOrgRoutingDroppedGb = totalOrgRoutingDroppedGb;
+    return this;
+  }
+
+  /**
+   * Get totalOrgRoutingDroppedGb
+   * @return totalOrgRoutingDroppedGb
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getTotalOrgRoutingDroppedGb() {
+    return totalOrgRoutingDroppedGb;
+  }
+
+  public void setTotalOrgRoutingDroppedGb(@javax.annotation.Nullable BigDecimal totalOrgRoutingDroppedGb) {
+    this.totalOrgRoutingDroppedGb = totalOrgRoutingDroppedGb;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -213,12 +261,14 @@ public class ModelsStorageTypeCostSummary {
         Objects.equals(this.totalOrgIngestBytes, modelsStorageTypeCostSummary.totalOrgIngestBytes) &&
         Objects.equals(this.totalOrgIngestGb, modelsStorageTypeCostSummary.totalOrgIngestGb) &&
         Objects.equals(this.totalOrgOutputStorageBytes, modelsStorageTypeCostSummary.totalOrgOutputStorageBytes) &&
-        Objects.equals(this.totalOrgOutputStorageGb, modelsStorageTypeCostSummary.totalOrgOutputStorageGb);
+        Objects.equals(this.totalOrgOutputStorageGb, modelsStorageTypeCostSummary.totalOrgOutputStorageGb) &&
+        Objects.equals(this.totalOrgRoutingDroppedBytes, modelsStorageTypeCostSummary.totalOrgRoutingDroppedBytes) &&
+        Objects.equals(this.totalOrgRoutingDroppedGb, modelsStorageTypeCostSummary.totalOrgRoutingDroppedGb);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalOrgCostPostFilter, totalOrgCostPreFilter, totalOrgIngestBytes, totalOrgIngestGb, totalOrgOutputStorageBytes, totalOrgOutputStorageGb);
+    return Objects.hash(totalOrgCostPostFilter, totalOrgCostPreFilter, totalOrgIngestBytes, totalOrgIngestGb, totalOrgOutputStorageBytes, totalOrgOutputStorageGb, totalOrgRoutingDroppedBytes, totalOrgRoutingDroppedGb);
   }
 
   @Override
@@ -231,6 +281,8 @@ public class ModelsStorageTypeCostSummary {
     sb.append("    totalOrgIngestGb: ").append(toIndentedString(totalOrgIngestGb)).append("\n");
     sb.append("    totalOrgOutputStorageBytes: ").append(toIndentedString(totalOrgOutputStorageBytes)).append("\n");
     sb.append("    totalOrgOutputStorageGb: ").append(toIndentedString(totalOrgOutputStorageGb)).append("\n");
+    sb.append("    totalOrgRoutingDroppedBytes: ").append(toIndentedString(totalOrgRoutingDroppedBytes)).append("\n");
+    sb.append("    totalOrgRoutingDroppedGb: ").append(toIndentedString(totalOrgRoutingDroppedGb)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -249,7 +301,7 @@ public class ModelsStorageTypeCostSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb"));
+    openapiFields = new HashSet<String>(Arrays.asList("total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb", "total_org_routing_dropped_bytes", "total_org_routing_dropped_gb"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

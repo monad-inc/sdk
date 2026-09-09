@@ -30,8 +30,10 @@ class ModelsStorageTypeCostEntry(BaseModel):
     """ # noqa: E501
     cost_per_gb: Optional[Union[StrictFloat, StrictInt]] = None
     id: Optional[StrictStr] = None
+    output_id: Optional[StrictStr] = None
+    output_name: Optional[StrictStr] = None
     storage_type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cost_per_gb", "id", "storage_type"]
+    __properties: ClassVar[List[str]] = ["cost_per_gb", "id", "output_id", "output_name", "storage_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -86,6 +88,8 @@ class ModelsStorageTypeCostEntry(BaseModel):
         _obj = cls.model_validate({
             "cost_per_gb": obj.get("cost_per_gb"),
             "id": obj.get("id"),
+            "output_id": obj.get("output_id"),
+            "output_name": obj.get("output_name"),
             "storage_type": obj.get("storage_type")
         })
         return _obj

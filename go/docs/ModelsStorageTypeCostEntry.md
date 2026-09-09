@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CostPerGb** | Pointer to **float32** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**OutputId** | Pointer to **string** |  | [optional] 
+**OutputName** | Pointer to **string** |  | [optional] 
 **StorageType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -76,6 +78,56 @@ SetId sets Id field to given value.
 `func (o *ModelsStorageTypeCostEntry) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetOutputId
+
+`func (o *ModelsStorageTypeCostEntry) GetOutputId() string`
+
+GetOutputId returns the OutputId field if non-nil, zero value otherwise.
+
+### GetOutputIdOk
+
+`func (o *ModelsStorageTypeCostEntry) GetOutputIdOk() (*string, bool)`
+
+GetOutputIdOk returns a tuple with the OutputId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputId
+
+`func (o *ModelsStorageTypeCostEntry) SetOutputId(v string)`
+
+SetOutputId sets OutputId field to given value.
+
+### HasOutputId
+
+`func (o *ModelsStorageTypeCostEntry) HasOutputId() bool`
+
+HasOutputId returns a boolean if a field has been set.
+
+### GetOutputName
+
+`func (o *ModelsStorageTypeCostEntry) GetOutputName() string`
+
+GetOutputName returns the OutputName field if non-nil, zero value otherwise.
+
+### GetOutputNameOk
+
+`func (o *ModelsStorageTypeCostEntry) GetOutputNameOk() (*string, bool)`
+
+GetOutputNameOk returns a tuple with the OutputName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputName
+
+`func (o *ModelsStorageTypeCostEntry) SetOutputName(v string)`
+
+SetOutputName sets OutputName field to given value.
+
+### HasOutputName
+
+`func (o *ModelsStorageTypeCostEntry) HasOutputName() bool`
+
+HasOutputName returns a boolean if a field has been set.
 
 ### GetStorageType
 

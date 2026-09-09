@@ -19,6 +19,11 @@ export class ModelsStorageTypeCostSummary {
     'totalOrgIngestGb'?: number;
     'totalOrgOutputStorageBytes'?: number;
     'totalOrgOutputStorageGb'?: number;
+    /**
+    * Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output\'s baseline and reported here on their own, where a misrouted pipeline shows up.
+    */
+    'totalOrgRoutingDroppedBytes'?: number;
+    'totalOrgRoutingDroppedGb'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -58,6 +63,18 @@ export class ModelsStorageTypeCostSummary {
         {
             "name": "totalOrgOutputStorageGb",
             "baseName": "total_org_output_storage_gb",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "totalOrgRoutingDroppedBytes",
+            "baseName": "total_org_routing_dropped_bytes",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "totalOrgRoutingDroppedGb",
+            "baseName": "total_org_routing_dropped_gb",
             "type": "number",
             "format": ""
         }    ];

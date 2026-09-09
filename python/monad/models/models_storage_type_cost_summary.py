@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,7 +34,9 @@ class ModelsStorageTypeCostSummary(BaseModel):
     total_org_ingest_gb: Optional[Union[StrictFloat, StrictInt]] = None
     total_org_output_storage_bytes: Optional[StrictInt] = None
     total_org_output_storage_gb: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb"]
+    total_org_routing_dropped_bytes: Optional[StrictInt] = Field(default=None, description="Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output's baseline and reported here on their own, where a misrouted pipeline shows up.")
+    total_org_routing_dropped_gb: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb", "total_org_routing_dropped_bytes", "total_org_routing_dropped_gb"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -92,7 +94,9 @@ class ModelsStorageTypeCostSummary(BaseModel):
             "total_org_ingest_bytes": obj.get("total_org_ingest_bytes"),
             "total_org_ingest_gb": obj.get("total_org_ingest_gb"),
             "total_org_output_storage_bytes": obj.get("total_org_output_storage_bytes"),
-            "total_org_output_storage_gb": obj.get("total_org_output_storage_gb")
+            "total_org_output_storage_gb": obj.get("total_org_output_storage_gb"),
+            "total_org_routing_dropped_bytes": obj.get("total_org_routing_dropped_bytes"),
+            "total_org_routing_dropped_gb": obj.get("total_org_routing_dropped_gb")
         })
         return _obj
 

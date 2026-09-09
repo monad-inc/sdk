@@ -38,6 +38,8 @@ class TestModelsStorageTypeCostEntry(unittest.TestCase):
             return ModelsStorageTypeCostEntry(
                 cost_per_gb = 1.337,
                 id = '',
+                output_id = '',
+                output_name = '',
                 storage_type = ''
             )
         else:

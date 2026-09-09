@@ -55,6 +55,22 @@ public class ModelsStorageTypeCostEntryTest {
     }
 
     /**
+     * Test the property 'outputId'
+     */
+    @Test
+    public void outputIdTest() {
+        // TODO: test outputId
+    }
+
+    /**
+     * Test the property 'outputName'
+     */
+    @Test
+    public void outputNameTest() {
+        // TODO: test outputName
+    }
+
+    /**
      * Test the property 'storageType'
      */
     @Test

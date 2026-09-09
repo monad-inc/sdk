@@ -15,6 +15,8 @@ import { HttpFile } from '../http/http';
 export class ModelsStorageTypeCostEntry {
     'costPerGb'?: number;
     'id'?: string;
+    'outputId'?: string;
+    'outputName'?: string;
     'storageType'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -31,6 +33,18 @@ export class ModelsStorageTypeCostEntry {
         {
             "name": "id",
             "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "outputId",
+            "baseName": "output_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "outputName",
+            "baseName": "output_name",
             "type": "string",
             "format": ""
         },
