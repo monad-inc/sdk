@@ -35,7 +35,7 @@ class ElasticsearchSettingsConfig(BaseModel):
     cloud_id: Optional[StrictStr] = None
     connection_config: Optional[ElasticsearchConnectionConfig] = None
     connection_type: Optional[StrictStr] = None
-    index: StrictStr = Field(description="The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.")
+    index: StrictStr = Field(description="The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically. Supports date templating, e.g. \"index-test-{yyyy}-{mm}-{dd}\". Tokens are resolved against the current UTC time at write time. Supported tokens: {yyyy}, {yy}, {mm}, {dd}, {hh}, {mi}, {ss}.")
     insecure_skip_verify: Optional[StrictBool] = Field(default=None, description="If set to true, it skips verification of the server's TLS certificate. This is insecure and should only be used for testing purposes.")
     url: Optional[StrictStr] = None
     username: StrictStr = Field(description="Username for authenticating with the Elasticsearch cluster.")

@@ -2617,7 +2617,7 @@
                         "type": "string"
                     },
                     "index": {
-                        "description": "The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.",
+                        "description": "The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.\nSupports date templating, e.g. \"index-test-{yyyy}-{mm}-{dd}\".\nTokens are resolved against the current UTC time at write time. Supported tokens: {yyyy}, {yy}, {mm}, {dd}, {hh}, {mi}, {ss}.",
                         "type": "string"
                     },
                     "insecure_skip_verify": {

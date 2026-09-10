@@ -28,7 +28,7 @@ type ElasticsearchSettingsConfig struct {
 	CloudId *string `json:"cloud_id,omitempty"`
 	ConnectionConfig *ElasticsearchConnectionConfig `json:"connection_config,omitempty"`
 	ConnectionType *string `json:"connection_type,omitempty"`
-	// The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically.
+	// The name of the Elasticsearch index to write data to. If the index doesn't exist, it will be created automatically. Supports date templating, e.g. \"index-test-{yyyy}-{mm}-{dd}\". Tokens are resolved against the current UTC time at write time. Supported tokens: {yyyy}, {yy}, {mm}, {dd}, {hh}, {mi}, {ss}.
 	Index string `json:"index"`
 	// If set to true, it skips verification of the server's TLS certificate. This is insecure and should only be used for testing purposes.
 	InsecureSkipVerify *bool `json:"insecure_skip_verify,omitempty"`

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **cloud_id** | **str** |  | [optional] 
 **connection_config** | [**ElasticsearchConnectionConfig**](ElasticsearchConnectionConfig.md) |  | [optional] 
 **connection_type** | **str** |  | [optional] 
-**index** | **str** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. | 
+**index** | **str** | The name of the Elasticsearch index to write data to. If the index doesn&#39;t exist, it will be created automatically. Supports date templating, e.g. \&quot;index-test-{yyyy}-{mm}-{dd}\&quot;. Tokens are resolved against the current UTC time at write time. Supported tokens: {yyyy}, {yy}, {mm}, {dd}, {hh}, {mi}, {ss}. | 
 **insecure_skip_verify** | **bool** | If set to true, it skips verification of the server&#39;s TLS certificate. This is insecure and should only be used for testing purposes. | [optional] 
 **url** | **str** |  | [optional] 
 **username** | **str** | Username for authenticating with the Elasticsearch cluster. | 
