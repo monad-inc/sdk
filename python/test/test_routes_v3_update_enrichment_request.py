@@ -44,8 +44,7 @@ class TestRoutesV3UpdateEnrichmentRequest(unittest.TestCase):
                         'key' : null
                         }, ),
                 description = '',
-                name = '',
-                type = ''
+                name = ''
             )
         else:
             return RoutesV3UpdateEnrichmentRequest(

@@ -17,7 +17,6 @@ export class RoutesV2UpdateInputRequest {
     'config'?: SecretProcessesorInputConfig;
     'description'?: string;
     'name'?: string;
-    'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -39,12 +38,6 @@ export class RoutesV2UpdateInputRequest {
         {
             "name": "name",
             "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
             "type": "string",
             "format": ""
         }    ];

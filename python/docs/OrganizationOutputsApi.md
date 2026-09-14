@@ -748,7 +748,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Output updated successfully |  -  |
-**400** | Invalid request body, output type, configuration validation error, or secret processing error |  -  |
+**400** | Invalid request body, configuration validation error, or secret processing error |  -  |
 **404** | Output not found |  -  |
 **500** | Internal server error |  -  |
 

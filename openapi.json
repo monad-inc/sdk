@@ -9381,9 +9381,6 @@
                     },
                     "name": {
                         "type": "string"
-                    },
-                    "type": {
-                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -9397,9 +9394,6 @@
                         "type": "string"
                     },
                     "name": {
-                        "type": "string"
-                    },
-                    "type": {
                         "type": "string"
                     }
                 },
@@ -10384,9 +10378,6 @@
                         "type": "string"
                     },
                     "name": {
-                        "type": "string"
-                    },
-                    "type": {
                         "type": "string"
                     }
                 },
@@ -18267,7 +18258,7 @@
                                 }
                             }
                         },
-                        "description": "Invalid request body, input type, configuration validation error, or secret processing error"
+                        "description": "Invalid request body, configuration validation error, or secret processing error"
                     },
                     "404": {
                         "content": {
@@ -19835,7 +19826,7 @@
                                 }
                             }
                         },
-                        "description": "Invalid request body, output type, configuration validation error, or secret processing error"
+                        "description": "Invalid request body, configuration validation error, or secret processing error"
                     },
                     "404": {
                         "content": {
@@ -25094,7 +25085,7 @@
                                 }
                             }
                         },
-                        "description": "Invalid request body, enrichment type, configuration validation error, or secret processing error"
+                        "description": "Invalid request body, configuration validation error, or secret processing error"
                     },
                     "404": {
                         "content": {

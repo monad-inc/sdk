@@ -62,12 +62,4 @@ public class RoutesV3UpdateEnrichmentRequestTest {
         // TODO: test name
     }
 
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
-    }
-
 }

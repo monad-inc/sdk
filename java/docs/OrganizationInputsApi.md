@@ -656,7 +656,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Input updated successfully |  -  |
-| **400** | Invalid request body, input type, configuration validation error, or secret processing error |  -  |
+| **400** | Invalid request body, configuration validation error, or secret processing error |  -  |
 | **404** | Input not found |  -  |
 | **500** | Internal server error |  -  |
 

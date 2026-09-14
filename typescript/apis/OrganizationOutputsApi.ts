@@ -860,7 +860,7 @@ export class OrganizationOutputsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, output type, configuration validation error, or secret processing error", body, response.headers);
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body, configuration validation error, or secret processing error", body, response.headers);
         }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

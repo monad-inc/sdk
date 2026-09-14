@@ -576,7 +576,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Enrichment updated successfully |  -  |
-| **400** | Invalid request body, enrichment type, configuration validation error, or secret processing error |  -  |
+| **400** | Invalid request body, configuration validation error, or secret processing error |  -  |
 | **404** | Enrichment not found |  -  |
 | **500** | Internal server error |  -  |
 

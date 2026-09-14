@@ -32,8 +32,7 @@ class RoutesV3UpdateEnrichmentRequest(BaseModel):
     config: Optional[SecretProcessesorEnrichmentConfig] = None
     description: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["config", "description", "name", "type"]
+    __properties: ClassVar[List[str]] = ["config", "description", "name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -91,8 +90,7 @@ class RoutesV3UpdateEnrichmentRequest(BaseModel):
         _obj = cls.model_validate({
             "config": SecretProcessesorEnrichmentConfig.from_dict(obj["config"]) if obj.get("config") is not None else None,
             "description": obj.get("description"),
-            "name": obj.get("name"),
-            "type": obj.get("type")
+            "name": obj.get("name")
         })
         return _obj
 

@@ -66,11 +66,6 @@ public class RoutesV2UpdateInputRequest {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private String type;
-
   public RoutesV2UpdateInputRequest() {
   }
 
@@ -131,25 +126,6 @@ public class RoutesV2UpdateInputRequest {
   }
 
 
-  public RoutesV2UpdateInputRequest type(@javax.annotation.Nullable String type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public String getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable String type) {
-    this.type = type;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -162,13 +138,12 @@ public class RoutesV2UpdateInputRequest {
     RoutesV2UpdateInputRequest routesV2UpdateInputRequest = (RoutesV2UpdateInputRequest) o;
     return Objects.equals(this.config, routesV2UpdateInputRequest.config) &&
         Objects.equals(this.description, routesV2UpdateInputRequest.description) &&
-        Objects.equals(this.name, routesV2UpdateInputRequest.name) &&
-        Objects.equals(this.type, routesV2UpdateInputRequest.type);
+        Objects.equals(this.name, routesV2UpdateInputRequest.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, description, name, type);
+    return Objects.hash(config, description, name);
   }
 
   @Override
@@ -178,7 +153,6 @@ public class RoutesV2UpdateInputRequest {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -197,7 +171,7 @@ public class RoutesV2UpdateInputRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("config", "description", "name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -233,9 +207,6 @@ public class RoutesV2UpdateInputRequest {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 

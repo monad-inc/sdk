@@ -44,8 +44,7 @@ class TestRoutesV2UpdateInputRequest(unittest.TestCase):
                         'key' : null
                         }, ),
                 description = '',
-                name = '',
-                type = ''
+                name = ''
             )
         else:
             return RoutesV2UpdateInputRequest(

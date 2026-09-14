@@ -23,7 +23,6 @@ type RoutesV2UpdateOutputRequest struct {
 	Config *SecretProcessesorOutputConfig `json:"config,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // NewRoutesV2UpdateOutputRequest instantiates a new RoutesV2UpdateOutputRequest object
@@ -139,38 +138,6 @@ func (o *RoutesV2UpdateOutputRequest) SetName(v string) {
 	o.Name = &v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *RoutesV2UpdateOutputRequest) GetType() string {
-	if o == nil || IsNil(o.Type) {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoutesV2UpdateOutputRequest) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *RoutesV2UpdateOutputRequest) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *RoutesV2UpdateOutputRequest) SetType(v string) {
-	o.Type = &v
-}
-
 func (o RoutesV2UpdateOutputRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -189,9 +156,6 @@ func (o RoutesV2UpdateOutputRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
 	}
 	return toSerialize, nil
 }

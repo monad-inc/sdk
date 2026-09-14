@@ -10,7 +10,6 @@
 |**config** | [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**type** | **String** |  |  [optional] |
 
 
 

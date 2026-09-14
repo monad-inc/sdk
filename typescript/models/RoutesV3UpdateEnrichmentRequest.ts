@@ -17,7 +17,6 @@ export class RoutesV3UpdateEnrichmentRequest {
     'config'?: SecretProcessesorEnrichmentConfig;
     'description'?: string;
     'name'?: string;
-    'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -39,12 +38,6 @@ export class RoutesV3UpdateEnrichmentRequest {
         {
             "name": "name",
             "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
             "type": "string",
             "format": ""
         }    ];

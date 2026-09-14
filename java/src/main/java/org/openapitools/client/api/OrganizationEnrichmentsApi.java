@@ -1000,7 +1000,7 @@ public class OrganizationEnrichmentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Enrichment updated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body, enrichment type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, configuration validation error, or secret processing error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Enrichment not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1091,7 +1091,7 @@ public class OrganizationEnrichmentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Enrichment updated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body, enrichment type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, configuration validation error, or secret processing error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Enrichment not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1115,7 +1115,7 @@ public class OrganizationEnrichmentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Enrichment updated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body, enrichment type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, configuration validation error, or secret processing error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Enrichment not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1141,7 +1141,7 @@ public class OrganizationEnrichmentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Enrichment updated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body, enrichment type, configuration validation error, or secret processing error </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid request body, configuration validation error, or secret processing error </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Enrichment not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>

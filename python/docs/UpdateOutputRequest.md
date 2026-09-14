@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **config** | [**SecretProcessesorOutputConfig**](SecretProcessesorOutputConfig.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
 
 ## Example
 

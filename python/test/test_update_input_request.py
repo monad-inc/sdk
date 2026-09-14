@@ -44,8 +44,7 @@ class TestUpdateInputRequest(unittest.TestCase):
                         'key' : null
                         }, ),
                 description = '',
-                name = '',
-                type = ''
+                name = ''
             )
         else:
             return UpdateInputRequest(

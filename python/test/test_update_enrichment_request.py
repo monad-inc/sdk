@@ -44,8 +44,7 @@ class TestUpdateEnrichmentRequest(unittest.TestCase):
                         'key' : null
                         }, ),
                 description = '',
-                name = '',
-                type = ''
+                name = ''
             )
         else:
             return UpdateEnrichmentRequest(
