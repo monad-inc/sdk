@@ -18,33 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_managed_by import ModelsManagedBy
-from monad.models.models_pipeline_status import ModelsPipelineStatus
-from monad.models.models_tag_summary import ModelsTagSummary
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ModelsPipeline(BaseModel):
+class ModelsTagSummary(BaseModel):
     """
-    ModelsPipeline
+    ModelsTagSummary
     """ # noqa: E501
-    component_tier: Optional[StrictInt] = None
-    created_at: Optional[StrictStr] = None
-    cron_schedule: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    enabled: Optional[StrictBool] = None
+    color: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    input_id: Optional[StrictStr] = None
-    managed_by: Optional[ModelsManagedBy] = None
     name: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    status: Optional[ModelsPipelineStatus] = None
-    tags: Optional[List[ModelsTagSummary]] = None
-    updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "status", "tags", "updated_at"]
+    __properties: ClassVar[List[str]] = ["color", "id", "name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -64,7 +51,7 @@ class ModelsPipeline(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ModelsPipeline from a JSON string"""
+        """Create an instance of ModelsTagSummary from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -85,21 +72,11 @@ class ModelsPipeline(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of status
-        if self.status:
-            _dict['status'] = self.status.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
-        _items = []
-        if self.tags:
-            for _item_tags in self.tags:
-                if _item_tags:
-                    _items.append(_item_tags.to_dict())
-            _dict['tags'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ModelsPipeline from a dict"""
+        """Create an instance of ModelsTagSummary from a dict"""
         if obj is None:
             return None
 
@@ -107,19 +84,9 @@ class ModelsPipeline(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "component_tier": obj.get("component_tier"),
-            "created_at": obj.get("created_at"),
-            "cron_schedule": obj.get("cron_schedule"),
-            "description": obj.get("description"),
-            "enabled": obj.get("enabled"),
+            "color": obj.get("color"),
             "id": obj.get("id"),
-            "input_id": obj.get("input_id"),
-            "managed_by": obj.get("managed_by"),
-            "name": obj.get("name"),
-            "organization_id": obj.get("organization_id"),
-            "status": ModelsPipelineStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
-            "tags": [ModelsTagSummary.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
-            "updated_at": obj.get("updated_at")
+            "name": obj.get("name")
         })
         return _obj
 

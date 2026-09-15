@@ -20,9 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipelineStatus;
+import org.openapitools.client.model.ModelsTagSummary;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -106,6 +109,11 @@ public class ModelsPipeline {
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
   private ModelsPipelineStatus status;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<ModelsTagSummary> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -324,6 +332,33 @@ public class ModelsPipeline {
   }
 
 
+  public ModelsPipeline tags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public ModelsPipeline addTagsItem(ModelsTagSummary tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<ModelsTagSummary> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+    this.tags = tags;
+  }
+
+
   public ModelsPipeline updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -364,12 +399,13 @@ public class ModelsPipeline {
         Objects.equals(this.name, modelsPipeline.name) &&
         Objects.equals(this.organizationId, modelsPipeline.organizationId) &&
         Objects.equals(this.status, modelsPipeline.status) &&
+        Objects.equals(this.tags, modelsPipeline.tags) &&
         Objects.equals(this.updatedAt, modelsPipeline.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(componentTier, createdAt, cronSchedule, description, enabled, id, inputId, managedBy, name, organizationId, status, updatedAt);
+    return Objects.hash(componentTier, createdAt, cronSchedule, description, enabled, id, inputId, managedBy, name, organizationId, status, tags, updatedAt);
   }
 
   @Override
@@ -387,6 +423,7 @@ public class ModelsPipeline {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -406,7 +443,7 @@ public class ModelsPipeline {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "status", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "status", "tags", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -461,6 +498,20 @@ public class ModelsPipeline {
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         ModelsPipelineStatus.validateJsonElement(jsonObj.get("status"));
+      }
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull()) {
+        JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
+        if (jsonArraytags != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("tags").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+          }
+
+          // validate the optional field `tags` (array)
+          for (int i = 0; i < jsonArraytags.size(); i++) {
+            ModelsTagSummary.validateJsonElement(jsonArraytags.get(i));
+          };
+        }
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));

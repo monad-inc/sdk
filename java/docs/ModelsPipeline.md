@@ -18,6 +18,7 @@
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  |  [optional] |
+|**tags** | [**List&lt;ModelsTagSummary&gt;**](ModelsTagSummary.md) |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

@@ -24,6 +24,7 @@
 |**organizationName** | **String** |  |  [optional] |
 |**retentionPolicy** | [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  |  [optional] |
 |**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  |  [optional] |
+|**tags** | [**List&lt;ModelsTagSummary&gt;**](ModelsTagSummary.md) | Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods. |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

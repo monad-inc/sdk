@@ -25,6 +25,7 @@ from monad.models.models_pipeline_edge import ModelsPipelineEdge
 from monad.models.models_pipeline_node import ModelsPipelineNode
 from monad.models.models_pipeline_retention_policy import ModelsPipelineRetentionPolicy
 from monad.models.models_pipeline_status import ModelsPipelineStatus
+from monad.models.models_tag_summary import ModelsTagSummary
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -50,8 +51,9 @@ class ModelsPipelineConfigV2(BaseModel):
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
     status: Optional[ModelsPipelineStatus] = None
+    tags: Optional[List[ModelsTagSummary]] = Field(default=None, description="Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.")
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "tags", "updatedAt"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -112,6 +114,13 @@ class ModelsPipelineConfigV2(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of status
         if self.status:
             _dict['status'] = self.status.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item_tags in self.tags:
+                if _item_tags:
+                    _items.append(_item_tags.to_dict())
+            _dict['tags'] = _items
         return _dict
 
     @classmethod
@@ -141,6 +150,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "organizationName": obj.get("organizationName"),
             "retention_policy": ModelsPipelineRetentionPolicy.from_dict(obj["retention_policy"]) if obj.get("retention_policy") is not None else None,
             "status": ModelsPipelineStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
+            "tags": [ModelsTagSummary.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "updatedAt": obj.get("updatedAt")
         })
         return _obj

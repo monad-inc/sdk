@@ -409,6 +409,7 @@ __all__ = [
     "ModelsStorageTypeTimeSeries",
     "ModelsStorageTypeTimeSeriesResponse",
     "ModelsSupportedFeatures",
+    "ModelsTagSummary",
     "ModelsTimeRange",
     "ModelsTransform",
     "ModelsTransformConfig",
@@ -1099,6 +1100,7 @@ from monad.models.models_storage_type_summary_response import ModelsStorageTypeS
 from monad.models.models_storage_type_time_series import ModelsStorageTypeTimeSeries as ModelsStorageTypeTimeSeries
 from monad.models.models_storage_type_time_series_response import ModelsStorageTypeTimeSeriesResponse as ModelsStorageTypeTimeSeriesResponse
 from monad.models.models_supported_features import ModelsSupportedFeatures as ModelsSupportedFeatures
+from monad.models.models_tag_summary import ModelsTagSummary as ModelsTagSummary
 from monad.models.models_time_range import ModelsTimeRange as ModelsTimeRange
 from monad.models.models_transform import ModelsTransform as ModelsTransform
 from monad.models.models_transform_config import ModelsTransformConfig as ModelsTransformConfig

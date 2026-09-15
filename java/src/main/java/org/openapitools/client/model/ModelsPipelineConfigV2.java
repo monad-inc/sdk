@@ -28,6 +28,7 @@ import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
 import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
 import org.openapitools.client.model.ModelsPipelineStatus;
+import org.openapitools.client.model.ModelsTagSummary;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -141,6 +142,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
   private ModelsPipelineStatus status;
+
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<ModelsTagSummary> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -489,6 +495,33 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 tags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public ModelsPipelineConfigV2 addTagsItem(ModelsTagSummary tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods.
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<ModelsTagSummary> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+    this.tags = tags;
+  }
+
+
   public ModelsPipelineConfigV2 updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -535,12 +568,13 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.organizationName, modelsPipelineConfigV2.organizationName) &&
         Objects.equals(this.retentionPolicy, modelsPipelineConfigV2.retentionPolicy) &&
         Objects.equals(this.status, modelsPipelineConfigV2.status) &&
+        Objects.equals(this.tags, modelsPipelineConfigV2.tags) &&
         Objects.equals(this.updatedAt, modelsPipelineConfigV2.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, status, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, status, tags, updatedAt);
   }
 
   @Override
@@ -564,6 +598,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -583,7 +618,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "tags", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -676,6 +711,20 @@ public class ModelsPipelineConfigV2 {
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         ModelsPipelineStatus.validateJsonElement(jsonObj.get("status"));
+      }
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull()) {
+        JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
+        if (jsonArraytags != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("tags").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+          }
+
+          // validate the optional field `tags` (array)
+          for (int i = 0; i < jsonArraytags.size(); i++) {
+            ModelsTagSummary.validateJsonElement(jsonArraytags.get(i));
+          };
+        }
       }
       if ((jsonObj.get("updatedAt") != null && !jsonObj.get("updatedAt").isJsonNull()) && !jsonObj.get("updatedAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedAt").toString()));

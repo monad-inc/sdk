@@ -10,25 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { ModelsManagedBy } from '../models/ModelsManagedBy';
-import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { ModelsTagSummary } from '../models/ModelsTagSummary';
 import { HttpFile } from '../http/http';
 
-export class ModelsPipeline {
-    'componentTier'?: number;
-    'createdAt'?: string;
-    'cronSchedule'?: string;
-    'description'?: string;
-    'enabled'?: boolean;
+export class ModelsTagSummary {
+    'color'?: string;
     'id'?: string;
-    'inputId'?: string;
-    'managedBy'?: ModelsManagedBy;
     'name'?: string;
-    'organizationId'?: string;
-    'status'?: ModelsPipelineStatus;
-    'tags'?: Array<ModelsTagSummary>;
-    'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -36,33 +23,9 @@ export class ModelsPipeline {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "componentTier",
-            "baseName": "component_tier",
-            "type": "number",
-            "format": ""
-        },
-        {
-            "name": "createdAt",
-            "baseName": "created_at",
+            "name": "color",
+            "baseName": "color",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "cronSchedule",
-            "baseName": "cron_schedule",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "description",
-            "baseName": "description",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "enabled",
-            "baseName": "enabled",
-            "type": "boolean",
             "format": ""
         },
         {
@@ -72,54 +35,16 @@ export class ModelsPipeline {
             "format": ""
         },
         {
-            "name": "inputId",
-            "baseName": "input_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "managedBy",
-            "baseName": "managed_by",
-            "type": "ModelsManagedBy",
-            "format": ""
-        },
-        {
             "name": "name",
             "baseName": "name",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "organizationId",
-            "baseName": "organization_id",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "status",
-            "baseName": "status",
-            "type": "ModelsPipelineStatus",
-            "format": ""
-        },
-        {
-            "name": "tags",
-            "baseName": "tags",
-            "type": "Array<ModelsTagSummary>",
-            "format": ""
-        },
-        {
-            "name": "updatedAt",
-            "baseName": "updated_at",
             "type": "string",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsPipeline.attributeTypeMap;
+        return ModelsTagSummary.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
-
-

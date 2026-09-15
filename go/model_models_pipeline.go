@@ -31,6 +31,7 @@ type ModelsPipeline struct {
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Status *ModelsPipelineStatus `json:"status,omitempty"`
+	Tags []ModelsTagSummary `json:"tags,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -403,6 +404,38 @@ func (o *ModelsPipeline) SetStatus(v ModelsPipelineStatus) {
 	o.Status = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ModelsPipeline) GetTags() []ModelsTagSummary {
+	if o == nil || IsNil(o.Tags) {
+		var ret []ModelsTagSummary
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipeline) GetTagsOk() ([]ModelsTagSummary, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ModelsPipeline) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []ModelsTagSummary and assigns it to the Tags field.
+func (o *ModelsPipeline) SetTags(v []ModelsTagSummary) {
+	o.Tags = v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsPipeline) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -477,6 +510,9 @@ func (o ModelsPipeline) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt

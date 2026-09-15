@@ -91,6 +91,12 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                             pipeline_name = '', 
                             progress = monad.models.models/progress_entries.models.ProgressEntries(), 
                             stream = , ), 
+                        tags = [
+                            monad.models.models/tag_summary.models.TagSummary(
+                                color = '', 
+                                id = '', 
+                                name = '', )
+                            ], 
                         updated_at = '', )
                     ],
                 config = monad.models.models/transform_config.models.TransformConfig(

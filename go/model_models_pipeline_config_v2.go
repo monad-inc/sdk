@@ -37,6 +37,8 @@ type ModelsPipelineConfigV2 struct {
 	OrganizationName *string `json:"organizationName,omitempty"`
 	RetentionPolicy *ModelsPipelineRetentionPolicy `json:"retention_policy,omitempty"`
 	Status *ModelsPipelineStatus `json:"status,omitempty"`
+	// Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.
+	Tags []ModelsTagSummary `json:"tags,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
@@ -601,6 +603,38 @@ func (o *ModelsPipelineConfigV2) SetStatus(v ModelsPipelineStatus) {
 	o.Status = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetTags() []ModelsTagSummary {
+	if o == nil || IsNil(o.Tags) {
+		var ret []ModelsTagSummary
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetTagsOk() ([]ModelsTagSummary, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []ModelsTagSummary and assigns it to the Tags field.
+func (o *ModelsPipelineConfigV2) SetTags(v []ModelsTagSummary) {
+	o.Tags = v
+}
+
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -693,6 +727,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updatedAt"] = o.UpdatedAt

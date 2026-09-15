@@ -4037,9 +4037,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -5767,6 +5767,13 @@
                     "status": {
                         "$ref": "#/components/schemas/models.PipelineStatus"
                     },
+                    "tags": {
+                        "items": {
+                            "$ref": "#/components/schemas/models.TagSummary"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
                     "updated_at": {
                         "type": "string"
                     }
@@ -5833,6 +5840,14 @@
                     },
                     "status": {
                         "$ref": "#/components/schemas/models.PipelineStatus"
+                    },
+                    "tags": {
+                        "description": "Tags is response-only (like NextCronRunAt): never set on the operator path,\nso omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.",
+                        "items": {
+                            "$ref": "#/components/schemas/models.TagSummary"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     },
                     "updatedAt": {
                         "type": "string"
@@ -6902,6 +6917,20 @@
                 "properties": {
                     "test_connection": {
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "models.TagSummary": {
+                "properties": {
+                    "color": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
                     }
                 },
                 "type": "object"

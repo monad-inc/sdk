@@ -192,6 +192,12 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                     progress = monad.models.models/progress_entries.models.ProgressEntries(), 
                     status = 'Unknown', 
                     stream = , ),
+                tags = [
+                    monad.models.models/tag_summary.models.TagSummary(
+                        color = '', 
+                        id = '', 
+                        name = '', )
+                    ],
                 updated_at = ''
             )
         else:
