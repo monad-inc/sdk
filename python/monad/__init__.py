@@ -201,6 +201,7 @@ __all__ = [
     "DatabricksLakehouseZeroBusWriteMode",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
+    "DedupArgumentsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
     "DefenderForEndpointAlertsSettingsConfig",
     "DelimitedDelimiterFormatter",
@@ -251,6 +252,7 @@ __all__ = [
     "GoogleCloudStorageSettingsConfig",
     "GoogleWorkspaceSecretsConfig",
     "GoogleWorkspaceSettingsConfig",
+    "HashArgumentsConfig",
     "HttpHeaders",
     "HttpPayloadStructure",
     "HttpSecretsConfig",
@@ -889,6 +891,7 @@ from monad.models.databricks_lakehouse_write_mode import DatabricksLakehouseWrit
 from monad.models.databricks_lakehouse_zero_bus_write_mode import DatabricksLakehouseZeroBusWriteMode as DatabricksLakehouseZeroBusWriteMode
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
+from monad.models.dedup_arguments_config import DedupArgumentsConfig as DedupArgumentsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig
 from monad.models.defender_for_endpoint_alerts_settings_config import DefenderForEndpointAlertsSettingsConfig as DefenderForEndpointAlertsSettingsConfig
 from monad.models.delimited_delimiter_formatter import DelimitedDelimiterFormatter as DelimitedDelimiterFormatter
@@ -939,6 +942,7 @@ from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageS
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig as GoogleCloudStorageSettingsConfig
 from monad.models.google_workspace_secrets_config import GoogleWorkspaceSecretsConfig as GoogleWorkspaceSecretsConfig
 from monad.models.google_workspace_settings_config import GoogleWorkspaceSettingsConfig as GoogleWorkspaceSettingsConfig
+from monad.models.hash_arguments_config import HashArgumentsConfig as HashArgumentsConfig
 from monad.models.http_headers import HttpHeaders as HttpHeaders
 from monad.models.http_payload_structure import HttpPayloadStructure as HttpPayloadStructure
 from monad.models.http_secrets_config import HttpSecretsConfig as HttpSecretsConfig

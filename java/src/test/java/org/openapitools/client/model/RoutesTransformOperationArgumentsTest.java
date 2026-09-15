@@ -30,14 +30,15 @@ import org.openapitools.client.model.ConvertCefArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampTimestampFormat;
 import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
+import org.openapitools.client.model.DedupArgumentsConfig;
 import org.openapitools.client.model.DropKeyArgumentsConfig;
 import org.openapitools.client.model.DropKeyWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.DropRecordWhereValueEqArgumentsConfig;
 import org.openapitools.client.model.DuplicateKeyValueToKeyArgumentsConfig;
-import org.openapitools.client.model.EncryptAlgorithmConfig;
 import org.openapitools.client.model.EncryptArgumentsConfig;
 import org.openapitools.client.model.FlattenArgumentsConfig;
 import org.openapitools.client.model.FlattenallArgumentsConfig;
+import org.openapitools.client.model.HashArgumentsConfig;
 import org.openapitools.client.model.JqArgumentsConfig;
 import org.openapitools.client.model.MaskArgumentsConfig;
 import org.openapitools.client.model.MaskModeConfig;
@@ -313,6 +314,22 @@ public class RoutesTransformOperationArgumentsTest {
     @Test
     public void valueToWatchTest() {
         // TODO: test valueToWatch
+    }
+
+    /**
+     * Test the property 'fields'
+     */
+    @Test
+    public void fieldsTest() {
+        // TODO: test fields
+    }
+
+    /**
+     * Test the property 'window'
+     */
+    @Test
+    public void windowTest() {
+        // TODO: test window
     }
 
     /**

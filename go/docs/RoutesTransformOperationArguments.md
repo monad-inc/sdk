@@ -35,8 +35,10 @@ Name | Type | Description | Notes
 **TargetTimezone** | Pointer to **string** | Optional: Target timezone (default: UTC) | [optional] 
 **KeyToWatch** | Pointer to **string** | The key to watch for | [optional] 
 **ValueToWatch** | Pointer to **interface{}** |  | [optional] 
+**Fields** | Pointer to **[]string** | Fields to hash, in order; empty hashes the whole record | [optional] 
+**Window** | Pointer to **string** | dedup window / key TTL: one of 1m..5m | [optional] 
 **NewKey** | Pointer to **string** | The new key to rename to | [optional] 
-**Algorithm** | Pointer to [**EncryptAlgorithmConfig**](EncryptAlgorithmConfig.md) |  | [optional] 
+**Algorithm** | Pointer to **string** | Hash algorithm | [optional] 
 **Delimiter** | Pointer to **string** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 | [optional] 
 **PreventDataDropping** | Pointer to **bool** | PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record. | [optional] 
 **Query** | Pointer to **string** | The raw query string from config | [optional] 
@@ -858,6 +860,56 @@ HasValueToWatch returns a boolean if a field has been set.
 `func (o *RoutesTransformOperationArguments) UnsetValueToWatch()`
 
 UnsetValueToWatch ensures that no value is present for ValueToWatch, not even an explicit nil
+### GetFields
+
+`func (o *RoutesTransformOperationArguments) GetFields() []string`
+
+GetFields returns the Fields field if non-nil, zero value otherwise.
+
+### GetFieldsOk
+
+`func (o *RoutesTransformOperationArguments) GetFieldsOk() (*[]string, bool)`
+
+GetFieldsOk returns a tuple with the Fields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFields
+
+`func (o *RoutesTransformOperationArguments) SetFields(v []string)`
+
+SetFields sets Fields field to given value.
+
+### HasFields
+
+`func (o *RoutesTransformOperationArguments) HasFields() bool`
+
+HasFields returns a boolean if a field has been set.
+
+### GetWindow
+
+`func (o *RoutesTransformOperationArguments) GetWindow() string`
+
+GetWindow returns the Window field if non-nil, zero value otherwise.
+
+### GetWindowOk
+
+`func (o *RoutesTransformOperationArguments) GetWindowOk() (*string, bool)`
+
+GetWindowOk returns a tuple with the Window field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWindow
+
+`func (o *RoutesTransformOperationArguments) SetWindow(v string)`
+
+SetWindow sets Window field to given value.
+
+### HasWindow
+
+`func (o *RoutesTransformOperationArguments) HasWindow() bool`
+
+HasWindow returns a boolean if a field has been set.
+
 ### GetNewKey
 
 `func (o *RoutesTransformOperationArguments) GetNewKey() string`
@@ -885,20 +937,20 @@ HasNewKey returns a boolean if a field has been set.
 
 ### GetAlgorithm
 
-`func (o *RoutesTransformOperationArguments) GetAlgorithm() EncryptAlgorithmConfig`
+`func (o *RoutesTransformOperationArguments) GetAlgorithm() string`
 
 GetAlgorithm returns the Algorithm field if non-nil, zero value otherwise.
 
 ### GetAlgorithmOk
 
-`func (o *RoutesTransformOperationArguments) GetAlgorithmOk() (*EncryptAlgorithmConfig, bool)`
+`func (o *RoutesTransformOperationArguments) GetAlgorithmOk() (*string, bool)`
 
 GetAlgorithmOk returns a tuple with the Algorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlgorithm
 
-`func (o *RoutesTransformOperationArguments) SetAlgorithm(v EncryptAlgorithmConfig)`
+`func (o *RoutesTransformOperationArguments) SetAlgorithm(v string)`
 
 SetAlgorithm sets Algorithm field to given value.
 

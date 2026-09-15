@@ -38,8 +38,10 @@
 |**targetTimezone** | **String** | Optional: Target timezone (default: UTC) |  [optional] |
 |**keyToWatch** | **String** | The key to watch for |  [optional] |
 |**valueToWatch** | **Object** |  |  [optional] |
+|**fields** | **List&lt;String&gt;** | Fields to hash, in order; empty hashes the whole record |  [optional] |
+|**window** | **String** | dedup window / key TTL: one of 1m..5m |  [optional] |
 |**newKey** | **String** | The new key to rename to |  [optional] |
-|**algorithm** | [**EncryptAlgorithmConfig**](EncryptAlgorithmConfig.md) |  |  [optional] |
+|**algorithm** | **String** | Hash algorithm |  [optional] |
 |**delimiter** | **String** | The delimiter to use when flattening for example flattening an array of assets: _ would result in assets_0, assets_1 |  [optional] |
 |**preventDataDropping** | **Boolean** | PreventDataDropping errors instead of dropping the record when the query produces no output. Only applies when Key is unset, since storing the result under a key always emits a record. |  [optional] |
 |**query** | **String** | The raw query string from config |  [optional] |

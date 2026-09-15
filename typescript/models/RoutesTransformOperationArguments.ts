@@ -15,6 +15,7 @@ import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
 import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
 import { CreateKeyValueIfKeyValueArgumentsConfig } from '../models/CreateKeyValueIfKeyValueArgumentsConfig';
+import { DedupArgumentsConfig } from '../models/DedupArgumentsConfig';
 import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
@@ -22,6 +23,7 @@ import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyVal
 import { EncryptArgumentsConfig } from '../models/EncryptArgumentsConfig';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
+import { HashArgumentsConfig } from '../models/HashArgumentsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
 import { MaskArgumentsConfig } from '../models/MaskArgumentsConfig';
 import { MathMultiplyWithValueArgumentsConfig } from '../models/MathMultiplyWithValueArgumentsConfig';
@@ -38,7 +40,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertCefArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | EncryptArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | JqArgumentsConfig | MaskArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
+export type RoutesTransformOperationArguments = AddArgumentsConfig | AddIdArgumentsConfig | ConvertCefArgumentsConfig | ConvertTimestampArgumentsConfig | CreateKeyValueIfKeyValueArgumentsConfig | DedupArgumentsConfig | DropKeyArgumentsConfig | DropKeyWhereValueEqArgumentsConfig | DropRecordWhereValueEqArgumentsConfig | DuplicateKeyValueToKeyArgumentsConfig | EncryptArgumentsConfig | FlattenArgumentsConfig | FlattenallArgumentsConfig | HashArgumentsConfig | JqArgumentsConfig | MaskArgumentsConfig | MathMultiplyWithValueArgumentsConfig | MutateTypeArgumentsConfig | MutateValueWhereKeyEqAndValueEqArgumentsConfig | MutateValueWhereKeyEqArgumentsConfig | RenameKeyArgumentsConfig | RenameKeyWhereValueEqArgumentsConfig | UtcTimestampArgumentsConfig | { [key: string]: any; };
 
 /**
 * @type RoutesTransformOperationArgumentsClass
@@ -49,6 +51,8 @@ export class RoutesTransformOperationArgumentsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
+
 
 
 

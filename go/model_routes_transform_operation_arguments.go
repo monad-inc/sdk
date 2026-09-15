@@ -24,6 +24,7 @@ type RoutesTransformOperationArguments struct {
 	ConvertCefArgumentsConfig *ConvertCefArgumentsConfig
 	ConvertTimestampArgumentsConfig *ConvertTimestampArgumentsConfig
 	CreateKeyValueIfKeyValueArgumentsConfig *CreateKeyValueIfKeyValueArgumentsConfig
+	DedupArgumentsConfig *DedupArgumentsConfig
 	DropKeyArgumentsConfig *DropKeyArgumentsConfig
 	DropKeyWhereValueEqArgumentsConfig *DropKeyWhereValueEqArgumentsConfig
 	DropRecordWhereValueEqArgumentsConfig *DropRecordWhereValueEqArgumentsConfig
@@ -31,6 +32,7 @@ type RoutesTransformOperationArguments struct {
 	EncryptArgumentsConfig *EncryptArgumentsConfig
 	FlattenArgumentsConfig *FlattenArgumentsConfig
 	FlattenallArgumentsConfig *FlattenallArgumentsConfig
+	HashArgumentsConfig *HashArgumentsConfig
 	JqArgumentsConfig *JqArgumentsConfig
 	MaskArgumentsConfig *MaskArgumentsConfig
 	MathMultiplyWithValueArgumentsConfig *MathMultiplyWithValueArgumentsConfig
@@ -75,6 +77,13 @@ func ConvertTimestampArgumentsConfigAsRoutesTransformOperationArguments(v *Conve
 func CreateKeyValueIfKeyValueArgumentsConfigAsRoutesTransformOperationArguments(v *CreateKeyValueIfKeyValueArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		CreateKeyValueIfKeyValueArgumentsConfig: v,
+	}
+}
+
+// DedupArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns DedupArgumentsConfig wrapped in RoutesTransformOperationArguments
+func DedupArgumentsConfigAsRoutesTransformOperationArguments(v *DedupArgumentsConfig) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		DedupArgumentsConfig: v,
 	}
 }
 
@@ -124,6 +133,13 @@ func FlattenArgumentsConfigAsRoutesTransformOperationArguments(v *FlattenArgumen
 func FlattenallArgumentsConfigAsRoutesTransformOperationArguments(v *FlattenallArgumentsConfig) RoutesTransformOperationArguments {
 	return RoutesTransformOperationArguments{
 		FlattenallArgumentsConfig: v,
+	}
+}
+
+// HashArgumentsConfigAsRoutesTransformOperationArguments is a convenience function that returns HashArgumentsConfig wrapped in RoutesTransformOperationArguments
+func HashArgumentsConfigAsRoutesTransformOperationArguments(v *HashArgumentsConfig) RoutesTransformOperationArguments {
+	return RoutesTransformOperationArguments{
+		HashArgumentsConfig: v,
 	}
 }
 
@@ -287,6 +303,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
 	}
 
+	// try to unmarshal data into DedupArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.DedupArgumentsConfig)
+	if err == nil {
+		jsonDedupArgumentsConfig, _ := json.Marshal(dst.DedupArgumentsConfig)
+		if string(jsonDedupArgumentsConfig) == "{}" { // empty struct
+			dst.DedupArgumentsConfig = nil
+		} else {
+			if err = validator.Validate(dst.DedupArgumentsConfig); err != nil {
+				dst.DedupArgumentsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.DedupArgumentsConfig = nil
+	}
+
 	// try to unmarshal data into DropKeyArgumentsConfig
 	err = newStrictDecoder(data).Decode(&dst.DropKeyArgumentsConfig)
 	if err == nil {
@@ -404,6 +437,23 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.FlattenallArgumentsConfig = nil
+	}
+
+	// try to unmarshal data into HashArgumentsConfig
+	err = newStrictDecoder(data).Decode(&dst.HashArgumentsConfig)
+	if err == nil {
+		jsonHashArgumentsConfig, _ := json.Marshal(dst.HashArgumentsConfig)
+		if string(jsonHashArgumentsConfig) == "{}" { // empty struct
+			dst.HashArgumentsConfig = nil
+		} else {
+			if err = validator.Validate(dst.HashArgumentsConfig); err != nil {
+				dst.HashArgumentsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.HashArgumentsConfig = nil
 	}
 
 	// try to unmarshal data into JqArgumentsConfig
@@ -583,6 +633,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.ConvertCefArgumentsConfig = nil
 		dst.ConvertTimestampArgumentsConfig = nil
 		dst.CreateKeyValueIfKeyValueArgumentsConfig = nil
+		dst.DedupArgumentsConfig = nil
 		dst.DropKeyArgumentsConfig = nil
 		dst.DropKeyWhereValueEqArgumentsConfig = nil
 		dst.DropRecordWhereValueEqArgumentsConfig = nil
@@ -590,6 +641,7 @@ func (dst *RoutesTransformOperationArguments) UnmarshalJSON(data []byte) error {
 		dst.EncryptArgumentsConfig = nil
 		dst.FlattenArgumentsConfig = nil
 		dst.FlattenallArgumentsConfig = nil
+		dst.HashArgumentsConfig = nil
 		dst.JqArgumentsConfig = nil
 		dst.MaskArgumentsConfig = nil
 		dst.MathMultiplyWithValueArgumentsConfig = nil
@@ -631,6 +683,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CreateKeyValueIfKeyValueArgumentsConfig)
 	}
 
+	if src.DedupArgumentsConfig != nil {
+		return json.Marshal(&src.DedupArgumentsConfig)
+	}
+
 	if src.DropKeyArgumentsConfig != nil {
 		return json.Marshal(&src.DropKeyArgumentsConfig)
 	}
@@ -657,6 +713,10 @@ func (src RoutesTransformOperationArguments) MarshalJSON() ([]byte, error) {
 
 	if src.FlattenallArgumentsConfig != nil {
 		return json.Marshal(&src.FlattenallArgumentsConfig)
+	}
+
+	if src.HashArgumentsConfig != nil {
+		return json.Marshal(&src.HashArgumentsConfig)
 	}
 
 	if src.JqArgumentsConfig != nil {
@@ -727,6 +787,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 		return obj.CreateKeyValueIfKeyValueArgumentsConfig
 	}
 
+	if obj.DedupArgumentsConfig != nil {
+		return obj.DedupArgumentsConfig
+	}
+
 	if obj.DropKeyArgumentsConfig != nil {
 		return obj.DropKeyArgumentsConfig
 	}
@@ -753,6 +817,10 @@ func (obj *RoutesTransformOperationArguments) GetActualInstance() (interface{}) 
 
 	if obj.FlattenallArgumentsConfig != nil {
 		return obj.FlattenallArgumentsConfig
+	}
+
+	if obj.HashArgumentsConfig != nil {
+		return obj.HashArgumentsConfig
 	}
 
 	if obj.JqArgumentsConfig != nil {
@@ -821,6 +889,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 		return *obj.CreateKeyValueIfKeyValueArgumentsConfig
 	}
 
+	if obj.DedupArgumentsConfig != nil {
+		return *obj.DedupArgumentsConfig
+	}
+
 	if obj.DropKeyArgumentsConfig != nil {
 		return *obj.DropKeyArgumentsConfig
 	}
@@ -847,6 +919,10 @@ func (obj RoutesTransformOperationArguments) GetActualInstanceValue() (interface
 
 	if obj.FlattenallArgumentsConfig != nil {
 		return *obj.FlattenallArgumentsConfig
+	}
+
+	if obj.HashArgumentsConfig != nil {
+		return *obj.HashArgumentsConfig
 	}
 
 	if obj.JqArgumentsConfig != nil {

@@ -131,6 +131,7 @@ import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWrite
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
+import { DedupArgumentsConfig } from '../models/DedupArgumentsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
 import { DelimitedDelimiterFormatter } from '../models/DelimitedDelimiterFormatter';
@@ -181,6 +182,7 @@ import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSec
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
 import { GoogleWorkspaceSecretsConfig } from '../models/GoogleWorkspaceSecretsConfig';
 import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
+import { HashArgumentsConfig } from '../models/HashArgumentsConfig';
 import { HttpHeaders } from '../models/HttpHeaders';
 import { HttpPayloadStructure } from '../models/HttpPayloadStructure';
 import { HttpSecretsConfig } from '../models/HttpSecretsConfig';

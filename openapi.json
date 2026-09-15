@@ -2391,6 +2391,23 @@
                 },
                 "type": "object"
             },
+            "dedup.ArgumentsConfig": {
+                "properties": {
+                    "fields": {
+                        "description": "fields to key on, in order; empty = whole record",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "window": {
+                        "description": "dedup window / key TTL: one of 1m..5m",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "defender_for_endpoint_alerts.SecretsConfig": {
                 "properties": {
                     "client_id": {
@@ -3210,6 +3227,27 @@
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "hash.ArgumentsConfig": {
+                "properties": {
+                    "algorithm": {
+                        "description": "Hash algorithm",
+                        "type": "string"
+                    },
+                    "fields": {
+                        "description": "Fields to hash, in order; empty hashes the whole record",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "key": {
+                        "description": "Key to store the resulting hash in",
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -8378,6 +8416,9 @@
                                 "$ref": "#/components/schemas/create_key_value_if_key_value.ArgumentsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/dedup.ArgumentsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/drop_key.ArgumentsConfig"
                             },
                             {
@@ -8397,6 +8438,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/flattenall.ArgumentsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/hash.ArgumentsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/jq.ArgumentsConfig"
