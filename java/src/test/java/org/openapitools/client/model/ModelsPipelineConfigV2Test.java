@@ -27,7 +27,6 @@ import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
 import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
 import org.openapitools.client.model.ModelsPipelineStatus;
-import org.openapitools.client.model.ModelsTagSummary;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

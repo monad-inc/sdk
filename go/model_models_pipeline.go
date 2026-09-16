@@ -31,7 +31,8 @@ type ModelsPipeline struct {
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	Status *ModelsPipelineStatus `json:"status,omitempty"`
-	Tags []ModelsTagSummary `json:"tags,omitempty"`
+	// customer tag names
+	Tags []string `json:"tags,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
@@ -405,9 +406,9 @@ func (o *ModelsPipeline) SetStatus(v ModelsPipelineStatus) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *ModelsPipeline) GetTags() []ModelsTagSummary {
+func (o *ModelsPipeline) GetTags() []string {
 	if o == nil || IsNil(o.Tags) {
-		var ret []ModelsTagSummary
+		var ret []string
 		return ret
 	}
 	return o.Tags
@@ -415,7 +416,7 @@ func (o *ModelsPipeline) GetTags() []ModelsTagSummary {
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPipeline) GetTagsOk() ([]ModelsTagSummary, bool) {
+func (o *ModelsPipeline) GetTagsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -431,8 +432,8 @@ func (o *ModelsPipeline) HasTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []ModelsTagSummary and assigns it to the Tags field.
-func (o *ModelsPipeline) SetTags(v []ModelsTagSummary) {
+// SetTags gets a reference to the given []string and assigns it to the Tags field.
+func (o *ModelsPipeline) SetTags(v []string) {
 	o.Tags = v
 }
 

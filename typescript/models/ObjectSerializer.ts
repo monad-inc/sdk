@@ -335,7 +335,6 @@ export * from '../models/ModelsStorageTypeSummaryResponse';
 export * from '../models/ModelsStorageTypeTimeSeries';
 export * from '../models/ModelsStorageTypeTimeSeriesResponse';
 export * from '../models/ModelsSupportedFeatures';
-export * from '../models/ModelsTagSummary';
 export * from '../models/ModelsTimeRange';
 export * from '../models/ModelsTransform';
 export * from '../models/ModelsTransformConfig';
@@ -967,7 +966,6 @@ import { ModelsStorageTypeSummaryResponse } from '../models/ModelsStorageTypeSum
 import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeries';
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
-import { ModelsTagSummary } from '../models/ModelsTagSummary';
 import { ModelsTimeRange } from '../models/ModelsTimeRange';
 import { ModelsTransform            } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
@@ -1670,7 +1668,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsStorageTypeTimeSeries": ModelsStorageTypeTimeSeries,
     "ModelsStorageTypeTimeSeriesResponse": ModelsStorageTypeTimeSeriesResponse,
     "ModelsSupportedFeatures": ModelsSupportedFeatures,
-    "ModelsTagSummary": ModelsTagSummary,
     "ModelsTimeRange": ModelsTimeRange,
     "ModelsTransform": ModelsTransform,
     "ModelsTransformConfig": ModelsTransformConfig,

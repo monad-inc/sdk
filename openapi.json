@@ -4037,9 +4037,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -5768,8 +5768,9 @@
                         "$ref": "#/components/schemas/models.PipelineStatus"
                     },
                     "tags": {
+                        "description": "customer tag names",
                         "items": {
-                            "$ref": "#/components/schemas/models.TagSummary"
+                            "type": "string"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -5842,9 +5843,9 @@
                         "$ref": "#/components/schemas/models.PipelineStatus"
                     },
                     "tags": {
-                        "description": "Tags is response-only (like NextCronRunAt): never set on the operator path,\nso omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.",
+                        "description": "Tags is the pipeline's customer tag names, populated only on customer reads\n(never on the operator path), so omitempty keeps the ConfigHash unchanged and\ntag edits don't roll pods.",
                         "items": {
-                            "$ref": "#/components/schemas/models.TagSummary"
+                            "type": "string"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -6917,20 +6918,6 @@
                 "properties": {
                     "test_connection": {
                         "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "models.TagSummary": {
-                "properties": {
-                    "color": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
                     }
                 },
                 "type": "object"

@@ -28,7 +28,6 @@ import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
 import org.openapitools.client.model.ModelsPipelineRetentionPolicy;
 import org.openapitools.client.model.ModelsPipelineStatus;
-import org.openapitools.client.model.ModelsTagSummary;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -146,7 +145,7 @@ public class ModelsPipelineConfigV2 {
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nullable
-  private List<ModelsTagSummary> tags = new ArrayList<>();
+  private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -495,12 +494,12 @@ public class ModelsPipelineConfigV2 {
   }
 
 
-  public ModelsPipelineConfigV2 tags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+  public ModelsPipelineConfigV2 tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
 
-  public ModelsPipelineConfigV2 addTagsItem(ModelsTagSummary tagsItem) {
+  public ModelsPipelineConfigV2 addTagsItem(String tagsItem) {
     if (this.tags == null) {
       this.tags = new ArrayList<>();
     }
@@ -509,15 +508,15 @@ public class ModelsPipelineConfigV2 {
   }
 
   /**
-   * Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods.
+   * Tags is the pipeline&#39;s customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods.
    * @return tags
    */
   @javax.annotation.Nullable
-  public List<ModelsTagSummary> getTags() {
+  public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
@@ -712,19 +711,9 @@ public class ModelsPipelineConfigV2 {
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         ModelsPipelineStatus.validateJsonElement(jsonObj.get("status"));
       }
-      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull()) {
-        JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
-        if (jsonArraytags != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("tags").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-          }
-
-          // validate the optional field `tags` (array)
-          for (int i = 0; i < jsonArraytags.size(); i++) {
-            ModelsTagSummary.validateJsonElement(jsonArraytags.get(i));
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("updatedAt") != null && !jsonObj.get("updatedAt").isJsonNull()) && !jsonObj.get("updatedAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedAt").toString()));

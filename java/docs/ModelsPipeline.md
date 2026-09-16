@@ -18,7 +18,7 @@
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
 |**status** | [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  |  [optional] |
-|**tags** | [**List&lt;ModelsTagSummary&gt;**](ModelsTagSummary.md) |  |  [optional] |
+|**tags** | **List&lt;String&gt;** | customer tag names |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 
 

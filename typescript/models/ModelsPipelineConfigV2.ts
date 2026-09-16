@@ -15,7 +15,6 @@ import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
 import { ModelsPipelineRetentionPolicy } from '../models/ModelsPipelineRetentionPolicy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { ModelsTagSummary } from '../models/ModelsTagSummary';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineConfigV2 {
@@ -37,9 +36,9 @@ export class ModelsPipelineConfigV2 {
     'retentionPolicy'?: ModelsPipelineRetentionPolicy;
     'status'?: ModelsPipelineStatus;
     /**
-    * Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don\'t roll pods.
+    * Tags is the pipeline\'s customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don\'t roll pods.
     */
-    'tags'?: Array<ModelsTagSummary>;
+    'tags'?: Array<string>;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -152,7 +151,7 @@ export class ModelsPipelineConfigV2 {
         {
             "name": "tags",
             "baseName": "tags",
-            "type": "Array<ModelsTagSummary>",
+            "type": "Array<string>",
             "format": ""
         },
         {

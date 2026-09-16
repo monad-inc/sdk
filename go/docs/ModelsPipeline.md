@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
-**Tags** | Pointer to [**[]ModelsTagSummary**](ModelsTagSummary.md) |  | [optional] 
+**Tags** | Pointer to **[]string** | customer tag names | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -314,20 +314,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *ModelsPipeline) GetTags() []ModelsTagSummary`
+`func (o *ModelsPipeline) GetTags() []string`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ModelsPipeline) GetTagsOk() (*[]ModelsTagSummary, bool)`
+`func (o *ModelsPipeline) GetTagsOk() (*[]string, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ModelsPipeline) SetTags(v []ModelsTagSummary)`
+`func (o *ModelsPipeline) SetTags(v []string)`
 
 SetTags sets Tags field to given value.
 

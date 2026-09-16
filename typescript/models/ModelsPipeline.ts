@@ -12,7 +12,6 @@
 
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipelineStatus } from '../models/ModelsPipelineStatus';
-import { ModelsTagSummary } from '../models/ModelsTagSummary';
 import { HttpFile } from '../http/http';
 
 export class ModelsPipeline {
@@ -27,7 +26,10 @@ export class ModelsPipeline {
     'name'?: string;
     'organizationId'?: string;
     'status'?: ModelsPipelineStatus;
-    'tags'?: Array<ModelsTagSummary>;
+    /**
+    * customer tag names
+    */
+    'tags'?: Array<string>;
     'updatedAt'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -104,7 +106,7 @@ export class ModelsPipeline {
         {
             "name": "tags",
             "baseName": "tags",
-            "type": "Array<ModelsTagSummary>",
+            "type": "Array<string>",
             "format": ""
         },
         {

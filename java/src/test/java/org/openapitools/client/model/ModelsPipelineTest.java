@@ -24,7 +24,6 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipelineStatus;
-import org.openapitools.client.model.ModelsTagSummary;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

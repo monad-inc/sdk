@@ -18,11 +18,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_pipeline_status import ModelsPipelineStatus
-from monad.models.models_tag_summary import ModelsTagSummary
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -42,7 +41,7 @@ class ModelsPipeline(BaseModel):
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     status: Optional[ModelsPipelineStatus] = None
-    tags: Optional[List[ModelsTagSummary]] = None
+    tags: Optional[List[StrictStr]] = Field(default=None, description="customer tag names")
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["component_tier", "created_at", "cron_schedule", "description", "enabled", "id", "input_id", "managed_by", "name", "organization_id", "status", "tags", "updated_at"]
 
@@ -88,13 +87,6 @@ class ModelsPipeline(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of status
         if self.status:
             _dict['status'] = self.status.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
-        _items = []
-        if self.tags:
-            for _item_tags in self.tags:
-                if _item_tags:
-                    _items.append(_item_tags.to_dict())
-            _dict['tags'] = _items
         return _dict
 
     @classmethod
@@ -118,7 +110,7 @@ class ModelsPipeline(BaseModel):
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "status": ModelsPipelineStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
-            "tags": [ModelsTagSummary.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
+            "tags": obj.get("tags"),
             "updated_at": obj.get("updated_at")
         })
         return _obj

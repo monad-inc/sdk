@@ -193,10 +193,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                     status = 'Unknown', 
                     stream = , ),
                 tags = [
-                    monad.models.models/tag_summary.models.TagSummary(
-                        color = '', 
-                        id = '', 
-                        name = '', )
+                    ''
                     ],
                 updated_at = ''
             )

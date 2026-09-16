@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **OrganizationName** | Pointer to **string** |  | [optional] 
 **RetentionPolicy** | Pointer to [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  | [optional] 
 **Status** | Pointer to [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
-**Tags** | Pointer to [**[]ModelsTagSummary**](ModelsTagSummary.md) | Tags is response-only (like NextCronRunAt): never set on the operator path, so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods. | [optional] 
+**Tags** | Pointer to **[]string** | Tags is the pipeline&#39;s customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods. | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -470,20 +470,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *ModelsPipelineConfigV2) GetTags() []ModelsTagSummary`
+`func (o *ModelsPipelineConfigV2) GetTags() []string`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ModelsPipelineConfigV2) GetTagsOk() (*[]ModelsTagSummary, bool)`
+`func (o *ModelsPipelineConfigV2) GetTagsOk() (*[]string, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ModelsPipelineConfigV2) SetTags(v []ModelsTagSummary)`
+`func (o *ModelsPipelineConfigV2) SetTags(v []string)`
 
 SetTags sets Tags field to given value.
 

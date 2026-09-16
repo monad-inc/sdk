@@ -92,10 +92,7 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                             progress = monad.models.models/progress_entries.models.ProgressEntries(), 
                             stream = , ), 
                         tags = [
-                            monad.models.models/tag_summary.models.TagSummary(
-                                color = '', 
-                                id = '', 
-                                name = '', )
+                            ''
                             ], 
                         updated_at = '', )
                     ],

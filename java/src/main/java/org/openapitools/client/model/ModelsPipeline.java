@@ -25,7 +25,6 @@ import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipelineStatus;
-import org.openapitools.client.model.ModelsTagSummary;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -113,7 +112,7 @@ public class ModelsPipeline {
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nullable
-  private List<ModelsTagSummary> tags = new ArrayList<>();
+  private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -332,12 +331,12 @@ public class ModelsPipeline {
   }
 
 
-  public ModelsPipeline tags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+  public ModelsPipeline tags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
     return this;
   }
 
-  public ModelsPipeline addTagsItem(ModelsTagSummary tagsItem) {
+  public ModelsPipeline addTagsItem(String tagsItem) {
     if (this.tags == null) {
       this.tags = new ArrayList<>();
     }
@@ -346,15 +345,15 @@ public class ModelsPipeline {
   }
 
   /**
-   * Get tags
+   * customer tag names
    * @return tags
    */
   @javax.annotation.Nullable
-  public List<ModelsTagSummary> getTags() {
+  public List<String> getTags() {
     return tags;
   }
 
-  public void setTags(@javax.annotation.Nullable List<ModelsTagSummary> tags) {
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
     this.tags = tags;
   }
 
@@ -499,19 +498,9 @@ public class ModelsPipeline {
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         ModelsPipelineStatus.validateJsonElement(jsonObj.get("status"));
       }
-      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull()) {
-        JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
-        if (jsonArraytags != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("tags").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-          }
-
-          // validate the optional field `tags` (array)
-          for (int i = 0; i < jsonArraytags.size(); i++) {
-            ModelsTagSummary.validateJsonElement(jsonArraytags.get(i));
-          };
-        }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
