@@ -79,6 +79,11 @@ public class RoutesV2CreatePipelineRequest {
   @javax.annotation.Nonnull
   private List<RoutesV2PipelineRequestNode> nodes = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
+
   public RoutesV2CreatePipelineRequest() {
   }
 
@@ -193,6 +198,33 @@ public class RoutesV2CreatePipelineRequest {
   }
 
 
+  public RoutesV2CreatePipelineRequest tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public RoutesV2CreatePipelineRequest addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * tag names; must exist in the org
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -207,12 +239,13 @@ public class RoutesV2CreatePipelineRequest {
         Objects.equals(this.edges, routesV2CreatePipelineRequest.edges) &&
         Objects.equals(this.enabled, routesV2CreatePipelineRequest.enabled) &&
         Objects.equals(this.name, routesV2CreatePipelineRequest.name) &&
-        Objects.equals(this.nodes, routesV2CreatePipelineRequest.nodes);
+        Objects.equals(this.nodes, routesV2CreatePipelineRequest.nodes) &&
+        Objects.equals(this.tags, routesV2CreatePipelineRequest.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, edges, enabled, name, nodes);
+    return Objects.hash(description, edges, enabled, name, nodes, tags);
   }
 
   @Override
@@ -224,6 +257,7 @@ public class RoutesV2CreatePipelineRequest {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -242,7 +276,7 @@ public class RoutesV2CreatePipelineRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("description", "edges", "enabled", "name", "nodes"));
+    openapiFields = new HashSet<String>(Arrays.asList("description", "edges", "enabled", "name", "nodes", "tags"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("edges", "name", "nodes"));
@@ -301,6 +335,10 @@ public class RoutesV2CreatePipelineRequest {
         for (int i = 0; i < jsonArraynodes.size(); i++) {
           RoutesV2PipelineRequestNode.validateJsonElement(jsonArraynodes.get(i));
         }
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 

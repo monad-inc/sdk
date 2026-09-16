@@ -12,6 +12,7 @@
 |**enabled** | **Boolean** | nil &#x3D;&gt; enabled |  [optional] |
 |**name** | **String** |  |  |
 |**nodes** | [**List&lt;RoutesV2PipelineRequestNode&gt;**](RoutesV2PipelineRequestNode.md) |  |  |
+|**tags** | **List&lt;String&gt;** | tag names; must exist in the org |  [optional] |
 
 
 

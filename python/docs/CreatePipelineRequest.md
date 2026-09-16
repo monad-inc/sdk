@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** | nil &#x3D;&gt; enabled | [optional] 
 **name** | **str** |  | 
 **nodes** | [**List[RoutesV2PipelineRequestNode]**](RoutesV2PipelineRequestNode.md) |  | 
+**tags** | **List[str]** | tag names; must exist in the org | [optional] 
 
 ## Example
 

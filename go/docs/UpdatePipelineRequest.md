@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Nodes** | Pointer to [**[]RoutesV2PipelineRequestNode**](RoutesV2PipelineRequestNode.md) |  | [optional] 
+**Tags** | Pointer to **[]string** | Tags: nil leaves tags unchanged; a set replaces them; [] clears them. | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetNodes sets Nodes field to given value.
 `func (o *UpdatePipelineRequest) HasNodes() bool`
 
 HasNodes returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *UpdatePipelineRequest) GetTags() []string`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *UpdatePipelineRequest) GetTagsOk() (*[]string, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *UpdatePipelineRequest) SetTags(v []string)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *UpdatePipelineRequest) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

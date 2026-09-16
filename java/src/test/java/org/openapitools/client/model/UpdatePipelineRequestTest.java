@@ -81,4 +81,12 @@ public class UpdatePipelineRequestTest {
         // TODO: test nodes
     }
 
+    /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
 }

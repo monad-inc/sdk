@@ -67,6 +67,9 @@ class TestUpdatePipelineRequest(unittest.TestCase):
                         enabled = True, 
                         id = '', 
                         slug = '', )
+                    ],
+                tags = [
+                    ''
                     ]
             )
         else:

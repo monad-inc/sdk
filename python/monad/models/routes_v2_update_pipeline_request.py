@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.routes_v2_pipeline_request_edge import RoutesV2PipelineRequestEdge
 from monad.models.routes_v2_pipeline_request_node import RoutesV2PipelineRequestNode
@@ -35,7 +35,8 @@ class RoutesV2UpdatePipelineRequest(BaseModel):
     enabled: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
     nodes: Optional[List[RoutesV2PipelineRequestNode]] = None
-    __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes"]
+    tags: Optional[List[StrictStr]] = Field(default=None, description="Tags: nil leaves tags unchanged; a set replaces them; [] clears them.")
+    __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes", "tags"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -106,7 +107,8 @@ class RoutesV2UpdatePipelineRequest(BaseModel):
             "edges": [RoutesV2PipelineRequestEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),
             "name": obj.get("name"),
-            "nodes": [RoutesV2PipelineRequestNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None
+            "nodes": [RoutesV2PipelineRequestNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
+            "tags": obj.get("tags")
         })
         return _obj
 

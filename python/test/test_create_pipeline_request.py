@@ -67,6 +67,9 @@ class TestCreatePipelineRequest(unittest.TestCase):
                         enabled = True, 
                         id = '', 
                         slug = '', )
+                    ],
+                tags = [
+                    ''
                     ]
             )
         else:

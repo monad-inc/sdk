@@ -35,7 +35,8 @@ class RoutesV2CreatePipelineRequest(BaseModel):
     enabled: Optional[StrictBool] = Field(default=None, description="nil => enabled")
     name: StrictStr
     nodes: List[RoutesV2PipelineRequestNode]
-    __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes"]
+    tags: Optional[List[StrictStr]] = Field(default=None, description="tag names; must exist in the org")
+    __properties: ClassVar[List[str]] = ["description", "edges", "enabled", "name", "nodes", "tags"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -106,7 +107,8 @@ class RoutesV2CreatePipelineRequest(BaseModel):
             "edges": [RoutesV2PipelineRequestEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),
             "name": obj.get("name"),
-            "nodes": [RoutesV2PipelineRequestNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None
+            "nodes": [RoutesV2PipelineRequestNode.from_dict(_item) for _item in obj["nodes"]] if obj.get("nodes") is not None else None,
+            "tags": obj.get("tags")
         })
         return _obj
 

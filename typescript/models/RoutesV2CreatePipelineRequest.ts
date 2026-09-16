@@ -23,6 +23,10 @@ export class RoutesV2CreatePipelineRequest {
     'enabled'?: boolean;
     'name': string;
     'nodes': Array<RoutesV2PipelineRequestNode>;
+    /**
+    * tag names; must exist in the org
+    */
+    'tags'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -57,6 +61,12 @@ export class RoutesV2CreatePipelineRequest {
             "name": "nodes",
             "baseName": "nodes",
             "type": "Array<RoutesV2PipelineRequestNode>",
+            "format": ""
+        },
+        {
+            "name": "tags",
+            "baseName": "tags",
+            "type": "Array<string>",
             "format": ""
         }    ];
 

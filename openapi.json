@@ -4037,9 +4037,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -8824,6 +8824,14 @@
                         },
                         "type": "array",
                         "uniqueItems": false
+                    },
+                    "tags": {
+                        "description": "tag names; must exist in the org",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     }
                 },
                 "required": [
@@ -9480,6 +9488,14 @@
                     "nodes": {
                         "items": {
                             "$ref": "#/components/schemas/routesV2.PipelineRequestNode"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    },
+                    "tags": {
+                        "description": "Tags: nil leaves tags unchanged; a set replaces them; [] clears them.",
+                        "items": {
+                            "type": "string"
                         },
                         "type": "array",
                         "uniqueItems": false

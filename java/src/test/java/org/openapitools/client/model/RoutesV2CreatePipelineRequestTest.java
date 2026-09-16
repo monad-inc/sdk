@@ -81,4 +81,12 @@ public class RoutesV2CreatePipelineRequestTest {
         // TODO: test nodes
     }
 
+    /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
 }

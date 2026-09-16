@@ -25,6 +25,8 @@ type RoutesV2UpdatePipelineRequest struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Nodes []RoutesV2PipelineRequestNode `json:"nodes,omitempty"`
+	// Tags: nil leaves tags unchanged; a set replaces them; [] clears them.
+	Tags []string `json:"tags,omitempty"`
 }
 
 // NewRoutesV2UpdatePipelineRequest instantiates a new RoutesV2UpdatePipelineRequest object
@@ -204,6 +206,38 @@ func (o *RoutesV2UpdatePipelineRequest) SetNodes(v []RoutesV2PipelineRequestNode
 	o.Nodes = v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *RoutesV2UpdatePipelineRequest) GetTags() []string {
+	if o == nil || IsNil(o.Tags) {
+		var ret []string
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2UpdatePipelineRequest) GetTagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *RoutesV2UpdatePipelineRequest) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []string and assigns it to the Tags field.
+func (o *RoutesV2UpdatePipelineRequest) SetTags(v []string) {
+	o.Tags = v
+}
+
 func (o RoutesV2UpdatePipelineRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -228,6 +262,9 @@ func (o RoutesV2UpdatePipelineRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Nodes) {
 		toSerialize["nodes"] = o.Nodes
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

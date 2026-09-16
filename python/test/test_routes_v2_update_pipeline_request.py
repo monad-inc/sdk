@@ -67,6 +67,9 @@ class TestRoutesV2UpdatePipelineRequest(unittest.TestCase):
                         enabled = True, 
                         id = '', 
                         slug = '', )
+                    ],
+                tags = [
+                    ''
                     ]
             )
         else:

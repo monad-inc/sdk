@@ -20,6 +20,10 @@ export class RoutesV2UpdatePipelineRequest {
     'enabled'?: boolean;
     'name'?: string;
     'nodes'?: Array<RoutesV2PipelineRequestNode>;
+    /**
+    * Tags: nil leaves tags unchanged; a set replaces them; [] clears them.
+    */
+    'tags'?: Array<string>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -54,6 +58,12 @@ export class RoutesV2UpdatePipelineRequest {
             "name": "nodes",
             "baseName": "nodes",
             "type": "Array<RoutesV2PipelineRequestNode>",
+            "format": ""
+        },
+        {
+            "name": "tags",
+            "baseName": "tags",
+            "type": "Array<string>",
             "format": ""
         }    ];
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **nodes** | [**List[RoutesV2PipelineRequestNode]**](RoutesV2PipelineRequestNode.md) |  | [optional] 
+**tags** | **List[str]** | Tags: nil leaves tags unchanged; a set replaces them; [] clears them. | [optional] 
 
 ## Example
 
