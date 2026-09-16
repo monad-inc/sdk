@@ -21,8 +21,8 @@ type KafkaPayloadFormat string
 
 // List of kafka.payloadFormat
 const (
-	defaultPayloadFormat KafkaPayloadFormat = "individual"
-	payloadFormatIndividual KafkaPayloadFormat = "json_array"
+	payloadFormatIndividual KafkaPayloadFormat = "individual"
+	payloadFormatJSONArray KafkaPayloadFormat = "json_array"
 )
 
 // All allowed values of KafkaPayloadFormat enum
