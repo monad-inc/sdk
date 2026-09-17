@@ -139,7 +139,7 @@ public class SnowflakeSnowpipeStreamingSettingsConfig {
   }
 
   /**
-   * Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. Defaults to \&quot;monad\&quot;.
+   * Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance.
    * @return channelPrefix
    */
   @javax.annotation.Nullable

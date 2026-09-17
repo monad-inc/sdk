@@ -248,7 +248,7 @@ public class SnowflakeOutputSettingsConfig {
   }
 
   /**
-   * The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.
+   * The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage.
    * @return stage
    */
   @javax.annotation.Nullable
@@ -267,7 +267,7 @@ public class SnowflakeOutputSettingsConfig {
   }
 
   /**
-   * The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table.
+   * The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist, the connector will create it.
    * @return table
    */
   @javax.annotation.Nullable

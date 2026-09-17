@@ -28,7 +28,7 @@ from pydantic_core import to_jsonable_python
 
 class Sentinelv2DCRConfig(BaseModel):
     """
-    How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.
+    How the destination DCR is provided: a single manual DCR, or a managed pool.
     """ # noqa: E501
     managed: Optional[Sentinelv2ManagedDCRVariant] = None
     manual: Optional[Sentinelv2ManualDCRVariant] = None

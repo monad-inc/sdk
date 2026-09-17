@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | **str** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
 **batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
-**channel_prefix** | **str** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. Defaults to \&quot;monad\&quot;. | [optional] 
+**channel_prefix** | **str** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. | [optional] 
 **database** | **str** | The Snowflake database that contains the target pipe. | 
 **pipe** | **str** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 

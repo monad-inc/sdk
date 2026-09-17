@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RoleArn** | **string** | The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole). | 
+**RoleArn** | **string** | The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MyRole). | 
 
 ## Methods
 

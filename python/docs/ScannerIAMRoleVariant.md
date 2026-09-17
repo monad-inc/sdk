@@ -6,7 +6,7 @@ IAM role configuration (required when type is iam_role).
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role_arn** | **str** | The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole). | 
+**role_arn** | **str** | The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MyRole). | 
 
 ## Example
 

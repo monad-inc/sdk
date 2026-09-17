@@ -48,7 +48,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.
+ * How the destination DCR is provided: a single manual DCR, or a managed pool.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Sentinelv2DCRConfig {

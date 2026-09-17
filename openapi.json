@@ -4037,9 +4037,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -10697,7 +10697,7 @@
                 "description": "IAM role configuration (required when type is iam_role).",
                 "properties": {
                     "role_arn": {
-                        "description": "The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole).",
+                        "description": "The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MyRole).",
                         "type": "string"
                     }
                 },
@@ -11466,7 +11466,7 @@
                 "type": "object"
             },
             "sentinelv2.DCRConfig": {
-                "description": "How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.",
+                "description": "How the destination DCR is provided: a single manual DCR, or a managed pool.",
                 "properties": {
                     "managed": {
                         "$ref": "#/components/schemas/sentinelv2.ManagedDCRVariant"
@@ -11635,11 +11635,11 @@
                         "type": "string"
                     },
                     "stage": {
-                        "description": "The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.",
+                        "description": "The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage.",
                         "type": "string"
                     },
                     "table": {
-                        "description": "The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.",
+                        "description": "The name of the table in Snowflake where the data will be written. If the table doesn't exist, the connector will create it.",
                         "type": "string"
                     },
                     "user": {
@@ -11664,7 +11664,7 @@
                         "$ref": "#/components/schemas/batch_config.BatchConfig"
                     },
                     "channel_prefix": {
-                        "description": "Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance. Defaults to \"monad\".",
+                        "description": "Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance.",
                         "type": "string"
                     },
                     "database": {
@@ -11783,7 +11783,7 @@
                         "type": "string"
                     },
                     "to_create": {
-                        "description": "Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token \u0026 Index scoping.",
+                        "description": "Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token \u0026 Index scoping.",
                         "type": "boolean"
                     },
                     "url": {

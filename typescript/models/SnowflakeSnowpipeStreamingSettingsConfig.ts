@@ -24,7 +24,7 @@ export class SnowflakeSnowpipeStreamingSettingsConfig {
     'account': string;
     'batchConfig'?: BatchConfigBatchConfig;
     /**
-    * Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance. Defaults to \"monad\".
+    * Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance.
     */
     'channelPrefix'?: string;
     /**

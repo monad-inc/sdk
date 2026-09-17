@@ -36,8 +36,8 @@ class SnowflakeOutputSettingsConfig(BaseModel):
     database: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake database to connect to and perform operations on")
     role: Optional[StrictStr] = Field(default=None, description="The name of the Role your service account was granted which can access your resources.")
     var_schema: Optional[StrictStr] = Field(default=None, description="The schema within the Snowflake database where the target table resides.", alias="schema")
-    stage: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.")
-    table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.")
+    stage: Optional[StrictStr] = Field(default=None, description="The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage.")
+    table: Optional[StrictStr] = Field(default=None, description="The name of the table in Snowflake where the data will be written. If the table doesn't exist, the connector will create it.")
     user: Optional[StrictStr] = Field(default=None, description="The username of the Snowflake account used to establish the connection.")
     warehouse: Optional[StrictStr] = Field(default=None, description="The Snowflake virtual warehouse to use for executing queries and processing data.")
     __properties: ClassVar[List[str]] = ["account", "auth_type", "batch_config", "case_insensitivity", "database", "role", "schema", "stage", "table", "user", "warehouse"]

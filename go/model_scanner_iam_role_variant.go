@@ -22,7 +22,7 @@ var _ MappedNullable = &ScannerIAMRoleVariant{}
 
 // ScannerIAMRoleVariant IAM role configuration (required when type is iam_role).
 type ScannerIAMRoleVariant struct {
-	// The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole).
+	// The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MyRole).
 	RoleArn string `json:"role_arn"`
 }
 

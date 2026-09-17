@@ -20,7 +20,7 @@ import (
 // checks if the Sentinelv2DCRConfig type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &Sentinelv2DCRConfig{}
 
-// Sentinelv2DCRConfig How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.
+// Sentinelv2DCRConfig How the destination DCR is provided: a single manual DCR, or a managed pool.
 type Sentinelv2DCRConfig struct {
 	Managed *Sentinelv2ManagedDCRVariant `json:"managed,omitempty"`
 	Manual *Sentinelv2ManualDCRVariant `json:"manual,omitempty"`

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **dataset** | **str** | The name of the BigQuery dataset where the table resides | [optional] 
 **bucket** | **str** | The S3 bucket in your AWS account that Scanner indexes. | 
 **project_id** | **str** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
-**table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | 
+**table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist, the connector will create it. | 
 **application_name** | **str** | ApplicationName is stamped on every record. Coralogix uses this to separate environments/tenants. | 
 **communication** | [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
 **subsystem_name** | **str** | SubsystemName is stamped on every record. Coralogix uses this to separate components within an application. | 
@@ -101,13 +101,13 @@ Name | Type | Description | Notes
 **account** | **str** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
 **case_insensitivity** | **bool** | Treat column names as case-insensitive (convert to uppercase) to match Snowflake&#39;s default behavior. | [optional] 
 **role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
-**stage** | **str** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
+**stage** | **str** | The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage. | [optional] 
 **warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
-**channel_prefix** | **str** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. Defaults to \&quot;monad\&quot;. | [optional] 
+**channel_prefix** | **str** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. | [optional] 
 **pipe** | **str** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **allow_insecure** | **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
-**to_create** | **bool** | Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
+**to_create** | **bool** | Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **source_metadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
 
 ## Example

@@ -32,7 +32,7 @@ class SnowflakeSnowpipeStreamingSettingsConfig(BaseModel):
     """ # noqa: E501
     account: StrictStr = Field(description="The unique identifier for your Snowflake account, e.g. 'orgname-account_name'.")
     batch_config: Optional[BatchConfigBatchConfig] = None
-    channel_prefix: Optional[StrictStr] = Field(default=None, description="Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance. Defaults to \"monad\".")
+    channel_prefix: Optional[StrictStr] = Field(default=None, description="Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance.")
     database: StrictStr = Field(description="The Snowflake database that contains the target pipe.")
     pipe: StrictStr = Field(description="The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE => 'STREAMING')).")
     private_key: ModelsSecret

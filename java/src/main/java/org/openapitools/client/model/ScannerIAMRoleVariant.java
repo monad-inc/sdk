@@ -64,7 +64,7 @@ public class ScannerIAMRoleVariant {
   }
 
   /**
-   * The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole).
+   * The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MyRole).
    * @return roleArn
    */
   @javax.annotation.Nonnull

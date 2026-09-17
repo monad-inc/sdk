@@ -28,7 +28,7 @@ type SplunkSettingsConfig struct {
 	Index *string `json:"index,omitempty"`
 	// The port of the Splunk instance.
 	Port string `json:"port"`
-	// Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
+	// Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
 	ToCreate *bool `json:"to_create,omitempty"`
 	// The URL of the Splunk instance (must start with http or https).
 	Url string `json:"url"`

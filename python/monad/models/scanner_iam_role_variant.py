@@ -28,7 +28,7 @@ class ScannerIAMRoleVariant(BaseModel):
     """
     IAM role configuration (required when type is iam_role).
     """ # noqa: E501
-    role_arn: StrictStr = Field(description="The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MonadRole).")
+    role_arn: StrictStr = Field(description="The ARN of the IAM role to assume (e.g. arn:aws:iam::123456789012:role/MyRole).")
     __properties: ClassVar[List[str]] = ["role_arn"]
 
     model_config = ConfigDict(

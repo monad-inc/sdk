@@ -2,7 +2,7 @@
 
 # Sentinelv2DCRConfig
 
-How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.
+How the destination DCR is provided: a single manual DCR, or a managed pool.
 
 ## Properties
 

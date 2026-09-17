@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **Database** | Pointer to **string** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **Role** | Pointer to **string** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **Schema** | Pointer to **string** | The schema within the Snowflake database where the target table resides. | [optional] 
-**Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
-**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
+**Stage** | Pointer to **string** | The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage. | [optional] 
+**Table** | Pointer to **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist, the connector will create it. | [optional] 
 **User** | Pointer to **string** | The username of the Snowflake account used to establish the connection. | [optional] 
 **Warehouse** | Pointer to **string** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 

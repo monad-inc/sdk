@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **database** | **str** | The name of the Snowflake database to connect to and perform operations on | [optional] 
 **role** | **str** | The name of the Role your service account was granted which can access your resources. | [optional] 
 **var_schema** | **str** | The schema within the Snowflake database where the target table resides. | [optional] 
-**stage** | **str** | The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage. | [optional] 
-**table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist Monad will create the table. | [optional] 
+**stage** | **str** | The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage. | [optional] 
+**table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist, the connector will create it. | [optional] 
 **user** | **str** | The username of the Snowflake account used to establish the connection. | [optional] 
 **warehouse** | **str** | The Snowflake virtual warehouse to use for executing queries and processing data. | [optional] 
 

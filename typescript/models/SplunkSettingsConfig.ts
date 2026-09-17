@@ -29,7 +29,7 @@ export class SplunkSettingsConfig {
     */
     'port': string;
     /**
-    * Ensure this is selected if you want Monad to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
+    * Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
     */
     'toCreate'?: boolean;
     /**

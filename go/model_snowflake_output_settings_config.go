@@ -32,9 +32,9 @@ type SnowflakeOutputSettingsConfig struct {
 	Role *string `json:"role,omitempty"`
 	// The schema within the Snowflake database where the target table resides.
 	Schema *string `json:"schema,omitempty"`
-	// The name of the Snowflake stage where the data will be copied to. Monad create or replace the stage.
+	// The name of the Snowflake stage where the data will be copied to. The connector creates or replaces the stage.
 	Stage *string `json:"stage,omitempty"`
-	// The name of the table in Snowflake where the data will be written. If the table doesn't exist Monad will create the table.
+	// The name of the table in Snowflake where the data will be written. If the table doesn't exist, the connector will create it.
 	Table *string `json:"table,omitempty"`
 	// The username of the Snowflake account used to establish the connection.
 	User *string `json:"user,omitempty"`

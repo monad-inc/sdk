@@ -15,7 +15,7 @@ import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant
 import { HttpFile } from '../http/http';
 
 /**
-* How the destination DCR is provided: a single manual DCR, or a Monad-managed pool.
+* How the destination DCR is provided: a single manual DCR, or a managed pool.
 */
 export class Sentinelv2DCRConfig {
     'managed'?: Sentinelv2ManagedDCRVariant;

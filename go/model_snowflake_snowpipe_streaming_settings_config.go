@@ -25,7 +25,7 @@ type SnowflakeSnowpipeStreamingSettingsConfig struct {
 	// The unique identifier for your Snowflake account, e.g. 'orgname-account_name'.
 	Account string `json:"account"`
 	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
-	// Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance. Defaults to \"monad\".
+	// Optional prefix for the channel name. Channels are named \"{prefix}_{instanceID}_{i}\" where instanceID is a fresh random ID per connector instance.
 	ChannelPrefix *string `json:"channel_prefix,omitempty"`
 	// The Snowflake database that contains the target pipe.
 	Database string `json:"database"`
