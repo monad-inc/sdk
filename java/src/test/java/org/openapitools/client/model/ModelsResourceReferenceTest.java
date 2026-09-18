@@ -46,6 +46,14 @@ public class ModelsResourceReferenceTest {
     }
 
     /**
+     * Test the property 'parentName'
+     */
+    @Test
+    public void parentNameTest() {
+        // TODO: test parentName
+    }
+
+    /**
      * Test the property 'parentType'
      */
     @Test
@@ -59,6 +67,14 @@ public class ModelsResourceReferenceTest {
     @Test
     public void resourceIdTest() {
         // TODO: test resourceId
+    }
+
+    /**
+     * Test the property 'resourceName'
+     */
+    @Test
+    public void resourceNameTest() {
+        // TODO: test resourceName
     }
 
     /**

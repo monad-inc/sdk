@@ -6,8 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **parent_id** | **str** | e.g., pipeline ID if resource is a node | [optional] 
+**parent_name** | **str** | Human-readable name for ParentID | [optional] 
 **parent_type** | **str** | For hierarchical resources | [optional] 
 **resource_id** | **str** |  | [optional] 
+**resource_name** | **str** | Human-readable name for ResourceID; omitted when unresolved | [optional] 
 **resource_type** | **str** | \&quot;pipeline\&quot;, \&quot;node\&quot;, \&quot;organization\&quot; | [optional] 
 
 ## Example

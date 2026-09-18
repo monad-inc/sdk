@@ -55,6 +55,11 @@ public class ModelsResourceReference {
   @javax.annotation.Nullable
   private String parentId;
 
+  public static final String SERIALIZED_NAME_PARENT_NAME = "parent_name";
+  @SerializedName(SERIALIZED_NAME_PARENT_NAME)
+  @javax.annotation.Nullable
+  private String parentName;
+
   public static final String SERIALIZED_NAME_PARENT_TYPE = "parent_type";
   @SerializedName(SERIALIZED_NAME_PARENT_TYPE)
   @javax.annotation.Nullable
@@ -64,6 +69,11 @@ public class ModelsResourceReference {
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
   @javax.annotation.Nullable
   private String resourceId;
+
+  public static final String SERIALIZED_NAME_RESOURCE_NAME = "resource_name";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_NAME)
+  @javax.annotation.Nullable
+  private String resourceName;
 
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
@@ -89,6 +99,25 @@ public class ModelsResourceReference {
 
   public void setParentId(@javax.annotation.Nullable String parentId) {
     this.parentId = parentId;
+  }
+
+
+  public ModelsResourceReference parentName(@javax.annotation.Nullable String parentName) {
+    this.parentName = parentName;
+    return this;
+  }
+
+  /**
+   * Human-readable name for ParentID
+   * @return parentName
+   */
+  @javax.annotation.Nullable
+  public String getParentName() {
+    return parentName;
+  }
+
+  public void setParentName(@javax.annotation.Nullable String parentName) {
+    this.parentName = parentName;
   }
 
 
@@ -130,6 +159,25 @@ public class ModelsResourceReference {
   }
 
 
+  public ModelsResourceReference resourceName(@javax.annotation.Nullable String resourceName) {
+    this.resourceName = resourceName;
+    return this;
+  }
+
+  /**
+   * Human-readable name for ResourceID; omitted when unresolved
+   * @return resourceName
+   */
+  @javax.annotation.Nullable
+  public String getResourceName() {
+    return resourceName;
+  }
+
+  public void setResourceName(@javax.annotation.Nullable String resourceName) {
+    this.resourceName = resourceName;
+  }
+
+
   public ModelsResourceReference resourceType(@javax.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
     return this;
@@ -160,14 +208,16 @@ public class ModelsResourceReference {
     }
     ModelsResourceReference modelsResourceReference = (ModelsResourceReference) o;
     return Objects.equals(this.parentId, modelsResourceReference.parentId) &&
+        Objects.equals(this.parentName, modelsResourceReference.parentName) &&
         Objects.equals(this.parentType, modelsResourceReference.parentType) &&
         Objects.equals(this.resourceId, modelsResourceReference.resourceId) &&
+        Objects.equals(this.resourceName, modelsResourceReference.resourceName) &&
         Objects.equals(this.resourceType, modelsResourceReference.resourceType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parentId, parentType, resourceId, resourceType);
+    return Objects.hash(parentId, parentName, parentType, resourceId, resourceName, resourceType);
   }
 
   @Override
@@ -175,8 +225,10 @@ public class ModelsResourceReference {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsResourceReference {\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    parentName: ").append(toIndentedString(parentName)).append("\n");
     sb.append("    parentType: ").append(toIndentedString(parentType)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+    sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -196,7 +248,7 @@ public class ModelsResourceReference {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("parent_id", "parent_type", "resource_id", "resource_type"));
+    openapiFields = new HashSet<String>(Arrays.asList("parent_id", "parent_name", "parent_type", "resource_id", "resource_name", "resource_type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -226,11 +278,17 @@ public class ModelsResourceReference {
       if ((jsonObj.get("parent_id") != null && !jsonObj.get("parent_id").isJsonNull()) && !jsonObj.get("parent_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parent_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_id").toString()));
       }
+      if ((jsonObj.get("parent_name") != null && !jsonObj.get("parent_name").isJsonNull()) && !jsonObj.get("parent_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parent_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_name").toString()));
+      }
       if ((jsonObj.get("parent_type") != null && !jsonObj.get("parent_type").isJsonNull()) && !jsonObj.get("parent_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `parent_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_type").toString()));
       }
       if ((jsonObj.get("resource_id") != null && !jsonObj.get("resource_id").isJsonNull()) && !jsonObj.get("resource_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_id").toString()));
+      }
+      if ((jsonObj.get("resource_name") != null && !jsonObj.get("resource_name").isJsonNull()) && !jsonObj.get("resource_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_name").toString()));
       }
       if ((jsonObj.get("resource_type") != null && !jsonObj.get("resource_type").isJsonNull()) && !jsonObj.get("resource_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `resource_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_type").toString()));

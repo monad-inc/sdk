@@ -45,8 +45,10 @@ class TestModelsAlert(unittest.TestCase):
                 organization_id = '',
                 resource = monad.models.models/resource_reference.models.ResourceReference(
                     parent_id = '', 
+                    parent_name = '', 
                     parent_type = '', 
                     resource_id = '', 
+                    resource_name = '', 
                     resource_type = '', ),
                 rule_id = '',
                 rule_type = '',

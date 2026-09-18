@@ -29,10 +29,12 @@ class ModelsResourceReference(BaseModel):
     ModelsResourceReference
     """ # noqa: E501
     parent_id: Optional[StrictStr] = Field(default=None, description="e.g., pipeline ID if resource is a node")
+    parent_name: Optional[StrictStr] = Field(default=None, description="Human-readable name for ParentID")
     parent_type: Optional[StrictStr] = Field(default=None, description="For hierarchical resources")
     resource_id: Optional[StrictStr] = None
+    resource_name: Optional[StrictStr] = Field(default=None, description="Human-readable name for ResourceID; omitted when unresolved")
     resource_type: Optional[StrictStr] = Field(default=None, description="\"pipeline\", \"node\", \"organization\"")
-    __properties: ClassVar[List[str]] = ["parent_id", "parent_type", "resource_id", "resource_type"]
+    __properties: ClassVar[List[str]] = ["parent_id", "parent_name", "parent_type", "resource_id", "resource_name", "resource_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -86,8 +88,10 @@ class ModelsResourceReference(BaseModel):
 
         _obj = cls.model_validate({
             "parent_id": obj.get("parent_id"),
+            "parent_name": obj.get("parent_name"),
             "parent_type": obj.get("parent_type"),
             "resource_id": obj.get("resource_id"),
+            "resource_name": obj.get("resource_name"),
             "resource_type": obj.get("resource_type")
         })
         return _obj

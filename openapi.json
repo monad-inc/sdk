@@ -6385,11 +6385,19 @@
                         "description": "e.g., pipeline ID if resource is a node",
                         "type": "string"
                     },
+                    "parent_name": {
+                        "description": "Human-readable name for ParentID",
+                        "type": "string"
+                    },
                     "parent_type": {
                         "description": "For hierarchical resources",
                         "type": "string"
                     },
                     "resource_id": {
+                        "type": "string"
+                    },
+                    "resource_name": {
+                        "description": "Human-readable name for ResourceID; omitted when unresolved",
                         "type": "string"
                     },
                     "resource_type": {

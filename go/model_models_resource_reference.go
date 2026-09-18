@@ -22,9 +22,13 @@ var _ MappedNullable = &ModelsResourceReference{}
 type ModelsResourceReference struct {
 	// e.g., pipeline ID if resource is a node
 	ParentId *string `json:"parent_id,omitempty"`
+	// Human-readable name for ParentID
+	ParentName *string `json:"parent_name,omitempty"`
 	// For hierarchical resources
 	ParentType *string `json:"parent_type,omitempty"`
 	ResourceId *string `json:"resource_id,omitempty"`
+	// Human-readable name for ResourceID; omitted when unresolved
+	ResourceName *string `json:"resource_name,omitempty"`
 	// \"pipeline\", \"node\", \"organization\"
 	ResourceType *string `json:"resource_type,omitempty"`
 }
@@ -76,6 +80,38 @@ func (o *ModelsResourceReference) HasParentId() bool {
 // SetParentId gets a reference to the given string and assigns it to the ParentId field.
 func (o *ModelsResourceReference) SetParentId(v string) {
 	o.ParentId = &v
+}
+
+// GetParentName returns the ParentName field value if set, zero value otherwise.
+func (o *ModelsResourceReference) GetParentName() string {
+	if o == nil || IsNil(o.ParentName) {
+		var ret string
+		return ret
+	}
+	return *o.ParentName
+}
+
+// GetParentNameOk returns a tuple with the ParentName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsResourceReference) GetParentNameOk() (*string, bool) {
+	if o == nil || IsNil(o.ParentName) {
+		return nil, false
+	}
+	return o.ParentName, true
+}
+
+// HasParentName returns a boolean if a field has been set.
+func (o *ModelsResourceReference) HasParentName() bool {
+	if o != nil && !IsNil(o.ParentName) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentName gets a reference to the given string and assigns it to the ParentName field.
+func (o *ModelsResourceReference) SetParentName(v string) {
+	o.ParentName = &v
 }
 
 // GetParentType returns the ParentType field value if set, zero value otherwise.
@@ -142,6 +178,38 @@ func (o *ModelsResourceReference) SetResourceId(v string) {
 	o.ResourceId = &v
 }
 
+// GetResourceName returns the ResourceName field value if set, zero value otherwise.
+func (o *ModelsResourceReference) GetResourceName() string {
+	if o == nil || IsNil(o.ResourceName) {
+		var ret string
+		return ret
+	}
+	return *o.ResourceName
+}
+
+// GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsResourceReference) GetResourceNameOk() (*string, bool) {
+	if o == nil || IsNil(o.ResourceName) {
+		return nil, false
+	}
+	return o.ResourceName, true
+}
+
+// HasResourceName returns a boolean if a field has been set.
+func (o *ModelsResourceReference) HasResourceName() bool {
+	if o != nil && !IsNil(o.ResourceName) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceName gets a reference to the given string and assigns it to the ResourceName field.
+func (o *ModelsResourceReference) SetResourceName(v string) {
+	o.ResourceName = &v
+}
+
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *ModelsResourceReference) GetResourceType() string {
 	if o == nil || IsNil(o.ResourceType) {
@@ -187,11 +255,17 @@ func (o ModelsResourceReference) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ParentId) {
 		toSerialize["parent_id"] = o.ParentId
 	}
+	if !IsNil(o.ParentName) {
+		toSerialize["parent_name"] = o.ParentName
+	}
 	if !IsNil(o.ParentType) {
 		toSerialize["parent_type"] = o.ParentType
 	}
 	if !IsNil(o.ResourceId) {
 		toSerialize["resource_id"] = o.ResourceId
+	}
+	if !IsNil(o.ResourceName) {
+		toSerialize["resource_name"] = o.ResourceName
 	}
 	if !IsNil(o.ResourceType) {
 		toSerialize["resource_type"] = o.ResourceType

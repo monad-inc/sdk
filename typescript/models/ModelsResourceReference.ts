@@ -18,10 +18,18 @@ export class ModelsResourceReference {
     */
     'parentId'?: string;
     /**
+    * Human-readable name for ParentID
+    */
+    'parentName'?: string;
+    /**
     * For hierarchical resources
     */
     'parentType'?: string;
     'resourceId'?: string;
+    /**
+    * Human-readable name for ResourceID; omitted when unresolved
+    */
+    'resourceName'?: string;
     /**
     * \"pipeline\", \"node\", \"organization\"
     */
@@ -39,6 +47,12 @@ export class ModelsResourceReference {
             "format": ""
         },
         {
+            "name": "parentName",
+            "baseName": "parent_name",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "parentType",
             "baseName": "parent_type",
             "type": "string",
@@ -47,6 +61,12 @@ export class ModelsResourceReference {
         {
             "name": "resourceId",
             "baseName": "resource_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "resourceName",
+            "baseName": "resource_name",
             "type": "string",
             "format": ""
         },

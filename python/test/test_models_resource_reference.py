@@ -37,8 +37,10 @@ class TestModelsResourceReference(unittest.TestCase):
         if include_optional:
             return ModelsResourceReference(
                 parent_id = '',
+                parent_name = '',
                 parent_type = '',
                 resource_id = '',
+                resource_name = '',
                 resource_type = ''
             )
         else:

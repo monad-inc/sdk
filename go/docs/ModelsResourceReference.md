@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ParentId** | Pointer to **string** | e.g., pipeline ID if resource is a node | [optional] 
+**ParentName** | Pointer to **string** | Human-readable name for ParentID | [optional] 
 **ParentType** | Pointer to **string** | For hierarchical resources | [optional] 
 **ResourceId** | Pointer to **string** |  | [optional] 
+**ResourceName** | Pointer to **string** | Human-readable name for ResourceID; omitted when unresolved | [optional] 
 **ResourceType** | Pointer to **string** | \&quot;pipeline\&quot;, \&quot;node\&quot;, \&quot;organization\&quot; | [optional] 
 
 ## Methods
@@ -52,6 +54,31 @@ SetParentId sets ParentId field to given value.
 `func (o *ModelsResourceReference) HasParentId() bool`
 
 HasParentId returns a boolean if a field has been set.
+
+### GetParentName
+
+`func (o *ModelsResourceReference) GetParentName() string`
+
+GetParentName returns the ParentName field if non-nil, zero value otherwise.
+
+### GetParentNameOk
+
+`func (o *ModelsResourceReference) GetParentNameOk() (*string, bool)`
+
+GetParentNameOk returns a tuple with the ParentName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentName
+
+`func (o *ModelsResourceReference) SetParentName(v string)`
+
+SetParentName sets ParentName field to given value.
+
+### HasParentName
+
+`func (o *ModelsResourceReference) HasParentName() bool`
+
+HasParentName returns a boolean if a field has been set.
 
 ### GetParentType
 
@@ -102,6 +129,31 @@ SetResourceId sets ResourceId field to given value.
 `func (o *ModelsResourceReference) HasResourceId() bool`
 
 HasResourceId returns a boolean if a field has been set.
+
+### GetResourceName
+
+`func (o *ModelsResourceReference) GetResourceName() string`
+
+GetResourceName returns the ResourceName field if non-nil, zero value otherwise.
+
+### GetResourceNameOk
+
+`func (o *ModelsResourceReference) GetResourceNameOk() (*string, bool)`
+
+GetResourceNameOk returns a tuple with the ResourceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceName
+
+`func (o *ModelsResourceReference) SetResourceName(v string)`
+
+SetResourceName sets ResourceName field to given value.
+
+### HasResourceName
+
+`func (o *ModelsResourceReference) HasResourceName() bool`
+
+HasResourceName returns a boolean if a field has been set.
 
 ### GetResourceType
 
