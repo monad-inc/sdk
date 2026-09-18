@@ -31,7 +31,7 @@ class RoutesV2ApplyTransformationResponse(BaseModel):
     bytes_after: Optional[StrictInt] = None
     bytes_before: Optional[StrictInt] = None
     percentage_change: Optional[Union[StrictFloat, StrictInt]] = None
-    records: Optional[List[List[StrictInt]]] = None
+    records: Optional[List[Dict[str, Any]]] = None
     __properties: ClassVar[List[str]] = ["bytes_after", "bytes_before", "percentage_change", "records"]
 
     model_config = ConfigDict(

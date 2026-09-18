@@ -23,7 +23,7 @@ type RoutesV2ApplyTransformationResponse struct {
 	BytesAfter *int32 `json:"bytes_after,omitempty"`
 	BytesBefore *int32 `json:"bytes_before,omitempty"`
 	PercentageChange *float32 `json:"percentage_change,omitempty"`
-	Records [][]int32 `json:"records,omitempty"`
+	Records []map[string]interface{} `json:"records,omitempty"`
 }
 
 // NewRoutesV2ApplyTransformationResponse instantiates a new RoutesV2ApplyTransformationResponse object
@@ -140,9 +140,9 @@ func (o *RoutesV2ApplyTransformationResponse) SetPercentageChange(v float32) {
 }
 
 // GetRecords returns the Records field value if set, zero value otherwise.
-func (o *RoutesV2ApplyTransformationResponse) GetRecords() [][]int32 {
+func (o *RoutesV2ApplyTransformationResponse) GetRecords() []map[string]interface{} {
 	if o == nil || IsNil(o.Records) {
-		var ret [][]int32
+		var ret []map[string]interface{}
 		return ret
 	}
 	return o.Records
@@ -150,7 +150,7 @@ func (o *RoutesV2ApplyTransformationResponse) GetRecords() [][]int32 {
 
 // GetRecordsOk returns a tuple with the Records field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2ApplyTransformationResponse) GetRecordsOk() ([][]int32, bool) {
+func (o *RoutesV2ApplyTransformationResponse) GetRecordsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Records) {
 		return nil, false
 	}
@@ -166,8 +166,8 @@ func (o *RoutesV2ApplyTransformationResponse) HasRecords() bool {
 	return false
 }
 
-// SetRecords gets a reference to the given [][]int32 and assigns it to the Records field.
-func (o *RoutesV2ApplyTransformationResponse) SetRecords(v [][]int32) {
+// SetRecords gets a reference to the given []map[string]interface{} and assigns it to the Records field.
+func (o *RoutesV2ApplyTransformationResponse) SetRecords(v []map[string]interface{}) {
 	o.Records = v
 }
 

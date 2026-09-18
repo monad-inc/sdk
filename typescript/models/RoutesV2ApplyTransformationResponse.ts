@@ -16,7 +16,7 @@ export class RoutesV2ApplyTransformationResponse {
     'bytesAfter'?: number;
     'bytesBefore'?: number;
     'percentageChange'?: number;
-    'records'?: Array<Array<number>>;
+    'records'?: Array<any>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -44,7 +44,7 @@ export class RoutesV2ApplyTransformationResponse {
         {
             "name": "records",
             "baseName": "records",
-            "type": "Array<Array<number>>",
+            "type": "Array<any>",
             "format": ""
         }    ];
 

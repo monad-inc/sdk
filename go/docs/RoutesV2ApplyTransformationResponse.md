@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BytesAfter** | Pointer to **int32** |  | [optional] 
 **BytesBefore** | Pointer to **int32** |  | [optional] 
 **PercentageChange** | Pointer to **float32** |  | [optional] 
-**Records** | Pointer to **[][]int32** |  | [optional] 
+**Records** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasPercentageChange returns a boolean if a field has been set.
 
 ### GetRecords
 
-`func (o *RoutesV2ApplyTransformationResponse) GetRecords() [][]int32`
+`func (o *RoutesV2ApplyTransformationResponse) GetRecords() []map[string]interface{}`
 
 GetRecords returns the Records field if non-nil, zero value otherwise.
 
 ### GetRecordsOk
 
-`func (o *RoutesV2ApplyTransformationResponse) GetRecordsOk() (*[][]int32, bool)`
+`func (o *RoutesV2ApplyTransformationResponse) GetRecordsOk() (*[]map[string]interface{}, bool)`
 
 GetRecordsOk returns a tuple with the Records field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecords
 
-`func (o *RoutesV2ApplyTransformationResponse) SetRecords(v [][]int32)`
+`func (o *RoutesV2ApplyTransformationResponse) SetRecords(v []map[string]interface{})`
 
 SetRecords sets Records field to given value.
 

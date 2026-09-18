@@ -40,9 +40,7 @@ class TestRoutesV2ApplyTransformationResponse(unittest.TestCase):
                 bytes_before = 56,
                 percentage_change = 1.337,
                 records = [
-                    [
-                        56
-                        ]
+                    None
                     ]
             )
         else:

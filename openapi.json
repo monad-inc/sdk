@@ -4037,9 +4037,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -8650,10 +8650,7 @@
                     },
                     "records": {
                         "items": {
-                            "items": {
-                                "type": "integer"
-                            },
-                            "type": "array"
+                            "type": "object"
                         },
                         "type": "array",
                         "uniqueItems": false

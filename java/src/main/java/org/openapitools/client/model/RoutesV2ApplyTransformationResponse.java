@@ -71,7 +71,7 @@ public class RoutesV2ApplyTransformationResponse {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)
   @javax.annotation.Nullable
-  private List<List<Integer>> records = new ArrayList<>();
+  private List<Object> records = new ArrayList<>();
 
   public RoutesV2ApplyTransformationResponse() {
   }
@@ -133,12 +133,12 @@ public class RoutesV2ApplyTransformationResponse {
   }
 
 
-  public RoutesV2ApplyTransformationResponse records(@javax.annotation.Nullable List<List<Integer>> records) {
+  public RoutesV2ApplyTransformationResponse records(@javax.annotation.Nullable List<Object> records) {
     this.records = records;
     return this;
   }
 
-  public RoutesV2ApplyTransformationResponse addRecordsItem(List<Integer> recordsItem) {
+  public RoutesV2ApplyTransformationResponse addRecordsItem(Object recordsItem) {
     if (this.records == null) {
       this.records = new ArrayList<>();
     }
@@ -151,11 +151,11 @@ public class RoutesV2ApplyTransformationResponse {
    * @return records
    */
   @javax.annotation.Nullable
-  public List<List<Integer>> getRecords() {
+  public List<Object> getRecords() {
     return records;
   }
 
-  public void setRecords(@javax.annotation.Nullable List<List<Integer>> records) {
+  public void setRecords(@javax.annotation.Nullable List<Object> records) {
     this.records = records;
   }
 

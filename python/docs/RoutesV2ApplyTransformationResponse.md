@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **bytes_after** | **int** |  | [optional] 
 **bytes_before** | **int** |  | [optional] 
 **percentage_change** | **float** |  | [optional] 
-**records** | **List[List[int]]** |  | [optional] 
+**records** | **List[object]** |  | [optional] 
 
 ## Example
 
