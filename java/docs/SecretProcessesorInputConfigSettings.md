@@ -75,6 +75,7 @@
 |**domainName** | **String** | Domain name of the Cortex XSOAR instance |  |
 |**category** | [**CategoryEnum**](#CategoryEnum) | The Category of logs to query |  |
 |**clusterName** | **String** | The name of the GKE cluster. |  |
+|**ingestionLagSeconds** | **Integer** |  |  [optional] |
 |**usesStaticCreds** | **Boolean** |  |  [optional] |
 |**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  |
 |**ingestionDelay** | **Integer** | The ingestion delay in seconds for the data source |  [optional] |

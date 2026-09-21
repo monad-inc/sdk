@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the EksAuditLogsSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -21,19 +23,24 @@ var _ MappedNullable = &EksAuditLogsSettingsConfig{}
 // EksAuditLogsSettingsConfig struct for EksAuditLogsSettingsConfig
 type EksAuditLogsSettingsConfig struct {
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
-	ClusterName *string `json:"cluster_name,omitempty"`
-	Region *string `json:"region,omitempty"`
+	ClusterName string `json:"cluster_name"`
+	IngestionLagSeconds *int32 `json:"ingestion_lag_seconds,omitempty"`
+	Region string `json:"region"`
 	RoleArn *string `json:"role_arn,omitempty"`
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 	UsesStaticCreds *bool `json:"usesStaticCreds,omitempty"`
 }
 
+type _EksAuditLogsSettingsConfig EksAuditLogsSettingsConfig
+
 // NewEksAuditLogsSettingsConfig instantiates a new EksAuditLogsSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEksAuditLogsSettingsConfig() *EksAuditLogsSettingsConfig {
+func NewEksAuditLogsSettingsConfig(clusterName string, region string) *EksAuditLogsSettingsConfig {
 	this := EksAuditLogsSettingsConfig{}
+	this.ClusterName = clusterName
+	this.Region = region
 	return &this
 }
 
@@ -77,68 +84,84 @@ func (o *EksAuditLogsSettingsConfig) SetBackfillStartTime(v string) {
 	o.BackfillStartTime = &v
 }
 
-// GetClusterName returns the ClusterName field value if set, zero value otherwise.
+// GetClusterName returns the ClusterName field value
 func (o *EksAuditLogsSettingsConfig) GetClusterName() string {
-	if o == nil || IsNil(o.ClusterName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ClusterName
+
+	return o.ClusterName
 }
 
-// GetClusterNameOk returns a tuple with the ClusterName field value if set, nil otherwise
+// GetClusterNameOk returns a tuple with the ClusterName field value
 // and a boolean to check if the value has been set.
 func (o *EksAuditLogsSettingsConfig) GetClusterNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ClusterName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClusterName, true
+	return &o.ClusterName, true
 }
 
-// HasClusterName returns a boolean if a field has been set.
-func (o *EksAuditLogsSettingsConfig) HasClusterName() bool {
-	if o != nil && !IsNil(o.ClusterName) {
+// SetClusterName sets field value
+func (o *EksAuditLogsSettingsConfig) SetClusterName(v string) {
+	o.ClusterName = v
+}
+
+// GetIngestionLagSeconds returns the IngestionLagSeconds field value if set, zero value otherwise.
+func (o *EksAuditLogsSettingsConfig) GetIngestionLagSeconds() int32 {
+	if o == nil || IsNil(o.IngestionLagSeconds) {
+		var ret int32
+		return ret
+	}
+	return *o.IngestionLagSeconds
+}
+
+// GetIngestionLagSecondsOk returns a tuple with the IngestionLagSeconds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EksAuditLogsSettingsConfig) GetIngestionLagSecondsOk() (*int32, bool) {
+	if o == nil || IsNil(o.IngestionLagSeconds) {
+		return nil, false
+	}
+	return o.IngestionLagSeconds, true
+}
+
+// HasIngestionLagSeconds returns a boolean if a field has been set.
+func (o *EksAuditLogsSettingsConfig) HasIngestionLagSeconds() bool {
+	if o != nil && !IsNil(o.IngestionLagSeconds) {
 		return true
 	}
 
 	return false
 }
 
-// SetClusterName gets a reference to the given string and assigns it to the ClusterName field.
-func (o *EksAuditLogsSettingsConfig) SetClusterName(v string) {
-	o.ClusterName = &v
+// SetIngestionLagSeconds gets a reference to the given int32 and assigns it to the IngestionLagSeconds field.
+func (o *EksAuditLogsSettingsConfig) SetIngestionLagSeconds(v int32) {
+	o.IngestionLagSeconds = &v
 }
 
-// GetRegion returns the Region field value if set, zero value otherwise.
+// GetRegion returns the Region field value
 func (o *EksAuditLogsSettingsConfig) GetRegion() string {
-	if o == nil || IsNil(o.Region) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Region
+
+	return o.Region
 }
 
-// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// GetRegionOk returns a tuple with the Region field value
 // and a boolean to check if the value has been set.
 func (o *EksAuditLogsSettingsConfig) GetRegionOk() (*string, bool) {
-	if o == nil || IsNil(o.Region) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Region, true
+	return &o.Region, true
 }
 
-// HasRegion returns a boolean if a field has been set.
-func (o *EksAuditLogsSettingsConfig) HasRegion() bool {
-	if o != nil && !IsNil(o.Region) {
-		return true
-	}
-
-	return false
-}
-
-// SetRegion gets a reference to the given string and assigns it to the Region field.
+// SetRegion sets field value
 func (o *EksAuditLogsSettingsConfig) SetRegion(v string) {
-	o.Region = &v
+	o.Region = v
 }
 
 // GetRoleArn returns the RoleArn field value if set, zero value otherwise.
@@ -250,12 +273,11 @@ func (o EksAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BackfillStartTime) {
 		toSerialize["backfill_start_time"] = o.BackfillStartTime
 	}
-	if !IsNil(o.ClusterName) {
-		toSerialize["cluster_name"] = o.ClusterName
+	toSerialize["cluster_name"] = o.ClusterName
+	if !IsNil(o.IngestionLagSeconds) {
+		toSerialize["ingestion_lag_seconds"] = o.IngestionLagSeconds
 	}
-	if !IsNil(o.Region) {
-		toSerialize["region"] = o.Region
-	}
+	toSerialize["region"] = o.Region
 	if !IsNil(o.RoleArn) {
 		toSerialize["role_arn"] = o.RoleArn
 	}
@@ -266,6 +288,44 @@ func (o EksAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 		toSerialize["usesStaticCreds"] = o.UsesStaticCreds
 	}
 	return toSerialize, nil
+}
+
+func (o *EksAuditLogsSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"cluster_name",
+		"region",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varEksAuditLogsSettingsConfig := _EksAuditLogsSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varEksAuditLogsSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = EksAuditLogsSettingsConfig(varEksAuditLogsSettingsConfig)
+
+	return err
 }
 
 type NullableEksAuditLogsSettingsConfig struct {

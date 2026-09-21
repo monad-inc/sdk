@@ -14,8 +14,9 @@ import { HttpFile } from '../http/http';
 
 export class EksAuditLogsSettingsConfig {
     'backfillStartTime'?: string;
-    'clusterName'?: string;
-    'region'?: string;
+    'clusterName': string;
+    'ingestionLagSeconds'?: number;
+    'region': string;
     'roleArn'?: string;
     'useSyntheticData'?: boolean;
     'usesStaticCreds'?: boolean;
@@ -35,6 +36,12 @@ export class EksAuditLogsSettingsConfig {
             "name": "clusterName",
             "baseName": "cluster_name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "ingestionLagSeconds",
+            "baseName": "ingestion_lag_seconds",
+            "type": "number",
             "format": ""
         },
         {

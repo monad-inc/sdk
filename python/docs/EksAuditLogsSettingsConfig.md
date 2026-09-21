@@ -6,8 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** |  | [optional] 
-**cluster_name** | **str** |  | [optional] 
-**region** | **str** |  | [optional] 
+**cluster_name** | **str** |  | 
+**ingestion_lag_seconds** | **int** |  | [optional] 
+**region** | **str** |  | 
 **role_arn** | **str** |  | [optional] 
 **use_synthetic_data** | **bool** |  | [optional] 
 **uses_static_creds** | **bool** |  | [optional] 

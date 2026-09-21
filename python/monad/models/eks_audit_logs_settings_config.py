@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,12 +30,13 @@ class EksAuditLogsSettingsConfig(BaseModel):
     EksAuditLogsSettingsConfig
     """ # noqa: E501
     backfill_start_time: Optional[StrictStr] = None
-    cluster_name: Optional[StrictStr] = None
-    region: Optional[StrictStr] = None
+    cluster_name: StrictStr
+    ingestion_lag_seconds: Optional[Annotated[int, Field(le=1209600, strict=True, ge=5)]] = None
+    region: StrictStr
     role_arn: Optional[StrictStr] = None
     use_synthetic_data: Optional[StrictBool] = None
     uses_static_creds: Optional[StrictBool] = Field(default=None, alias="usesStaticCreds")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "cluster_name", "region", "role_arn", "use_synthetic_data", "usesStaticCreds"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "cluster_name", "ingestion_lag_seconds", "region", "role_arn", "use_synthetic_data", "usesStaticCreds"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,6 +91,7 @@ class EksAuditLogsSettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "backfill_start_time": obj.get("backfill_start_time"),
             "cluster_name": obj.get("cluster_name"),
+            "ingestion_lag_seconds": obj.get("ingestion_lag_seconds"),
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
             "use_synthetic_data": obj.get("use_synthetic_data"),

@@ -38,6 +38,7 @@ class TestEksAuditLogsSettingsConfig(unittest.TestCase):
             return EksAuditLogsSettingsConfig(
                 backfill_start_time = '',
                 cluster_name = '',
+                ingestion_lag_seconds = 5,
                 region = '',
                 role_arn = '',
                 use_synthetic_data = True,
@@ -45,6 +46,8 @@ class TestEksAuditLogsSettingsConfig(unittest.TestCase):
             )
         else:
             return EksAuditLogsSettingsConfig(
+                cluster_name = '',
+                region = '',
         )
         """
 

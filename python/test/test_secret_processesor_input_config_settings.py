@@ -129,6 +129,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 domain_name = '',
                 category = 'AuditLogs',
                 cluster_name = '',
+                ingestion_lag_seconds = 5,
                 uses_static_creds = True,
                 namespace = '',
                 ingestion_delay = 56,

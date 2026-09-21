@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** |  | [optional] 
-**ClusterName** | Pointer to **string** |  | [optional] 
-**Region** | Pointer to **string** |  | [optional] 
+**ClusterName** | **string** |  | 
+**IngestionLagSeconds** | Pointer to **int32** |  | [optional] 
+**Region** | **string** |  | 
 **RoleArn** | Pointer to **string** |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** |  | [optional] 
 **UsesStaticCreds** | Pointer to **bool** |  | [optional] 
@@ -15,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewEksAuditLogsSettingsConfig
 
-`func NewEksAuditLogsSettingsConfig() *EksAuditLogsSettingsConfig`
+`func NewEksAuditLogsSettingsConfig(clusterName string, region string, ) *EksAuditLogsSettingsConfig`
 
 NewEksAuditLogsSettingsConfig instantiates a new EksAuditLogsSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -74,11 +75,31 @@ and a boolean to check if the value has been set.
 
 SetClusterName sets ClusterName field to given value.
 
-### HasClusterName
 
-`func (o *EksAuditLogsSettingsConfig) HasClusterName() bool`
+### GetIngestionLagSeconds
 
-HasClusterName returns a boolean if a field has been set.
+`func (o *EksAuditLogsSettingsConfig) GetIngestionLagSeconds() int32`
+
+GetIngestionLagSeconds returns the IngestionLagSeconds field if non-nil, zero value otherwise.
+
+### GetIngestionLagSecondsOk
+
+`func (o *EksAuditLogsSettingsConfig) GetIngestionLagSecondsOk() (*int32, bool)`
+
+GetIngestionLagSecondsOk returns a tuple with the IngestionLagSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngestionLagSeconds
+
+`func (o *EksAuditLogsSettingsConfig) SetIngestionLagSeconds(v int32)`
+
+SetIngestionLagSeconds sets IngestionLagSeconds field to given value.
+
+### HasIngestionLagSeconds
+
+`func (o *EksAuditLogsSettingsConfig) HasIngestionLagSeconds() bool`
+
+HasIngestionLagSeconds returns a boolean if a field has been set.
 
 ### GetRegion
 
@@ -99,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
-### HasRegion
-
-`func (o *EksAuditLogsSettingsConfig) HasRegion() bool`
-
-HasRegion returns a boolean if a field has been set.
 
 ### GetRoleArn
 

@@ -675,6 +675,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'ingestionLagSeconds'
+     */
+    @Test
+    public void ingestionLagSecondsTest() {
+        // TODO: test ingestionLagSeconds
+    }
+
+    /**
      * Test the property 'usesStaticCreds'
      */
     @Test

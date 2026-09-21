@@ -57,12 +57,17 @@ public class EksAuditLogsSettingsConfig {
 
   public static final String SERIALIZED_NAME_CLUSTER_NAME = "cluster_name";
   @SerializedName(SERIALIZED_NAME_CLUSTER_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String clusterName;
+
+  public static final String SERIALIZED_NAME_INGESTION_LAG_SECONDS = "ingestion_lag_seconds";
+  @SerializedName(SERIALIZED_NAME_INGESTION_LAG_SECONDS)
+  @javax.annotation.Nullable
+  private Integer ingestionLagSeconds;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String region;
 
   public static final String SERIALIZED_NAME_ROLE_ARN = "role_arn";
@@ -102,7 +107,7 @@ public class EksAuditLogsSettingsConfig {
   }
 
 
-  public EksAuditLogsSettingsConfig clusterName(@javax.annotation.Nullable String clusterName) {
+  public EksAuditLogsSettingsConfig clusterName(@javax.annotation.Nonnull String clusterName) {
     this.clusterName = clusterName;
     return this;
   }
@@ -111,17 +116,38 @@ public class EksAuditLogsSettingsConfig {
    * Get clusterName
    * @return clusterName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getClusterName() {
     return clusterName;
   }
 
-  public void setClusterName(@javax.annotation.Nullable String clusterName) {
+  public void setClusterName(@javax.annotation.Nonnull String clusterName) {
     this.clusterName = clusterName;
   }
 
 
-  public EksAuditLogsSettingsConfig region(@javax.annotation.Nullable String region) {
+  public EksAuditLogsSettingsConfig ingestionLagSeconds(@javax.annotation.Nullable Integer ingestionLagSeconds) {
+    this.ingestionLagSeconds = ingestionLagSeconds;
+    return this;
+  }
+
+  /**
+   * Get ingestionLagSeconds
+   * minimum: 5
+   * maximum: 1209600
+   * @return ingestionLagSeconds
+   */
+  @javax.annotation.Nullable
+  public Integer getIngestionLagSeconds() {
+    return ingestionLagSeconds;
+  }
+
+  public void setIngestionLagSeconds(@javax.annotation.Nullable Integer ingestionLagSeconds) {
+    this.ingestionLagSeconds = ingestionLagSeconds;
+  }
+
+
+  public EksAuditLogsSettingsConfig region(@javax.annotation.Nonnull String region) {
     this.region = region;
     return this;
   }
@@ -130,12 +156,12 @@ public class EksAuditLogsSettingsConfig {
    * Get region
    * @return region
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getRegion() {
     return region;
   }
 
-  public void setRegion(@javax.annotation.Nullable String region) {
+  public void setRegion(@javax.annotation.Nonnull String region) {
     this.region = region;
   }
 
@@ -209,6 +235,7 @@ public class EksAuditLogsSettingsConfig {
     EksAuditLogsSettingsConfig eksAuditLogsSettingsConfig = (EksAuditLogsSettingsConfig) o;
     return Objects.equals(this.backfillStartTime, eksAuditLogsSettingsConfig.backfillStartTime) &&
         Objects.equals(this.clusterName, eksAuditLogsSettingsConfig.clusterName) &&
+        Objects.equals(this.ingestionLagSeconds, eksAuditLogsSettingsConfig.ingestionLagSeconds) &&
         Objects.equals(this.region, eksAuditLogsSettingsConfig.region) &&
         Objects.equals(this.roleArn, eksAuditLogsSettingsConfig.roleArn) &&
         Objects.equals(this.useSyntheticData, eksAuditLogsSettingsConfig.useSyntheticData) &&
@@ -217,7 +244,7 @@ public class EksAuditLogsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, clusterName, region, roleArn, useSyntheticData, usesStaticCreds);
+    return Objects.hash(backfillStartTime, clusterName, ingestionLagSeconds, region, roleArn, useSyntheticData, usesStaticCreds);
   }
 
   @Override
@@ -226,6 +253,7 @@ public class EksAuditLogsSettingsConfig {
     sb.append("class EksAuditLogsSettingsConfig {\n");
     sb.append("    backfillStartTime: ").append(toIndentedString(backfillStartTime)).append("\n");
     sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+    sb.append("    ingestionLagSeconds: ").append(toIndentedString(ingestionLagSeconds)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
@@ -248,10 +276,10 @@ public class EksAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cluster_name", "region", "role_arn", "use_synthetic_data", "usesStaticCreds"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cluster_name", "ingestion_lag_seconds", "region", "role_arn", "use_synthetic_data", "usesStaticCreds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("cluster_name", "region"));
   }
 
   /**
@@ -274,14 +302,21 @@ public class EksAuditLogsSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EksAuditLogsSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EksAuditLogsSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("backfill_start_time") != null && !jsonObj.get("backfill_start_time").isJsonNull()) && !jsonObj.get("backfill_start_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `backfill_start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backfill_start_time").toString()));
       }
-      if ((jsonObj.get("cluster_name") != null && !jsonObj.get("cluster_name").isJsonNull()) && !jsonObj.get("cluster_name").isJsonPrimitive()) {
+      if (!jsonObj.get("cluster_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cluster_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cluster_name").toString()));
       }
-      if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
+      if (!jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("role_arn") != null && !jsonObj.get("role_arn").isJsonNull()) && !jsonObj.get("role_arn").isJsonPrimitive()) {

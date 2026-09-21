@@ -2524,6 +2524,11 @@
                     "cluster_name": {
                         "type": "string"
                     },
+                    "ingestion_lag_seconds": {
+                        "maximum": 1209600,
+                        "minimum": 5,
+                        "type": "integer"
+                    },
                     "region": {
                         "type": "string"
                     },
@@ -2537,6 +2542,10 @@
                         "type": "boolean"
                     }
                 },
+                "required": [
+                    "cluster_name",
+                    "region"
+                ],
                 "type": "object"
             },
             "elasticsearch.AuthConfig": {

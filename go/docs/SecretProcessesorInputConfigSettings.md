@@ -72,6 +72,7 @@ Name | Type | Description | Notes
 **DomainName** | **string** | Domain name of the Cortex XSOAR instance | 
 **Category** | **string** | The Category of logs to query | 
 **ClusterName** | **string** | The name of the GKE cluster. | 
+**IngestionLagSeconds** | Pointer to **int32** |  | [optional] 
 **UsesStaticCreds** | Pointer to **bool** |  | [optional] 
 **Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
@@ -1788,6 +1789,31 @@ and a boolean to check if the value has been set.
 
 SetClusterName sets ClusterName field to given value.
 
+
+### GetIngestionLagSeconds
+
+`func (o *SecretProcessesorInputConfigSettings) GetIngestionLagSeconds() int32`
+
+GetIngestionLagSeconds returns the IngestionLagSeconds field if non-nil, zero value otherwise.
+
+### GetIngestionLagSecondsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIngestionLagSecondsOk() (*int32, bool)`
+
+GetIngestionLagSecondsOk returns a tuple with the IngestionLagSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngestionLagSeconds
+
+`func (o *SecretProcessesorInputConfigSettings) SetIngestionLagSeconds(v int32)`
+
+SetIngestionLagSeconds sets IngestionLagSeconds field to given value.
+
+### HasIngestionLagSeconds
+
+`func (o *SecretProcessesorInputConfigSettings) HasIngestionLagSeconds() bool`
+
+HasIngestionLagSeconds returns a boolean if a field has been set.
 
 ### GetUsesStaticCreds
 
