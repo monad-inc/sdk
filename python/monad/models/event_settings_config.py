@@ -28,7 +28,7 @@ class EventSettingsConfig(BaseModel):
     """
     CrowdStrike EDR event stream settings
     """ # noqa: E501
-    app_name: Optional[StrictStr] = Field(default=None, description="The application name monad uses to connect to the CrowdStrike data stream. It's important that this name is unique to avoid conflicts with other applications connecting to the same stream. You're advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named 'monad'.")
+    app_name: Optional[StrictStr] = Field(default=None, description="The application name the connector uses to connect to the CrowdStrike data stream. It's important that this name is unique to avoid conflicts with other applications connecting to the same stream. You're advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both share the same name.")
     cloud: Optional[StrictStr] = Field(default=None, description="Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.")
     member_cid: Optional[StrictStr] = Field(default=None, description="In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer's environment. This is crucial for scenarios where operational isolation between different clients' data and configurations is necessary.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")

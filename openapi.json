@@ -2863,7 +2863,7 @@
                 "description": "CrowdStrike EDR event stream settings",
                 "properties": {
                     "app_name": {
-                        "description": "The application name monad uses to connect to the CrowdStrike data stream.\nIt's important that this name is unique to avoid conflicts with other applications\nconnecting to the same stream. You're advised to use a unique identifier for this\napplication. For example, if you have 2 stream input connections they should not both\nbe named 'monad'.",
+                        "description": "The application name the connector uses to connect to the CrowdStrike data stream.\nIt's important that this name is unique to avoid conflicts with other applications\nconnecting to the same stream. You're advised to use a unique identifier for this\napplication. For example, if you have 2 stream input connections they should not both\nshare the same name.",
                         "type": "string"
                     },
                     "cloud": {
@@ -4037,9 +4037,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {

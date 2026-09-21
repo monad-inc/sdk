@@ -20,7 +20,7 @@ var _ MappedNullable = &EventSettingsConfig{}
 
 // EventSettingsConfig CrowdStrike EDR event stream settings
 type EventSettingsConfig struct {
-	// The application name monad uses to connect to the CrowdStrike data stream. It's important that this name is unique to avoid conflicts with other applications connecting to the same stream. You're advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both be named 'monad'.
+	// The application name the connector uses to connect to the CrowdStrike data stream. It's important that this name is unique to avoid conflicts with other applications connecting to the same stream. You're advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both share the same name.
 	AppName *string `json:"app_name,omitempty"`
 	// Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.
 	Cloud *string `json:"cloud,omitempty"`
