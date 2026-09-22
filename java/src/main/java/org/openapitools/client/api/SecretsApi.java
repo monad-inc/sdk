@@ -89,6 +89,7 @@ public class SecretsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -167,6 +168,7 @@ public class SecretsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -188,6 +190,7 @@ public class SecretsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -211,6 +214,7 @@ public class SecretsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -677,6 +681,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Secret not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -763,6 +768,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Secret not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -786,6 +792,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Secret not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -811,6 +818,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Secret not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A secret with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

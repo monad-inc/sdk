@@ -88,6 +88,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
 | **400** | Invalid request body |  -  |
+| **409** | A secret with this name already exists |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="deleteSecret"></a>
@@ -409,5 +410,6 @@ public class Example {
 | **200** | OK |  -  |
 | **400** | Invalid request body |  -  |
 | **404** | Secret not found |  -  |
+| **409** | A secret with this name already exists |  -  |
 | **500** | Internal server error |  -  |
 

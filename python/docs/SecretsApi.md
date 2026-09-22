@@ -98,6 +98,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **201** | Created |  -  |
 **400** | Invalid request body |  -  |
+**409** | A secret with this name already exists |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -462,6 +463,7 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid request body |  -  |
 **404** | Secret not found |  -  |
+**409** | A secret with this name already exists |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

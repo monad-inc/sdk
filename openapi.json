@@ -22347,6 +22347,16 @@
                         },
                         "description": "Invalid request body"
                     },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A secret with this name already exists"
+                    },
                     "500": {
                         "content": {
                             "application/json": {
@@ -22604,6 +22614,16 @@
                             }
                         },
                         "description": "Secret not found"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A secret with this name already exists"
                     },
                     "500": {
                         "content": {

@@ -102,6 +102,7 @@ class SecretsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "RoutesV2SecretResponse",
             '400': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -175,6 +176,7 @@ class SecretsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "RoutesV2SecretResponse",
             '400': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -248,6 +250,7 @@ class SecretsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '201': "RoutesV2SecretResponse",
             '400': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1274,6 +1277,7 @@ class SecretsApi:
             '200': "RoutesV2SecretResponse",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1352,6 +1356,7 @@ class SecretsApi:
             '200': "RoutesV2SecretResponse",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1430,6 +1435,7 @@ class SecretsApi:
             '200': "RoutesV2SecretResponse",
             '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
