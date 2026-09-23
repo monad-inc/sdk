@@ -9,7 +9,7 @@ KV Lookup Output Settings
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**keyField** | **String** | The field in the incoming record to use as the key |  [optional] |
-|**ttl** | **Integer** | Time-to-live in hours for stored key-value pairs (0 means no expiration) |  [optional] |
+|**ttl** | **Integer** | Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours |  [optional] |
 |**valueField** | **String** | The field in the incoming record to use as the value |  [optional] |
 
 

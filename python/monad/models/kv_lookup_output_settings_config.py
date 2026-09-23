@@ -29,7 +29,7 @@ class KvLookupOutputSettingsConfig(BaseModel):
     KV Lookup Output Settings
     """ # noqa: E501
     key_field: Optional[StrictStr] = Field(default=None, description="The field in the incoming record to use as the key")
-    ttl: Optional[StrictInt] = Field(default=None, description="Time-to-live in hours for stored key-value pairs (0 means no expiration)")
+    ttl: Optional[StrictInt] = Field(default=None, description="Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours")
     value_field: Optional[StrictStr] = Field(default=None, description="The field in the incoming record to use as the value")
     __properties: ClassVar[List[str]] = ["key_field", "ttl", "value_field"]
 

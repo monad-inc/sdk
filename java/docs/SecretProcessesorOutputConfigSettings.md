@@ -75,7 +75,7 @@
 |**securityProtocol** | **KafkaSecurityProtocol** |  |  [optional] |
 |**topic** | **String** | The Kafka topic to publish messages to |  [optional] |
 |**keyField** | **String** | The field in the incoming record to use as the key |  [optional] |
-|**ttl** | **Integer** | Time-to-live in hours for stored key-value pairs (0 means no expiration) |  [optional] |
+|**ttl** | **Integer** | Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours |  [optional] |
 |**valueField** | **String** |  |  [optional] |
 |**skipSslVerification** | **Boolean** | Whether to skip SSL certificate verification (useful for self-signed certificates or development environments) |  [optional] |
 |**usePathStyle** | **Boolean** | Whether to use path-style URLs (bucket.endpoint.com/object vs endpoint.com/bucket/object). Most S3-compatible services require this to be true. |  [optional] |

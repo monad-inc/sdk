@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KeyField** | Pointer to **string** | The field in the incoming record to use as the key | [optional] 
-**Ttl** | Pointer to **int32** | Time-to-live in hours for stored key-value pairs (0 means no expiration) | [optional] 
+**Ttl** | Pointer to **int32** | Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours | [optional] 
 **ValueField** | Pointer to **string** | The field in the incoming record to use as the value | [optional] 
 
 ## Methods

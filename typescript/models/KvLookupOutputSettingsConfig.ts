@@ -21,7 +21,7 @@ export class KvLookupOutputSettingsConfig {
     */
     'keyField'?: string;
     /**
-    * Time-to-live in hours for stored key-value pairs (0 means no expiration)
+    * Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours
     */
     'ttl'?: number;
     /**

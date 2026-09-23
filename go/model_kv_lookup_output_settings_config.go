@@ -22,7 +22,7 @@ var _ MappedNullable = &KvLookupOutputSettingsConfig{}
 type KvLookupOutputSettingsConfig struct {
 	// The field in the incoming record to use as the key
 	KeyField *string `json:"key_field,omitempty"`
-	// Time-to-live in hours for stored key-value pairs (0 means no expiration)
+	// Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The field in the incoming record to use as the value
 	ValueField *string `json:"value_field,omitempty"`

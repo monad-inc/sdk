@@ -4167,7 +4167,7 @@
                         "type": "string"
                     },
                     "ttl": {
-                        "description": "Time-to-live in hours for stored key-value pairs (0 means no expiration)",
+                        "description": "Time-to-live in seconds for stored key-value pairs, between 5 seconds and 48 hours",
                         "type": "integer"
                     },
                     "value_field": {
