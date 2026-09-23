@@ -387,6 +387,8 @@ Class | Method | HTTP request | Description
  - [BrinqaAuditLogsSettingsConfig](docs/BrinqaAuditLogsSettingsConfig.md)
  - [BuildkiteGraphqlInputSecretsConfig](docs/BuildkiteGraphqlInputSecretsConfig.md)
  - [BuildkiteGraphqlInputSettingsConfig](docs/BuildkiteGraphqlInputSettingsConfig.md)
+ - [CatoNetworksEventsSecretsConfig](docs/CatoNetworksEventsSecretsConfig.md)
+ - [CatoNetworksEventsSettingsConfig](docs/CatoNetworksEventsSettingsConfig.md)
  - [CisaUserSettingsConfig](docs/CisaUserSettingsConfig.md)
  - [CloudConfigurationFindingsSecretsConfig](docs/CloudConfigurationFindingsSecretsConfig.md)
  - [CloudConfigurationFindingsSettingsConfig](docs/CloudConfigurationFindingsSettingsConfig.md)

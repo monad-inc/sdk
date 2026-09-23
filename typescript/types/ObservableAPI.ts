@@ -55,6 +55,8 @@ import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsCo
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
 import { BuildkiteGraphqlInputSettingsConfig } from '../models/BuildkiteGraphqlInputSettingsConfig';
+import { CatoNetworksEventsSecretsConfig } from '../models/CatoNetworksEventsSecretsConfig';
+import { CatoNetworksEventsSettingsConfig } from '../models/CatoNetworksEventsSettingsConfig';
 import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';

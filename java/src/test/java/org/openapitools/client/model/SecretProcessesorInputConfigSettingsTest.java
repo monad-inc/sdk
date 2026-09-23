@@ -40,6 +40,7 @@ import org.openapitools.client.model.BackblazeB2SettingsConfig;
 import org.openapitools.client.model.BigqueryInputSettingsConfig;
 import org.openapitools.client.model.BrinqaAuditLogsSettingsConfig;
 import org.openapitools.client.model.BuildkiteGraphqlInputSettingsConfig;
+import org.openapitools.client.model.CatoNetworksEventsSettingsConfig;
 import org.openapitools.client.model.CisaUserSettingsConfig;
 import org.openapitools.client.model.CloudConfigurationFindingsSettingsConfig;
 import org.openapitools.client.model.CloudLogsSettingsConfig;
@@ -507,6 +508,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'accountId'
+     */
+    @Test
+    public void accountIdTest() {
+        // TODO: test accountId
+    }
+
+    /**
      * Test the property 'endpointUrl'
      */
     @Test
@@ -584,14 +593,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void intervalTest() {
         // TODO: test interval
-    }
-
-    /**
-     * Test the property 'accountId'
-     */
-    @Test
-    public void accountIdTest() {
-        // TODO: test accountId
     }
 
     /**

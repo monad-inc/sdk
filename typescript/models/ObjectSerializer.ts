@@ -50,6 +50,8 @@ export * from '../models/BrinqaAuditLogsSecretsConfig';
 export * from '../models/BrinqaAuditLogsSettingsConfig';
 export * from '../models/BuildkiteGraphqlInputSecretsConfig';
 export * from '../models/BuildkiteGraphqlInputSettingsConfig';
+export * from '../models/CatoNetworksEventsSecretsConfig';
+export * from '../models/CatoNetworksEventsSettingsConfig';
 export * from '../models/CisaUserSettingsConfig';
 export * from '../models/CloudConfigurationFindingsSecretsConfig';
 export * from '../models/CloudConfigurationFindingsSettingsConfig';
@@ -681,6 +683,8 @@ import { BrinqaAuditLogsSecretsConfig } from '../models/BrinqaAuditLogsSecretsCo
 import { BrinqaAuditLogsSettingsConfig } from '../models/BrinqaAuditLogsSettingsConfig';
 import { BuildkiteGraphqlInputSecretsConfig } from '../models/BuildkiteGraphqlInputSecretsConfig';
 import { BuildkiteGraphqlInputSettingsConfig } from '../models/BuildkiteGraphqlInputSettingsConfig';
+import { CatoNetworksEventsSecretsConfig } from '../models/CatoNetworksEventsSecretsConfig';
+import { CatoNetworksEventsSettingsConfig } from '../models/CatoNetworksEventsSettingsConfig';
 import { CisaUserSettingsConfig } from '../models/CisaUserSettingsConfig';
 import { CloudConfigurationFindingsSecretsConfig } from '../models/CloudConfigurationFindingsSecretsConfig';
 import { CloudConfigurationFindingsSettingsConfig } from '../models/CloudConfigurationFindingsSettingsConfig';
@@ -1409,6 +1413,8 @@ let typeMap: {[index: string]: any} = {
     "BrinqaAuditLogsSettingsConfig": BrinqaAuditLogsSettingsConfig,
     "BuildkiteGraphqlInputSecretsConfig": BuildkiteGraphqlInputSecretsConfig,
     "BuildkiteGraphqlInputSettingsConfig": BuildkiteGraphqlInputSettingsConfig,
+    "CatoNetworksEventsSecretsConfig": CatoNetworksEventsSecretsConfig,
+    "CatoNetworksEventsSettingsConfig": CatoNetworksEventsSettingsConfig,
     "CisaUserSettingsConfig": CisaUserSettingsConfig,
     "CloudConfigurationFindingsSecretsConfig": CloudConfigurationFindingsSecretsConfig,
     "CloudConfigurationFindingsSettingsConfig": CloudConfigurationFindingsSettingsConfig,

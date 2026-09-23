@@ -33,6 +33,7 @@ type SecretProcessesorInputConfigSettings struct {
 	BigqueryInputSettingsConfig *BigqueryInputSettingsConfig
 	BrinqaAuditLogsSettingsConfig *BrinqaAuditLogsSettingsConfig
 	BuildkiteGraphqlInputSettingsConfig *BuildkiteGraphqlInputSettingsConfig
+	CatoNetworksEventsSettingsConfig *CatoNetworksEventsSettingsConfig
 	CisaUserSettingsConfig *CisaUserSettingsConfig
 	CloudConfigurationFindingsSettingsConfig *CloudConfigurationFindingsSettingsConfig
 	CloudLogsSettingsConfig *CloudLogsSettingsConfig
@@ -180,6 +181,13 @@ func BrinqaAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *Brin
 func BuildkiteGraphqlInputSettingsConfigAsSecretProcessesorInputConfigSettings(v *BuildkiteGraphqlInputSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		BuildkiteGraphqlInputSettingsConfig: v,
+	}
+}
+
+// CatoNetworksEventsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns CatoNetworksEventsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func CatoNetworksEventsSettingsConfigAsSecretProcessesorInputConfigSettings(v *CatoNetworksEventsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		CatoNetworksEventsSettingsConfig: v,
 	}
 }
 
@@ -774,6 +782,23 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.BuildkiteGraphqlInputSettingsConfig = nil
+	}
+
+	// try to unmarshal data into CatoNetworksEventsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.CatoNetworksEventsSettingsConfig)
+	if err == nil {
+		jsonCatoNetworksEventsSettingsConfig, _ := json.Marshal(dst.CatoNetworksEventsSettingsConfig)
+		if string(jsonCatoNetworksEventsSettingsConfig) == "{}" { // empty struct
+			dst.CatoNetworksEventsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.CatoNetworksEventsSettingsConfig); err != nil {
+				dst.CatoNetworksEventsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.CatoNetworksEventsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into CisaUserSettingsConfig
@@ -1642,6 +1667,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.BigqueryInputSettingsConfig = nil
 		dst.BrinqaAuditLogsSettingsConfig = nil
 		dst.BuildkiteGraphqlInputSettingsConfig = nil
+		dst.CatoNetworksEventsSettingsConfig = nil
 		dst.CisaUserSettingsConfig = nil
 		dst.CloudConfigurationFindingsSettingsConfig = nil
 		dst.CloudLogsSettingsConfig = nil
@@ -1757,6 +1783,10 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.BuildkiteGraphqlInputSettingsConfig != nil {
 		return json.Marshal(&src.BuildkiteGraphqlInputSettingsConfig)
+	}
+
+	if src.CatoNetworksEventsSettingsConfig != nil {
+		return json.Marshal(&src.CatoNetworksEventsSettingsConfig)
 	}
 
 	if src.CisaUserSettingsConfig != nil {
@@ -2023,6 +2053,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.BuildkiteGraphqlInputSettingsConfig
 	}
 
+	if obj.CatoNetworksEventsSettingsConfig != nil {
+		return obj.CatoNetworksEventsSettingsConfig
+	}
+
 	if obj.CisaUserSettingsConfig != nil {
 		return obj.CisaUserSettingsConfig
 	}
@@ -2283,6 +2317,10 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.BuildkiteGraphqlInputSettingsConfig != nil {
 		return *obj.BuildkiteGraphqlInputSettingsConfig
+	}
+
+	if obj.CatoNetworksEventsSettingsConfig != nil {
+		return *obj.CatoNetworksEventsSettingsConfig
 	}
 
 	if obj.CisaUserSettingsConfig != nil {

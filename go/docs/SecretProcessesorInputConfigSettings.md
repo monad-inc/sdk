@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **HasNextPagePath** | Pointer to **string** | JSONPath location to check if there are more pages | [optional] 
 **PaginationCursorPath** | Pointer to **string** | JSONPath location for pagination cursor/token | [optional] 
 **Variables** | Pointer to [**[]MonadGraphqlInputVariable**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request | [optional] 
+**AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | 
 **Result** | Pointer to [**[]WizResult**](WizResult.md) | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
 **Status** | Pointer to [**[]WizStatus**](WizStatus.md) | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
@@ -61,7 +62,6 @@ Name | Type | Description | Notes
 **EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. | 
 **FullSnapshot** | Pointer to **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
 **Interval** | Pointer to **int32** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
-**AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **IncludeBotFields** | Pointer to **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **ZoneId** | Pointer to **string** | Cloudflare Zone ID | [optional] 
 **Fields** | Pointer to **[]string** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. | [optional] 
@@ -1295,6 +1295,31 @@ SetVariables sets Variables field to given value.
 
 HasVariables returns a boolean if a field has been set.
 
+### GetAccountId
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountId() string`
+
+GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+
+### GetAccountIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetAccountIdOk() (*string, bool)`
+
+GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountId
+
+`func (o *SecretProcessesorInputConfigSettings) SetAccountId(v string)`
+
+SetAccountId sets AccountId field to given value.
+
+### HasAccountId
+
+`func (o *SecretProcessesorInputConfigSettings) HasAccountId() bool`
+
+HasAccountId returns a boolean if a field has been set.
+
 ### GetEndpointUrl
 
 `func (o *SecretProcessesorInputConfigSettings) GetEndpointUrl() string`
@@ -1534,31 +1559,6 @@ SetInterval sets Interval field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
-
-### GetAccountId
-
-`func (o *SecretProcessesorInputConfigSettings) GetAccountId() string`
-
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
-
-### GetAccountIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAccountIdOk() (*string, bool)`
-
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccountId
-
-`func (o *SecretProcessesorInputConfigSettings) SetAccountId(v string)`
-
-SetAccountId sets AccountId field to given value.
-
-### HasAccountId
-
-`func (o *SecretProcessesorInputConfigSettings) HasAccountId() bool`
-
-HasAccountId returns a boolean if a field has been set.
 
 ### GetIncludeBotFields
 

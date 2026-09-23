@@ -124,6 +124,8 @@ __all__ = [
     "BrinqaAuditLogsSettingsConfig",
     "BuildkiteGraphqlInputSecretsConfig",
     "BuildkiteGraphqlInputSettingsConfig",
+    "CatoNetworksEventsSecretsConfig",
+    "CatoNetworksEventsSettingsConfig",
     "CisaUserSettingsConfig",
     "CloudConfigurationFindingsSecretsConfig",
     "CloudConfigurationFindingsSettingsConfig",
@@ -814,6 +816,8 @@ from monad.models.brinqa_audit_logs_secrets_config import BrinqaAuditLogsSecrets
 from monad.models.brinqa_audit_logs_settings_config import BrinqaAuditLogsSettingsConfig as BrinqaAuditLogsSettingsConfig
 from monad.models.buildkite_graphql_input_secrets_config import BuildkiteGraphqlInputSecretsConfig as BuildkiteGraphqlInputSecretsConfig
 from monad.models.buildkite_graphql_input_settings_config import BuildkiteGraphqlInputSettingsConfig as BuildkiteGraphqlInputSettingsConfig
+from monad.models.cato_networks_events_secrets_config import CatoNetworksEventsSecretsConfig as CatoNetworksEventsSecretsConfig
+from monad.models.cato_networks_events_settings_config import CatoNetworksEventsSettingsConfig as CatoNetworksEventsSettingsConfig
 from monad.models.cisa_user_settings_config import CisaUserSettingsConfig as CisaUserSettingsConfig
 from monad.models.cloud_configuration_findings_secrets_config import CloudConfigurationFindingsSecretsConfig as CloudConfigurationFindingsSecretsConfig
 from monad.models.cloud_configuration_findings_settings_config import CloudConfigurationFindingsSettingsConfig as CloudConfigurationFindingsSettingsConfig

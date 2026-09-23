@@ -54,6 +54,7 @@
 |**hasNextPagePath** | **String** | JSONPath location to check if there are more pages |  [optional] |
 |**paginationCursorPath** | **String** | JSONPath location for pagination cursor/token |  [optional] |
 |**variables** | [**List&lt;MonadGraphqlInputVariable&gt;**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request |  [optional] |
+|**accountId** | **String** | Account ID for the input |  [optional] |
 |**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  |
 |**result** | **List&lt;WizResult&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. |  [optional] |
 |**status** | **List&lt;WizStatus&gt;** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. |  [optional] |
@@ -64,7 +65,6 @@
 |**entityType** | **List&lt;WizEntityType&gt;** | Entity types for Wiz. |  |
 |**fullSnapshot** | **Boolean** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. |  [optional] |
 |**interval** | **Integer** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. |  [optional] |
-|**accountId** | **String** | Account ID for the input |  [optional] |
 |**includeBotFields** | **Boolean** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) |  [optional] |
 |**zoneId** | **String** | Cloudflare Zone ID |  [optional] |
 |**fields** | **List&lt;String&gt;** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. |  [optional] |

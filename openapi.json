@@ -1088,6 +1088,32 @@
                 },
                 "type": "object"
             },
+            "cato_networks_events.SecretsConfig": {
+                "description": "Cato Networks secrets",
+                "properties": {
+                    "api_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "type": "object"
+            },
+            "cato_networks_events.SettingsConfig": {
+                "description": "Cato Networks settings",
+                "properties": {
+                    "account_id": {
+                        "description": "ID of account for which the events need to be fetched",
+                        "type": "string"
+                    },
+                    "rate_limit": {
+                        "$ref": "#/components/schemas/models.InputRateLimit"
+                    },
+                    "use_synthetic_data": {
+                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
             "cisa_user.SecretsConfig": {
                 "description": "CISA KEV secrets",
                 "type": "object"
@@ -10890,6 +10916,9 @@
                                 "$ref": "#/components/schemas/buildkite_graphql_input.SecretsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/cato_networks_events.SecretsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/cisa_user.SecretsConfig"
                             },
                             {
@@ -11077,6 +11106,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/buildkite_graphql_input.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/cato_networks_events.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/cisa_user.SettingsConfig"

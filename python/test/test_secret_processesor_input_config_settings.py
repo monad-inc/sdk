@@ -96,6 +96,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                         name = '', 
                         value = '', )
                     ],
+                account_id = '',
                 endpoint_url = '',
                 result = [
                     'PASS'
@@ -116,7 +117,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 full_snapshot = True,
                 interval = 56,
-                account_id = '',
                 include_bot_fields = True,
                 zone_id = '',
                 fields = [
