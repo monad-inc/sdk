@@ -85,6 +85,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup metadata </td><td>  -  </td></tr>
      </table>
      */
@@ -165,6 +166,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup metadata </td><td>  -  </td></tr>
      </table>
      */
@@ -185,6 +187,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup metadata </td><td>  -  </td></tr>
      </table>
      */
@@ -207,6 +210,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup metadata </td><td>  -  </td></tr>
      </table>
      */
@@ -231,6 +235,7 @@ public class KeyValueStoreApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sample entries retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid num_entries parameter </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
@@ -322,6 +327,7 @@ public class KeyValueStoreApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sample entries retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid num_entries parameter </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
@@ -344,6 +350,7 @@ public class KeyValueStoreApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sample entries retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid num_entries parameter </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
@@ -368,6 +375,7 @@ public class KeyValueStoreApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sample entries retrieved successfully </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid num_entries parameter </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get KV lookup sample entries </td><td>  -  </td></tr>
      </table>
      */
@@ -391,6 +399,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Value retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */
@@ -481,6 +490,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Value retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */
@@ -502,6 +512,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Value retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */
@@ -525,6 +536,7 @@ public class KeyValueStoreApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Value retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> KV lookup output not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to get value from KV lookup </td><td>  -  </td></tr>
      </table>
      */

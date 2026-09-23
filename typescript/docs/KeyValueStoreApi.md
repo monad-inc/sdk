@@ -62,6 +62,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Metadata retrieved successfully |  -  |
+**404** | KV lookup output not found |  -  |
 **500** | Failed to get KV lookup metadata |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -123,6 +124,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Sample entries retrieved successfully |  -  |
 **400** | Invalid num_entries parameter |  -  |
+**404** | KV lookup output not found |  -  |
 **500** | Failed to get KV lookup sample entries |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -183,6 +185,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Value retrieved successfully |  -  |
+**404** | KV lookup output not found |  -  |
 **500** | Failed to get value from KV lookup |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

@@ -225,6 +225,13 @@ export class KeyValueStoreApiResponseProcessor {
             ) as KvlookupGetMetadataResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "KV lookup output not found", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -268,6 +275,13 @@ export class KeyValueStoreApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Invalid num_entries parameter", body, response.headers);
         }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "KV lookup output not found", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -303,6 +317,13 @@ export class KeyValueStoreApiResponseProcessor {
                 "RoutesV3KvEntryResponse", ""
             ) as RoutesV3KvEntryResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "KV lookup output not found", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

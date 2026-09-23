@@ -85,6 +85,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Metadata retrieved successfully |  -  |
+| **404** | KV lookup output not found |  -  |
 | **500** | Failed to get KV lookup metadata |  -  |
 
 <a id="getKVLookupSampleEntries"></a>
@@ -166,6 +167,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Sample entries retrieved successfully |  -  |
 | **400** | Invalid num_entries parameter |  -  |
+| **404** | KV lookup output not found |  -  |
 | **500** | Failed to get KV lookup sample entries |  -  |
 
 <a id="getValueFromKvStore"></a>
@@ -246,5 +248,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Value retrieved successfully |  -  |
+| **404** | KV lookup output not found |  -  |
 | **500** | Failed to get value from KV lookup |  -  |
 

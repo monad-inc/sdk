@@ -4046,9 +4046,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -25485,6 +25485,16 @@
                         },
                         "description": "Metadata retrieved successfully"
                     },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "KV lookup output not found"
+                    },
                     "500": {
                         "content": {
                             "application/json": {
@@ -25570,6 +25580,16 @@
                         },
                         "description": "Invalid num_entries parameter"
                     },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "KV lookup output not found"
+                    },
                     "500": {
                         "content": {
                             "application/json": {
@@ -25641,6 +25661,16 @@
                             }
                         },
                         "description": "Value retrieved successfully"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "KV lookup output not found"
                     },
                     "500": {
                         "content": {

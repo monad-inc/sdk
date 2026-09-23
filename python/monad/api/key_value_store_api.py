@@ -99,6 +99,7 @@ class KeyValueStoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "KvlookupGetMetadataResponse",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -171,6 +172,7 @@ class KeyValueStoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "KvlookupGetMetadataResponse",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -243,6 +245,7 @@ class KeyValueStoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "KvlookupGetMetadataResponse",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -386,6 +389,7 @@ class KeyValueStoreApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[RoutesV3KvEntryResponse]",
             '400': "str",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -463,6 +467,7 @@ class KeyValueStoreApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[RoutesV3KvEntryResponse]",
             '400': "str",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -540,6 +545,7 @@ class KeyValueStoreApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[RoutesV3KvEntryResponse]",
             '400': "str",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -687,6 +693,7 @@ class KeyValueStoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3KvEntryResponse",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -763,6 +770,7 @@ class KeyValueStoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3KvEntryResponse",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -839,6 +847,7 @@ class KeyValueStoreApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3KvEntryResponse",
+            '404': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
