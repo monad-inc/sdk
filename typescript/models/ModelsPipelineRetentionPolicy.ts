@@ -12,6 +12,9 @@
 
 import { HttpFile } from '../http/http';
 
+/**
+* Deprecated: Never set. Removed along with pkg/datastore/postgres.
+*/
 export class ModelsPipelineRetentionPolicy {
     'streamAgeLimit'?: number;
     'streamSizeLimit'?: string;

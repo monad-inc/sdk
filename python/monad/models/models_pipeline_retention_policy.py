@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class ModelsPipelineRetentionPolicy(BaseModel):
     """
-    ModelsPipelineRetentionPolicy
+    Deprecated: Never set. Removed along with pkg/datastore/postgres.
     """ # noqa: E501
     stream_age_limit: Optional[StrictInt] = None
     stream_size_limit: Optional[StrictStr] = None

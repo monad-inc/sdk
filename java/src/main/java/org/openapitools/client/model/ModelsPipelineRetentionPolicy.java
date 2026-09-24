@@ -46,7 +46,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * ModelsPipelineRetentionPolicy
+ * Deprecated: Never set. Removed along with pkg/datastore/postgres.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsPipelineRetentionPolicy {

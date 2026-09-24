@@ -6111,6 +6111,7 @@
                 "type": "object"
             },
             "models.PipelineRetentionPolicy": {
+                "description": "Deprecated: Never set. Removed along with pkg/datastore/postgres.",
                 "properties": {
                     "stream_age_limit": {
                         "type": "integer"

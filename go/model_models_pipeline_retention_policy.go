@@ -18,7 +18,7 @@ import (
 // checks if the ModelsPipelineRetentionPolicy type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsPipelineRetentionPolicy{}
 
-// ModelsPipelineRetentionPolicy struct for ModelsPipelineRetentionPolicy
+// ModelsPipelineRetentionPolicy Deprecated: Never set. Removed along with pkg/datastore/postgres.
 type ModelsPipelineRetentionPolicy struct {
 	StreamAgeLimit *int32 `json:"stream_age_limit,omitempty"`
 	StreamSizeLimit *string `json:"stream_size_limit,omitempty"`

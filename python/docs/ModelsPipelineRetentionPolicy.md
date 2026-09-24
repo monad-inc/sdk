@@ -1,5 +1,6 @@
 # ModelsPipelineRetentionPolicy
 
+Deprecated: Never set. Removed along with pkg/datastore/postgres.
 
 ## Properties
 
