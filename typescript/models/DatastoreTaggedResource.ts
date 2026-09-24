@@ -10,12 +10,54 @@
  * Do not edit the class manually.
  */
 
+import { DatastoreResourceKind } from '../models/DatastoreResourceKind';
 import { HttpFile } from '../http/http';
 
-/**
-* How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-*/
-export enum KafkaPayloadFormat {
-    defaultPayloadFormat = 'individual',
-    payloadFormatIndividual = 'json_array'
+export class DatastoreTaggedResource {
+    'id'?: string;
+    'kind'?: DatastoreResourceKind;
+    'name'?: string;
+    /**
+    * connector sub_type; empty for pipelines
+    */
+    'type'?: string;
+
+    static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
+
+    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "id",
+            "baseName": "id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "kind",
+            "baseName": "kind",
+            "type": "DatastoreResourceKind",
+            "format": ""
+        },
+        {
+            "name": "name",
+            "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "type",
+            "baseName": "type",
+            "type": "string",
+            "format": ""
+        }    ];
+
+    static getAttributeTypeMap() {
+        return DatastoreTaggedResource.attributeTypeMap;
+    }
+
+    public constructor() {
+    }
 }
+
+

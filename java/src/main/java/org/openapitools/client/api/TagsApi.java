@@ -30,6 +30,7 @@ import java.io.IOException;
 import org.openapitools.client.model.CreateTagRequest;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3TagListResponse;
+import org.openapitools.client.model.RoutesV3TagResourcesResponse;
 import org.openapitools.client.model.RoutesV3TagResponse;
 import org.openapitools.client.model.UpdateTagRequest;
 
@@ -520,6 +521,171 @@ public class TagsApi {
 
         okhttp3.Call localVarCall = getTagValidateBeforeCall(organizationId, tag, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3TagResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listTagResources
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @param limit Page size (default 10, max 100) (optional)
+     * @param offset Offset (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Resources tagged with this tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listTagResourcesCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/tags/{tag}/resources"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "tag" + "}", localVarApiClient.escapeString(tag.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listTagResourcesValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling listTagResources(Async)");
+        }
+
+        // verify the required parameter 'tag' is set
+        if (tag == null) {
+            throw new ApiException("Missing the required parameter 'tag' when calling listTagResources(Async)");
+        }
+
+        return listTagResourcesCall(organizationId, tag, limit, offset, _callback);
+
+    }
+
+    /**
+     * List a tag&#39;s resources
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @param limit Page size (default 10, max 100) (optional)
+     * @param offset Offset (optional)
+     * @return RoutesV3TagResourcesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Resources tagged with this tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV3TagResourcesResponse listTagResources(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        ApiResponse<RoutesV3TagResourcesResponse> localVarResp = listTagResourcesWithHttpInfo(organizationId, tag, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List a tag&#39;s resources
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @param limit Page size (default 10, max 100) (optional)
+     * @param offset Offset (optional)
+     * @return ApiResponse&lt;RoutesV3TagResourcesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Resources tagged with this tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV3TagResourcesResponse> listTagResourcesWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listTagResourcesValidateBeforeCall(organizationId, tag, limit, offset, null);
+        Type localVarReturnType = new TypeToken<RoutesV3TagResourcesResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List a tag&#39;s resources (asynchronously)
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @param limit Page size (default 10, max 100) (optional)
+     * @param offset Offset (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Resources tagged with this tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listTagResourcesAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<RoutesV3TagResourcesResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listTagResourcesValidateBeforeCall(organizationId, tag, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV3TagResourcesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

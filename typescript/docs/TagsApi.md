@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createTag**](TagsApi.md#createTag) | **POST** /v3/{organization_id}/tags | Create a tag
 [**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag
 [**getTag**](TagsApi.md#getTag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag
+[**listTagResources**](TagsApi.md#listTagResources) | **GET** /v3/{organization_id}/tags/{tag}/resources | List a tag\&#39;s resources
 [**listTags**](TagsApi.md#listTags) | **GET** /v3/{organization_id}/tags | List tags
 [**updateTag**](TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag
 
@@ -183,6 +184,71 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Tag |  -  |
+**400** | Invalid tag name |  -  |
+**404** | Tag not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listTagResources**
+> RoutesV3TagResourcesResponse listTagResources()
+
+List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+
+### Example
+
+
+```typescript
+import { createConfiguration, TagsApi } from '';
+import type { TagsApiListTagResourcesRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new TagsApi(configuration);
+
+const request: TagsApiListTagResourcesRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Tag ID or name
+  tag: "tag_example",
+    // Page size (default 10, max 100) (optional)
+  limit: 1,
+    // Offset (optional)
+  offset: 1,
+};
+
+const data = await apiInstance.listTagResources(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **tag** | [**string**] | Tag ID or name | defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 100) | (optional) defaults to undefined
+ **offset** | [**number**] | Offset | (optional) defaults to undefined
+
+
+### Return type
+
+**RoutesV3TagResourcesResponse**
+
+### Authorization
+
+[Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Resources tagged with this tag |  -  |
 **400** | Invalid tag name |  -  |
 **404** | Tag not found |  -  |
 **500** | Internal server error |  -  |

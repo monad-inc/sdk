@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateTag**](TagsAPI.md#CreateTag) | **Post** /v3/{organization_id}/tags | Create a tag
 [**DeleteTag**](TagsAPI.md#DeleteTag) | **Delete** /v3/{organization_id}/tags/{tag} | Delete a tag
 [**GetTag**](TagsAPI.md#GetTag) | **Get** /v3/{organization_id}/tags/{tag} | Get a tag
+[**ListTagResources**](TagsAPI.md#ListTagResources) | **Get** /v3/{organization_id}/tags/{tag}/resources | List a tag&#39;s resources
 [**ListTags**](TagsAPI.md#ListTags) | **Get** /v3/{organization_id}/tags | List tags
 [**UpdateTag**](TagsAPI.md#UpdateTag) | **Patch** /v3/{organization_id}/tags/{tag} | Update a tag
 
@@ -213,6 +214,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RoutesV3TagResponse**](RoutesV3TagResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTagResources
+
+> RoutesV3TagResourcesResponse ListTagResources(ctx, organizationId, tag).Limit(limit).Offset(offset).Execute()
+
+List a tag's resources
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	tag := "tag_example" // string | Tag ID or name
+	limit := int32(56) // int32 | Page size (default 10, max 100) (optional)
+	offset := int32(56) // int32 | Offset (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TagsAPI.ListTagResources(context.Background(), organizationId, tag).Limit(limit).Offset(offset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.ListTagResources``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListTagResources`: RoutesV3TagResourcesResponse
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.ListTagResources`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**tag** | **string** | Tag ID or name | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTagResourcesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **limit** | **int32** | Page size (default 10, max 100) | 
+ **offset** | **int32** | Offset | 
+
+### Return type
+
+[**RoutesV3TagResourcesResponse**](RoutesV3TagResourcesResponse.md)
 
 ### Authorization
 

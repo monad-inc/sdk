@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_tag**](TagsApi.md#create_tag) | **POST** /v3/{organization_id}/tags | Create a tag
 [**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag
 [**get_tag**](TagsApi.md#get_tag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag
+[**list_tag_resources**](TagsApi.md#list_tag_resources) | **GET** /v3/{organization_id}/tags/{tag}/resources | List a tag&#39;s resources
 [**list_tags**](TagsApi.md#list_tags) | **GET** /v3/{organization_id}/tags | List tags
 [**update_tag**](TagsApi.md#update_tag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag
 
@@ -256,6 +257,94 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Tag |  -  |
+**400** | Invalid tag name |  -  |
+**404** | Tag not found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_tag_resources**
+> RoutesV3TagResourcesResponse list_tag_resources(organization_id, tag, limit=limit, offset=offset)
+
+List a tag's resources
+
+List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+
+### Example
+
+* Api Key Authentication (Bearer):
+
+```python
+import monad
+from monad.models.routes_v3_tag_resources_response import RoutesV3TagResourcesResponse
+from monad.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://monad.com/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = monad.Configuration(
+    host = "https://monad.com/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration.api_key['Bearer'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with monad.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = monad.TagsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization ID
+    tag = 'tag_example' # str | Tag ID or name
+    limit = 56 # int | Page size (default 10, max 100) (optional)
+    offset = 56 # int | Offset (optional)
+
+    try:
+        # List a tag's resources
+        api_response = api_instance.list_tag_resources(organization_id, tag, limit=limit, offset=offset)
+        print("The response of TagsApi->list_tag_resources:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TagsApi->list_tag_resources: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization ID | 
+ **tag** | **str**| Tag ID or name | 
+ **limit** | **int**| Page size (default 10, max 100) | [optional] 
+ **offset** | **int**| Offset | [optional] 
+
+### Return type
+
+[**RoutesV3TagResourcesResponse**](RoutesV3TagResourcesResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Resources tagged with this tag |  -  |
 **400** | Invalid tag name |  -  |
 **404** | Tag not found |  -  |
 **500** | Internal server error |  -  |

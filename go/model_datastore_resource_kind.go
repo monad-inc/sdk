@@ -16,52 +16,58 @@ import (
 	"fmt"
 )
 
-// KafkaPayloadFormat How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-type KafkaPayloadFormat string
+// DatastoreResourceKind the model 'DatastoreResourceKind'
+type DatastoreResourceKind string
 
-// List of kafka.payloadFormat
+// List of datastore.ResourceKind
 const (
-	defaultPayloadFormat KafkaPayloadFormat = "individual"
-	payloadFormatIndividual KafkaPayloadFormat = "json_array"
+	ResourceKindPipeline DatastoreResourceKind = "pipeline"
+	ResourceKindInput DatastoreResourceKind = "input"
+	ResourceKindOutput DatastoreResourceKind = "output"
+	ResourceKindEnrichment DatastoreResourceKind = "enrichment"
+	ResourceKindTransform DatastoreResourceKind = "transform"
 )
 
-// All allowed values of KafkaPayloadFormat enum
-var AllowedKafkaPayloadFormatEnumValues = []KafkaPayloadFormat{
-	"individual",
-	"json_array",
+// All allowed values of DatastoreResourceKind enum
+var AllowedDatastoreResourceKindEnumValues = []DatastoreResourceKind{
+	"pipeline",
+	"input",
+	"output",
+	"enrichment",
+	"transform",
 }
 
-func (v *KafkaPayloadFormat) UnmarshalJSON(src []byte) error {
+func (v *DatastoreResourceKind) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := KafkaPayloadFormat(value)
-	for _, existing := range AllowedKafkaPayloadFormatEnumValues {
+	enumTypeValue := DatastoreResourceKind(value)
+	for _, existing := range AllowedDatastoreResourceKindEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid KafkaPayloadFormat", value)
+	return fmt.Errorf("%+v is not a valid DatastoreResourceKind", value)
 }
 
-// NewKafkaPayloadFormatFromValue returns a pointer to a valid KafkaPayloadFormat
+// NewDatastoreResourceKindFromValue returns a pointer to a valid DatastoreResourceKind
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewKafkaPayloadFormatFromValue(v string) (*KafkaPayloadFormat, error) {
-	ev := KafkaPayloadFormat(v)
+func NewDatastoreResourceKindFromValue(v string) (*DatastoreResourceKind, error) {
+	ev := DatastoreResourceKind(v)
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for KafkaPayloadFormat: valid values are %v", v, AllowedKafkaPayloadFormatEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for DatastoreResourceKind: valid values are %v", v, AllowedDatastoreResourceKindEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v KafkaPayloadFormat) IsValid() bool {
-	for _, existing := range AllowedKafkaPayloadFormatEnumValues {
+func (v DatastoreResourceKind) IsValid() bool {
+	for _, existing := range AllowedDatastoreResourceKindEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,43 +75,43 @@ func (v KafkaPayloadFormat) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to kafka.payloadFormat value
-func (v KafkaPayloadFormat) Ptr() *KafkaPayloadFormat {
+// Ptr returns reference to datastore.ResourceKind value
+func (v DatastoreResourceKind) Ptr() *DatastoreResourceKind {
 	return &v
 }
 
-type NullableKafkaPayloadFormat struct {
-	value *KafkaPayloadFormat
+type NullableDatastoreResourceKind struct {
+	value *DatastoreResourceKind
 	isSet bool
 }
 
-func (v NullableKafkaPayloadFormat) Get() *KafkaPayloadFormat {
+func (v NullableDatastoreResourceKind) Get() *DatastoreResourceKind {
 	return v.value
 }
 
-func (v *NullableKafkaPayloadFormat) Set(val *KafkaPayloadFormat) {
+func (v *NullableDatastoreResourceKind) Set(val *DatastoreResourceKind) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableKafkaPayloadFormat) IsSet() bool {
+func (v NullableDatastoreResourceKind) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableKafkaPayloadFormat) Unset() {
+func (v *NullableDatastoreResourceKind) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableKafkaPayloadFormat(val *KafkaPayloadFormat) *NullableKafkaPayloadFormat {
-	return &NullableKafkaPayloadFormat{value: val, isSet: true}
+func NewNullableDatastoreResourceKind(val *DatastoreResourceKind) *NullableDatastoreResourceKind {
+	return &NullableDatastoreResourceKind{value: val, isSet: true}
 }
 
-func (v NullableKafkaPayloadFormat) MarshalJSON() ([]byte, error) {
+func (v NullableDatastoreResourceKind) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableKafkaPayloadFormat) UnmarshalJSON(src []byte) error {
+func (v *NullableDatastoreResourceKind) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

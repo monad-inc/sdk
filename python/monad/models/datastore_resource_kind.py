@@ -19,20 +19,23 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class KafkaPayloadFormat(str, Enum):
+class DatastoreResourceKind(str, Enum):
     """
-    How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
+    DatastoreResourceKind
     """
 
     """
     allowed enum values
     """
-    defaultPayloadFormat = 'individual'
-    payloadFormatIndividual = 'json_array'
+    ResourceKindPipeline = 'pipeline'
+    ResourceKindInput = 'input'
+    ResourceKindOutput = 'output'
+    ResourceKindEnrichment = 'enrichment'
+    ResourceKindTransform = 'transform'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of KafkaPayloadFormat from a JSON string"""
+        """Create an instance of DatastoreResourceKind from a JSON string"""
         return cls(json.loads(json_str))
 
 

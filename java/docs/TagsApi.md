@@ -7,6 +7,7 @@ All URIs are relative to *https://monad.com/api*
 | [**createTag**](TagsApi.md#createTag) | **POST** /v3/{organization_id}/tags | Create a tag |
 | [**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag |
 | [**getTag**](TagsApi.md#getTag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag |
+| [**listTagResources**](TagsApi.md#listTagResources) | **GET** /v3/{organization_id}/tags/{tag}/resources | List a tag&#39;s resources |
 | [**listTags**](TagsApi.md#listTags) | **GET** /v3/{organization_id}/tags | List tags |
 | [**updateTag**](TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag |
 
@@ -229,6 +230,84 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Tag |  -  |
+| **400** | Invalid tag name |  -  |
+| **404** | Tag not found |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="listTagResources"></a>
+# **listTagResources**
+> RoutesV3TagResourcesResponse listTagResources(organizationId, tag, limit, offset)
+
+List a tag&#39;s resources
+
+List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.TagsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    TagsApi apiInstance = new TagsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String tag = "tag_example"; // String | Tag ID or name
+    Integer limit = 56; // Integer | Page size (default 10, max 100)
+    Integer offset = 56; // Integer | Offset
+    try {
+      RoutesV3TagResourcesResponse result = apiInstance.listTagResources(organizationId, tag, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TagsApi#listTagResources");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **tag** | **String**| Tag ID or name | |
+| **limit** | **Integer**| Page size (default 10, max 100) | [optional] |
+| **offset** | **Integer**| Offset | [optional] |
+
+### Return type
+
+[**RoutesV3TagResourcesResponse**](RoutesV3TagResourcesResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Resources tagged with this tag |  -  |
 | **400** | Invalid tag name |  -  |
 | **404** | Tag not found |  -  |
 | **500** | Internal server error |  -  |

@@ -13,26 +13,50 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import json
-from enum import Enum
-from typing_extensions import Self
+import unittest
 
+from monad.models.routes_v3_tag_resources_response import RoutesV3TagResourcesResponse
 
-class KafkaPayloadFormat(str, Enum):
-    """
-    How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-    """
+class TestRoutesV3TagResourcesResponse(unittest.TestCase):
+    """RoutesV3TagResourcesResponse unit test stubs"""
 
-    """
-    allowed enum values
-    """
-    defaultPayloadFormat = 'individual'
-    payloadFormatIndividual = 'json_array'
+    def setUp(self):
+        pass
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Create an instance of KafkaPayloadFormat from a JSON string"""
-        return cls(json.loads(json_str))
+    def tearDown(self):
+        pass
 
+    def make_instance(self, include_optional) -> RoutesV3TagResourcesResponse:
+        """Test RoutesV3TagResourcesResponse
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `RoutesV3TagResourcesResponse`
+        """
+        model = RoutesV3TagResourcesResponse()
+        if include_optional:
+            return RoutesV3TagResourcesResponse(
+                pagination = monad.models.models/pagination.models.Pagination(
+                    limit = 56, 
+                    offset = 56, 
+                    total = 56, ),
+                resources = [
+                    monad.models.datastore/tagged_resource.datastore.TaggedResource(
+                        id = '', 
+                        kind = 'pipeline', 
+                        name = '', 
+                        type = '', )
+                    ]
+            )
+        else:
+            return RoutesV3TagResourcesResponse(
+        )
+        """
 
+    def testRoutesV3TagResourcesResponse(self):
+        """Test RoutesV3TagResourcesResponse"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()

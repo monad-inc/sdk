@@ -13,26 +13,22 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import json
-from enum import Enum
-from typing_extensions import Self
+import unittest
 
+from monad.models.datastore_resource_kind import DatastoreResourceKind
 
-class KafkaPayloadFormat(str, Enum):
-    """
-    How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-    """
+class TestDatastoreResourceKind(unittest.TestCase):
+    """DatastoreResourceKind unit test stubs"""
 
-    """
-    allowed enum values
-    """
-    defaultPayloadFormat = 'individual'
-    payloadFormatIndividual = 'json_array'
+    def setUp(self):
+        pass
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Create an instance of KafkaPayloadFormat from a JSON string"""
-        return cls(json.loads(json_str))
+    def tearDown(self):
+        pass
 
+    def testDatastoreResourceKind(self):
+        """Test DatastoreResourceKind"""
+        # inst = DatastoreResourceKind()
 
+if __name__ == '__main__':
+    unittest.main()

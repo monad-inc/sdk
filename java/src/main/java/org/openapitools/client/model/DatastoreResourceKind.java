@@ -24,18 +24,24 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
+ * Gets or Sets datastore.ResourceKind
  */
-@JsonAdapter(KafkaPayloadFormat.Adapter.class)
-public enum KafkaPayloadFormat {
+@JsonAdapter(DatastoreResourceKind.Adapter.class)
+public enum DatastoreResourceKind {
   
-  defaultPayloadFormat("individual"),
+  ResourceKindPipeline("pipeline"),
   
-  payloadFormatIndividual("json_array");
+  ResourceKindInput("input"),
+  
+  ResourceKindOutput("output"),
+  
+  ResourceKindEnrichment("enrichment"),
+  
+  ResourceKindTransform("transform");
 
   private String value;
 
-  KafkaPayloadFormat(String value) {
+  DatastoreResourceKind(String value) {
     this.value = value;
   }
 
@@ -48,8 +54,8 @@ public enum KafkaPayloadFormat {
     return String.valueOf(value);
   }
 
-  public static KafkaPayloadFormat fromValue(String value) {
-    for (KafkaPayloadFormat b : KafkaPayloadFormat.values()) {
+  public static DatastoreResourceKind fromValue(String value) {
+    for (DatastoreResourceKind b : DatastoreResourceKind.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -57,22 +63,22 @@ public enum KafkaPayloadFormat {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<KafkaPayloadFormat> {
+  public static class Adapter extends TypeAdapter<DatastoreResourceKind> {
     @Override
-    public void write(final JsonWriter jsonWriter, final KafkaPayloadFormat enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final DatastoreResourceKind enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public KafkaPayloadFormat read(final JsonReader jsonReader) throws IOException {
+    public DatastoreResourceKind read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return KafkaPayloadFormat.fromValue(value);
+      return DatastoreResourceKind.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    KafkaPayloadFormat.fromValue(value);
+    DatastoreResourceKind.fromValue(value);
   }
 }
 

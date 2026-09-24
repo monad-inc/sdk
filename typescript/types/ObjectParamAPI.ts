@@ -133,6 +133,8 @@ import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWrite
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
+import { DatastoreResourceKind } from '../models/DatastoreResourceKind';
+import { DatastoreTaggedResource } from '../models/DatastoreTaggedResource';
 import { DedupArgumentsConfig } from '../models/DedupArgumentsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
@@ -513,6 +515,7 @@ import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedReso
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResourcesResponse } from '../models/RoutesV3TagResourcesResponse';
 import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -7929,6 +7932,37 @@ export interface TagsApiGetTagRequest {
     tag: string
 }
 
+export interface TagsApiListTagResourcesRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApilistTagResources
+     */
+    organizationId: string
+    /**
+     * Tag ID or name
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApilistTagResources
+     */
+    tag: string
+    /**
+     * Page size (default 10, max 100)
+     * Defaults to: undefined
+     * @type number
+     * @memberof TagsApilistTagResources
+     */
+    limit?: number
+    /**
+     * Offset
+     * Defaults to: undefined
+     * @type number
+     * @memberof TagsApilistTagResources
+     */
+    offset?: number
+}
+
 export interface TagsApiListTagsRequest {
     /**
      * Organization ID
@@ -8042,6 +8076,24 @@ export class ObjectTagsApi {
      */
     public getTag(param: TagsApiGetTagRequest, options?: ConfigurationOptions): Promise<RoutesV3TagResponse> {
         return this.api.getTag(param.organizationId, param.tag,  options).toPromise();
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param param the request object
+     */
+    public listTagResourcesWithHttpInfo(param: TagsApiListTagResourcesRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3TagResourcesResponse>> {
+        return this.api.listTagResourcesWithHttpInfo(param.organizationId, param.tag, param.limit, param.offset,  options).toPromise();
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param param the request object
+     */
+    public listTagResources(param: TagsApiListTagResourcesRequest, options?: ConfigurationOptions): Promise<RoutesV3TagResourcesResponse> {
+        return this.api.listTagResources(param.organizationId, param.tag, param.limit, param.offset,  options).toPromise();
     }
 
     /**

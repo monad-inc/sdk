@@ -2417,6 +2417,41 @@
                 },
                 "type": "object"
             },
+            "datastore.ResourceKind": {
+                "enum": [
+                    "pipeline",
+                    "input",
+                    "output",
+                    "enrichment",
+                    "transform"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "ResourceKindPipeline",
+                    "ResourceKindInput",
+                    "ResourceKindOutput",
+                    "ResourceKindEnrichment",
+                    "ResourceKindTransform"
+                ]
+            },
+            "datastore.TaggedResource": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "kind": {
+                        "$ref": "#/components/schemas/datastore.ResourceKind"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "connector sub_type; empty for pipelines",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "dedup.ArgumentsConfig": {
                 "properties": {
                     "fields": {
@@ -4072,9 +4107,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -10324,6 +10359,21 @@
                     "tags": {
                         "items": {
                             "$ref": "#/components/schemas/routesV3.TagResponse"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
+                    }
+                },
+                "type": "object"
+            },
+            "routesV3.TagResourcesResponse": {
+                "properties": {
+                    "pagination": {
+                        "$ref": "#/components/schemas/models.Pagination"
+                    },
+                    "resources": {
+                        "items": {
+                            "$ref": "#/components/schemas/datastore.TaggedResource"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -27871,6 +27921,102 @@
                 ],
                 "x-required-permissions": [
                     "tag:write"
+                ]
+            }
+        },
+        "/v3/{organization_id}/tags/{tag}/resources": {
+            "get": {
+                "description": "List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.",
+                "operationId": "ListTagResources",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Tag ID or name",
+                        "in": "path",
+                        "name": "tag",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Page size (default 10, max 100)",
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Offset",
+                        "in": "query",
+                        "name": "offset",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.TagResourcesResponse"
+                                }
+                            }
+                        },
+                        "description": "Resources tagged with this tag"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid tag name"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "List a tag's resources",
+                "tags": [
+                    "Tags"
+                ],
+                "x-required-permissions": [
+                    "tag:read"
                 ]
             }
         },

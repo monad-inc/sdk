@@ -11,6 +11,7 @@ import {SecurityAuthentication} from '../auth/auth';
 import { CreateTagRequest } from '../models/CreateTagRequest';
 import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResourcesResponse } from '../models/RoutesV3TagResourcesResponse';
 import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { UpdateTagRequest } from '../models/UpdateTagRequest';
 
@@ -150,6 +151,66 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     * @param limit Page size (default 10, max 100)
+     * @param offset Offset
+     */
+    public async listTagResources(organizationId: string, tag: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("TagsApi", "listTagResources", "organizationId");
+        }
+
+
+        // verify required parameter 'tag' is not null or undefined
+        if (tag === null || tag === undefined) {
+            throw new RequiredError("TagsApi", "listTagResources", "tag");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/tags/{tag}/resources'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{tag}', encodeURIComponent(String(tag)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (limit !== undefined) {
+            requestContext.setQueryParam("limit", ObjectSerializer.serialize(limit, "number", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", ""));
+        }
 
 
         let authMethod: SecurityAuthentication | undefined;
@@ -441,6 +502,56 @@ export class TagsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "RoutesV3TagResponse", ""
             ) as RoutesV3TagResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to listTagResources
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async listTagResourcesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3TagResourcesResponse >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: RoutesV3TagResourcesResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV3TagResourcesResponse", ""
+            ) as RoutesV3TagResourcesResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid tag name", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Tag not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: RoutesV3TagResourcesResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV3TagResourcesResponse", ""
+            ) as RoutesV3TagResourcesResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

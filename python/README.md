@@ -337,6 +337,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /v3/{organization_id}/tags | Create a tag
 *TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag
 *TagsApi* | [**get_tag**](docs/TagsApi.md#get_tag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag
+*TagsApi* | [**list_tag_resources**](docs/TagsApi.md#list_tag_resources) | **GET** /v3/{organization_id}/tags/{tag}/resources | List a tag&#39;s resources
 *TagsApi* | [**list_tags**](docs/TagsApi.md#list_tags) | **GET** /v3/{organization_id}/tags | List tags
 *TagsApi* | [**update_tag**](docs/TagsApi.md#update_tag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag
 *TransformSandboxApi* | [**apply_transformation**](docs/TransformSandboxApi.md#apply_transformation) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record
@@ -492,6 +493,8 @@ Class | Method | HTTP request | Description
  - [DatabricksLakehouseZeroBusWriteMode](docs/DatabricksLakehouseZeroBusWriteMode.md)
  - [DatadogSecretsConfig](docs/DatadogSecretsConfig.md)
  - [DatadogSettingsConfig](docs/DatadogSettingsConfig.md)
+ - [DatastoreResourceKind](docs/DatastoreResourceKind.md)
+ - [DatastoreTaggedResource](docs/DatastoreTaggedResource.md)
  - [DedupArgumentsConfig](docs/DedupArgumentsConfig.md)
  - [DefenderForEndpointAlertsSecretsConfig](docs/DefenderForEndpointAlertsSecretsConfig.md)
  - [DefenderForEndpointAlertsSettingsConfig](docs/DefenderForEndpointAlertsSettingsConfig.md)
@@ -872,6 +875,7 @@ Class | Method | HTTP request | Description
  - [RoutesV3SuccessResponse](docs/RoutesV3SuccessResponse.md)
  - [RoutesV3Summary](docs/RoutesV3Summary.md)
  - [RoutesV3TagListResponse](docs/RoutesV3TagListResponse.md)
+ - [RoutesV3TagResourcesResponse](docs/RoutesV3TagResourcesResponse.md)
  - [RoutesV3TagResponse](docs/RoutesV3TagResponse.md)
  - [RoutesV3TestEnrichmentConnectionRequest](docs/RoutesV3TestEnrichmentConnectionRequest.md)
  - [RoutesV3TransformConfig](docs/RoutesV3TransformConfig.md)

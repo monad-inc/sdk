@@ -12,10 +12,10 @@
 
 import { HttpFile } from '../http/http';
 
-/**
-* How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-*/
-export enum KafkaPayloadFormat {
-    defaultPayloadFormat = 'individual',
-    payloadFormatIndividual = 'json_array'
+export enum DatastoreResourceKind {
+    ResourceKindPipeline = 'pipeline',
+    ResourceKindInput = 'input',
+    ResourceKindOutput = 'output',
+    ResourceKindEnrichment = 'enrichment',
+    ResourceKindTransform = 'transform'
 }

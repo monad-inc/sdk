@@ -129,6 +129,8 @@ export * from '../models/DatabricksLakehouseWriteMode';
 export * from '../models/DatabricksLakehouseZeroBusWriteMode';
 export * from '../models/DatadogSecretsConfig';
 export * from '../models/DatadogSettingsConfig';
+export * from '../models/DatastoreResourceKind';
+export * from '../models/DatastoreTaggedResource';
 export * from '../models/DedupArgumentsConfig';
 export * from '../models/DefenderForEndpointAlertsSecretsConfig';
 export * from '../models/DefenderForEndpointAlertsSettingsConfig';
@@ -509,6 +511,7 @@ export * from '../models/RoutesV3SharedResourceWithMetadata';
 export * from '../models/RoutesV3SuccessResponse';
 export * from '../models/RoutesV3Summary';
 export * from '../models/RoutesV3TagListResponse';
+export * from '../models/RoutesV3TagResourcesResponse';
 export * from '../models/RoutesV3TagResponse';
 export * from '../models/RoutesV3TestEnrichmentConnectionRequest';
 export * from '../models/RoutesV3TransformConfig';
@@ -762,6 +765,8 @@ import { DatabricksLakehouseWriteMode , DatabricksLakehouseWriteModeWriteModeEnu
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
+import { DatastoreResourceKind } from '../models/DatastoreResourceKind';
+import { DatastoreTaggedResource     } from '../models/DatastoreTaggedResource';
 import { DedupArgumentsConfig } from '../models/DedupArgumentsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
@@ -1142,6 +1147,7 @@ import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedReso
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResourcesResponse } from '../models/RoutesV3TagResourcesResponse';
 import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -1293,6 +1299,7 @@ let enumsMap: Set<string> = new Set<string>([
     "DatabricksDeltaTableWriteModeWriteModeEnum",
     "DatabricksLakehousePipelineConfigModeEnum",
     "DatabricksLakehouseWriteModeWriteModeEnum",
+    "DatastoreResourceKind",
     "ElasticsearchAuthConfigTypeEnum",
     "ElasticsearchConnectionConfigTypeEnum",
     "EntraIdSettingsConfigCategoryEnum",
@@ -1490,6 +1497,7 @@ let typeMap: {[index: string]: any} = {
     "DatabricksLakehouseZeroBusWriteMode": DatabricksLakehouseZeroBusWriteMode,
     "DatadogSecretsConfig": DatadogSecretsConfig,
     "DatadogSettingsConfig": DatadogSettingsConfig,
+    "DatastoreTaggedResource": DatastoreTaggedResource,
     "DedupArgumentsConfig": DedupArgumentsConfig,
     "DefenderForEndpointAlertsSecretsConfig": DefenderForEndpointAlertsSecretsConfig,
     "DefenderForEndpointAlertsSettingsConfig": DefenderForEndpointAlertsSettingsConfig,
@@ -1844,6 +1852,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV3SuccessResponse": RoutesV3SuccessResponse,
     "RoutesV3Summary": RoutesV3Summary,
     "RoutesV3TagListResponse": RoutesV3TagListResponse,
+    "RoutesV3TagResourcesResponse": RoutesV3TagResourcesResponse,
     "RoutesV3TagResponse": RoutesV3TagResponse,
     "RoutesV3TestEnrichmentConnectionRequest": RoutesV3TestEnrichmentConnectionRequest,
     "RoutesV3TransformConfig": RoutesV3TransformConfig,

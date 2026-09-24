@@ -134,6 +134,8 @@ import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWrite
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
+import { DatastoreResourceKind } from '../models/DatastoreResourceKind';
+import { DatastoreTaggedResource } from '../models/DatastoreTaggedResource';
 import { DedupArgumentsConfig } from '../models/DedupArgumentsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
@@ -514,6 +516,7 @@ import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedReso
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResourcesResponse } from '../models/RoutesV3TagResourcesResponse';
 import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -7790,6 +7793,46 @@ export class ObservableTagsApi {
      */
     public getTag(organizationId: string, tag: string, _options?: ConfigurationOptions): Observable<RoutesV3TagResponse> {
         return this.getTagWithHttpInfo(organizationId, tag, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResponse>) => apiResponse.data));
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     * @param [limit] Page size (default 10, max 100)
+     * @param [offset] Offset
+     */
+    public listTagResourcesWithHttpInfo(organizationId: string, tag: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagResourcesResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.listTagResources(organizationId, tag, limit, offset, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listTagResourcesWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     * @param [limit] Page size (default 10, max 100)
+     * @param [offset] Offset
+     */
+    public listTagResources(organizationId: string, tag: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV3TagResourcesResponse> {
+        return this.listTagResourcesWithHttpInfo(organizationId, tag, limit, offset, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResourcesResponse>) => apiResponse.data));
     }
 
     /**

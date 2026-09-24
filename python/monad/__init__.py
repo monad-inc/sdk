@@ -203,6 +203,8 @@ __all__ = [
     "DatabricksLakehouseZeroBusWriteMode",
     "DatadogSecretsConfig",
     "DatadogSettingsConfig",
+    "DatastoreResourceKind",
+    "DatastoreTaggedResource",
     "DedupArgumentsConfig",
     "DefenderForEndpointAlertsSecretsConfig",
     "DefenderForEndpointAlertsSettingsConfig",
@@ -583,6 +585,7 @@ __all__ = [
     "RoutesV3SuccessResponse",
     "RoutesV3Summary",
     "RoutesV3TagListResponse",
+    "RoutesV3TagResourcesResponse",
     "RoutesV3TagResponse",
     "RoutesV3TestEnrichmentConnectionRequest",
     "RoutesV3TransformConfig",
@@ -895,6 +898,8 @@ from monad.models.databricks_lakehouse_write_mode import DatabricksLakehouseWrit
 from monad.models.databricks_lakehouse_zero_bus_write_mode import DatabricksLakehouseZeroBusWriteMode as DatabricksLakehouseZeroBusWriteMode
 from monad.models.datadog_secrets_config import DatadogSecretsConfig as DatadogSecretsConfig
 from monad.models.datadog_settings_config import DatadogSettingsConfig as DatadogSettingsConfig
+from monad.models.datastore_resource_kind import DatastoreResourceKind as DatastoreResourceKind
+from monad.models.datastore_tagged_resource import DatastoreTaggedResource as DatastoreTaggedResource
 from monad.models.dedup_arguments_config import DedupArgumentsConfig as DedupArgumentsConfig
 from monad.models.defender_for_endpoint_alerts_secrets_config import DefenderForEndpointAlertsSecretsConfig as DefenderForEndpointAlertsSecretsConfig
 from monad.models.defender_for_endpoint_alerts_settings_config import DefenderForEndpointAlertsSettingsConfig as DefenderForEndpointAlertsSettingsConfig
@@ -1275,6 +1280,7 @@ from monad.models.routes_v3_shared_resource_with_metadata import RoutesV3SharedR
 from monad.models.routes_v3_success_response import RoutesV3SuccessResponse as RoutesV3SuccessResponse
 from monad.models.routes_v3_summary import RoutesV3Summary as RoutesV3Summary
 from monad.models.routes_v3_tag_list_response import RoutesV3TagListResponse as RoutesV3TagListResponse
+from monad.models.routes_v3_tag_resources_response import RoutesV3TagResourcesResponse as RoutesV3TagResourcesResponse
 from monad.models.routes_v3_tag_response import RoutesV3TagResponse as RoutesV3TagResponse
 from monad.models.routes_v3_test_enrichment_connection_request import RoutesV3TestEnrichmentConnectionRequest as RoutesV3TestEnrichmentConnectionRequest
 from monad.models.routes_v3_transform_config import RoutesV3TransformConfig as RoutesV3TransformConfig

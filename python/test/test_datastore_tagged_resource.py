@@ -13,26 +13,43 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import json
-from enum import Enum
-from typing_extensions import Self
+import unittest
 
+from monad.models.datastore_tagged_resource import DatastoreTaggedResource
 
-class KafkaPayloadFormat(str, Enum):
-    """
-    How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-    """
+class TestDatastoreTaggedResource(unittest.TestCase):
+    """DatastoreTaggedResource unit test stubs"""
 
-    """
-    allowed enum values
-    """
-    defaultPayloadFormat = 'individual'
-    payloadFormatIndividual = 'json_array'
+    def setUp(self):
+        pass
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Create an instance of KafkaPayloadFormat from a JSON string"""
-        return cls(json.loads(json_str))
+    def tearDown(self):
+        pass
 
+    def make_instance(self, include_optional) -> DatastoreTaggedResource:
+        """Test DatastoreTaggedResource
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `DatastoreTaggedResource`
+        """
+        model = DatastoreTaggedResource()
+        if include_optional:
+            return DatastoreTaggedResource(
+                id = '',
+                kind = 'pipeline',
+                name = '',
+                type = ''
+            )
+        else:
+            return DatastoreTaggedResource(
+        )
+        """
 
+    def testDatastoreTaggedResource(self):
+        """Test DatastoreTaggedResource"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()

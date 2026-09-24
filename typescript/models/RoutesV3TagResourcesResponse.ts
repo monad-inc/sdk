@@ -10,12 +10,36 @@
  * Do not edit the class manually.
  */
 
+import { DatastoreTaggedResource } from '../models/DatastoreTaggedResource';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { HttpFile } from '../http/http';
 
-/**
-* How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-*/
-export enum KafkaPayloadFormat {
-    defaultPayloadFormat = 'individual',
-    payloadFormatIndividual = 'json_array'
+export class RoutesV3TagResourcesResponse {
+    'pagination'?: ModelsPagination;
+    'resources'?: Array<DatastoreTaggedResource>;
+
+    static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
+
+    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "pagination",
+            "baseName": "pagination",
+            "type": "ModelsPagination",
+            "format": ""
+        },
+        {
+            "name": "resources",
+            "baseName": "resources",
+            "type": "Array<DatastoreTaggedResource>",
+            "format": ""
+        }    ];
+
+    static getAttributeTypeMap() {
+        return RoutesV3TagResourcesResponse.attributeTypeMap;
+    }
+
+    public constructor() {
+    }
 }

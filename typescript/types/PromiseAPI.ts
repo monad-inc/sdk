@@ -133,6 +133,8 @@ import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWrite
 import { DatabricksLakehouseZeroBusWriteMode } from '../models/DatabricksLakehouseZeroBusWriteMode';
 import { DatadogSecretsConfig } from '../models/DatadogSecretsConfig';
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
+import { DatastoreResourceKind } from '../models/DatastoreResourceKind';
+import { DatastoreTaggedResource } from '../models/DatastoreTaggedResource';
 import { DedupArgumentsConfig } from '../models/DedupArgumentsConfig';
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { DefenderForEndpointAlertsSettingsConfig } from '../models/DefenderForEndpointAlertsSettingsConfig';
@@ -513,6 +515,7 @@ import { RoutesV3SharedResourceWithMetadata } from '../models/RoutesV3SharedReso
 import { RoutesV3SuccessResponse } from '../models/RoutesV3SuccessResponse';
 import { RoutesV3Summary } from '../models/RoutesV3Summary';
 import { RoutesV3TagListResponse } from '../models/RoutesV3TagListResponse';
+import { RoutesV3TagResourcesResponse } from '../models/RoutesV3TagResourcesResponse';
 import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { RoutesV3TestEnrichmentConnectionRequest } from '../models/RoutesV3TestEnrichmentConnectionRequest';
 import { RoutesV3TransformConfig } from '../models/RoutesV3TransformConfig';
@@ -5759,6 +5762,34 @@ export class PromiseTagsApi {
     public getTag(organizationId: string, tag: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3TagResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getTag(organizationId, tag, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     * @param [limit] Page size (default 10, max 100)
+     * @param [offset] Offset
+     */
+    public listTagResourcesWithHttpInfo(organizationId: string, tag: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3TagResourcesResponse>> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listTagResourcesWithHttpInfo(organizationId, tag, limit, offset, observableOptions);
+        return result.toPromise();
+    }
+
+    /**
+     * List the resources (v1: pipelines) a customer tag is attached to, by tag ID or name. Each resource carries a flat kind (pipeline, input, output, enrichment, transform). Reserved tags return 404.
+     * List a tag\'s resources
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     * @param [limit] Page size (default 10, max 100)
+     * @param [offset] Offset
+     */
+    public listTagResources(organizationId: string, tag: string, limit?: number, offset?: number, _options?: PromiseConfigurationOptions): Promise<RoutesV3TagResourcesResponse> {
+        const observableOptions = wrapOptions(_options);
+        const result = this.api.listTagResources(organizationId, tag, limit, offset, observableOptions);
         return result.toPromise();
     }
 
