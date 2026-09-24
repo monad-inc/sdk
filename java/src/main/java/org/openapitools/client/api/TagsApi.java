@@ -238,6 +238,7 @@ public class TagsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -305,7 +306,7 @@ public class TagsApi {
 
     /**
      * Delete a tag
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * @param organizationId Organization ID (required)
      * @param tagId Tag ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -315,6 +316,7 @@ public class TagsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -324,7 +326,7 @@ public class TagsApi {
 
     /**
      * Delete a tag
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * @param organizationId Organization ID (required)
      * @param tagId Tag ID (required)
      * @return ApiResponse&lt;Void&gt;
@@ -335,6 +337,7 @@ public class TagsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -345,7 +348,7 @@ public class TagsApi {
 
     /**
      * Delete a tag (asynchronously)
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * @param organizationId Organization ID (required)
      * @param tagId Tag ID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -357,6 +360,7 @@ public class TagsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

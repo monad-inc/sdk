@@ -90,7 +90,7 @@ public class Example {
 
 Delete a tag
 
-Delete a customer tag. Reserved tags return 404. Taggings cascade.
+Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
 ### Example
 ```java
@@ -154,6 +154,7 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **204** | Tag deleted |  -  |
 | **404** | Tag not found |  -  |
+| **409** | Tag is attached to resources |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="listTags"></a>

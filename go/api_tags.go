@@ -199,7 +199,7 @@ func (r ApiDeleteTagRequest) Execute() (*http.Response, error) {
 /*
 DeleteTag Delete a tag
 
-Delete a customer tag. Reserved tags return 404. Taggings cascade.
+Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -290,6 +290,17 @@ func (a *TagsAPIService) DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 409 {
 			var v ResponderErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

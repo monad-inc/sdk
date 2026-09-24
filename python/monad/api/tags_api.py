@@ -360,7 +360,7 @@ class TagsApi:
     ) -> None:
         """Delete a tag
 
-        Delete a customer tag. Reserved tags return 404. Taggings cascade.
+        Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -400,6 +400,7 @@ class TagsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -433,7 +434,7 @@ class TagsApi:
     ) -> ApiResponse[None]:
         """Delete a tag
 
-        Delete a customer tag. Reserved tags return 404. Taggings cascade.
+        Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -473,6 +474,7 @@ class TagsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -506,7 +508,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """Delete a tag
 
-        Delete a customer tag. Reserved tags return 404. Taggings cascade.
+        Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -546,6 +548,7 @@ class TagsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '404': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(

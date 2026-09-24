@@ -7992,7 +7992,7 @@ export class ObjectTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param param the request object
      */
@@ -8001,7 +8001,7 @@ export class ObjectTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param param the request object
      */

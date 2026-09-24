@@ -76,7 +76,7 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tagId Tag ID
@@ -316,6 +316,13 @@ export class TagsApiResponseProcessor {
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
             throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Tag not found", body, response.headers);
+        }
+        if (isCodeInRange("409", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Tag is attached to resources", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

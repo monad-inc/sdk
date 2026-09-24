@@ -4072,9 +4072,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -27606,7 +27606,7 @@
         },
         "/v3/{organization_id}/tags/{tag_id}": {
             "delete": {
-                "description": "Delete a customer tag. Reserved tags return 404. Taggings cascade.",
+                "description": "Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.",
                 "operationId": "DeleteTag",
                 "parameters": [
                     {
@@ -27641,6 +27641,16 @@
                             }
                         },
                         "description": "Tag not found"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag is attached to resources"
                     },
                     "500": {
                         "content": {

@@ -7721,7 +7721,7 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tagId Tag ID
@@ -7747,7 +7747,7 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. Taggings cascade.
+     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tagId Tag ID
