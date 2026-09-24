@@ -7904,12 +7904,29 @@ export interface TagsApiDeleteTagRequest {
      */
     organizationId: string
     /**
-     * Tag ID
+     * Tag ID or name
      * Defaults to: undefined
      * @type string
      * @memberof TagsApideleteTag
      */
-    tagId: string
+    tag: string
+}
+
+export interface TagsApiGetTagRequest {
+    /**
+     * Organization ID
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApigetTag
+     */
+    organizationId: string
+    /**
+     * Tag ID or name
+     * Defaults to: undefined
+     * @type string
+     * @memberof TagsApigetTag
+     */
+    tag: string
 }
 
 export interface TagsApiListTagsRequest {
@@ -7952,12 +7969,12 @@ export interface TagsApiUpdateTagRequest {
      */
     organizationId: string
     /**
-     * Tag ID
+     * Tag ID or name
      * Defaults to: undefined
      * @type string
      * @memberof TagsApiupdateTag
      */
-    tagId: string
+    tag: string
     /**
      * Request body for updating a tag
      * @type UpdateTagRequest
@@ -7992,21 +8009,39 @@ export class ObjectTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param param the request object
      */
     public deleteTagWithHttpInfo(param: TagsApiDeleteTagRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
-        return this.api.deleteTagWithHttpInfo(param.organizationId, param.tagId,  options).toPromise();
+        return this.api.deleteTagWithHttpInfo(param.organizationId, param.tag,  options).toPromise();
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param param the request object
      */
     public deleteTag(param: TagsApiDeleteTagRequest, options?: ConfigurationOptions): Promise<void> {
-        return this.api.deleteTag(param.organizationId, param.tagId,  options).toPromise();
+        return this.api.deleteTag(param.organizationId, param.tag,  options).toPromise();
+    }
+
+    /**
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
+     * Get a tag
+     * @param param the request object
+     */
+    public getTagWithHttpInfo(param: TagsApiGetTagRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3TagResponse>> {
+        return this.api.getTagWithHttpInfo(param.organizationId, param.tag,  options).toPromise();
+    }
+
+    /**
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
+     * Get a tag
+     * @param param the request object
+     */
+    public getTag(param: TagsApiGetTagRequest, options?: ConfigurationOptions): Promise<RoutesV3TagResponse> {
+        return this.api.getTag(param.organizationId, param.tag,  options).toPromise();
     }
 
     /**
@@ -8028,21 +8063,21 @@ export class ObjectTagsApi {
     }
 
     /**
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
      * Update a tag
      * @param param the request object
      */
     public updateTagWithHttpInfo(param: TagsApiUpdateTagRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3TagResponse>> {
-        return this.api.updateTagWithHttpInfo(param.organizationId, param.tagId, param.updateTagRequest,  options).toPromise();
+        return this.api.updateTagWithHttpInfo(param.organizationId, param.tag, param.updateTagRequest,  options).toPromise();
     }
 
     /**
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
      * Update a tag
      * @param param the request object
      */
     public updateTag(param: TagsApiUpdateTagRequest, options?: ConfigurationOptions): Promise<RoutesV3TagResponse> {
-        return this.api.updateTag(param.organizationId, param.tagId, param.updateTagRequest,  options).toPromise();
+        return this.api.updateTag(param.organizationId, param.tag, param.updateTagRequest,  options).toPromise();
     }
 
 }

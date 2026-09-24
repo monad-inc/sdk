@@ -344,7 +344,7 @@ class TagsApi:
     def delete_tag(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        tag_id: Annotated[StrictStr, Field(description="Tag ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -360,12 +360,12 @@ class TagsApi:
     ) -> None:
         """Delete a tag
 
-        Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param tag_id: Tag ID (required)
-        :type tag_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -390,7 +390,7 @@ class TagsApi:
 
         _param = self._delete_tag_serialize(
             organization_id=organization_id,
-            tag_id=tag_id,
+            tag=tag,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -399,6 +399,7 @@ class TagsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -418,7 +419,7 @@ class TagsApi:
     def delete_tag_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        tag_id: Annotated[StrictStr, Field(description="Tag ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -434,12 +435,12 @@ class TagsApi:
     ) -> ApiResponse[None]:
         """Delete a tag
 
-        Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param tag_id: Tag ID (required)
-        :type tag_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -464,7 +465,7 @@ class TagsApi:
 
         _param = self._delete_tag_serialize(
             organization_id=organization_id,
-            tag_id=tag_id,
+            tag=tag,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -473,6 +474,7 @@ class TagsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -492,7 +494,7 @@ class TagsApi:
     def delete_tag_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        tag_id: Annotated[StrictStr, Field(description="Tag ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -508,12 +510,12 @@ class TagsApi:
     ) -> RESTResponseType:
         """Delete a tag
 
-        Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param tag_id: Tag ID (required)
-        :type tag_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -538,7 +540,7 @@ class TagsApi:
 
         _param = self._delete_tag_serialize(
             organization_id=organization_id,
-            tag_id=tag_id,
+            tag=tag,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -547,6 +549,7 @@ class TagsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
+            '400': "ResponderErrorResponse",
             '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
@@ -561,7 +564,7 @@ class TagsApi:
     def _delete_tag_serialize(
         self,
         organization_id,
-        tag_id,
+        tag,
         _request_auth,
         _content_type,
         _headers,
@@ -585,8 +588,8 @@ class TagsApi:
         # process the path parameters
         if organization_id is not None:
             _path_params['organization_id'] = organization_id
-        if tag_id is not None:
-            _path_params['tag_id'] = tag_id
+        if tag is not None:
+            _path_params['tag'] = tag
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -609,7 +612,292 @@ class TagsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v3/{organization_id}/tags/{tag_id}',
+            resource_path='/v3/{organization_id}/tags/{tag}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_tag(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RoutesV3TagResponse:
+        """Get a tag
+
+        Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_tag_serialize(
+            organization_id=organization_id,
+            tag=tag,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RoutesV3TagResponse",
+            '400': "ResponderErrorResponse",
+            '404': "ResponderErrorResponse",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_tag_with_http_info(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[RoutesV3TagResponse]:
+        """Get a tag
+
+        Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_tag_serialize(
+            organization_id=organization_id,
+            tag=tag,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RoutesV3TagResponse",
+            '400': "ResponderErrorResponse",
+            '404': "ResponderErrorResponse",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_tag_without_preload_content(
+        self,
+        organization_id: Annotated[StrictStr, Field(description="Organization ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get a tag
+
+        Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.
+
+        :param organization_id: Organization ID (required)
+        :type organization_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_tag_serialize(
+            organization_id=organization_id,
+            tag=tag,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "RoutesV3TagResponse",
+            '400': "ResponderErrorResponse",
+            '404': "ResponderErrorResponse",
+            '500': "ResponderErrorResponse",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_tag_serialize(
+        self,
+        organization_id,
+        tag,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if organization_id is not None:
+            _path_params['organization_id'] = organization_id
+        if tag is not None:
+            _path_params['tag'] = tag
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'Bearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/v3/{organization_id}/tags/{tag}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -944,7 +1232,7 @@ class TagsApi:
     def update_tag(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        tag_id: Annotated[StrictStr, Field(description="Tag ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
         update_tag_request: Annotated[UpdateTagRequest, Field(description="Request body for updating a tag")],
         _request_timeout: Union[
             None,
@@ -961,12 +1249,12 @@ class TagsApi:
     ) -> RoutesV3TagResponse:
         """Update a tag
 
-        Partially update a customer tag. Reserved tags return 404.
+        Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param tag_id: Tag ID (required)
-        :type tag_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
         :param update_tag_request: Request body for updating a tag (required)
         :type update_tag_request: UpdateTagRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -993,7 +1281,7 @@ class TagsApi:
 
         _param = self._update_tag_serialize(
             organization_id=organization_id,
-            tag_id=tag_id,
+            tag=tag,
             update_tag_request=update_tag_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1023,7 +1311,7 @@ class TagsApi:
     def update_tag_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        tag_id: Annotated[StrictStr, Field(description="Tag ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
         update_tag_request: Annotated[UpdateTagRequest, Field(description="Request body for updating a tag")],
         _request_timeout: Union[
             None,
@@ -1040,12 +1328,12 @@ class TagsApi:
     ) -> ApiResponse[RoutesV3TagResponse]:
         """Update a tag
 
-        Partially update a customer tag. Reserved tags return 404.
+        Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param tag_id: Tag ID (required)
-        :type tag_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
         :param update_tag_request: Request body for updating a tag (required)
         :type update_tag_request: UpdateTagRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -1072,7 +1360,7 @@ class TagsApi:
 
         _param = self._update_tag_serialize(
             organization_id=organization_id,
-            tag_id=tag_id,
+            tag=tag,
             update_tag_request=update_tag_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1102,7 +1390,7 @@ class TagsApi:
     def update_tag_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        tag_id: Annotated[StrictStr, Field(description="Tag ID")],
+        tag: Annotated[StrictStr, Field(description="Tag ID or name")],
         update_tag_request: Annotated[UpdateTagRequest, Field(description="Request body for updating a tag")],
         _request_timeout: Union[
             None,
@@ -1119,12 +1407,12 @@ class TagsApi:
     ) -> RESTResponseType:
         """Update a tag
 
-        Partially update a customer tag. Reserved tags return 404.
+        Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param tag_id: Tag ID (required)
-        :type tag_id: str
+        :param tag: Tag ID or name (required)
+        :type tag: str
         :param update_tag_request: Request body for updating a tag (required)
         :type update_tag_request: UpdateTagRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -1151,7 +1439,7 @@ class TagsApi:
 
         _param = self._update_tag_serialize(
             organization_id=organization_id,
-            tag_id=tag_id,
+            tag=tag,
             update_tag_request=update_tag_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1176,7 +1464,7 @@ class TagsApi:
     def _update_tag_serialize(
         self,
         organization_id,
-        tag_id,
+        tag,
         update_tag_request,
         _request_auth,
         _content_type,
@@ -1201,8 +1489,8 @@ class TagsApi:
         # process the path parameters
         if organization_id is not None:
             _path_params['organization_id'] = organization_id
-        if tag_id is not None:
-            _path_params['tag_id'] = tag_id
+        if tag is not None:
+            _path_params['tag'] = tag
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1240,7 +1528,7 @@ class TagsApi:
 
         return self.api_client.param_serialize(
             method='PATCH',
-            resource_path='/v3/{organization_id}/tags/{tag_id}',
+            resource_path='/v3/{organization_id}/tags/{tag}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

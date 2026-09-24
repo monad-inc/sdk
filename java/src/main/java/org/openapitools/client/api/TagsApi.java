@@ -228,7 +228,7 @@ public class TagsApi {
     /**
      * Build call for deleteTag
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -237,12 +237,13 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTagCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTagCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,9 +260,9 @@ public class TagsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v3/{organization_id}/tags/{tag_id}"
+        String localVarPath = "/v3/{organization_id}/tags/{tag}"
             .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
-            .replace("{" + "tag_id" + "}", localVarApiClient.escapeString(tagId.toString()));
+            .replace("{" + "tag" + "}", localVarApiClient.escapeString(tag.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -289,46 +290,47 @@ public class TagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTagValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTagValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling deleteTag(Async)");
         }
 
-        // verify the required parameter 'tagId' is set
-        if (tagId == null) {
-            throw new ApiException("Missing the required parameter 'tagId' when calling deleteTag(Async)");
+        // verify the required parameter 'tag' is set
+        if (tag == null) {
+            throw new ApiException("Missing the required parameter 'tag' when calling deleteTag(Async)");
         }
 
-        return deleteTagCall(organizationId, tagId, _callback);
+        return deleteTagCall(organizationId, tag, _callback);
 
     }
 
     /**
      * Delete a tag
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteTag(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId) throws ApiException {
-        deleteTagWithHttpInfo(organizationId, tagId);
+    public void deleteTag(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag) throws ApiException {
+        deleteTagWithHttpInfo(organizationId, tag);
     }
 
     /**
      * Delete a tag
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -336,21 +338,22 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteTagWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId) throws ApiException {
-        okhttp3.Call localVarCall = deleteTagValidateBeforeCall(organizationId, tagId, null);
+    public ApiResponse<Void> deleteTagWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag) throws ApiException {
+        okhttp3.Call localVarCall = deleteTagValidateBeforeCall(organizationId, tag, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a tag (asynchronously)
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -359,15 +362,165 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTagAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteTagAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteTagValidateBeforeCall(organizationId, tagId, _callback);
+        okhttp3.Call localVarCall = deleteTagValidateBeforeCall(organizationId, tag, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getTag
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getTagCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v3/{organization_id}/tags/{tag}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "tag" + "}", localVarApiClient.escapeString(tag.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Bearer" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getTagValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getTag(Async)");
+        }
+
+        // verify the required parameter 'tag' is set
+        if (tag == null) {
+            throw new ApiException("Missing the required parameter 'tag' when calling getTag(Async)");
+        }
+
+        return getTagCall(organizationId, tag, _callback);
+
+    }
+
+    /**
+     * Get a tag
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @return RoutesV3TagResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public RoutesV3TagResponse getTag(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag) throws ApiException {
+        ApiResponse<RoutesV3TagResponse> localVarResp = getTagWithHttpInfo(organizationId, tag);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get a tag
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @return ApiResponse&lt;RoutesV3TagResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<RoutesV3TagResponse> getTagWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag) throws ApiException {
+        okhttp3.Call localVarCall = getTagValidateBeforeCall(organizationId, tag, null);
+        Type localVarReturnType = new TypeToken<RoutesV3TagResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get a tag (asynchronously)
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
+     * @param organizationId Organization ID (required)
+     * @param tag Tag ID or name (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Tag </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getTagAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, final ApiCallback<RoutesV3TagResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getTagValidateBeforeCall(organizationId, tag, _callback);
+        Type localVarReturnType = new TypeToken<RoutesV3TagResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -528,7 +681,7 @@ public class TagsApi {
     /**
      * Build call for updateTag
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @param updateTagRequest Request body for updating a tag (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -538,13 +691,13 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name or request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A tag with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTagCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTagCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -561,9 +714,9 @@ public class TagsApi {
         Object localVarPostBody = updateTagRequest;
 
         // create path and map variables
-        String localVarPath = "/v3/{organization_id}/tags/{tag_id}"
+        String localVarPath = "/v3/{organization_id}/tags/{tag}"
             .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
-            .replace("{" + "tag_id" + "}", localVarApiClient.escapeString(tagId.toString()));
+            .replace("{" + "tag" + "}", localVarApiClient.escapeString(tag.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -592,15 +745,15 @@ public class TagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTagValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTagValidateBeforeCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateTag(Async)");
         }
 
-        // verify the required parameter 'tagId' is set
-        if (tagId == null) {
-            throw new ApiException("Missing the required parameter 'tagId' when calling updateTag(Async)");
+        // verify the required parameter 'tag' is set
+        if (tag == null) {
+            throw new ApiException("Missing the required parameter 'tag' when calling updateTag(Async)");
         }
 
         // verify the required parameter 'updateTagRequest' is set
@@ -608,15 +761,15 @@ public class TagsApi {
             throw new ApiException("Missing the required parameter 'updateTagRequest' when calling updateTag(Async)");
         }
 
-        return updateTagCall(organizationId, tagId, updateTagRequest, _callback);
+        return updateTagCall(organizationId, tag, updateTagRequest, _callback);
 
     }
 
     /**
      * Update a tag
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @param updateTagRequest Request body for updating a tag (required)
      * @return RoutesV3TagResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -625,22 +778,22 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name or request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A tag with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3TagResponse updateTag(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest) throws ApiException {
-        ApiResponse<RoutesV3TagResponse> localVarResp = updateTagWithHttpInfo(organizationId, tagId, updateTagRequest);
+    public RoutesV3TagResponse updateTag(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest) throws ApiException {
+        ApiResponse<RoutesV3TagResponse> localVarResp = updateTagWithHttpInfo(organizationId, tag, updateTagRequest);
         return localVarResp.getData();
     }
 
     /**
      * Update a tag
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @param updateTagRequest Request body for updating a tag (required)
      * @return ApiResponse&lt;RoutesV3TagResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -649,23 +802,23 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name or request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A tag with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3TagResponse> updateTagWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateTagValidateBeforeCall(organizationId, tagId, updateTagRequest, null);
+    public ApiResponse<RoutesV3TagResponse> updateTagWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateTagValidateBeforeCall(organizationId, tag, updateTagRequest, null);
         Type localVarReturnType = new TypeToken<RoutesV3TagResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Update a tag (asynchronously)
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
      * @param organizationId Organization ID (required)
-     * @param tagId Tag ID (required)
+     * @param tag Tag ID or name (required)
      * @param updateTagRequest Request body for updating a tag (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -675,15 +828,15 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Tag updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid tag name or request body </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A tag with this name already exists </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTagAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tagId, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest, final ApiCallback<RoutesV3TagResponse> _callback) throws ApiException {
+    public okhttp3.Call updateTagAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String tag, @javax.annotation.Nonnull UpdateTagRequest updateTagRequest, final ApiCallback<RoutesV3TagResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateTagValidateBeforeCall(organizationId, tagId, updateTagRequest, _callback);
+        okhttp3.Call localVarCall = updateTagValidateBeforeCall(organizationId, tag, updateTagRequest, _callback);
         Type localVarReturnType = new TypeToken<RoutesV3TagResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

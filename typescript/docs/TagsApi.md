@@ -5,9 +5,10 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createTag**](TagsApi.md#createTag) | **POST** /v3/{organization_id}/tags | Create a tag
-[**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag_id} | Delete a tag
+[**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag
+[**getTag**](TagsApi.md#getTag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag
 [**listTags**](TagsApi.md#listTags) | **GET** /v3/{organization_id}/tags | List tags
-[**updateTag**](TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag_id} | Update a tag
+[**updateTag**](TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag
 
 
 # **createTag**
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 # **deleteTag**
 > void deleteTag()
 
-Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
 ### Example
 
@@ -87,8 +88,8 @@ const apiInstance = new TagsApi(configuration);
 const request: TagsApiDeleteTagRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Tag ID
-  tagId: "tag_id_example",
+    // Tag ID or name
+  tag: "tag_example",
 };
 
 const data = await apiInstance.deleteTag(request);
@@ -101,7 +102,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **tagId** | [**string**] | Tag ID | defaults to undefined
+ **tag** | [**string**] | Tag ID or name | defaults to undefined
 
 
 ### Return type
@@ -122,8 +123,68 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Tag deleted |  -  |
+**400** | Invalid tag name |  -  |
 **404** | Tag not found |  -  |
 **409** | Tag is attached to resources |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getTag**
+> RoutesV3TagResponse getTag()
+
+Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
+
+### Example
+
+
+```typescript
+import { createConfiguration, TagsApi } from '';
+import type { TagsApiGetTagRequest } from '';
+
+const configuration = createConfiguration();
+const apiInstance = new TagsApi(configuration);
+
+const request: TagsApiGetTagRequest = {
+    // Organization ID
+  organizationId: "organization_id_example",
+    // Tag ID or name
+  tag: "tag_example",
+};
+
+const data = await apiInstance.getTag(request);
+console.log('API called successfully. Returned data:', data);
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | [**string**] | Organization ID | defaults to undefined
+ **tag** | [**string**] | Tag ID or name | defaults to undefined
+
+
+### Return type
+
+**RoutesV3TagResponse**
+
+### Authorization
+
+[Bearer](README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Tag |  -  |
+**400** | Invalid tag name |  -  |
+**404** | Tag not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -194,7 +255,7 @@ Name | Type | Description  | Notes
 # **updateTag**
 > RoutesV3TagResponse updateTag(updateTagRequest)
 
-Partially update a customer tag. Reserved tags return 404.
+Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
 
 ### Example
 
@@ -209,8 +270,8 @@ const apiInstance = new TagsApi(configuration);
 const request: TagsApiUpdateTagRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Tag ID
-  tagId: "tag_id_example",
+    // Tag ID or name
+  tag: "tag_example",
     // Request body for updating a tag
   updateTagRequest: null,
 };
@@ -226,7 +287,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateTagRequest** | **UpdateTagRequest**| Request body for updating a tag |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **tagId** | [**string**] | Tag ID | defaults to undefined
+ **tag** | [**string**] | Tag ID or name | defaults to undefined
 
 
 ### Return type
@@ -247,7 +308,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Tag updated |  -  |
-**400** | Invalid request body |  -  |
+**400** | Invalid tag name or request body |  -  |
 **404** | Tag not found |  -  |
 **409** | A tag with this name already exists |  -  |
 **500** | Internal server error |  -  |

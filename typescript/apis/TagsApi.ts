@@ -76,12 +76,12 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param organizationId Organization ID
-     * @param tagId Tag ID
+     * @param tag Tag ID or name
      */
-    public async deleteTag(organizationId: string, tagId: string, _options?: Configuration): Promise<RequestContext> {
+    public async deleteTag(organizationId: string, tag: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -90,19 +90,65 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'tagId' is not null or undefined
-        if (tagId === null || tagId === undefined) {
-            throw new RequiredError("TagsApi", "deleteTag", "tagId");
+        // verify required parameter 'tag' is not null or undefined
+        if (tag === null || tag === undefined) {
+            throw new RequiredError("TagsApi", "deleteTag", "tag");
         }
 
 
         // Path Params
-        const localVarPath = '/v3/{organization_id}/tags/{tag_id}'
+        const localVarPath = '/v3/{organization_id}/tags/{tag}'
             .replace('{organization_id}', encodeURIComponent(String(organizationId)))
-            .replace('{tag_id}', encodeURIComponent(String(tagId)));
+            .replace('{tag}', encodeURIComponent(String(tag)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.DELETE);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["Bearer"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _config?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
+     * Get a tag
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     */
+    public async getTag(organizationId: string, tag: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'organizationId' is not null or undefined
+        if (organizationId === null || organizationId === undefined) {
+            throw new RequiredError("TagsApi", "getTag", "organizationId");
+        }
+
+
+        // verify required parameter 'tag' is not null or undefined
+        if (tag === null || tag === undefined) {
+            throw new RequiredError("TagsApi", "getTag", "tag");
+        }
+
+
+        // Path Params
+        const localVarPath = '/v3/{organization_id}/tags/{tag}'
+            .replace('{organization_id}', encodeURIComponent(String(organizationId)))
+            .replace('{tag}', encodeURIComponent(String(tag)));
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
 
@@ -181,13 +227,13 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
      * Update a tag
      * @param organizationId Organization ID
-     * @param tagId Tag ID
+     * @param tag Tag ID or name
      * @param updateTagRequest Request body for updating a tag
      */
-    public async updateTag(organizationId: string, tagId: string, updateTagRequest: UpdateTagRequest, _options?: Configuration): Promise<RequestContext> {
+    public async updateTag(organizationId: string, tag: string, updateTagRequest: UpdateTagRequest, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'organizationId' is not null or undefined
@@ -196,9 +242,9 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
         }
 
 
-        // verify required parameter 'tagId' is not null or undefined
-        if (tagId === null || tagId === undefined) {
-            throw new RequiredError("TagsApi", "updateTag", "tagId");
+        // verify required parameter 'tag' is not null or undefined
+        if (tag === null || tag === undefined) {
+            throw new RequiredError("TagsApi", "updateTag", "tag");
         }
 
 
@@ -209,9 +255,9 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/v3/{organization_id}/tags/{tag_id}'
+        const localVarPath = '/v3/{organization_id}/tags/{tag}'
             .replace('{organization_id}', encodeURIComponent(String(organizationId)))
-            .replace('{tag_id}', encodeURIComponent(String(tagId)));
+            .replace('{tag}', encodeURIComponent(String(tag)));
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PATCH);
@@ -310,6 +356,13 @@ export class TagsApiResponseProcessor {
         if (isCodeInRange("204", response.httpStatusCode)) {
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, undefined);
         }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid tag name", body, response.headers);
+        }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -338,6 +391,56 @@ export class TagsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "void", ""
             ) as void;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to getTag
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async getTagWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RoutesV3TagResponse >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: RoutesV3TagResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV3TagResponse", ""
+            ) as RoutesV3TagResponse;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid tag name", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Tag not found", body, response.headers);
+        }
+        if (isCodeInRange("500", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Internal server error", body, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: RoutesV3TagResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RoutesV3TagResponse", ""
+            ) as RoutesV3TagResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -401,7 +504,7 @@ export class TagsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid request body", body, response.headers);
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Invalid tag name or request body", body, response.headers);
         }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

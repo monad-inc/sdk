@@ -5,9 +5,10 @@ All URIs are relative to *https://monad.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateTag**](TagsAPI.md#CreateTag) | **Post** /v3/{organization_id}/tags | Create a tag
-[**DeleteTag**](TagsAPI.md#DeleteTag) | **Delete** /v3/{organization_id}/tags/{tag_id} | Delete a tag
+[**DeleteTag**](TagsAPI.md#DeleteTag) | **Delete** /v3/{organization_id}/tags/{tag} | Delete a tag
+[**GetTag**](TagsAPI.md#GetTag) | **Get** /v3/{organization_id}/tags/{tag} | Get a tag
 [**ListTags**](TagsAPI.md#ListTags) | **Get** /v3/{organization_id}/tags | List tags
-[**UpdateTag**](TagsAPI.md#UpdateTag) | **Patch** /v3/{organization_id}/tags/{tag_id} | Update a tag
+[**UpdateTag**](TagsAPI.md#UpdateTag) | **Patch** /v3/{organization_id}/tags/{tag} | Update a tag
 
 
 
@@ -85,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## DeleteTag
 
-> DeleteTag(ctx, organizationId, tagId).Execute()
+> DeleteTag(ctx, organizationId, tag).Execute()
 
 Delete a tag
 
@@ -105,11 +106,11 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	tagId := "tagId_example" // string | Tag ID
+	tag := "tag_example" // string | Tag ID or name
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.DeleteTag(context.Background(), organizationId, tagId).Execute()
+	r, err := apiClient.TagsAPI.DeleteTag(context.Background(), organizationId, tag).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.DeleteTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,7 +125,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organizationId** | **string** | Organization ID | 
-**tagId** | **string** | Tag ID | 
+**tag** | **string** | Tag ID or name | 
 
 ### Other Parameters
 
@@ -139,6 +140,79 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTag
+
+> RoutesV3TagResponse GetTag(ctx, organizationId, tag).Execute()
+
+Get a tag
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/monad-inc/sdk/go"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | Organization ID
+	tag := "tag_example" // string | Tag ID or name
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TagsAPI.GetTag(context.Background(), organizationId, tag).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTag`: RoutesV3TagResponse
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organizationId** | **string** | Organization ID | 
+**tag** | **string** | Tag ID or name | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**RoutesV3TagResponse**](RoutesV3TagResponse.md)
 
 ### Authorization
 
@@ -232,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTag
 
-> RoutesV3TagResponse UpdateTag(ctx, organizationId, tagId).UpdateTagRequest(updateTagRequest).Execute()
+> RoutesV3TagResponse UpdateTag(ctx, organizationId, tag).UpdateTagRequest(updateTagRequest).Execute()
 
 Update a tag
 
@@ -252,12 +326,12 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	tagId := "tagId_example" // string | Tag ID
+	tag := "tag_example" // string | Tag ID or name
 	updateTagRequest := openapiclient.UpdateTag_request{RoutesV3UpdateTagRequest: openapiclient.NewRoutesV3UpdateTagRequest()} // UpdateTagRequest | Request body for updating a tag
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TagsAPI.UpdateTag(context.Background(), organizationId, tagId).UpdateTagRequest(updateTagRequest).Execute()
+	resp, r, err := apiClient.TagsAPI.UpdateTag(context.Background(), organizationId, tag).UpdateTagRequest(updateTagRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.UpdateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -274,7 +348,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organizationId** | **string** | Organization ID | 
-**tagId** | **string** | Tag ID | 
+**tag** | **string** | Tag ID or name | 
 
 ### Other Parameters
 

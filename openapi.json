@@ -27604,9 +27604,9 @@
                 ]
             }
         },
-        "/v3/{organization_id}/tags/{tag_id}": {
+        "/v3/{organization_id}/tags/{tag}": {
             "delete": {
-                "description": "Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.",
+                "description": "Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.",
                 "operationId": "DeleteTag",
                 "parameters": [
                     {
@@ -27619,9 +27619,9 @@
                         }
                     },
                     {
-                        "description": "Tag ID",
+                        "description": "Tag ID or name",
                         "in": "path",
-                        "name": "tag_id",
+                        "name": "tag",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -27631,6 +27631,16 @@
                 "responses": {
                     "204": {
                         "description": "Tag deleted"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid tag name"
                     },
                     "404": {
                         "content": {
@@ -27676,8 +27686,86 @@
                     "tag:delete"
                 ]
             },
+            "get": {
+                "description": "Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.",
+                "operationId": "GetTag",
+                "parameters": [
+                    {
+                        "description": "Organization ID",
+                        "in": "path",
+                        "name": "organization_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Tag ID or name",
+                        "in": "path",
+                        "name": "tag",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/routesV3.TagResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Invalid tag name"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Tag not found"
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Get a tag",
+                "tags": [
+                    "Tags"
+                ],
+                "x-required-permissions": [
+                    "tag:read"
+                ]
+            },
             "patch": {
-                "description": "Partially update a customer tag. Reserved tags return 404.",
+                "description": "Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can't be UUIDs. Reserved tags return 404.",
                 "operationId": "UpdateTag",
                 "parameters": [
                     {
@@ -27690,9 +27778,9 @@
                         }
                     },
                     {
-                        "description": "Tag ID",
+                        "description": "Tag ID or name",
                         "in": "path",
-                        "name": "tag_id",
+                        "name": "tag",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -27738,7 +27826,7 @@
                                 }
                             }
                         },
-                        "description": "Invalid request body"
+                        "description": "Invalid tag name or request body"
                     },
                     "404": {
                         "content": {

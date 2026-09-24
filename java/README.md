@@ -361,9 +361,10 @@ Class | Method | HTTP request | Description
 *SecretsApi* | [**updateSecret**](docs/SecretsApi.md#updateSecret) | **PATCH** /v2/{organization_id}/secrets/{secret_id} | Update secret
 *SessionsApi* | [**createSession**](docs/SessionsApi.md#createSession) | **POST** /v3/sessions | Mint a short-lived API token, optionally scoped to a single org
 *TagsApi* | [**createTag**](docs/TagsApi.md#createTag) | **POST** /v3/{organization_id}/tags | Create a tag
-*TagsApi* | [**deleteTag**](docs/TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag_id} | Delete a tag
+*TagsApi* | [**deleteTag**](docs/TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag
+*TagsApi* | [**getTag**](docs/TagsApi.md#getTag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag
 *TagsApi* | [**listTags**](docs/TagsApi.md#listTags) | **GET** /v3/{organization_id}/tags | List tags
-*TagsApi* | [**updateTag**](docs/TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag_id} | Update a tag
+*TagsApi* | [**updateTag**](docs/TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag
 *TransformSandboxApi* | [**applyTransformation**](docs/TransformSandboxApi.md#applyTransformation) | **POST** /v2/{organization_id}/sandbox/transform | Apply transformation to record
 *TransformSandboxApi* | [**applyTransformationV2**](docs/TransformSandboxApi.md#applyTransformationV2) | **POST** /v2/sandbox/transform | Apply transformation to record
 *TransformSandboxApi* | [**generateRecord**](docs/TransformSandboxApi.md#generateRecord) | **POST** /v2/sandbox/template | Generate sample record

@@ -5,9 +5,10 @@ All URIs are relative to *https://monad.com/api*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createTag**](TagsApi.md#createTag) | **POST** /v3/{organization_id}/tags | Create a tag |
-| [**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag_id} | Delete a tag |
+| [**deleteTag**](TagsApi.md#deleteTag) | **DELETE** /v3/{organization_id}/tags/{tag} | Delete a tag |
+| [**getTag**](TagsApi.md#getTag) | **GET** /v3/{organization_id}/tags/{tag} | Get a tag |
 | [**listTags**](TagsApi.md#listTags) | **GET** /v3/{organization_id}/tags | List tags |
-| [**updateTag**](TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag_id} | Update a tag |
+| [**updateTag**](TagsApi.md#updateTag) | **PATCH** /v3/{organization_id}/tags/{tag} | Update a tag |
 
 
 <a id="createTag"></a>
@@ -86,11 +87,11 @@ public class Example {
 
 <a id="deleteTag"></a>
 # **deleteTag**
-> deleteTag(organizationId, tagId)
+> deleteTag(organizationId, tag)
 
 Delete a tag
 
-Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
 
 ### Example
 ```java
@@ -115,9 +116,9 @@ public class Example {
 
     TagsApi apiInstance = new TagsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    String tagId = "tagId_example"; // String | Tag ID
+    String tag = "tag_example"; // String | Tag ID or name
     try {
-      apiInstance.deleteTag(organizationId, tagId);
+      apiInstance.deleteTag(organizationId, tag);
     } catch (ApiException e) {
       System.err.println("Exception when calling TagsApi#deleteTag");
       System.err.println("Status code: " + e.getCode());
@@ -134,7 +135,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **tagId** | **String**| Tag ID | |
+| **tag** | **String**| Tag ID or name | |
 
 ### Return type
 
@@ -153,8 +154,83 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Tag deleted |  -  |
+| **400** | Invalid tag name |  -  |
 | **404** | Tag not found |  -  |
 | **409** | Tag is attached to resources |  -  |
+| **500** | Internal server error |  -  |
+
+<a id="getTag"></a>
+# **getTag**
+> RoutesV3TagResponse getTag(organizationId, tag)
+
+Get a tag
+
+Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.TagsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://monad.com/api");
+    
+    // Configure API key authorization: Bearer
+    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
+    Bearer.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Bearer.setApiKeyPrefix("Token");
+
+    TagsApi apiInstance = new TagsApi(defaultClient);
+    String organizationId = "organizationId_example"; // String | Organization ID
+    String tag = "tag_example"; // String | Tag ID or name
+    try {
+      RoutesV3TagResponse result = apiInstance.getTag(organizationId, tag);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TagsApi#getTag");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **String**| Organization ID | |
+| **tag** | **String**| Tag ID or name | |
+
+### Return type
+
+[**RoutesV3TagResponse**](RoutesV3TagResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tag |  -  |
+| **400** | Invalid tag name |  -  |
+| **404** | Tag not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="listTags"></a>
@@ -235,11 +311,11 @@ public class Example {
 
 <a id="updateTag"></a>
 # **updateTag**
-> RoutesV3TagResponse updateTag(organizationId, tagId, updateTagRequest)
+> RoutesV3TagResponse updateTag(organizationId, tag, updateTagRequest)
 
 Update a tag
 
-Partially update a customer tag. Reserved tags return 404.
+Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can&#39;t be UUIDs. Reserved tags return 404.
 
 ### Example
 ```java
@@ -264,10 +340,10 @@ public class Example {
 
     TagsApi apiInstance = new TagsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    String tagId = "tagId_example"; // String | Tag ID
+    String tag = "tag_example"; // String | Tag ID or name
     UpdateTagRequest updateTagRequest = new UpdateTagRequest(); // UpdateTagRequest | Request body for updating a tag
     try {
-      RoutesV3TagResponse result = apiInstance.updateTag(organizationId, tagId, updateTagRequest);
+      RoutesV3TagResponse result = apiInstance.updateTag(organizationId, tag, updateTagRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TagsApi#updateTag");
@@ -285,7 +361,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **tagId** | **String**| Tag ID | |
+| **tag** | **String**| Tag ID or name | |
 | **updateTagRequest** | [**UpdateTagRequest**](UpdateTagRequest.md)| Request body for updating a tag | |
 
 ### Return type
@@ -305,7 +381,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Tag updated |  -  |
-| **400** | Invalid request body |  -  |
+| **400** | Invalid tag name or request body |  -  |
 | **404** | Tag not found |  -  |
 | **409** | A tag with this name already exists |  -  |
 | **500** | Internal server error |  -  |

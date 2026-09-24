@@ -7721,15 +7721,15 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param organizationId Organization ID
-     * @param tagId Tag ID
+     * @param tag Tag ID or name
      */
-    public deleteTagWithHttpInfo(organizationId: string, tagId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
+    public deleteTagWithHttpInfo(organizationId: string, tag: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.deleteTag(organizationId, tagId, _config);
+        const requestContextPromise = this.requestFactory.deleteTag(organizationId, tag, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -7747,13 +7747,49 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Delete a customer tag. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
      * Delete a tag
      * @param organizationId Organization ID
-     * @param tagId Tag ID
+     * @param tag Tag ID or name
      */
-    public deleteTag(organizationId: string, tagId: string, _options?: ConfigurationOptions): Observable<void> {
-        return this.deleteTagWithHttpInfo(organizationId, tagId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    public deleteTag(organizationId: string, tag: string, _options?: ConfigurationOptions): Observable<void> {
+        return this.deleteTagWithHttpInfo(organizationId, tag, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
+    }
+
+    /**
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
+     * Get a tag
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     */
+    public getTagWithHttpInfo(organizationId: string, tag: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagResponse>> {
+        const _config = mergeConfiguration(this.configuration, _options);
+
+        const requestContextPromise = this.requestFactory.getTag(organizationId, tag, _config);
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (const middleware of _config.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => _config.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (const middleware of _config.middleware.reverse()) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.getTagWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get a customer tag by ID or name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
+     * Get a tag
+     * @param organizationId Organization ID
+     * @param tag Tag ID or name
+     */
+    public getTag(organizationId: string, tag: string, _options?: ConfigurationOptions): Observable<RoutesV3TagResponse> {
+        return this.getTagWithHttpInfo(organizationId, tag, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResponse>) => apiResponse.data));
     }
 
     /**
@@ -7797,16 +7833,16 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
      * Update a tag
      * @param organizationId Organization ID
-     * @param tagId Tag ID
+     * @param tag Tag ID or name
      * @param updateTagRequest Request body for updating a tag
      */
-    public updateTagWithHttpInfo(organizationId: string, tagId: string, updateTagRequest: UpdateTagRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagResponse>> {
+    public updateTagWithHttpInfo(organizationId: string, tag: string, updateTagRequest: UpdateTagRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
-        const requestContextPromise = this.requestFactory.updateTag(organizationId, tagId, updateTagRequest, _config);
+        const requestContextPromise = this.requestFactory.updateTag(organizationId, tag, updateTagRequest, _config);
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
         for (const middleware of _config.middleware) {
@@ -7824,14 +7860,14 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Partially update a customer tag. Reserved tags return 404.
+     * Partially update a customer tag, by ID or name. Rename by setting name. A value that parses as a UUID is looked up by ID; tag names can\'t be UUIDs. Reserved tags return 404.
      * Update a tag
      * @param organizationId Organization ID
-     * @param tagId Tag ID
+     * @param tag Tag ID or name
      * @param updateTagRequest Request body for updating a tag
      */
-    public updateTag(organizationId: string, tagId: string, updateTagRequest: UpdateTagRequest, _options?: ConfigurationOptions): Observable<RoutesV3TagResponse> {
-        return this.updateTagWithHttpInfo(organizationId, tagId, updateTagRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResponse>) => apiResponse.data));
+    public updateTag(organizationId: string, tag: string, updateTagRequest: UpdateTagRequest, _options?: ConfigurationOptions): Observable<RoutesV3TagResponse> {
+        return this.updateTagWithHttpInfo(organizationId, tag, updateTagRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3TagResponse>) => apiResponse.data));
     }
 
 }
