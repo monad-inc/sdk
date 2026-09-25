@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **pipeline** | [**DatabricksLakehousePipelineConfig**](DatabricksLakehousePipelineConfig.md) |  | [optional] 
 **volume** | **str** | The Unity Catalog Volume used for staging JSONL files | 
 

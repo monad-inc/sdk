@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from monad.models.databricks_lakehouse_write_mode import DatabricksLakehouseWriteMode
 from monad.models.models_secret import ModelsSecret
@@ -31,7 +31,7 @@ class DatabricksLakehouseSettingsConfig(BaseModel):
     """
     Databricks Lakehouse Output Settings
     """ # noqa: E501
-    batch_config: BatchConfigBatchConfig
+    batch_config: Optional[BatchConfigBatchConfig] = None
     catalog: StrictStr = Field(description="The Unity Catalog name")
     client_id: ModelsSecret
     client_secret: ModelsSecret

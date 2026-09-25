@@ -37,6 +37,10 @@ class TestDatabricksLakehouseWriteMode(unittest.TestCase):
         if include_optional:
             return DatabricksLakehouseWriteMode(
                 autoloader = monad.models.databricks_lakehouse/auto_loader_write_mode.databricks_lakehouse.AutoLoaderWriteMode(
+                    batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                        batch_data_size = 56, 
+                        batch_record_count = 56, 
+                        publish_rate = 56, ), 
                     pipeline = monad.models.databricks_lakehouse/pipeline_config.databricks_lakehouse.PipelineConfig(
                         mode = 'self_managed', 
                         monad_managed = monad.models.databricks_lakehouse/monad_managed_pipeline.databricks_lakehouse.MonadManagedPipeline(
@@ -45,6 +49,10 @@ class TestDatabricksLakehouseWriteMode(unittest.TestCase):
                     volume = '', ),
                 write_mode = 'autoloader',
                 zerobus = monad.models.databricks_lakehouse/zero_bus_write_mode.databricks_lakehouse.ZeroBusWriteMode(
+                    batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                        batch_data_size = 56, 
+                        batch_record_count = 56, 
+                        publish_rate = 56, ), 
                     region = '', 
                     table_name = '', 
                     workspace_id = '', )

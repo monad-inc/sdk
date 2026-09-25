@@ -19,7 +19,7 @@ import { HttpFile } from '../http/http';
 * Databricks Lakehouse Output Settings
 */
 export class DatabricksLakehouseSettingsConfig {
-    'batchConfig': BatchConfigBatchConfig;
+    'batchConfig'?: BatchConfigBatchConfig;
     /**
     * The Unity Catalog name
     */

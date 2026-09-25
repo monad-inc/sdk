@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **region** | **str** |  | 
 **table_name** | **str** |  | 
 **workspace_id** | **str** |  | 

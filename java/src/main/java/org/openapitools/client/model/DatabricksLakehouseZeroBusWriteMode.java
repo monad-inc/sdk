@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchConfigBatchConfig;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,6 +51,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakehouseZeroBusWriteMode {
+  public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
+  @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
+  @javax.annotation.Nullable
+  private BatchConfigBatchConfig batchConfig;
+
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nonnull
@@ -67,6 +73,25 @@ public class DatabricksLakehouseZeroBusWriteMode {
 
   public DatabricksLakehouseZeroBusWriteMode() {
   }
+
+  public DatabricksLakehouseZeroBusWriteMode batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+    return this;
+  }
+
+  /**
+   * Get batchConfig
+   * @return batchConfig
+   */
+  @javax.annotation.Nullable
+  public BatchConfigBatchConfig getBatchConfig() {
+    return batchConfig;
+  }
+
+  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+  }
+
 
   public DatabricksLakehouseZeroBusWriteMode region(@javax.annotation.Nonnull String region) {
     this.region = region;
@@ -135,20 +160,22 @@ public class DatabricksLakehouseZeroBusWriteMode {
       return false;
     }
     DatabricksLakehouseZeroBusWriteMode databricksLakehouseZeroBusWriteMode = (DatabricksLakehouseZeroBusWriteMode) o;
-    return Objects.equals(this.region, databricksLakehouseZeroBusWriteMode.region) &&
+    return Objects.equals(this.batchConfig, databricksLakehouseZeroBusWriteMode.batchConfig) &&
+        Objects.equals(this.region, databricksLakehouseZeroBusWriteMode.region) &&
         Objects.equals(this.tableName, databricksLakehouseZeroBusWriteMode.tableName) &&
         Objects.equals(this.workspaceId, databricksLakehouseZeroBusWriteMode.workspaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(region, tableName, workspaceId);
+    return Objects.hash(batchConfig, region, tableName, workspaceId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatabricksLakehouseZeroBusWriteMode {\n");
+    sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
     sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
@@ -170,7 +197,7 @@ public class DatabricksLakehouseZeroBusWriteMode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("region", "table_name", "workspace_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "region", "table_name", "workspace_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("region", "table_name", "workspace_id"));
@@ -204,6 +231,10 @@ public class DatabricksLakehouseZeroBusWriteMode {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `batch_config`
+      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
+        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+      }
       if (!jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }

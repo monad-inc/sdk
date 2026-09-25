@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.DatabricksLakehousePipelineConfig;
 
 import com.google.gson.Gson;
@@ -51,6 +52,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakehouseAutoLoaderWriteMode {
+  public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
+  @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
+  @javax.annotation.Nullable
+  private BatchConfigBatchConfig batchConfig;
+
   public static final String SERIALIZED_NAME_PIPELINE = "pipeline";
   @SerializedName(SERIALIZED_NAME_PIPELINE)
   @javax.annotation.Nullable
@@ -63,6 +69,25 @@ public class DatabricksLakehouseAutoLoaderWriteMode {
 
   public DatabricksLakehouseAutoLoaderWriteMode() {
   }
+
+  public DatabricksLakehouseAutoLoaderWriteMode batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+    return this;
+  }
+
+  /**
+   * Get batchConfig
+   * @return batchConfig
+   */
+  @javax.annotation.Nullable
+  public BatchConfigBatchConfig getBatchConfig() {
+    return batchConfig;
+  }
+
+  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
+    this.batchConfig = batchConfig;
+  }
+
 
   public DatabricksLakehouseAutoLoaderWriteMode pipeline(@javax.annotation.Nullable DatabricksLakehousePipelineConfig pipeline) {
     this.pipeline = pipeline;
@@ -112,19 +137,21 @@ public class DatabricksLakehouseAutoLoaderWriteMode {
       return false;
     }
     DatabricksLakehouseAutoLoaderWriteMode databricksLakehouseAutoLoaderWriteMode = (DatabricksLakehouseAutoLoaderWriteMode) o;
-    return Objects.equals(this.pipeline, databricksLakehouseAutoLoaderWriteMode.pipeline) &&
+    return Objects.equals(this.batchConfig, databricksLakehouseAutoLoaderWriteMode.batchConfig) &&
+        Objects.equals(this.pipeline, databricksLakehouseAutoLoaderWriteMode.pipeline) &&
         Objects.equals(this.volume, databricksLakehouseAutoLoaderWriteMode.volume);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pipeline, volume);
+    return Objects.hash(batchConfig, pipeline, volume);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatabricksLakehouseAutoLoaderWriteMode {\n");
+    sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    pipeline: ").append(toIndentedString(pipeline)).append("\n");
     sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("}");
@@ -145,7 +172,7 @@ public class DatabricksLakehouseAutoLoaderWriteMode {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("pipeline", "volume"));
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "pipeline", "volume"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("volume"));
@@ -179,6 +206,10 @@ public class DatabricksLakehouseAutoLoaderWriteMode {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `batch_config`
+      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
+        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+      }
       // validate the optional field `pipeline`
       if (jsonObj.get("pipeline") != null && !jsonObj.get("pipeline").isJsonNull()) {
         DatabricksLakehousePipelineConfig.validateJsonElement(jsonObj.get("pipeline"));

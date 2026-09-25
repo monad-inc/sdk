@@ -36,6 +36,10 @@ class TestDatabricksLakehouseZeroBusWriteMode(unittest.TestCase):
         model = DatabricksLakehouseZeroBusWriteMode()
         if include_optional:
             return DatabricksLakehouseZeroBusWriteMode(
+                batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                    batch_data_size = 56, 
+                    batch_record_count = 56, 
+                    publish_rate = 56, ),
                 region = '',
                 table_name = '',
                 workspace_id = ''

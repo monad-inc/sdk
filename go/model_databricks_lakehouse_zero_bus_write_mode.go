@@ -22,6 +22,7 @@ var _ MappedNullable = &DatabricksLakehouseZeroBusWriteMode{}
 
 // DatabricksLakehouseZeroBusWriteMode struct for DatabricksLakehouseZeroBusWriteMode
 type DatabricksLakehouseZeroBusWriteMode struct {
+	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	Region string `json:"region"`
 	TableName string `json:"table_name"`
 	WorkspaceId string `json:"workspace_id"`
@@ -47,6 +48,38 @@ func NewDatabricksLakehouseZeroBusWriteMode(region string, tableName string, wor
 func NewDatabricksLakehouseZeroBusWriteModeWithDefaults() *DatabricksLakehouseZeroBusWriteMode {
 	this := DatabricksLakehouseZeroBusWriteMode{}
 	return &this
+}
+
+// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
+func (o *DatabricksLakehouseZeroBusWriteMode) GetBatchConfig() BatchConfigBatchConfig {
+	if o == nil || IsNil(o.BatchConfig) {
+		var ret BatchConfigBatchConfig
+		return ret
+	}
+	return *o.BatchConfig
+}
+
+// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DatabricksLakehouseZeroBusWriteMode) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
+	if o == nil || IsNil(o.BatchConfig) {
+		return nil, false
+	}
+	return o.BatchConfig, true
+}
+
+// HasBatchConfig returns a boolean if a field has been set.
+func (o *DatabricksLakehouseZeroBusWriteMode) HasBatchConfig() bool {
+	if o != nil && !IsNil(o.BatchConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
+func (o *DatabricksLakehouseZeroBusWriteMode) SetBatchConfig(v BatchConfigBatchConfig) {
+	o.BatchConfig = &v
 }
 
 // GetRegion returns the Region field value
@@ -131,6 +164,9 @@ func (o DatabricksLakehouseZeroBusWriteMode) MarshalJSON() ([]byte, error) {
 
 func (o DatabricksLakehouseZeroBusWriteMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BatchConfig) {
+		toSerialize["batch_config"] = o.BatchConfig
+	}
 	toSerialize["region"] = o.Region
 	toSerialize["table_name"] = o.TableName
 	toSerialize["workspace_id"] = o.WorkspaceId

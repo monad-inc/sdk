@@ -10,9 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { HttpFile } from '../http/http';
 
 export class DatabricksLakehouseZeroBusWriteMode {
+    'batchConfig'?: BatchConfigBatchConfig;
     'region': string;
     'tableName': string;
     'workspaceId': string;
@@ -22,6 +24,12 @@ export class DatabricksLakehouseZeroBusWriteMode {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "batchConfig",
+            "baseName": "batch_config",
+            "type": "BatchConfigBatchConfig",
+            "format": ""
+        },
         {
             "name": "region",
             "baseName": "region",

@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.DatabricksLakehousePipelineConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -36,6 +37,14 @@ public class DatabricksLakehouseAutoLoaderWriteModeTest {
     @Test
     public void testDatabricksLakehouseAutoLoaderWriteMode() {
         // TODO: test DatabricksLakehouseAutoLoaderWriteMode
+    }
+
+    /**
+     * Test the property 'batchConfig'
+     */
+    @Test
+    public void batchConfigTest() {
+        // TODO: test batchConfig
     }
 
     /**

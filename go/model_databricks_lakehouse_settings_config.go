@@ -22,7 +22,7 @@ var _ MappedNullable = &DatabricksLakehouseSettingsConfig{}
 
 // DatabricksLakehouseSettingsConfig Databricks Lakehouse Output Settings
 type DatabricksLakehouseSettingsConfig struct {
-	BatchConfig BatchConfigBatchConfig `json:"batch_config"`
+	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	// The Unity Catalog name
 	Catalog string `json:"catalog"`
 	ClientId ModelsSecret `json:"client_id"`
@@ -40,9 +40,8 @@ type _DatabricksLakehouseSettingsConfig DatabricksLakehouseSettingsConfig
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabricksLakehouseSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, clientId ModelsSecret, clientSecret ModelsSecret, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode) *DatabricksLakehouseSettingsConfig {
+func NewDatabricksLakehouseSettingsConfig(catalog string, clientId ModelsSecret, clientSecret ModelsSecret, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode) *DatabricksLakehouseSettingsConfig {
 	this := DatabricksLakehouseSettingsConfig{}
-	this.BatchConfig = batchConfig
 	this.Catalog = catalog
 	this.ClientId = clientId
 	this.ClientSecret = clientSecret
@@ -60,28 +59,36 @@ func NewDatabricksLakehouseSettingsConfigWithDefaults() *DatabricksLakehouseSett
 	return &this
 }
 
-// GetBatchConfig returns the BatchConfig field value
+// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
 func (o *DatabricksLakehouseSettingsConfig) GetBatchConfig() BatchConfigBatchConfig {
-	if o == nil {
+	if o == nil || IsNil(o.BatchConfig) {
 		var ret BatchConfigBatchConfig
 		return ret
 	}
-
-	return o.BatchConfig
+	return *o.BatchConfig
 }
 
-// GetBatchConfigOk returns a tuple with the BatchConfig field value
+// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DatabricksLakehouseSettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.BatchConfig) {
 		return nil, false
 	}
-	return &o.BatchConfig, true
+	return o.BatchConfig, true
 }
 
-// SetBatchConfig sets field value
+// HasBatchConfig returns a boolean if a field has been set.
+func (o *DatabricksLakehouseSettingsConfig) HasBatchConfig() bool {
+	if o != nil && !IsNil(o.BatchConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
 func (o *DatabricksLakehouseSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
-	o.BatchConfig = v
+	o.BatchConfig = &v
 }
 
 // GetCatalog returns the Catalog field value
@@ -238,7 +245,9 @@ func (o DatabricksLakehouseSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o DatabricksLakehouseSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["batch_config"] = o.BatchConfig
+	if !IsNil(o.BatchConfig) {
+		toSerialize["batch_config"] = o.BatchConfig
+	}
 	toSerialize["catalog"] = o.Catalog
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["client_secret"] = o.ClientSecret
@@ -253,7 +262,6 @@ func (o *DatabricksLakehouseSettingsConfig) UnmarshalJSON(data []byte) (err erro
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"batch_config",
 		"catalog",
 		"client_id",
 		"client_secret",

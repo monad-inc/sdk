@@ -22,6 +22,7 @@ var _ MappedNullable = &DatabricksLakehouseAutoLoaderWriteMode{}
 
 // DatabricksLakehouseAutoLoaderWriteMode struct for DatabricksLakehouseAutoLoaderWriteMode
 type DatabricksLakehouseAutoLoaderWriteMode struct {
+	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	Pipeline *DatabricksLakehousePipelineConfig `json:"pipeline,omitempty"`
 	// The Unity Catalog Volume used for staging JSONL files
 	Volume string `json:"volume"`
@@ -45,6 +46,38 @@ func NewDatabricksLakehouseAutoLoaderWriteMode(volume string) *DatabricksLakehou
 func NewDatabricksLakehouseAutoLoaderWriteModeWithDefaults() *DatabricksLakehouseAutoLoaderWriteMode {
 	this := DatabricksLakehouseAutoLoaderWriteMode{}
 	return &this
+}
+
+// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
+func (o *DatabricksLakehouseAutoLoaderWriteMode) GetBatchConfig() BatchConfigBatchConfig {
+	if o == nil || IsNil(o.BatchConfig) {
+		var ret BatchConfigBatchConfig
+		return ret
+	}
+	return *o.BatchConfig
+}
+
+// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DatabricksLakehouseAutoLoaderWriteMode) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
+	if o == nil || IsNil(o.BatchConfig) {
+		return nil, false
+	}
+	return o.BatchConfig, true
+}
+
+// HasBatchConfig returns a boolean if a field has been set.
+func (o *DatabricksLakehouseAutoLoaderWriteMode) HasBatchConfig() bool {
+	if o != nil && !IsNil(o.BatchConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
+func (o *DatabricksLakehouseAutoLoaderWriteMode) SetBatchConfig(v BatchConfigBatchConfig) {
+	o.BatchConfig = &v
 }
 
 // GetPipeline returns the Pipeline field value if set, zero value otherwise.
@@ -113,6 +146,9 @@ func (o DatabricksLakehouseAutoLoaderWriteMode) MarshalJSON() ([]byte, error) {
 
 func (o DatabricksLakehouseAutoLoaderWriteMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BatchConfig) {
+		toSerialize["batch_config"] = o.BatchConfig
+	}
 	if !IsNil(o.Pipeline) {
 		toSerialize["pipeline"] = o.Pipeline
 	}

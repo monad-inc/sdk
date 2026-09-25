@@ -55,7 +55,7 @@ import org.openapitools.client.JSON;
 public class DatabricksLakehouseSettingsConfig {
   public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
   @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BatchConfigBatchConfig batchConfig;
 
   public static final String SERIALIZED_NAME_CATALOG = "catalog";
@@ -91,7 +91,7 @@ public class DatabricksLakehouseSettingsConfig {
   public DatabricksLakehouseSettingsConfig() {
   }
 
-  public DatabricksLakehouseSettingsConfig batchConfig(@javax.annotation.Nonnull BatchConfigBatchConfig batchConfig) {
+  public DatabricksLakehouseSettingsConfig batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
     this.batchConfig = batchConfig;
     return this;
   }
@@ -100,12 +100,12 @@ public class DatabricksLakehouseSettingsConfig {
    * Get batchConfig
    * @return batchConfig
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BatchConfigBatchConfig getBatchConfig() {
     return batchConfig;
   }
 
-  public void setBatchConfig(@javax.annotation.Nonnull BatchConfigBatchConfig batchConfig) {
+  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
     this.batchConfig = batchConfig;
   }
 
@@ -280,7 +280,7 @@ public class DatabricksLakehouseSettingsConfig {
     openapiFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"));
   }
 
   /**
@@ -311,8 +311,10 @@ public class DatabricksLakehouseSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `batch_config`
-      BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+      // validate the optional field `batch_config`
+      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
+        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
+      }
       if (!jsonObj.get("catalog").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `catalog` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog").toString()));
       }

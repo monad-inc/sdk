@@ -8,7 +8,7 @@ Databricks Lakehouse Output Settings
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  |
+|**batchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  |  [optional] |
 |**catalog** | **String** | The Unity Catalog name |  |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |

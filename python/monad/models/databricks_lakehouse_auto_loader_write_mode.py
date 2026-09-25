@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from monad.models.databricks_lakehouse_pipeline_config import DatabricksLakehousePipelineConfig
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,9 +30,10 @@ class DatabricksLakehouseAutoLoaderWriteMode(BaseModel):
     """
     DatabricksLakehouseAutoLoaderWriteMode
     """ # noqa: E501
+    batch_config: Optional[BatchConfigBatchConfig] = None
     pipeline: Optional[DatabricksLakehousePipelineConfig] = None
     volume: StrictStr = Field(description="The Unity Catalog Volume used for staging JSONL files")
-    __properties: ClassVar[List[str]] = ["pipeline", "volume"]
+    __properties: ClassVar[List[str]] = ["batch_config", "pipeline", "volume"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -72,6 +74,9 @@ class DatabricksLakehouseAutoLoaderWriteMode(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of batch_config
+        if self.batch_config:
+            _dict['batch_config'] = self.batch_config.to_dict()
         # override the default output from pydantic by calling `to_dict()` of pipeline
         if self.pipeline:
             _dict['pipeline'] = self.pipeline.to_dict()
@@ -87,6 +92,7 @@ class DatabricksLakehouseAutoLoaderWriteMode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
             "pipeline": DatabricksLakehousePipelineConfig.from_dict(obj["pipeline"]) if obj.get("pipeline") is not None else None,
             "volume": obj.get("volume")
         })

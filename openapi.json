@@ -2255,6 +2255,9 @@
             },
             "databricks_lakehouse.AutoLoaderWriteMode": {
                 "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
                     "pipeline": {
                         "$ref": "#/components/schemas/databricks_lakehouse.PipelineConfig"
                     },
@@ -2329,7 +2332,6 @@
                     }
                 },
                 "required": [
-                    "batch_config",
                     "catalog",
                     "client_id",
                     "client_secret",
@@ -2363,6 +2365,9 @@
             },
             "databricks_lakehouse.ZeroBusWriteMode": {
                 "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
                     "region": {
                         "type": "string"
                     },

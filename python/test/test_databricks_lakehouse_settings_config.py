@@ -71,6 +71,10 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
                 server_hostname = '',
                 write_mode = monad.models.databricks_lakehouse/write_mode.databricks_lakehouse.WriteMode(
                     autoloader = monad.models.databricks_lakehouse/auto_loader_write_mode.databricks_lakehouse.AutoLoaderWriteMode(
+                        batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                            batch_data_size = 56, 
+                            batch_record_count = 56, 
+                            publish_rate = 56, ), 
                         pipeline = monad.models.databricks_lakehouse/pipeline_config.databricks_lakehouse.PipelineConfig(
                             mode = 'self_managed', 
                             monad_managed = monad.models.databricks_lakehouse/monad_managed_pipeline.databricks_lakehouse.MonadManagedPipeline(
@@ -85,10 +89,6 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
             )
         else:
             return DatabricksLakehouseSettingsConfig(
-                batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
-                    batch_data_size = 56, 
-                    batch_record_count = 56, 
-                    publish_rate = 56, ),
                 catalog = '',
                 client_id = monad.models.models/secret.models.Secret(
                     created_at = '', 
@@ -120,6 +120,10 @@ class TestDatabricksLakehouseSettingsConfig(unittest.TestCase):
                 server_hostname = '',
                 write_mode = monad.models.databricks_lakehouse/write_mode.databricks_lakehouse.WriteMode(
                     autoloader = monad.models.databricks_lakehouse/auto_loader_write_mode.databricks_lakehouse.AutoLoaderWriteMode(
+                        batch_config = monad.models.batch_config/batch_config.batch_config.BatchConfig(
+                            batch_data_size = 56, 
+                            batch_record_count = 56, 
+                            publish_rate = 56, ), 
                         pipeline = monad.models.databricks_lakehouse/pipeline_config.databricks_lakehouse.PipelineConfig(
                             mode = 'self_managed', 
                             monad_managed = monad.models.databricks_lakehouse/monad_managed_pipeline.databricks_lakehouse.MonadManagedPipeline(

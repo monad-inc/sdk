@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Pipeline** | Pointer to [**DatabricksLakehousePipelineConfig**](DatabricksLakehousePipelineConfig.md) |  | [optional] 
 **Volume** | **string** | The Unity Catalog Volume used for staging JSONL files | 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewDatabricksLakehouseAutoLoaderWriteModeWithDefaults instantiates a new DatabricksLakehouseAutoLoaderWriteMode object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBatchConfig
+
+`func (o *DatabricksLakehouseAutoLoaderWriteMode) GetBatchConfig() BatchConfigBatchConfig`
+
+GetBatchConfig returns the BatchConfig field if non-nil, zero value otherwise.
+
+### GetBatchConfigOk
+
+`func (o *DatabricksLakehouseAutoLoaderWriteMode) GetBatchConfigOk() (*BatchConfigBatchConfig, bool)`
+
+GetBatchConfigOk returns a tuple with the BatchConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBatchConfig
+
+`func (o *DatabricksLakehouseAutoLoaderWriteMode) SetBatchConfig(v BatchConfigBatchConfig)`
+
+SetBatchConfig sets BatchConfig field to given value.
+
+### HasBatchConfig
+
+`func (o *DatabricksLakehouseAutoLoaderWriteMode) HasBatchConfig() bool`
+
+HasBatchConfig returns a boolean if a field has been set.
 
 ### GetPipeline
 

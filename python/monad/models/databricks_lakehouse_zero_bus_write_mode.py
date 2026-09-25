@@ -19,7 +19,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.batch_config_batch_config import BatchConfigBatchConfig
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,10 +29,11 @@ class DatabricksLakehouseZeroBusWriteMode(BaseModel):
     """
     DatabricksLakehouseZeroBusWriteMode
     """ # noqa: E501
+    batch_config: Optional[BatchConfigBatchConfig] = None
     region: StrictStr
     table_name: StrictStr
     workspace_id: StrictStr
-    __properties: ClassVar[List[str]] = ["region", "table_name", "workspace_id"]
+    __properties: ClassVar[List[str]] = ["batch_config", "region", "table_name", "workspace_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -72,6 +74,9 @@ class DatabricksLakehouseZeroBusWriteMode(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of batch_config
+        if self.batch_config:
+            _dict['batch_config'] = self.batch_config.to_dict()
         return _dict
 
     @classmethod
@@ -84,6 +89,7 @@ class DatabricksLakehouseZeroBusWriteMode(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
             "region": obj.get("region"),
             "table_name": obj.get("table_name"),
             "workspace_id": obj.get("workspace_id")

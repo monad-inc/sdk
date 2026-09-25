@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BatchConfig** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
+**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Catalog** | **string** | The Unity Catalog name | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewDatabricksLakehouseSettingsConfig
 
-`func NewDatabricksLakehouseSettingsConfig(batchConfig BatchConfigBatchConfig, catalog string, clientId ModelsSecret, clientSecret ModelsSecret, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, ) *DatabricksLakehouseSettingsConfig`
+`func NewDatabricksLakehouseSettingsConfig(catalog string, clientId ModelsSecret, clientSecret ModelsSecret, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, ) *DatabricksLakehouseSettingsConfig`
 
 NewDatabricksLakehouseSettingsConfig instantiates a new DatabricksLakehouseSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetBatchConfig sets BatchConfig field to given value.
 
+### HasBatchConfig
+
+`func (o *DatabricksLakehouseSettingsConfig) HasBatchConfig() bool`
+
+HasBatchConfig returns a boolean if a field has been set.
 
 ### GetCatalog
 

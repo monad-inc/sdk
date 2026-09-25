@@ -6,7 +6,7 @@ Databricks Lakehouse Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | 
+**batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **catalog** | **str** | The Unity Catalog name | 
 **client_id** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 

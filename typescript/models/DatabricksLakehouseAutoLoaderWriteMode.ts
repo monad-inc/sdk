@@ -10,10 +10,12 @@
  * Do not edit the class manually.
  */
 
+import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { DatabricksLakehousePipelineConfig } from '../models/DatabricksLakehousePipelineConfig';
 import { HttpFile } from '../http/http';
 
 export class DatabricksLakehouseAutoLoaderWriteMode {
+    'batchConfig'?: BatchConfigBatchConfig;
     'pipeline'?: DatabricksLakehousePipelineConfig;
     /**
     * The Unity Catalog Volume used for staging JSONL files
@@ -25,6 +27,12 @@ export class DatabricksLakehouseAutoLoaderWriteMode {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "batchConfig",
+            "baseName": "batch_config",
+            "type": "BatchConfigBatchConfig",
+            "format": ""
+        },
         {
             "name": "pipeline",
             "baseName": "pipeline",
