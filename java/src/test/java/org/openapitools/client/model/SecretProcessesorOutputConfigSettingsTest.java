@@ -74,6 +74,7 @@ import org.openapitools.client.model.ScannerFormatConfig;
 import org.openapitools.client.model.ScannerSettingsConfig;
 import org.openapitools.client.model.SecurityLakeSettingsConfig;
 import org.openapitools.client.model.SecurityLakeSourceAccountDetails;
+import org.openapitools.client.model.SentinelThreatIntelligenceSettingsConfig;
 import org.openapitools.client.model.Sentinelv2DCRConfig;
 import org.openapitools.client.model.Sentinelv2SettingsConfig;
 import org.openapitools.client.model.SlackAuthConfig;
@@ -819,6 +820,30 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void sourceAccountDetailsTest() {
         // TODO: test sourceAccountDetails
+    }
+
+    /**
+     * Test the property 'sourceSystem'
+     */
+    @Test
+    public void sourceSystemTest() {
+        // TODO: test sourceSystem
+    }
+
+    /**
+     * Test the property 'tenantId'
+     */
+    @Test
+    public void tenantIdTest() {
+        // TODO: test tenantId
+    }
+
+    /**
+     * Test the property 'workspaceId'
+     */
+    @Test
+    public void workspaceIdTest() {
+        // TODO: test workspaceId
     }
 
     /**

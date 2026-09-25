@@ -551,6 +551,7 @@ import { SecretProcessesorOutputConfigSecrets } from '../models/SecretProcesseso
 import { SecretProcessesorOutputConfigSettings } from '../models/SecretProcessesorOutputConfigSettings';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
+import { SentinelThreatIntelligenceSettingsConfig } from '../models/SentinelThreatIntelligenceSettingsConfig';
 import { Sentinelv2DCRConfig } from '../models/Sentinelv2DCRConfig';
 import { Sentinelv2ManagedDCRVariant } from '../models/Sentinelv2ManagedDCRVariant';
 import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant';

@@ -620,6 +620,7 @@ __all__ = [
     "SecretProcessesorOutputConfigSettings",
     "SecurityLakeSettingsConfig",
     "SecurityLakeSourceAccountDetails",
+    "SentinelThreatIntelligenceSettingsConfig",
     "Sentinelv2DCRConfig",
     "Sentinelv2ManagedDCRVariant",
     "Sentinelv2ManualDCRVariant",
@@ -1315,6 +1316,7 @@ from monad.models.secret_processesor_output_config_secrets import SecretProcesse
 from monad.models.secret_processesor_output_config_settings import SecretProcessesorOutputConfigSettings as SecretProcessesorOutputConfigSettings
 from monad.models.security_lake_settings_config import SecurityLakeSettingsConfig as SecurityLakeSettingsConfig
 from monad.models.security_lake_source_account_details import SecurityLakeSourceAccountDetails as SecurityLakeSourceAccountDetails
+from monad.models.sentinel_threat_intelligence_settings_config import SentinelThreatIntelligenceSettingsConfig as SentinelThreatIntelligenceSettingsConfig
 from monad.models.sentinelv2_dcr_config import Sentinelv2DCRConfig as Sentinelv2DCRConfig
 from monad.models.sentinelv2_managed_dcr_variant import Sentinelv2ManagedDCRVariant as Sentinelv2ManagedDCRVariant
 from monad.models.sentinelv2_manual_dcr_variant import Sentinelv2ManualDCRVariant as Sentinelv2ManualDCRVariant

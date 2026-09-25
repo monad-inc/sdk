@@ -47,6 +47,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	S3SettingsConfig *S3SettingsConfig
 	ScannerSettingsConfig *ScannerSettingsConfig
 	SecurityLakeSettingsConfig *SecurityLakeSettingsConfig
+	SentinelThreatIntelligenceSettingsConfig *SentinelThreatIntelligenceSettingsConfig
 	Sentinelv2SettingsConfig *Sentinelv2SettingsConfig
 	SlackSettingsConfig *SlackSettingsConfig
 	SnowflakeOutputSettingsConfig *SnowflakeOutputSettingsConfig
@@ -250,6 +251,13 @@ func ScannerSettingsConfigAsSecretProcessesorOutputConfigSettings(v *ScannerSett
 func SecurityLakeSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SecurityLakeSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		SecurityLakeSettingsConfig: v,
+	}
+}
+
+// SentinelThreatIntelligenceSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns SentinelThreatIntelligenceSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func SentinelThreatIntelligenceSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SentinelThreatIntelligenceSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		SentinelThreatIntelligenceSettingsConfig: v,
 	}
 }
 
@@ -790,6 +798,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SecurityLakeSettingsConfig = nil
 	}
 
+	// try to unmarshal data into SentinelThreatIntelligenceSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.SentinelThreatIntelligenceSettingsConfig)
+	if err == nil {
+		jsonSentinelThreatIntelligenceSettingsConfig, _ := json.Marshal(dst.SentinelThreatIntelligenceSettingsConfig)
+		if string(jsonSentinelThreatIntelligenceSettingsConfig) == "{}" { // empty struct
+			dst.SentinelThreatIntelligenceSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.SentinelThreatIntelligenceSettingsConfig); err != nil {
+				dst.SentinelThreatIntelligenceSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SentinelThreatIntelligenceSettingsConfig = nil
+	}
+
 	// try to unmarshal data into Sentinelv2SettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.Sentinelv2SettingsConfig)
 	if err == nil {
@@ -956,6 +981,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.S3SettingsConfig = nil
 		dst.ScannerSettingsConfig = nil
 		dst.SecurityLakeSettingsConfig = nil
+		dst.SentinelThreatIntelligenceSettingsConfig = nil
 		dst.Sentinelv2SettingsConfig = nil
 		dst.SlackSettingsConfig = nil
 		dst.SnowflakeOutputSettingsConfig = nil
@@ -1085,6 +1111,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SecurityLakeSettingsConfig != nil {
 		return json.Marshal(&src.SecurityLakeSettingsConfig)
+	}
+
+	if src.SentinelThreatIntelligenceSettingsConfig != nil {
+		return json.Marshal(&src.SentinelThreatIntelligenceSettingsConfig)
 	}
 
 	if src.Sentinelv2SettingsConfig != nil {
@@ -1239,6 +1269,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.SecurityLakeSettingsConfig
 	}
 
+	if obj.SentinelThreatIntelligenceSettingsConfig != nil {
+		return obj.SentinelThreatIntelligenceSettingsConfig
+	}
+
 	if obj.Sentinelv2SettingsConfig != nil {
 		return obj.Sentinelv2SettingsConfig
 	}
@@ -1387,6 +1421,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.SecurityLakeSettingsConfig != nil {
 		return *obj.SecurityLakeSettingsConfig
+	}
+
+	if obj.SentinelThreatIntelligenceSettingsConfig != nil {
+		return *obj.SentinelThreatIntelligenceSettingsConfig
 	}
 
 	if obj.Sentinelv2SettingsConfig != nil {

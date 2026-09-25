@@ -910,6 +910,7 @@ Class | Method | HTTP request | Description
  - [SecretProcessesorOutputConfigSettings](docs/SecretProcessesorOutputConfigSettings.md)
  - [SecurityLakeSettingsConfig](docs/SecurityLakeSettingsConfig.md)
  - [SecurityLakeSourceAccountDetails](docs/SecurityLakeSourceAccountDetails.md)
+ - [SentinelThreatIntelligenceSettingsConfig](docs/SentinelThreatIntelligenceSettingsConfig.md)
  - [Sentinelv2DCRConfig](docs/Sentinelv2DCRConfig.md)
  - [Sentinelv2ManagedDCRVariant](docs/Sentinelv2ManagedDCRVariant.md)
  - [Sentinelv2ManualDCRVariant](docs/Sentinelv2ManualDCRVariant.md)

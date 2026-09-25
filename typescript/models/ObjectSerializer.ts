@@ -546,6 +546,7 @@ export * from '../models/SecretProcessesorOutputConfigSecrets';
 export * from '../models/SecretProcessesorOutputConfigSettings';
 export * from '../models/SecurityLakeSettingsConfig';
 export * from '../models/SecurityLakeSourceAccountDetails';
+export * from '../models/SentinelThreatIntelligenceSettingsConfig';
 export * from '../models/Sentinelv2DCRConfig';
 export * from '../models/Sentinelv2ManagedDCRVariant';
 export * from '../models/Sentinelv2ManualDCRVariant';
@@ -1182,6 +1183,7 @@ import { SecretProcessesorOutputConfigSecretsClass } from '../models/SecretProce
 import { SecretProcessesorOutputConfigSettingsClass } from '../models/SecretProcessesorOutputConfigSettings';
 import { SecurityLakeSettingsConfig } from '../models/SecurityLakeSettingsConfig';
 import { SecurityLakeSourceAccountDetails } from '../models/SecurityLakeSourceAccountDetails';
+import { SentinelThreatIntelligenceSettingsConfig } from '../models/SentinelThreatIntelligenceSettingsConfig';
 import { Sentinelv2DCRConfig  , Sentinelv2DCRConfigTypeEnum   } from '../models/Sentinelv2DCRConfig';
 import { Sentinelv2ManagedDCRVariant } from '../models/Sentinelv2ManagedDCRVariant';
 import { Sentinelv2ManualDCRVariant } from '../models/Sentinelv2ManualDCRVariant';
@@ -1887,6 +1889,7 @@ let typeMap: {[index: string]: any} = {
     "SecretProcessesorOutputConfigSettings": SecretProcessesorOutputConfigSettingsClass,
     "SecurityLakeSettingsConfig": SecurityLakeSettingsConfig,
     "SecurityLakeSourceAccountDetails": SecurityLakeSourceAccountDetails,
+    "SentinelThreatIntelligenceSettingsConfig": SentinelThreatIntelligenceSettingsConfig,
     "Sentinelv2DCRConfig": Sentinelv2DCRConfig,
     "Sentinelv2ManagedDCRVariant": Sentinelv2ManagedDCRVariant,
     "Sentinelv2ManualDCRVariant": Sentinelv2ManualDCRVariant,

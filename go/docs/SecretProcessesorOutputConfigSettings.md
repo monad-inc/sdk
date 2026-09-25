@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **Schema** | **string** | The schema within the database that contains the target pipe. | 
 **ServerHostname** | **string** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) | 
 **WriteMode** | [**DatabricksLakehouseWriteMode**](DatabricksLakehouseWriteMode.md) |  | 
-**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientId** | **string** | The application (client) ID registered in Microsoft Entra. | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Ddsource** | Pointer to **string** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. | [optional] 
 **Ddtags** | Pointer to **[]string** | Tags associated with your logs. | [optional] 
@@ -94,6 +94,9 @@ Name | Type | Description | Notes
 **Key** | Pointer to **string** | S3 Key | [optional] 
 **ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
+**SourceSystem** | **string** | Free-form label identifying the source system in Sentinel. Must NOT be \&quot;Microsoft Sentinel\&quot; — that value is restricted by the API. | 
+**TenantId** | **string** | The Microsoft Entra tenant (directory) ID. | 
+**WorkspaceId** | **string** | The Log Analytics workspace ID (GUID) that will store the STIX objects. | 
 **DcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | 
 **StreamName** | **string** | The name of the data stream defined in the Data Collection Rule. | 
 **MessageTemplate** | Pointer to **string** |  | [optional] 
@@ -113,7 +116,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId ModelsSecret, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -745,20 +748,20 @@ SetWriteMode sets WriteMode field to given value.
 
 ### GetClientId
 
-`func (o *SecretProcessesorOutputConfigSettings) GetClientId() ModelsSecret`
+`func (o *SecretProcessesorOutputConfigSettings) GetClientId() string`
 
 GetClientId returns the ClientId field if non-nil, zero value otherwise.
 
 ### GetClientIdOk
 
-`func (o *SecretProcessesorOutputConfigSettings) GetClientIdOk() (*ModelsSecret, bool)`
+`func (o *SecretProcessesorOutputConfigSettings) GetClientIdOk() (*string, bool)`
 
 GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientId
 
-`func (o *SecretProcessesorOutputConfigSettings) SetClientId(v ModelsSecret)`
+`func (o *SecretProcessesorOutputConfigSettings) SetClientId(v string)`
 
 SetClientId sets ClientId field to given value.
 
@@ -2262,6 +2265,66 @@ SetSourceAccountDetails sets SourceAccountDetails field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasSourceAccountDetails() bool`
 
 HasSourceAccountDetails returns a boolean if a field has been set.
+
+### GetSourceSystem
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourceSystem() string`
+
+GetSourceSystem returns the SourceSystem field if non-nil, zero value otherwise.
+
+### GetSourceSystemOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourceSystemOk() (*string, bool)`
+
+GetSourceSystemOk returns a tuple with the SourceSystem field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceSystem
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSourceSystem(v string)`
+
+SetSourceSystem sets SourceSystem field to given value.
+
+
+### GetTenantId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTenantId() string`
+
+GetTenantId returns the TenantId field if non-nil, zero value otherwise.
+
+### GetTenantIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTenantIdOk() (*string, bool)`
+
+GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTenantId(v string)`
+
+SetTenantId sets TenantId field to given value.
+
+
+### GetWorkspaceId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetWorkspaceId() string`
+
+GetWorkspaceId returns the WorkspaceId field if non-nil, zero value otherwise.
+
+### GetWorkspaceIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetWorkspaceIdOk() (*string, bool)`
+
+GetWorkspaceIdOk returns a tuple with the WorkspaceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkspaceId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetWorkspaceId(v string)`
+
+SetWorkspaceId sets WorkspaceId field to given value.
+
 
 ### GetDcrConfig
 

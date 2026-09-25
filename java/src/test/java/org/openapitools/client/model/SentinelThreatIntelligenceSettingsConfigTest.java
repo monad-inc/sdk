@@ -13,66 +13,69 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import org.openapitools.client.model.ModelsSecret;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
+ * Model tests for SentinelThreatIntelligenceSettingsConfig
  */
-@JsonAdapter(KafkaPayloadFormat.Adapter.class)
-public enum KafkaPayloadFormat {
-  
-  defaultPayloadFormat("individual"),
-  
-  payloadFormatIndividual("json_array");
+public class SentinelThreatIntelligenceSettingsConfigTest {
+    private final SentinelThreatIntelligenceSettingsConfig model = new SentinelThreatIntelligenceSettingsConfig();
 
-  private String value;
-
-  KafkaPayloadFormat(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static KafkaPayloadFormat fromValue(String value) {
-    for (KafkaPayloadFormat b : KafkaPayloadFormat.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<KafkaPayloadFormat> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final KafkaPayloadFormat enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+    /**
+     * Model tests for SentinelThreatIntelligenceSettingsConfig
+     */
+    @Test
+    public void testSentinelThreatIntelligenceSettingsConfig() {
+        // TODO: test SentinelThreatIntelligenceSettingsConfig
     }
 
-    @Override
-    public KafkaPayloadFormat read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return KafkaPayloadFormat.fromValue(value);
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
     }
-  }
 
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    KafkaPayloadFormat.fromValue(value);
-  }
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
+    }
+
+    /**
+     * Test the property 'sourceSystem'
+     */
+    @Test
+    public void sourceSystemTest() {
+        // TODO: test sourceSystem
+    }
+
+    /**
+     * Test the property 'tenantId'
+     */
+    @Test
+    public void tenantIdTest() {
+        // TODO: test tenantId
+    }
+
+    /**
+     * Test the property 'workspaceId'
+     */
+    @Test
+    public void workspaceIdTest() {
+        // TODO: test workspaceId
+    }
+
 }
-

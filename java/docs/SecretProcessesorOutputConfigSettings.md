@@ -34,7 +34,7 @@
 |**schema** | **String** | The schema within the database that contains the target pipe. |  |
 |**serverHostname** | **String** | The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net) |  |
 |**writeMode** | [**DatabricksLakehouseWriteMode**](DatabricksLakehouseWriteMode.md) |  |  |
-|**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clientId** | **String** | The application (client) ID registered in Microsoft Entra. |  |
 |**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**ddsource** | **String** | The integration name associated with your log: the technology from which the log originated. When it matches an integration name, Datadog automatically installs the corresponding parsers and facets. |  [optional] |
 |**ddtags** | **List&lt;String&gt;** | Tags associated with your logs. |  [optional] |
@@ -97,6 +97,9 @@
 |**key** | **String** | S3 Key |  [optional] |
 |**parquetFormat** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  |  [optional] |
 |**sourceAccountDetails** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  |  [optional] |
+|**sourceSystem** | **String** | Free-form label identifying the source system in Sentinel. Must NOT be \&quot;Microsoft Sentinel\&quot; — that value is restricted by the API. |  |
+|**tenantId** | **String** | The Microsoft Entra tenant (directory) ID. |  |
+|**workspaceId** | **String** | The Log Analytics workspace ID (GUID) that will store the STIX objects. |  |
 |**dcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  |  |
 |**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  |
 |**messageTemplate** | **String** |  |  [optional] |

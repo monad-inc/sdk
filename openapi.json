@@ -4112,9 +4112,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -11496,6 +11496,9 @@
                                 "$ref": "#/components/schemas/security_lake.SettingsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/sentinel_threat_intelligence.SettingsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/sentinelv2.SettingsConfig"
                             },
                             {
@@ -11565,6 +11568,38 @@
                         "type": "string"
                     }
                 },
+                "type": "object"
+            },
+            "sentinel_threat_intelligence.SettingsConfig": {
+                "description": "Microsoft Sentinel Threat Intelligence Upload API Output Settings",
+                "properties": {
+                    "client_id": {
+                        "description": "The application (client) ID registered in Microsoft Entra.",
+                        "type": "string"
+                    },
+                    "client_secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "source_system": {
+                        "description": "Free-form label identifying the source system in Sentinel. Must NOT be\n\"Microsoft Sentinel\" — that value is restricted by the API.",
+                        "type": "string"
+                    },
+                    "tenant_id": {
+                        "description": "The Microsoft Entra tenant (directory) ID.",
+                        "type": "string"
+                    },
+                    "workspace_id": {
+                        "description": "The Log Analytics workspace ID (GUID) that will store the STIX objects.",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "client_id",
+                    "client_secret",
+                    "source_system",
+                    "tenant_id",
+                    "workspace_id"
+                ],
                 "type": "object"
             },
             "sentinelv2.DCRConfig": {

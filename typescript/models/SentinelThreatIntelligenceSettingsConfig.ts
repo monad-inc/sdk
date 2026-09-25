@@ -10,12 +10,71 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
-* How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
+* Microsoft Sentinel Threat Intelligence Upload API Output Settings
 */
-export enum KafkaPayloadFormat {
-    defaultPayloadFormat = 'individual',
-    payloadFormatIndividual = 'json_array'
+export class SentinelThreatIntelligenceSettingsConfig {
+    /**
+    * The application (client) ID registered in Microsoft Entra.
+    */
+    'clientId': string;
+    'clientSecret': ModelsSecret;
+    /**
+    * Free-form label identifying the source system in Sentinel. Must NOT be \"Microsoft Sentinel\" — that value is restricted by the API.
+    */
+    'sourceSystem': string;
+    /**
+    * The Microsoft Entra tenant (directory) ID.
+    */
+    'tenantId': string;
+    /**
+    * The Log Analytics workspace ID (GUID) that will store the STIX objects.
+    */
+    'workspaceId': string;
+
+    static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
+
+    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "clientId",
+            "baseName": "client_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "clientSecret",
+            "baseName": "client_secret",
+            "type": "ModelsSecret",
+            "format": ""
+        },
+        {
+            "name": "sourceSystem",
+            "baseName": "source_system",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "tenantId",
+            "baseName": "tenant_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "workspaceId",
+            "baseName": "workspace_id",
+            "type": "string",
+            "format": ""
+        }    ];
+
+    static getAttributeTypeMap() {
+        return SentinelThreatIntelligenceSettingsConfig.attributeTypeMap;
+    }
+
+    public constructor() {
+    }
 }
