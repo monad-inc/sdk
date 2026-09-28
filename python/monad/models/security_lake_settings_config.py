@@ -32,13 +32,11 @@ class SecurityLakeSettingsConfig(BaseModel):
     Security Lake Output Settings
     """ # noqa: E501
     batch_config: Optional[BatchConfigBatchConfig] = None
-    bucket_name: Optional[StrictStr] = Field(default=None, description="Bucket Name", alias="bucketName")
     bucket_url: Optional[StrictStr] = Field(default=None, description="The name of the S3 bucket where data will be stored")
-    key: Optional[StrictStr] = Field(default=None, description="S3 Key")
     parquet_format: Optional[ParquetParquetFormatter] = None
     role_arn: Optional[StrictStr] = Field(default=None, description="The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket")
     source_account_details: Optional[SecurityLakeSourceAccountDetails] = None
-    __properties: ClassVar[List[str]] = ["batch_config", "bucketName", "bucket_url", "key", "parquet_format", "role_arn", "source_account_details"]
+    __properties: ClassVar[List[str]] = ["batch_config", "bucket_url", "parquet_format", "role_arn", "source_account_details"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -101,9 +99,7 @@ class SecurityLakeSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
-            "bucketName": obj.get("bucketName"),
             "bucket_url": obj.get("bucket_url"),
-            "key": obj.get("key"),
             "parquet_format": ParquetParquetFormatter.from_dict(obj["parquet_format"]) if obj.get("parquet_format") is not None else None,
             "role_arn": obj.get("role_arn"),
             "source_account_details": SecurityLakeSourceAccountDetails.from_dict(obj["source_account_details"]) if obj.get("source_account_details") is not None else None

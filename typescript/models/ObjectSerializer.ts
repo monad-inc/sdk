@@ -591,8 +591,6 @@ export * from '../models/TwilioEventsSecretsConfig';
 export * from '../models/TwilioEventsSettingsConfig';
 export * from '../models/TwilioSendgridEmailActivitySecretsConfig';
 export * from '../models/TwilioSendgridEmailActivitySettingsConfig';
-export * from '../models/TypesStringComparison';
-export * from '../models/TypesStringFilter';
 export * from '../models/UpdateAPIKeyRequest';
 export * from '../models/UpdateAlertRuleRequest';
 export * from '../models/UpdateBillingAccountRequest';
@@ -1229,8 +1227,6 @@ import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
 import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
 import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
-import { TypesStringComparison } from '../models/TypesStringComparison';
-import { TypesStringFilter   } from '../models/TypesStringFilter';
 import { UpdateAPIKeyRequestClass } from '../models/UpdateAPIKeyRequest';
 import { UpdateAlertRuleRequestClass } from '../models/UpdateAlertRuleRequest';
 import { UpdateBillingAccountRequestClass } from '../models/UpdateBillingAccountRequest';
@@ -1356,7 +1352,6 @@ let enumsMap: Set<string> = new Set<string>([
     "SqsS3BaseKeyFilterMode",
     "SqsS3BaseKeyFilterOperator",
     "SqsS3BaseKeyFilterType",
-    "TypesStringComparison",
     "UtcTimestampTimestampFormat",
     "WizAssetStatus",
     "WizAssetType",
@@ -1933,7 +1928,6 @@ let typeMap: {[index: string]: any} = {
     "TwilioEventsSettingsConfig": TwilioEventsSettingsConfig,
     "TwilioSendgridEmailActivitySecretsConfig": TwilioSendgridEmailActivitySecretsConfig,
     "TwilioSendgridEmailActivitySettingsConfig": TwilioSendgridEmailActivitySettingsConfig,
-    "TypesStringFilter": TypesStringFilter,
     "UpdateAPIKeyRequest": UpdateAPIKeyRequestClass,
     "UpdateAlertRuleRequest": UpdateAlertRuleRequestClass,
     "UpdateBillingAccountRequest": UpdateBillingAccountRequestClass,

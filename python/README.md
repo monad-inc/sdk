@@ -955,8 +955,6 @@ Class | Method | HTTP request | Description
  - [TwilioEventsSettingsConfig](docs/TwilioEventsSettingsConfig.md)
  - [TwilioSendgridEmailActivitySecretsConfig](docs/TwilioSendgridEmailActivitySecretsConfig.md)
  - [TwilioSendgridEmailActivitySettingsConfig](docs/TwilioSendgridEmailActivitySettingsConfig.md)
- - [TypesStringComparison](docs/TypesStringComparison.md)
- - [TypesStringFilter](docs/TypesStringFilter.md)
  - [UpdateAPIKeyRequest](docs/UpdateAPIKeyRequest.md)
  - [UpdateAlertRuleRequest](docs/UpdateAlertRuleRequest.md)
  - [UpdateBillingAccountRequest](docs/UpdateBillingAccountRequest.md)

@@ -94,7 +94,6 @@ import org.openapitools.client.model.TinesAuditLogsSettingsConfig;
 import org.openapitools.client.model.TinesEventsLogsSettingsConfig;
 import org.openapitools.client.model.TwilioEventsSettingsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySettingsConfig;
-import org.openapitools.client.model.TypesStringFilter;
 import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
 import org.openapitools.client.model.WizAssetStatus;
@@ -684,14 +683,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'usesStaticCreds'
-     */
-    @Test
-    public void usesStaticCredsTest() {
-        // TODO: test usesStaticCreds
-    }
-
-    /**
      * Test the property 'namespace'
      */
     @Test
@@ -865,14 +856,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void severitiesTest() {
         // TODO: test severities
-    }
-
-    /**
-     * Test the property 'severityFilter'
-     */
-    @Test
-    public void severityFilterTest() {
-        // TODO: test severityFilter
     }
 
     /**

@@ -74,7 +74,6 @@ Name | Type | Description | Notes
 **category** | **str** | The Category of logs to query | 
 **cluster_name** | **str** | The name of the GKE cluster. | 
 **ingestion_lag_seconds** | **int** |  | [optional] 
-**uses_static_creds** | **bool** |  | [optional] 
 **namespace** | **str** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **ingestion_delay** | **int** | The ingestion delay in seconds for the data source | [optional] 
 **workspace_id** | **str** | The workspace ID of the Log Analytics workspace | 
@@ -97,7 +96,6 @@ Name | Type | Description | Notes
 **primary_entity_type** | **str** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **primary_entity_value** | **str** | Filter by primary entity value (contains search) | [optional] 
 **severities** | [**List[WizIssueSeverity]**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
-**severity_filter** | [**List[TypesStringFilter]**](TypesStringFilter.md) |  | [optional] 
 **control_ids** | **List[str]** | @Description Filter Issues created by specific control IDs | [optional] 
 **has_note** | [**WizNoteFilter**](WizNoteFilter.md) |  | [optional] 
 **has_remediation** | [**WizRemediationFilter**](WizRemediationFilter.md) |  | [optional] 

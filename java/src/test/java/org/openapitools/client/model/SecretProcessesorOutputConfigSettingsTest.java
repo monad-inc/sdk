@@ -784,27 +784,11 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'bucketName'
-     */
-    @Test
-    public void bucketNameTest() {
-        // TODO: test bucketName
-    }
-
-    /**
      * Test the property 'bucketUrl'
      */
     @Test
     public void bucketUrlTest() {
         // TODO: test bucketUrl
-    }
-
-    /**
-     * Test the property 'key'
-     */
-    @Test
-    public void keyTest() {
-        // TODO: test key
     }
 
     /**

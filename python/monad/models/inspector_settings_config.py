@@ -20,7 +20,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.types_string_filter import TypesStringFilter
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,9 +32,8 @@ class InspectorSettingsConfig(BaseModel):
     region: Optional[StrictStr] = Field(default=None, description="The AWS region where Inspector is enabled.")
     role_arn: Optional[StrictStr] = Field(default=None, description="The ARN of the IAM role to assume for accessing Inspector.")
     severities: Optional[List[StrictStr]] = Field(default=None, description="Minimum severity level of findings to fetch.")
-    severity_filter: Optional[List[TypesStringFilter]] = Field(default=None, alias="severityFilter")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "region", "role_arn", "severities", "severityFilter", "use_synthetic_data"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "region", "role_arn", "severities", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -76,13 +74,6 @@ class InspectorSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in severity_filter (list)
-        _items = []
-        if self.severity_filter:
-            for _item_severity_filter in self.severity_filter:
-                if _item_severity_filter:
-                    _items.append(_item_severity_filter.to_dict())
-            _dict['severityFilter'] = _items
         return _dict
 
     @classmethod
@@ -99,7 +90,6 @@ class InspectorSettingsConfig(BaseModel):
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
             "severities": obj.get("severities"),
-            "severityFilter": [TypesStringFilter.from_dict(_item) for _item in obj["severityFilter"]] if obj.get("severityFilter") is not None else None,
             "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj

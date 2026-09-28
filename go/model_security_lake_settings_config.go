@@ -21,12 +21,8 @@ var _ MappedNullable = &SecurityLakeSettingsConfig{}
 // SecurityLakeSettingsConfig Security Lake Output Settings
 type SecurityLakeSettingsConfig struct {
 	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
-	// Bucket Name
-	BucketName *string `json:"bucketName,omitempty"`
 	// The name of the S3 bucket where data will be stored
 	BucketUrl *string `json:"bucket_url,omitempty"`
-	// S3 Key
-	Key *string `json:"key,omitempty"`
 	ParquetFormat *ParquetParquetFormatter `json:"parquet_format,omitempty"`
 	// The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket
 	RoleArn *string `json:"role_arn,omitempty"`
@@ -82,38 +78,6 @@ func (o *SecurityLakeSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
 	o.BatchConfig = &v
 }
 
-// GetBucketName returns the BucketName field value if set, zero value otherwise.
-func (o *SecurityLakeSettingsConfig) GetBucketName() string {
-	if o == nil || IsNil(o.BucketName) {
-		var ret string
-		return ret
-	}
-	return *o.BucketName
-}
-
-// GetBucketNameOk returns a tuple with the BucketName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SecurityLakeSettingsConfig) GetBucketNameOk() (*string, bool) {
-	if o == nil || IsNil(o.BucketName) {
-		return nil, false
-	}
-	return o.BucketName, true
-}
-
-// HasBucketName returns a boolean if a field has been set.
-func (o *SecurityLakeSettingsConfig) HasBucketName() bool {
-	if o != nil && !IsNil(o.BucketName) {
-		return true
-	}
-
-	return false
-}
-
-// SetBucketName gets a reference to the given string and assigns it to the BucketName field.
-func (o *SecurityLakeSettingsConfig) SetBucketName(v string) {
-	o.BucketName = &v
-}
-
 // GetBucketUrl returns the BucketUrl field value if set, zero value otherwise.
 func (o *SecurityLakeSettingsConfig) GetBucketUrl() string {
 	if o == nil || IsNil(o.BucketUrl) {
@@ -144,38 +108,6 @@ func (o *SecurityLakeSettingsConfig) HasBucketUrl() bool {
 // SetBucketUrl gets a reference to the given string and assigns it to the BucketUrl field.
 func (o *SecurityLakeSettingsConfig) SetBucketUrl(v string) {
 	o.BucketUrl = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *SecurityLakeSettingsConfig) GetKey() string {
-	if o == nil || IsNil(o.Key) {
-		var ret string
-		return ret
-	}
-	return *o.Key
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SecurityLakeSettingsConfig) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
-		return nil, false
-	}
-	return o.Key, true
-}
-
-// HasKey returns a boolean if a field has been set.
-func (o *SecurityLakeSettingsConfig) HasKey() bool {
-	if o != nil && !IsNil(o.Key) {
-		return true
-	}
-
-	return false
-}
-
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *SecurityLakeSettingsConfig) SetKey(v string) {
-	o.Key = &v
 }
 
 // GetParquetFormat returns the ParquetFormat field value if set, zero value otherwise.
@@ -287,14 +219,8 @@ func (o SecurityLakeSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BatchConfig) {
 		toSerialize["batch_config"] = o.BatchConfig
 	}
-	if !IsNil(o.BucketName) {
-		toSerialize["bucketName"] = o.BucketName
-	}
 	if !IsNil(o.BucketUrl) {
 		toSerialize["bucket_url"] = o.BucketUrl
-	}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
 	}
 	if !IsNil(o.ParquetFormat) {
 		toSerialize["parquet_format"] = o.ParquetFormat

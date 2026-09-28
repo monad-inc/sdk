@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.TypesStringFilter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -72,11 +71,6 @@ public class InspectorSettingsConfig {
   @SerializedName(SERIALIZED_NAME_SEVERITIES)
   @javax.annotation.Nullable
   private List<String> severities = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_SEVERITY_FILTER = "severityFilter";
-  @SerializedName(SERIALIZED_NAME_SEVERITY_FILTER)
-  @javax.annotation.Nullable
-  private List<TypesStringFilter> severityFilter = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
   @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
@@ -170,33 +164,6 @@ public class InspectorSettingsConfig {
   }
 
 
-  public InspectorSettingsConfig severityFilter(@javax.annotation.Nullable List<TypesStringFilter> severityFilter) {
-    this.severityFilter = severityFilter;
-    return this;
-  }
-
-  public InspectorSettingsConfig addSeverityFilterItem(TypesStringFilter severityFilterItem) {
-    if (this.severityFilter == null) {
-      this.severityFilter = new ArrayList<>();
-    }
-    this.severityFilter.add(severityFilterItem);
-    return this;
-  }
-
-  /**
-   * Get severityFilter
-   * @return severityFilter
-   */
-  @javax.annotation.Nullable
-  public List<TypesStringFilter> getSeverityFilter() {
-    return severityFilter;
-  }
-
-  public void setSeverityFilter(@javax.annotation.Nullable List<TypesStringFilter> severityFilter) {
-    this.severityFilter = severityFilter;
-  }
-
-
   public InspectorSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
     this.useSyntheticData = useSyntheticData;
     return this;
@@ -230,13 +197,12 @@ public class InspectorSettingsConfig {
         Objects.equals(this.region, inspectorSettingsConfig.region) &&
         Objects.equals(this.roleArn, inspectorSettingsConfig.roleArn) &&
         Objects.equals(this.severities, inspectorSettingsConfig.severities) &&
-        Objects.equals(this.severityFilter, inspectorSettingsConfig.severityFilter) &&
         Objects.equals(this.useSyntheticData, inspectorSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, region, roleArn, severities, severityFilter, useSyntheticData);
+    return Objects.hash(backfillStartTime, region, roleArn, severities, useSyntheticData);
   }
 
   @Override
@@ -247,7 +213,6 @@ public class InspectorSettingsConfig {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    severities: ").append(toIndentedString(severities)).append("\n");
-    sb.append("    severityFilter: ").append(toIndentedString(severityFilter)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -267,7 +232,7 @@ public class InspectorSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "region", "role_arn", "severities", "severityFilter", "use_synthetic_data"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "region", "role_arn", "severities", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -306,20 +271,6 @@ public class InspectorSettingsConfig {
       // ensure the optional json data is an array if present
       if (jsonObj.get("severities") != null && !jsonObj.get("severities").isJsonNull() && !jsonObj.get("severities").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severities` to be an array in the JSON string but got `%s`", jsonObj.get("severities").toString()));
-      }
-      if (jsonObj.get("severityFilter") != null && !jsonObj.get("severityFilter").isJsonNull()) {
-        JsonArray jsonArrayseverityFilter = jsonObj.getAsJsonArray("severityFilter");
-        if (jsonArrayseverityFilter != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("severityFilter").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severityFilter` to be an array in the JSON string but got `%s`", jsonObj.get("severityFilter").toString()));
-          }
-
-          // validate the optional field `severityFilter` (array)
-          for (int i = 0; i < jsonArrayseverityFilter.size(); i++) {
-            TypesStringFilter.validateJsonElement(jsonArrayseverityFilter.get(i));
-          };
-        }
       }
   }
 

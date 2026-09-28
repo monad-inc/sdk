@@ -5,9 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
-**BucketName** | Pointer to **string** | Bucket Name | [optional] 
 **BucketUrl** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
-**Key** | Pointer to **string** | S3 Key | [optional] 
 **ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
@@ -56,31 +54,6 @@ SetBatchConfig sets BatchConfig field to given value.
 
 HasBatchConfig returns a boolean if a field has been set.
 
-### GetBucketName
-
-`func (o *SecurityLakeSettingsConfig) GetBucketName() string`
-
-GetBucketName returns the BucketName field if non-nil, zero value otherwise.
-
-### GetBucketNameOk
-
-`func (o *SecurityLakeSettingsConfig) GetBucketNameOk() (*string, bool)`
-
-GetBucketNameOk returns a tuple with the BucketName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBucketName
-
-`func (o *SecurityLakeSettingsConfig) SetBucketName(v string)`
-
-SetBucketName sets BucketName field to given value.
-
-### HasBucketName
-
-`func (o *SecurityLakeSettingsConfig) HasBucketName() bool`
-
-HasBucketName returns a boolean if a field has been set.
-
 ### GetBucketUrl
 
 `func (o *SecurityLakeSettingsConfig) GetBucketUrl() string`
@@ -105,31 +78,6 @@ SetBucketUrl sets BucketUrl field to given value.
 `func (o *SecurityLakeSettingsConfig) HasBucketUrl() bool`
 
 HasBucketUrl returns a boolean if a field has been set.
-
-### GetKey
-
-`func (o *SecurityLakeSettingsConfig) GetKey() string`
-
-GetKey returns the Key field if non-nil, zero value otherwise.
-
-### GetKeyOk
-
-`func (o *SecurityLakeSettingsConfig) GetKeyOk() (*string, bool)`
-
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKey
-
-`func (o *SecurityLakeSettingsConfig) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
-### HasKey
-
-`func (o *SecurityLakeSettingsConfig) HasKey() bool`
-
-HasKey returns a boolean if a field has been set.
 
 ### GetParquetFormat
 

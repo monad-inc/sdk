@@ -95,7 +95,6 @@ import org.openapitools.client.model.TinesAuditLogsSettingsConfig;
 import org.openapitools.client.model.TinesEventsLogsSettingsConfig;
 import org.openapitools.client.model.TwilioEventsSettingsConfig;
 import org.openapitools.client.model.TwilioSendgridEmailActivitySettingsConfig;
-import org.openapitools.client.model.TypesStringFilter;
 import org.openapitools.client.model.VoltioAuditLogsSettingsConfig;
 import org.openapitools.client.model.VulnerabilityFindingsSettingsConfig;
 import org.openapitools.client.model.WizAssetStatus;

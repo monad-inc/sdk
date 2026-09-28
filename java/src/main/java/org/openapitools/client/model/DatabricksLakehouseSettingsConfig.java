@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.BatchConfigBatchConfig;
 import org.openapitools.client.model.DatabricksLakehouseWriteMode;
 import org.openapitools.client.model.ModelsSecret;
 
@@ -53,11 +52,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class DatabricksLakehouseSettingsConfig {
-  public static final String SERIALIZED_NAME_BATCH_CONFIG = "batch_config";
-  @SerializedName(SERIALIZED_NAME_BATCH_CONFIG)
-  @javax.annotation.Nullable
-  private BatchConfigBatchConfig batchConfig;
-
   public static final String SERIALIZED_NAME_CATALOG = "catalog";
   @SerializedName(SERIALIZED_NAME_CATALOG)
   @javax.annotation.Nonnull
@@ -90,25 +84,6 @@ public class DatabricksLakehouseSettingsConfig {
 
   public DatabricksLakehouseSettingsConfig() {
   }
-
-  public DatabricksLakehouseSettingsConfig batchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
-    this.batchConfig = batchConfig;
-    return this;
-  }
-
-  /**
-   * Get batchConfig
-   * @return batchConfig
-   */
-  @javax.annotation.Nullable
-  public BatchConfigBatchConfig getBatchConfig() {
-    return batchConfig;
-  }
-
-  public void setBatchConfig(@javax.annotation.Nullable BatchConfigBatchConfig batchConfig) {
-    this.batchConfig = batchConfig;
-  }
-
 
   public DatabricksLakehouseSettingsConfig catalog(@javax.annotation.Nonnull String catalog) {
     this.catalog = catalog;
@@ -234,8 +209,7 @@ public class DatabricksLakehouseSettingsConfig {
       return false;
     }
     DatabricksLakehouseSettingsConfig databricksLakehouseSettingsConfig = (DatabricksLakehouseSettingsConfig) o;
-    return Objects.equals(this.batchConfig, databricksLakehouseSettingsConfig.batchConfig) &&
-        Objects.equals(this.catalog, databricksLakehouseSettingsConfig.catalog) &&
+    return Objects.equals(this.catalog, databricksLakehouseSettingsConfig.catalog) &&
         Objects.equals(this.clientId, databricksLakehouseSettingsConfig.clientId) &&
         Objects.equals(this.clientSecret, databricksLakehouseSettingsConfig.clientSecret) &&
         Objects.equals(this.schema, databricksLakehouseSettingsConfig.schema) &&
@@ -245,14 +219,13 @@ public class DatabricksLakehouseSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchConfig, catalog, clientId, clientSecret, schema, serverHostname, writeMode);
+    return Objects.hash(catalog, clientId, clientSecret, schema, serverHostname, writeMode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatabricksLakehouseSettingsConfig {\n");
-    sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
     sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
@@ -277,7 +250,7 @@ public class DatabricksLakehouseSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"));
+    openapiFields = new HashSet<String>(Arrays.asList("catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"));
@@ -311,10 +284,6 @@ public class DatabricksLakehouseSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `batch_config`
-      if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
-        BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
-      }
       if (!jsonObj.get("catalog").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `catalog` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog").toString()));
       }

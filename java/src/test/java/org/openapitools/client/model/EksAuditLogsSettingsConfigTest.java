@@ -85,12 +85,4 @@ public class EksAuditLogsSettingsConfigTest {
         // TODO: test useSyntheticData
     }
 
-    /**
-     * Test the property 'usesStaticCreds'
-     */
-    @Test
-    public void usesStaticCredsTest() {
-        // TODO: test usesStaticCreds
-    }
-
 }

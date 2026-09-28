@@ -35,8 +35,7 @@ class EksAuditLogsSettingsConfig(BaseModel):
     region: StrictStr
     role_arn: Optional[StrictStr] = None
     use_synthetic_data: Optional[StrictBool] = None
-    uses_static_creds: Optional[StrictBool] = Field(default=None, alias="usesStaticCreds")
-    __properties: ClassVar[List[str]] = ["backfill_start_time", "cluster_name", "ingestion_lag_seconds", "region", "role_arn", "use_synthetic_data", "usesStaticCreds"]
+    __properties: ClassVar[List[str]] = ["backfill_start_time", "cluster_name", "ingestion_lag_seconds", "region", "role_arn", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,8 +93,7 @@ class EksAuditLogsSettingsConfig(BaseModel):
             "ingestion_lag_seconds": obj.get("ingestion_lag_seconds"),
             "region": obj.get("region"),
             "role_arn": obj.get("role_arn"),
-            "use_synthetic_data": obj.get("use_synthetic_data"),
-            "usesStaticCreds": obj.get("usesStaticCreds")
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 

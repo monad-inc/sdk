@@ -596,8 +596,6 @@ import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
 import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
 import { TwilioSendgridEmailActivitySettingsConfig } from '../models/TwilioSendgridEmailActivitySettingsConfig';
-import { TypesStringComparison } from '../models/TypesStringComparison';
-import { TypesStringFilter } from '../models/TypesStringFilter';
 import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
 import { UpdateAlertRuleRequest } from '../models/UpdateAlertRuleRequest';
 import { UpdateBillingAccountRequest } from '../models/UpdateBillingAccountRequest';

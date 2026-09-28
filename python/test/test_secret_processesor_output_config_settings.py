@@ -296,9 +296,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     updated_at = '', 
                     value = '', ),
                 webhook_id = '',
-                bucket_name = '',
                 bucket_url = '',
-                key = '',
                 parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
                     schema = '', ),
                 source_account_details = monad.models.security_lake/source_account_details.security_lake.SourceAccountDetails(

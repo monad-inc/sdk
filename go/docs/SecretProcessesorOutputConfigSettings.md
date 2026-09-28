@@ -89,9 +89,7 @@ Name | Type | Description | Notes
 **TimestampField** | Pointer to **string** |  | [optional] 
 **BearerToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **WebhookId** | **string** | The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI. | 
-**BucketName** | Pointer to **string** | Bucket Name | [optional] 
 **BucketUrl** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
-**Key** | Pointer to **string** | S3 Key | [optional] 
 **ParquetFormat** | Pointer to [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **SourceAccountDetails** | Pointer to [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
 **SourceSystem** | **string** | Free-form label identifying the source system in Sentinel. Must NOT be \&quot;Microsoft Sentinel\&quot; — that value is restricted by the API. | 
@@ -2144,31 +2142,6 @@ and a boolean to check if the value has been set.
 SetWebhookId sets WebhookId field to given value.
 
 
-### GetBucketName
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBucketName() string`
-
-GetBucketName returns the BucketName field if non-nil, zero value otherwise.
-
-### GetBucketNameOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetBucketNameOk() (*string, bool)`
-
-GetBucketNameOk returns a tuple with the BucketName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBucketName
-
-`func (o *SecretProcessesorOutputConfigSettings) SetBucketName(v string)`
-
-SetBucketName sets BucketName field to given value.
-
-### HasBucketName
-
-`func (o *SecretProcessesorOutputConfigSettings) HasBucketName() bool`
-
-HasBucketName returns a boolean if a field has been set.
-
 ### GetBucketUrl
 
 `func (o *SecretProcessesorOutputConfigSettings) GetBucketUrl() string`
@@ -2193,31 +2166,6 @@ SetBucketUrl sets BucketUrl field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasBucketUrl() bool`
 
 HasBucketUrl returns a boolean if a field has been set.
-
-### GetKey
-
-`func (o *SecretProcessesorOutputConfigSettings) GetKey() string`
-
-GetKey returns the Key field if non-nil, zero value otherwise.
-
-### GetKeyOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetKeyOk() (*string, bool)`
-
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKey
-
-`func (o *SecretProcessesorOutputConfigSettings) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
-### HasKey
-
-`func (o *SecretProcessesorOutputConfigSettings) HasKey() bool`
-
-HasKey returns a boolean if a field has been set.
 
 ### GetParquetFormat
 

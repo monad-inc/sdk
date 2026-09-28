@@ -22,7 +22,6 @@ var _ MappedNullable = &DatabricksLakehouseSettingsConfig{}
 
 // DatabricksLakehouseSettingsConfig Databricks Lakehouse Output Settings
 type DatabricksLakehouseSettingsConfig struct {
-	BatchConfig *BatchConfigBatchConfig `json:"batch_config,omitempty"`
 	// The Unity Catalog name
 	Catalog string `json:"catalog"`
 	ClientId ModelsSecret `json:"client_id"`
@@ -57,38 +56,6 @@ func NewDatabricksLakehouseSettingsConfig(catalog string, clientId ModelsSecret,
 func NewDatabricksLakehouseSettingsConfigWithDefaults() *DatabricksLakehouseSettingsConfig {
 	this := DatabricksLakehouseSettingsConfig{}
 	return &this
-}
-
-// GetBatchConfig returns the BatchConfig field value if set, zero value otherwise.
-func (o *DatabricksLakehouseSettingsConfig) GetBatchConfig() BatchConfigBatchConfig {
-	if o == nil || IsNil(o.BatchConfig) {
-		var ret BatchConfigBatchConfig
-		return ret
-	}
-	return *o.BatchConfig
-}
-
-// GetBatchConfigOk returns a tuple with the BatchConfig field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DatabricksLakehouseSettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool) {
-	if o == nil || IsNil(o.BatchConfig) {
-		return nil, false
-	}
-	return o.BatchConfig, true
-}
-
-// HasBatchConfig returns a boolean if a field has been set.
-func (o *DatabricksLakehouseSettingsConfig) HasBatchConfig() bool {
-	if o != nil && !IsNil(o.BatchConfig) {
-		return true
-	}
-
-	return false
-}
-
-// SetBatchConfig gets a reference to the given BatchConfigBatchConfig and assigns it to the BatchConfig field.
-func (o *DatabricksLakehouseSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig) {
-	o.BatchConfig = &v
 }
 
 // GetCatalog returns the Catalog field value
@@ -245,9 +212,6 @@ func (o DatabricksLakehouseSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o DatabricksLakehouseSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BatchConfig) {
-		toSerialize["batch_config"] = o.BatchConfig
-	}
 	toSerialize["catalog"] = o.Catalog
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["client_secret"] = o.ClientSecret

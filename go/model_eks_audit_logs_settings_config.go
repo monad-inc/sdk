@@ -28,7 +28,6 @@ type EksAuditLogsSettingsConfig struct {
 	Region string `json:"region"`
 	RoleArn *string `json:"role_arn,omitempty"`
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
-	UsesStaticCreds *bool `json:"usesStaticCreds,omitempty"`
 }
 
 type _EksAuditLogsSettingsConfig EksAuditLogsSettingsConfig
@@ -228,38 +227,6 @@ func (o *EksAuditLogsSettingsConfig) SetUseSyntheticData(v bool) {
 	o.UseSyntheticData = &v
 }
 
-// GetUsesStaticCreds returns the UsesStaticCreds field value if set, zero value otherwise.
-func (o *EksAuditLogsSettingsConfig) GetUsesStaticCreds() bool {
-	if o == nil || IsNil(o.UsesStaticCreds) {
-		var ret bool
-		return ret
-	}
-	return *o.UsesStaticCreds
-}
-
-// GetUsesStaticCredsOk returns a tuple with the UsesStaticCreds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EksAuditLogsSettingsConfig) GetUsesStaticCredsOk() (*bool, bool) {
-	if o == nil || IsNil(o.UsesStaticCreds) {
-		return nil, false
-	}
-	return o.UsesStaticCreds, true
-}
-
-// HasUsesStaticCreds returns a boolean if a field has been set.
-func (o *EksAuditLogsSettingsConfig) HasUsesStaticCreds() bool {
-	if o != nil && !IsNil(o.UsesStaticCreds) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsesStaticCreds gets a reference to the given bool and assigns it to the UsesStaticCreds field.
-func (o *EksAuditLogsSettingsConfig) SetUsesStaticCreds(v bool) {
-	o.UsesStaticCreds = &v
-}
-
 func (o EksAuditLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -283,9 +250,6 @@ func (o EksAuditLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData
-	}
-	if !IsNil(o.UsesStaticCreds) {
-		toSerialize["usesStaticCreds"] = o.UsesStaticCreds
 	}
 	return toSerialize, nil
 }

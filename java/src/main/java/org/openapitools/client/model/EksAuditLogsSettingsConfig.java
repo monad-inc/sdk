@@ -80,11 +80,6 @@ public class EksAuditLogsSettingsConfig {
   @javax.annotation.Nullable
   private Boolean useSyntheticData;
 
-  public static final String SERIALIZED_NAME_USES_STATIC_CREDS = "usesStaticCreds";
-  @SerializedName(SERIALIZED_NAME_USES_STATIC_CREDS)
-  @javax.annotation.Nullable
-  private Boolean usesStaticCreds;
-
   public EksAuditLogsSettingsConfig() {
   }
 
@@ -204,25 +199,6 @@ public class EksAuditLogsSettingsConfig {
   }
 
 
-  public EksAuditLogsSettingsConfig usesStaticCreds(@javax.annotation.Nullable Boolean usesStaticCreds) {
-    this.usesStaticCreds = usesStaticCreds;
-    return this;
-  }
-
-  /**
-   * Get usesStaticCreds
-   * @return usesStaticCreds
-   */
-  @javax.annotation.Nullable
-  public Boolean getUsesStaticCreds() {
-    return usesStaticCreds;
-  }
-
-  public void setUsesStaticCreds(@javax.annotation.Nullable Boolean usesStaticCreds) {
-    this.usesStaticCreds = usesStaticCreds;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -238,13 +214,12 @@ public class EksAuditLogsSettingsConfig {
         Objects.equals(this.ingestionLagSeconds, eksAuditLogsSettingsConfig.ingestionLagSeconds) &&
         Objects.equals(this.region, eksAuditLogsSettingsConfig.region) &&
         Objects.equals(this.roleArn, eksAuditLogsSettingsConfig.roleArn) &&
-        Objects.equals(this.useSyntheticData, eksAuditLogsSettingsConfig.useSyntheticData) &&
-        Objects.equals(this.usesStaticCreds, eksAuditLogsSettingsConfig.usesStaticCreds);
+        Objects.equals(this.useSyntheticData, eksAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backfillStartTime, clusterName, ingestionLagSeconds, region, roleArn, useSyntheticData, usesStaticCreds);
+    return Objects.hash(backfillStartTime, clusterName, ingestionLagSeconds, region, roleArn, useSyntheticData);
   }
 
   @Override
@@ -257,7 +232,6 @@ public class EksAuditLogsSettingsConfig {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
-    sb.append("    usesStaticCreds: ").append(toIndentedString(usesStaticCreds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -276,7 +250,7 @@ public class EksAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cluster_name", "ingestion_lag_seconds", "region", "role_arn", "use_synthetic_data", "usesStaticCreds"));
+    openapiFields = new HashSet<String>(Arrays.asList("backfill_start_time", "cluster_name", "ingestion_lag_seconds", "region", "role_arn", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("cluster_name", "region"));

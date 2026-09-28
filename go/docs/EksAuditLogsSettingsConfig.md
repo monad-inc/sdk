@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **Region** | **string** |  | 
 **RoleArn** | Pointer to **string** |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** |  | [optional] 
-**UsesStaticCreds** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -170,31 +169,6 @@ SetUseSyntheticData sets UseSyntheticData field to given value.
 `func (o *EksAuditLogsSettingsConfig) HasUseSyntheticData() bool`
 
 HasUseSyntheticData returns a boolean if a field has been set.
-
-### GetUsesStaticCreds
-
-`func (o *EksAuditLogsSettingsConfig) GetUsesStaticCreds() bool`
-
-GetUsesStaticCreds returns the UsesStaticCreds field if non-nil, zero value otherwise.
-
-### GetUsesStaticCredsOk
-
-`func (o *EksAuditLogsSettingsConfig) GetUsesStaticCredsOk() (*bool, bool)`
-
-GetUsesStaticCredsOk returns a tuple with the UsesStaticCreds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsesStaticCreds
-
-`func (o *EksAuditLogsSettingsConfig) SetUsesStaticCreds(v bool)`
-
-SetUsesStaticCreds sets UsesStaticCreds field to given value.
-
-### HasUsesStaticCreds
-
-`func (o *EksAuditLogsSettingsConfig) HasUsesStaticCreds() bool`
-
-HasUsesStaticCreds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

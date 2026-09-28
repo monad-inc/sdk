@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-import { TypesStringFilter } from '../models/TypesStringFilter';
 import { HttpFile } from '../http/http';
 
 /**
@@ -33,7 +32,6 @@ export class InspectorSettingsConfig {
     * Minimum severity level of findings to fetch.
     */
     'severities'?: Array<string>;
-    'severityFilter'?: Array<TypesStringFilter>;
     /**
     * Generate synthetic demo data instead of connecting to the real data source.
     */
@@ -66,12 +64,6 @@ export class InspectorSettingsConfig {
             "name": "severities",
             "baseName": "severities",
             "type": "Array<string>",
-            "format": ""
-        },
-        {
-            "name": "severityFilter",
-            "baseName": "severityFilter",
-            "type": "Array<TypesStringFilter>",
             "format": ""
         },
         {

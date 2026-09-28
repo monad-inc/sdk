@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.client.model.TypesStringFilter;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -70,14 +69,6 @@ public class InspectorSettingsConfigTest {
     @Test
     public void severitiesTest() {
         // TODO: test severities
-    }
-
-    /**
-     * Test the property 'severityFilter'
-     */
-    @Test
-    public void severityFilterTest() {
-        // TODO: test severityFilter
     }
 
     /**

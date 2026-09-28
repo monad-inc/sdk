@@ -19,8 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.batch_config_batch_config import BatchConfigBatchConfig
+from typing import Any, ClassVar, Dict, List
 from monad.models.databricks_lakehouse_write_mode import DatabricksLakehouseWriteMode
 from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
@@ -31,14 +30,13 @@ class DatabricksLakehouseSettingsConfig(BaseModel):
     """
     Databricks Lakehouse Output Settings
     """ # noqa: E501
-    batch_config: Optional[BatchConfigBatchConfig] = None
     catalog: StrictStr = Field(description="The Unity Catalog name")
     client_id: ModelsSecret
     client_secret: ModelsSecret
     var_schema: StrictStr = Field(description="The target schema within the catalog", alias="schema")
     server_hostname: StrictStr = Field(description="The Databricks workspace hostname (e.g. adb-1234567890.azuredatabricks.net)")
     write_mode: DatabricksLakehouseWriteMode
-    __properties: ClassVar[List[str]] = ["batch_config", "catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"]
+    __properties: ClassVar[List[str]] = ["catalog", "client_id", "client_secret", "schema", "server_hostname", "write_mode"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -79,9 +77,6 @@ class DatabricksLakehouseSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of batch_config
-        if self.batch_config:
-            _dict['batch_config'] = self.batch_config.to_dict()
         # override the default output from pydantic by calling `to_dict()` of client_id
         if self.client_id:
             _dict['client_id'] = self.client_id.to_dict()
@@ -103,7 +98,6 @@ class DatabricksLakehouseSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "batch_config": BatchConfigBatchConfig.from_dict(obj["batch_config"]) if obj.get("batch_config") is not None else None,
             "catalog": obj.get("catalog"),
             "client_id": ModelsSecret.from_dict(obj["client_id"]) if obj.get("client_id") is not None else None,
             "client_secret": ModelsSecret.from_dict(obj["client_secret"]) if obj.get("client_secret") is not None else None,

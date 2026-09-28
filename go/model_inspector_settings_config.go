@@ -28,7 +28,6 @@ type InspectorSettingsConfig struct {
 	RoleArn *string `json:"role_arn,omitempty"`
 	// Minimum severity level of findings to fetch.
 	Severities []string `json:"severities,omitempty"`
-	SeverityFilter []TypesStringFilter `json:"severityFilter,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.
 	UseSyntheticData *bool `json:"use_synthetic_data,omitempty"`
 }
@@ -178,38 +177,6 @@ func (o *InspectorSettingsConfig) SetSeverities(v []string) {
 	o.Severities = v
 }
 
-// GetSeverityFilter returns the SeverityFilter field value if set, zero value otherwise.
-func (o *InspectorSettingsConfig) GetSeverityFilter() []TypesStringFilter {
-	if o == nil || IsNil(o.SeverityFilter) {
-		var ret []TypesStringFilter
-		return ret
-	}
-	return o.SeverityFilter
-}
-
-// GetSeverityFilterOk returns a tuple with the SeverityFilter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InspectorSettingsConfig) GetSeverityFilterOk() ([]TypesStringFilter, bool) {
-	if o == nil || IsNil(o.SeverityFilter) {
-		return nil, false
-	}
-	return o.SeverityFilter, true
-}
-
-// HasSeverityFilter returns a boolean if a field has been set.
-func (o *InspectorSettingsConfig) HasSeverityFilter() bool {
-	if o != nil && !IsNil(o.SeverityFilter) {
-		return true
-	}
-
-	return false
-}
-
-// SetSeverityFilter gets a reference to the given []TypesStringFilter and assigns it to the SeverityFilter field.
-func (o *InspectorSettingsConfig) SetSeverityFilter(v []TypesStringFilter) {
-	o.SeverityFilter = v
-}
-
 // GetUseSyntheticData returns the UseSyntheticData field value if set, zero value otherwise.
 func (o *InspectorSettingsConfig) GetUseSyntheticData() bool {
 	if o == nil || IsNil(o.UseSyntheticData) {
@@ -263,9 +230,6 @@ func (o InspectorSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Severities) {
 		toSerialize["severities"] = o.Severities
-	}
-	if !IsNil(o.SeverityFilter) {
-		toSerialize["severityFilter"] = o.SeverityFilter
 	}
 	if !IsNil(o.UseSyntheticData) {
 		toSerialize["use_synthetic_data"] = o.UseSyntheticData

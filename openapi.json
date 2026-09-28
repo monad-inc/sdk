@@ -2306,9 +2306,6 @@
             "databricks_lakehouse.SettingsConfig": {
                 "description": "Databricks Lakehouse Output Settings",
                 "properties": {
-                    "batch_config": {
-                        "$ref": "#/components/schemas/batch_config.BatchConfig"
-                    },
                     "catalog": {
                         "description": "The Unity Catalog name",
                         "type": "string"
@@ -2602,9 +2599,6 @@
                         "type": "string"
                     },
                     "use_synthetic_data": {
-                        "type": "boolean"
-                    },
-                    "usesStaticCreds": {
                         "type": "boolean"
                     }
                 },
@@ -3788,12 +3782,6 @@
                         "type": "array",
                         "uniqueItems": false
                     },
-                    "severityFilter": {
-                        "items": {
-                            "$ref": "#/components/schemas/types.StringFilter"
-                        },
-                        "type": "array"
-                    },
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
@@ -4112,9 +4100,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -11534,16 +11522,8 @@
                     "batch_config": {
                         "$ref": "#/components/schemas/batch_config.BatchConfig"
                     },
-                    "bucketName": {
-                        "description": "Bucket Name",
-                        "type": "string"
-                    },
                     "bucket_url": {
                         "description": "The name of the S3 bucket where data will be stored",
-                        "type": "string"
-                    },
-                    "key": {
-                        "description": "S3 Key",
                         "type": "string"
                     },
                     "parquet_format": {
@@ -12319,32 +12299,6 @@
                     "use_synthetic_data": {
                         "description": "Generate synthetic demo data instead of connecting to the real data source.",
                         "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
-            "types.StringComparison": {
-                "description": "The operator to use when comparing values in the filter.\n\nThis member is required.",
-                "enum": [
-                    "EQUALS",
-                    "PREFIX",
-                    "NOT_EQUALS"
-                ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "StringComparisonEquals",
-                    "StringComparisonPrefix",
-                    "StringComparisonNotEquals"
-                ]
-            },
-            "types.StringFilter": {
-                "properties": {
-                    "comparison": {
-                        "$ref": "#/components/schemas/types.StringComparison"
-                    },
-                    "value": {
-                        "description": "The value to filter on.\n\nThis member is required.",
-                        "type": "string"
                     }
                 },
                 "type": "object"

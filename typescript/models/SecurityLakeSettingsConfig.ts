@@ -21,17 +21,9 @@ import { HttpFile } from '../http/http';
 export class SecurityLakeSettingsConfig {
     'batchConfig'?: BatchConfigBatchConfig;
     /**
-    * Bucket Name
-    */
-    'bucketName'?: string;
-    /**
     * The name of the S3 bucket where data will be stored
     */
     'bucketUrl'?: string;
-    /**
-    * S3 Key
-    */
-    'key'?: string;
     'parquetFormat'?: ParquetParquetFormatter;
     /**
     * The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket
@@ -51,20 +43,8 @@ export class SecurityLakeSettingsConfig {
             "format": ""
         },
         {
-            "name": "bucketName",
-            "baseName": "bucketName",
-            "type": "string",
-            "format": ""
-        },
-        {
             "name": "bucketUrl",
             "baseName": "bucket_url",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "key",
-            "baseName": "key",
             "type": "string",
             "format": ""
         },

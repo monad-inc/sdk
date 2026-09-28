@@ -130,7 +130,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 category = 'AuditLogs',
                 cluster_name = '',
                 ingestion_lag_seconds = 5,
-                uses_static_creds = True,
                 namespace = '',
                 ingestion_delay = 56,
                 workspace_id = '',
@@ -198,11 +197,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 primary_entity_value = '',
                 severities = [
                     'INFORMATIONAL'
-                    ],
-                severity_filter = [
-                    monad.models.types/string_filter.types.StringFilter(
-                        comparison = 'EQUALS', 
-                        value = '', )
                     ],
                 control_ids = [
                     ''

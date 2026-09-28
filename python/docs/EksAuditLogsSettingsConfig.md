@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **region** | **str** |  | 
 **role_arn** | **str** |  | [optional] 
 **use_synthetic_data** | **bool** |  | [optional] 
-**uses_static_creds** | **bool** |  | [optional] 
 
 ## Example
 

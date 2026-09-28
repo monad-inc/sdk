@@ -90,9 +90,7 @@ Name | Type | Description | Notes
 **timestamp_field** | **str** |  | [optional] 
 **bearer_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **webhook_id** | **str** | The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI. | 
-**bucket_name** | **str** | Bucket Name | [optional] 
 **bucket_url** | **str** | The name of the S3 bucket where data will be stored | [optional] 
-**key** | **str** | S3 Key | [optional] 
 **parquet_format** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **source_account_details** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 
 **source_system** | **str** | Free-form label identifying the source system in Sentinel. Must NOT be \&quot;Microsoft Sentinel\&quot; — that value is restricted by the API. | 

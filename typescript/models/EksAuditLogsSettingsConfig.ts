@@ -19,7 +19,6 @@ export class EksAuditLogsSettingsConfig {
     'region': string;
     'roleArn'?: string;
     'useSyntheticData'?: boolean;
-    'usesStaticCreds'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -59,12 +58,6 @@ export class EksAuditLogsSettingsConfig {
         {
             "name": "useSyntheticData",
             "baseName": "use_synthetic_data",
-            "type": "boolean",
-            "format": ""
-        },
-        {
-            "name": "usesStaticCreds",
-            "baseName": "usesStaticCreds",
             "type": "boolean",
             "format": ""
         }    ];

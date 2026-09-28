@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-import { BatchConfigBatchConfig } from '../models/BatchConfigBatchConfig';
 import { DatabricksLakehouseWriteMode } from '../models/DatabricksLakehouseWriteMode';
 import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
@@ -19,7 +18,6 @@ import { HttpFile } from '../http/http';
 * Databricks Lakehouse Output Settings
 */
 export class DatabricksLakehouseSettingsConfig {
-    'batchConfig'?: BatchConfigBatchConfig;
     /**
     * The Unity Catalog name
     */
@@ -41,12 +39,6 @@ export class DatabricksLakehouseSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "batchConfig",
-            "baseName": "batch_config",
-            "type": "BatchConfigBatchConfig",
-            "format": ""
-        },
         {
             "name": "catalog",
             "baseName": "catalog",

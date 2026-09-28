@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Region** | Pointer to **string** | The AWS region where Inspector is enabled. | [optional] 
 **RoleArn** | Pointer to **string** | The ARN of the IAM role to assume for accessing Inspector. | [optional] 
 **Severities** | Pointer to **[]string** | Minimum severity level of findings to fetch. | [optional] 
-**SeverityFilter** | Pointer to [**[]TypesStringFilter**](TypesStringFilter.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Methods
@@ -129,31 +128,6 @@ SetSeverities sets Severities field to given value.
 `func (o *InspectorSettingsConfig) HasSeverities() bool`
 
 HasSeverities returns a boolean if a field has been set.
-
-### GetSeverityFilter
-
-`func (o *InspectorSettingsConfig) GetSeverityFilter() []TypesStringFilter`
-
-GetSeverityFilter returns the SeverityFilter field if non-nil, zero value otherwise.
-
-### GetSeverityFilterOk
-
-`func (o *InspectorSettingsConfig) GetSeverityFilterOk() (*[]TypesStringFilter, bool)`
-
-GetSeverityFilterOk returns a tuple with the SeverityFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeverityFilter
-
-`func (o *InspectorSettingsConfig) SetSeverityFilter(v []TypesStringFilter)`
-
-SetSeverityFilter sets SeverityFilter field to given value.
-
-### HasSeverityFilter
-
-`func (o *InspectorSettingsConfig) HasSeverityFilter() bool`
-
-HasSeverityFilter returns a boolean if a field has been set.
 
 ### GetUseSyntheticData
 

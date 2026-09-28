@@ -58,20 +58,10 @@ public class SecurityLakeSettingsConfig {
   @javax.annotation.Nullable
   private BatchConfigBatchConfig batchConfig;
 
-  public static final String SERIALIZED_NAME_BUCKET_NAME = "bucketName";
-  @SerializedName(SERIALIZED_NAME_BUCKET_NAME)
-  @javax.annotation.Nullable
-  private String bucketName;
-
   public static final String SERIALIZED_NAME_BUCKET_URL = "bucket_url";
   @SerializedName(SERIALIZED_NAME_BUCKET_URL)
   @javax.annotation.Nullable
   private String bucketUrl;
-
-  public static final String SERIALIZED_NAME_KEY = "key";
-  @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
-  private String key;
 
   public static final String SERIALIZED_NAME_PARQUET_FORMAT = "parquet_format";
   @SerializedName(SERIALIZED_NAME_PARQUET_FORMAT)
@@ -110,25 +100,6 @@ public class SecurityLakeSettingsConfig {
   }
 
 
-  public SecurityLakeSettingsConfig bucketName(@javax.annotation.Nullable String bucketName) {
-    this.bucketName = bucketName;
-    return this;
-  }
-
-  /**
-   * Bucket Name
-   * @return bucketName
-   */
-  @javax.annotation.Nullable
-  public String getBucketName() {
-    return bucketName;
-  }
-
-  public void setBucketName(@javax.annotation.Nullable String bucketName) {
-    this.bucketName = bucketName;
-  }
-
-
   public SecurityLakeSettingsConfig bucketUrl(@javax.annotation.Nullable String bucketUrl) {
     this.bucketUrl = bucketUrl;
     return this;
@@ -145,25 +116,6 @@ public class SecurityLakeSettingsConfig {
 
   public void setBucketUrl(@javax.annotation.Nullable String bucketUrl) {
     this.bucketUrl = bucketUrl;
-  }
-
-
-  public SecurityLakeSettingsConfig key(@javax.annotation.Nullable String key) {
-    this.key = key;
-    return this;
-  }
-
-  /**
-   * S3 Key
-   * @return key
-   */
-  @javax.annotation.Nullable
-  public String getKey() {
-    return key;
-  }
-
-  public void setKey(@javax.annotation.Nullable String key) {
-    this.key = key;
   }
 
 
@@ -235,9 +187,7 @@ public class SecurityLakeSettingsConfig {
     }
     SecurityLakeSettingsConfig securityLakeSettingsConfig = (SecurityLakeSettingsConfig) o;
     return Objects.equals(this.batchConfig, securityLakeSettingsConfig.batchConfig) &&
-        Objects.equals(this.bucketName, securityLakeSettingsConfig.bucketName) &&
         Objects.equals(this.bucketUrl, securityLakeSettingsConfig.bucketUrl) &&
-        Objects.equals(this.key, securityLakeSettingsConfig.key) &&
         Objects.equals(this.parquetFormat, securityLakeSettingsConfig.parquetFormat) &&
         Objects.equals(this.roleArn, securityLakeSettingsConfig.roleArn) &&
         Objects.equals(this.sourceAccountDetails, securityLakeSettingsConfig.sourceAccountDetails);
@@ -245,7 +195,7 @@ public class SecurityLakeSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(batchConfig, bucketName, bucketUrl, key, parquetFormat, roleArn, sourceAccountDetails);
+    return Objects.hash(batchConfig, bucketUrl, parquetFormat, roleArn, sourceAccountDetails);
   }
 
   @Override
@@ -253,9 +203,7 @@ public class SecurityLakeSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SecurityLakeSettingsConfig {\n");
     sb.append("    batchConfig: ").append(toIndentedString(batchConfig)).append("\n");
-    sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
     sb.append("    bucketUrl: ").append(toIndentedString(bucketUrl)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    parquetFormat: ").append(toIndentedString(parquetFormat)).append("\n");
     sb.append("    roleArn: ").append(toIndentedString(roleArn)).append("\n");
     sb.append("    sourceAccountDetails: ").append(toIndentedString(sourceAccountDetails)).append("\n");
@@ -277,7 +225,7 @@ public class SecurityLakeSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "bucketName", "bucket_url", "key", "parquet_format", "role_arn", "source_account_details"));
+    openapiFields = new HashSet<String>(Arrays.asList("batch_config", "bucket_url", "parquet_format", "role_arn", "source_account_details"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -308,14 +256,8 @@ public class SecurityLakeSettingsConfig {
       if (jsonObj.get("batch_config") != null && !jsonObj.get("batch_config").isJsonNull()) {
         BatchConfigBatchConfig.validateJsonElement(jsonObj.get("batch_config"));
       }
-      if ((jsonObj.get("bucketName") != null && !jsonObj.get("bucketName").isJsonNull()) && !jsonObj.get("bucketName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucketName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucketName").toString()));
-      }
       if ((jsonObj.get("bucket_url") != null && !jsonObj.get("bucket_url").isJsonNull()) && !jsonObj.get("bucket_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bucket_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bucket_url").toString()));
-      }
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // validate the optional field `parquet_format`
       if (jsonObj.get("parquet_format") != null && !jsonObj.get("parquet_format").isJsonNull()) {

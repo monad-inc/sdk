@@ -13,7 +13,6 @@
 |**region** | **String** |  |  |
 |**roleArn** | **String** |  |  [optional] |
 |**useSyntheticData** | **Boolean** |  |  [optional] |
-|**usesStaticCreds** | **Boolean** |  |  [optional] |
 
 
 

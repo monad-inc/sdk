@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BatchConfig** | Pointer to [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
 **Catalog** | **string** | The Unity Catalog name | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -30,31 +29,6 @@ will change when the set of required properties is changed
 NewDatabricksLakehouseSettingsConfigWithDefaults instantiates a new DatabricksLakehouseSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBatchConfig
-
-`func (o *DatabricksLakehouseSettingsConfig) GetBatchConfig() BatchConfigBatchConfig`
-
-GetBatchConfig returns the BatchConfig field if non-nil, zero value otherwise.
-
-### GetBatchConfigOk
-
-`func (o *DatabricksLakehouseSettingsConfig) GetBatchConfigOk() (*BatchConfigBatchConfig, bool)`
-
-GetBatchConfigOk returns a tuple with the BatchConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBatchConfig
-
-`func (o *DatabricksLakehouseSettingsConfig) SetBatchConfig(v BatchConfigBatchConfig)`
-
-SetBatchConfig sets BatchConfig field to given value.
-
-### HasBatchConfig
-
-`func (o *DatabricksLakehouseSettingsConfig) HasBatchConfig() bool`
-
-HasBatchConfig returns a boolean if a field has been set.
 
 ### GetCatalog
 

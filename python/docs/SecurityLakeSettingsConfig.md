@@ -7,9 +7,7 @@ Security Lake Output Settings
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **batch_config** | [**BatchConfigBatchConfig**](BatchConfigBatchConfig.md) |  | [optional] 
-**bucket_name** | **str** | Bucket Name | [optional] 
 **bucket_url** | **str** | The name of the S3 bucket where data will be stored | [optional] 
-**key** | **str** | S3 Key | [optional] 
 **parquet_format** | [**ParquetParquetFormatter**](ParquetParquetFormatter.md) |  | [optional] 
 **role_arn** | **str** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **source_account_details** | [**SecurityLakeSourceAccountDetails**](SecurityLakeSourceAccountDetails.md) |  | [optional] 

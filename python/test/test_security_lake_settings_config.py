@@ -40,9 +40,7 @@ class TestSecurityLakeSettingsConfig(unittest.TestCase):
                     batch_data_size = 56, 
                     batch_record_count = 56, 
                     publish_rate = 56, ),
-                bucket_name = '',
                 bucket_url = '',
-                key = '',
                 parquet_format = monad.models.parquet/parquet_formatter.parquet.ParquetFormatter(
                     schema = '', ),
                 role_arn = '',

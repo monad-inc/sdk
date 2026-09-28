@@ -73,7 +73,6 @@ Name | Type | Description | Notes
 **Category** | **string** | The Category of logs to query | 
 **ClusterName** | **string** | The name of the GKE cluster. | 
 **IngestionLagSeconds** | Pointer to **int32** |  | [optional] 
-**UsesStaticCreds** | Pointer to **bool** |  | [optional] 
 **Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
 **WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
@@ -96,7 +95,6 @@ Name | Type | Description | Notes
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **PrimaryEntityValue** | Pointer to **string** | Filter by primary entity value (contains search) | [optional] 
 **Severities** | Pointer to [**[]WizIssueSeverity**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
-**SeverityFilter** | Pointer to [**[]TypesStringFilter**](TypesStringFilter.md) |  | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to [**WizNoteFilter**](WizNoteFilter.md) |  | [optional] 
 **HasRemediation** | Pointer to [**WizRemediationFilter**](WizRemediationFilter.md) |  | [optional] 
@@ -1815,31 +1813,6 @@ SetIngestionLagSeconds sets IngestionLagSeconds field to given value.
 
 HasIngestionLagSeconds returns a boolean if a field has been set.
 
-### GetUsesStaticCreds
-
-`func (o *SecretProcessesorInputConfigSettings) GetUsesStaticCreds() bool`
-
-GetUsesStaticCreds returns the UsesStaticCreds field if non-nil, zero value otherwise.
-
-### GetUsesStaticCredsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUsesStaticCredsOk() (*bool, bool)`
-
-GetUsesStaticCredsOk returns a tuple with the UsesStaticCreds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsesStaticCreds
-
-`func (o *SecretProcessesorInputConfigSettings) SetUsesStaticCreds(v bool)`
-
-SetUsesStaticCreds sets UsesStaticCreds field to given value.
-
-### HasUsesStaticCreds
-
-`func (o *SecretProcessesorInputConfigSettings) HasUsesStaticCreds() bool`
-
-HasUsesStaticCreds returns a boolean if a field has been set.
-
 ### GetNamespace
 
 `func (o *SecretProcessesorInputConfigSettings) GetNamespace() string`
@@ -2354,31 +2327,6 @@ SetSeverities sets Severities field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSeverities() bool`
 
 HasSeverities returns a boolean if a field has been set.
-
-### GetSeverityFilter
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverityFilter() []TypesStringFilter`
-
-GetSeverityFilter returns the SeverityFilter field if non-nil, zero value otherwise.
-
-### GetSeverityFilterOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverityFilterOk() (*[]TypesStringFilter, bool)`
-
-GetSeverityFilterOk returns a tuple with the SeverityFilter field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeverityFilter
-
-`func (o *SecretProcessesorInputConfigSettings) SetSeverityFilter(v []TypesStringFilter)`
-
-SetSeverityFilter sets SeverityFilter field to given value.
-
-### HasSeverityFilter
-
-`func (o *SecretProcessesorInputConfigSettings) HasSeverityFilter() bool`
-
-HasSeverityFilter returns a boolean if a field has been set.
 
 ### GetControlIds
 

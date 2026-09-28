@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **region** | **str** | The AWS region where Inspector is enabled. | [optional] 
 **role_arn** | **str** | The ARN of the IAM role to assume for accessing Inspector. | [optional] 
 **severities** | **List[str]** | Minimum severity level of findings to fetch. | [optional] 
-**severity_filter** | [**List[TypesStringFilter]**](TypesStringFilter.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 
 ## Example

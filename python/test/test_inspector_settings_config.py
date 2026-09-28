@@ -42,11 +42,6 @@ class TestInspectorSettingsConfig(unittest.TestCase):
                 severities = [
                     ''
                     ],
-                severity_filter = [
-                    monad.models.types/string_filter.types.StringFilter(
-                        comparison = 'EQUALS', 
-                        value = '', )
-                    ],
                 use_synthetic_data = True
             )
         else:

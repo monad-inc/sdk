@@ -41,8 +41,7 @@ class TestEksAuditLogsSettingsConfig(unittest.TestCase):
                 ingestion_lag_seconds = 5,
                 region = '',
                 role_arn = '',
-                use_synthetic_data = True,
-                uses_static_creds = True
+                use_synthetic_data = True
             )
         else:
             return EksAuditLogsSettingsConfig(
