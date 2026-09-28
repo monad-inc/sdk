@@ -50,11 +50,6 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class AzureVnetFlowLogsSettingsConfig {
-  public static final String SERIALIZED_NAME_PREFIX = "prefix";
-  @SerializedName(SERIALIZED_NAME_PREFIX)
-  @javax.annotation.Nullable
-  private String prefix;
-
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nullable
@@ -92,25 +87,6 @@ public class AzureVnetFlowLogsSettingsConfig {
 
   public AzureVnetFlowLogsSettingsConfig() {
   }
-
-  public AzureVnetFlowLogsSettingsConfig prefix(@javax.annotation.Nullable String prefix) {
-    this.prefix = prefix;
-    return this;
-  }
-
-  /**
-   * Get prefix
-   * @return prefix
-   */
-  @javax.annotation.Nullable
-  public String getPrefix() {
-    return prefix;
-  }
-
-  public void setPrefix(@javax.annotation.Nullable String prefix) {
-    this.prefix = prefix;
-  }
-
 
   public AzureVnetFlowLogsSettingsConfig region(@javax.annotation.Nullable String region) {
     this.region = region;
@@ -255,8 +231,7 @@ public class AzureVnetFlowLogsSettingsConfig {
       return false;
     }
     AzureVnetFlowLogsSettingsConfig azureVnetFlowLogsSettingsConfig = (AzureVnetFlowLogsSettingsConfig) o;
-    return Objects.equals(this.prefix, azureVnetFlowLogsSettingsConfig.prefix) &&
-        Objects.equals(this.region, azureVnetFlowLogsSettingsConfig.region) &&
+    return Objects.equals(this.region, azureVnetFlowLogsSettingsConfig.region) &&
         Objects.equals(this.resourceGroupName, azureVnetFlowLogsSettingsConfig.resourceGroupName) &&
         Objects.equals(this.storageAccountUrl, azureVnetFlowLogsSettingsConfig.storageAccountUrl) &&
         Objects.equals(this.subscriptionId, azureVnetFlowLogsSettingsConfig.subscriptionId) &&
@@ -267,14 +242,13 @@ public class AzureVnetFlowLogsSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(prefix, region, resourceGroupName, storageAccountUrl, subscriptionId, tenantId, useSyntheticData, virtualNetworkName);
+    return Objects.hash(region, resourceGroupName, storageAccountUrl, subscriptionId, tenantId, useSyntheticData, virtualNetworkName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AzureVnetFlowLogsSettingsConfig {\n");
-    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    resourceGroupName: ").append(toIndentedString(resourceGroupName)).append("\n");
     sb.append("    storageAccountUrl: ").append(toIndentedString(storageAccountUrl)).append("\n");
@@ -300,7 +274,7 @@ public class AzureVnetFlowLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("prefix", "region", "resource_group_name", "storage_account_url", "subscription_id", "tenant_id", "use_synthetic_data", "virtual_network_name"));
+    openapiFields = new HashSet<String>(Arrays.asList("region", "resource_group_name", "storage_account_url", "subscription_id", "tenant_id", "use_synthetic_data", "virtual_network_name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -327,9 +301,6 @@ public class AzureVnetFlowLogsSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
-      }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }

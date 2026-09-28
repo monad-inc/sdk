@@ -38,14 +38,6 @@ public class AzureVnetFlowLogsSettingsConfigTest {
     }
 
     /**
-     * Test the property 'prefix'
-     */
-    @Test
-    public void prefixTest() {
-        // TODO: test prefix
-    }
-
-    /**
      * Test the property 'region'
      */
     @Test

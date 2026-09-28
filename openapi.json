@@ -717,9 +717,6 @@
             "azure_vnet_flow_logs.SettingsConfig": {
                 "description": "Microsoft Azure Vnet Flow Logs settings",
                 "properties": {
-                    "prefix": {
-                        "type": "string"
-                    },
                     "region": {
                         "description": "The Azure region where the virtual network is located",
                         "type": "string"
@@ -4100,9 +4097,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {

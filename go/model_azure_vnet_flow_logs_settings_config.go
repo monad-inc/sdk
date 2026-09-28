@@ -20,7 +20,6 @@ var _ MappedNullable = &AzureVnetFlowLogsSettingsConfig{}
 
 // AzureVnetFlowLogsSettingsConfig Microsoft Azure Vnet Flow Logs settings
 type AzureVnetFlowLogsSettingsConfig struct {
-	Prefix *string `json:"prefix,omitempty"`
 	// The Azure region where the virtual network is located
 	Region *string `json:"region,omitempty"`
 	// The name of the resource group containing the virtual network
@@ -52,38 +51,6 @@ func NewAzureVnetFlowLogsSettingsConfig() *AzureVnetFlowLogsSettingsConfig {
 func NewAzureVnetFlowLogsSettingsConfigWithDefaults() *AzureVnetFlowLogsSettingsConfig {
 	this := AzureVnetFlowLogsSettingsConfig{}
 	return &this
-}
-
-// GetPrefix returns the Prefix field value if set, zero value otherwise.
-func (o *AzureVnetFlowLogsSettingsConfig) GetPrefix() string {
-	if o == nil || IsNil(o.Prefix) {
-		var ret string
-		return ret
-	}
-	return *o.Prefix
-}
-
-// GetPrefixOk returns a tuple with the Prefix field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AzureVnetFlowLogsSettingsConfig) GetPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.Prefix) {
-		return nil, false
-	}
-	return o.Prefix, true
-}
-
-// HasPrefix returns a boolean if a field has been set.
-func (o *AzureVnetFlowLogsSettingsConfig) HasPrefix() bool {
-	if o != nil && !IsNil(o.Prefix) {
-		return true
-	}
-
-	return false
-}
-
-// SetPrefix gets a reference to the given string and assigns it to the Prefix field.
-func (o *AzureVnetFlowLogsSettingsConfig) SetPrefix(v string) {
-	o.Prefix = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -320,9 +287,6 @@ func (o AzureVnetFlowLogsSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o AzureVnetFlowLogsSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Prefix) {
-		toSerialize["prefix"] = o.Prefix
-	}
 	if !IsNil(o.Region) {
 		toSerialize["region"] = o.Region
 	}

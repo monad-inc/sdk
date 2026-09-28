@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Prefix** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** | The Azure region where the virtual network is located | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
 **StorageAccountUrl** | Pointer to **string** | The Azure storage account URL where flow logs are stored | [optional] 
@@ -31,31 +30,6 @@ will change when the set of required properties is changed
 NewAzureVnetFlowLogsSettingsConfigWithDefaults instantiates a new AzureVnetFlowLogsSettingsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPrefix
-
-`func (o *AzureVnetFlowLogsSettingsConfig) GetPrefix() string`
-
-GetPrefix returns the Prefix field if non-nil, zero value otherwise.
-
-### GetPrefixOk
-
-`func (o *AzureVnetFlowLogsSettingsConfig) GetPrefixOk() (*string, bool)`
-
-GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrefix
-
-`func (o *AzureVnetFlowLogsSettingsConfig) SetPrefix(v string)`
-
-SetPrefix sets Prefix field to given value.
-
-### HasPrefix
-
-`func (o *AzureVnetFlowLogsSettingsConfig) HasPrefix() bool`
-
-HasPrefix returns a boolean if a field has been set.
 
 ### GetRegion
 

@@ -28,7 +28,6 @@ class AzureVnetFlowLogsSettingsConfig(BaseModel):
     """
     Microsoft Azure Vnet Flow Logs settings
     """ # noqa: E501
-    prefix: Optional[StrictStr] = None
     region: Optional[StrictStr] = Field(default=None, description="The Azure region where the virtual network is located")
     resource_group_name: Optional[StrictStr] = Field(default=None, description="The name of the resource group containing the virtual network")
     storage_account_url: Optional[StrictStr] = Field(default=None, description="The Azure storage account URL where flow logs are stored")
@@ -36,7 +35,7 @@ class AzureVnetFlowLogsSettingsConfig(BaseModel):
     tenant_id: Optional[StrictStr] = Field(default=None, description="The Azure Entra ID tenant (directory) ID.")
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     virtual_network_name: Optional[StrictStr] = Field(default=None, description="The name of the virtual network for which flow logs are being collected")
-    __properties: ClassVar[List[str]] = ["prefix", "region", "resource_group_name", "storage_account_url", "subscription_id", "tenant_id", "use_synthetic_data", "virtual_network_name"]
+    __properties: ClassVar[List[str]] = ["region", "resource_group_name", "storage_account_url", "subscription_id", "tenant_id", "use_synthetic_data", "virtual_network_name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,7 +88,6 @@ class AzureVnetFlowLogsSettingsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "prefix": obj.get("prefix"),
             "region": obj.get("region"),
             "resource_group_name": obj.get("resource_group_name"),
             "storage_account_url": obj.get("storage_account_url"),

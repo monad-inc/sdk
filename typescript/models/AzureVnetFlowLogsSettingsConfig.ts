@@ -16,7 +16,6 @@ import { HttpFile } from '../http/http';
 * Microsoft Azure Vnet Flow Logs settings
 */
 export class AzureVnetFlowLogsSettingsConfig {
-    'prefix'?: string;
     /**
     * The Azure region where the virtual network is located
     */
@@ -51,12 +50,6 @@ export class AzureVnetFlowLogsSettingsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
-        {
-            "name": "prefix",
-            "baseName": "prefix",
-            "type": "string",
-            "format": ""
-        },
         {
             "name": "region",
             "baseName": "region",

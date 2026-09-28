@@ -6,7 +6,6 @@ Microsoft Azure Vnet Flow Logs settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**prefix** | **str** |  | [optional] 
 **region** | **str** | The Azure region where the virtual network is located | [optional] 
 **resource_group_name** | **str** | The name of the resource group containing the virtual network | [optional] 
 **storage_account_url** | **str** | The Azure storage account URL where flow logs are stored | [optional] 

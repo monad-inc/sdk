@@ -36,7 +36,6 @@ class TestAzureVnetFlowLogsSettingsConfig(unittest.TestCase):
         model = AzureVnetFlowLogsSettingsConfig()
         if include_optional:
             return AzureVnetFlowLogsSettingsConfig(
-                prefix = '',
                 region = '',
                 resource_group_name = '',
                 storage_account_url = '',
