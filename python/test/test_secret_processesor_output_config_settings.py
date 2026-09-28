@@ -345,7 +345,22 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                         monad.models.sumologic/sumo_field.sumologic.SumoField(
                             field_name = '', 
                             field_value = '', )
-                        ], )
+                        ], ),
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
+                enable_compression = True,
+                tenant_fqdn = ''
             )
         else:
             return SecretProcessesorOutputConfigSettings(
@@ -453,6 +468,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                         shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
+                tenant_fqdn = '',
         )
         """
 

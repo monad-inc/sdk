@@ -85,6 +85,7 @@ import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
 import org.openapitools.client.model.SumologicSourceMetadata;
 import org.openapitools.client.model.WazuhSettingsConfig;
+import org.openapitools.client.model.XsiamSettingsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -956,6 +957,30 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void sourceMetadataTest() {
         // TODO: test sourceMetadata
+    }
+
+    /**
+     * Test the property 'apiKey'
+     */
+    @Test
+    public void apiKeyTest() {
+        // TODO: test apiKey
+    }
+
+    /**
+     * Test the property 'enableCompression'
+     */
+    @Test
+    public void enableCompressionTest() {
+        // TODO: test enableCompression
+    }
+
+    /**
+     * Test the property 'tenantFqdn'
+     */
+    @Test
+    public void tenantFqdnTest() {
+        // TODO: test tenantFqdn
     }
 
 }

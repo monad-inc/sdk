@@ -634,6 +634,7 @@ export * from '../models/WizServiceTicketFilter';
 export * from '../models/WizStackLayer';
 export * from '../models/WizStatus';
 export * from '../models/WizVendorSeverity';
+export * from '../models/XsiamSettingsConfig';
 
 import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
@@ -1271,6 +1272,7 @@ import { WizServiceTicketFilter } from '../models/WizServiceTicketFilter';
 import { WizStackLayer } from '../models/WizStackLayer';
 import { WizStatus } from '../models/WizStatus';
 import { WizVendorSeverity } from '../models/WizVendorSeverity';
+import { XsiamSettingsConfig } from '../models/XsiamSettingsConfig';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -1955,6 +1957,7 @@ let typeMap: {[index: string]: any} = {
     "WazuhSettingsConfig": WazuhSettingsConfig,
     "WizAuditLogsSecretsConfig": WizAuditLogsSecretsConfig,
     "WizAuditLogsSettingsConfig": WizAuditLogsSettingsConfig,
+    "XsiamSettingsConfig": XsiamSettingsConfig,
 }
 
 type MimeTypeDescriptor = {

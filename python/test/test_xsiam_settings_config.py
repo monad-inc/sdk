@@ -13,26 +13,56 @@
 """  # noqa: E501
 
 
-from __future__ import annotations
-import json
-from enum import Enum
-from typing_extensions import Self
+import unittest
 
+from monad.models.xsiam_settings_config import XsiamSettingsConfig
 
-class KafkaPayloadFormat(str, Enum):
-    """
-    How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
-    """
+class TestXsiamSettingsConfig(unittest.TestCase):
+    """XsiamSettingsConfig unit test stubs"""
 
-    """
-    allowed enum values
-    """
-    payloadFormatIndividual = 'individual'
-    payloadFormatJSONArray = 'json_array'
+    def setUp(self):
+        pass
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Self:
-        """Create an instance of KafkaPayloadFormat from a JSON string"""
-        return cls(json.loads(json_str))
+    def tearDown(self):
+        pass
 
+    def make_instance(self, include_optional) -> XsiamSettingsConfig:
+        """Test XsiamSettingsConfig
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `XsiamSettingsConfig`
+        """
+        model = XsiamSettingsConfig()
+        if include_optional:
+            return XsiamSettingsConfig(
+                allow_insecure = True,
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
+                enable_compression = True,
+                tenant_fqdn = ''
+            )
+        else:
+            return XsiamSettingsConfig(
+                tenant_fqdn = '',
+        )
+        """
 
+    def testXsiamSettingsConfig(self):
+        """Test XsiamSettingsConfig"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()

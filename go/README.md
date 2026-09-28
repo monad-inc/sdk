@@ -973,6 +973,7 @@ Class | Method | HTTP request | Description
  - [WizStackLayer](docs/WizStackLayer.md)
  - [WizStatus](docs/WizStatus.md)
  - [WizVendorSeverity](docs/WizVendorSeverity.md)
+ - [XsiamSettingsConfig](docs/XsiamSettingsConfig.md)
 
 
 ## Documentation For Authorization

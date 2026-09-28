@@ -55,6 +55,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
 	WazuhSettingsConfig *WazuhSettingsConfig
+	XsiamSettingsConfig *XsiamSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
 
@@ -307,6 +308,13 @@ func SumologicSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Sumologic
 func WazuhSettingsConfigAsSecretProcessesorOutputConfigSettings(v *WazuhSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		WazuhSettingsConfig: v,
+	}
+}
+
+// XsiamSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns XsiamSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func XsiamSettingsConfigAsSecretProcessesorOutputConfigSettings(v *XsiamSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		XsiamSettingsConfig: v,
 	}
 }
 
@@ -934,6 +942,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.WazuhSettingsConfig = nil
 	}
 
+	// try to unmarshal data into XsiamSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.XsiamSettingsConfig)
+	if err == nil {
+		jsonXsiamSettingsConfig, _ := json.Marshal(dst.XsiamSettingsConfig)
+		if string(jsonXsiamSettingsConfig) == "{}" { // empty struct
+			dst.XsiamSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.XsiamSettingsConfig); err != nil {
+				dst.XsiamSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.XsiamSettingsConfig = nil
+	}
+
 	// try to unmarshal data into MapmapOfStringAny
 	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
 	if err == nil {
@@ -989,6 +1014,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
 		dst.WazuhSettingsConfig = nil
+		dst.XsiamSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(SecretProcessesorOutputConfigSettings)")
@@ -1143,6 +1169,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.WazuhSettingsConfig != nil {
 		return json.Marshal(&src.WazuhSettingsConfig)
+	}
+
+	if src.XsiamSettingsConfig != nil {
+		return json.Marshal(&src.XsiamSettingsConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -1301,6 +1331,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.WazuhSettingsConfig
 	}
 
+	if obj.XsiamSettingsConfig != nil {
+		return obj.XsiamSettingsConfig
+	}
+
 	if obj.MapmapOfStringAny != nil {
 		return obj.MapmapOfStringAny
 	}
@@ -1453,6 +1487,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.WazuhSettingsConfig != nil {
 		return *obj.WazuhSettingsConfig
+	}
+
+	if obj.XsiamSettingsConfig != nil {
+		return *obj.XsiamSettingsConfig
 	}
 
 	if obj.MapmapOfStringAny != nil {

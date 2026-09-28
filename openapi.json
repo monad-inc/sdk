@@ -4112,9 +4112,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -11518,6 +11518,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/wazuh.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/xsiam.SettingsConfig"
                             }
                         ],
                         "type": "object"
@@ -13076,6 +13079,30 @@
                 },
                 "required": [
                     "tenant_data_center"
+                ],
+                "type": "object"
+            },
+            "xsiam.SettingsConfig": {
+                "description": "Palo Alto XSIAM Output Settings",
+                "properties": {
+                    "allow_insecure": {
+                        "description": "Skip TLS verification. Not recommended outside local testing.",
+                        "type": "boolean"
+                    },
+                    "api_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "enable_compression": {
+                        "description": "By default the connector gzips the request body and sends\n`Content-Encoding: gzip`. Set true to send uncompressed instead. This\nMUST match the HTTP Log Collector's Compression setting in the XSIAM UI.",
+                        "type": "boolean"
+                    },
+                    "tenant_fqdn": {
+                        "description": "The XSIAM tenant API FQDN, hostname only (no scheme, no path).",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "tenant_fqdn"
                 ],
                 "type": "object"
             }

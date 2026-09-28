@@ -708,6 +708,7 @@ __all__ = [
     "WizStackLayer",
     "WizStatus",
     "WizVendorSeverity",
+    "XsiamSettingsConfig",
 ]
 
 # import apis into sdk package
@@ -1404,4 +1405,5 @@ from monad.models.wiz_service_ticket_filter import WizServiceTicketFilter as Wiz
 from monad.models.wiz_stack_layer import WizStackLayer as WizStackLayer
 from monad.models.wiz_status import WizStatus as WizStatus
 from monad.models.wiz_vendor_severity import WizVendorSeverity as WizVendorSeverity
+from monad.models.xsiam_settings_config import XsiamSettingsConfig as XsiamSettingsConfig
 

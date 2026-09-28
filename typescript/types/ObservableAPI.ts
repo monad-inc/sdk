@@ -639,6 +639,7 @@ import { WizServiceTicketFilter } from '../models/WizServiceTicketFilter';
 import { WizStackLayer } from '../models/WizStackLayer';
 import { WizStatus } from '../models/WizStatus';
 import { WizVendorSeverity } from '../models/WizVendorSeverity';
+import { XsiamSettingsConfig } from '../models/XsiamSettingsConfig';
 
 import { AlertRulesApiRequestFactory, AlertRulesApiResponseProcessor} from "../apis/AlertRulesApi";
 export class ObservableAlertRulesApi {

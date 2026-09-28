@@ -109,9 +109,12 @@ Name | Type | Description | Notes
 **channel_prefix** | **str** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. | [optional] 
 **pipe** | **str** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**allow_insecure** | **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
+**allow_insecure** | **bool** | Skip TLS verification. Not recommended outside local testing. | [optional] 
 **to_create** | **bool** | Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **source_metadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
+**api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**enable_compression** | **bool** | By default the connector gzips the request body and sends &#x60;Content-Encoding: gzip&#x60;. Set true to send uncompressed instead. This MUST match the HTTP Log Collector&#39;s Compression setting in the XSIAM UI. | [optional] 
+**tenant_fqdn** | **str** | The XSIAM tenant API FQDN, hostname only (no scheme, no path). | 
 
 ## Example
 

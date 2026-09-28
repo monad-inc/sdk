@@ -10,12 +10,61 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
-* How records map onto Kafka messages: individual (one message per record) or json_array (bundle the whole batch into a single JSON-array message)
+* Palo Alto XSIAM Output Settings
 */
-export enum KafkaPayloadFormat {
-    payloadFormatIndividual = 'individual',
-    payloadFormatJSONArray = 'json_array'
+export class XsiamSettingsConfig {
+    /**
+    * Skip TLS verification. Not recommended outside local testing.
+    */
+    'allowInsecure'?: boolean;
+    'apiKey'?: ModelsSecret;
+    /**
+    * By default the connector gzips the request body and sends `Content-Encoding: gzip`. Set true to send uncompressed instead. This MUST match the HTTP Log Collector\'s Compression setting in the XSIAM UI.
+    */
+    'enableCompression'?: boolean;
+    /**
+    * The XSIAM tenant API FQDN, hostname only (no scheme, no path).
+    */
+    'tenantFqdn': string;
+
+    static readonly discriminator: string | undefined = undefined;
+
+    static readonly mapping: {[index: string]: string} | undefined = undefined;
+
+    static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "allowInsecure",
+            "baseName": "allow_insecure",
+            "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "apiKey",
+            "baseName": "api_key",
+            "type": "ModelsSecret",
+            "format": ""
+        },
+        {
+            "name": "enableCompression",
+            "baseName": "enable_compression",
+            "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "tenantFqdn",
+            "baseName": "tenant_fqdn",
+            "type": "string",
+            "format": ""
+        }    ];
+
+    static getAttributeTypeMap() {
+        return XsiamSettingsConfig.attributeTypeMap;
+    }
+
+    public constructor() {
+    }
 }

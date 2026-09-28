@@ -108,15 +108,18 @@ Name | Type | Description | Notes
 **ChannelPrefix** | Pointer to **string** | Optional prefix for the channel name. Channels are named \&quot;{prefix}_{instanceID}_{i}\&quot; where instanceID is a fresh random ID per connector instance. | [optional] 
 **Pipe** | **string** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
 **PrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
+**AllowInsecure** | Pointer to **bool** | Skip TLS verification. Not recommended outside local testing. | [optional] 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **SourceMetadata** | Pointer to [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
+**ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**EnableCompression** | Pointer to **bool** | By default the connector gzips the request body and sends &#x60;Content-Encoding: gzip&#x60;. Set true to send uncompressed instead. This MUST match the HTTP Log Collector&#39;s Compression setting in the XSIAM UI. | [optional] 
+**TenantFqdn** | **string** | The XSIAM tenant API FQDN, hostname only (no scheme, no path). | 
 
 ## Methods
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, tenantFqdn string, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2650,6 +2653,76 @@ SetSourceMetadata sets SourceMetadata field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasSourceMetadata() bool`
 
 HasSourceMetadata returns a boolean if a field has been set.
+
+### GetApiKey
+
+`func (o *SecretProcessesorOutputConfigSettings) GetApiKey() ModelsSecret`
+
+GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+
+### GetApiKeyOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetApiKeyOk() (*ModelsSecret, bool)`
+
+GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKey
+
+`func (o *SecretProcessesorOutputConfigSettings) SetApiKey(v ModelsSecret)`
+
+SetApiKey sets ApiKey field to given value.
+
+### HasApiKey
+
+`func (o *SecretProcessesorOutputConfigSettings) HasApiKey() bool`
+
+HasApiKey returns a boolean if a field has been set.
+
+### GetEnableCompression
+
+`func (o *SecretProcessesorOutputConfigSettings) GetEnableCompression() bool`
+
+GetEnableCompression returns the EnableCompression field if non-nil, zero value otherwise.
+
+### GetEnableCompressionOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetEnableCompressionOk() (*bool, bool)`
+
+GetEnableCompressionOk returns a tuple with the EnableCompression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableCompression
+
+`func (o *SecretProcessesorOutputConfigSettings) SetEnableCompression(v bool)`
+
+SetEnableCompression sets EnableCompression field to given value.
+
+### HasEnableCompression
+
+`func (o *SecretProcessesorOutputConfigSettings) HasEnableCompression() bool`
+
+HasEnableCompression returns a boolean if a field has been set.
+
+### GetTenantFqdn
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTenantFqdn() string`
+
+GetTenantFqdn returns the TenantFqdn field if non-nil, zero value otherwise.
+
+### GetTenantFqdnOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTenantFqdnOk() (*string, bool)`
+
+GetTenantFqdnOk returns a tuple with the TenantFqdn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantFqdn
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTenantFqdn(v string)`
+
+SetTenantFqdn sets TenantFqdn field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -650,4 +650,5 @@ from monad.models.wiz_service_ticket_filter import WizServiceTicketFilter
 from monad.models.wiz_stack_layer import WizStackLayer
 from monad.models.wiz_status import WizStatus
 from monad.models.wiz_vendor_severity import WizVendorSeverity
+from monad.models.xsiam_settings_config import XsiamSettingsConfig
 
