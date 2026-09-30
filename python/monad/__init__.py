@@ -634,10 +634,6 @@ __all__ = [
     "SnowflakeOutputSecretsConfig",
     "SnowflakeOutputSettingsConfig",
     "SnowflakeSnowpipeStreamingSettingsConfig",
-    "SnykIssuesSecretsConfig",
-    "SnykIssuesSettingsConfig",
-    "SnykTargetsSecretsConfig",
-    "SnykTargetsSettingsConfig",
     "SplunkSecretsConfig",
     "SplunkSettingsConfig",
     "SqsS3BaseFilterVariant",
@@ -1329,10 +1325,6 @@ from monad.models.slack_webhook_variant import SlackWebhookVariant as SlackWebho
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig as SnowflakeOutputSecretsConfig
 from monad.models.snowflake_output_settings_config import SnowflakeOutputSettingsConfig as SnowflakeOutputSettingsConfig
 from monad.models.snowflake_snowpipe_streaming_settings_config import SnowflakeSnowpipeStreamingSettingsConfig as SnowflakeSnowpipeStreamingSettingsConfig
-from monad.models.snyk_issues_secrets_config import SnykIssuesSecretsConfig as SnykIssuesSecretsConfig
-from monad.models.snyk_issues_settings_config import SnykIssuesSettingsConfig as SnykIssuesSettingsConfig
-from monad.models.snyk_targets_secrets_config import SnykTargetsSecretsConfig as SnykTargetsSecretsConfig
-from monad.models.snyk_targets_settings_config import SnykTargetsSettingsConfig as SnykTargetsSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig as SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig as SplunkSettingsConfig
 from monad.models.sqs_s3_base_filter_variant import SqsS3BaseFilterVariant as SqsS3BaseFilterVariant

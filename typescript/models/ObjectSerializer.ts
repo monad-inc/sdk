@@ -560,10 +560,6 @@ export * from '../models/SlackWebhookVariant';
 export * from '../models/SnowflakeOutputSecretsConfig';
 export * from '../models/SnowflakeOutputSettingsConfig';
 export * from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
-export * from '../models/SnykIssuesSecretsConfig';
-export * from '../models/SnykIssuesSettingsConfig';
-export * from '../models/SnykTargetsSecretsConfig';
-export * from '../models/SnykTargetsSettingsConfig';
 export * from '../models/SplunkSecretsConfig';
 export * from '../models/SplunkSettingsConfig';
 export * from '../models/SqsS3BaseFilterVariant';
@@ -1196,10 +1192,6 @@ import { SlackWebhookVariant } from '../models/SlackWebhookVariant';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettingsConfig';
 import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
-import { SnykIssuesSecretsConfig } from '../models/SnykIssuesSecretsConfig';
-import { SnykIssuesSettingsConfig } from '../models/SnykIssuesSettingsConfig';
-import { SnykTargetsSecretsConfig } from '../models/SnykTargetsSecretsConfig';
-import { SnykTargetsSettingsConfig } from '../models/SnykTargetsSettingsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
 import { SqsS3BaseFilterVariant    } from '../models/SqsS3BaseFilterVariant';
@@ -1900,10 +1892,6 @@ let typeMap: {[index: string]: any} = {
     "SnowflakeOutputSecretsConfig": SnowflakeOutputSecretsConfig,
     "SnowflakeOutputSettingsConfig": SnowflakeOutputSettingsConfig,
     "SnowflakeSnowpipeStreamingSettingsConfig": SnowflakeSnowpipeStreamingSettingsConfig,
-    "SnykIssuesSecretsConfig": SnykIssuesSecretsConfig,
-    "SnykIssuesSettingsConfig": SnykIssuesSettingsConfig,
-    "SnykTargetsSecretsConfig": SnykTargetsSecretsConfig,
-    "SnykTargetsSettingsConfig": SnykTargetsSettingsConfig,
     "SplunkSecretsConfig": SplunkSecretsConfig,
     "SplunkSettingsConfig": SplunkSettingsConfig,
     "SqsS3BaseFilterVariant": SqsS3BaseFilterVariant,

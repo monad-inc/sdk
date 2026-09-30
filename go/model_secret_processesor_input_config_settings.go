@@ -71,8 +71,6 @@ type SecretProcessesorInputConfigSettings struct {
 	PaloAltoDataSecurityAlertsSettingsConfig *PaloAltoDataSecurityAlertsSettingsConfig
 	PlaidWebhooksSettingsConfig *PlaidWebhooksSettingsConfig
 	RedshiftAuditLogsSettingsConfig *RedshiftAuditLogsSettingsConfig
-	SnykIssuesSettingsConfig *SnykIssuesSettingsConfig
-	SnykTargetsSettingsConfig *SnykTargetsSettingsConfig
 	SyntheticDataCustomSettingsConfig *SyntheticDataCustomSettingsConfig
 	SyntheticDataSettingsConfig *SyntheticDataSettingsConfig
 	TaniumGraphqlInputSettingsConfig *TaniumGraphqlInputSettingsConfig
@@ -447,20 +445,6 @@ func PlaidWebhooksSettingsConfigAsSecretProcessesorInputConfigSettings(v *PlaidW
 func RedshiftAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *RedshiftAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		RedshiftAuditLogsSettingsConfig: v,
-	}
-}
-
-// SnykIssuesSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnykIssuesSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SnykIssuesSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykIssuesSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SnykIssuesSettingsConfig: v,
-	}
-}
-
-// SnykTargetsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns SnykTargetsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func SnykTargetsSettingsConfigAsSecretProcessesorInputConfigSettings(v *SnykTargetsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		SnykTargetsSettingsConfig: v,
 	}
 }
 
@@ -1430,40 +1414,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.RedshiftAuditLogsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into SnykIssuesSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSettingsConfig)
-	if err == nil {
-		jsonSnykIssuesSettingsConfig, _ := json.Marshal(dst.SnykIssuesSettingsConfig)
-		if string(jsonSnykIssuesSettingsConfig) == "{}" { // empty struct
-			dst.SnykIssuesSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnykIssuesSettingsConfig); err != nil {
-				dst.SnykIssuesSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnykIssuesSettingsConfig = nil
-	}
-
-	// try to unmarshal data into SnykTargetsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnykTargetsSettingsConfig)
-	if err == nil {
-		jsonSnykTargetsSettingsConfig, _ := json.Marshal(dst.SnykTargetsSettingsConfig)
-		if string(jsonSnykTargetsSettingsConfig) == "{}" { // empty struct
-			dst.SnykTargetsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnykTargetsSettingsConfig); err != nil {
-				dst.SnykTargetsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnykTargetsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into SyntheticDataCustomSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.SyntheticDataCustomSettingsConfig)
 	if err == nil {
@@ -1705,8 +1655,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.PaloAltoDataSecurityAlertsSettingsConfig = nil
 		dst.PlaidWebhooksSettingsConfig = nil
 		dst.RedshiftAuditLogsSettingsConfig = nil
-		dst.SnykIssuesSettingsConfig = nil
-		dst.SnykTargetsSettingsConfig = nil
 		dst.SyntheticDataCustomSettingsConfig = nil
 		dst.SyntheticDataSettingsConfig = nil
 		dst.TaniumGraphqlInputSettingsConfig = nil
@@ -1935,14 +1883,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.RedshiftAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.RedshiftAuditLogsSettingsConfig)
-	}
-
-	if src.SnykIssuesSettingsConfig != nil {
-		return json.Marshal(&src.SnykIssuesSettingsConfig)
-	}
-
-	if src.SnykTargetsSettingsConfig != nil {
-		return json.Marshal(&src.SnykTargetsSettingsConfig)
 	}
 
 	if src.SyntheticDataCustomSettingsConfig != nil {
@@ -2205,14 +2145,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.RedshiftAuditLogsSettingsConfig
 	}
 
-	if obj.SnykIssuesSettingsConfig != nil {
-		return obj.SnykIssuesSettingsConfig
-	}
-
-	if obj.SnykTargetsSettingsConfig != nil {
-		return obj.SnykTargetsSettingsConfig
-	}
-
 	if obj.SyntheticDataCustomSettingsConfig != nil {
 		return obj.SyntheticDataCustomSettingsConfig
 	}
@@ -2469,14 +2401,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.RedshiftAuditLogsSettingsConfig != nil {
 		return *obj.RedshiftAuditLogsSettingsConfig
-	}
-
-	if obj.SnykIssuesSettingsConfig != nil {
-		return *obj.SnykIssuesSettingsConfig
-	}
-
-	if obj.SnykTargetsSettingsConfig != nil {
-		return *obj.SnykTargetsSettingsConfig
 	}
 
 	if obj.SyntheticDataCustomSettingsConfig != nil {

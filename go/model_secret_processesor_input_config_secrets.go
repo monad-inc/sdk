@@ -63,8 +63,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
 	PlaidWebhooksSecretsConfig *PlaidWebhooksSecretsConfig
-	SnykIssuesSecretsConfig *SnykIssuesSecretsConfig
-	SnykTargetsSecretsConfig *SnykTargetsSecretsConfig
 	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
 	TinesAuditLogsSecretsConfig *TinesAuditLogsSecretsConfig
 	TinesEventsLogsSecretsConfig *TinesEventsLogsSecretsConfig
@@ -381,20 +379,6 @@ func PaloAltoDataSecurityAlertsSecretsConfigAsSecretProcessesorInputConfigSecret
 func PlaidWebhooksSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PlaidWebhooksSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		PlaidWebhooksSecretsConfig: v,
-	}
-}
-
-// SnykIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnykIssuesSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SnykIssuesSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykIssuesSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SnykIssuesSecretsConfig: v,
-	}
-}
-
-// SnykTargetsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns SnykTargetsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func SnykTargetsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *SnykTargetsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		SnykTargetsSecretsConfig: v,
 	}
 }
 
@@ -1214,40 +1198,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PlaidWebhooksSecretsConfig = nil
 	}
 
-	// try to unmarshal data into SnykIssuesSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnykIssuesSecretsConfig)
-	if err == nil {
-		jsonSnykIssuesSecretsConfig, _ := json.Marshal(dst.SnykIssuesSecretsConfig)
-		if string(jsonSnykIssuesSecretsConfig) == "{}" { // empty struct
-			dst.SnykIssuesSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnykIssuesSecretsConfig); err != nil {
-				dst.SnykIssuesSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnykIssuesSecretsConfig = nil
-	}
-
-	// try to unmarshal data into SnykTargetsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.SnykTargetsSecretsConfig)
-	if err == nil {
-		jsonSnykTargetsSecretsConfig, _ := json.Marshal(dst.SnykTargetsSecretsConfig)
-		if string(jsonSnykTargetsSecretsConfig) == "{}" { // empty struct
-			dst.SnykTargetsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.SnykTargetsSecretsConfig); err != nil {
-				dst.SnykTargetsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.SnykTargetsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into TaniumGraphqlInputSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.TaniumGraphqlInputSecretsConfig)
 	if err == nil {
@@ -1447,8 +1397,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OrgAuditLogsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 		dst.PlaidWebhooksSecretsConfig = nil
-		dst.SnykIssuesSecretsConfig = nil
-		dst.SnykTargetsSecretsConfig = nil
 		dst.TaniumGraphqlInputSecretsConfig = nil
 		dst.TinesAuditLogsSecretsConfig = nil
 		dst.TinesEventsLogsSecretsConfig = nil
@@ -1643,14 +1591,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.PlaidWebhooksSecretsConfig != nil {
 		return json.Marshal(&src.PlaidWebhooksSecretsConfig)
-	}
-
-	if src.SnykIssuesSecretsConfig != nil {
-		return json.Marshal(&src.SnykIssuesSecretsConfig)
-	}
-
-	if src.SnykTargetsSecretsConfig != nil {
-		return json.Marshal(&src.SnykTargetsSecretsConfig)
 	}
 
 	if src.TaniumGraphqlInputSecretsConfig != nil {
@@ -1873,14 +1813,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.PlaidWebhooksSecretsConfig
 	}
 
-	if obj.SnykIssuesSecretsConfig != nil {
-		return obj.SnykIssuesSecretsConfig
-	}
-
-	if obj.SnykTargetsSecretsConfig != nil {
-		return obj.SnykTargetsSecretsConfig
-	}
-
 	if obj.TaniumGraphqlInputSecretsConfig != nil {
 		return obj.TaniumGraphqlInputSecretsConfig
 	}
@@ -2097,14 +2029,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.PlaidWebhooksSecretsConfig != nil {
 		return *obj.PlaidWebhooksSecretsConfig
-	}
-
-	if obj.SnykIssuesSecretsConfig != nil {
-		return *obj.SnykIssuesSecretsConfig
-	}
-
-	if obj.SnykTargetsSecretsConfig != nil {
-		return *obj.SnykTargetsSecretsConfig
 	}
 
 	if obj.TaniumGraphqlInputSecretsConfig != nil {

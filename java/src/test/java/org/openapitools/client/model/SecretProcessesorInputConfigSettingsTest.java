@@ -84,8 +84,6 @@ import org.openapitools.client.model.OrgAuditLogsSettingsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSettingsConfig;
 import org.openapitools.client.model.PlaidWebhooksSettingsConfig;
 import org.openapitools.client.model.RedshiftAuditLogsSettingsConfig;
-import org.openapitools.client.model.SnykIssuesSettingsConfig;
-import org.openapitools.client.model.SnykTargetsSettingsConfig;
 import org.openapitools.client.model.SqsS3BaseKeyFilter;
 import org.openapitools.client.model.SyntheticDataCustomSettingsConfig;
 import org.openapitools.client.model.SyntheticDataSettingsConfig;

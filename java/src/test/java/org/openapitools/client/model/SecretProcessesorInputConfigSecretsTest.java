@@ -66,8 +66,6 @@ import org.openapitools.client.model.OperationLogsSecretsConfig;
 import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
 import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
-import org.openapitools.client.model.SnykIssuesSecretsConfig;
-import org.openapitools.client.model.SnykTargetsSecretsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
 import org.openapitools.client.model.TinesAuditLogsSecretsConfig;
 import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
