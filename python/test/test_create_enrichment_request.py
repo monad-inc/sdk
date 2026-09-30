@@ -36,7 +36,7 @@ class TestCreateEnrichmentRequest(unittest.TestCase):
         model = CreateEnrichmentRequest()
         if include_optional:
             return CreateEnrichmentRequest(
-                config = monad.models.models/enrichment_config.models.EnrichmentConfig(
+                config = monad.models.secret_processesor/enrichment_config.secret_processesor.EnrichmentConfig(
                     secrets = {
                         'key' : null
                         }, 

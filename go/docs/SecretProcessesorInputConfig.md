@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Secrets** | Pointer to **map[string]interface{}** |  | [optional] 
-**Settings** | Pointer to **map[string]interface{}** |  | [optional] 
+**Secrets** | Pointer to [**SecretProcessesorInputConfigSecrets**](SecretProcessesorInputConfigSecrets.md) |  | [optional] 
+**Settings** | Pointer to [**SecretProcessesorInputConfigSettings**](SecretProcessesorInputConfigSettings.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSecrets
 
-`func (o *SecretProcessesorInputConfig) GetSecrets() map[string]interface{}`
+`func (o *SecretProcessesorInputConfig) GetSecrets() SecretProcessesorInputConfigSecrets`
 
 GetSecrets returns the Secrets field if non-nil, zero value otherwise.
 
 ### GetSecretsOk
 
-`func (o *SecretProcessesorInputConfig) GetSecretsOk() (*map[string]interface{}, bool)`
+`func (o *SecretProcessesorInputConfig) GetSecretsOk() (*SecretProcessesorInputConfigSecrets, bool)`
 
 GetSecretsOk returns a tuple with the Secrets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecrets
 
-`func (o *SecretProcessesorInputConfig) SetSecrets(v map[string]interface{})`
+`func (o *SecretProcessesorInputConfig) SetSecrets(v SecretProcessesorInputConfigSecrets)`
 
 SetSecrets sets Secrets field to given value.
 
@@ -53,20 +53,20 @@ HasSecrets returns a boolean if a field has been set.
 
 ### GetSettings
 
-`func (o *SecretProcessesorInputConfig) GetSettings() map[string]interface{}`
+`func (o *SecretProcessesorInputConfig) GetSettings() SecretProcessesorInputConfigSettings`
 
 GetSettings returns the Settings field if non-nil, zero value otherwise.
 
 ### GetSettingsOk
 
-`func (o *SecretProcessesorInputConfig) GetSettingsOk() (*map[string]interface{}, bool)`
+`func (o *SecretProcessesorInputConfig) GetSettingsOk() (*SecretProcessesorInputConfigSettings, bool)`
 
 GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSettings
 
-`func (o *SecretProcessesorInputConfig) SetSettings(v map[string]interface{})`
+`func (o *SecretProcessesorInputConfig) SetSettings(v SecretProcessesorInputConfigSettings)`
 
 SetSettings sets Settings field to given value.
 
