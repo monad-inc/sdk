@@ -21,6 +21,10 @@ export class ModelsAPIKeyWithToken {
     * JWTSigningKeyID is the jwt_signing_keys row that signed the key\'s current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded.
     */
     'jwtSigningKeyId'?: string;
+    /**
+    * LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began.
+    */
+    'lastUsedAt'?: string;
     'name'?: string;
     'organizationId'?: string;
     'roleId'?: string;
@@ -63,6 +67,12 @@ export class ModelsAPIKeyWithToken {
         {
             "name": "jwtSigningKeyId",
             "baseName": "jwt_signing_key_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "lastUsedAt",
+            "baseName": "last_used_at",
             "type": "string",
             "format": ""
         },

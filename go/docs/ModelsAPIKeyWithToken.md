@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ExpirationTime** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **JwtSigningKeyId** | Pointer to **string** | JWTSigningKeyID is the jwt_signing_keys row that signed the key&#39;s current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded. | [optional] 
+**LastUsedAt** | Pointer to **string** | LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began. | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **RoleId** | Pointer to **string** |  | [optional] 
@@ -159,6 +160,31 @@ SetJwtSigningKeyId sets JwtSigningKeyId field to given value.
 `func (o *ModelsAPIKeyWithToken) HasJwtSigningKeyId() bool`
 
 HasJwtSigningKeyId returns a boolean if a field has been set.
+
+### GetLastUsedAt
+
+`func (o *ModelsAPIKeyWithToken) GetLastUsedAt() string`
+
+GetLastUsedAt returns the LastUsedAt field if non-nil, zero value otherwise.
+
+### GetLastUsedAtOk
+
+`func (o *ModelsAPIKeyWithToken) GetLastUsedAtOk() (*string, bool)`
+
+GetLastUsedAtOk returns a tuple with the LastUsedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastUsedAt
+
+`func (o *ModelsAPIKeyWithToken) SetLastUsedAt(v string)`
+
+SetLastUsedAt sets LastUsedAt field to given value.
+
+### HasLastUsedAt
+
+`func (o *ModelsAPIKeyWithToken) HasLastUsedAt() bool`
+
+HasLastUsedAt returns a boolean if a field has been set.
 
 ### GetName
 

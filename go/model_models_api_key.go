@@ -26,6 +26,8 @@ type ModelsAPIKey struct {
 	Id *string `json:"id,omitempty"`
 	// JWTSigningKeyID is the jwt_signing_keys row that signed the key's current token. Re-stamped on rotation. Empty when signed via the legacy HS256 path (no signing-key row), or for keys created before this was recorded.
 	JwtSigningKeyId *string `json:"jwt_signing_key_id,omitempty"`
+	// LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began.
+	LastUsedAt *string `json:"last_used_at,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
@@ -209,6 +211,38 @@ func (o *ModelsAPIKey) HasJwtSigningKeyId() bool {
 // SetJwtSigningKeyId gets a reference to the given string and assigns it to the JwtSigningKeyId field.
 func (o *ModelsAPIKey) SetJwtSigningKeyId(v string) {
 	o.JwtSigningKeyId = &v
+}
+
+// GetLastUsedAt returns the LastUsedAt field value if set, zero value otherwise.
+func (o *ModelsAPIKey) GetLastUsedAt() string {
+	if o == nil || IsNil(o.LastUsedAt) {
+		var ret string
+		return ret
+	}
+	return *o.LastUsedAt
+}
+
+// GetLastUsedAtOk returns a tuple with the LastUsedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAPIKey) GetLastUsedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.LastUsedAt) {
+		return nil, false
+	}
+	return o.LastUsedAt, true
+}
+
+// HasLastUsedAt returns a boolean if a field has been set.
+func (o *ModelsAPIKey) HasLastUsedAt() bool {
+	if o != nil && !IsNil(o.LastUsedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUsedAt gets a reference to the given string and assigns it to the LastUsedAt field.
+func (o *ModelsAPIKey) SetLastUsedAt(v string) {
+	o.LastUsedAt = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -395,6 +429,9 @@ func (o ModelsAPIKey) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.JwtSigningKeyId) {
 		toSerialize["jwt_signing_key_id"] = o.JwtSigningKeyId
+	}
+	if !IsNil(o.LastUsedAt) {
+		toSerialize["last_used_at"] = o.LastUsedAt
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

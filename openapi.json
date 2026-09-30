@@ -4097,9 +4097,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -4462,6 +4462,10 @@
                         "description": "JWTSigningKeyID is the jwt_signing_keys row that signed the key's current\ntoken. Re-stamped on rotation. Empty when signed via the legacy HS256\npath (no signing-key row), or for keys created before this was recorded.",
                         "type": "string"
                     },
+                    "last_used_at": {
+                        "description": "LastUsedAt is when the key, or a token minted from it, last\nauthenticated a request. Recorded at most once a minute, so it can lag\nreal use by that much. Nil when the key has not been used since tracking\nbegan.",
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
                     },
@@ -4512,6 +4516,10 @@
                     },
                     "jwt_signing_key_id": {
                         "description": "JWTSigningKeyID is the jwt_signing_keys row that signed the key's current\ntoken. Re-stamped on rotation. Empty when signed via the legacy HS256\npath (no signing-key row), or for keys created before this was recorded.",
+                        "type": "string"
+                    },
+                    "last_used_at": {
+                        "description": "LastUsedAt is when the key, or a token minted from it, last\nauthenticated a request. Recorded at most once a minute, so it can lag\nreal use by that much. Nil when the key has not been used since tracking\nbegan.",
                         "type": "string"
                     },
                     "name": {

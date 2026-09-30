@@ -75,6 +75,11 @@ public class ModelsAPIKeyWithToken {
   @javax.annotation.Nullable
   private String jwtSigningKeyId;
 
+  public static final String SERIALIZED_NAME_LAST_USED_AT = "last_used_at";
+  @SerializedName(SERIALIZED_NAME_LAST_USED_AT)
+  @javax.annotation.Nullable
+  private String lastUsedAt;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
@@ -200,6 +205,25 @@ public class ModelsAPIKeyWithToken {
 
   public void setJwtSigningKeyId(@javax.annotation.Nullable String jwtSigningKeyId) {
     this.jwtSigningKeyId = jwtSigningKeyId;
+  }
+
+
+  public ModelsAPIKeyWithToken lastUsedAt(@javax.annotation.Nullable String lastUsedAt) {
+    this.lastUsedAt = lastUsedAt;
+    return this;
+  }
+
+  /**
+   * LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began.
+   * @return lastUsedAt
+   */
+  @javax.annotation.Nullable
+  public String getLastUsedAt() {
+    return lastUsedAt;
+  }
+
+  public void setLastUsedAt(@javax.annotation.Nullable String lastUsedAt) {
+    this.lastUsedAt = lastUsedAt;
   }
 
 
@@ -332,6 +356,7 @@ public class ModelsAPIKeyWithToken {
         Objects.equals(this.expirationTime, modelsAPIKeyWithToken.expirationTime) &&
         Objects.equals(this.id, modelsAPIKeyWithToken.id) &&
         Objects.equals(this.jwtSigningKeyId, modelsAPIKeyWithToken.jwtSigningKeyId) &&
+        Objects.equals(this.lastUsedAt, modelsAPIKeyWithToken.lastUsedAt) &&
         Objects.equals(this.name, modelsAPIKeyWithToken.name) &&
         Objects.equals(this.organizationId, modelsAPIKeyWithToken.organizationId) &&
         Objects.equals(this.roleId, modelsAPIKeyWithToken.roleId) &&
@@ -342,7 +367,7 @@ public class ModelsAPIKeyWithToken {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, expirationTime, id, jwtSigningKeyId, name, organizationId, roleId, token, tokenVersion, updatedAt);
+    return Objects.hash(createdAt, description, expirationTime, id, jwtSigningKeyId, lastUsedAt, name, organizationId, roleId, token, tokenVersion, updatedAt);
   }
 
   @Override
@@ -354,6 +379,7 @@ public class ModelsAPIKeyWithToken {
     sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    jwtSigningKeyId: ").append(toIndentedString(jwtSigningKeyId)).append("\n");
+    sb.append("    lastUsedAt: ").append(toIndentedString(lastUsedAt)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
@@ -378,7 +404,7 @@ public class ModelsAPIKeyWithToken {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "name", "organization_id", "role_id", "token", "token_version", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "last_used_at", "name", "organization_id", "role_id", "token", "token_version", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -419,6 +445,9 @@ public class ModelsAPIKeyWithToken {
       }
       if ((jsonObj.get("jwt_signing_key_id") != null && !jsonObj.get("jwt_signing_key_id").isJsonNull()) && !jsonObj.get("jwt_signing_key_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `jwt_signing_key_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jwt_signing_key_id").toString()));
+      }
+      if ((jsonObj.get("last_used_at") != null && !jsonObj.get("last_used_at").isJsonNull()) && !jsonObj.get("last_used_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_used_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_used_at").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));

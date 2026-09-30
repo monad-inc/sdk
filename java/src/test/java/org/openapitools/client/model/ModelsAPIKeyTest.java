@@ -78,6 +78,14 @@ public class ModelsAPIKeyTest {
     }
 
     /**
+     * Test the property 'lastUsedAt'
+     */
+    @Test
+    public void lastUsedAtTest() {
+        // TODO: test lastUsedAt
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

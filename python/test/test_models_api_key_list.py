@@ -43,6 +43,7 @@ class TestModelsAPIKeyList(unittest.TestCase):
                         expiration_time = '', 
                         id = '', 
                         jwt_signing_key_id = '', 
+                        last_used_at = '', 
                         name = '', 
                         organization_id = '', 
                         role_id = '', 
