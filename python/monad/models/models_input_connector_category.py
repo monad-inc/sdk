@@ -35,6 +35,7 @@ class ModelsInputConnectorCategory(str, Enum):
     DataSecurity = 'Data Security'
     EmailSecurity = 'Email Security'
     EndpointSecurity = 'Endpoint Security'
+    FinancialServices = 'Financial Services'
     HealthcareSecurity = 'Healthcare Security'
     IdentitySecurity = 'Identity Security'
     IncidentResponse = 'Incident Response'

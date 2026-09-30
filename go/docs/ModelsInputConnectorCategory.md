@@ -19,6 +19,8 @@
 
 * `EndpointSecurity` (value: `"Endpoint Security"`)
 
+* `FinancialServices` (value: `"Financial Services"`)
+
 * `HealthcareSecurity` (value: `"Healthcare Security"`)
 
 * `IdentitySecurity` (value: `"Identity Security"`)

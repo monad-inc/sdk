@@ -29,6 +29,7 @@ const (
 	DataSecurity ModelsInputConnectorCategory = "Data Security"
 	EmailSecurity ModelsInputConnectorCategory = "Email Security"
 	EndpointSecurity ModelsInputConnectorCategory = "Endpoint Security"
+	FinancialServices ModelsInputConnectorCategory = "Financial Services"
 	HealthcareSecurity ModelsInputConnectorCategory = "Healthcare Security"
 	IdentitySecurity ModelsInputConnectorCategory = "Identity Security"
 	IncidentResponse ModelsInputConnectorCategory = "Incident Response"
@@ -59,6 +60,7 @@ var AllowedModelsInputConnectorCategoryEnumValues = []ModelsInputConnectorCatego
 	"Data Security",
 	"Email Security",
 	"Endpoint Security",
+	"Financial Services",
 	"Healthcare Security",
 	"Identity Security",
 	"Incident Response",

@@ -45,6 +45,8 @@ public enum ModelsInputConnectorCategory {
   
   EndpointSecurity("Endpoint Security"),
   
+  FinancialServices("Financial Services"),
+  
   HealthcareSecurity("Healthcare Security"),
   
   IdentitySecurity("Identity Security"),
