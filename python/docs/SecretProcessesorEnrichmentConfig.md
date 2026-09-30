@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**secrets** | [**SecretProcessesorEnrichmentConfigSecrets**](SecretProcessesorEnrichmentConfigSecrets.md) |  | [optional] 
-**settings** | [**SecretProcessesorEnrichmentConfigSettings**](SecretProcessesorEnrichmentConfigSettings.md) |  | [optional] 
+**secrets** | **Dict[str, object]** |  | [optional] 
+**settings** | **Dict[str, object]** |  | [optional] 
 
 ## Example
 

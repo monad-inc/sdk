@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**secrets** | [**SecretProcessesorOutputConfigSecrets**](SecretProcessesorOutputConfigSecrets.md) |  |  [optional] |
-|**settings** | [**SecretProcessesorOutputConfigSettings**](SecretProcessesorOutputConfigSettings.md) |  |  [optional] |
+|**secrets** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**settings** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 

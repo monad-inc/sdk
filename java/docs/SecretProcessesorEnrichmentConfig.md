@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**secrets** | [**SecretProcessesorEnrichmentConfigSecrets**](SecretProcessesorEnrichmentConfigSecrets.md) |  |  [optional] |
-|**settings** | [**SecretProcessesorEnrichmentConfigSettings**](SecretProcessesorEnrichmentConfigSettings.md) |  |  [optional] |
+|**secrets** | **Map&lt;String, Object&gt;** |  |  [optional] |
+|**settings** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
