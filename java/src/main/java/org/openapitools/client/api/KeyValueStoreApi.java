@@ -156,7 +156,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get KV lookup metadata
-     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @return KvlookupGetMetadataResponse
@@ -177,7 +177,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get KV lookup metadata
-     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @return ApiResponse&lt;KvlookupGetMetadataResponse&gt;
@@ -199,7 +199,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get KV lookup metadata (asynchronously)
-     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -315,7 +315,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get KV lookup sample entries
-     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get a sample of entries from the NATS KV lookup stream for a given organization and component
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param numEntries Number of sample entries to return (required)
@@ -338,7 +338,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get KV lookup sample entries
-     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get a sample of entries from the NATS KV lookup stream for a given organization and component
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param numEntries Number of sample entries to return (required)
@@ -362,7 +362,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get KV lookup sample entries (asynchronously)
-     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get a sample of entries from the NATS KV lookup stream for a given organization and component
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param numEntries Number of sample entries to return (required)
@@ -479,7 +479,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get value by key from KV lookup
-     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param key Key to look up (required)
@@ -501,7 +501,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get value by key from KV lookup
-     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param key Key to look up (required)
@@ -524,7 +524,7 @@ public class KeyValueStoreApi {
 
     /**
      * Get value by key from KV lookup (asynchronously)
-     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
      * @param organizationId Organization ID (required)
      * @param componentId Component ID (required)
      * @param key Key to look up (required)

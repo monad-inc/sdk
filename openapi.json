@@ -4097,9 +4097,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -25493,7 +25493,7 @@
         },
         "/v3/{organization_id}/kv_lookup/metadata": {
             "get": {
-                "description": "Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL",
+                "description": "Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL",
                 "operationId": "GetKVLookupMetadata",
                 "parameters": [
                     {
@@ -25566,7 +25566,7 @@
         },
         "/v3/{organization_id}/kv_lookup/sample": {
             "get": {
-                "description": "Get a sample of entries from the NATS KV lookup bucket for a given organization and component",
+                "description": "Get a sample of entries from the NATS KV lookup stream for a given organization and component",
                 "operationId": "GetKVLookupSampleEntries",
                 "parameters": [
                     {
@@ -25661,7 +25661,7 @@
         },
         "/v3/{organization_id}/kv_lookup/value": {
             "get": {
-                "description": "Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component",
+                "description": "Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component",
                 "operationId": "GetValueFromKvStore",
                 "parameters": [
                     {

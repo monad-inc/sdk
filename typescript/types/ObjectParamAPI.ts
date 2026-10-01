@@ -2482,7 +2482,7 @@ export class ObjectKeyValueStoreApi {
     }
 
     /**
-     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
      * Get KV lookup metadata
      * @param param the request object
      */
@@ -2491,7 +2491,7 @@ export class ObjectKeyValueStoreApi {
     }
 
     /**
-     * Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+     * Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
      * Get KV lookup metadata
      * @param param the request object
      */
@@ -2500,7 +2500,7 @@ export class ObjectKeyValueStoreApi {
     }
 
     /**
-     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get a sample of entries from the NATS KV lookup stream for a given organization and component
      * Get KV lookup sample entries
      * @param param the request object
      */
@@ -2509,7 +2509,7 @@ export class ObjectKeyValueStoreApi {
     }
 
     /**
-     * Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+     * Get a sample of entries from the NATS KV lookup stream for a given organization and component
      * Get KV lookup sample entries
      * @param param the request object
      */
@@ -2518,7 +2518,7 @@ export class ObjectKeyValueStoreApi {
     }
 
     /**
-     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
      * Get value by key from KV lookup
      * @param param the request object
      */
@@ -2527,7 +2527,7 @@ export class ObjectKeyValueStoreApi {
     }
 
     /**
-     * Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+     * Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
      * Get value by key from KV lookup
      * @param param the request object
      */

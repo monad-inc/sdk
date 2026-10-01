@@ -60,7 +60,7 @@ class KeyValueStoreApi:
     ) -> KvlookupGetMetadataResponse:
         """Get KV lookup metadata
 
-        Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+        Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -133,7 +133,7 @@ class KeyValueStoreApi:
     ) -> ApiResponse[KvlookupGetMetadataResponse]:
         """Get KV lookup metadata
 
-        Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+        Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -206,7 +206,7 @@ class KeyValueStoreApi:
     ) -> RESTResponseType:
         """Get KV lookup metadata
 
-        Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+        Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -346,7 +346,7 @@ class KeyValueStoreApi:
     ) -> List[RoutesV3KvEntryResponse]:
         """Get KV lookup sample entries
 
-        Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+        Get a sample of entries from the NATS KV lookup stream for a given organization and component
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -424,7 +424,7 @@ class KeyValueStoreApi:
     ) -> ApiResponse[List[RoutesV3KvEntryResponse]]:
         """Get KV lookup sample entries
 
-        Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+        Get a sample of entries from the NATS KV lookup stream for a given organization and component
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -502,7 +502,7 @@ class KeyValueStoreApi:
     ) -> RESTResponseType:
         """Get KV lookup sample entries
 
-        Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+        Get a sample of entries from the NATS KV lookup stream for a given organization and component
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -651,7 +651,7 @@ class KeyValueStoreApi:
     ) -> RoutesV3KvEntryResponse:
         """Get value by key from KV lookup
 
-        Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+        Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -728,7 +728,7 @@ class KeyValueStoreApi:
     ) -> ApiResponse[RoutesV3KvEntryResponse]:
         """Get value by key from KV lookup
 
-        Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+        Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -805,7 +805,7 @@ class KeyValueStoreApi:
     ) -> RESTResponseType:
         """Get value by key from KV lookup
 
-        Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+        Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
 
         :param organization_id: Organization ID (required)
         :type organization_id: str

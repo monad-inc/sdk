@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **getKVLookupMetadata**
 > KvlookupGetMetadataResponse getKVLookupMetadata()
 
-Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
 
 ### Example
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 # **getKVLookupSampleEntries**
 > Array<RoutesV3KvEntryResponse> getKVLookupSampleEntries()
 
-Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+Get a sample of entries from the NATS KV lookup stream for a given organization and component
 
 ### Example
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 # **getValueFromKvStore**
 > RoutesV3KvEntryResponse getValueFromKvStore()
 
-Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
 
 ### Example
 

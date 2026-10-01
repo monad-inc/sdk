@@ -44,7 +44,7 @@ func (r ApiGetKVLookupMetadataRequest) Execute() (*KvlookupGetMetadataResponse, 
 /*
 GetKVLookupMetadata Get KV lookup metadata
 
-Get metadata of the KV lookup bucket for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
+Get metadata of the KV lookup stream for a given organization and component, including key count, byte usage, last ingested time, max bytes, and TTL
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -214,7 +214,7 @@ func (r ApiGetKVLookupSampleEntriesRequest) Execute() ([]RoutesV3KvEntryResponse
 /*
 GetKVLookupSampleEntries Get KV lookup sample entries
 
-Get a sample of entries from the NATS KV lookup bucket for a given organization and component
+Get a sample of entries from the NATS KV lookup stream for a given organization and component
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
@@ -399,7 +399,7 @@ func (r ApiGetValueFromKvStoreRequest) Execute() (*RoutesV3KvEntryResponse, *htt
 /*
 GetValueFromKvStore Get value by key from KV lookup
 
-Get the value associated with a specific key from the NATS KV lookup bucket for a given organization and component
+Get the value associated with a specific key from the NATS KV lookup stream for a given organization and component
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
