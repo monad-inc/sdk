@@ -4097,9 +4097,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -5908,6 +5908,10 @@
                     },
                     "retention_policy": {
                         "$ref": "#/components/schemas/models.PipelineRetentionPolicy"
+                    },
+                    "routable": {
+                        "description": "Routable is set by the api from the inputs registry when the pipeline's input is a push\n(HTTP, OTEL, TCP) input, and the pipeline-operator labels the Pipeline from it. omitempty\nkeeps it off customer reads and leaves the ConfigHash unchanged for non-push pipelines.",
+                        "type": "boolean"
                     },
                     "status": {
                         "$ref": "#/components/schemas/models.PipelineStatus"

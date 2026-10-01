@@ -137,6 +137,11 @@ public class ModelsPipelineConfigV2 {
   @javax.annotation.Nullable
   private ModelsPipelineRetentionPolicy retentionPolicy;
 
+  public static final String SERIALIZED_NAME_ROUTABLE = "routable";
+  @SerializedName(SERIALIZED_NAME_ROUTABLE)
+  @javax.annotation.Nullable
+  private Boolean routable;
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
@@ -475,6 +480,25 @@ public class ModelsPipelineConfigV2 {
   }
 
 
+  public ModelsPipelineConfigV2 routable(@javax.annotation.Nullable Boolean routable) {
+    this.routable = routable;
+    return this;
+  }
+
+  /**
+   * Routable is set by the api from the inputs registry when the pipeline&#39;s input is a push (HTTP, OTEL, TCP) input, and the pipeline-operator labels the Pipeline from it. omitempty keeps it off customer reads and leaves the ConfigHash unchanged for non-push pipelines.
+   * @return routable
+   */
+  @javax.annotation.Nullable
+  public Boolean getRoutable() {
+    return routable;
+  }
+
+  public void setRoutable(@javax.annotation.Nullable Boolean routable) {
+    this.routable = routable;
+  }
+
+
   public ModelsPipelineConfigV2 status(@javax.annotation.Nullable ModelsPipelineStatus status) {
     this.status = status;
     return this;
@@ -566,6 +590,7 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.organizationId, modelsPipelineConfigV2.organizationId) &&
         Objects.equals(this.organizationName, modelsPipelineConfigV2.organizationName) &&
         Objects.equals(this.retentionPolicy, modelsPipelineConfigV2.retentionPolicy) &&
+        Objects.equals(this.routable, modelsPipelineConfigV2.routable) &&
         Objects.equals(this.status, modelsPipelineConfigV2.status) &&
         Objects.equals(this.tags, modelsPipelineConfigV2.tags) &&
         Objects.equals(this.updatedAt, modelsPipelineConfigV2.updatedAt);
@@ -573,7 +598,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, status, tags, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, routable, status, tags, updatedAt);
   }
 
   @Override
@@ -596,6 +621,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    organizationName: ").append(toIndentedString(organizationName)).append("\n");
     sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
+    sb.append("    routable: ").append(toIndentedString(routable)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -617,7 +643,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "tags", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "routable", "status", "tags", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** |  | [optional] 
 **OrganizationName** | Pointer to **string** |  | [optional] 
 **RetentionPolicy** | Pointer to [**ModelsPipelineRetentionPolicy**](ModelsPipelineRetentionPolicy.md) |  | [optional] 
+**Routable** | Pointer to **bool** | Routable is set by the api from the inputs registry when the pipeline&#39;s input is a push (HTTP, OTEL, TCP) input, and the pipeline-operator labels the Pipeline from it. omitempty keeps it off customer reads and leaves the ConfigHash unchanged for non-push pipelines. | [optional] 
 **Status** | Pointer to [**ModelsPipelineStatus**](ModelsPipelineStatus.md) |  | [optional] 
 **Tags** | Pointer to **[]string** | Tags is the pipeline&#39;s customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don&#39;t roll pods. | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
@@ -442,6 +443,31 @@ SetRetentionPolicy sets RetentionPolicy field to given value.
 `func (o *ModelsPipelineConfigV2) HasRetentionPolicy() bool`
 
 HasRetentionPolicy returns a boolean if a field has been set.
+
+### GetRoutable
+
+`func (o *ModelsPipelineConfigV2) GetRoutable() bool`
+
+GetRoutable returns the Routable field if non-nil, zero value otherwise.
+
+### GetRoutableOk
+
+`func (o *ModelsPipelineConfigV2) GetRoutableOk() (*bool, bool)`
+
+GetRoutableOk returns a tuple with the Routable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutable
+
+`func (o *ModelsPipelineConfigV2) SetRoutable(v bool)`
+
+SetRoutable sets Routable field to given value.
+
+### HasRoutable
+
+`func (o *ModelsPipelineConfigV2) HasRoutable() bool`
+
+HasRoutable returns a boolean if a field has been set.
 
 ### GetStatus
 

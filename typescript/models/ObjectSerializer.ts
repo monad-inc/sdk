@@ -923,7 +923,7 @@ import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline              } from '../models/ModelsPipeline';
-import { ModelsPipelineConfigV2                    } from '../models/ModelsPipelineConfigV2';
+import { ModelsPipelineConfigV2                     } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';

@@ -34,6 +34,10 @@ export class ModelsPipelineConfigV2 {
     'organizationId'?: string;
     'organizationName'?: string;
     'retentionPolicy'?: ModelsPipelineRetentionPolicy;
+    /**
+    * Routable is set by the api from the inputs registry when the pipeline\'s input is a push (HTTP, OTEL, TCP) input, and the pipeline-operator labels the Pipeline from it. omitempty keeps it off customer reads and leaves the ConfigHash unchanged for non-push pipelines.
+    */
+    'routable'?: boolean;
     'status'?: ModelsPipelineStatus;
     /**
     * Tags is the pipeline\'s customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don\'t roll pods.
@@ -140,6 +144,12 @@ export class ModelsPipelineConfigV2 {
             "name": "retentionPolicy",
             "baseName": "retention_policy",
             "type": "ModelsPipelineRetentionPolicy",
+            "format": ""
+        },
+        {
+            "name": "routable",
+            "baseName": "routable",
+            "type": "boolean",
             "format": ""
         },
         {

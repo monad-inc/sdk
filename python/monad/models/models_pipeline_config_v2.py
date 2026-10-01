@@ -49,10 +49,11 @@ class ModelsPipelineConfigV2(BaseModel):
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     organization_name: Optional[StrictStr] = Field(default=None, alias="organizationName")
     retention_policy: Optional[ModelsPipelineRetentionPolicy] = None
+    routable: Optional[StrictBool] = Field(default=None, description="Routable is set by the api from the inputs registry when the pipeline's input is a push (HTTP, OTEL, TCP) input, and the pipeline-operator labels the Pipeline from it. omitempty keeps it off customer reads and leaves the ConfigHash unchanged for non-push pipelines.")
     status: Optional[ModelsPipelineStatus] = None
     tags: Optional[List[StrictStr]] = Field(default=None, description="Tags is the pipeline's customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.")
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "status", "tags", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "routable", "status", "tags", "updatedAt"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -141,6 +142,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "organizationId": obj.get("organizationId"),
             "organizationName": obj.get("organizationName"),
             "retention_policy": ModelsPipelineRetentionPolicy.from_dict(obj["retention_policy"]) if obj.get("retention_policy") is not None else None,
+            "routable": obj.get("routable"),
             "status": ModelsPipelineStatus.from_dict(obj["status"]) if obj.get("status") is not None else None,
             "tags": obj.get("tags"),
             "updatedAt": obj.get("updatedAt")

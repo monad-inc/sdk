@@ -173,6 +173,14 @@ public class ModelsPipelineConfigV2Test {
     }
 
     /**
+     * Test the property 'routable'
+     */
+    @Test
+    public void routableTest() {
+        // TODO: test routable
+    }
+
+    /**
      * Test the property 'status'
      */
     @Test

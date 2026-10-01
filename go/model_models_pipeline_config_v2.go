@@ -36,6 +36,8 @@ type ModelsPipelineConfigV2 struct {
 	OrganizationId *string `json:"organizationId,omitempty"`
 	OrganizationName *string `json:"organizationName,omitempty"`
 	RetentionPolicy *ModelsPipelineRetentionPolicy `json:"retention_policy,omitempty"`
+	// Routable is set by the api from the inputs registry when the pipeline's input is a push (HTTP, OTEL, TCP) input, and the pipeline-operator labels the Pipeline from it. omitempty keeps it off customer reads and leaves the ConfigHash unchanged for non-push pipelines.
+	Routable *bool `json:"routable,omitempty"`
 	Status *ModelsPipelineStatus `json:"status,omitempty"`
 	// Tags is the pipeline's customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.
 	Tags []string `json:"tags,omitempty"`
@@ -571,6 +573,38 @@ func (o *ModelsPipelineConfigV2) SetRetentionPolicy(v ModelsPipelineRetentionPol
 	o.RetentionPolicy = &v
 }
 
+// GetRoutable returns the Routable field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetRoutable() bool {
+	if o == nil || IsNil(o.Routable) {
+		var ret bool
+		return ret
+	}
+	return *o.Routable
+}
+
+// GetRoutableOk returns a tuple with the Routable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetRoutableOk() (*bool, bool) {
+	if o == nil || IsNil(o.Routable) {
+		return nil, false
+	}
+	return o.Routable, true
+}
+
+// HasRoutable returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasRoutable() bool {
+	if o != nil && !IsNil(o.Routable) {
+		return true
+	}
+
+	return false
+}
+
+// SetRoutable gets a reference to the given bool and assigns it to the Routable field.
+func (o *ModelsPipelineConfigV2) SetRoutable(v bool) {
+	o.Routable = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ModelsPipelineConfigV2) GetStatus() ModelsPipelineStatus {
 	if o == nil || IsNil(o.Status) {
@@ -724,6 +758,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RetentionPolicy) {
 		toSerialize["retention_policy"] = o.RetentionPolicy
+	}
+	if !IsNil(o.Routable) {
+		toSerialize["routable"] = o.Routable
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

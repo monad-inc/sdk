@@ -147,6 +147,7 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                 retention_policy = monad.models.models/pipeline_retention_policy.models.PipelineRetentionPolicy(
                     stream_age_limit = 56, 
                     stream_size_limit = '', ),
+                routable = True,
                 status = monad.models.models/pipeline_status.models.PipelineStatus(
                     average_size_egressed = 56, 
                     average_size_ingested = 56, 
