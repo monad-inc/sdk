@@ -27,7 +27,7 @@ export class ElasticsearchSettingsConfig {
     'connectionConfig'?: ElasticsearchConnectionConfig;
     'connectionType'?: string;
     /**
-    * The name of the Elasticsearch index to write data to. If the index doesn\'t exist, it will be created automatically. Supports date templating, e.g. \"index-test-{yyyy}-{mm}-{dd}\". Tokens are resolved against the current UTC time at write time. Supported tokens: {yyyy}, {yy}, {mm}, {dd}, {hh}, {mi}, {ss}.
+    * The name of the Elasticsearch index to write data to. If the index doesn\'t exist, it will be created automatically. Supports date templating, e.g. \"index-test-{yyyy}-{mm}-{dd}\". Tokens are resolved against the current UTC time at write time. Supported tokens: {yyyy}, {yy}, {mm}, {dd}, {hh}, {mi}, {ss}. Must not be a data stream, or a name that matches a data stream index template such as \"logs-*-*\".
     */
     'index': string;
     /**
