@@ -22,6 +22,7 @@ import { DatabricksLakehouseSettingsConfig } from '../models/DatabricksLakehouse
 import { DatadogSettingsConfig } from '../models/DatadogSettingsConfig';
 import { ElasticsearchSettingsConfig } from '../models/ElasticsearchSettingsConfig';
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
+import { GoogleSecopsSettingsConfig } from '../models/GoogleSecopsSettingsConfig';
 import { HttpSettingsConfig } from '../models/HttpSettingsConfig';
 import { HydrolixSettingsConfig } from '../models/HydrolixSettingsConfig';
 import { IbmQradarSettingsConfig } from '../models/IbmQradarSettingsConfig';
@@ -54,7 +55,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CoralogixSettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | IbmQradarSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelThreatIntelligenceSettingsConfig | Sentinelv2SettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig | XsiamSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSettings = AbsSettingsConfig | AwssqsoutputSettingsConfig | AxiomSettingsConfig | BackblazeSettingsConfig | BigquerySettingsConfig | CoralogixSettingsConfig | CriblHttpSettingsConfig | DatabricksDeltaTableSettingsConfig | DatabricksLakehouseSettingsConfig | DatadogSettingsConfig | ElasticsearchSettingsConfig | GoogleCloudStorageOutputSettingsConfig | GoogleSecopsSettingsConfig | HttpSettingsConfig | HydrolixSettingsConfig | IbmQradarSettingsConfig | KafkaSettingsConfig | KvLookupOutputSettingsConfig | NextGenSiemSettingsConfig | ObjectStorageSettingsConfig | OpensearchSettingsConfig | PagerdutySettingsConfig | PantherSettingsConfig | PostgresqlSettingsConfig | PrometheusSettingsConfig | RunrevealSettingsConfig | S3SettingsConfig | ScannerSettingsConfig | SecurityLakeSettingsConfig | SentinelThreatIntelligenceSettingsConfig | Sentinelv2SettingsConfig | SlackSettingsConfig | SnowflakeOutputSettingsConfig | SnowflakeSnowpipeStreamingSettingsConfig | SplunkSettingsConfig | SumologicSettingsConfig | WazuhSettingsConfig | XsiamSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSettingsClass
@@ -65,6 +66,7 @@ export class SecretProcessesorOutputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

@@ -3263,6 +3263,57 @@
                 },
                 "type": "object"
             },
+            "google_secops.SettingsConfig": {
+                "description": "Google SecOps (Chronicle) Output Settings",
+                "properties": {
+                    "batch_config": {
+                        "$ref": "#/components/schemas/batch_config.BatchConfig"
+                    },
+                    "collection_time_path": {
+                        "type": "string"
+                    },
+                    "compress": {
+                        "type": "boolean"
+                    },
+                    "credentials_json": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "endpoint": {
+                        "type": "string"
+                    },
+                    "environment_namespace": {
+                        "type": "string"
+                    },
+                    "forwarder": {
+                        "type": "string"
+                    },
+                    "instance_id": {
+                        "type": "string"
+                    },
+                    "log_entry_time_path": {
+                        "type": "string"
+                    },
+                    "log_type": {
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "collection_time_path",
+                    "credentials_json",
+                    "instance_id",
+                    "log_entry_time_path",
+                    "log_type",
+                    "project_id",
+                    "region"
+                ],
+                "type": "object"
+            },
             "google_workspace.SecretsConfig": {
                 "description": "Google Workspace Activity secrets",
                 "properties": {
@@ -11430,6 +11481,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/google_cloud_storage_output.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/google_secops.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/http.SettingsConfig"

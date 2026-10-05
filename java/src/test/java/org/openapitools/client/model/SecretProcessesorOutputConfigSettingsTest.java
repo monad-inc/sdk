@@ -40,6 +40,7 @@ import org.openapitools.client.model.ElasticsearchConnectionConfig;
 import org.openapitools.client.model.ElasticsearchSettingsConfig;
 import org.openapitools.client.model.FormatterFormatConfig;
 import org.openapitools.client.model.GoogleCloudStorageOutputSettingsConfig;
+import org.openapitools.client.model.GoogleSecopsSettingsConfig;
 import org.openapitools.client.model.HttpPayloadStructure;
 import org.openapitools.client.model.HttpSettingsConfig;
 import org.openapitools.client.model.HydrolixSettingsConfig;
@@ -456,11 +457,75 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'collectionTimePath'
+     */
+    @Test
+    public void collectionTimePathTest() {
+        // TODO: test collectionTimePath
+    }
+
+    /**
+     * Test the property 'compress'
+     */
+    @Test
+    public void compressTest() {
+        // TODO: test compress
+    }
+
+    /**
+     * Test the property 'credentialsJson'
+     */
+    @Test
+    public void credentialsJsonTest() {
+        // TODO: test credentialsJson
+    }
+
+    /**
      * Test the property 'endpoint'
      */
     @Test
     public void endpointTest() {
         // TODO: test endpoint
+    }
+
+    /**
+     * Test the property 'environmentNamespace'
+     */
+    @Test
+    public void environmentNamespaceTest() {
+        // TODO: test environmentNamespace
+    }
+
+    /**
+     * Test the property 'forwarder'
+     */
+    @Test
+    public void forwarderTest() {
+        // TODO: test forwarder
+    }
+
+    /**
+     * Test the property 'instanceId'
+     */
+    @Test
+    public void instanceIdTest() {
+        // TODO: test instanceId
+    }
+
+    /**
+     * Test the property 'logEntryTimePath'
+     */
+    @Test
+    public void logEntryTimePathTest() {
+        // TODO: test logEntryTimePath
+    }
+
+    /**
+     * Test the property 'logType'
+     */
+    @Test
+    public void logTypeTest() {
+        // TODO: test logType
     }
 
     /**

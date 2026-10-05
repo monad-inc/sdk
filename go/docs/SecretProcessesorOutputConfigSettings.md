@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **RoleArn** | Pointer to **string** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **Dataset** | Pointer to **string** | The name of the BigQuery dataset where the table resides | [optional] 
 **Bucket** | **string** | The S3 bucket in your AWS account that Scanner indexes. | 
-**ProjectId** | Pointer to **string** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
+**ProjectId** | **string** |  | 
 **Table** | **string** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist, the connector will create it. | 
 **ApplicationName** | **string** | ApplicationName is stamped on every record. Coralogix uses this to separate environments/tenants. | 
 **Communication** | Pointer to [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
@@ -48,7 +48,15 @@ Name | Type | Description | Notes
 **Url** | **string** | The URL of the Wazuh indexer API (must start with https). | 
 **Username** | **string** | The username for authenticating with the Wazuh indexer. | 
 **Format** | Pointer to [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
+**CollectionTimePath** | **string** |  | 
+**Compress** | Pointer to **bool** |  | [optional] 
+**CredentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Endpoint** | **string** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | 
+**EnvironmentNamespace** | Pointer to **string** |  | [optional] 
+**Forwarder** | Pointer to **string** |  | [optional] 
+**InstanceId** | **string** |  | 
+**LogEntryTimePath** | **string** |  | 
+**LogType** | **string** |  | 
 **Headers** | Pointer to [**[]KafkaKafkaHeader**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **MaxBatchDataSize** | Pointer to **int32** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **MaxBatchRecordCount** | Pointer to **int32** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 
@@ -117,7 +125,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, endpoint string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, tenantFqdn string, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, projectId string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, collectionTimePath string, credentialsJson ModelsSecret, endpoint string, instanceId string, logEntryTimePath string, logType string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, tenantFqdn string, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -481,11 +489,6 @@ and a boolean to check if the value has been set.
 
 SetProjectId sets ProjectId field to given value.
 
-### HasProjectId
-
-`func (o *SecretProcessesorOutputConfigSettings) HasProjectId() bool`
-
-HasProjectId returns a boolean if a field has been set.
 
 ### GetTable
 
@@ -1147,6 +1150,71 @@ SetFormat sets Format field to given value.
 
 HasFormat returns a boolean if a field has been set.
 
+### GetCollectionTimePath
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCollectionTimePath() string`
+
+GetCollectionTimePath returns the CollectionTimePath field if non-nil, zero value otherwise.
+
+### GetCollectionTimePathOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCollectionTimePathOk() (*string, bool)`
+
+GetCollectionTimePathOk returns a tuple with the CollectionTimePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCollectionTimePath
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCollectionTimePath(v string)`
+
+SetCollectionTimePath sets CollectionTimePath field to given value.
+
+
+### GetCompress
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCompress() bool`
+
+GetCompress returns the Compress field if non-nil, zero value otherwise.
+
+### GetCompressOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCompressOk() (*bool, bool)`
+
+GetCompressOk returns a tuple with the Compress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompress
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCompress(v bool)`
+
+SetCompress sets Compress field to given value.
+
+### HasCompress
+
+`func (o *SecretProcessesorOutputConfigSettings) HasCompress() bool`
+
+HasCompress returns a boolean if a field has been set.
+
+### GetCredentialsJson
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCredentialsJson() ModelsSecret`
+
+GetCredentialsJson returns the CredentialsJson field if non-nil, zero value otherwise.
+
+### GetCredentialsJsonOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetCredentialsJsonOk() (*ModelsSecret, bool)`
+
+GetCredentialsJsonOk returns a tuple with the CredentialsJson field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentialsJson
+
+`func (o *SecretProcessesorOutputConfigSettings) SetCredentialsJson(v ModelsSecret)`
+
+SetCredentialsJson sets CredentialsJson field to given value.
+
+
 ### GetEndpoint
 
 `func (o *SecretProcessesorOutputConfigSettings) GetEndpoint() string`
@@ -1165,6 +1233,116 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorOutputConfigSettings) SetEndpoint(v string)`
 
 SetEndpoint sets Endpoint field to given value.
+
+
+### GetEnvironmentNamespace
+
+`func (o *SecretProcessesorOutputConfigSettings) GetEnvironmentNamespace() string`
+
+GetEnvironmentNamespace returns the EnvironmentNamespace field if non-nil, zero value otherwise.
+
+### GetEnvironmentNamespaceOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetEnvironmentNamespaceOk() (*string, bool)`
+
+GetEnvironmentNamespaceOk returns a tuple with the EnvironmentNamespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironmentNamespace
+
+`func (o *SecretProcessesorOutputConfigSettings) SetEnvironmentNamespace(v string)`
+
+SetEnvironmentNamespace sets EnvironmentNamespace field to given value.
+
+### HasEnvironmentNamespace
+
+`func (o *SecretProcessesorOutputConfigSettings) HasEnvironmentNamespace() bool`
+
+HasEnvironmentNamespace returns a boolean if a field has been set.
+
+### GetForwarder
+
+`func (o *SecretProcessesorOutputConfigSettings) GetForwarder() string`
+
+GetForwarder returns the Forwarder field if non-nil, zero value otherwise.
+
+### GetForwarderOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetForwarderOk() (*string, bool)`
+
+GetForwarderOk returns a tuple with the Forwarder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForwarder
+
+`func (o *SecretProcessesorOutputConfigSettings) SetForwarder(v string)`
+
+SetForwarder sets Forwarder field to given value.
+
+### HasForwarder
+
+`func (o *SecretProcessesorOutputConfigSettings) HasForwarder() bool`
+
+HasForwarder returns a boolean if a field has been set.
+
+### GetInstanceId
+
+`func (o *SecretProcessesorOutputConfigSettings) GetInstanceId() string`
+
+GetInstanceId returns the InstanceId field if non-nil, zero value otherwise.
+
+### GetInstanceIdOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetInstanceIdOk() (*string, bool)`
+
+GetInstanceIdOk returns a tuple with the InstanceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceId
+
+`func (o *SecretProcessesorOutputConfigSettings) SetInstanceId(v string)`
+
+SetInstanceId sets InstanceId field to given value.
+
+
+### GetLogEntryTimePath
+
+`func (o *SecretProcessesorOutputConfigSettings) GetLogEntryTimePath() string`
+
+GetLogEntryTimePath returns the LogEntryTimePath field if non-nil, zero value otherwise.
+
+### GetLogEntryTimePathOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetLogEntryTimePathOk() (*string, bool)`
+
+GetLogEntryTimePathOk returns a tuple with the LogEntryTimePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogEntryTimePath
+
+`func (o *SecretProcessesorOutputConfigSettings) SetLogEntryTimePath(v string)`
+
+SetLogEntryTimePath sets LogEntryTimePath field to given value.
+
+
+### GetLogType
+
+`func (o *SecretProcessesorOutputConfigSettings) GetLogType() string`
+
+GetLogType returns the LogType field if non-nil, zero value otherwise.
+
+### GetLogTypeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetLogTypeOk() (*string, bool)`
+
+GetLogTypeOk returns a tuple with the LogType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogType
+
+`func (o *SecretProcessesorOutputConfigSettings) SetLogType(v string)`
+
+SetLogType sets LogType field to given value.
 
 
 ### GetHeaders

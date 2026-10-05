@@ -519,6 +519,7 @@ Class | Method | HTTP request | Description
  - [GoogleCloudStorageOutputSettingsConfig](docs/GoogleCloudStorageOutputSettingsConfig.md)
  - [GoogleCloudStorageSecretsConfig](docs/GoogleCloudStorageSecretsConfig.md)
  - [GoogleCloudStorageSettingsConfig](docs/GoogleCloudStorageSettingsConfig.md)
+ - [GoogleSecopsSettingsConfig](docs/GoogleSecopsSettingsConfig.md)
  - [GoogleWorkspaceSecretsConfig](docs/GoogleWorkspaceSecretsConfig.md)
  - [GoogleWorkspaceSettingsConfig](docs/GoogleWorkspaceSettingsConfig.md)
  - [HashArgumentsConfig](docs/HashArgumentsConfig.md)

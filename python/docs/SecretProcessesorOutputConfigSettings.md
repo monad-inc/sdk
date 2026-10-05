@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **role_arn** | **str** | The Amazon Resource Name (ARN) of the IAM role to assume which grants access to the S3 bucket | [optional] 
 **dataset** | **str** | The name of the BigQuery dataset where the table resides | [optional] 
 **bucket** | **str** | The S3 bucket in your AWS account that Scanner indexes. | 
-**project_id** | **str** | The Google Cloud Project ID where the BigQuery instance is located | [optional] 
+**project_id** | **str** |  | 
 **table** | **str** | The name of the table in Snowflake where the data will be written. If the table doesn&#39;t exist, the connector will create it. | 
 **application_name** | **str** | ApplicationName is stamped on every record. Coralogix uses this to separate environments/tenants. | 
 **communication** | [**IbmQradarCommunicationConfig**](IbmQradarCommunicationConfig.md) |  | [optional] 
@@ -49,7 +49,15 @@ Name | Type | Description | Notes
 **url** | **str** | The URL of the Wazuh indexer API (must start with https). | 
 **username** | **str** | The username for authenticating with the Wazuh indexer. | 
 **format** | [**ScannerFormatConfig**](ScannerFormatConfig.md) |  | [optional] 
+**collection_time_path** | **str** |  | 
+**compress** | **bool** |  | [optional] 
+**credentials_json** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | 
+**environment_namespace** | **str** |  | [optional] 
+**forwarder** | **str** |  | [optional] 
+**instance_id** | **str** |  | 
+**log_entry_time_path** | **str** |  | 
+**log_type** | **str** |  | 
 **headers** | [**List[KafkaKafkaHeader]**](KafkaKafkaHeader.md) | Static headers to add to each Kafka message | [optional] 
 **max_batch_data_size** | **int** | The maximum size in KB for a single batch of data to be sent in one request. This does not effect the single payload structure. | [optional] 
 **max_batch_record_count** | **int** | The maximum number of records to include in a single batch. For single payload structure, this is automatically set to 1. For other payload structures, this determines the maximum number of records sent in a single request. | [optional] 

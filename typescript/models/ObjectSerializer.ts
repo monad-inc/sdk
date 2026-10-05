@@ -180,6 +180,7 @@ export * from '../models/GoogleCloudStorageOutputSecretsConfig';
 export * from '../models/GoogleCloudStorageOutputSettingsConfig';
 export * from '../models/GoogleCloudStorageSecretsConfig';
 export * from '../models/GoogleCloudStorageSettingsConfig';
+export * from '../models/GoogleSecopsSettingsConfig';
 export * from '../models/GoogleWorkspaceSecretsConfig';
 export * from '../models/GoogleWorkspaceSettingsConfig';
 export * from '../models/HashArgumentsConfig';
@@ -812,6 +813,7 @@ import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStor
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
+import { GoogleSecopsSettingsConfig } from '../models/GoogleSecopsSettingsConfig';
 import { GoogleWorkspaceSecretsConfig } from '../models/GoogleWorkspaceSecretsConfig';
 import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
 import { HashArgumentsConfig } from '../models/HashArgumentsConfig';
@@ -1537,6 +1539,7 @@ let typeMap: {[index: string]: any} = {
     "GoogleCloudStorageOutputSettingsConfig": GoogleCloudStorageOutputSettingsConfig,
     "GoogleCloudStorageSecretsConfig": GoogleCloudStorageSecretsConfig,
     "GoogleCloudStorageSettingsConfig": GoogleCloudStorageSettingsConfig,
+    "GoogleSecopsSettingsConfig": GoogleSecopsSettingsConfig,
     "GoogleWorkspaceSecretsConfig": GoogleWorkspaceSecretsConfig,
     "GoogleWorkspaceSettingsConfig": GoogleWorkspaceSettingsConfig,
     "HashArgumentsConfig": HashArgumentsConfig,

@@ -184,6 +184,7 @@ import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStor
 import { GoogleCloudStorageOutputSettingsConfig } from '../models/GoogleCloudStorageOutputSettingsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
 import { GoogleCloudStorageSettingsConfig } from '../models/GoogleCloudStorageSettingsConfig';
+import { GoogleSecopsSettingsConfig } from '../models/GoogleSecopsSettingsConfig';
 import { GoogleWorkspaceSecretsConfig } from '../models/GoogleWorkspaceSecretsConfig';
 import { GoogleWorkspaceSettingsConfig } from '../models/GoogleWorkspaceSettingsConfig';
 import { HashArgumentsConfig } from '../models/HashArgumentsConfig';

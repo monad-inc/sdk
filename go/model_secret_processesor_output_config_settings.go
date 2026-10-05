@@ -31,6 +31,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	DatadogSettingsConfig *DatadogSettingsConfig
 	ElasticsearchSettingsConfig *ElasticsearchSettingsConfig
 	GoogleCloudStorageOutputSettingsConfig *GoogleCloudStorageOutputSettingsConfig
+	GoogleSecopsSettingsConfig *GoogleSecopsSettingsConfig
 	HttpSettingsConfig *HttpSettingsConfig
 	HydrolixSettingsConfig *HydrolixSettingsConfig
 	IbmQradarSettingsConfig *IbmQradarSettingsConfig
@@ -140,6 +141,13 @@ func ElasticsearchSettingsConfigAsSecretProcessesorOutputConfigSettings(v *Elast
 func GoogleCloudStorageOutputSettingsConfigAsSecretProcessesorOutputConfigSettings(v *GoogleCloudStorageOutputSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		GoogleCloudStorageOutputSettingsConfig: v,
+	}
+}
+
+// GoogleSecopsSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns GoogleSecopsSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func GoogleSecopsSettingsConfigAsSecretProcessesorOutputConfigSettings(v *GoogleSecopsSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		GoogleSecopsSettingsConfig: v,
 	}
 }
 
@@ -532,6 +540,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		}
 	} else {
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
+	}
+
+	// try to unmarshal data into GoogleSecopsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.GoogleSecopsSettingsConfig)
+	if err == nil {
+		jsonGoogleSecopsSettingsConfig, _ := json.Marshal(dst.GoogleSecopsSettingsConfig)
+		if string(jsonGoogleSecopsSettingsConfig) == "{}" { // empty struct
+			dst.GoogleSecopsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.GoogleSecopsSettingsConfig); err != nil {
+				dst.GoogleSecopsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.GoogleSecopsSettingsConfig = nil
 	}
 
 	// try to unmarshal data into HttpSettingsConfig
@@ -990,6 +1015,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.DatadogSettingsConfig = nil
 		dst.ElasticsearchSettingsConfig = nil
 		dst.GoogleCloudStorageOutputSettingsConfig = nil
+		dst.GoogleSecopsSettingsConfig = nil
 		dst.HttpSettingsConfig = nil
 		dst.HydrolixSettingsConfig = nil
 		dst.IbmQradarSettingsConfig = nil
@@ -1073,6 +1099,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.GoogleCloudStorageOutputSettingsConfig != nil {
 		return json.Marshal(&src.GoogleCloudStorageOutputSettingsConfig)
+	}
+
+	if src.GoogleSecopsSettingsConfig != nil {
+		return json.Marshal(&src.GoogleSecopsSettingsConfig)
 	}
 
 	if src.HttpSettingsConfig != nil {
@@ -1235,6 +1265,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.GoogleCloudStorageOutputSettingsConfig
 	}
 
+	if obj.GoogleSecopsSettingsConfig != nil {
+		return obj.GoogleSecopsSettingsConfig
+	}
+
 	if obj.HttpSettingsConfig != nil {
 		return obj.HttpSettingsConfig
 	}
@@ -1391,6 +1425,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.GoogleCloudStorageOutputSettingsConfig != nil {
 		return *obj.GoogleCloudStorageOutputSettingsConfig
+	}
+
+	if obj.GoogleSecopsSettingsConfig != nil {
+		return *obj.GoogleSecopsSettingsConfig
 	}
 
 	if obj.HttpSettingsConfig != nil {

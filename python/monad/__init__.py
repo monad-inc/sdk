@@ -254,6 +254,7 @@ __all__ = [
     "GoogleCloudStorageOutputSettingsConfig",
     "GoogleCloudStorageSecretsConfig",
     "GoogleCloudStorageSettingsConfig",
+    "GoogleSecopsSettingsConfig",
     "GoogleWorkspaceSecretsConfig",
     "GoogleWorkspaceSettingsConfig",
     "HashArgumentsConfig",
@@ -945,6 +946,7 @@ from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudS
 from monad.models.google_cloud_storage_output_settings_config import GoogleCloudStorageOutputSettingsConfig as GoogleCloudStorageOutputSettingsConfig
 from monad.models.google_cloud_storage_secrets_config import GoogleCloudStorageSecretsConfig as GoogleCloudStorageSecretsConfig
 from monad.models.google_cloud_storage_settings_config import GoogleCloudStorageSettingsConfig as GoogleCloudStorageSettingsConfig
+from monad.models.google_secops_settings_config import GoogleSecopsSettingsConfig as GoogleSecopsSettingsConfig
 from monad.models.google_workspace_secrets_config import GoogleWorkspaceSecretsConfig as GoogleWorkspaceSecretsConfig
 from monad.models.google_workspace_settings_config import GoogleWorkspaceSettingsConfig as GoogleWorkspaceSettingsConfig
 from monad.models.hash_arguments_config import HashArgumentsConfig as HashArgumentsConfig
