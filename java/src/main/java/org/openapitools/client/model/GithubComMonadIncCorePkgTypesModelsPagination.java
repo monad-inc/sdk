@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
  * Pagination metadata.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class ModelsPagination {
+public class GithubComMonadIncCorePkgTypesModelsPagination {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
   @javax.annotation.Nullable
@@ -65,10 +65,10 @@ public class ModelsPagination {
   @javax.annotation.Nullable
   private Integer total;
 
-  public ModelsPagination() {
+  public GithubComMonadIncCorePkgTypesModelsPagination() {
   }
 
-  public ModelsPagination limit(@javax.annotation.Nullable Integer limit) {
+  public GithubComMonadIncCorePkgTypesModelsPagination limit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -87,7 +87,7 @@ public class ModelsPagination {
   }
 
 
-  public ModelsPagination offset(@javax.annotation.Nullable Integer offset) {
+  public GithubComMonadIncCorePkgTypesModelsPagination offset(@javax.annotation.Nullable Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -106,7 +106,7 @@ public class ModelsPagination {
   }
 
 
-  public ModelsPagination total(@javax.annotation.Nullable Integer total) {
+  public GithubComMonadIncCorePkgTypesModelsPagination total(@javax.annotation.Nullable Integer total) {
     this.total = total;
     return this;
   }
@@ -134,10 +134,10 @@ public class ModelsPagination {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelsPagination modelsPagination = (ModelsPagination) o;
-    return Objects.equals(this.limit, modelsPagination.limit) &&
-        Objects.equals(this.offset, modelsPagination.offset) &&
-        Objects.equals(this.total, modelsPagination.total);
+    GithubComMonadIncCorePkgTypesModelsPagination githubComMonadIncCorePkgTypesModelsPagination = (GithubComMonadIncCorePkgTypesModelsPagination) o;
+    return Objects.equals(this.limit, githubComMonadIncCorePkgTypesModelsPagination.limit) &&
+        Objects.equals(this.offset, githubComMonadIncCorePkgTypesModelsPagination.offset) &&
+        Objects.equals(this.total, githubComMonadIncCorePkgTypesModelsPagination.total);
   }
 
   @Override
@@ -148,7 +148,7 @@ public class ModelsPagination {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelsPagination {\n");
+    sb.append("class GithubComMonadIncCorePkgTypesModelsPagination {\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
@@ -180,20 +180,20 @@ public class ModelsPagination {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ModelsPagination
+   * @throws IOException if the JSON Element is invalid with respect to GithubComMonadIncCorePkgTypesModelsPagination
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ModelsPagination.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsPagination is not found in the empty JSON string", ModelsPagination.openapiRequiredFields.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsPagination.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GithubComMonadIncCorePkgTypesModelsPagination is not found in the empty JSON string", GithubComMonadIncCorePkgTypesModelsPagination.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ModelsPagination.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsPagination` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!GithubComMonadIncCorePkgTypesModelsPagination.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GithubComMonadIncCorePkgTypesModelsPagination` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -203,22 +203,22 @@ public class ModelsPagination {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ModelsPagination.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ModelsPagination' and its subtypes
+       if (!GithubComMonadIncCorePkgTypesModelsPagination.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GithubComMonadIncCorePkgTypesModelsPagination' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ModelsPagination> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsPagination.class));
+       final TypeAdapter<GithubComMonadIncCorePkgTypesModelsPagination> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GithubComMonadIncCorePkgTypesModelsPagination.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ModelsPagination>() {
+       return (TypeAdapter<T>) new TypeAdapter<GithubComMonadIncCorePkgTypesModelsPagination>() {
            @Override
-           public void write(JsonWriter out, ModelsPagination value) throws IOException {
+           public void write(JsonWriter out, GithubComMonadIncCorePkgTypesModelsPagination value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ModelsPagination read(JsonReader in) throws IOException {
+           public GithubComMonadIncCorePkgTypesModelsPagination read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -229,18 +229,18 @@ public class ModelsPagination {
   }
 
   /**
-   * Create an instance of ModelsPagination given an JSON string
+   * Create an instance of GithubComMonadIncCorePkgTypesModelsPagination given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ModelsPagination
-   * @throws IOException if the JSON string is invalid with respect to ModelsPagination
+   * @return An instance of GithubComMonadIncCorePkgTypesModelsPagination
+   * @throws IOException if the JSON string is invalid with respect to GithubComMonadIncCorePkgTypesModelsPagination
    */
-  public static ModelsPagination fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ModelsPagination.class);
+  public static GithubComMonadIncCorePkgTypesModelsPagination fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GithubComMonadIncCorePkgTypesModelsPagination.class);
   }
 
   /**
-   * Convert an instance of ModelsPagination to an JSON string
+   * Convert an instance of GithubComMonadIncCorePkgTypesModelsPagination to an JSON string
    *
    * @return JSON string
    */

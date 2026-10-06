@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_pagination import ModelsPagination
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.models_resource_share_target import ModelsResourceShareTarget
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class ModelsResourceShareTargetList(BaseModel):
     ModelsResourceShareTargetList
     """ # noqa: E501
     organizations: Optional[List[ModelsResourceShareTarget]] = Field(default=None, description="The page of child orgs.")
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     share_with_all_new_children: Optional[StrictBool] = Field(default=None, description="Whether the resource's policy auto-shares it with new direct children.")
     __properties: ClassVar[List[str]] = ["organizations", "pagination", "share_with_all_new_children"]
 
@@ -97,7 +97,7 @@ class ModelsResourceShareTargetList(BaseModel):
 
         _obj = cls.model_validate({
             "organizations": [ModelsResourceShareTarget.from_dict(_item) for _item in obj["organizations"]] if obj.get("organizations") is not None else None,
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "share_with_all_new_children": obj.get("share_with_all_new_children")
         })
         return _obj

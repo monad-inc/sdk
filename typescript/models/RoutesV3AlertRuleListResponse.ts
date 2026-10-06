@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPagination } from '../models/ModelsPagination';
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3AlertRuleListResponse {
     'alertRules'?: Array<RoutesV3AlertRuleWithMetadata>;
-    'pagination'?: ModelsPagination;
+    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class RoutesV3AlertRuleListResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "ModelsPagination",
+            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
             "format": ""
         }    ];
 

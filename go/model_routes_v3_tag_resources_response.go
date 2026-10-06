@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV3TagResourcesResponse{}
 
 // RoutesV3TagResourcesResponse struct for RoutesV3TagResourcesResponse
 type RoutesV3TagResourcesResponse struct {
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 	Resources []DatastoreTaggedResource `json:"resources,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV3TagResourcesResponseWithDefaults() *RoutesV3TagResourcesResponse
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *RoutesV3TagResourcesResponse) GetPagination() ModelsPagination {
+func (o *RoutesV3TagResourcesResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -52,7 +52,7 @@ func (o *RoutesV3TagResourcesResponse) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3TagResourcesResponse) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *RoutesV3TagResourcesResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV3TagResourcesResponse) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *RoutesV3TagResourcesResponse) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *RoutesV3TagResourcesResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

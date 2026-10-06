@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_pagination import ModelsPagination
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.routes_v3_enrichment_with_metadata import RoutesV3EnrichmentWithMetadata
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class RoutesV3ListEnrichmentsResponse(BaseModel):
     RoutesV3ListEnrichmentsResponse
     """ # noqa: E501
     enrichments: Optional[List[RoutesV3EnrichmentWithMetadata]] = None
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     __properties: ClassVar[List[str]] = ["enrichments", "pagination"]
 
     model_config = ConfigDict(
@@ -96,7 +96,7 @@ class RoutesV3ListEnrichmentsResponse(BaseModel):
 
         _obj = cls.model_validate({
             "enrichments": [RoutesV3EnrichmentWithMetadata.from_dict(_item) for _item in obj["enrichments"]] if obj.get("enrichments") is not None else None,
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         return _obj
 

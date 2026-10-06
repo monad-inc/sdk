@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **outputs** | [**List[RoutesOutputWithMetadata]**](RoutesOutputWithMetadata.md) |  | [optional] 
-**pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Example
 

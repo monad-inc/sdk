@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.DatastoreTaggedResource;
-import org.openapitools.client.model.ModelsPagination;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPagination;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { ModelsAPIKey } from '../models/ModelsAPIKey';
-import { ModelsPagination } from '../models/ModelsPagination';
 import { HttpFile } from '../http/http';
 
 export class ModelsAPIKeyList {
     'apiKeys'?: Array<ModelsAPIKey>;
-    'pagination'?: ModelsPagination;
+    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class ModelsAPIKeyList {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "ModelsPagination",
+            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
             "format": ""
         }    ];
 

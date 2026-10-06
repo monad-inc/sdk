@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPagination } from '../models/ModelsPagination';
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { ModelsSchemaHistory } from '../models/ModelsSchemaHistory';
 import { HttpFile } from '../http/http';
 
 export class ModelsSchemaHistoryList {
-    'pagination'?: ModelsPagination;
+    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
     'schemaHistory'?: Array<ModelsSchemaHistory>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class ModelsSchemaHistoryList {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "ModelsPagination",
+            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
             "format": ""
         },
         {

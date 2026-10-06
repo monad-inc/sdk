@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 **Registrations** | Pointer to [**[]ModelsMCPClientRegistration**](ModelsMCPClientRegistration.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPagination
 
-`func (o *ModelsMCPClientRegistrationList) GetPagination() ModelsPagination`
+`func (o *ModelsMCPClientRegistrationList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *ModelsMCPClientRegistrationList) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *ModelsMCPClientRegistrationList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *ModelsMCPClientRegistrationList) SetPagination(v ModelsPagination)`
+`func (o *ModelsMCPClientRegistrationList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

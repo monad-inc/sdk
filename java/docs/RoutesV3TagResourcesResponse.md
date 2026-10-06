@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**pagination** | [**ModelsPagination**](ModelsPagination.md) |  |  [optional] |
+|**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  |  [optional] |
 |**resources** | [**List&lt;DatastoreTaggedResource&gt;**](DatastoreTaggedResource.md) |  |  [optional] |
 
 

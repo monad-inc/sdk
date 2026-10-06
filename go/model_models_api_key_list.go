@@ -21,7 +21,7 @@ var _ MappedNullable = &ModelsAPIKeyList{}
 // ModelsAPIKeyList struct for ModelsAPIKeyList
 type ModelsAPIKeyList struct {
 	ApiKeys []ModelsAPIKey `json:"api_keys,omitempty"`
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 }
 
 // NewModelsAPIKeyList instantiates a new ModelsAPIKeyList object
@@ -74,9 +74,9 @@ func (o *ModelsAPIKeyList) SetApiKeys(v []ModelsAPIKey) {
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsAPIKeyList) GetPagination() ModelsPagination {
+func (o *ModelsAPIKeyList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -84,7 +84,7 @@ func (o *ModelsAPIKeyList) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAPIKeyList) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *ModelsAPIKeyList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *ModelsAPIKeyList) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *ModelsAPIKeyList) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *ModelsAPIKeyList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlertRules** | Pointer to [**[]RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md) |  | [optional] 
-**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasAlertRules returns a boolean if a field has been set.
 
 ### GetPagination
 
-`func (o *RoutesV3AlertRuleListResponse) GetPagination() ModelsPagination`
+`func (o *RoutesV3AlertRuleListResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *RoutesV3AlertRuleListResponse) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *RoutesV3AlertRuleListResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *RoutesV3AlertRuleListResponse) SetPagination(v ModelsPagination)`
+`func (o *RoutesV3AlertRuleListResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

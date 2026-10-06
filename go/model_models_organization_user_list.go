@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsOrganizationUserList{}
 
 // ModelsOrganizationUserList struct for ModelsOrganizationUserList
 type ModelsOrganizationUserList struct {
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 	Users []ModelsOrganizationUser `json:"users,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewModelsOrganizationUserListWithDefaults() *ModelsOrganizationUserList {
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsOrganizationUserList) GetPagination() ModelsPagination {
+func (o *ModelsOrganizationUserList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -52,7 +52,7 @@ func (o *ModelsOrganizationUserList) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsOrganizationUserList) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *ModelsOrganizationUserList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ModelsOrganizationUserList) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *ModelsOrganizationUserList) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *ModelsOrganizationUserList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

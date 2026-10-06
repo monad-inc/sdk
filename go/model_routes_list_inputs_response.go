@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutesListInputsResponse{}
 // RoutesListInputsResponse struct for RoutesListInputsResponse
 type RoutesListInputsResponse struct {
 	Inputs []RoutesInputWithMetadata `json:"inputs,omitempty"`
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 }
 
 // NewRoutesListInputsResponse instantiates a new RoutesListInputsResponse object
@@ -74,9 +74,9 @@ func (o *RoutesListInputsResponse) SetInputs(v []RoutesInputWithMetadata) {
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *RoutesListInputsResponse) GetPagination() ModelsPagination {
+func (o *RoutesListInputsResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -84,7 +84,7 @@ func (o *RoutesListInputsResponse) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesListInputsResponse) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *RoutesListInputsResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *RoutesListInputsResponse) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *RoutesListInputsResponse) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *RoutesListInputsResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

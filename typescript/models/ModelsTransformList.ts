@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPagination } from '../models/ModelsPagination';
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { HttpFile } from '../http/http';
 
 export class ModelsTransformList {
-    'pagination'?: ModelsPagination;
+    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
     'transforms'?: Array<ModelsTransform>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class ModelsTransformList {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "ModelsPagination",
+            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
             "format": ""
         },
         {

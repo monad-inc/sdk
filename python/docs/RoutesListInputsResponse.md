@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **inputs** | [**List[RoutesInputWithMetadata]**](RoutesInputWithMetadata.md) |  | [optional] 
-**pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Example
 

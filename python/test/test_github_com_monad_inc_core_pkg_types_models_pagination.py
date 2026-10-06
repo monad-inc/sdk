@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.models_pagination import ModelsPagination
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 
-class TestModelsPagination(unittest.TestCase):
-    """ModelsPagination unit test stubs"""
+class TestGithubComMonadIncCorePkgTypesModelsPagination(unittest.TestCase):
+    """GithubComMonadIncCorePkgTypesModelsPagination unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,27 @@ class TestModelsPagination(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsPagination:
-        """Test ModelsPagination
+    def make_instance(self, include_optional) -> GithubComMonadIncCorePkgTypesModelsPagination:
+        """Test GithubComMonadIncCorePkgTypesModelsPagination
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsPagination`
+        # uncomment below to create an instance of `GithubComMonadIncCorePkgTypesModelsPagination`
         """
-        model = ModelsPagination()
+        model = GithubComMonadIncCorePkgTypesModelsPagination()
         if include_optional:
-            return ModelsPagination(
+            return GithubComMonadIncCorePkgTypesModelsPagination(
                 limit = 56,
                 offset = 56,
                 total = 56
             )
         else:
-            return ModelsPagination(
+            return GithubComMonadIncCorePkgTypesModelsPagination(
         )
         """
 
-    def testModelsPagination(self):
-        """Test ModelsPagination"""
+    def testGithubComMonadIncCorePkgTypesModelsPagination(self):
+        """Test GithubComMonadIncCorePkgTypesModelsPagination"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.models_billing_product import ModelsBillingProduct
-from monad.models.models_pagination import ModelsPagination
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,7 +31,7 @@ class ModelsBillingProductList(BaseModel):
     ModelsBillingProductList
     """ # noqa: E501
     billing_products: Optional[List[ModelsBillingProduct]] = None
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     __properties: ClassVar[List[str]] = ["billing_products", "pagination"]
 
     model_config = ConfigDict(
@@ -96,7 +96,7 @@ class ModelsBillingProductList(BaseModel):
 
         _obj = cls.model_validate({
             "billing_products": [ModelsBillingProduct.from_dict(_item) for _item in obj["billing_products"]] if obj.get("billing_products") is not None else None,
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         return _obj
 

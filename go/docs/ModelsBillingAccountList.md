@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingAccounts** | Pointer to [**[]ModelsBillingAccount**](ModelsBillingAccount.md) |  | [optional] 
-**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasBillingAccounts returns a boolean if a field has been set.
 
 ### GetPagination
 
-`func (o *ModelsBillingAccountList) GetPagination() ModelsPagination`
+`func (o *ModelsBillingAccountList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *ModelsBillingAccountList) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *ModelsBillingAccountList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *ModelsBillingAccountList) SetPagination(v ModelsPagination)`
+`func (o *ModelsBillingAccountList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

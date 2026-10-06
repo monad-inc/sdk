@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApiKeys** | Pointer to [**[]ModelsAPIKey**](ModelsAPIKey.md) |  | [optional] 
-**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasApiKeys returns a boolean if a field has been set.
 
 ### GetPagination
 
-`func (o *ModelsAPIKeyList) GetPagination() ModelsPagination`
+`func (o *ModelsAPIKeyList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *ModelsAPIKeyList) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *ModelsAPIKeyList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *ModelsAPIKeyList) SetPagination(v ModelsPagination)`
+`func (o *ModelsAPIKeyList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

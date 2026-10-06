@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.models_organization_user import ModelsOrganizationUser
-from monad.models.models_pagination import ModelsPagination
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,7 +30,7 @@ class ModelsOrganizationUserList(BaseModel):
     """
     ModelsOrganizationUserList
     """ # noqa: E501
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     users: Optional[List[ModelsOrganizationUser]] = None
     __properties: ClassVar[List[str]] = ["pagination", "users"]
 
@@ -95,7 +95,7 @@ class ModelsOrganizationUserList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "users": [ModelsOrganizationUser.from_dict(_item) for _item in obj["users"]] if obj.get("users") is not None else None
         })
         return _obj

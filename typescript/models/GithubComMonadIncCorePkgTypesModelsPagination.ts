@@ -15,7 +15,7 @@ import { HttpFile } from '../http/http';
 /**
 * Pagination metadata.
 */
-export class ModelsPagination {
+export class GithubComMonadIncCorePkgTypesModelsPagination {
     'limit'?: number;
     'offset'?: number;
     'total'?: number;
@@ -45,7 +45,7 @@ export class ModelsPagination {
         }    ];
 
     static getAttributeTypeMap() {
-        return ModelsPagination.attributeTypeMap;
+        return GithubComMonadIncCorePkgTypesModelsPagination.attributeTypeMap;
     }
 
     public constructor() {

@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.datastore_tagged_resource import DatastoreTaggedResource
-from monad.models.models_pagination import ModelsPagination
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,7 +30,7 @@ class RoutesV3TagResourcesResponse(BaseModel):
     """
     RoutesV3TagResourcesResponse
     """ # noqa: E501
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     resources: Optional[List[DatastoreTaggedResource]] = None
     __properties: ClassVar[List[str]] = ["pagination", "resources"]
 
@@ -95,7 +95,7 @@ class RoutesV3TagResourcesResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "resources": [DatastoreTaggedResource.from_dict(_item) for _item in obj["resources"]] if obj.get("resources") is not None else None
         })
         return _obj

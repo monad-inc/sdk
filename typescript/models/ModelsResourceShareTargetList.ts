@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPagination } from '../models/ModelsPagination';
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { ModelsResourceShareTarget } from '../models/ModelsResourceShareTarget';
 import { HttpFile } from '../http/http';
 
@@ -19,7 +19,7 @@ export class ModelsResourceShareTargetList {
     * The page of child orgs.
     */
     'organizations'?: Array<ModelsResourceShareTarget>;
-    'pagination'?: ModelsPagination;
+    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
     /**
     * Whether the resource\'s policy auto-shares it with new direct children.
     */
@@ -39,7 +39,7 @@ export class ModelsResourceShareTargetList {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "ModelsPagination",
+            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
             "format": ""
         },
         {

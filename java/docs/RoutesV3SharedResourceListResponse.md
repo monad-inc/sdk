@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**pagination** | [**ModelsPagination**](ModelsPagination.md) |  |  [optional] |
+|**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  |  [optional] |
 |**sharedResources** | [**List&lt;RoutesV3SharedResourceWithMetadata&gt;**](RoutesV3SharedResourceWithMetadata.md) |  |  [optional] |
 
 

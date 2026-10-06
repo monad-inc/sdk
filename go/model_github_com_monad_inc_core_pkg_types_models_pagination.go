@@ -15,35 +15,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the ModelsPagination type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ModelsPagination{}
+// checks if the GithubComMonadIncCorePkgTypesModelsPagination type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GithubComMonadIncCorePkgTypesModelsPagination{}
 
-// ModelsPagination Pagination metadata.
-type ModelsPagination struct {
+// GithubComMonadIncCorePkgTypesModelsPagination Pagination metadata.
+type GithubComMonadIncCorePkgTypesModelsPagination struct {
 	Limit *int32 `json:"limit,omitempty"`
 	Offset *int32 `json:"offset,omitempty"`
 	Total *int32 `json:"total,omitempty"`
 }
 
-// NewModelsPagination instantiates a new ModelsPagination object
+// NewGithubComMonadIncCorePkgTypesModelsPagination instantiates a new GithubComMonadIncCorePkgTypesModelsPagination object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsPagination() *ModelsPagination {
-	this := ModelsPagination{}
+func NewGithubComMonadIncCorePkgTypesModelsPagination() *GithubComMonadIncCorePkgTypesModelsPagination {
+	this := GithubComMonadIncCorePkgTypesModelsPagination{}
 	return &this
 }
 
-// NewModelsPaginationWithDefaults instantiates a new ModelsPagination object
+// NewGithubComMonadIncCorePkgTypesModelsPaginationWithDefaults instantiates a new GithubComMonadIncCorePkgTypesModelsPagination object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewModelsPaginationWithDefaults() *ModelsPagination {
-	this := ModelsPagination{}
+func NewGithubComMonadIncCorePkgTypesModelsPaginationWithDefaults() *GithubComMonadIncCorePkgTypesModelsPagination {
+	this := GithubComMonadIncCorePkgTypesModelsPagination{}
 	return &this
 }
 
 // GetLimit returns the Limit field value if set, zero value otherwise.
-func (o *ModelsPagination) GetLimit() int32 {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) GetLimit() int32 {
 	if o == nil || IsNil(o.Limit) {
 		var ret int32
 		return ret
@@ -53,7 +53,7 @@ func (o *ModelsPagination) GetLimit() int32 {
 
 // GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPagination) GetLimitOk() (*int32, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) GetLimitOk() (*int32, bool) {
 	if o == nil || IsNil(o.Limit) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ModelsPagination) GetLimitOk() (*int32, bool) {
 }
 
 // HasLimit returns a boolean if a field has been set.
-func (o *ModelsPagination) HasLimit() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) HasLimit() bool {
 	if o != nil && !IsNil(o.Limit) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *ModelsPagination) HasLimit() bool {
 }
 
 // SetLimit gets a reference to the given int32 and assigns it to the Limit field.
-func (o *ModelsPagination) SetLimit(v int32) {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) SetLimit(v int32) {
 	o.Limit = &v
 }
 
 // GetOffset returns the Offset field value if set, zero value otherwise.
-func (o *ModelsPagination) GetOffset() int32 {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) GetOffset() int32 {
 	if o == nil || IsNil(o.Offset) {
 		var ret int32
 		return ret
@@ -85,7 +85,7 @@ func (o *ModelsPagination) GetOffset() int32 {
 
 // GetOffsetOk returns a tuple with the Offset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPagination) GetOffsetOk() (*int32, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) GetOffsetOk() (*int32, bool) {
 	if o == nil || IsNil(o.Offset) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *ModelsPagination) GetOffsetOk() (*int32, bool) {
 }
 
 // HasOffset returns a boolean if a field has been set.
-func (o *ModelsPagination) HasOffset() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) HasOffset() bool {
 	if o != nil && !IsNil(o.Offset) {
 		return true
 	}
@@ -102,12 +102,12 @@ func (o *ModelsPagination) HasOffset() bool {
 }
 
 // SetOffset gets a reference to the given int32 and assigns it to the Offset field.
-func (o *ModelsPagination) SetOffset(v int32) {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) SetOffset(v int32) {
 	o.Offset = &v
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
-func (o *ModelsPagination) GetTotal() int32 {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) GetTotal() int32 {
 	if o == nil || IsNil(o.Total) {
 		var ret int32
 		return ret
@@ -117,7 +117,7 @@ func (o *ModelsPagination) GetTotal() int32 {
 
 // GetTotalOk returns a tuple with the Total field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPagination) GetTotalOk() (*int32, bool) {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) GetTotalOk() (*int32, bool) {
 	if o == nil || IsNil(o.Total) {
 		return nil, false
 	}
@@ -125,7 +125,7 @@ func (o *ModelsPagination) GetTotalOk() (*int32, bool) {
 }
 
 // HasTotal returns a boolean if a field has been set.
-func (o *ModelsPagination) HasTotal() bool {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) HasTotal() bool {
 	if o != nil && !IsNil(o.Total) {
 		return true
 	}
@@ -134,11 +134,11 @@ func (o *ModelsPagination) HasTotal() bool {
 }
 
 // SetTotal gets a reference to the given int32 and assigns it to the Total field.
-func (o *ModelsPagination) SetTotal(v int32) {
+func (o *GithubComMonadIncCorePkgTypesModelsPagination) SetTotal(v int32) {
 	o.Total = &v
 }
 
-func (o ModelsPagination) MarshalJSON() ([]byte, error) {
+func (o GithubComMonadIncCorePkgTypesModelsPagination) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -146,7 +146,7 @@ func (o ModelsPagination) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ModelsPagination) ToMap() (map[string]interface{}, error) {
+func (o GithubComMonadIncCorePkgTypesModelsPagination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Limit) {
 		toSerialize["limit"] = o.Limit
@@ -160,38 +160,38 @@ func (o ModelsPagination) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableModelsPagination struct {
-	value *ModelsPagination
+type NullableGithubComMonadIncCorePkgTypesModelsPagination struct {
+	value *GithubComMonadIncCorePkgTypesModelsPagination
 	isSet bool
 }
 
-func (v NullableModelsPagination) Get() *ModelsPagination {
+func (v NullableGithubComMonadIncCorePkgTypesModelsPagination) Get() *GithubComMonadIncCorePkgTypesModelsPagination {
 	return v.value
 }
 
-func (v *NullableModelsPagination) Set(val *ModelsPagination) {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsPagination) Set(val *GithubComMonadIncCorePkgTypesModelsPagination) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableModelsPagination) IsSet() bool {
+func (v NullableGithubComMonadIncCorePkgTypesModelsPagination) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableModelsPagination) Unset() {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsPagination) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableModelsPagination(val *ModelsPagination) *NullableModelsPagination {
-	return &NullableModelsPagination{value: val, isSet: true}
+func NewNullableGithubComMonadIncCorePkgTypesModelsPagination(val *GithubComMonadIncCorePkgTypesModelsPagination) *NullableGithubComMonadIncCorePkgTypesModelsPagination {
+	return &NullableGithubComMonadIncCorePkgTypesModelsPagination{value: val, isSet: true}
 }
 
-func (v NullableModelsPagination) MarshalJSON() ([]byte, error) {
+func (v NullableGithubComMonadIncCorePkgTypesModelsPagination) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableModelsPagination) UnmarshalJSON(src []byte) error {
+func (v *NullableGithubComMonadIncCorePkgTypesModelsPagination) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

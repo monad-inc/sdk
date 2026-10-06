@@ -21,7 +21,7 @@ var _ MappedNullable = &ModelsUserOrganizationList{}
 // ModelsUserOrganizationList struct for ModelsUserOrganizationList
 type ModelsUserOrganizationList struct {
 	Organizations []ModelsUserOrganization `json:"organizations,omitempty"`
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 }
 
 // NewModelsUserOrganizationList instantiates a new ModelsUserOrganizationList object
@@ -74,9 +74,9 @@ func (o *ModelsUserOrganizationList) SetOrganizations(v []ModelsUserOrganization
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsUserOrganizationList) GetPagination() ModelsPagination {
+func (o *ModelsUserOrganizationList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -84,7 +84,7 @@ func (o *ModelsUserOrganizationList) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsUserOrganizationList) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *ModelsUserOrganizationList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *ModelsUserOrganizationList) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *ModelsUserOrganizationList) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *ModelsUserOrganizationList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &RoutesV3AlertRuleListResponse{}
 // RoutesV3AlertRuleListResponse struct for RoutesV3AlertRuleListResponse
 type RoutesV3AlertRuleListResponse struct {
 	AlertRules []RoutesV3AlertRuleWithMetadata `json:"alert_rules,omitempty"`
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 }
 
 // NewRoutesV3AlertRuleListResponse instantiates a new RoutesV3AlertRuleListResponse object
@@ -74,9 +74,9 @@ func (o *RoutesV3AlertRuleListResponse) SetAlertRules(v []RoutesV3AlertRuleWithM
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *RoutesV3AlertRuleListResponse) GetPagination() ModelsPagination {
+func (o *RoutesV3AlertRuleListResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -84,7 +84,7 @@ func (o *RoutesV3AlertRuleListResponse) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3AlertRuleListResponse) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *RoutesV3AlertRuleListResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *RoutesV3AlertRuleListResponse) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *RoutesV3AlertRuleListResponse) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *RoutesV3AlertRuleListResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

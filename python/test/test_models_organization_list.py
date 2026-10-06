@@ -48,7 +48,7 @@ class TestModelsOrganizationList(unittest.TestCase):
                         parent_organization_id = '', 
                         updated_at = '', )
                     ],
-                pagination = monad.models.models/pagination.models.Pagination(
+                pagination = monad.models.github_com_monad_inc_core_pkg_types_models/pagination.github_com_monad-inc_core_pkg_types_models.Pagination(
                     limit = 56, 
                     offset = 56, 
                     total = 56, )

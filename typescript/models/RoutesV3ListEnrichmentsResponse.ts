@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { ModelsPagination } from '../models/ModelsPagination';
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { RoutesV3EnrichmentWithMetadata } from '../models/RoutesV3EnrichmentWithMetadata';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3ListEnrichmentsResponse {
     'enrichments'?: Array<RoutesV3EnrichmentWithMetadata>;
-    'pagination'?: ModelsPagination;
+    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class RoutesV3ListEnrichmentsResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "ModelsPagination",
+            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
             "format": ""
         }    ];
 

@@ -23,8 +23,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPagination;
 import org.openapitools.client.model.ModelsAPIKey;
-import org.openapitools.client.model.ModelsPagination;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,7 +62,7 @@ public class ModelsAPIKeyList {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
   @javax.annotation.Nullable
-  private ModelsPagination pagination;
+  private GithubComMonadIncCorePkgTypesModelsPagination pagination;
 
   public ModelsAPIKeyList() {
   }
@@ -94,7 +94,7 @@ public class ModelsAPIKeyList {
   }
 
 
-  public ModelsAPIKeyList pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public ModelsAPIKeyList pagination(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -104,11 +104,11 @@ public class ModelsAPIKeyList {
    * @return pagination
    */
   @javax.annotation.Nullable
-  public ModelsPagination getPagination() {
+  public GithubComMonadIncCorePkgTypesModelsPagination getPagination() {
     return pagination;
   }
 
-  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public void setPagination(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsPagination pagination) {
     this.pagination = pagination;
   }
 
@@ -199,7 +199,7 @@ public class ModelsAPIKeyList {
       }
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
-        ModelsPagination.validateJsonElement(jsonObj.get("pagination"));
+        GithubComMonadIncCorePkgTypesModelsPagination.validateJsonElement(jsonObj.get("pagination"));
       }
   }
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Organizations** | Pointer to [**[]ModelsResourceShareTarget**](ModelsResourceShareTarget.md) | The page of child orgs. | [optional] 
-**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 **ShareWithAllNewChildren** | Pointer to **bool** | Whether the resource&#39;s policy auto-shares it with new direct children. | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasOrganizations returns a boolean if a field has been set.
 
 ### GetPagination
 
-`func (o *ModelsResourceShareTargetList) GetPagination() ModelsPagination`
+`func (o *ModelsResourceShareTargetList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *ModelsResourceShareTargetList) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *ModelsResourceShareTargetList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *ModelsResourceShareTargetList) SetPagination(v ModelsPagination)`
+`func (o *ModelsResourceShareTargetList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

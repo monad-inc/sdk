@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_pagination import ModelsPagination
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.routes_v3_shared_resource_with_metadata import RoutesV3SharedResourceWithMetadata
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class RoutesV3SharedResourceListResponse(BaseModel):
     """
     RoutesV3SharedResourceListResponse
     """ # noqa: E501
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     shared_resources: Optional[List[RoutesV3SharedResourceWithMetadata]] = None
     __properties: ClassVar[List[str]] = ["pagination", "shared_resources"]
 
@@ -95,7 +95,7 @@ class RoutesV3SharedResourceListResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "shared_resources": [RoutesV3SharedResourceWithMetadata.from_dict(_item) for _item in obj["shared_resources"]] if obj.get("shared_resources") is not None else None
         })
         return _obj

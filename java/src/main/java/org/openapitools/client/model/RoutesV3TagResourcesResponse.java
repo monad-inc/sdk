@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.DatastoreTaggedResource;
-import org.openapitools.client.model.ModelsPagination;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPagination;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,7 +57,7 @@ public class RoutesV3TagResourcesResponse {
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
   @javax.annotation.Nullable
-  private ModelsPagination pagination;
+  private GithubComMonadIncCorePkgTypesModelsPagination pagination;
 
   public static final String SERIALIZED_NAME_RESOURCES = "resources";
   @SerializedName(SERIALIZED_NAME_RESOURCES)
@@ -67,7 +67,7 @@ public class RoutesV3TagResourcesResponse {
   public RoutesV3TagResourcesResponse() {
   }
 
-  public RoutesV3TagResourcesResponse pagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public RoutesV3TagResourcesResponse pagination(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsPagination pagination) {
     this.pagination = pagination;
     return this;
   }
@@ -77,11 +77,11 @@ public class RoutesV3TagResourcesResponse {
    * @return pagination
    */
   @javax.annotation.Nullable
-  public ModelsPagination getPagination() {
+  public GithubComMonadIncCorePkgTypesModelsPagination getPagination() {
     return pagination;
   }
 
-  public void setPagination(@javax.annotation.Nullable ModelsPagination pagination) {
+  public void setPagination(@javax.annotation.Nullable GithubComMonadIncCorePkgTypesModelsPagination pagination) {
     this.pagination = pagination;
   }
 
@@ -185,7 +185,7 @@ public class RoutesV3TagResourcesResponse {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `pagination`
       if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
-        ModelsPagination.validateJsonElement(jsonObj.get("pagination"));
+        GithubComMonadIncCorePkgTypesModelsPagination.validateJsonElement(jsonObj.get("pagination"));
       }
       if (jsonObj.get("resources") != null && !jsonObj.get("resources").isJsonNull()) {
         JsonArray jsonArrayresources = jsonObj.getAsJsonArray("resources");

@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsSchemaHistoryList{}
 
 // ModelsSchemaHistoryList struct for ModelsSchemaHistoryList
 type ModelsSchemaHistoryList struct {
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 	SchemaHistory []ModelsSchemaHistory `json:"schema_history,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewModelsSchemaHistoryListWithDefaults() *ModelsSchemaHistoryList {
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsSchemaHistoryList) GetPagination() ModelsPagination {
+func (o *ModelsSchemaHistoryList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -52,7 +52,7 @@ func (o *ModelsSchemaHistoryList) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSchemaHistoryList) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *ModelsSchemaHistoryList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ModelsSchemaHistoryList) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *ModelsSchemaHistoryList) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *ModelsSchemaHistoryList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

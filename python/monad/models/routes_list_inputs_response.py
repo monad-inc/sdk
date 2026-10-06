@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_pagination import ModelsPagination
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.routes_input_with_metadata import RoutesInputWithMetadata
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,7 @@ class RoutesListInputsResponse(BaseModel):
     RoutesListInputsResponse
     """ # noqa: E501
     inputs: Optional[List[RoutesInputWithMetadata]] = None
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     __properties: ClassVar[List[str]] = ["inputs", "pagination"]
 
     model_config = ConfigDict(
@@ -96,7 +96,7 @@ class RoutesListInputsResponse(BaseModel):
 
         _obj = cls.model_validate({
             "inputs": [RoutesInputWithMetadata.from_dict(_item) for _item in obj["inputs"]] if obj.get("inputs") is not None else None,
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         return _obj
 

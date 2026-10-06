@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**pagination** | [**ModelsPagination**](ModelsPagination.md) |  |  [optional] |
+|**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  |  [optional] |
 |**registrations** | [**List&lt;ModelsMCPClientRegistration&gt;**](ModelsMCPClientRegistration.md) |  |  [optional] |
 
 

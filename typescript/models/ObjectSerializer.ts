@@ -174,6 +174,7 @@ export * from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 export * from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
+export * from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 export * from '../models/GkeAuditLogsSecretsConfig';
 export * from '../models/GkeAuditLogsSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -288,7 +289,6 @@ export * from '../models/ModelsOrganizationUserList';
 export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputConnectorCategory';
-export * from '../models/ModelsPagination';
 export * from '../models/ModelsPermission';
 export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
@@ -807,6 +807,7 @@ import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/Git
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig  , GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum   } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
+import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -921,7 +922,6 @@ import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList
 import { ModelsOutput             } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
-import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline              } from '../models/ModelsPipeline';
@@ -1533,6 +1533,7 @@ let typeMap: {[index: string]: any} = {
     "GithubActionsWorkflowLogsWebhookRepositoryScope": GithubActionsWorkflowLogsWebhookRepositoryScope,
     "GithubActionsWorkflowLogsWebhookScopeConfig": GithubActionsWorkflowLogsWebhookScopeConfig,
     "GithubActionsWorkflowLogsWebhookSettingsConfig": GithubActionsWorkflowLogsWebhookSettingsConfig,
+    "GithubComMonadIncCorePkgTypesModelsPagination": GithubComMonadIncCorePkgTypesModelsPagination,
     "GkeAuditLogsSecretsConfig": GkeAuditLogsSecretsConfig,
     "GkeAuditLogsSettingsConfig": GkeAuditLogsSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -1631,7 +1632,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsOrganizationUserList": ModelsOrganizationUserList,
     "ModelsOutput": ModelsOutput,
     "ModelsOutputConfig": ModelsOutputConfig,
-    "ModelsPagination": ModelsPagination,
     "ModelsPermission": ModelsPermission,
     "ModelsPermissionList": ModelsPermissionList,
     "ModelsPipeline": ModelsPipeline,

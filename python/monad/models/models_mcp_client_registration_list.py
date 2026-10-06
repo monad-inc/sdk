@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.models_mcp_client_registration import ModelsMCPClientRegistration
-from monad.models.models_pagination import ModelsPagination
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,7 +30,7 @@ class ModelsMCPClientRegistrationList(BaseModel):
     """
     ModelsMCPClientRegistrationList
     """ # noqa: E501
-    pagination: Optional[ModelsPagination] = None
+    pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     registrations: Optional[List[ModelsMCPClientRegistration]] = None
     __properties: ClassVar[List[str]] = ["pagination", "registrations"]
 
@@ -95,7 +95,7 @@ class ModelsMCPClientRegistrationList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "pagination": ModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
+            "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "registrations": [ModelsMCPClientRegistration.from_dict(_item) for _item in obj["registrations"]] if obj.get("registrations") is not None else None
         })
         return _obj

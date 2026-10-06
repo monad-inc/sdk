@@ -248,6 +248,7 @@ __all__ = [
     "GithubActionsWorkflowLogsWebhookRepositoryScope",
     "GithubActionsWorkflowLogsWebhookScopeConfig",
     "GithubActionsWorkflowLogsWebhookSettingsConfig",
+    "GithubComMonadIncCorePkgTypesModelsPagination",
     "GkeAuditLogsSecretsConfig",
     "GkeAuditLogsSettingsConfig",
     "GoogleCloudStorageOutputSecretsConfig",
@@ -362,7 +363,6 @@ __all__ = [
     "ModelsOutput",
     "ModelsOutputConfig",
     "ModelsOutputConnectorCategory",
-    "ModelsPagination",
     "ModelsPermission",
     "ModelsPermissionList",
     "ModelsPipeline",
@@ -940,6 +940,7 @@ from monad.models.github_actions_workflow_logs_webhook_organization_scope import
 from monad.models.github_actions_workflow_logs_webhook_repository_scope import GithubActionsWorkflowLogsWebhookRepositoryScope as GithubActionsWorkflowLogsWebhookRepositoryScope
 from monad.models.github_actions_workflow_logs_webhook_scope_config import GithubActionsWorkflowLogsWebhookScopeConfig as GithubActionsWorkflowLogsWebhookScopeConfig
 from monad.models.github_actions_workflow_logs_webhook_settings_config import GithubActionsWorkflowLogsWebhookSettingsConfig as GithubActionsWorkflowLogsWebhookSettingsConfig
+from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination as GithubComMonadIncCorePkgTypesModelsPagination
 from monad.models.gke_audit_logs_secrets_config import GkeAuditLogsSecretsConfig as GkeAuditLogsSecretsConfig
 from monad.models.gke_audit_logs_settings_config import GkeAuditLogsSettingsConfig as GkeAuditLogsSettingsConfig
 from monad.models.google_cloud_storage_output_secrets_config import GoogleCloudStorageOutputSecretsConfig as GoogleCloudStorageOutputSecretsConfig
@@ -1054,7 +1055,6 @@ from monad.models.models_organization_user_list import ModelsOrganizationUserLis
 from monad.models.models_output import ModelsOutput as ModelsOutput
 from monad.models.models_output_config import ModelsOutputConfig as ModelsOutputConfig
 from monad.models.models_output_connector_category import ModelsOutputConnectorCategory as ModelsOutputConnectorCategory
-from monad.models.models_pagination import ModelsPagination as ModelsPagination
 from monad.models.models_permission import ModelsPermission as ModelsPermission
 from monad.models.models_permission_list import ModelsPermissionList as ModelsPermissionList
 from monad.models.models_pipeline import ModelsPipeline as ModelsPipeline

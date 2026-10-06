@@ -24,17 +24,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ModelsPagination
+ * Model tests for GithubComMonadIncCorePkgTypesModelsPagination
  */
-public class ModelsPaginationTest {
-    private final ModelsPagination model = new ModelsPagination();
+public class GithubComMonadIncCorePkgTypesModelsPaginationTest {
+    private final GithubComMonadIncCorePkgTypesModelsPagination model = new GithubComMonadIncCorePkgTypesModelsPagination();
 
     /**
-     * Model tests for ModelsPagination
+     * Model tests for GithubComMonadIncCorePkgTypesModelsPagination
      */
     @Test
-    public void testModelsPagination() {
-        // TODO: test ModelsPagination
+    public void testGithubComMonadIncCorePkgTypesModelsPagination() {
+        // TODO: test GithubComMonadIncCorePkgTypesModelsPagination
     }
 
     /**

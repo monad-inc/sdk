@@ -22,8 +22,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPagination;
 import org.openapitools.client.model.ModelsBillingAccount;
-import org.openapitools.client.model.ModelsPagination;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

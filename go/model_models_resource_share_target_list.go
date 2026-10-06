@@ -22,7 +22,7 @@ var _ MappedNullable = &ModelsResourceShareTargetList{}
 type ModelsResourceShareTargetList struct {
 	// The page of child orgs.
 	Organizations []ModelsResourceShareTarget `json:"organizations,omitempty"`
-	Pagination *ModelsPagination `json:"pagination,omitempty"`
+	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 	// Whether the resource's policy auto-shares it with new direct children.
 	ShareWithAllNewChildren *bool `json:"share_with_all_new_children,omitempty"`
 }
@@ -77,9 +77,9 @@ func (o *ModelsResourceShareTargetList) SetOrganizations(v []ModelsResourceShare
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsResourceShareTargetList) GetPagination() ModelsPagination {
+func (o *ModelsResourceShareTargetList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret ModelsPagination
+		var ret GithubComMonadIncCorePkgTypesModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -87,7 +87,7 @@ func (o *ModelsResourceShareTargetList) GetPagination() ModelsPagination {
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsResourceShareTargetList) GetPaginationOk() (*ModelsPagination, bool) {
+func (o *ModelsResourceShareTargetList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ModelsResourceShareTargetList) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
-func (o *ModelsResourceShareTargetList) SetPagination(v ModelsPagination) {
+// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
+func (o *ModelsResourceShareTargetList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
 	o.Pagination = &v
 }
 

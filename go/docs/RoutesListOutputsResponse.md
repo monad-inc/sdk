@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Outputs** | Pointer to [**[]RoutesOutputWithMetadata**](RoutesOutputWithMetadata.md) |  | [optional] 
-**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasOutputs returns a boolean if a field has been set.
 
 ### GetPagination
 
-`func (o *RoutesListOutputsResponse) GetPagination() ModelsPagination`
+`func (o *RoutesListOutputsResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *RoutesListOutputsResponse) GetPaginationOk() (*ModelsPagination, bool)`
+`func (o *RoutesListOutputsResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *RoutesListOutputsResponse) SetPagination(v ModelsPagination)`
+`func (o *RoutesListOutputsResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 
