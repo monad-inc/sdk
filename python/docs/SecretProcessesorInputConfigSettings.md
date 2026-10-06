@@ -9,9 +9,6 @@ Name | Type | Description | Notes
 **interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**region** | **str** | AWS Region of your bucket. | 
-**role_arn** | **str** | Role ARN to assume when reading from S3. | [optional] 
-**severity** | **str** | Filter by alert severity (error, warning) | [optional] 
 **bucket** | **str** | Name of the S3 bucket that receives Redshift audit logs. | 
 **compression** | **str** | Compression format of the objects | 
 **format** | **str** | File format of the objects | 
@@ -19,6 +16,8 @@ Name | Type | Description | Notes
 **partition_format** | **str** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **prefix** | **str** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. | [optional] 
 **record_location** | **str** | JSONPath location of the records array in the GraphQL response | [optional] 
+**region** | **str** | AWS Region of your bucket. | 
+**role_arn** | **str** | Role ARN to assume when reading from S3. | [optional] 
 **var_schema** | **List[str]** | Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field. | 
 **chunking_mode** | [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
 **exclude_digest_files** | **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
@@ -55,6 +54,7 @@ Name | Type | Description | Notes
 **account_id** | **str** | Account ID for the input | [optional] 
 **endpoint_url** | **str** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | 
 **result** | [**List[WizResult]**](WizResult.md) | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
+**severity** | **str** | Filter by alert severity (error, warning) | [optional] 
 **status** | [**List[WizStatus]**](WizStatus.md) | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **enable_proto_payload_parsing** | **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **filter** | **str** | The filter to apply to the logs. | [optional] 
@@ -72,8 +72,6 @@ Name | Type | Description | Notes
 **api_key_id** | **str** | API Key ID for authentication | 
 **domain_name** | **str** | Domain name of the Cortex XSOAR instance | 
 **category** | **str** | The Category of logs to query | 
-**cluster_name** | **str** | The name of the GKE cluster. | 
-**ingestion_lag_seconds** | **int** |  | [optional] 
 **namespace** | **str** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **ingestion_delay** | **int** | The ingestion delay in seconds for the data source | [optional] 
 **workspace_id** | **str** | The workspace ID of the Log Analytics workspace | 
@@ -85,6 +83,7 @@ Name | Type | Description | Notes
 **auth_config** | [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
 **scope** | [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 
 **webhook_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**cluster_name** | **str** | The name of the GKE cluster. | 
 **location** | **str** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. | 
 **project_id** | **str** | The Google Cloud project ID to use | 
 **bucket_name** | **str** | The name of the Google Cloud Storage bucket to use | 
@@ -95,7 +94,6 @@ Name | Type | Description | Notes
 **embed** | **str** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **primary_entity_type** | **str** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **primary_entity_value** | **str** | Filter by primary entity value (contains search) | [optional] 
-**severities** | [**List[WizIssueSeverity]**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
 **control_ids** | **List[str]** | @Description Filter Issues created by specific control IDs | [optional] 
 **has_note** | [**WizNoteFilter**](WizNoteFilter.md) |  | [optional] 
 **has_remediation** | [**WizRemediationFilter**](WizRemediationFilter.md) |  | [optional] 
@@ -109,6 +107,7 @@ Name | Type | Description | Notes
 **risk_equals_any** | [**List[WizRiskType]**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
 **search_query** | **str** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
 **security_scan** | **str** | @Description Filter by security scan source | [optional] 
+**severities** | [**List[WizIssueSeverity]**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
 **stack_layers** | [**List[WizStackLayer]**](WizStackLayer.md) | @Description Filter Issues from specific stack layers | [optional] 
 **tenant_data_center** | **str** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **audit_log_types** | **List[str]** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 

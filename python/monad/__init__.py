@@ -87,8 +87,6 @@ __all__ = [
     "AuthenticationtypesAuthenticationMethod",
     "AuthenticationtypesMFAEnrollmentTicket",
     "AuthenticationtypesTokenResponse",
-    "AwsGuarddutySecretsConfig",
-    "AwsGuarddutySettingsConfig",
     "AwsS3SecretsConfig",
     "AwsS3SettingsConfig",
     "AwsSqsS3CloudtrailChunkingMode",
@@ -213,8 +211,6 @@ __all__ = [
     "DropKeyWhereValueEqArgumentsConfig",
     "DropRecordWhereValueEqArgumentsConfig",
     "DuplicateKeyValueToKeyArgumentsConfig",
-    "EksAuditLogsSecretsConfig",
-    "EksAuditLogsSettingsConfig",
     "ElasticsearchAuthConfig",
     "ElasticsearchCloudIdVariant",
     "ElasticsearchConnectionConfig",
@@ -278,8 +274,6 @@ __all__ = [
     "IndividualAlertsSecretsConfig",
     "IndividualAlertsSettingsConfig",
     "InputsConnectorMeta",
-    "InspectorSecretsConfig",
-    "InspectorSettingsConfig",
     "IssuesSecretsConfig",
     "IssuesSettingsConfig",
     "JqArgumentsConfig",
@@ -779,8 +773,6 @@ from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettings
 from monad.models.authenticationtypes_authentication_method import AuthenticationtypesAuthenticationMethod as AuthenticationtypesAuthenticationMethod
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket as AuthenticationtypesMFAEnrollmentTicket
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse
-from monad.models.aws_guardduty_secrets_config import AwsGuarddutySecretsConfig as AwsGuarddutySecretsConfig
-from monad.models.aws_guardduty_settings_config import AwsGuarddutySettingsConfig as AwsGuarddutySettingsConfig
 from monad.models.aws_s3_secrets_config import AwsS3SecretsConfig as AwsS3SecretsConfig
 from monad.models.aws_s3_settings_config import AwsS3SettingsConfig as AwsS3SettingsConfig
 from monad.models.aws_sqs_s3_cloudtrail_chunking_mode import AwsSqsS3CloudtrailChunkingMode as AwsSqsS3CloudtrailChunkingMode
@@ -905,8 +897,6 @@ from monad.models.drop_key_arguments_config import DropKeyArgumentsConfig as Dro
 from monad.models.drop_key_where_value_eq_arguments_config import DropKeyWhereValueEqArgumentsConfig as DropKeyWhereValueEqArgumentsConfig
 from monad.models.drop_record_where_value_eq_arguments_config import DropRecordWhereValueEqArgumentsConfig as DropRecordWhereValueEqArgumentsConfig
 from monad.models.duplicate_key_value_to_key_arguments_config import DuplicateKeyValueToKeyArgumentsConfig as DuplicateKeyValueToKeyArgumentsConfig
-from monad.models.eks_audit_logs_secrets_config import EksAuditLogsSecretsConfig as EksAuditLogsSecretsConfig
-from monad.models.eks_audit_logs_settings_config import EksAuditLogsSettingsConfig as EksAuditLogsSettingsConfig
 from monad.models.elasticsearch_auth_config import ElasticsearchAuthConfig as ElasticsearchAuthConfig
 from monad.models.elasticsearch_cloud_id_variant import ElasticsearchCloudIdVariant as ElasticsearchCloudIdVariant
 from monad.models.elasticsearch_connection_config import ElasticsearchConnectionConfig as ElasticsearchConnectionConfig
@@ -970,8 +960,6 @@ from monad.models.ibm_qradar_settings_config import IbmQradarSettingsConfig as I
 from monad.models.individual_alerts_secrets_config import IndividualAlertsSecretsConfig as IndividualAlertsSecretsConfig
 from monad.models.individual_alerts_settings_config import IndividualAlertsSettingsConfig as IndividualAlertsSettingsConfig
 from monad.models.inputs_connector_meta import InputsConnectorMeta as InputsConnectorMeta
-from monad.models.inspector_secrets_config import InspectorSecretsConfig as InspectorSecretsConfig
-from monad.models.inspector_settings_config import InspectorSettingsConfig as InspectorSettingsConfig
 from monad.models.issues_secrets_config import IssuesSecretsConfig as IssuesSecretsConfig
 from monad.models.issues_settings_config import IssuesSettingsConfig as IssuesSettingsConfig
 from monad.models.jq_arguments_config import JqArgumentsConfig as JqArgumentsConfig

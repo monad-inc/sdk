@@ -8,9 +8,6 @@ Name | Type | Description | Notes
 **IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
-**Region** | **string** | AWS Region of your bucket. | 
-**RoleArn** | Pointer to **string** | Role ARN to assume when reading from S3. | [optional] 
-**Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
 **Bucket** | **string** | Name of the S3 bucket that receives Redshift audit logs. | 
 **Compression** | **string** | Compression format of the objects | 
 **Format** | **string** | File format of the objects | 
@@ -18,6 +15,8 @@ Name | Type | Description | Notes
 **PartitionFormat** | **string** | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). | 
 **Prefix** | Pointer to **string** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. | [optional] 
 **RecordLocation** | Pointer to **string** | JSONPath location of the records array in the GraphQL response | [optional] 
+**Region** | **string** | AWS Region of your bucket. | 
+**RoleArn** | Pointer to **string** | Role ARN to assume when reading from S3. | [optional] 
 **Schema** | **[]string** | Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field. | 
 **ChunkingMode** | Pointer to [**AwsSqsS3CloudtrailChunkingMode**](AwsSqsS3CloudtrailChunkingMode.md) |  | [optional] 
 **ExcludeDigestFiles** | Pointer to **bool** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). | [optional] 
@@ -54,6 +53,7 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
 **EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. | 
 **Result** | Pointer to [**[]WizResult**](WizResult.md) | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. | [optional] 
+**Severity** | Pointer to **string** | Filter by alert severity (error, warning) | [optional] 
 **Status** | Pointer to [**[]WizStatus**](WizStatus.md) | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. | [optional] 
 **EnableProtoPayloadParsing** | Pointer to **bool** | Enables automatic parsing of embedded protocol buffer payloads within the input. | [optional] 
 **Filter** | Pointer to **string** | The filter to apply to the logs. | [optional] 
@@ -71,8 +71,6 @@ Name | Type | Description | Notes
 **ApiKeyId** | **string** | API Key ID for authentication | 
 **DomainName** | **string** | Domain name of the Cortex XSOAR instance | 
 **Category** | **string** | The Category of logs to query | 
-**ClusterName** | **string** | The name of the GKE cluster. | 
-**IngestionLagSeconds** | Pointer to **int32** |  | [optional] 
 **Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
 **WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
@@ -84,6 +82,7 @@ Name | Type | Description | Notes
 **AuthConfig** | Pointer to [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
 **Scope** | Pointer to [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  | [optional] 
 **WebhookSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClusterName** | **string** | The name of the GKE cluster. | 
 **Location** | **string** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. | 
 **ProjectId** | **string** | The Google Cloud project ID to use | 
 **BucketName** | **string** | The name of the Google Cloud Storage bucket to use | 
@@ -94,7 +93,6 @@ Name | Type | Description | Notes
 **Embed** | Pointer to **string** | Embed related resources in the data returned (e.g., read-consolidated-alert) | [optional] 
 **PrimaryEntityType** | Pointer to **string** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) | [optional] 
 **PrimaryEntityValue** | Pointer to **string** | Filter by primary entity value (contains search) | [optional] 
-**Severities** | Pointer to [**[]WizIssueSeverity**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
 **ControlIds** | Pointer to **[]string** | @Description Filter Issues created by specific control IDs | [optional] 
 **HasNote** | Pointer to [**WizNoteFilter**](WizNoteFilter.md) |  | [optional] 
 **HasRemediation** | Pointer to [**WizRemediationFilter**](WizRemediationFilter.md) |  | [optional] 
@@ -108,6 +106,7 @@ Name | Type | Description | Notes
 **RiskEqualsAny** | Pointer to [**[]WizRiskType**](WizRiskType.md) | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name | [optional] 
 **SearchQuery** | Pointer to **string** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found | [optional] 
 **SecurityScan** | Pointer to **string** | @Description Filter by security scan source | [optional] 
+**Severities** | Pointer to [**[]WizIssueSeverity**](WizIssueSeverity.md) | @Description Filter Issues according to Control severity | [optional] 
 **StackLayers** | Pointer to [**[]WizStackLayer**](WizStackLayer.md) | @Description Filter Issues from specific stack layers | [optional] 
 **TenantDataCenter** | **string** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; | 
 **AuditLogTypes** | Pointer to **[]string** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. | [optional] 
@@ -148,7 +147,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(region string, bucket string, compression string, format string, partitionFormat string, schema []string, queueUrl string, tenantId string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, clusterName string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(bucket string, compression string, format string, partitionFormat string, region string, schema []string, queueUrl string, tenantId string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, clusterName string, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -262,76 +261,6 @@ SetUseSyntheticData sets UseSyntheticData field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
 
 HasUseSyntheticData returns a boolean if a field has been set.
-
-### GetRegion
-
-`func (o *SecretProcessesorInputConfigSettings) GetRegion() string`
-
-GetRegion returns the Region field if non-nil, zero value otherwise.
-
-### GetRegionOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRegionOk() (*string, bool)`
-
-GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegion
-
-`func (o *SecretProcessesorInputConfigSettings) SetRegion(v string)`
-
-SetRegion sets Region field to given value.
-
-
-### GetRoleArn
-
-`func (o *SecretProcessesorInputConfigSettings) GetRoleArn() string`
-
-GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
-
-### GetRoleArnOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRoleArnOk() (*string, bool)`
-
-GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoleArn
-
-`func (o *SecretProcessesorInputConfigSettings) SetRoleArn(v string)`
-
-SetRoleArn sets RoleArn field to given value.
-
-### HasRoleArn
-
-`func (o *SecretProcessesorInputConfigSettings) HasRoleArn() bool`
-
-HasRoleArn returns a boolean if a field has been set.
-
-### GetSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverity() string`
-
-GetSeverity returns the Severity field if non-nil, zero value otherwise.
-
-### GetSeverityOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverityOk() (*string, bool)`
-
-GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) SetSeverity(v string)`
-
-SetSeverity sets Severity field to given value.
-
-### HasSeverity
-
-`func (o *SecretProcessesorInputConfigSettings) HasSeverity() bool`
-
-HasSeverity returns a boolean if a field has been set.
 
 ### GetBucket
 
@@ -487,6 +416,51 @@ SetRecordLocation sets RecordLocation field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasRecordLocation() bool`
 
 HasRecordLocation returns a boolean if a field has been set.
+
+### GetRegion
+
+`func (o *SecretProcessesorInputConfigSettings) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *SecretProcessesorInputConfigSettings) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+
+### GetRoleArn
+
+`func (o *SecretProcessesorInputConfigSettings) GetRoleArn() string`
+
+GetRoleArn returns the RoleArn field if non-nil, zero value otherwise.
+
+### GetRoleArnOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRoleArnOk() (*string, bool)`
+
+GetRoleArnOk returns a tuple with the RoleArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleArn
+
+`func (o *SecretProcessesorInputConfigSettings) SetRoleArn(v string)`
+
+SetRoleArn sets RoleArn field to given value.
+
+### HasRoleArn
+
+`func (o *SecretProcessesorInputConfigSettings) HasRoleArn() bool`
+
+HasRoleArn returns a boolean if a field has been set.
 
 ### GetSchema
 
@@ -1363,6 +1337,31 @@ SetResult sets Result field to given value.
 
 HasResult returns a boolean if a field has been set.
 
+### GetSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverity() string`
+
+GetSeverity returns the Severity field if non-nil, zero value otherwise.
+
+### GetSeverityOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverityOk() (*string, bool)`
+
+GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) SetSeverity(v string)`
+
+SetSeverity sets Severity field to given value.
+
+### HasSeverity
+
+`func (o *SecretProcessesorInputConfigSettings) HasSeverity() bool`
+
+HasSeverity returns a boolean if a field has been set.
+
 ### GetStatus
 
 `func (o *SecretProcessesorInputConfigSettings) GetStatus() []WizStatus`
@@ -1768,51 +1767,6 @@ and a boolean to check if the value has been set.
 SetCategory sets Category field to given value.
 
 
-### GetClusterName
-
-`func (o *SecretProcessesorInputConfigSettings) GetClusterName() string`
-
-GetClusterName returns the ClusterName field if non-nil, zero value otherwise.
-
-### GetClusterNameOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetClusterNameOk() (*string, bool)`
-
-GetClusterNameOk returns a tuple with the ClusterName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClusterName
-
-`func (o *SecretProcessesorInputConfigSettings) SetClusterName(v string)`
-
-SetClusterName sets ClusterName field to given value.
-
-
-### GetIngestionLagSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) GetIngestionLagSeconds() int32`
-
-GetIngestionLagSeconds returns the IngestionLagSeconds field if non-nil, zero value otherwise.
-
-### GetIngestionLagSecondsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIngestionLagSecondsOk() (*int32, bool)`
-
-GetIngestionLagSecondsOk returns a tuple with the IngestionLagSeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIngestionLagSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) SetIngestionLagSeconds(v int32)`
-
-SetIngestionLagSeconds sets IngestionLagSeconds field to given value.
-
-### HasIngestionLagSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) HasIngestionLagSeconds() bool`
-
-HasIngestionLagSeconds returns a boolean if a field has been set.
-
 ### GetNamespace
 
 `func (o *SecretProcessesorInputConfigSettings) GetNamespace() string`
@@ -2068,6 +2022,26 @@ and a boolean to check if the value has been set.
 SetWebhookSecret sets WebhookSecret field to given value.
 
 
+### GetClusterName
+
+`func (o *SecretProcessesorInputConfigSettings) GetClusterName() string`
+
+GetClusterName returns the ClusterName field if non-nil, zero value otherwise.
+
+### GetClusterNameOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetClusterNameOk() (*string, bool)`
+
+GetClusterNameOk returns a tuple with the ClusterName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterName
+
+`func (o *SecretProcessesorInputConfigSettings) SetClusterName(v string)`
+
+SetClusterName sets ClusterName field to given value.
+
+
 ### GetLocation
 
 `func (o *SecretProcessesorInputConfigSettings) GetLocation() string`
@@ -2302,31 +2276,6 @@ SetPrimaryEntityValue sets PrimaryEntityValue field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasPrimaryEntityValue() bool`
 
 HasPrimaryEntityValue returns a boolean if a field has been set.
-
-### GetSeverities
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeverities() []WizIssueSeverity`
-
-GetSeverities returns the Severities field if non-nil, zero value otherwise.
-
-### GetSeveritiesOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetSeveritiesOk() (*[]WizIssueSeverity, bool)`
-
-GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeverities
-
-`func (o *SecretProcessesorInputConfigSettings) SetSeverities(v []WizIssueSeverity)`
-
-SetSeverities sets Severities field to given value.
-
-### HasSeverities
-
-`func (o *SecretProcessesorInputConfigSettings) HasSeverities() bool`
-
-HasSeverities returns a boolean if a field has been set.
 
 ### GetControlIds
 
@@ -2647,6 +2596,31 @@ SetSecurityScan sets SecurityScan field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSecurityScan() bool`
 
 HasSecurityScan returns a boolean if a field has been set.
+
+### GetSeverities
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeverities() []WizIssueSeverity`
+
+GetSeverities returns the Severities field if non-nil, zero value otherwise.
+
+### GetSeveritiesOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSeveritiesOk() (*[]WizIssueSeverity, bool)`
+
+GetSeveritiesOk returns a tuple with the Severities field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeverities
+
+`func (o *SecretProcessesorInputConfigSettings) SetSeverities(v []WizIssueSeverity)`
+
+SetSeverities sets Severities field to given value.
+
+### HasSeverities
+
+`func (o *SecretProcessesorInputConfigSettings) HasSeverities() bool`
+
+HasSeverities returns a boolean if a field has been set.
 
 ### GetStackLayers
 

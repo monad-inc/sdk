@@ -254,44 +254,6 @@
                 },
                 "type": "object"
             },
-            "aws_guardduty.SecretsConfig": {
-                "description": "Aws Guardduty secrets",
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "aws_guardduty.SettingsConfig": {
-                "description": "AWS Guardduty settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync of is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "region": {
-                        "description": "The AWS region where GuardDuty is enabled.",
-                        "type": "string"
-                    },
-                    "role_arn": {
-                        "description": "The ARN of the IAM role to assume for accessing GuardDuty.",
-                        "type": "string"
-                    },
-                    "severity": {
-                        "description": "Filter findings by severity levels.",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "aws_s3.SecretsConfig": {
                 "properties": {
                     "access_key": {
@@ -2565,46 +2527,6 @@
                 },
                 "type": "object"
             },
-            "eks_audit_logs.SecretsConfig": {
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "eks_audit_logs.SettingsConfig": {
-                "properties": {
-                    "backfill_start_time": {
-                        "type": "string"
-                    },
-                    "cluster_name": {
-                        "type": "string"
-                    },
-                    "ingestion_lag_seconds": {
-                        "maximum": 1209600,
-                        "minimum": 5,
-                        "type": "integer"
-                    },
-                    "region": {
-                        "type": "string"
-                    },
-                    "role_arn": {
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "cluster_name",
-                    "region"
-                ],
-                "type": "object"
-            },
             "elasticsearch.AuthConfig": {
                 "properties": {
                     "api_key": {
@@ -3806,48 +3728,6 @@
                     },
                     "version": {
                         "type": "integer"
-                    }
-                },
-                "type": "object"
-            },
-            "inspector.SecretsConfig": {
-                "description": "AWS Inspector secrets",
-                "properties": {
-                    "access_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "secret_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "inspector.SettingsConfig": {
-                "description": "AWS Inspector settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from. If not specified, a full sync is fetched on the first sync. All syncs thereafter will be incremental.",
-                        "type": "string"
-                    },
-                    "region": {
-                        "description": "The AWS region where Inspector is enabled.",
-                        "type": "string"
-                    },
-                    "role_arn": {
-                        "description": "The ARN of the IAM role to assume for accessing Inspector.",
-                        "type": "string"
-                    },
-                    "severities": {
-                        "description": "Minimum severity level of findings to fetch.",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
                     }
                 },
                 "type": "object"
@@ -10992,9 +10872,6 @@
                                 "$ref": "#/components/schemas/arize_audit_logs.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/aws_guardduty.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/aws_s3.SecretsConfig"
                             },
                             {
@@ -11064,9 +10941,6 @@
                                 "$ref": "#/components/schemas/defender_for_endpoint_alerts.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/eks_audit_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/endor_labs_audit_logs.SecretsConfig"
                             },
                             {
@@ -11089,9 +10963,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/individual_alerts.SecretsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/inspector.SecretsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/issues.SecretsConfig"
@@ -11167,9 +11038,6 @@
                         "oneOf": [
                             {
                                 "$ref": "#/components/schemas/arize_audit_logs.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/aws_guardduty.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/aws_s3.SettingsConfig"
@@ -11253,9 +11121,6 @@
                                 "$ref": "#/components/schemas/defender_for_endpoint_alerts.SettingsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/eks_audit_logs.SettingsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/endor_labs_audit_logs.SettingsConfig"
                             },
                             {
@@ -11281,9 +11146,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/individual_alerts.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/inspector.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/issues.SettingsConfig"

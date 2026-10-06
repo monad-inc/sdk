@@ -20,7 +20,6 @@ import (
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
 	ArizeAuditLogsSettingsConfig *ArizeAuditLogsSettingsConfig
-	AwsGuarddutySettingsConfig *AwsGuarddutySettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AwsSqsS3CloudtrailSettingsConfig *AwsSqsS3CloudtrailSettingsConfig
 	AwsSqsS3GuarddutySettingsConfig *AwsSqsS3GuarddutySettingsConfig
@@ -48,7 +47,6 @@ type SecretProcessesorInputConfigSettings struct {
 	ClumioConsolidatedAlertsSettingsConfig *ClumioConsolidatedAlertsSettingsConfig
 	CortexXsoarManagementLogsSettingsConfig *CortexXsoarManagementLogsSettingsConfig
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
-	EksAuditLogsSettingsConfig *EksAuditLogsSettingsConfig
 	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
 	EventSettingsConfig *EventSettingsConfig
@@ -58,7 +56,6 @@ type SecretProcessesorInputConfigSettings struct {
 	GoogleCloudStorageSettingsConfig *GoogleCloudStorageSettingsConfig
 	GoogleWorkspaceSettingsConfig *GoogleWorkspaceSettingsConfig
 	IndividualAlertsSettingsConfig *IndividualAlertsSettingsConfig
-	InspectorSettingsConfig *InspectorSettingsConfig
 	IssuesSettingsConfig *IssuesSettingsConfig
 	KoiAuditLogsSettingsConfig *KoiAuditLogsSettingsConfig
 	LogAnalyticsQuerySettingsConfig *LogAnalyticsQuerySettingsConfig
@@ -88,13 +85,6 @@ type SecretProcessesorInputConfigSettings struct {
 func ArizeAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *ArizeAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		ArizeAuditLogsSettingsConfig: v,
-	}
-}
-
-// AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsGuarddutySettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func AwsGuarddutySettingsConfigAsSecretProcessesorInputConfigSettings(v *AwsGuarddutySettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		AwsGuarddutySettingsConfig: v,
 	}
 }
 
@@ -287,13 +277,6 @@ func DefenderForEndpointAlertsSettingsConfigAsSecretProcessesorInputConfigSettin
 	}
 }
 
-// EksAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EksAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func EksAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EksAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		EksAuditLogsSettingsConfig: v,
-	}
-}
-
 // EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EndorLabsAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
 func EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *EndorLabsAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
@@ -354,13 +337,6 @@ func GoogleWorkspaceSettingsConfigAsSecretProcessesorInputConfigSettings(v *Goog
 func IndividualAlertsSettingsConfigAsSecretProcessesorInputConfigSettings(v *IndividualAlertsSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		IndividualAlertsSettingsConfig: v,
-	}
-}
-
-// InspectorSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns InspectorSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func InspectorSettingsConfigAsSecretProcessesorInputConfigSettings(v *InspectorSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		InspectorSettingsConfig: v,
 	}
 }
 
@@ -545,23 +521,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.ArizeAuditLogsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into AwsGuarddutySettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.AwsGuarddutySettingsConfig)
-	if err == nil {
-		jsonAwsGuarddutySettingsConfig, _ := json.Marshal(dst.AwsGuarddutySettingsConfig)
-		if string(jsonAwsGuarddutySettingsConfig) == "{}" { // empty struct
-			dst.AwsGuarddutySettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.AwsGuarddutySettingsConfig); err != nil {
-				dst.AwsGuarddutySettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AwsGuarddutySettingsConfig = nil
 	}
 
 	// try to unmarshal data into AwsS3SettingsConfig
@@ -1023,23 +982,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 	}
 
-	// try to unmarshal data into EksAuditLogsSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.EksAuditLogsSettingsConfig)
-	if err == nil {
-		jsonEksAuditLogsSettingsConfig, _ := json.Marshal(dst.EksAuditLogsSettingsConfig)
-		if string(jsonEksAuditLogsSettingsConfig) == "{}" { // empty struct
-			dst.EksAuditLogsSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EksAuditLogsSettingsConfig); err != nil {
-				dst.EksAuditLogsSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EksAuditLogsSettingsConfig = nil
-	}
-
 	// try to unmarshal data into EndorLabsAuditLogsSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.EndorLabsAuditLogsSettingsConfig)
 	if err == nil {
@@ -1191,23 +1133,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		}
 	} else {
 		dst.IndividualAlertsSettingsConfig = nil
-	}
-
-	// try to unmarshal data into InspectorSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.InspectorSettingsConfig)
-	if err == nil {
-		jsonInspectorSettingsConfig, _ := json.Marshal(dst.InspectorSettingsConfig)
-		if string(jsonInspectorSettingsConfig) == "{}" { // empty struct
-			dst.InspectorSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.InspectorSettingsConfig); err != nil {
-				dst.InspectorSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.InspectorSettingsConfig = nil
 	}
 
 	// try to unmarshal data into IssuesSettingsConfig
@@ -1604,7 +1529,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.ArizeAuditLogsSettingsConfig = nil
-		dst.AwsGuarddutySettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AwsSqsS3CloudtrailSettingsConfig = nil
 		dst.AwsSqsS3GuarddutySettingsConfig = nil
@@ -1632,7 +1556,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.ClumioConsolidatedAlertsSettingsConfig = nil
 		dst.CortexXsoarManagementLogsSettingsConfig = nil
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
-		dst.EksAuditLogsSettingsConfig = nil
 		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
 		dst.EventSettingsConfig = nil
@@ -1642,7 +1565,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.GoogleCloudStorageSettingsConfig = nil
 		dst.GoogleWorkspaceSettingsConfig = nil
 		dst.IndividualAlertsSettingsConfig = nil
-		dst.InspectorSettingsConfig = nil
 		dst.IssuesSettingsConfig = nil
 		dst.KoiAuditLogsSettingsConfig = nil
 		dst.LogAnalyticsQuerySettingsConfig = nil
@@ -1679,10 +1601,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 	if src.ArizeAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.ArizeAuditLogsSettingsConfig)
-	}
-
-	if src.AwsGuarddutySettingsConfig != nil {
-		return json.Marshal(&src.AwsGuarddutySettingsConfig)
 	}
 
 	if src.AwsS3SettingsConfig != nil {
@@ -1793,10 +1711,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.DefenderForEndpointAlertsSettingsConfig)
 	}
 
-	if src.EksAuditLogsSettingsConfig != nil {
-		return json.Marshal(&src.EksAuditLogsSettingsConfig)
-	}
-
 	if src.EndorLabsAuditLogsSettingsConfig != nil {
 		return json.Marshal(&src.EndorLabsAuditLogsSettingsConfig)
 	}
@@ -1831,10 +1745,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.IndividualAlertsSettingsConfig != nil {
 		return json.Marshal(&src.IndividualAlertsSettingsConfig)
-	}
-
-	if src.InspectorSettingsConfig != nil {
-		return json.Marshal(&src.InspectorSettingsConfig)
 	}
 
 	if src.IssuesSettingsConfig != nil {
@@ -1939,10 +1849,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 	}
 	if obj.ArizeAuditLogsSettingsConfig != nil {
 		return obj.ArizeAuditLogsSettingsConfig
-	}
-
-	if obj.AwsGuarddutySettingsConfig != nil {
-		return obj.AwsGuarddutySettingsConfig
 	}
 
 	if obj.AwsS3SettingsConfig != nil {
@@ -2053,10 +1959,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.DefenderForEndpointAlertsSettingsConfig
 	}
 
-	if obj.EksAuditLogsSettingsConfig != nil {
-		return obj.EksAuditLogsSettingsConfig
-	}
-
 	if obj.EndorLabsAuditLogsSettingsConfig != nil {
 		return obj.EndorLabsAuditLogsSettingsConfig
 	}
@@ -2091,10 +1993,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return obj.IndividualAlertsSettingsConfig
-	}
-
-	if obj.InspectorSettingsConfig != nil {
-		return obj.InspectorSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {
@@ -2197,10 +2095,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interface{}) {
 	if obj.ArizeAuditLogsSettingsConfig != nil {
 		return *obj.ArizeAuditLogsSettingsConfig
-	}
-
-	if obj.AwsGuarddutySettingsConfig != nil {
-		return *obj.AwsGuarddutySettingsConfig
 	}
 
 	if obj.AwsS3SettingsConfig != nil {
@@ -2311,10 +2205,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 		return *obj.DefenderForEndpointAlertsSettingsConfig
 	}
 
-	if obj.EksAuditLogsSettingsConfig != nil {
-		return *obj.EksAuditLogsSettingsConfig
-	}
-
 	if obj.EndorLabsAuditLogsSettingsConfig != nil {
 		return *obj.EndorLabsAuditLogsSettingsConfig
 	}
@@ -2349,10 +2239,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.IndividualAlertsSettingsConfig != nil {
 		return *obj.IndividualAlertsSettingsConfig
-	}
-
-	if obj.InspectorSettingsConfig != nil {
-		return *obj.InspectorSettingsConfig
 	}
 
 	if obj.IssuesSettingsConfig != nil {

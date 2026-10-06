@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
-import org.openapitools.client.model.AwsGuarddutySettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AwsSqsS3CloudtrailChunkingMode;
 import org.openapitools.client.model.AwsSqsS3CloudtrailSettingsConfig;
@@ -57,7 +56,6 @@ import org.openapitools.client.model.CommonAuthConfig;
 import org.openapitools.client.model.CommonAuthType;
 import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
-import org.openapitools.client.model.EksAuditLogsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
 import org.openapitools.client.model.EventSettingsConfig;
@@ -68,7 +66,6 @@ import org.openapitools.client.model.GkeAuditLogsSettingsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSettingsConfig;
 import org.openapitools.client.model.GoogleWorkspaceSettingsConfig;
 import org.openapitools.client.model.IndividualAlertsSettingsConfig;
-import org.openapitools.client.model.InspectorSettingsConfig;
 import org.openapitools.client.model.IssuesSettingsConfig;
 import org.openapitools.client.model.KoiAuditLogsSettingsConfig;
 import org.openapitools.client.model.LogAnalyticsQuerySettingsConfig;
@@ -161,30 +158,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'region'
-     */
-    @Test
-    public void regionTest() {
-        // TODO: test region
-    }
-
-    /**
-     * Test the property 'roleArn'
-     */
-    @Test
-    public void roleArnTest() {
-        // TODO: test roleArn
-    }
-
-    /**
-     * Test the property 'severity'
-     */
-    @Test
-    public void severityTest() {
-        // TODO: test severity
-    }
-
-    /**
      * Test the property 'bucket'
      */
     @Test
@@ -238,6 +211,22 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void recordLocationTest() {
         // TODO: test recordLocation
+    }
+
+    /**
+     * Test the property 'region'
+     */
+    @Test
+    public void regionTest() {
+        // TODO: test region
+    }
+
+    /**
+     * Test the property 'roleArn'
+     */
+    @Test
+    public void roleArnTest() {
+        // TODO: test roleArn
     }
 
     /**
@@ -529,6 +518,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'severity'
+     */
+    @Test
+    public void severityTest() {
+        // TODO: test severity
+    }
+
+    /**
      * Test the property 'status'
      */
     @Test
@@ -665,22 +662,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'clusterName'
-     */
-    @Test
-    public void clusterNameTest() {
-        // TODO: test clusterName
-    }
-
-    /**
-     * Test the property 'ingestionLagSeconds'
-     */
-    @Test
-    public void ingestionLagSecondsTest() {
-        // TODO: test ingestionLagSeconds
-    }
-
-    /**
      * Test the property 'namespace'
      */
     @Test
@@ -769,6 +750,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'clusterName'
+     */
+    @Test
+    public void clusterNameTest() {
+        // TODO: test clusterName
+    }
+
+    /**
      * Test the property 'location'
      */
     @Test
@@ -846,14 +835,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void primaryEntityValueTest() {
         // TODO: test primaryEntityValue
-    }
-
-    /**
-     * Test the property 'severities'
-     */
-    @Test
-    public void severitiesTest() {
-        // TODO: test severities
     }
 
     /**
@@ -958,6 +939,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void securityScanTest() {
         // TODO: test securityScan
+    }
+
+    /**
+     * Test the property 'severities'
+     */
+    @Test
+    public void severitiesTest() {
+        // TODO: test severities
     }
 
     /**

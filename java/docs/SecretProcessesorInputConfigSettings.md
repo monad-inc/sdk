@@ -11,9 +11,6 @@
 |**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
 |**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
-|**region** | **String** | AWS Region of your bucket. |  |
-|**roleArn** | **String** | Role ARN to assume when reading from S3. |  [optional] |
-|**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
 |**bucket** | **String** | Name of the S3 bucket that receives Redshift audit logs. |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**format** | [**FormatEnum**](#FormatEnum) | File format of the objects |  |
@@ -21,6 +18,8 @@
 |**partitionFormat** | [**PartitionFormatEnum**](#PartitionFormatEnum) | Partition format of your bucket. Options: hive compliant (&#39;year&#x3D;2024/month&#x3D;01/day&#x3D;01&#39;), flat hive compliant (&#39;dt&#x3D;2024-01-01&#39;), or simple date (&#39;2024/01/01&#39;). |  |
 |**prefix** | **String** | Prefix of the audit log keys, up to (but not including) the date partition — e.g. \&quot;AWSLogs/123456789012/redshift/us-east-1\&quot;. If you configured a custom S3 key prefix for audit logging, include it here. |  [optional] |
 |**recordLocation** | **String** | JSONPath location of the records array in the GraphQL response |  [optional] |
+|**region** | **String** | AWS Region of your bucket. |  |
+|**roleArn** | **String** | Role ARN to assume when reading from S3. |  [optional] |
 |**schema** | **Set&lt;String&gt;** | Ordered list of column names for headerless delimited files (e.g. PSV). Applies to the \&quot;delimited\&quot; format only; the \&quot;csv\&quot; and \&quot;wsv\&quot; formats always read column names from the first row and ignore this field. |  |
 |**chunkingMode** | **AwsSqsS3CloudtrailChunkingMode** |  |  [optional] |
 |**excludeDigestFiles** | **Boolean** | ExcludeDigestFiles skips keys containing \&quot;/CloudTrail-Digest/\&quot; (hash signatures, not events). |  [optional] |
@@ -57,6 +56,7 @@
 |**accountId** | **String** | Account ID for the input |  [optional] |
 |**endpointUrl** | **String** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/vulnerability-findings&#39;. |  |
 |**result** | **List&lt;WizResult&gt;** | Result types for Wiz. Ex: &#39;PASSED&#39;, &#39;FAILED&#39;, &#39;ERROR&#39;, &#39;NOT ASSESSED&#39;. |  [optional] |
+|**severity** | **String** | Filter by alert severity (error, warning) |  [optional] |
 |**status** | **List&lt;WizStatus&gt;** | Status types for Wiz. Ex: &#39;OPEN&#39;, &#39;RESOLVED&#39;. |  [optional] |
 |**enableProtoPayloadParsing** | **Boolean** | Enables automatic parsing of embedded protocol buffer payloads within the input. |  [optional] |
 |**filter** | **String** | The filter to apply to the logs. |  [optional] |
@@ -74,8 +74,6 @@
 |**apiKeyId** | **String** | API Key ID for authentication |  |
 |**domainName** | **String** | Domain name of the Cortex XSOAR instance |  |
 |**category** | [**CategoryEnum**](#CategoryEnum) | The Category of logs to query |  |
-|**clusterName** | **String** | The name of the GKE cluster. |  |
-|**ingestionLagSeconds** | **Integer** |  |  [optional] |
 |**namespace** | **String** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) |  |
 |**ingestionDelay** | **Integer** | The ingestion delay in seconds for the data source |  [optional] |
 |**workspaceId** | **String** | The workspace ID of the Log Analytics workspace |  |
@@ -87,6 +85,7 @@
 |**authConfig** | [**CommonAuthConfig**](CommonAuthConfig.md) |  |  [optional] |
 |**scope** | [**GithubActionsWorkflowLogsWebhookScopeConfig**](GithubActionsWorkflowLogsWebhookScopeConfig.md) |  |  [optional] |
 |**webhookSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clusterName** | **String** | The name of the GKE cluster. |  |
 |**location** | **String** | The GCP location (region or zone) where the GKE cluster runs, e.g. us-central1. |  |
 |**projectId** | **String** | The Google Cloud project ID to use |  |
 |**bucketName** | **String** | The name of the Google Cloud Storage bucket to use |  |
@@ -97,7 +96,6 @@
 |**embed** | **String** | Embed related resources in the data returned (e.g., read-consolidated-alert) |  [optional] |
 |**primaryEntityType** | **String** | Filter by primary entity type (e.g., aws_ebs_volume, vmware_vm) |  [optional] |
 |**primaryEntityValue** | **String** | Filter by primary entity value (contains search) |  [optional] |
-|**severities** | **List&lt;WizIssueSeverity&gt;** | @Description Filter Issues according to Control severity |  [optional] |
 |**controlIds** | **List&lt;String&gt;** | @Description Filter Issues created by specific control IDs |  [optional] |
 |**hasNote** | **WizNoteFilter** |  |  [optional] |
 |**hasRemediation** | **WizRemediationFilter** |  |  [optional] |
@@ -111,6 +109,7 @@
 |**riskEqualsAny** | **List&lt;WizRiskType&gt;** | @Description Filters Issues by risk type according to Wiz-defined types of risk @Description Use the risk ID and not the risk name |  [optional] |
 |**searchQuery** | **String** | @Description Free text search on Issue title or object name @Description Returns NULL if no match is found |  [optional] |
 |**securityScan** | **String** | @Description Filter by security scan source |  [optional] |
+|**severities** | **List&lt;WizIssueSeverity&gt;** | @Description Filter Issues according to Control severity |  [optional] |
 |**stackLayers** | **List&lt;WizStackLayer&gt;** | @Description Filter Issues from specific stack layers |  [optional] |
 |**tenantDataCenter** | **String** | DataCenter represents the tenant&#39;s data center location. Enter a tenant data center, e.g., \&quot;us1\&quot;, \&quot;us2\&quot;, \&quot;us3\&quot; |  |
 |**auditLogTypes** | **List&lt;String&gt;** | Filter audit logs by type(s). Available types: approval_requests, devices, endpoints, extensions, firewall. Leave empty to fetch all types. |  [optional] |

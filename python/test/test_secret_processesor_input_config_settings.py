@@ -42,9 +42,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     rate = 1.337, 
                     unit = 'per_second', ),
                 use_synthetic_data = True,
-                region = '',
-                role_arn = '',
-                severity = '',
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
@@ -57,6 +54,8 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 partition_format = 'flat hive compliant',
                 prefix = '',
                 record_location = '',
+                region = '',
+                role_arn = '',
                 var_schema = [
                     ''
                     ],
@@ -101,6 +100,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 result = [
                     'PASS'
                     ],
+                severity = '',
                 status = [
                     'OPEN'
                     ],
@@ -128,8 +128,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 api_key_id = '',
                 domain_name = '',
                 category = 'AuditLogs',
-                cluster_name = '',
-                ingestion_lag_seconds = 5,
                 namespace = '',
                 ingestion_delay = 56,
                 workspace_id = '',
@@ -185,6 +183,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                         shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
+                cluster_name = '',
                 location = '',
                 project_id = '',
                 bucket_name = '',
@@ -195,9 +194,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 embed = '',
                 primary_entity_type = '',
                 primary_entity_value = '',
-                severities = [
-                    'INFORMATIONAL'
-                    ],
                 control_ids = [
                     ''
                     ],
@@ -225,6 +221,9 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 search_query = '',
                 security_scan = '',
+                severities = [
+                    'INFORMATIONAL'
+                    ],
                 stack_layers = [
                     'APPLICATION_AND_DATA'
                     ],
@@ -283,11 +282,11 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
             )
         else:
             return SecretProcessesorInputConfigSettings(
-                region = '',
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
                 partition_format = 'flat hive compliant',
+                region = '',
                 var_schema = [
                     ''
                     ],
@@ -301,7 +300,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 api_key_id = '',
                 domain_name = '',
                 category = 'AuditLogs',
-                cluster_name = '',
                 namespace = '',
                 workspace_id = '',
                 org_slug = '',
@@ -318,6 +316,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                         shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
+                cluster_name = '',
                 location = '',
                 project_id = '',
                 bucket_name = '',

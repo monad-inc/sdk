@@ -13,8 +13,6 @@ export * from '../models/ArizeAuditLogsSettingsConfig';
 export * from '../models/AuthenticationtypesAuthenticationMethod';
 export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
 export * from '../models/AuthenticationtypesTokenResponse';
-export * from '../models/AwsGuarddutySecretsConfig';
-export * from '../models/AwsGuarddutySettingsConfig';
 export * from '../models/AwsS3SecretsConfig';
 export * from '../models/AwsS3SettingsConfig';
 export * from '../models/AwsSqsS3CloudtrailChunkingMode';
@@ -139,8 +137,6 @@ export * from '../models/DropKeyArgumentsConfig';
 export * from '../models/DropKeyWhereValueEqArgumentsConfig';
 export * from '../models/DropRecordWhereValueEqArgumentsConfig';
 export * from '../models/DuplicateKeyValueToKeyArgumentsConfig';
-export * from '../models/EksAuditLogsSecretsConfig';
-export * from '../models/EksAuditLogsSettingsConfig';
 export * from '../models/ElasticsearchAuthConfig';
 export * from '../models/ElasticsearchCloudIdVariant';
 export * from '../models/ElasticsearchConnectionConfig';
@@ -204,8 +200,6 @@ export * from '../models/IbmQradarSettingsConfig';
 export * from '../models/IndividualAlertsSecretsConfig';
 export * from '../models/IndividualAlertsSettingsConfig';
 export * from '../models/InputsConnectorMeta';
-export * from '../models/InspectorSecretsConfig';
-export * from '../models/InspectorSettingsConfig';
 export * from '../models/IssuesSecretsConfig';
 export * from '../models/IssuesSettingsConfig';
 export * from '../models/JqArgumentsConfig';
@@ -646,8 +640,6 @@ import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsCo
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
-import { AwsGuarddutySecretsConfig } from '../models/AwsGuarddutySecretsConfig';
-import { AwsGuarddutySettingsConfig } from '../models/AwsGuarddutySettingsConfig';
 import { AwsS3SecretsConfig } from '../models/AwsS3SecretsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwsSqsS3CloudtrailChunkingMode } from '../models/AwsSqsS3CloudtrailChunkingMode';
@@ -772,8 +764,6 @@ import { DropKeyArgumentsConfig } from '../models/DropKeyArgumentsConfig';
 import { DropKeyWhereValueEqArgumentsConfig } from '../models/DropKeyWhereValueEqArgumentsConfig';
 import { DropRecordWhereValueEqArgumentsConfig } from '../models/DropRecordWhereValueEqArgumentsConfig';
 import { DuplicateKeyValueToKeyArgumentsConfig } from '../models/DuplicateKeyValueToKeyArgumentsConfig';
-import { EksAuditLogsSecretsConfig } from '../models/EksAuditLogsSecretsConfig';
-import { EksAuditLogsSettingsConfig } from '../models/EksAuditLogsSettingsConfig';
 import { ElasticsearchAuthConfig  , ElasticsearchAuthConfigTypeEnum   } from '../models/ElasticsearchAuthConfig';
 import { ElasticsearchCloudIdVariant } from '../models/ElasticsearchCloudIdVariant';
 import { ElasticsearchConnectionConfig , ElasticsearchConnectionConfigTypeEnum    } from '../models/ElasticsearchConnectionConfig';
@@ -837,8 +827,6 @@ import { IbmQradarSettingsConfig } from '../models/IbmQradarSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
 import { InputsConnectorMeta               } from '../models/InputsConnectorMeta';
-import { InspectorSecretsConfig } from '../models/InspectorSecretsConfig';
-import { InspectorSettingsConfig } from '../models/InspectorSettingsConfig';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig                     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
@@ -1379,8 +1367,6 @@ let typeMap: {[index: string]: any} = {
     "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,
     "AuthenticationtypesMFAEnrollmentTicket": AuthenticationtypesMFAEnrollmentTicket,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,
-    "AwsGuarddutySecretsConfig": AwsGuarddutySecretsConfig,
-    "AwsGuarddutySettingsConfig": AwsGuarddutySettingsConfig,
     "AwsS3SecretsConfig": AwsS3SecretsConfig,
     "AwsS3SettingsConfig": AwsS3SettingsConfig,
     "AwsSqsS3CloudtrailSettingsConfig": AwsSqsS3CloudtrailSettingsConfig,
@@ -1499,8 +1485,6 @@ let typeMap: {[index: string]: any} = {
     "DropKeyWhereValueEqArgumentsConfig": DropKeyWhereValueEqArgumentsConfig,
     "DropRecordWhereValueEqArgumentsConfig": DropRecordWhereValueEqArgumentsConfig,
     "DuplicateKeyValueToKeyArgumentsConfig": DuplicateKeyValueToKeyArgumentsConfig,
-    "EksAuditLogsSecretsConfig": EksAuditLogsSecretsConfig,
-    "EksAuditLogsSettingsConfig": EksAuditLogsSettingsConfig,
     "ElasticsearchAuthConfig": ElasticsearchAuthConfig,
     "ElasticsearchCloudIdVariant": ElasticsearchCloudIdVariant,
     "ElasticsearchConnectionConfig": ElasticsearchConnectionConfig,
@@ -1562,8 +1546,6 @@ let typeMap: {[index: string]: any} = {
     "IndividualAlertsSecretsConfig": IndividualAlertsSecretsConfig,
     "IndividualAlertsSettingsConfig": IndividualAlertsSettingsConfig,
     "InputsConnectorMeta": InputsConnectorMeta,
-    "InspectorSecretsConfig": InspectorSecretsConfig,
-    "InspectorSettingsConfig": InspectorSettingsConfig,
     "IssuesSecretsConfig": IssuesSecretsConfig,
     "IssuesSettingsConfig": IssuesSettingsConfig,
     "JqArgumentsConfig": JqArgumentsConfig,
