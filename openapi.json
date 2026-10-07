@@ -137,6 +137,10 @@
                     "name": {
                         "type": "string"
                     },
+                    "supports_tag_targeting": {
+                        "description": "SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it.",
+                        "type": "boolean"
+                    },
                     "tier": {
                         "type": "integer"
                     },

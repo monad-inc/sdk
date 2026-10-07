@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Internal** | Pointer to **bool** |  | [optional] 
 **ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**SupportsTagTargeting** | Pointer to **bool** | SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it. | [optional] 
 **Tier** | Pointer to **int32** |  | [optional] 
 **TypeId** | Pointer to **string** |  | [optional] 
 
@@ -243,6 +244,31 @@ SetName sets Name field to given value.
 `func (o *AlertsAlertMeta) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetSupportsTagTargeting
+
+`func (o *AlertsAlertMeta) GetSupportsTagTargeting() bool`
+
+GetSupportsTagTargeting returns the SupportsTagTargeting field if non-nil, zero value otherwise.
+
+### GetSupportsTagTargetingOk
+
+`func (o *AlertsAlertMeta) GetSupportsTagTargetingOk() (*bool, bool)`
+
+GetSupportsTagTargetingOk returns a tuple with the SupportsTagTargeting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsTagTargeting
+
+`func (o *AlertsAlertMeta) SetSupportsTagTargeting(v bool)`
+
+SetSupportsTagTargeting sets SupportsTagTargeting field to given value.
+
+### HasSupportsTagTargeting
+
+`func (o *AlertsAlertMeta) HasSupportsTagTargeting() bool`
+
+HasSupportsTagTargeting returns a boolean if a field has been set.
 
 ### GetTier
 

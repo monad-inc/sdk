@@ -28,6 +28,8 @@ type AlertsAlertMeta struct {
 	Internal *bool `json:"internal,omitempty"`
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
+	// SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it.
+	SupportsTagTargeting *bool `json:"supports_tag_targeting,omitempty"`
 	Tier *int32 `json:"tier,omitempty"`
 	TypeId *string `json:"type_id,omitempty"`
 }
@@ -306,6 +308,38 @@ func (o *AlertsAlertMeta) SetName(v string) {
 	o.Name = &v
 }
 
+// GetSupportsTagTargeting returns the SupportsTagTargeting field value if set, zero value otherwise.
+func (o *AlertsAlertMeta) GetSupportsTagTargeting() bool {
+	if o == nil || IsNil(o.SupportsTagTargeting) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsTagTargeting
+}
+
+// GetSupportsTagTargetingOk returns a tuple with the SupportsTagTargeting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertsAlertMeta) GetSupportsTagTargetingOk() (*bool, bool) {
+	if o == nil || IsNil(o.SupportsTagTargeting) {
+		return nil, false
+	}
+	return o.SupportsTagTargeting, true
+}
+
+// HasSupportsTagTargeting returns a boolean if a field has been set.
+func (o *AlertsAlertMeta) HasSupportsTagTargeting() bool {
+	if o != nil && !IsNil(o.SupportsTagTargeting) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsTagTargeting gets a reference to the given bool and assigns it to the SupportsTagTargeting field.
+func (o *AlertsAlertMeta) SetSupportsTagTargeting(v bool) {
+	o.SupportsTagTargeting = &v
+}
+
 // GetTier returns the Tier field value if set, zero value otherwise.
 func (o *AlertsAlertMeta) GetTier() int32 {
 	if o == nil || IsNil(o.Tier) {
@@ -403,6 +437,9 @@ func (o AlertsAlertMeta) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.SupportsTagTargeting) {
+		toSerialize["supports_tag_targeting"] = o.SupportsTagTargeting
 	}
 	if !IsNil(o.Tier) {
 		toSerialize["tier"] = o.Tier

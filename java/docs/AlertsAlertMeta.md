@@ -15,6 +15,7 @@
 |**internal** | **Boolean** |  |  [optional] |
 |**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
+|**supportsTagTargeting** | **Boolean** | SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it. |  [optional] |
 |**tier** | **Integer** |  |  [optional] |
 |**typeId** | **String** |  |  [optional] |
 

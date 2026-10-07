@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **internal** | **bool** |  | [optional] 
 **managed_by** | [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **name** | **str** |  | [optional] 
+**supports_tag_targeting** | **bool** | SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it. | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 
 

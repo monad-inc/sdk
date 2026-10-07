@@ -25,6 +25,10 @@ export class AlertsAlertMeta {
     'internal'?: boolean;
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
+    /**
+    * SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it.
+    */
+    'supportsTagTargeting'?: boolean;
     'tier'?: number;
     'typeId'?: string;
 
@@ -79,6 +83,12 @@ export class AlertsAlertMeta {
             "name": "name",
             "baseName": "name",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "supportsTagTargeting",
+            "baseName": "supports_tag_targeting",
+            "type": "boolean",
             "format": ""
         },
         {

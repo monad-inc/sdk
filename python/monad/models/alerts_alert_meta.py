@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.alerts_alert_category import AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity
@@ -40,9 +40,10 @@ class AlertsAlertMeta(BaseModel):
     internal: Optional[StrictBool] = None
     managed_by: Optional[ModelsManagedBy] = None
     name: Optional[StrictStr] = None
+    supports_tag_targeting: Optional[StrictBool] = Field(default=None, description="SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it.")
     tier: Optional[StrictInt] = None
     type_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["category", "config", "description", "granularity", "house", "internal", "managed_by", "name", "tier", "type_id"]
+    __properties: ClassVar[List[str]] = ["category", "config", "description", "granularity", "house", "internal", "managed_by", "name", "supports_tag_targeting", "tier", "type_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -108,6 +109,7 @@ class AlertsAlertMeta(BaseModel):
             "internal": obj.get("internal"),
             "managed_by": obj.get("managed_by"),
             "name": obj.get("name"),
+            "supports_tag_targeting": obj.get("supports_tag_targeting"),
             "tier": obj.get("tier"),
             "type_id": obj.get("type_id")
         })

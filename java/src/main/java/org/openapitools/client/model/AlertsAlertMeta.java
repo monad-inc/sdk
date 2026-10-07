@@ -95,6 +95,11 @@ public class AlertsAlertMeta {
   @javax.annotation.Nullable
   private String name;
 
+  public static final String SERIALIZED_NAME_SUPPORTS_TAG_TARGETING = "supports_tag_targeting";
+  @SerializedName(SERIALIZED_NAME_SUPPORTS_TAG_TARGETING)
+  @javax.annotation.Nullable
+  private Boolean supportsTagTargeting;
+
   public static final String SERIALIZED_NAME_TIER = "tier";
   @SerializedName(SERIALIZED_NAME_TIER)
   @javax.annotation.Nullable
@@ -260,6 +265,25 @@ public class AlertsAlertMeta {
   }
 
 
+  public AlertsAlertMeta supportsTagTargeting(@javax.annotation.Nullable Boolean supportsTagTargeting) {
+    this.supportsTagTargeting = supportsTagTargeting;
+    return this;
+  }
+
+  /**
+   * SupportsTagTargeting: the evaluator sees pipeline tags. api and ui gate tags on it.
+   * @return supportsTagTargeting
+   */
+  @javax.annotation.Nullable
+  public Boolean getSupportsTagTargeting() {
+    return supportsTagTargeting;
+  }
+
+  public void setSupportsTagTargeting(@javax.annotation.Nullable Boolean supportsTagTargeting) {
+    this.supportsTagTargeting = supportsTagTargeting;
+  }
+
+
   public AlertsAlertMeta tier(@javax.annotation.Nullable Integer tier) {
     this.tier = tier;
     return this;
@@ -316,6 +340,7 @@ public class AlertsAlertMeta {
         Objects.equals(this.internal, alertsAlertMeta.internal) &&
         Objects.equals(this.managedBy, alertsAlertMeta.managedBy) &&
         Objects.equals(this.name, alertsAlertMeta.name) &&
+        Objects.equals(this.supportsTagTargeting, alertsAlertMeta.supportsTagTargeting) &&
         Objects.equals(this.tier, alertsAlertMeta.tier) &&
         Objects.equals(this.typeId, alertsAlertMeta.typeId);
   }
@@ -326,7 +351,7 @@ public class AlertsAlertMeta {
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, config, description, granularity, house, internal, managedBy, name, tier, typeId);
+    return Objects.hash(category, config, description, granularity, house, internal, managedBy, name, supportsTagTargeting, tier, typeId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -348,6 +373,7 @@ public class AlertsAlertMeta {
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    supportsTagTargeting: ").append(toIndentedString(supportsTagTargeting)).append("\n");
     sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
     sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
     sb.append("}");
@@ -368,7 +394,7 @@ public class AlertsAlertMeta {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("category", "config", "description", "granularity", "house", "internal", "managed_by", "name", "tier", "type_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("category", "config", "description", "granularity", "house", "internal", "managed_by", "name", "supports_tag_targeting", "tier", "type_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

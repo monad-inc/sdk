@@ -44,6 +44,7 @@ class TestAlertsAlertMeta(unittest.TestCase):
                 internal = True,
                 managed_by = 'customer',
                 name = '',
+                supports_tag_targeting = True,
                 tier = 56,
                 type_id = ''
             )

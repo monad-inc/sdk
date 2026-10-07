@@ -107,6 +107,14 @@ public class AlertsAlertMetaTest {
     }
 
     /**
+     * Test the property 'supportsTagTargeting'
+     */
+    @Test
+    public void supportsTagTargetingTest() {
+        // TODO: test supportsTagTargeting
+    }
+
+    /**
      * Test the property 'tier'
      */
     @Test
