@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**InvertSelection** | Pointer to **bool** | InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs. | [optional] 
+**InvertSelection** | Pointer to **bool** | InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it. | [optional] 
 **ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ResourceMetadata** | Pointer to [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **RuleConfig** | Pointer to **map[string]interface{}** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
+**TagIds** | Pointer to **[]string** | TagIDs adds every pipeline carrying any of these tags to the selection. | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
@@ -337,6 +338,31 @@ SetSeverity sets Severity field to given value.
 `func (o *RoutesV3AlertRuleWithMetadata) HasSeverity() bool`
 
 HasSeverity returns a boolean if a field has been set.
+
+### GetTagIds
+
+`func (o *RoutesV3AlertRuleWithMetadata) GetTagIds() []string`
+
+GetTagIds returns the TagIds field if non-nil, zero value otherwise.
+
+### GetTagIdsOk
+
+`func (o *RoutesV3AlertRuleWithMetadata) GetTagIdsOk() (*[]string, bool)`
+
+GetTagIdsOk returns a tuple with the TagIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTagIds
+
+`func (o *RoutesV3AlertRuleWithMetadata) SetTagIds(v []string)`
+
+SetTagIds sets TagIds field to given value.
+
+### HasTagIds
+
+`func (o *RoutesV3AlertRuleWithMetadata) HasTagIds() bool`
+
+HasTagIds returns a boolean if a field has been set.
 
 ### GetType
 

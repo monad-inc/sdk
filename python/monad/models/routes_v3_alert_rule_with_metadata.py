@@ -34,7 +34,7 @@ class RoutesV3AlertRuleWithMetadata(BaseModel):
     created_at: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    invert_selection: Optional[StrictBool] = Field(default=None, description="InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs.")
+    invert_selection: Optional[StrictBool] = Field(default=None, description="InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it.")
     managed_by: Optional[ModelsManagedBy] = None
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
@@ -42,9 +42,10 @@ class RoutesV3AlertRuleWithMetadata(BaseModel):
     resource_metadata: Optional[ConnectormetaResourceMetadata] = None
     rule_config: Optional[Dict[str, Any]] = None
     severity: Optional[StrictStr] = None
+    tag_ids: Optional[List[StrictStr]] = Field(default=None, description="TagIDs adds every pipeline carrying any of these tags to the selection.")
     type: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "resource_metadata", "rule_config", "severity", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "resource_metadata", "rule_config", "severity", "tag_ids", "type", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -112,6 +113,7 @@ class RoutesV3AlertRuleWithMetadata(BaseModel):
             "resource_metadata": ConnectormetaResourceMetadata.from_dict(obj["resource_metadata"]) if obj.get("resource_metadata") is not None else None,
             "rule_config": obj.get("rule_config"),
             "severity": obj.get("severity"),
+            "tag_ids": obj.get("tag_ids"),
             "type": obj.get("type"),
             "updated_at": obj.get("updated_at")
         })

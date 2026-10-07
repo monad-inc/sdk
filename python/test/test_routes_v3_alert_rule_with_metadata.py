@@ -59,6 +59,9 @@ class TestRoutesV3AlertRuleWithMetadata(unittest.TestCase):
                     'key' : null
                     },
                 severity = '',
+                tag_ids = [
+                    ''
+                    ],
                 type = '',
                 updated_at = ''
             )

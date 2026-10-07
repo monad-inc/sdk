@@ -24,7 +24,7 @@ type ModelsAlertRule struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
-	// InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs.
+	// InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it.
 	InvertSelection *bool `json:"invert_selection,omitempty"`
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -32,6 +32,8 @@ type ModelsAlertRule struct {
 	PipelineIds []string `json:"pipeline_ids,omitempty"`
 	RuleConfig map[string]interface{} `json:"rule_config,omitempty"`
 	Severity *string `json:"severity,omitempty"`
+	// TagIDs adds every pipeline carrying any of these tags to the selection.
+	TagIds []string `json:"tag_ids,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
@@ -405,6 +407,38 @@ func (o *ModelsAlertRule) SetSeverity(v string) {
 	o.Severity = &v
 }
 
+// GetTagIds returns the TagIds field value if set, zero value otherwise.
+func (o *ModelsAlertRule) GetTagIds() []string {
+	if o == nil || IsNil(o.TagIds) {
+		var ret []string
+		return ret
+	}
+	return o.TagIds
+}
+
+// GetTagIdsOk returns a tuple with the TagIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAlertRule) GetTagIdsOk() ([]string, bool) {
+	if o == nil || IsNil(o.TagIds) {
+		return nil, false
+	}
+	return o.TagIds, true
+}
+
+// HasTagIds returns a boolean if a field has been set.
+func (o *ModelsAlertRule) HasTagIds() bool {
+	if o != nil && !IsNil(o.TagIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetTagIds gets a reference to the given []string and assigns it to the TagIds field.
+func (o *ModelsAlertRule) SetTagIds(v []string) {
+	o.TagIds = v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ModelsAlertRule) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -511,6 +545,9 @@ func (o ModelsAlertRule) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
+	}
+	if !IsNil(o.TagIds) {
+		toSerialize["tag_ids"] = o.TagIds
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -1,0 +1,516 @@
+# SecretProcessesorInputConfigSecrets
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**TenantId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApplicationKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApplicationKeyId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**CredentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**GithubAppPrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**Secret** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**TwilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+
+## Methods
+
+### NewSecretProcessesorInputConfigSecrets
+
+`func NewSecretProcessesorInputConfigSecrets(apiKey ModelsSecret, accessKey ModelsSecret, secretKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, apiSecret ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+
+NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewSecretProcessesorInputConfigSecretsWithDefaults
+
+`func NewSecretProcessesorInputConfigSecretsWithDefaults() *SecretProcessesorInputConfigSecrets`
+
+NewSecretProcessesorInputConfigSecretsWithDefaults instantiates a new SecretProcessesorInputConfigSecrets object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
+
+GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+
+### GetApiKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
+
+GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
+
+SetApiKey sets ApiKey field to given value.
+
+
+### GetAccessKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessKey() ModelsSecret`
+
+GetAccessKey returns the AccessKey field if non-nil, zero value otherwise.
+
+### GetAccessKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessKeyOk() (*ModelsSecret, bool)`
+
+GetAccessKeyOk returns a tuple with the AccessKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetAccessKey(v ModelsSecret)`
+
+SetAccessKey sets AccessKey field to given value.
+
+
+### GetSecretKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecretKey() ModelsSecret`
+
+GetSecretKey returns the SecretKey field if non-nil, zero value otherwise.
+
+### GetSecretKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecretKeyOk() (*ModelsSecret, bool)`
+
+GetSecretKeyOk returns a tuple with the SecretKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecretKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetSecretKey(v ModelsSecret)`
+
+SetSecretKey sets SecretKey field to given value.
+
+
+### GetClientId
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientId() ModelsSecret`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientIdOk() (*ModelsSecret, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SecretProcessesorInputConfigSecrets) SetClientId(v ModelsSecret)`
+
+SetClientId sets ClientId field to given value.
+
+
+### GetClientSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientSecret() ModelsSecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetClientSecretOk() (*ModelsSecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) SetClientSecret(v ModelsSecret)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+
+### GetTenantId
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTenantId() ModelsSecret`
+
+GetTenantId returns the TenantId field if non-nil, zero value otherwise.
+
+### GetTenantIdOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTenantIdOk() (*ModelsSecret, bool)`
+
+GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantId
+
+`func (o *SecretProcessesorInputConfigSecrets) SetTenantId(v ModelsSecret)`
+
+SetTenantId sets TenantId field to given value.
+
+### HasTenantId
+
+`func (o *SecretProcessesorInputConfigSecrets) HasTenantId() bool`
+
+HasTenantId returns a boolean if a field has been set.
+
+### GetApplicationKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApplicationKey() ModelsSecret`
+
+GetApplicationKey returns the ApplicationKey field if non-nil, zero value otherwise.
+
+### GetApplicationKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApplicationKeyOk() (*ModelsSecret, bool)`
+
+GetApplicationKeyOk returns a tuple with the ApplicationKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApplicationKey(v ModelsSecret)`
+
+SetApplicationKey sets ApplicationKey field to given value.
+
+### HasApplicationKey
+
+`func (o *SecretProcessesorInputConfigSecrets) HasApplicationKey() bool`
+
+HasApplicationKey returns a boolean if a field has been set.
+
+### GetApplicationKeyId
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApplicationKeyId() ModelsSecret`
+
+GetApplicationKeyId returns the ApplicationKeyId field if non-nil, zero value otherwise.
+
+### GetApplicationKeyIdOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApplicationKeyIdOk() (*ModelsSecret, bool)`
+
+GetApplicationKeyIdOk returns a tuple with the ApplicationKeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationKeyId
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApplicationKeyId(v ModelsSecret)`
+
+SetApplicationKeyId sets ApplicationKeyId field to given value.
+
+### HasApplicationKeyId
+
+`func (o *SecretProcessesorInputConfigSecrets) HasApplicationKeyId() bool`
+
+HasApplicationKeyId returns a boolean if a field has been set.
+
+### GetCredentialsJson
+
+`func (o *SecretProcessesorInputConfigSecrets) GetCredentialsJson() ModelsSecret`
+
+GetCredentialsJson returns the CredentialsJson field if non-nil, zero value otherwise.
+
+### GetCredentialsJsonOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetCredentialsJsonOk() (*ModelsSecret, bool)`
+
+GetCredentialsJsonOk returns a tuple with the CredentialsJson field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentialsJson
+
+`func (o *SecretProcessesorInputConfigSecrets) SetCredentialsJson(v ModelsSecret)`
+
+SetCredentialsJson sets CredentialsJson field to given value.
+
+
+### GetPassword
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPassword() ModelsSecret`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPasswordOk() (*ModelsSecret, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *SecretProcessesorInputConfigSecrets) SetPassword(v ModelsSecret)`
+
+SetPassword sets Password field to given value.
+
+
+### GetUsername
+
+`func (o *SecretProcessesorInputConfigSecrets) GetUsername() ModelsSecret`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetUsernameOk() (*ModelsSecret, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsername
+
+`func (o *SecretProcessesorInputConfigSecrets) SetUsername(v ModelsSecret)`
+
+SetUsername sets Username field to given value.
+
+
+### GetApiToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiToken() ModelsSecret`
+
+GetApiToken returns the ApiToken field if non-nil, zero value otherwise.
+
+### GetApiTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiTokenOk() (*ModelsSecret, bool)`
+
+GetApiTokenOk returns a tuple with the ApiToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApiToken(v ModelsSecret)`
+
+SetApiToken sets ApiToken field to given value.
+
+
+### GetAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessToken() ModelsSecret`
+
+GetAccessToken returns the AccessToken field if non-nil, zero value otherwise.
+
+### GetAccessTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetAccessTokenOk() (*ModelsSecret, bool)`
+
+GetAccessTokenOk returns a tuple with the AccessToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetAccessToken(v ModelsSecret)`
+
+SetAccessToken sets AccessToken field to given value.
+
+### HasAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasAccessToken() bool`
+
+HasAccessToken returns a boolean if a field has been set.
+
+### GetApiSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiSecret() ModelsSecret`
+
+GetApiSecret returns the ApiSecret field if non-nil, zero value otherwise.
+
+### GetApiSecretOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiSecretOk() (*ModelsSecret, bool)`
+
+GetApiSecretOk returns a tuple with the ApiSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApiSecret(v ModelsSecret)`
+
+SetApiSecret sets ApiSecret field to given value.
+
+
+### GetOauthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetOauthToken() ModelsSecret`
+
+GetOauthToken returns the OauthToken field if non-nil, zero value otherwise.
+
+### GetOauthTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetOauthTokenOk() (*ModelsSecret, bool)`
+
+GetOauthTokenOk returns a tuple with the OauthToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetOauthToken(v ModelsSecret)`
+
+SetOauthToken sets OauthToken field to given value.
+
+### HasOauthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasOauthToken() bool`
+
+HasOauthToken returns a boolean if a field has been set.
+
+### GetGithubAppPrivateKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetGithubAppPrivateKey() ModelsSecret`
+
+GetGithubAppPrivateKey returns the GithubAppPrivateKey field if non-nil, zero value otherwise.
+
+### GetGithubAppPrivateKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetGithubAppPrivateKeyOk() (*ModelsSecret, bool)`
+
+GetGithubAppPrivateKeyOk returns a tuple with the GithubAppPrivateKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGithubAppPrivateKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetGithubAppPrivateKey(v ModelsSecret)`
+
+SetGithubAppPrivateKey sets GithubAppPrivateKey field to given value.
+
+### HasGithubAppPrivateKey
+
+`func (o *SecretProcessesorInputConfigSecrets) HasGithubAppPrivateKey() bool`
+
+HasGithubAppPrivateKey returns a boolean if a field has been set.
+
+### GetPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessToken() ModelsSecret`
+
+GetPersonalAccessToken returns the PersonalAccessToken field if non-nil, zero value otherwise.
+
+### GetPersonalAccessTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetPersonalAccessTokenOk() (*ModelsSecret, bool)`
+
+GetPersonalAccessTokenOk returns a tuple with the PersonalAccessToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetPersonalAccessToken(v ModelsSecret)`
+
+SetPersonalAccessToken sets PersonalAccessToken field to given value.
+
+### HasPersonalAccessToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasPersonalAccessToken() bool`
+
+HasPersonalAccessToken returns a boolean if a field has been set.
+
+### GetSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecret() ModelsSecret`
+
+GetSecret returns the Secret field if non-nil, zero value otherwise.
+
+### GetSecretOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetSecretOk() (*ModelsSecret, bool)`
+
+GetSecretOk returns a tuple with the Secret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) SetSecret(v ModelsSecret)`
+
+SetSecret sets Secret field to given value.
+
+### HasSecret
+
+`func (o *SecretProcessesorInputConfigSecrets) HasSecret() bool`
+
+HasSecret returns a boolean if a field has been set.
+
+### GetTwilioAccountSid
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTwilioAccountSid() ModelsSecret`
+
+GetTwilioAccountSid returns the TwilioAccountSid field if non-nil, zero value otherwise.
+
+### GetTwilioAccountSidOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTwilioAccountSidOk() (*ModelsSecret, bool)`
+
+GetTwilioAccountSidOk returns a tuple with the TwilioAccountSid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTwilioAccountSid
+
+`func (o *SecretProcessesorInputConfigSecrets) SetTwilioAccountSid(v ModelsSecret)`
+
+SetTwilioAccountSid sets TwilioAccountSid field to given value.
+
+
+### GetTwilioAuthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTwilioAuthToken() ModelsSecret`
+
+GetTwilioAuthToken returns the TwilioAuthToken field if non-nil, zero value otherwise.
+
+### GetTwilioAuthTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTwilioAuthTokenOk() (*ModelsSecret, bool)`
+
+GetTwilioAuthTokenOk returns a tuple with the TwilioAuthToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTwilioAuthToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetTwilioAuthToken(v ModelsSecret)`
+
+SetTwilioAuthToken sets TwilioAuthToken field to given value.
+
+
+### GetToken
+
+`func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetTokenOk() (*ModelsSecret, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *SecretProcessesorInputConfigSecrets) SetToken(v ModelsSecret)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *SecretProcessesorInputConfigSecrets) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -61,6 +61,9 @@ class TestRoutesV3AlertRuleListResponse(unittest.TestCase):
                             'key' : null
                             }, 
                         severity = '', 
+                        tag_ids = [
+                            ''
+                            ], 
                         type = '', 
                         updated_at = '', )
                     ],

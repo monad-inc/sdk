@@ -11,7 +11,7 @@
 |**createdAt** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
-|**invertSelection** | **Boolean** | InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs. |  [optional] |
+|**invertSelection** | **Boolean** | InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it. |  [optional] |
 |**managedBy** | **ModelsManagedBy** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
@@ -19,6 +19,7 @@
 |**resourceMetadata** | [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  |  [optional] |
 |**ruleConfig** | **Map&lt;String, Object&gt;** |  |  [optional] |
 |**severity** | **String** |  |  [optional] |
+|**tagIds** | **List&lt;String&gt;** | TagIDs adds every pipeline carrying any of these tags to the selection. |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
 

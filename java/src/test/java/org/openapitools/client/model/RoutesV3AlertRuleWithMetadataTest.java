@@ -140,6 +140,14 @@ public class RoutesV3AlertRuleWithMetadataTest {
     }
 
     /**
+     * Test the property 'tagIds'
+     */
+    @Test
+    public void tagIdsTest() {
+        // TODO: test tagIds
+    }
+
+    /**
      * Test the property 'type'
      */
     @Test

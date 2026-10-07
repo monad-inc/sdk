@@ -21,8 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import org.openapitools.client.model.SecretProcessesorInputConfigSecrets;
+import org.openapitools.client.model.SecretProcessesorInputConfigSettings;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,26 +55,18 @@ public class SecretProcessesorInputConfig {
   public static final String SERIALIZED_NAME_SECRETS = "secrets";
   @SerializedName(SERIALIZED_NAME_SECRETS)
   @javax.annotation.Nullable
-  private Map<String, Object> secrets = new HashMap<>();
+  private SecretProcessesorInputConfigSecrets secrets;
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
   @javax.annotation.Nullable
-  private Map<String, Object> settings = new HashMap<>();
+  private SecretProcessesorInputConfigSettings settings;
 
   public SecretProcessesorInputConfig() {
   }
 
-  public SecretProcessesorInputConfig secrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+  public SecretProcessesorInputConfig secrets(@javax.annotation.Nullable SecretProcessesorInputConfigSecrets secrets) {
     this.secrets = secrets;
-    return this;
-  }
-
-  public SecretProcessesorInputConfig putSecretsItem(String key, Object secretsItem) {
-    if (this.secrets == null) {
-      this.secrets = new HashMap<>();
-    }
-    this.secrets.put(key, secretsItem);
     return this;
   }
 
@@ -83,25 +75,17 @@ public class SecretProcessesorInputConfig {
    * @return secrets
    */
   @javax.annotation.Nullable
-  public Map<String, Object> getSecrets() {
+  public SecretProcessesorInputConfigSecrets getSecrets() {
     return secrets;
   }
 
-  public void setSecrets(@javax.annotation.Nullable Map<String, Object> secrets) {
+  public void setSecrets(@javax.annotation.Nullable SecretProcessesorInputConfigSecrets secrets) {
     this.secrets = secrets;
   }
 
 
-  public SecretProcessesorInputConfig settings(@javax.annotation.Nullable Map<String, Object> settings) {
+  public SecretProcessesorInputConfig settings(@javax.annotation.Nullable SecretProcessesorInputConfigSettings settings) {
     this.settings = settings;
-    return this;
-  }
-
-  public SecretProcessesorInputConfig putSettingsItem(String key, Object settingsItem) {
-    if (this.settings == null) {
-      this.settings = new HashMap<>();
-    }
-    this.settings.put(key, settingsItem);
     return this;
   }
 
@@ -110,11 +94,11 @@ public class SecretProcessesorInputConfig {
    * @return settings
    */
   @javax.annotation.Nullable
-  public Map<String, Object> getSettings() {
+  public SecretProcessesorInputConfigSettings getSettings() {
     return settings;
   }
 
-  public void setSettings(@javax.annotation.Nullable Map<String, Object> settings) {
+  public void setSettings(@javax.annotation.Nullable SecretProcessesorInputConfigSettings settings) {
     this.settings = settings;
   }
 
@@ -189,6 +173,14 @@ public class SecretProcessesorInputConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `secrets`
+      if (jsonObj.get("secrets") != null && !jsonObj.get("secrets").isJsonNull()) {
+        SecretProcessesorInputConfigSecrets.validateJsonElement(jsonObj.get("secrets"));
+      }
+      // validate the optional field `settings`
+      if (jsonObj.get("settings") != null && !jsonObj.get("settings").isJsonNull()) {
+        SecretProcessesorInputConfigSettings.validateJsonElement(jsonObj.get("settings"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

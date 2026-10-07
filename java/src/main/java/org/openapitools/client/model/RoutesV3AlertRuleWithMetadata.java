@@ -116,6 +116,11 @@ public class RoutesV3AlertRuleWithMetadata {
   @javax.annotation.Nullable
   private String severity;
 
+  public static final String SERIALIZED_NAME_TAG_IDS = "tag_ids";
+  @SerializedName(SERIALIZED_NAME_TAG_IDS)
+  @javax.annotation.Nullable
+  private List<String> tagIds = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
@@ -211,7 +216,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
   /**
-   * InvertSelection flips the meaning of PipelineIDs from an include-list to an exclude-list, so the rule monitors every pipeline except those listed. It only applies to pipeline-granularity rule types; billing- and organization-scoped types never consult PipelineIDs.
+   * InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it.
    * @return invertSelection
    */
   @javax.annotation.Nullable
@@ -373,6 +378,33 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
+  public RoutesV3AlertRuleWithMetadata tagIds(@javax.annotation.Nullable List<String> tagIds) {
+    this.tagIds = tagIds;
+    return this;
+  }
+
+  public RoutesV3AlertRuleWithMetadata addTagIdsItem(String tagIdsItem) {
+    if (this.tagIds == null) {
+      this.tagIds = new ArrayList<>();
+    }
+    this.tagIds.add(tagIdsItem);
+    return this;
+  }
+
+  /**
+   * TagIDs adds every pipeline carrying any of these tags to the selection.
+   * @return tagIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getTagIds() {
+    return tagIds;
+  }
+
+  public void setTagIds(@javax.annotation.Nullable List<String> tagIds) {
+    this.tagIds = tagIds;
+  }
+
+
   public RoutesV3AlertRuleWithMetadata type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -433,13 +465,14 @@ public class RoutesV3AlertRuleWithMetadata {
         Objects.equals(this.resourceMetadata, routesV3AlertRuleWithMetadata.resourceMetadata) &&
         Objects.equals(this.ruleConfig, routesV3AlertRuleWithMetadata.ruleConfig) &&
         Objects.equals(this.severity, routesV3AlertRuleWithMetadata.severity) &&
+        Objects.equals(this.tagIds, routesV3AlertRuleWithMetadata.tagIds) &&
         Objects.equals(this.type, routesV3AlertRuleWithMetadata.type) &&
         Objects.equals(this.updatedAt, routesV3AlertRuleWithMetadata.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, createdAt, description, id, invertSelection, managedBy, name, organizationId, pipelineIds, resourceMetadata, ruleConfig, severity, type, updatedAt);
+    return Objects.hash(active, createdAt, description, id, invertSelection, managedBy, name, organizationId, pipelineIds, resourceMetadata, ruleConfig, severity, tagIds, type, updatedAt);
   }
 
   @Override
@@ -458,6 +491,7 @@ public class RoutesV3AlertRuleWithMetadata {
     sb.append("    resourceMetadata: ").append(toIndentedString(resourceMetadata)).append("\n");
     sb.append("    ruleConfig: ").append(toIndentedString(ruleConfig)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+    sb.append("    tagIds: ").append(toIndentedString(tagIds)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -478,7 +512,7 @@ public class RoutesV3AlertRuleWithMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "resource_metadata", "rule_config", "severity", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "resource_metadata", "rule_config", "severity", "tag_ids", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -534,6 +568,10 @@ public class RoutesV3AlertRuleWithMetadata {
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tag_ids") != null && !jsonObj.get("tag_ids").isJsonNull() && !jsonObj.get("tag_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tag_ids` to be an array in the JSON string but got `%s`", jsonObj.get("tag_ids").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
