@@ -89,6 +89,11 @@ public class RoutesV3CreateAlertRuleRequest {
   @javax.annotation.Nullable
   private String severity;
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
@@ -141,7 +146,7 @@ public class RoutesV3CreateAlertRuleRequest {
   }
 
   /**
-   * InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+   * InvertSelection reads pipeline_ids and tags as an exclude-list instead of an include-list, so the rule applies to all pipelines except those selected. An empty selection still means all pipelines either way.
    * @return invertSelection
    */
   @javax.annotation.Nullable
@@ -246,6 +251,33 @@ public class RoutesV3CreateAlertRuleRequest {
   }
 
 
+  public RoutesV3CreateAlertRuleRequest tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public RoutesV3CreateAlertRuleRequest addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Tags (names) whose pipelines this alert rule also applies to. Only for rule types whose metadata has supports_tag_targeting.
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
+
   public RoutesV3CreateAlertRuleRequest type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
@@ -282,12 +314,13 @@ public class RoutesV3CreateAlertRuleRequest {
         Objects.equals(this.pipelineIds, routesV3CreateAlertRuleRequest.pipelineIds) &&
         Objects.equals(this.ruleConfig, routesV3CreateAlertRuleRequest.ruleConfig) &&
         Objects.equals(this.severity, routesV3CreateAlertRuleRequest.severity) &&
+        Objects.equals(this.tags, routesV3CreateAlertRuleRequest.tags) &&
         Objects.equals(this.type, routesV3CreateAlertRuleRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, description, invertSelection, name, pipelineIds, ruleConfig, severity, type);
+    return Objects.hash(active, description, invertSelection, name, pipelineIds, ruleConfig, severity, tags, type);
   }
 
   @Override
@@ -301,6 +334,7 @@ public class RoutesV3CreateAlertRuleRequest {
     sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
     sb.append("    ruleConfig: ").append(toIndentedString(ruleConfig)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -320,7 +354,7 @@ public class RoutesV3CreateAlertRuleRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity", "type"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity", "tags", "type"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -359,6 +393,10 @@ public class RoutesV3CreateAlertRuleRequest {
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

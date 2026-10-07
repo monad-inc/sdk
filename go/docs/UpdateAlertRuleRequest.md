@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Active indicates whether the alert rule is active | [optional] 
 **Description** | Pointer to **string** | Description of the alert rule | [optional] 
-**InvertSelection** | Pointer to **bool** | InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way. | [optional] 
+**InvertSelection** | Pointer to **bool** | InvertSelection reads pipeline_ids and tags as an exclude-list instead of an include-list, so the rule applies to all pipelines except those selected. An empty selection still means all pipelines either way. | [optional] 
 **Name** | Pointer to **string** | Name of the alert rule | [optional] 
 **PipelineIds** | Pointer to **[]string** | Pipeline IDs that this alert rule applies to | [optional] 
 **RuleConfig** | Pointer to **map[string]interface{}** | RuleConfig contains the configuration for the alert rule | [optional] 
 **Severity** | Pointer to **string** | Severity level of the alert. Must be one of \&quot;critical\&quot;, \&quot;high\&quot;, \&quot;medium\&quot;, \&quot;low\&quot;, \&quot;info\&quot;. | [optional] 
+**Tags** | Pointer to **[]string** | Tags (names) whose pipelines this alert rule also applies to. Omitted leaves the rule&#39;s tags unchanged; [] clears them. | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetSeverity sets Severity field to given value.
 `func (o *UpdateAlertRuleRequest) HasSeverity() bool`
 
 HasSeverity returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *UpdateAlertRuleRequest) GetTags() []string`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *UpdateAlertRuleRequest) GetTagsOk() (*[]string, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *UpdateAlertRuleRequest) SetTags(v []string)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *UpdateAlertRuleRequest) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

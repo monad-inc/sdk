@@ -89,6 +89,11 @@ public class RoutesV3UpdateAlertRuleRequest {
   @javax.annotation.Nullable
   private String severity;
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
+  private List<String> tags = new ArrayList<>();
+
   public RoutesV3UpdateAlertRuleRequest() {
   }
 
@@ -136,7 +141,7 @@ public class RoutesV3UpdateAlertRuleRequest {
   }
 
   /**
-   * InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+   * InvertSelection reads pipeline_ids and tags as an exclude-list instead of an include-list, so the rule applies to all pipelines except those selected. An empty selection still means all pipelines either way.
    * @return invertSelection
    */
   @javax.annotation.Nullable
@@ -241,6 +246,33 @@ public class RoutesV3UpdateAlertRuleRequest {
   }
 
 
+  public RoutesV3UpdateAlertRuleRequest tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public RoutesV3UpdateAlertRuleRequest addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+  /**
+   * Tags (names) whose pipelines this alert rule also applies to. Omitted leaves the rule&#39;s tags unchanged; [] clears them.
+   * @return tags
+   */
+  @javax.annotation.Nullable
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -257,12 +289,13 @@ public class RoutesV3UpdateAlertRuleRequest {
         Objects.equals(this.name, routesV3UpdateAlertRuleRequest.name) &&
         Objects.equals(this.pipelineIds, routesV3UpdateAlertRuleRequest.pipelineIds) &&
         Objects.equals(this.ruleConfig, routesV3UpdateAlertRuleRequest.ruleConfig) &&
-        Objects.equals(this.severity, routesV3UpdateAlertRuleRequest.severity);
+        Objects.equals(this.severity, routesV3UpdateAlertRuleRequest.severity) &&
+        Objects.equals(this.tags, routesV3UpdateAlertRuleRequest.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, description, invertSelection, name, pipelineIds, ruleConfig, severity);
+    return Objects.hash(active, description, invertSelection, name, pipelineIds, ruleConfig, severity, tags);
   }
 
   @Override
@@ -276,6 +309,7 @@ public class RoutesV3UpdateAlertRuleRequest {
     sb.append("    pipelineIds: ").append(toIndentedString(pipelineIds)).append("\n");
     sb.append("    ruleConfig: ").append(toIndentedString(ruleConfig)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -294,7 +328,7 @@ public class RoutesV3UpdateAlertRuleRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity", "tags"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -333,6 +367,10 @@ public class RoutesV3UpdateAlertRuleRequest {
       }
       if ((jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) && !jsonObj.get("severity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 

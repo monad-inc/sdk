@@ -52,10 +52,10 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * RoutesV3AlertRuleWithMetadata
+ * RoutesV3AlertRuleResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class RoutesV3AlertRuleWithMetadata {
+public class RoutesV3AlertRuleResponse {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   @javax.annotation.Nullable
@@ -116,10 +116,10 @@ public class RoutesV3AlertRuleWithMetadata {
   @javax.annotation.Nullable
   private String severity;
 
-  public static final String SERIALIZED_NAME_TAG_IDS = "tag_ids";
-  @SerializedName(SERIALIZED_NAME_TAG_IDS)
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
   @javax.annotation.Nullable
-  private List<String> tagIds = new ArrayList<>();
+  private List<String> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -131,10 +131,10 @@ public class RoutesV3AlertRuleWithMetadata {
   @javax.annotation.Nullable
   private String updatedAt;
 
-  public RoutesV3AlertRuleWithMetadata() {
+  public RoutesV3AlertRuleResponse() {
   }
 
-  public RoutesV3AlertRuleWithMetadata active(@javax.annotation.Nullable Boolean active) {
+  public RoutesV3AlertRuleResponse active(@javax.annotation.Nullable Boolean active) {
     this.active = active;
     return this;
   }
@@ -153,7 +153,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata createdAt(@javax.annotation.Nullable String createdAt) {
+  public RoutesV3AlertRuleResponse createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -172,7 +172,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata description(@javax.annotation.Nullable String description) {
+  public RoutesV3AlertRuleResponse description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -191,7 +191,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata id(@javax.annotation.Nullable String id) {
+  public RoutesV3AlertRuleResponse id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -210,13 +210,13 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata invertSelection(@javax.annotation.Nullable Boolean invertSelection) {
+  public RoutesV3AlertRuleResponse invertSelection(@javax.annotation.Nullable Boolean invertSelection) {
     this.invertSelection = invertSelection;
     return this;
   }
 
   /**
-   * InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it.
+   * Get invertSelection
    * @return invertSelection
    */
   @javax.annotation.Nullable
@@ -229,7 +229,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata managedBy(@javax.annotation.Nullable ModelsManagedBy managedBy) {
+  public RoutesV3AlertRuleResponse managedBy(@javax.annotation.Nullable ModelsManagedBy managedBy) {
     this.managedBy = managedBy;
     return this;
   }
@@ -248,7 +248,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata name(@javax.annotation.Nullable String name) {
+  public RoutesV3AlertRuleResponse name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -267,7 +267,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata organizationId(@javax.annotation.Nullable String organizationId) {
+  public RoutesV3AlertRuleResponse organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -286,12 +286,12 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata pipelineIds(@javax.annotation.Nullable List<String> pipelineIds) {
+  public RoutesV3AlertRuleResponse pipelineIds(@javax.annotation.Nullable List<String> pipelineIds) {
     this.pipelineIds = pipelineIds;
     return this;
   }
 
-  public RoutesV3AlertRuleWithMetadata addPipelineIdsItem(String pipelineIdsItem) {
+  public RoutesV3AlertRuleResponse addPipelineIdsItem(String pipelineIdsItem) {
     if (this.pipelineIds == null) {
       this.pipelineIds = new ArrayList<>();
     }
@@ -313,7 +313,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata resourceMetadata(@javax.annotation.Nullable ConnectormetaResourceMetadata resourceMetadata) {
+  public RoutesV3AlertRuleResponse resourceMetadata(@javax.annotation.Nullable ConnectormetaResourceMetadata resourceMetadata) {
     this.resourceMetadata = resourceMetadata;
     return this;
   }
@@ -332,12 +332,12 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata ruleConfig(@javax.annotation.Nullable Map<String, Object> ruleConfig) {
+  public RoutesV3AlertRuleResponse ruleConfig(@javax.annotation.Nullable Map<String, Object> ruleConfig) {
     this.ruleConfig = ruleConfig;
     return this;
   }
 
-  public RoutesV3AlertRuleWithMetadata putRuleConfigItem(String key, Object ruleConfigItem) {
+  public RoutesV3AlertRuleResponse putRuleConfigItem(String key, Object ruleConfigItem) {
     if (this.ruleConfig == null) {
       this.ruleConfig = new HashMap<>();
     }
@@ -359,7 +359,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata severity(@javax.annotation.Nullable String severity) {
+  public RoutesV3AlertRuleResponse severity(@javax.annotation.Nullable String severity) {
     this.severity = severity;
     return this;
   }
@@ -378,34 +378,34 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata tagIds(@javax.annotation.Nullable List<String> tagIds) {
-    this.tagIds = tagIds;
+  public RoutesV3AlertRuleResponse tags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
     return this;
   }
 
-  public RoutesV3AlertRuleWithMetadata addTagIdsItem(String tagIdsItem) {
-    if (this.tagIds == null) {
-      this.tagIds = new ArrayList<>();
+  public RoutesV3AlertRuleResponse addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
     }
-    this.tagIds.add(tagIdsItem);
+    this.tags.add(tagsItem);
     return this;
   }
 
   /**
-   * TagIDs adds every pipeline carrying any of these tags to the selection.
-   * @return tagIds
+   * TODO(ENG-11020): drop omitempty once tagging is GA; it matches pipelines meanwhile.
+   * @return tags
    */
   @javax.annotation.Nullable
-  public List<String> getTagIds() {
-    return tagIds;
+  public List<String> getTags() {
+    return tags;
   }
 
-  public void setTagIds(@javax.annotation.Nullable List<String> tagIds) {
-    this.tagIds = tagIds;
+  public void setTags(@javax.annotation.Nullable List<String> tags) {
+    this.tags = tags;
   }
 
 
-  public RoutesV3AlertRuleWithMetadata type(@javax.annotation.Nullable String type) {
+  public RoutesV3AlertRuleResponse type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -424,7 +424,7 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
 
-  public RoutesV3AlertRuleWithMetadata updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public RoutesV3AlertRuleResponse updatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -452,33 +452,33 @@ public class RoutesV3AlertRuleWithMetadata {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RoutesV3AlertRuleWithMetadata routesV3AlertRuleWithMetadata = (RoutesV3AlertRuleWithMetadata) o;
-    return Objects.equals(this.active, routesV3AlertRuleWithMetadata.active) &&
-        Objects.equals(this.createdAt, routesV3AlertRuleWithMetadata.createdAt) &&
-        Objects.equals(this.description, routesV3AlertRuleWithMetadata.description) &&
-        Objects.equals(this.id, routesV3AlertRuleWithMetadata.id) &&
-        Objects.equals(this.invertSelection, routesV3AlertRuleWithMetadata.invertSelection) &&
-        Objects.equals(this.managedBy, routesV3AlertRuleWithMetadata.managedBy) &&
-        Objects.equals(this.name, routesV3AlertRuleWithMetadata.name) &&
-        Objects.equals(this.organizationId, routesV3AlertRuleWithMetadata.organizationId) &&
-        Objects.equals(this.pipelineIds, routesV3AlertRuleWithMetadata.pipelineIds) &&
-        Objects.equals(this.resourceMetadata, routesV3AlertRuleWithMetadata.resourceMetadata) &&
-        Objects.equals(this.ruleConfig, routesV3AlertRuleWithMetadata.ruleConfig) &&
-        Objects.equals(this.severity, routesV3AlertRuleWithMetadata.severity) &&
-        Objects.equals(this.tagIds, routesV3AlertRuleWithMetadata.tagIds) &&
-        Objects.equals(this.type, routesV3AlertRuleWithMetadata.type) &&
-        Objects.equals(this.updatedAt, routesV3AlertRuleWithMetadata.updatedAt);
+    RoutesV3AlertRuleResponse routesV3AlertRuleResponse = (RoutesV3AlertRuleResponse) o;
+    return Objects.equals(this.active, routesV3AlertRuleResponse.active) &&
+        Objects.equals(this.createdAt, routesV3AlertRuleResponse.createdAt) &&
+        Objects.equals(this.description, routesV3AlertRuleResponse.description) &&
+        Objects.equals(this.id, routesV3AlertRuleResponse.id) &&
+        Objects.equals(this.invertSelection, routesV3AlertRuleResponse.invertSelection) &&
+        Objects.equals(this.managedBy, routesV3AlertRuleResponse.managedBy) &&
+        Objects.equals(this.name, routesV3AlertRuleResponse.name) &&
+        Objects.equals(this.organizationId, routesV3AlertRuleResponse.organizationId) &&
+        Objects.equals(this.pipelineIds, routesV3AlertRuleResponse.pipelineIds) &&
+        Objects.equals(this.resourceMetadata, routesV3AlertRuleResponse.resourceMetadata) &&
+        Objects.equals(this.ruleConfig, routesV3AlertRuleResponse.ruleConfig) &&
+        Objects.equals(this.severity, routesV3AlertRuleResponse.severity) &&
+        Objects.equals(this.tags, routesV3AlertRuleResponse.tags) &&
+        Objects.equals(this.type, routesV3AlertRuleResponse.type) &&
+        Objects.equals(this.updatedAt, routesV3AlertRuleResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, createdAt, description, id, invertSelection, managedBy, name, organizationId, pipelineIds, resourceMetadata, ruleConfig, severity, tagIds, type, updatedAt);
+    return Objects.hash(active, createdAt, description, id, invertSelection, managedBy, name, organizationId, pipelineIds, resourceMetadata, ruleConfig, severity, tags, type, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RoutesV3AlertRuleWithMetadata {\n");
+    sb.append("class RoutesV3AlertRuleResponse {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -491,7 +491,7 @@ public class RoutesV3AlertRuleWithMetadata {
     sb.append("    resourceMetadata: ").append(toIndentedString(resourceMetadata)).append("\n");
     sb.append("    ruleConfig: ").append(toIndentedString(ruleConfig)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-    sb.append("    tagIds: ").append(toIndentedString(tagIds)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -512,7 +512,7 @@ public class RoutesV3AlertRuleWithMetadata {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "resource_metadata", "rule_config", "severity", "tag_ids", "type", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("active", "created_at", "description", "id", "invert_selection", "managed_by", "name", "organization_id", "pipeline_ids", "resource_metadata", "rule_config", "severity", "tags", "type", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -522,20 +522,20 @@ public class RoutesV3AlertRuleWithMetadata {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to RoutesV3AlertRuleWithMetadata
+   * @throws IOException if the JSON Element is invalid with respect to RoutesV3AlertRuleResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!RoutesV3AlertRuleWithMetadata.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV3AlertRuleWithMetadata is not found in the empty JSON string", RoutesV3AlertRuleWithMetadata.openapiRequiredFields.toString()));
+        if (!RoutesV3AlertRuleResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RoutesV3AlertRuleResponse is not found in the empty JSON string", RoutesV3AlertRuleResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!RoutesV3AlertRuleWithMetadata.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3AlertRuleWithMetadata` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RoutesV3AlertRuleResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `RoutesV3AlertRuleResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -570,8 +570,8 @@ public class RoutesV3AlertRuleWithMetadata {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("tag_ids") != null && !jsonObj.get("tag_ids").isJsonNull() && !jsonObj.get("tag_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tag_ids` to be an array in the JSON string but got `%s`", jsonObj.get("tag_ids").toString()));
+      if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
@@ -585,22 +585,22 @@ public class RoutesV3AlertRuleWithMetadata {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!RoutesV3AlertRuleWithMetadata.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'RoutesV3AlertRuleWithMetadata' and its subtypes
+       if (!RoutesV3AlertRuleResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RoutesV3AlertRuleResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<RoutesV3AlertRuleWithMetadata> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(RoutesV3AlertRuleWithMetadata.class));
+       final TypeAdapter<RoutesV3AlertRuleResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RoutesV3AlertRuleResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<RoutesV3AlertRuleWithMetadata>() {
+       return (TypeAdapter<T>) new TypeAdapter<RoutesV3AlertRuleResponse>() {
            @Override
-           public void write(JsonWriter out, RoutesV3AlertRuleWithMetadata value) throws IOException {
+           public void write(JsonWriter out, RoutesV3AlertRuleResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public RoutesV3AlertRuleWithMetadata read(JsonReader in) throws IOException {
+           public RoutesV3AlertRuleResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -611,18 +611,18 @@ public class RoutesV3AlertRuleWithMetadata {
   }
 
   /**
-   * Create an instance of RoutesV3AlertRuleWithMetadata given an JSON string
+   * Create an instance of RoutesV3AlertRuleResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of RoutesV3AlertRuleWithMetadata
-   * @throws IOException if the JSON string is invalid with respect to RoutesV3AlertRuleWithMetadata
+   * @return An instance of RoutesV3AlertRuleResponse
+   * @throws IOException if the JSON string is invalid with respect to RoutesV3AlertRuleResponse
    */
-  public static RoutesV3AlertRuleWithMetadata fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, RoutesV3AlertRuleWithMetadata.class);
+  public static RoutesV3AlertRuleResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RoutesV3AlertRuleResponse.class);
   }
 
   /**
-   * Convert an instance of RoutesV3AlertRuleWithMetadata to an JSON string
+   * Convert an instance of RoutesV3AlertRuleResponse to an JSON string
    *
    * @return JSON string
    */

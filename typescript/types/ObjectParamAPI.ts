@@ -239,7 +239,6 @@ import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlert } from '../models/ModelsAlert';
-import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAlertStatus } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
@@ -478,7 +477,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
-import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
+import { RoutesV3AlertRuleResponse } from '../models/RoutesV3AlertRuleResponse';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
@@ -754,7 +753,7 @@ export class ObjectAlertRulesApi {
      * Create a new alert rule
      * @param param the request object
      */
-    public createAlertRuleWithHttpInfo(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public createAlertRuleWithHttpInfo(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleResponse>> {
         return this.api.createAlertRuleWithHttpInfo(param.organizationId, param.createAlertRuleRequest,  options).toPromise();
     }
 
@@ -763,7 +762,7 @@ export class ObjectAlertRulesApi {
      * Create a new alert rule
      * @param param the request object
      */
-    public createAlertRule(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+    public createAlertRule(param: AlertRulesApiCreateAlertRuleRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertRuleResponse> {
         return this.api.createAlertRule(param.organizationId, param.createAlertRuleRequest,  options).toPromise();
     }
 
@@ -790,7 +789,7 @@ export class ObjectAlertRulesApi {
      * Get alert rule by ID
      * @param param the request object
      */
-    public getAlertRuleByIDWithHttpInfo(param: AlertRulesApiGetAlertRuleByIDRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleWithMetadata>> {
+    public getAlertRuleByIDWithHttpInfo(param: AlertRulesApiGetAlertRuleByIDRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleResponse>> {
         return this.api.getAlertRuleByIDWithHttpInfo(param.organizationId, param.alertRuleId,  options).toPromise();
     }
 
@@ -799,7 +798,7 @@ export class ObjectAlertRulesApi {
      * Get alert rule by ID
      * @param param the request object
      */
-    public getAlertRuleByID(param: AlertRulesApiGetAlertRuleByIDRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertRuleWithMetadata> {
+    public getAlertRuleByID(param: AlertRulesApiGetAlertRuleByIDRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertRuleResponse> {
         return this.api.getAlertRuleByID(param.organizationId, param.alertRuleId,  options).toPromise();
     }
 
@@ -862,7 +861,7 @@ export class ObjectAlertRulesApi {
      * Update alert rule
      * @param param the request object
      */
-    public updateAlertRuleWithHttpInfo(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public updateAlertRuleWithHttpInfo(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleResponse>> {
         return this.api.updateAlertRuleWithHttpInfo(param.organizationId, param.alertRuleId, param.updateAlertRuleRequest,  options).toPromise();
     }
 
@@ -871,7 +870,7 @@ export class ObjectAlertRulesApi {
      * Update alert rule
      * @param param the request object
      */
-    public updateAlertRule(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<ModelsAlertRule> {
+    public updateAlertRule(param: AlertRulesApiUpdateAlertRuleRequest, options?: ConfigurationOptions): Promise<RoutesV3AlertRuleResponse> {
         return this.api.updateAlertRule(param.organizationId, param.alertRuleId, param.updateAlertRuleRequest,  options).toPromise();
     }
 
@@ -8034,7 +8033,7 @@ export class ObjectTagsApi {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param param the request object
      */
@@ -8043,7 +8042,7 @@ export class ObjectTagsApi {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param param the request object
      */

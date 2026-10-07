@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_alert_rule**
-> ModelsAlertRule create_alert_rule(organization_id, create_alert_rule_request)
+> RoutesV3AlertRuleResponse create_alert_rule(organization_id, create_alert_rule_request)
 
 Create a new alert rule
 
@@ -27,7 +27,7 @@ Create a new alert rule with the provided details
 ```python
 import monad
 from monad.models.create_alert_rule_request import CreateAlertRuleRequest
-from monad.models.models_alert_rule import ModelsAlertRule
+from monad.models.routes_v3_alert_rule_response import RoutesV3AlertRuleResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_alert_rule_by_id**
-> RoutesV3AlertRuleWithMetadata get_alert_rule_by_id(organization_id, alert_rule_id)
+> RoutesV3AlertRuleResponse get_alert_rule_by_id(organization_id, alert_rule_id)
 
 Get alert rule by ID
 
@@ -191,7 +191,7 @@ Retrieve an alert rule by its ID
 
 ```python
 import monad
-from monad.models.routes_v3_alert_rule_with_metadata import RoutesV3AlertRuleWithMetadata
+from monad.models.routes_v3_alert_rule_response import RoutesV3AlertRuleResponse
 from monad.rest import ApiException
 from pprint import pprint
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_alert_rule**
-> ModelsAlertRule update_alert_rule(organization_id, alert_rule_id, update_alert_rule_request)
+> RoutesV3AlertRuleResponse update_alert_rule(organization_id, alert_rule_id, update_alert_rule_request)
 
 Update alert rule
 
@@ -528,7 +528,7 @@ Update an existing alert rule
 
 ```python
 import monad
-from monad.models.models_alert_rule import ModelsAlertRule
+from monad.models.routes_v3_alert_rule_response import RoutesV3AlertRuleResponse
 from monad.models.update_alert_rule_request import UpdateAlertRuleRequest
 from monad.rest import ApiException
 from pprint import pprint
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 

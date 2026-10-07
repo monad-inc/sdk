@@ -46,7 +46,10 @@ class TestUpdateAlertRuleRequest(unittest.TestCase):
                 rule_config = {
                     'key' : null
                     },
-                severity = ''
+                severity = '',
+                tags = [
+                    ''
+                    ]
             )
         else:
             return UpdateAlertRuleRequest(

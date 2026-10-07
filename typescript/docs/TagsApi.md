@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 # **deleteTag**
 > void deleteTag()
 
-Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
 
 ### Example
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 **204** | Tag deleted |  -  |
 **400** | Invalid tag name |  -  |
 **404** | Tag not found |  -  |
-**409** | Tag is attached to resources |  -  |
+**409** | Tag is attached to resources or used by alert rules |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

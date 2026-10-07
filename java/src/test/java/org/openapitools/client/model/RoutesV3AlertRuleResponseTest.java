@@ -30,17 +30,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for RoutesV3AlertRuleWithMetadata
+ * Model tests for RoutesV3AlertRuleResponse
  */
-public class RoutesV3AlertRuleWithMetadataTest {
-    private final RoutesV3AlertRuleWithMetadata model = new RoutesV3AlertRuleWithMetadata();
+public class RoutesV3AlertRuleResponseTest {
+    private final RoutesV3AlertRuleResponse model = new RoutesV3AlertRuleResponse();
 
     /**
-     * Model tests for RoutesV3AlertRuleWithMetadata
+     * Model tests for RoutesV3AlertRuleResponse
      */
     @Test
-    public void testRoutesV3AlertRuleWithMetadata() {
-        // TODO: test RoutesV3AlertRuleWithMetadata
+    public void testRoutesV3AlertRuleResponse() {
+        // TODO: test RoutesV3AlertRuleResponse
     }
 
     /**
@@ -140,11 +140,11 @@ public class RoutesV3AlertRuleWithMetadataTest {
     }
 
     /**
-     * Test the property 'tagIds'
+     * Test the property 'tags'
      */
     @Test
-    public void tagIdsTest() {
-        // TODO: test tagIds
+    public void tagsTest() {
+        // TODO: test tags
     }
 
     /**

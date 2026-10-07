@@ -98,6 +98,14 @@ public class CreateAlertRuleRequestTest {
     }
 
     /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
+    /**
      * Test the property 'type'
      */
     @Test

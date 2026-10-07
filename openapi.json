@@ -4047,9 +4047,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -4568,64 +4568,6 @@
                     },
                     "status": {
                         "$ref": "#/components/schemas/models.AlertStatus"
-                    }
-                },
-                "type": "object"
-            },
-            "models.AlertRule": {
-                "properties": {
-                    "active": {
-                        "type": "boolean"
-                    },
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "string"
-                    },
-                    "invert_selection": {
-                        "description": "InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list.\nOnly pipeline-granularity rule types consult it.",
-                        "type": "boolean"
-                    },
-                    "managed_by": {
-                        "$ref": "#/components/schemas/models.ManagedBy"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "organization_id": {
-                        "type": "string"
-                    },
-                    "pipeline_ids": {
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "rule_config": {
-                        "additionalProperties": {},
-                        "type": "object"
-                    },
-                    "severity": {
-                        "type": "string"
-                    },
-                    "tag_ids": {
-                        "description": "TagIDs adds every pipeline carrying any of these tags to the selection.",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array",
-                        "uniqueItems": false
-                    },
-                    "type": {
-                        "type": "string"
-                    },
-                    "updated_at": {
-                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -9670,7 +9612,7 @@
                 "properties": {
                     "alert_rules": {
                         "items": {
-                            "$ref": "#/components/schemas/routesV3.AlertRuleWithMetadata"
+                            "$ref": "#/components/schemas/routesV3.AlertRuleResponse"
                         },
                         "type": "array",
                         "uniqueItems": false
@@ -9681,7 +9623,7 @@
                 },
                 "type": "object"
             },
-            "routesV3.AlertRuleWithMetadata": {
+            "routesV3.AlertRuleResponse": {
                 "properties": {
                     "active": {
                         "type": "boolean"
@@ -9696,7 +9638,6 @@
                         "type": "string"
                     },
                     "invert_selection": {
-                        "description": "InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list.\nOnly pipeline-granularity rule types consult it.",
                         "type": "boolean"
                     },
                     "managed_by": {
@@ -9725,8 +9666,8 @@
                     "severity": {
                         "type": "string"
                     },
-                    "tag_ids": {
-                        "description": "TagIDs adds every pipeline carrying any of these tags to the selection.",
+                    "tags": {
+                        "description": "TODO(ENG-11020): drop omitempty once tagging is GA; it matches pipelines meanwhile.",
                         "items": {
                             "type": "string"
                         },
@@ -9753,7 +9694,7 @@
                         "type": "string"
                     },
                     "invert_selection": {
-                        "description": "InvertSelection reads pipeline_ids as an exclude-list instead of an include-list,\nso the rule applies to all pipelines except those listed. An empty pipeline_ids\nstill means all pipelines either way.",
+                        "description": "InvertSelection reads pipeline_ids and tags as an exclude-list instead of an\ninclude-list, so the rule applies to all pipelines except those selected. An\nempty selection still means all pipelines either way.",
                         "type": "boolean"
                     },
                     "name": {
@@ -9776,6 +9717,14 @@
                     "severity": {
                         "description": "Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".",
                         "type": "string"
+                    },
+                    "tags": {
+                        "description": "Tags (names) whose pipelines this alert rule also applies to. Only for rule\ntypes whose metadata has supports_tag_targeting.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     },
                     "type": {
                         "description": "Type of the alert rule",
@@ -10424,7 +10373,7 @@
                         "type": "string"
                     },
                     "invert_selection": {
-                        "description": "InvertSelection reads pipeline_ids as an exclude-list instead of an include-list,\nso the rule applies to all pipelines except those listed. An empty pipeline_ids\nstill means all pipelines either way.",
+                        "description": "InvertSelection reads pipeline_ids and tags as an exclude-list instead of an\ninclude-list, so the rule applies to all pipelines except those selected. An\nempty selection still means all pipelines either way.",
                         "type": "boolean"
                     },
                     "name": {
@@ -10447,6 +10396,14 @@
                     "severity": {
                         "description": "Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".",
                         "type": "string"
+                    },
+                    "tags": {
+                        "description": "Tags (names) whose pipelines this alert rule also applies to. Omitted leaves the\nrule's tags unchanged; [] clears them.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": false
                     }
                 },
                 "type": "object"
@@ -23472,7 +23429,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.AlertRule"
+                                    "$ref": "#/components/schemas/routesV3.AlertRuleResponse"
                                 }
                             }
                         },
@@ -23613,7 +23570,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/routesV3.AlertRuleWithMetadata"
+                                    "$ref": "#/components/schemas/routesV3.AlertRuleResponse"
                                 }
                             }
                         },
@@ -23711,7 +23668,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/models.AlertRule"
+                                    "$ref": "#/components/schemas/routesV3.AlertRuleResponse"
                                 }
                             }
                         },
@@ -27555,7 +27512,7 @@
         },
         "/v3/{organization_id}/tags/{tag}": {
             "delete": {
-                "description": "Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.",
+                "description": "Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.",
                 "operationId": "DeleteTag",
                 "parameters": [
                     {
@@ -27609,7 +27566,7 @@
                                 }
                             }
                         },
-                        "description": "Tag is attached to resources"
+                        "description": "Tag is attached to resources or used by alert rules"
                     },
                     "500": {
                         "content": {

@@ -47,6 +47,9 @@ class TestCreateAlertRuleRequest(unittest.TestCase):
                     'key' : null
                     },
                 severity = '',
+                tags = [
+                    ''
+                    ],
                 type = ''
             )
         else:

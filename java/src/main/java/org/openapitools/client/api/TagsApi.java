@@ -240,7 +240,7 @@ public class TagsApi {
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources or used by alert rules </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -308,7 +308,7 @@ public class TagsApi {
 
     /**
      * Delete a tag
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * @param organizationId Organization ID (required)
      * @param tag Tag ID or name (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -319,7 +319,7 @@ public class TagsApi {
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources or used by alert rules </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -329,7 +329,7 @@ public class TagsApi {
 
     /**
      * Delete a tag
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * @param organizationId Organization ID (required)
      * @param tag Tag ID or name (required)
      * @return ApiResponse&lt;Void&gt;
@@ -341,7 +341,7 @@ public class TagsApi {
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources or used by alert rules </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -352,7 +352,7 @@ public class TagsApi {
 
     /**
      * Delete a tag (asynchronously)
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * @param organizationId Organization ID (required)
      * @param tag Tag ID or name (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -365,7 +365,7 @@ public class TagsApi {
         <tr><td> 204 </td><td> Tag deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid tag name </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Tag not found </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Tag is attached to resources </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Tag is attached to resources or used by alert rules </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

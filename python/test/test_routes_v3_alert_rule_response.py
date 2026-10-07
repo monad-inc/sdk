@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.models_alert_rule import ModelsAlertRule
+from monad.models.routes_v3_alert_rule_response import RoutesV3AlertRuleResponse
 
-class TestModelsAlertRule(unittest.TestCase):
-    """ModelsAlertRule unit test stubs"""
+class TestRoutesV3AlertRuleResponse(unittest.TestCase):
+    """RoutesV3AlertRuleResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestModelsAlertRule(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ModelsAlertRule:
-        """Test ModelsAlertRule
+    def make_instance(self, include_optional) -> RoutesV3AlertRuleResponse:
+        """Test RoutesV3AlertRuleResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ModelsAlertRule`
+        # uncomment below to create an instance of `RoutesV3AlertRuleResponse`
         """
-        model = ModelsAlertRule()
+        model = RoutesV3AlertRuleResponse()
         if include_optional:
-            return ModelsAlertRule(
+            return RoutesV3AlertRuleResponse(
                 active = True,
                 created_at = '',
                 description = '',
@@ -47,23 +47,31 @@ class TestModelsAlertRule(unittest.TestCase):
                 pipeline_ids = [
                     ''
                     ],
+                resource_metadata = monad.models.connectormeta/resource_metadata.connectormeta.ResourceMetadata(
+                    category = '', 
+                    description = '', 
+                    house = '', 
+                    in_beta = True, 
+                    name = '', 
+                    tier = 56, 
+                    type_id = '', ),
                 rule_config = {
                     'key' : null
                     },
                 severity = '',
-                tag_ids = [
+                tags = [
                     ''
                     ],
                 type = '',
                 updated_at = ''
             )
         else:
-            return ModelsAlertRule(
+            return RoutesV3AlertRuleResponse(
         )
         """
 
-    def testModelsAlertRule(self):
-        """Test ModelsAlertRule"""
+    def testRoutesV3AlertRuleResponse(self):
+        """Test RoutesV3AlertRuleResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

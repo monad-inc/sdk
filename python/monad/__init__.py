@@ -309,7 +309,6 @@ __all__ = [
     "ModelsAPILogActor",
     "ModelsAPILogActorRole",
     "ModelsAlert",
-    "ModelsAlertRule",
     "ModelsAlertState",
     "ModelsAlertStatus",
     "ModelsAuditAction",
@@ -548,7 +547,7 @@ __all__ = [
     "RoutesV2UpdateRoleV2Request",
     "RoutesV3AlertList",
     "RoutesV3AlertRuleListResponse",
-    "RoutesV3AlertRuleWithMetadata",
+    "RoutesV3AlertRuleResponse",
     "RoutesV3CreateAlertRuleRequest",
     "RoutesV3CreateChildOrganizationRequest",
     "RoutesV3CreateConnectionRequest",
@@ -995,7 +994,6 @@ from monad.models.models_api_key_with_token import ModelsAPIKeyWithToken as Mode
 from monad.models.models_api_log_actor import ModelsAPILogActor as ModelsAPILogActor
 from monad.models.models_api_log_actor_role import ModelsAPILogActorRole as ModelsAPILogActorRole
 from monad.models.models_alert import ModelsAlert as ModelsAlert
-from monad.models.models_alert_rule import ModelsAlertRule as ModelsAlertRule
 from monad.models.models_alert_state import ModelsAlertState as ModelsAlertState
 from monad.models.models_alert_status import ModelsAlertStatus as ModelsAlertStatus
 from monad.models.models_audit_action import ModelsAuditAction as ModelsAuditAction
@@ -1234,7 +1232,7 @@ from monad.models.routes_v2_update_pipeline_request import RoutesV2UpdatePipelin
 from monad.models.routes_v2_update_role_v2_request import RoutesV2UpdateRoleV2Request as RoutesV2UpdateRoleV2Request
 from monad.models.routes_v3_alert_list import RoutesV3AlertList as RoutesV3AlertList
 from monad.models.routes_v3_alert_rule_list_response import RoutesV3AlertRuleListResponse as RoutesV3AlertRuleListResponse
-from monad.models.routes_v3_alert_rule_with_metadata import RoutesV3AlertRuleWithMetadata as RoutesV3AlertRuleWithMetadata
+from monad.models.routes_v3_alert_rule_response import RoutesV3AlertRuleResponse as RoutesV3AlertRuleResponse
 from monad.models.routes_v3_create_alert_rule_request import RoutesV3CreateAlertRuleRequest as RoutesV3CreateAlertRuleRequest
 from monad.models.routes_v3_create_child_organization_request import RoutesV3CreateChildOrganizationRequest as RoutesV3CreateChildOrganizationRequest
 from monad.models.routes_v3_create_connection_request import RoutesV3CreateConnectionRequest as RoutesV3CreateConnectionRequest

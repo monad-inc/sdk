@@ -37,7 +37,7 @@ class TestRoutesV3AlertRuleListResponse(unittest.TestCase):
         if include_optional:
             return RoutesV3AlertRuleListResponse(
                 alert_rules = [
-                    monad.models.routes_v3/alert_rule_with_metadata.routesV3.AlertRuleWithMetadata(
+                    monad.models.routes_v3/alert_rule_response.routesV3.AlertRuleResponse(
                         active = True, 
                         created_at = '', 
                         description = '', 
@@ -61,7 +61,7 @@ class TestRoutesV3AlertRuleListResponse(unittest.TestCase):
                             'key' : null
                             }, 
                         severity = '', 
-                        tag_ids = [
+                        tags = [
                             ''
                             ], 
                         type = '', 

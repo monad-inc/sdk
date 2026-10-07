@@ -30,12 +30,13 @@ class RoutesV3UpdateAlertRuleRequest(BaseModel):
     """ # noqa: E501
     active: Optional[StrictBool] = Field(default=None, description="Active indicates whether the alert rule is active")
     description: Optional[StrictStr] = Field(default=None, description="Description of the alert rule")
-    invert_selection: Optional[StrictBool] = Field(default=None, description="InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.")
+    invert_selection: Optional[StrictBool] = Field(default=None, description="InvertSelection reads pipeline_ids and tags as an exclude-list instead of an include-list, so the rule applies to all pipelines except those selected. An empty selection still means all pipelines either way.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the alert rule")
     pipeline_ids: Optional[List[StrictStr]] = Field(default=None, description="Pipeline IDs that this alert rule applies to")
     rule_config: Optional[Dict[str, Any]] = Field(default=None, description="RuleConfig contains the configuration for the alert rule")
     severity: Optional[StrictStr] = Field(default=None, description="Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".")
-    __properties: ClassVar[List[str]] = ["active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity"]
+    tags: Optional[List[StrictStr]] = Field(default=None, description="Tags (names) whose pipelines this alert rule also applies to. Omitted leaves the rule's tags unchanged; [] clears them.")
+    __properties: ClassVar[List[str]] = ["active", "description", "invert_selection", "name", "pipeline_ids", "rule_config", "severity", "tags"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,7 +95,8 @@ class RoutesV3UpdateAlertRuleRequest(BaseModel):
             "name": obj.get("name"),
             "pipeline_ids": obj.get("pipeline_ids"),
             "rule_config": obj.get("rule_config"),
-            "severity": obj.get("severity")
+            "severity": obj.get("severity"),
+            "tags": obj.get("tags")
         })
         return _obj
 

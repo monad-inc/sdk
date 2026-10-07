@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alert_rules** | [**List[RoutesV3AlertRuleWithMetadata]**](RoutesV3AlertRuleWithMetadata.md) |  | [optional] 
+**alert_rules** | [**List[RoutesV3AlertRuleResponse]**](RoutesV3AlertRuleResponse.md) |  | [optional] 
 **pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Example

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createAlertRule**
-> ModelsAlertRule createAlertRule(createAlertRuleRequest)
+> RoutesV3AlertRuleResponse createAlertRule(createAlertRuleRequest)
 
 Create a new alert rule with the provided details
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsAlertRule**
+**RoutesV3AlertRuleResponse**
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **getAlertRuleByID**
-> RoutesV3AlertRuleWithMetadata getAlertRuleByID()
+> RoutesV3AlertRuleResponse getAlertRuleByID()
 
 Retrieve an alert rule by its ID
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RoutesV3AlertRuleWithMetadata**
+**RoutesV3AlertRuleResponse**
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **updateAlertRule**
-> ModelsAlertRule updateAlertRule(updateAlertRuleRequest)
+> RoutesV3AlertRuleResponse updateAlertRule(updateAlertRuleRequest)
 
 Update an existing alert rule
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ModelsAlertRule**
+**RoutesV3AlertRuleResponse**
 
 ### Authorization
 

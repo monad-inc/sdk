@@ -15,48 +15,48 @@ import (
 	"encoding/json"
 )
 
-// checks if the ModelsAlertRule type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ModelsAlertRule{}
+// checks if the RoutesV3AlertRuleResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RoutesV3AlertRuleResponse{}
 
-// ModelsAlertRule struct for ModelsAlertRule
-type ModelsAlertRule struct {
+// RoutesV3AlertRuleResponse struct for RoutesV3AlertRuleResponse
+type RoutesV3AlertRuleResponse struct {
 	Active *bool `json:"active,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
-	// InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it.
 	InvertSelection *bool `json:"invert_selection,omitempty"`
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
 	PipelineIds []string `json:"pipeline_ids,omitempty"`
+	ResourceMetadata *ConnectormetaResourceMetadata `json:"resource_metadata,omitempty"`
 	RuleConfig map[string]interface{} `json:"rule_config,omitempty"`
 	Severity *string `json:"severity,omitempty"`
-	// TagIDs adds every pipeline carrying any of these tags to the selection.
-	TagIds []string `json:"tag_ids,omitempty"`
+	// TODO(ENG-11020): drop omitempty once tagging is GA; it matches pipelines meanwhile.
+	Tags []string `json:"tags,omitempty"`
 	Type *string `json:"type,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }
 
-// NewModelsAlertRule instantiates a new ModelsAlertRule object
+// NewRoutesV3AlertRuleResponse instantiates a new RoutesV3AlertRuleResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsAlertRule() *ModelsAlertRule {
-	this := ModelsAlertRule{}
+func NewRoutesV3AlertRuleResponse() *RoutesV3AlertRuleResponse {
+	this := RoutesV3AlertRuleResponse{}
 	return &this
 }
 
-// NewModelsAlertRuleWithDefaults instantiates a new ModelsAlertRule object
+// NewRoutesV3AlertRuleResponseWithDefaults instantiates a new RoutesV3AlertRuleResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewModelsAlertRuleWithDefaults() *ModelsAlertRule {
-	this := ModelsAlertRule{}
+func NewRoutesV3AlertRuleResponseWithDefaults() *RoutesV3AlertRuleResponse {
+	this := RoutesV3AlertRuleResponse{}
 	return &this
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetActive() bool {
+func (o *RoutesV3AlertRuleResponse) GetActive() bool {
 	if o == nil || IsNil(o.Active) {
 		var ret bool
 		return ret
@@ -66,7 +66,7 @@ func (o *ModelsAlertRule) GetActive() bool {
 
 // GetActiveOk returns a tuple with the Active field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetActiveOk() (*bool, bool) {
+func (o *RoutesV3AlertRuleResponse) GetActiveOk() (*bool, bool) {
 	if o == nil || IsNil(o.Active) {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *ModelsAlertRule) GetActiveOk() (*bool, bool) {
 }
 
 // HasActive returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasActive() bool {
+func (o *RoutesV3AlertRuleResponse) HasActive() bool {
 	if o != nil && !IsNil(o.Active) {
 		return true
 	}
@@ -83,12 +83,12 @@ func (o *ModelsAlertRule) HasActive() bool {
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *ModelsAlertRule) SetActive(v bool) {
+func (o *RoutesV3AlertRuleResponse) SetActive(v bool) {
 	o.Active = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetCreatedAt() string {
+func (o *RoutesV3AlertRuleResponse) GetCreatedAt() string {
 	if o == nil || IsNil(o.CreatedAt) {
 		var ret string
 		return ret
@@ -98,7 +98,7 @@ func (o *ModelsAlertRule) GetCreatedAt() string {
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetCreatedAtOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetCreatedAtOk() (*string, bool) {
 	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
@@ -106,7 +106,7 @@ func (o *ModelsAlertRule) GetCreatedAtOk() (*string, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasCreatedAt() bool {
+func (o *RoutesV3AlertRuleResponse) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -115,12 +115,12 @@ func (o *ModelsAlertRule) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
-func (o *ModelsAlertRule) SetCreatedAt(v string) {
+func (o *RoutesV3AlertRuleResponse) SetCreatedAt(v string) {
 	o.CreatedAt = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetDescription() string {
+func (o *RoutesV3AlertRuleResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
@@ -130,7 +130,7 @@ func (o *ModelsAlertRule) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetDescriptionOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
@@ -138,7 +138,7 @@ func (o *ModelsAlertRule) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasDescription() bool {
+func (o *RoutesV3AlertRuleResponse) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -147,12 +147,12 @@ func (o *ModelsAlertRule) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *ModelsAlertRule) SetDescription(v string) {
+func (o *RoutesV3AlertRuleResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetId() string {
+func (o *RoutesV3AlertRuleResponse) GetId() string {
 	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
@@ -162,7 +162,7 @@ func (o *ModelsAlertRule) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetIdOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -170,7 +170,7 @@ func (o *ModelsAlertRule) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasId() bool {
+func (o *RoutesV3AlertRuleResponse) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -179,12 +179,12 @@ func (o *ModelsAlertRule) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ModelsAlertRule) SetId(v string) {
+func (o *RoutesV3AlertRuleResponse) SetId(v string) {
 	o.Id = &v
 }
 
 // GetInvertSelection returns the InvertSelection field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetInvertSelection() bool {
+func (o *RoutesV3AlertRuleResponse) GetInvertSelection() bool {
 	if o == nil || IsNil(o.InvertSelection) {
 		var ret bool
 		return ret
@@ -194,7 +194,7 @@ func (o *ModelsAlertRule) GetInvertSelection() bool {
 
 // GetInvertSelectionOk returns a tuple with the InvertSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetInvertSelectionOk() (*bool, bool) {
+func (o *RoutesV3AlertRuleResponse) GetInvertSelectionOk() (*bool, bool) {
 	if o == nil || IsNil(o.InvertSelection) {
 		return nil, false
 	}
@@ -202,7 +202,7 @@ func (o *ModelsAlertRule) GetInvertSelectionOk() (*bool, bool) {
 }
 
 // HasInvertSelection returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasInvertSelection() bool {
+func (o *RoutesV3AlertRuleResponse) HasInvertSelection() bool {
 	if o != nil && !IsNil(o.InvertSelection) {
 		return true
 	}
@@ -211,12 +211,12 @@ func (o *ModelsAlertRule) HasInvertSelection() bool {
 }
 
 // SetInvertSelection gets a reference to the given bool and assigns it to the InvertSelection field.
-func (o *ModelsAlertRule) SetInvertSelection(v bool) {
+func (o *RoutesV3AlertRuleResponse) SetInvertSelection(v bool) {
 	o.InvertSelection = &v
 }
 
 // GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetManagedBy() ModelsManagedBy {
+func (o *RoutesV3AlertRuleResponse) GetManagedBy() ModelsManagedBy {
 	if o == nil || IsNil(o.ManagedBy) {
 		var ret ModelsManagedBy
 		return ret
@@ -226,7 +226,7 @@ func (o *ModelsAlertRule) GetManagedBy() ModelsManagedBy {
 
 // GetManagedByOk returns a tuple with the ManagedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetManagedByOk() (*ModelsManagedBy, bool) {
+func (o *RoutesV3AlertRuleResponse) GetManagedByOk() (*ModelsManagedBy, bool) {
 	if o == nil || IsNil(o.ManagedBy) {
 		return nil, false
 	}
@@ -234,7 +234,7 @@ func (o *ModelsAlertRule) GetManagedByOk() (*ModelsManagedBy, bool) {
 }
 
 // HasManagedBy returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasManagedBy() bool {
+func (o *RoutesV3AlertRuleResponse) HasManagedBy() bool {
 	if o != nil && !IsNil(o.ManagedBy) {
 		return true
 	}
@@ -243,12 +243,12 @@ func (o *ModelsAlertRule) HasManagedBy() bool {
 }
 
 // SetManagedBy gets a reference to the given ModelsManagedBy and assigns it to the ManagedBy field.
-func (o *ModelsAlertRule) SetManagedBy(v ModelsManagedBy) {
+func (o *RoutesV3AlertRuleResponse) SetManagedBy(v ModelsManagedBy) {
 	o.ManagedBy = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetName() string {
+func (o *RoutesV3AlertRuleResponse) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -258,7 +258,7 @@ func (o *ModelsAlertRule) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetNameOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -266,7 +266,7 @@ func (o *ModelsAlertRule) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasName() bool {
+func (o *RoutesV3AlertRuleResponse) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -275,12 +275,12 @@ func (o *ModelsAlertRule) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ModelsAlertRule) SetName(v string) {
+func (o *RoutesV3AlertRuleResponse) SetName(v string) {
 	o.Name = &v
 }
 
 // GetOrganizationId returns the OrganizationId field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetOrganizationId() string {
+func (o *RoutesV3AlertRuleResponse) GetOrganizationId() string {
 	if o == nil || IsNil(o.OrganizationId) {
 		var ret string
 		return ret
@@ -290,7 +290,7 @@ func (o *ModelsAlertRule) GetOrganizationId() string {
 
 // GetOrganizationIdOk returns a tuple with the OrganizationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetOrganizationIdOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetOrganizationIdOk() (*string, bool) {
 	if o == nil || IsNil(o.OrganizationId) {
 		return nil, false
 	}
@@ -298,7 +298,7 @@ func (o *ModelsAlertRule) GetOrganizationIdOk() (*string, bool) {
 }
 
 // HasOrganizationId returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasOrganizationId() bool {
+func (o *RoutesV3AlertRuleResponse) HasOrganizationId() bool {
 	if o != nil && !IsNil(o.OrganizationId) {
 		return true
 	}
@@ -307,12 +307,12 @@ func (o *ModelsAlertRule) HasOrganizationId() bool {
 }
 
 // SetOrganizationId gets a reference to the given string and assigns it to the OrganizationId field.
-func (o *ModelsAlertRule) SetOrganizationId(v string) {
+func (o *RoutesV3AlertRuleResponse) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
 // GetPipelineIds returns the PipelineIds field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetPipelineIds() []string {
+func (o *RoutesV3AlertRuleResponse) GetPipelineIds() []string {
 	if o == nil || IsNil(o.PipelineIds) {
 		var ret []string
 		return ret
@@ -322,7 +322,7 @@ func (o *ModelsAlertRule) GetPipelineIds() []string {
 
 // GetPipelineIdsOk returns a tuple with the PipelineIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetPipelineIdsOk() ([]string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetPipelineIdsOk() ([]string, bool) {
 	if o == nil || IsNil(o.PipelineIds) {
 		return nil, false
 	}
@@ -330,7 +330,7 @@ func (o *ModelsAlertRule) GetPipelineIdsOk() ([]string, bool) {
 }
 
 // HasPipelineIds returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasPipelineIds() bool {
+func (o *RoutesV3AlertRuleResponse) HasPipelineIds() bool {
 	if o != nil && !IsNil(o.PipelineIds) {
 		return true
 	}
@@ -339,12 +339,44 @@ func (o *ModelsAlertRule) HasPipelineIds() bool {
 }
 
 // SetPipelineIds gets a reference to the given []string and assigns it to the PipelineIds field.
-func (o *ModelsAlertRule) SetPipelineIds(v []string) {
+func (o *RoutesV3AlertRuleResponse) SetPipelineIds(v []string) {
 	o.PipelineIds = v
 }
 
+// GetResourceMetadata returns the ResourceMetadata field value if set, zero value otherwise.
+func (o *RoutesV3AlertRuleResponse) GetResourceMetadata() ConnectormetaResourceMetadata {
+	if o == nil || IsNil(o.ResourceMetadata) {
+		var ret ConnectormetaResourceMetadata
+		return ret
+	}
+	return *o.ResourceMetadata
+}
+
+// GetResourceMetadataOk returns a tuple with the ResourceMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3AlertRuleResponse) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool) {
+	if o == nil || IsNil(o.ResourceMetadata) {
+		return nil, false
+	}
+	return o.ResourceMetadata, true
+}
+
+// HasResourceMetadata returns a boolean if a field has been set.
+func (o *RoutesV3AlertRuleResponse) HasResourceMetadata() bool {
+	if o != nil && !IsNil(o.ResourceMetadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceMetadata gets a reference to the given ConnectormetaResourceMetadata and assigns it to the ResourceMetadata field.
+func (o *RoutesV3AlertRuleResponse) SetResourceMetadata(v ConnectormetaResourceMetadata) {
+	o.ResourceMetadata = &v
+}
+
 // GetRuleConfig returns the RuleConfig field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetRuleConfig() map[string]interface{} {
+func (o *RoutesV3AlertRuleResponse) GetRuleConfig() map[string]interface{} {
 	if o == nil || IsNil(o.RuleConfig) {
 		var ret map[string]interface{}
 		return ret
@@ -354,7 +386,7 @@ func (o *ModelsAlertRule) GetRuleConfig() map[string]interface{} {
 
 // GetRuleConfigOk returns a tuple with the RuleConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetRuleConfigOk() (map[string]interface{}, bool) {
+func (o *RoutesV3AlertRuleResponse) GetRuleConfigOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.RuleConfig) {
 		return map[string]interface{}{}, false
 	}
@@ -362,7 +394,7 @@ func (o *ModelsAlertRule) GetRuleConfigOk() (map[string]interface{}, bool) {
 }
 
 // HasRuleConfig returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasRuleConfig() bool {
+func (o *RoutesV3AlertRuleResponse) HasRuleConfig() bool {
 	if o != nil && !IsNil(o.RuleConfig) {
 		return true
 	}
@@ -371,12 +403,12 @@ func (o *ModelsAlertRule) HasRuleConfig() bool {
 }
 
 // SetRuleConfig gets a reference to the given map[string]interface{} and assigns it to the RuleConfig field.
-func (o *ModelsAlertRule) SetRuleConfig(v map[string]interface{}) {
+func (o *RoutesV3AlertRuleResponse) SetRuleConfig(v map[string]interface{}) {
 	o.RuleConfig = v
 }
 
 // GetSeverity returns the Severity field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetSeverity() string {
+func (o *RoutesV3AlertRuleResponse) GetSeverity() string {
 	if o == nil || IsNil(o.Severity) {
 		var ret string
 		return ret
@@ -386,7 +418,7 @@ func (o *ModelsAlertRule) GetSeverity() string {
 
 // GetSeverityOk returns a tuple with the Severity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetSeverityOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetSeverityOk() (*string, bool) {
 	if o == nil || IsNil(o.Severity) {
 		return nil, false
 	}
@@ -394,7 +426,7 @@ func (o *ModelsAlertRule) GetSeverityOk() (*string, bool) {
 }
 
 // HasSeverity returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasSeverity() bool {
+func (o *RoutesV3AlertRuleResponse) HasSeverity() bool {
 	if o != nil && !IsNil(o.Severity) {
 		return true
 	}
@@ -403,44 +435,44 @@ func (o *ModelsAlertRule) HasSeverity() bool {
 }
 
 // SetSeverity gets a reference to the given string and assigns it to the Severity field.
-func (o *ModelsAlertRule) SetSeverity(v string) {
+func (o *RoutesV3AlertRuleResponse) SetSeverity(v string) {
 	o.Severity = &v
 }
 
-// GetTagIds returns the TagIds field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetTagIds() []string {
-	if o == nil || IsNil(o.TagIds) {
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *RoutesV3AlertRuleResponse) GetTags() []string {
+	if o == nil || IsNil(o.Tags) {
 		var ret []string
 		return ret
 	}
-	return o.TagIds
+	return o.Tags
 }
 
-// GetTagIdsOk returns a tuple with the TagIds field value if set, nil otherwise
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetTagIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.TagIds) {
+func (o *RoutesV3AlertRuleResponse) GetTagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
-	return o.TagIds, true
+	return o.Tags, true
 }
 
-// HasTagIds returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasTagIds() bool {
-	if o != nil && !IsNil(o.TagIds) {
+// HasTags returns a boolean if a field has been set.
+func (o *RoutesV3AlertRuleResponse) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
 	return false
 }
 
-// SetTagIds gets a reference to the given []string and assigns it to the TagIds field.
-func (o *ModelsAlertRule) SetTagIds(v []string) {
-	o.TagIds = v
+// SetTags gets a reference to the given []string and assigns it to the Tags field.
+func (o *RoutesV3AlertRuleResponse) SetTags(v []string) {
+	o.Tags = v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetType() string {
+func (o *RoutesV3AlertRuleResponse) GetType() string {
 	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
@@ -450,7 +482,7 @@ func (o *ModelsAlertRule) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetTypeOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -458,7 +490,7 @@ func (o *ModelsAlertRule) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasType() bool {
+func (o *RoutesV3AlertRuleResponse) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -467,12 +499,12 @@ func (o *ModelsAlertRule) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ModelsAlertRule) SetType(v string) {
+func (o *RoutesV3AlertRuleResponse) SetType(v string) {
 	o.Type = &v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
-func (o *ModelsAlertRule) GetUpdatedAt() string {
+func (o *RoutesV3AlertRuleResponse) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
 		var ret string
 		return ret
@@ -482,7 +514,7 @@ func (o *ModelsAlertRule) GetUpdatedAt() string {
 
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAlertRule) GetUpdatedAtOk() (*string, bool) {
+func (o *RoutesV3AlertRuleResponse) GetUpdatedAtOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
@@ -490,7 +522,7 @@ func (o *ModelsAlertRule) GetUpdatedAtOk() (*string, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *ModelsAlertRule) HasUpdatedAt() bool {
+func (o *RoutesV3AlertRuleResponse) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -499,11 +531,11 @@ func (o *ModelsAlertRule) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
-func (o *ModelsAlertRule) SetUpdatedAt(v string) {
+func (o *RoutesV3AlertRuleResponse) SetUpdatedAt(v string) {
 	o.UpdatedAt = &v
 }
 
-func (o ModelsAlertRule) MarshalJSON() ([]byte, error) {
+func (o RoutesV3AlertRuleResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -511,7 +543,7 @@ func (o ModelsAlertRule) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ModelsAlertRule) ToMap() (map[string]interface{}, error) {
+func (o RoutesV3AlertRuleResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active
@@ -540,14 +572,17 @@ func (o ModelsAlertRule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PipelineIds) {
 		toSerialize["pipeline_ids"] = o.PipelineIds
 	}
+	if !IsNil(o.ResourceMetadata) {
+		toSerialize["resource_metadata"] = o.ResourceMetadata
+	}
 	if !IsNil(o.RuleConfig) {
 		toSerialize["rule_config"] = o.RuleConfig
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
 	}
-	if !IsNil(o.TagIds) {
-		toSerialize["tag_ids"] = o.TagIds
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -558,38 +593,38 @@ func (o ModelsAlertRule) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableModelsAlertRule struct {
-	value *ModelsAlertRule
+type NullableRoutesV3AlertRuleResponse struct {
+	value *RoutesV3AlertRuleResponse
 	isSet bool
 }
 
-func (v NullableModelsAlertRule) Get() *ModelsAlertRule {
+func (v NullableRoutesV3AlertRuleResponse) Get() *RoutesV3AlertRuleResponse {
 	return v.value
 }
 
-func (v *NullableModelsAlertRule) Set(val *ModelsAlertRule) {
+func (v *NullableRoutesV3AlertRuleResponse) Set(val *RoutesV3AlertRuleResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableModelsAlertRule) IsSet() bool {
+func (v NullableRoutesV3AlertRuleResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableModelsAlertRule) Unset() {
+func (v *NullableRoutesV3AlertRuleResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableModelsAlertRule(val *ModelsAlertRule) *NullableModelsAlertRule {
-	return &NullableModelsAlertRule{value: val, isSet: true}
+func NewNullableRoutesV3AlertRuleResponse(val *RoutesV3AlertRuleResponse) *NullableRoutesV3AlertRuleResponse {
+	return &NullableRoutesV3AlertRuleResponse{value: val, isSet: true}
 }
 
-func (v NullableModelsAlertRule) MarshalJSON() ([]byte, error) {
+func (v NullableRoutesV3AlertRuleResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableModelsAlertRule) UnmarshalJSON(src []byte) error {
+func (v *NullableRoutesV3AlertRuleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

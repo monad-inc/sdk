@@ -29,10 +29,9 @@ import java.io.IOException;
 
 import org.openapitools.client.model.AlertsAlertMeta;
 import org.openapitools.client.model.CreateAlertRuleRequest;
-import org.openapitools.client.model.ModelsAlertRule;
 import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3AlertRuleListResponse;
-import org.openapitools.client.model.RoutesV3AlertRuleWithMetadata;
+import org.openapitools.client.model.RoutesV3AlertRuleResponse;
 import org.openapitools.client.model.UpdateAlertRuleRequest;
 
 import java.lang.reflect.Type;
@@ -161,7 +160,7 @@ public class AlertRulesApi {
      * Create a new alert rule with the provided details
      * @param organizationId Organization ID (required)
      * @param createAlertRuleRequest Request body for creating an alert rule (required)
-     * @return ModelsAlertRule
+     * @return RoutesV3AlertRuleResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -172,8 +171,8 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAlertRule createAlertRule(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest) throws ApiException {
-        ApiResponse<ModelsAlertRule> localVarResp = createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest);
+    public RoutesV3AlertRuleResponse createAlertRule(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest) throws ApiException {
+        ApiResponse<RoutesV3AlertRuleResponse> localVarResp = createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest);
         return localVarResp.getData();
     }
 
@@ -182,7 +181,7 @@ public class AlertRulesApi {
      * Create a new alert rule with the provided details
      * @param organizationId Organization ID (required)
      * @param createAlertRuleRequest Request body for creating an alert rule (required)
-     * @return ApiResponse&lt;ModelsAlertRule&gt;
+     * @return ApiResponse&lt;RoutesV3AlertRuleResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -193,9 +192,9 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAlertRule> createAlertRuleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest) throws ApiException {
+    public ApiResponse<RoutesV3AlertRuleResponse> createAlertRuleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest) throws ApiException {
         okhttp3.Call localVarCall = createAlertRuleValidateBeforeCall(organizationId, createAlertRuleRequest, null);
-        Type localVarReturnType = new TypeToken<ModelsAlertRule>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -216,10 +215,10 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertRuleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest, final ApiCallback<ModelsAlertRule> _callback) throws ApiException {
+    public okhttp3.Call createAlertRuleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest, final ApiCallback<RoutesV3AlertRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertRuleValidateBeforeCall(organizationId, createAlertRuleRequest, _callback);
-        Type localVarReturnType = new TypeToken<ModelsAlertRule>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -452,7 +451,7 @@ public class AlertRulesApi {
      * Retrieve an alert rule by its ID
      * @param organizationId Organization ID (required)
      * @param alertRuleId Alert Rule ID to retrieve (required)
-     * @return RoutesV3AlertRuleWithMetadata
+     * @return RoutesV3AlertRuleResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -464,8 +463,8 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public RoutesV3AlertRuleWithMetadata getAlertRuleByID(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId) throws ApiException {
-        ApiResponse<RoutesV3AlertRuleWithMetadata> localVarResp = getAlertRuleByIDWithHttpInfo(organizationId, alertRuleId);
+    public RoutesV3AlertRuleResponse getAlertRuleByID(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId) throws ApiException {
+        ApiResponse<RoutesV3AlertRuleResponse> localVarResp = getAlertRuleByIDWithHttpInfo(organizationId, alertRuleId);
         return localVarResp.getData();
     }
 
@@ -474,7 +473,7 @@ public class AlertRulesApi {
      * Retrieve an alert rule by its ID
      * @param organizationId Organization ID (required)
      * @param alertRuleId Alert Rule ID to retrieve (required)
-     * @return ApiResponse&lt;RoutesV3AlertRuleWithMetadata&gt;
+     * @return ApiResponse&lt;RoutesV3AlertRuleResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -486,9 +485,9 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RoutesV3AlertRuleWithMetadata> getAlertRuleByIDWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId) throws ApiException {
+    public ApiResponse<RoutesV3AlertRuleResponse> getAlertRuleByIDWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId) throws ApiException {
         okhttp3.Call localVarCall = getAlertRuleByIDValidateBeforeCall(organizationId, alertRuleId, null);
-        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleWithMetadata>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -510,10 +509,10 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertRuleByIDAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, final ApiCallback<RoutesV3AlertRuleWithMetadata> _callback) throws ApiException {
+    public okhttp3.Call getAlertRuleByIDAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, final ApiCallback<RoutesV3AlertRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertRuleByIDValidateBeforeCall(organizationId, alertRuleId, _callback);
-        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleWithMetadata>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1003,7 +1002,7 @@ public class AlertRulesApi {
      * @param organizationId Organization ID (required)
      * @param alertRuleId Alert Rule ID to update (required)
      * @param updateAlertRuleRequest Request body for updating an alert rule (required)
-     * @return ModelsAlertRule
+     * @return RoutesV3AlertRuleResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1014,8 +1013,8 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ModelsAlertRule updateAlertRule(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest) throws ApiException {
-        ApiResponse<ModelsAlertRule> localVarResp = updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest);
+    public RoutesV3AlertRuleResponse updateAlertRule(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest) throws ApiException {
+        ApiResponse<RoutesV3AlertRuleResponse> localVarResp = updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest);
         return localVarResp.getData();
     }
 
@@ -1025,7 +1024,7 @@ public class AlertRulesApi {
      * @param organizationId Organization ID (required)
      * @param alertRuleId Alert Rule ID to update (required)
      * @param updateAlertRuleRequest Request body for updating an alert rule (required)
-     * @return ApiResponse&lt;ModelsAlertRule&gt;
+     * @return ApiResponse&lt;RoutesV3AlertRuleResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1036,9 +1035,9 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelsAlertRule> updateAlertRuleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest) throws ApiException {
+    public ApiResponse<RoutesV3AlertRuleResponse> updateAlertRuleWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest) throws ApiException {
         okhttp3.Call localVarCall = updateAlertRuleValidateBeforeCall(organizationId, alertRuleId, updateAlertRuleRequest, null);
-        Type localVarReturnType = new TypeToken<ModelsAlertRule>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1060,10 +1059,10 @@ public class AlertRulesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertRuleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest, final ApiCallback<ModelsAlertRule> _callback) throws ApiException {
+    public okhttp3.Call updateAlertRuleAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nonnull String alertRuleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest, final ApiCallback<RoutesV3AlertRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertRuleValidateBeforeCall(organizationId, alertRuleId, updateAlertRuleRequest, _callback);
-        Type localVarReturnType = new TypeToken<ModelsAlertRule>(){}.getType();
+        Type localVarReturnType = new TypeToken<RoutesV3AlertRuleResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

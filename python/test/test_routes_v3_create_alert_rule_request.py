@@ -47,6 +47,9 @@ class TestRoutesV3CreateAlertRuleRequest(unittest.TestCase):
                     'key' : null
                     },
                 severity = '',
+                tags = [
+                    ''
+                    ],
                 type = ''
             )
         else:

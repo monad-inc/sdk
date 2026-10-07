@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.client.model.GithubComMonadIncCorePkgTypesModelsPagination;
-import org.openapitools.client.model.RoutesV3AlertRuleWithMetadata;
+import org.openapitools.client.model.RoutesV3AlertRuleResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,7 +57,7 @@ public class RoutesV3AlertRuleListResponse {
   public static final String SERIALIZED_NAME_ALERT_RULES = "alert_rules";
   @SerializedName(SERIALIZED_NAME_ALERT_RULES)
   @javax.annotation.Nullable
-  private List<RoutesV3AlertRuleWithMetadata> alertRules = new ArrayList<>();
+  private List<RoutesV3AlertRuleResponse> alertRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -67,12 +67,12 @@ public class RoutesV3AlertRuleListResponse {
   public RoutesV3AlertRuleListResponse() {
   }
 
-  public RoutesV3AlertRuleListResponse alertRules(@javax.annotation.Nullable List<RoutesV3AlertRuleWithMetadata> alertRules) {
+  public RoutesV3AlertRuleListResponse alertRules(@javax.annotation.Nullable List<RoutesV3AlertRuleResponse> alertRules) {
     this.alertRules = alertRules;
     return this;
   }
 
-  public RoutesV3AlertRuleListResponse addAlertRulesItem(RoutesV3AlertRuleWithMetadata alertRulesItem) {
+  public RoutesV3AlertRuleListResponse addAlertRulesItem(RoutesV3AlertRuleResponse alertRulesItem) {
     if (this.alertRules == null) {
       this.alertRules = new ArrayList<>();
     }
@@ -85,11 +85,11 @@ public class RoutesV3AlertRuleListResponse {
    * @return alertRules
    */
   @javax.annotation.Nullable
-  public List<RoutesV3AlertRuleWithMetadata> getAlertRules() {
+  public List<RoutesV3AlertRuleResponse> getAlertRules() {
     return alertRules;
   }
 
-  public void setAlertRules(@javax.annotation.Nullable List<RoutesV3AlertRuleWithMetadata> alertRules) {
+  public void setAlertRules(@javax.annotation.Nullable List<RoutesV3AlertRuleResponse> alertRules) {
     this.alertRules = alertRules;
   }
 
@@ -193,7 +193,7 @@ public class RoutesV3AlertRuleListResponse {
 
           // validate the optional field `alert_rules` (array)
           for (int i = 0; i < jsonArrayalertRules.size(); i++) {
-            RoutesV3AlertRuleWithMetadata.validateJsonElement(jsonArrayalertRules.get(i));
+            RoutesV3AlertRuleResponse.validateJsonElement(jsonArrayalertRules.get(i));
           };
         }
       }

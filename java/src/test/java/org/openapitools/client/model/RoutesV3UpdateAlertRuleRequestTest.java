@@ -97,4 +97,12 @@ public class RoutesV3UpdateAlertRuleRequestTest {
         // TODO: test severity
     }
 
+    /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
 }

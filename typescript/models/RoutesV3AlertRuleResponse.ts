@@ -14,14 +14,11 @@ import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMe
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { HttpFile } from '../http/http';
 
-export class RoutesV3AlertRuleWithMetadata {
+export class RoutesV3AlertRuleResponse {
     'active'?: boolean;
     'createdAt'?: string;
     'description'?: string;
     'id'?: string;
-    /**
-    * InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it.
-    */
     'invertSelection'?: boolean;
     'managedBy'?: ModelsManagedBy;
     'name'?: string;
@@ -31,9 +28,9 @@ export class RoutesV3AlertRuleWithMetadata {
     'ruleConfig'?: { [key: string]: any; };
     'severity'?: string;
     /**
-    * TagIDs adds every pipeline carrying any of these tags to the selection.
+    * TODO(ENG-11020): drop omitempty once tagging is GA; it matches pipelines meanwhile.
     */
-    'tagIds'?: Array<string>;
+    'tags'?: Array<string>;
     'type'?: string;
     'updatedAt'?: string;
 
@@ -115,8 +112,8 @@ export class RoutesV3AlertRuleWithMetadata {
             "format": ""
         },
         {
-            "name": "tagIds",
-            "baseName": "tag_ids",
+            "name": "tags",
+            "baseName": "tags",
             "type": "Array<string>",
             "format": ""
         },
@@ -134,7 +131,7 @@ export class RoutesV3AlertRuleWithMetadata {
         }    ];
 
     static getAttributeTypeMap() {
-        return RoutesV3AlertRuleWithMetadata.attributeTypeMap;
+        return RoutesV3AlertRuleResponse.attributeTypeMap;
     }
 
     public constructor() {

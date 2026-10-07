@@ -240,7 +240,6 @@ import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlert } from '../models/ModelsAlert';
-import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAlertStatus } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
@@ -479,7 +478,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
-import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
+import { RoutesV3AlertRuleResponse } from '../models/RoutesV3AlertRuleResponse';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
@@ -652,7 +651,7 @@ export class ObservableAlertRulesApi {
      * @param organizationId Organization ID
      * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRuleWithHttpInfo(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+    public createAlertRuleWithHttpInfo(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertRuleResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.createAlertRule(organizationId, createAlertRuleRequest, _config);
@@ -678,8 +677,8 @@ export class ObservableAlertRulesApi {
      * @param organizationId Organization ID
      * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
-        return this.createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    public createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: ConfigurationOptions): Observable<RoutesV3AlertRuleResponse> {
+        return this.createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertRuleResponse>) => apiResponse.data));
     }
 
     /**
@@ -724,7 +723,7 @@ export class ObservableAlertRulesApi {
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to retrieve
      */
-    public getAlertRuleByIDWithHttpInfo(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertRuleWithMetadata>> {
+    public getAlertRuleByIDWithHttpInfo(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertRuleResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.getAlertRuleByID(organizationId, alertRuleId, _config);
@@ -750,8 +749,8 @@ export class ObservableAlertRulesApi {
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to retrieve
      */
-    public getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<RoutesV3AlertRuleWithMetadata> {
-        return this.getAlertRuleByIDWithHttpInfo(organizationId, alertRuleId, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertRuleWithMetadata>) => apiResponse.data));
+    public getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: ConfigurationOptions): Observable<RoutesV3AlertRuleResponse> {
+        return this.getAlertRuleByIDWithHttpInfo(organizationId, alertRuleId, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertRuleResponse>) => apiResponse.data));
     }
 
     /**
@@ -865,7 +864,7 @@ export class ObservableAlertRulesApi {
      * @param alertRuleId Alert Rule ID to update
      * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAlertRule>> {
+    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertRuleResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
 
         const requestContextPromise = this.requestFactory.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest, _config);
@@ -892,8 +891,8 @@ export class ObservableAlertRulesApi {
      * @param alertRuleId Alert Rule ID to update
      * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<ModelsAlertRule> {
-        return this.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<ModelsAlertRule>) => apiResponse.data));
+    public updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: ConfigurationOptions): Observable<RoutesV3AlertRuleResponse> {
+        return this.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest, _options).pipe(map((apiResponse: HttpInfo<RoutesV3AlertRuleResponse>) => apiResponse.data));
     }
 
 }
@@ -7715,7 +7714,7 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tag Tag ID or name
@@ -7741,7 +7740,7 @@ export class ObservableTagsApi {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tag Tag ID or name

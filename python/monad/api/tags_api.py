@@ -361,7 +361,7 @@ class TagsApi:
     ) -> None:
         """Delete a tag
 
-        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -436,7 +436,7 @@ class TagsApi:
     ) -> ApiResponse[None]:
         """Delete a tag
 
-        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
@@ -511,7 +511,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """Delete a tag
 
-        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+        Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str

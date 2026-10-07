@@ -171,7 +171,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     CreateAlertRuleRequest createAlertRuleRequest = new CreateAlertRuleRequest(); // CreateAlertRuleRequest | Request body for creating an alert rule
     try {
-      ModelsAlertRule result = apiInstance.createAlertRule(organizationId, createAlertRuleRequest);
+      RoutesV3AlertRuleResponse result = apiInstance.createAlertRule(organizationId, createAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#createAlertRule");
@@ -625,7 +625,6 @@ Class | Method | HTTP request | Description
  - [ModelsAPILogActor](docs/ModelsAPILogActor.md)
  - [ModelsAPILogActorRole](docs/ModelsAPILogActorRole.md)
  - [ModelsAlert](docs/ModelsAlert.md)
- - [ModelsAlertRule](docs/ModelsAlertRule.md)
  - [ModelsAlertState](docs/ModelsAlertState.md)
  - [ModelsAlertStatus](docs/ModelsAlertStatus.md)
  - [ModelsAuditAction](docs/ModelsAuditAction.md)
@@ -864,7 +863,7 @@ Class | Method | HTTP request | Description
  - [RoutesV2UpdateRoleV2Request](docs/RoutesV2UpdateRoleV2Request.md)
  - [RoutesV3AlertList](docs/RoutesV3AlertList.md)
  - [RoutesV3AlertRuleListResponse](docs/RoutesV3AlertRuleListResponse.md)
- - [RoutesV3AlertRuleWithMetadata](docs/RoutesV3AlertRuleWithMetadata.md)
+ - [RoutesV3AlertRuleResponse](docs/RoutesV3AlertRuleResponse.md)
  - [RoutesV3CreateAlertRuleRequest](docs/RoutesV3CreateAlertRuleRequest.md)
  - [RoutesV3CreateChildOrganizationRequest](docs/RoutesV3CreateChildOrganizationRequest.md)
  - [RoutesV3CreateConnectionRequest](docs/RoutesV3CreateConnectionRequest.md)

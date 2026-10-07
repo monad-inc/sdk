@@ -46,7 +46,10 @@ class TestRoutesV3UpdateAlertRuleRequest(unittest.TestCase):
                 rule_config = {
                     'key' : null
                     },
-                severity = ''
+                severity = '',
+                tags = [
+                    ''
+                    ]
             )
         else:
             return RoutesV3UpdateAlertRuleRequest(

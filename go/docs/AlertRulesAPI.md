@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateAlertRule
 
-> ModelsAlertRule CreateAlertRule(ctx, organizationId).CreateAlertRuleRequest(createAlertRuleRequest).Execute()
+> RoutesV3AlertRuleResponse CreateAlertRule(ctx, organizationId).CreateAlertRuleRequest(createAlertRuleRequest).Execute()
 
 Create a new alert rule
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.CreateAlertRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateAlertRule`: ModelsAlertRule
+	// response from `CreateAlertRule`: RoutesV3AlertRuleResponse
 	fmt.Fprintf(os.Stdout, "Response from `AlertRulesAPI.CreateAlertRule`: %v\n", resp)
 }
 ```
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertRuleByID
 
-> RoutesV3AlertRuleWithMetadata GetAlertRuleByID(ctx, organizationId, alertRuleId).Execute()
+> RoutesV3AlertRuleResponse GetAlertRuleByID(ctx, organizationId, alertRuleId).Execute()
 
 Get alert rule by ID
 
@@ -188,7 +188,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.GetAlertRuleByID``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlertRuleByID`: RoutesV3AlertRuleWithMetadata
+	// response from `GetAlertRuleByID`: RoutesV3AlertRuleResponse
 	fmt.Fprintf(os.Stdout, "Response from `AlertRulesAPI.GetAlertRuleByID`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertRule
 
-> ModelsAlertRule UpdateAlertRule(ctx, organizationId, alertRuleId).UpdateAlertRuleRequest(updateAlertRuleRequest).Execute()
+> RoutesV3AlertRuleResponse UpdateAlertRule(ctx, organizationId, alertRuleId).UpdateAlertRuleRequest(updateAlertRuleRequest).Execute()
 
 Update alert rule
 
@@ -467,7 +467,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AlertRulesAPI.UpdateAlertRule``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateAlertRule`: ModelsAlertRule
+	// response from `UpdateAlertRule`: RoutesV3AlertRuleResponse
 	fmt.Fprintf(os.Stdout, "Response from `AlertRulesAPI.UpdateAlertRule`: %v\n", resp)
 }
 ```
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 

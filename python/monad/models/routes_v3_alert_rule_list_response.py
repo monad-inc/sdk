@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.github_com_monad_inc_core_pkg_types_models_pagination import GithubComMonadIncCorePkgTypesModelsPagination
-from monad.models.routes_v3_alert_rule_with_metadata import RoutesV3AlertRuleWithMetadata
+from monad.models.routes_v3_alert_rule_response import RoutesV3AlertRuleResponse
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,7 +30,7 @@ class RoutesV3AlertRuleListResponse(BaseModel):
     """
     RoutesV3AlertRuleListResponse
     """ # noqa: E501
-    alert_rules: Optional[List[RoutesV3AlertRuleWithMetadata]] = None
+    alert_rules: Optional[List[RoutesV3AlertRuleResponse]] = None
     pagination: Optional[GithubComMonadIncCorePkgTypesModelsPagination] = None
     __properties: ClassVar[List[str]] = ["alert_rules", "pagination"]
 
@@ -95,7 +95,7 @@ class RoutesV3AlertRuleListResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "alert_rules": [RoutesV3AlertRuleWithMetadata.from_dict(_item) for _item in obj["alert_rules"]] if obj.get("alert_rules") is not None else None,
+            "alert_rules": [RoutesV3AlertRuleResponse.from_dict(_item) for _item in obj["alert_rules"]] if obj.get("alert_rules") is not None else None,
             "pagination": GithubComMonadIncCorePkgTypesModelsPagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         return _obj

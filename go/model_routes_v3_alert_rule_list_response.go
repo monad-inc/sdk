@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV3AlertRuleListResponse{}
 
 // RoutesV3AlertRuleListResponse struct for RoutesV3AlertRuleListResponse
 type RoutesV3AlertRuleListResponse struct {
-	AlertRules []RoutesV3AlertRuleWithMetadata `json:"alert_rules,omitempty"`
+	AlertRules []RoutesV3AlertRuleResponse `json:"alert_rules,omitempty"`
 	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV3AlertRuleListResponseWithDefaults() *RoutesV3AlertRuleListRespon
 }
 
 // GetAlertRules returns the AlertRules field value if set, zero value otherwise.
-func (o *RoutesV3AlertRuleListResponse) GetAlertRules() []RoutesV3AlertRuleWithMetadata {
+func (o *RoutesV3AlertRuleListResponse) GetAlertRules() []RoutesV3AlertRuleResponse {
 	if o == nil || IsNil(o.AlertRules) {
-		var ret []RoutesV3AlertRuleWithMetadata
+		var ret []RoutesV3AlertRuleResponse
 		return ret
 	}
 	return o.AlertRules
@@ -52,7 +52,7 @@ func (o *RoutesV3AlertRuleListResponse) GetAlertRules() []RoutesV3AlertRuleWithM
 
 // GetAlertRulesOk returns a tuple with the AlertRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3AlertRuleListResponse) GetAlertRulesOk() ([]RoutesV3AlertRuleWithMetadata, bool) {
+func (o *RoutesV3AlertRuleListResponse) GetAlertRulesOk() ([]RoutesV3AlertRuleResponse, bool) {
 	if o == nil || IsNil(o.AlertRules) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV3AlertRuleListResponse) HasAlertRules() bool {
 	return false
 }
 
-// SetAlertRules gets a reference to the given []RoutesV3AlertRuleWithMetadata and assigns it to the AlertRules field.
-func (o *RoutesV3AlertRuleListResponse) SetAlertRules(v []RoutesV3AlertRuleWithMetadata) {
+// SetAlertRules gets a reference to the given []RoutesV3AlertRuleResponse and assigns it to the AlertRules field.
+func (o *RoutesV3AlertRuleListResponse) SetAlertRules(v []RoutesV3AlertRuleResponse) {
 	o.AlertRules = v
 }
 

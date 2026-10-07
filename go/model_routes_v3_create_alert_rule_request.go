@@ -24,7 +24,7 @@ type RoutesV3CreateAlertRuleRequest struct {
 	Active *bool `json:"active,omitempty"`
 	// Description of the alert rule
 	Description *string `json:"description,omitempty"`
-	// InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+	// InvertSelection reads pipeline_ids and tags as an exclude-list instead of an include-list, so the rule applies to all pipelines except those selected. An empty selection still means all pipelines either way.
 	InvertSelection *bool `json:"invert_selection,omitempty"`
 	// Name of the alert rule
 	Name *string `json:"name,omitempty"`
@@ -34,6 +34,8 @@ type RoutesV3CreateAlertRuleRequest struct {
 	RuleConfig map[string]interface{} `json:"rule_config,omitempty"`
 	// Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".
 	Severity *string `json:"severity,omitempty"`
+	// Tags (names) whose pipelines this alert rule also applies to. Only for rule types whose metadata has supports_tag_targeting.
+	Tags []string `json:"tags,omitempty"`
 	// Type of the alert rule
 	Type *string `json:"type,omitempty"`
 }
@@ -279,6 +281,38 @@ func (o *RoutesV3CreateAlertRuleRequest) SetSeverity(v string) {
 	o.Severity = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *RoutesV3CreateAlertRuleRequest) GetTags() []string {
+	if o == nil || IsNil(o.Tags) {
+		var ret []string
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV3CreateAlertRuleRequest) GetTagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *RoutesV3CreateAlertRuleRequest) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []string and assigns it to the Tags field.
+func (o *RoutesV3CreateAlertRuleRequest) SetTags(v []string) {
+	o.Tags = v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RoutesV3CreateAlertRuleRequest) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -341,6 +375,9 @@ func (o RoutesV3CreateAlertRuleRequest) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

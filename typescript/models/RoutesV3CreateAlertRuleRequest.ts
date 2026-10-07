@@ -22,7 +22,7 @@ export class RoutesV3CreateAlertRuleRequest {
     */
     'description'?: string;
     /**
-    * InvertSelection reads pipeline_ids as an exclude-list instead of an include-list, so the rule applies to all pipelines except those listed. An empty pipeline_ids still means all pipelines either way.
+    * InvertSelection reads pipeline_ids and tags as an exclude-list instead of an include-list, so the rule applies to all pipelines except those selected. An empty selection still means all pipelines either way.
     */
     'invertSelection'?: boolean;
     /**
@@ -41,6 +41,10 @@ export class RoutesV3CreateAlertRuleRequest {
     * Severity level of the alert. Must be one of \"critical\", \"high\", \"medium\", \"low\", \"info\".
     */
     'severity'?: string;
+    /**
+    * Tags (names) whose pipelines this alert rule also applies to. Only for rule types whose metadata has supports_tag_targeting.
+    */
+    'tags'?: Array<string>;
     /**
     * Type of the alert rule
     */
@@ -91,6 +95,12 @@ export class RoutesV3CreateAlertRuleRequest {
             "name": "severity",
             "baseName": "severity",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "tags",
+            "baseName": "tags",
+            "type": "Array<string>",
             "format": ""
         },
         {

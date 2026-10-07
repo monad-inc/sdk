@@ -37,7 +37,7 @@ func (r ApiCreateAlertRuleRequest) CreateAlertRuleRequest(createAlertRuleRequest
 	return r
 }
 
-func (r ApiCreateAlertRuleRequest) Execute() (*ModelsAlertRule, *http.Response, error) {
+func (r ApiCreateAlertRuleRequest) Execute() (*RoutesV3AlertRuleResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertRuleExecute(r)
 }
 
@@ -59,13 +59,13 @@ func (a *AlertRulesAPIService) CreateAlertRule(ctx context.Context, organization
 }
 
 // Execute executes the request
-//  @return ModelsAlertRule
-func (a *AlertRulesAPIService) CreateAlertRuleExecute(r ApiCreateAlertRuleRequest) (*ModelsAlertRule, *http.Response, error) {
+//  @return RoutesV3AlertRuleResponse
+func (a *AlertRulesAPIService) CreateAlertRuleExecute(r ApiCreateAlertRuleRequest) (*RoutesV3AlertRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsAlertRule
+		localVarReturnValue  *RoutesV3AlertRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertRulesAPIService.CreateAlertRule")
@@ -323,7 +323,7 @@ type ApiGetAlertRuleByIDRequest struct {
 	alertRuleId string
 }
 
-func (r ApiGetAlertRuleByIDRequest) Execute() (*RoutesV3AlertRuleWithMetadata, *http.Response, error) {
+func (r ApiGetAlertRuleByIDRequest) Execute() (*RoutesV3AlertRuleResponse, *http.Response, error) {
 	return r.ApiService.GetAlertRuleByIDExecute(r)
 }
 
@@ -347,13 +347,13 @@ func (a *AlertRulesAPIService) GetAlertRuleByID(ctx context.Context, organizatio
 }
 
 // Execute executes the request
-//  @return RoutesV3AlertRuleWithMetadata
-func (a *AlertRulesAPIService) GetAlertRuleByIDExecute(r ApiGetAlertRuleByIDRequest) (*RoutesV3AlertRuleWithMetadata, *http.Response, error) {
+//  @return RoutesV3AlertRuleResponse
+func (a *AlertRulesAPIService) GetAlertRuleByIDExecute(r ApiGetAlertRuleByIDRequest) (*RoutesV3AlertRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RoutesV3AlertRuleWithMetadata
+		localVarReturnValue  *RoutesV3AlertRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertRulesAPIService.GetAlertRuleByID")
@@ -898,7 +898,7 @@ func (r ApiUpdateAlertRuleRequest) UpdateAlertRuleRequest(updateAlertRuleRequest
 	return r
 }
 
-func (r ApiUpdateAlertRuleRequest) Execute() (*ModelsAlertRule, *http.Response, error) {
+func (r ApiUpdateAlertRuleRequest) Execute() (*RoutesV3AlertRuleResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertRuleExecute(r)
 }
 
@@ -922,13 +922,13 @@ func (a *AlertRulesAPIService) UpdateAlertRule(ctx context.Context, organization
 }
 
 // Execute executes the request
-//  @return ModelsAlertRule
-func (a *AlertRulesAPIService) UpdateAlertRuleExecute(r ApiUpdateAlertRuleRequest) (*ModelsAlertRule, *http.Response, error) {
+//  @return RoutesV3AlertRuleResponse
+func (a *AlertRulesAPIService) UpdateAlertRuleExecute(r ApiUpdateAlertRuleRequest) (*RoutesV3AlertRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ModelsAlertRule
+		localVarReturnValue  *RoutesV3AlertRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertRulesAPIService.UpdateAlertRule")

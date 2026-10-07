@@ -1,4 +1,4 @@
-# RoutesV3AlertRuleWithMetadata
+# RoutesV3AlertRuleResponse
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**InvertSelection** | Pointer to **bool** | InvertSelection makes the selection (PipelineIDs and TagIDs) an exclude-list. Only pipeline-granularity rule types consult it. | [optional] 
+**InvertSelection** | Pointer to **bool** |  | [optional] 
 **ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
@@ -16,401 +16,401 @@ Name | Type | Description | Notes
 **ResourceMetadata** | Pointer to [**ConnectormetaResourceMetadata**](ConnectormetaResourceMetadata.md) |  | [optional] 
 **RuleConfig** | Pointer to **map[string]interface{}** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
-**TagIds** | Pointer to **[]string** | TagIDs adds every pipeline carrying any of these tags to the selection. | [optional] 
+**Tags** | Pointer to **[]string** | TODO(ENG-11020): drop omitempty once tagging is GA; it matches pipelines meanwhile. | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewRoutesV3AlertRuleWithMetadata
+### NewRoutesV3AlertRuleResponse
 
-`func NewRoutesV3AlertRuleWithMetadata() *RoutesV3AlertRuleWithMetadata`
+`func NewRoutesV3AlertRuleResponse() *RoutesV3AlertRuleResponse`
 
-NewRoutesV3AlertRuleWithMetadata instantiates a new RoutesV3AlertRuleWithMetadata object
+NewRoutesV3AlertRuleResponse instantiates a new RoutesV3AlertRuleResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRoutesV3AlertRuleWithMetadataWithDefaults
+### NewRoutesV3AlertRuleResponseWithDefaults
 
-`func NewRoutesV3AlertRuleWithMetadataWithDefaults() *RoutesV3AlertRuleWithMetadata`
+`func NewRoutesV3AlertRuleResponseWithDefaults() *RoutesV3AlertRuleResponse`
 
-NewRoutesV3AlertRuleWithMetadataWithDefaults instantiates a new RoutesV3AlertRuleWithMetadata object
+NewRoutesV3AlertRuleResponseWithDefaults instantiates a new RoutesV3AlertRuleResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetActive
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetActive() bool`
+`func (o *RoutesV3AlertRuleResponse) GetActive() bool`
 
 GetActive returns the Active field if non-nil, zero value otherwise.
 
 ### GetActiveOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetActiveOk() (*bool, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetActiveOk() (*bool, bool)`
 
 GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActive
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetActive(v bool)`
+`func (o *RoutesV3AlertRuleResponse) SetActive(v bool)`
 
 SetActive sets Active field to given value.
 
 ### HasActive
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasActive() bool`
+`func (o *RoutesV3AlertRuleResponse) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetCreatedAt() string`
+`func (o *RoutesV3AlertRuleResponse) GetCreatedAt() string`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetCreatedAtOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetCreatedAtOk() (*string, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetCreatedAt(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetCreatedAt(v string)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasCreatedAt() bool`
+`func (o *RoutesV3AlertRuleResponse) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetDescription() string`
+`func (o *RoutesV3AlertRuleResponse) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetDescriptionOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetDescription(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasDescription() bool`
+`func (o *RoutesV3AlertRuleResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetId() string`
+`func (o *RoutesV3AlertRuleResponse) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetIdOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetId(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasId() bool`
+`func (o *RoutesV3AlertRuleResponse) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetInvertSelection
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetInvertSelection() bool`
+`func (o *RoutesV3AlertRuleResponse) GetInvertSelection() bool`
 
 GetInvertSelection returns the InvertSelection field if non-nil, zero value otherwise.
 
 ### GetInvertSelectionOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetInvertSelectionOk() (*bool, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetInvertSelectionOk() (*bool, bool)`
 
 GetInvertSelectionOk returns a tuple with the InvertSelection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvertSelection
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetInvertSelection(v bool)`
+`func (o *RoutesV3AlertRuleResponse) SetInvertSelection(v bool)`
 
 SetInvertSelection sets InvertSelection field to given value.
 
 ### HasInvertSelection
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasInvertSelection() bool`
+`func (o *RoutesV3AlertRuleResponse) HasInvertSelection() bool`
 
 HasInvertSelection returns a boolean if a field has been set.
 
 ### GetManagedBy
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetManagedBy() ModelsManagedBy`
+`func (o *RoutesV3AlertRuleResponse) GetManagedBy() ModelsManagedBy`
 
 GetManagedBy returns the ManagedBy field if non-nil, zero value otherwise.
 
 ### GetManagedByOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetManagedByOk() (*ModelsManagedBy, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetManagedByOk() (*ModelsManagedBy, bool)`
 
 GetManagedByOk returns a tuple with the ManagedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManagedBy
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetManagedBy(v ModelsManagedBy)`
+`func (o *RoutesV3AlertRuleResponse) SetManagedBy(v ModelsManagedBy)`
 
 SetManagedBy sets ManagedBy field to given value.
 
 ### HasManagedBy
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasManagedBy() bool`
+`func (o *RoutesV3AlertRuleResponse) HasManagedBy() bool`
 
 HasManagedBy returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetName() string`
+`func (o *RoutesV3AlertRuleResponse) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetNameOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetName(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasName() bool`
+`func (o *RoutesV3AlertRuleResponse) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetOrganizationId
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetOrganizationId() string`
+`func (o *RoutesV3AlertRuleResponse) GetOrganizationId() string`
 
 GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
 
 ### GetOrganizationIdOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetOrganizationIdOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetOrganizationIdOk() (*string, bool)`
 
 GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizationId
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetOrganizationId(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetOrganizationId(v string)`
 
 SetOrganizationId sets OrganizationId field to given value.
 
 ### HasOrganizationId
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasOrganizationId() bool`
+`func (o *RoutesV3AlertRuleResponse) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
 
 ### GetPipelineIds
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetPipelineIds() []string`
+`func (o *RoutesV3AlertRuleResponse) GetPipelineIds() []string`
 
 GetPipelineIds returns the PipelineIds field if non-nil, zero value otherwise.
 
 ### GetPipelineIdsOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetPipelineIdsOk() (*[]string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetPipelineIdsOk() (*[]string, bool)`
 
 GetPipelineIdsOk returns a tuple with the PipelineIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPipelineIds
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetPipelineIds(v []string)`
+`func (o *RoutesV3AlertRuleResponse) SetPipelineIds(v []string)`
 
 SetPipelineIds sets PipelineIds field to given value.
 
 ### HasPipelineIds
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasPipelineIds() bool`
+`func (o *RoutesV3AlertRuleResponse) HasPipelineIds() bool`
 
 HasPipelineIds returns a boolean if a field has been set.
 
 ### GetResourceMetadata
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetResourceMetadata() ConnectormetaResourceMetadata`
+`func (o *RoutesV3AlertRuleResponse) GetResourceMetadata() ConnectormetaResourceMetadata`
 
 GetResourceMetadata returns the ResourceMetadata field if non-nil, zero value otherwise.
 
 ### GetResourceMetadataOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetResourceMetadataOk() (*ConnectormetaResourceMetadata, bool)`
 
 GetResourceMetadataOk returns a tuple with the ResourceMetadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourceMetadata
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetResourceMetadata(v ConnectormetaResourceMetadata)`
+`func (o *RoutesV3AlertRuleResponse) SetResourceMetadata(v ConnectormetaResourceMetadata)`
 
 SetResourceMetadata sets ResourceMetadata field to given value.
 
 ### HasResourceMetadata
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasResourceMetadata() bool`
+`func (o *RoutesV3AlertRuleResponse) HasResourceMetadata() bool`
 
 HasResourceMetadata returns a boolean if a field has been set.
 
 ### GetRuleConfig
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetRuleConfig() map[string]interface{}`
+`func (o *RoutesV3AlertRuleResponse) GetRuleConfig() map[string]interface{}`
 
 GetRuleConfig returns the RuleConfig field if non-nil, zero value otherwise.
 
 ### GetRuleConfigOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetRuleConfigOk() (*map[string]interface{}, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetRuleConfigOk() (*map[string]interface{}, bool)`
 
 GetRuleConfigOk returns a tuple with the RuleConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuleConfig
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetRuleConfig(v map[string]interface{})`
+`func (o *RoutesV3AlertRuleResponse) SetRuleConfig(v map[string]interface{})`
 
 SetRuleConfig sets RuleConfig field to given value.
 
 ### HasRuleConfig
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasRuleConfig() bool`
+`func (o *RoutesV3AlertRuleResponse) HasRuleConfig() bool`
 
 HasRuleConfig returns a boolean if a field has been set.
 
 ### GetSeverity
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetSeverity() string`
+`func (o *RoutesV3AlertRuleResponse) GetSeverity() string`
 
 GetSeverity returns the Severity field if non-nil, zero value otherwise.
 
 ### GetSeverityOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetSeverityOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetSeverityOk() (*string, bool)`
 
 GetSeverityOk returns a tuple with the Severity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSeverity
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetSeverity(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetSeverity(v string)`
 
 SetSeverity sets Severity field to given value.
 
 ### HasSeverity
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasSeverity() bool`
+`func (o *RoutesV3AlertRuleResponse) HasSeverity() bool`
 
 HasSeverity returns a boolean if a field has been set.
 
-### GetTagIds
+### GetTags
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetTagIds() []string`
+`func (o *RoutesV3AlertRuleResponse) GetTags() []string`
 
-GetTagIds returns the TagIds field if non-nil, zero value otherwise.
+GetTags returns the Tags field if non-nil, zero value otherwise.
 
-### GetTagIdsOk
+### GetTagsOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetTagIdsOk() (*[]string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetTagsOk() (*[]string, bool)`
 
-GetTagIdsOk returns a tuple with the TagIds field if it's non-nil, zero value otherwise
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTagIds
+### SetTags
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetTagIds(v []string)`
+`func (o *RoutesV3AlertRuleResponse) SetTags(v []string)`
 
-SetTagIds sets TagIds field to given value.
+SetTags sets Tags field to given value.
 
-### HasTagIds
+### HasTags
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasTagIds() bool`
+`func (o *RoutesV3AlertRuleResponse) HasTags() bool`
 
-HasTagIds returns a boolean if a field has been set.
+HasTags returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetType() string`
+`func (o *RoutesV3AlertRuleResponse) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetTypeOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetType(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetType(v string)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasType() bool`
+`func (o *RoutesV3AlertRuleResponse) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetUpdatedAt() string`
+`func (o *RoutesV3AlertRuleResponse) GetUpdatedAt() string`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *RoutesV3AlertRuleWithMetadata) GetUpdatedAtOk() (*string, bool)`
+`func (o *RoutesV3AlertRuleResponse) GetUpdatedAtOk() (*string, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *RoutesV3AlertRuleWithMetadata) SetUpdatedAt(v string)`
+`func (o *RoutesV3AlertRuleResponse) SetUpdatedAt(v string)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *RoutesV3AlertRuleWithMetadata) HasUpdatedAt() bool`
+`func (o *RoutesV3AlertRuleResponse) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 

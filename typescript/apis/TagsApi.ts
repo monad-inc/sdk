@@ -77,7 +77,7 @@ export class TagsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tag Tag ID or name
@@ -436,7 +436,7 @@ export class TagsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Tag is attached to resources", body, response.headers);
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Tag is attached to resources or used by alert rules", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

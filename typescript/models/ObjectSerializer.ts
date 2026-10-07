@@ -235,7 +235,6 @@ export * from '../models/ModelsAPIKeyWithToken';
 export * from '../models/ModelsAPILogActor';
 export * from '../models/ModelsAPILogActorRole';
 export * from '../models/ModelsAlert';
-export * from '../models/ModelsAlertRule';
 export * from '../models/ModelsAlertState';
 export * from '../models/ModelsAlertStatus';
 export * from '../models/ModelsAuditAction';
@@ -474,7 +473,7 @@ export * from '../models/RoutesV2UpdatePipelineRequest';
 export * from '../models/RoutesV2UpdateRoleV2Request';
 export * from '../models/RoutesV3AlertList';
 export * from '../models/RoutesV3AlertRuleListResponse';
-export * from '../models/RoutesV3AlertRuleWithMetadata';
+export * from '../models/RoutesV3AlertRuleResponse';
 export * from '../models/RoutesV3CreateAlertRuleRequest';
 export * from '../models/RoutesV3CreateChildOrganizationRequest';
 export * from '../models/RoutesV3CreateConnectionRequest';
@@ -862,7 +861,6 @@ import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlert } from '../models/ModelsAlert';
-import { ModelsAlertRule               } from '../models/ModelsAlertRule';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAlertStatus    } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
@@ -1101,7 +1099,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
-import { RoutesV3AlertRuleWithMetadata                } from '../models/RoutesV3AlertRuleWithMetadata';
+import { RoutesV3AlertRuleResponse                } from '../models/RoutesV3AlertRuleResponse';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
@@ -1575,7 +1573,6 @@ let typeMap: {[index: string]: any} = {
     "ModelsAPILogActor": ModelsAPILogActor,
     "ModelsAPILogActorRole": ModelsAPILogActorRole,
     "ModelsAlert": ModelsAlert,
-    "ModelsAlertRule": ModelsAlertRule,
     "ModelsAlertStatus": ModelsAlertStatus,
     "ModelsAuditLogHistogramBucket": ModelsAuditLogHistogramBucket,
     "ModelsAuditResource": ModelsAuditResource,
@@ -1796,7 +1793,7 @@ let typeMap: {[index: string]: any} = {
     "RoutesV2UpdateRoleV2Request": RoutesV2UpdateRoleV2Request,
     "RoutesV3AlertList": RoutesV3AlertList,
     "RoutesV3AlertRuleListResponse": RoutesV3AlertRuleListResponse,
-    "RoutesV3AlertRuleWithMetadata": RoutesV3AlertRuleWithMetadata,
+    "RoutesV3AlertRuleResponse": RoutesV3AlertRuleResponse,
     "RoutesV3CreateAlertRuleRequest": RoutesV3CreateAlertRuleRequest,
     "RoutesV3CreateChildOrganizationRequest": RoutesV3CreateChildOrganizationRequest,
     "RoutesV3CreateConnectionRequest": RoutesV3CreateConnectionRequest,

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AlertRules** | Pointer to [**[]RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md) |  | [optional] 
+**AlertRules** | Pointer to [**[]RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md) |  | [optional] 
 **Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAlertRules
 
-`func (o *RoutesV3AlertRuleListResponse) GetAlertRules() []RoutesV3AlertRuleWithMetadata`
+`func (o *RoutesV3AlertRuleListResponse) GetAlertRules() []RoutesV3AlertRuleResponse`
 
 GetAlertRules returns the AlertRules field if non-nil, zero value otherwise.
 
 ### GetAlertRulesOk
 
-`func (o *RoutesV3AlertRuleListResponse) GetAlertRulesOk() (*[]RoutesV3AlertRuleWithMetadata, bool)`
+`func (o *RoutesV3AlertRuleListResponse) GetAlertRulesOk() (*[]RoutesV3AlertRuleResponse, bool)`
 
 GetAlertRulesOk returns a tuple with the AlertRules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertRules
 
-`func (o *RoutesV3AlertRuleListResponse) SetAlertRules(v []RoutesV3AlertRuleWithMetadata)`
+`func (o *RoutesV3AlertRuleListResponse) SetAlertRules(v []RoutesV3AlertRuleResponse)`
 
 SetAlertRules sets AlertRules field to given value.
 

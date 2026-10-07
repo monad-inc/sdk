@@ -239,7 +239,6 @@ import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { ModelsAPILogActor } from '../models/ModelsAPILogActor';
 import { ModelsAPILogActorRole } from '../models/ModelsAPILogActorRole';
 import { ModelsAlert } from '../models/ModelsAlert';
-import { ModelsAlertRule } from '../models/ModelsAlertRule';
 import { ModelsAlertState } from '../models/ModelsAlertState';
 import { ModelsAlertStatus } from '../models/ModelsAlertStatus';
 import { ModelsAuditAction } from '../models/ModelsAuditAction';
@@ -478,7 +477,7 @@ import { RoutesV2UpdatePipelineRequest } from '../models/RoutesV2UpdatePipelineR
 import { RoutesV2UpdateRoleV2Request } from '../models/RoutesV2UpdateRoleV2Request';
 import { RoutesV3AlertList } from '../models/RoutesV3AlertList';
 import { RoutesV3AlertRuleListResponse } from '../models/RoutesV3AlertRuleListResponse';
-import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
+import { RoutesV3AlertRuleResponse } from '../models/RoutesV3AlertRuleResponse';
 import { RoutesV3CreateAlertRuleRequest } from '../models/RoutesV3CreateAlertRuleRequest';
 import { RoutesV3CreateChildOrganizationRequest } from '../models/RoutesV3CreateChildOrganizationRequest';
 import { RoutesV3CreateConnectionRequest } from '../models/RoutesV3CreateConnectionRequest';
@@ -648,7 +647,7 @@ export class PromiseAlertRulesApi {
      * @param organizationId Organization ID
      * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRuleWithHttpInfo(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public createAlertRuleWithHttpInfo(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createAlertRuleWithHttpInfo(organizationId, createAlertRuleRequest, observableOptions);
         return result.toPromise();
@@ -660,7 +659,7 @@ export class PromiseAlertRulesApi {
      * @param organizationId Organization ID
      * @param createAlertRuleRequest Request body for creating an alert rule
      */
-    public createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
+    public createAlertRule(organizationId: string, createAlertRuleRequest: CreateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertRuleResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.createAlertRule(organizationId, createAlertRuleRequest, observableOptions);
         return result.toPromise();
@@ -696,7 +695,7 @@ export class PromiseAlertRulesApi {
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to retrieve
      */
-    public getAlertRuleByIDWithHttpInfo(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleWithMetadata>> {
+    public getAlertRuleByIDWithHttpInfo(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getAlertRuleByIDWithHttpInfo(organizationId, alertRuleId, observableOptions);
         return result.toPromise();
@@ -708,7 +707,7 @@ export class PromiseAlertRulesApi {
      * @param organizationId Organization ID
      * @param alertRuleId Alert Rule ID to retrieve
      */
-    public getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertRuleWithMetadata> {
+    public getAlertRuleByID(organizationId: string, alertRuleId: string, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertRuleResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.getAlertRuleByID(organizationId, alertRuleId, observableOptions);
         return result.toPromise();
@@ -789,7 +788,7 @@ export class PromiseAlertRulesApi {
      * @param alertRuleId Alert Rule ID to update
      * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAlertRule>> {
+    public updateAlertRuleWithHttpInfo(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<RoutesV3AlertRuleResponse>> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateAlertRuleWithHttpInfo(organizationId, alertRuleId, updateAlertRuleRequest, observableOptions);
         return result.toPromise();
@@ -802,7 +801,7 @@ export class PromiseAlertRulesApi {
      * @param alertRuleId Alert Rule ID to update
      * @param updateAlertRuleRequest Request body for updating an alert rule
      */
-    public updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAlertRule> {
+    public updateAlertRule(organizationId: string, alertRuleId: string, updateAlertRuleRequest: UpdateAlertRuleRequest, _options?: PromiseConfigurationOptions): Promise<RoutesV3AlertRuleResponse> {
         const observableOptions = wrapOptions(_options);
         const result = this.api.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest, observableOptions);
         return result.toPromise();
@@ -5709,7 +5708,7 @@ export class PromiseTagsApi {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tag Tag ID or name
@@ -5721,7 +5720,7 @@ export class PromiseTagsApi {
     }
 
     /**
-     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources returns 409; detach it first.
+     * Delete a customer tag, by ID or name. A value that parses as a UUID is looked up by ID. Reserved tags return 404. A tag still attached to resources or used by alert rules returns 409; detach it and remove it from those rules first.
      * Delete a tag
      * @param organizationId Organization ID
      * @param tag Tag ID or name

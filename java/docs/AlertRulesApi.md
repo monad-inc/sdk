@@ -15,7 +15,7 @@ All URIs are relative to *https://monad.com/api*
 
 <a id="createAlertRule"></a>
 # **createAlertRule**
-> ModelsAlertRule createAlertRule(organizationId, createAlertRuleRequest)
+> RoutesV3AlertRuleResponse createAlertRule(organizationId, createAlertRuleRequest)
 
 Create a new alert rule
 
@@ -46,7 +46,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     CreateAlertRuleRequest createAlertRuleRequest = new CreateAlertRuleRequest(); // CreateAlertRuleRequest | Request body for creating an alert rule
     try {
-      ModelsAlertRule result = apiInstance.createAlertRule(organizationId, createAlertRuleRequest);
+      RoutesV3AlertRuleResponse result = apiInstance.createAlertRule(organizationId, createAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#createAlertRule");
@@ -68,7 +68,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ null (empty response body)
 
 <a id="getAlertRuleByID"></a>
 # **getAlertRuleByID**
-> RoutesV3AlertRuleWithMetadata getAlertRuleByID(organizationId, alertRuleId)
+> RoutesV3AlertRuleResponse getAlertRuleByID(organizationId, alertRuleId)
 
 Get alert rule by ID
 
@@ -192,7 +192,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Organization ID
     String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to retrieve
     try {
-      RoutesV3AlertRuleWithMetadata result = apiInstance.getAlertRuleByID(organizationId, alertRuleId);
+      RoutesV3AlertRuleResponse result = apiInstance.getAlertRuleByID(organizationId, alertRuleId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#getAlertRuleByID");
@@ -214,7 +214,7 @@ public class Example {
 
 ### Return type
 
-[**RoutesV3AlertRuleWithMetadata**](RoutesV3AlertRuleWithMetadata.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 
@@ -456,7 +456,7 @@ public class Example {
 
 <a id="updateAlertRule"></a>
 # **updateAlertRule**
-> ModelsAlertRule updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest)
+> RoutesV3AlertRuleResponse updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest)
 
 Update alert rule
 
@@ -488,7 +488,7 @@ public class Example {
     String alertRuleId = "alertRuleId_example"; // String | Alert Rule ID to update
     UpdateAlertRuleRequest updateAlertRuleRequest = new UpdateAlertRuleRequest(); // UpdateAlertRuleRequest | Request body for updating an alert rule
     try {
-      ModelsAlertRule result = apiInstance.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest);
+      RoutesV3AlertRuleResponse result = apiInstance.updateAlertRule(organizationId, alertRuleId, updateAlertRuleRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRulesApi#updateAlertRule");
@@ -511,7 +511,7 @@ public class Example {
 
 ### Return type
 
-[**ModelsAlertRule**](ModelsAlertRule.md)
+[**RoutesV3AlertRuleResponse**](RoutesV3AlertRuleResponse.md)
 
 ### Authorization
 

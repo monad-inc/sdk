@@ -11,11 +11,11 @@
  */
 
 import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
-import { RoutesV3AlertRuleWithMetadata } from '../models/RoutesV3AlertRuleWithMetadata';
+import { RoutesV3AlertRuleResponse } from '../models/RoutesV3AlertRuleResponse';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3AlertRuleListResponse {
-    'alertRules'?: Array<RoutesV3AlertRuleWithMetadata>;
+    'alertRules'?: Array<RoutesV3AlertRuleResponse>;
     'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class RoutesV3AlertRuleListResponse {
         {
             "name": "alertRules",
             "baseName": "alert_rules",
-            "type": "Array<RoutesV3AlertRuleWithMetadata>",
+            "type": "Array<RoutesV3AlertRuleResponse>",
             "format": ""
         },
         {
