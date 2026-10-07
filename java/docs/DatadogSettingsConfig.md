@@ -12,6 +12,7 @@
 |**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |
 |**hostname** | **String** | The name of the originating host of the log. |  [optional] |
 |**service** | **String** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. |  [optional] |
+|**timestampField** | **String** | Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts). |  [optional] |
 
 
 

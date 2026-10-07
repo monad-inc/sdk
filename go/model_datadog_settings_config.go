@@ -30,6 +30,8 @@ type DatadogSettingsConfig struct {
 	Hostname *string `json:"hostname,omitempty"`
 	// The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.
 	Service *string `json:"service,omitempty"`
+	// Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).
+	TimestampField *string `json:"timestamp_field,omitempty"`
 }
 
 // NewDatadogSettingsConfig instantiates a new DatadogSettingsConfig object
@@ -209,6 +211,38 @@ func (o *DatadogSettingsConfig) SetService(v string) {
 	o.Service = &v
 }
 
+// GetTimestampField returns the TimestampField field value if set, zero value otherwise.
+func (o *DatadogSettingsConfig) GetTimestampField() string {
+	if o == nil || IsNil(o.TimestampField) {
+		var ret string
+		return ret
+	}
+	return *o.TimestampField
+}
+
+// GetTimestampFieldOk returns a tuple with the TimestampField field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DatadogSettingsConfig) GetTimestampFieldOk() (*string, bool) {
+	if o == nil || IsNil(o.TimestampField) {
+		return nil, false
+	}
+	return o.TimestampField, true
+}
+
+// HasTimestampField returns a boolean if a field has been set.
+func (o *DatadogSettingsConfig) HasTimestampField() bool {
+	if o != nil && !IsNil(o.TimestampField) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimestampField gets a reference to the given string and assigns it to the TimestampField field.
+func (o *DatadogSettingsConfig) SetTimestampField(v string) {
+	o.TimestampField = &v
+}
+
 func (o DatadogSettingsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -233,6 +267,9 @@ func (o DatadogSettingsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Service) {
 		toSerialize["service"] = o.Service
+	}
+	if !IsNil(o.TimestampField) {
+		toSerialize["timestamp_field"] = o.TimestampField
 	}
 	return toSerialize, nil
 }

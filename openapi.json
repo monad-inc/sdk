@@ -2378,6 +2378,10 @@
                     "service": {
                         "description": "The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.",
                         "type": "string"
+                    },
+                    "timestamp_field": {
+                        "description": "Optional JSON path to the event timestamp in each record. When set, the value is converted in place\nto epoch milliseconds (the only numeric format Datadog accepts).",
+                        "type": "string"
                     }
                 },
                 "type": "object"

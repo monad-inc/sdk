@@ -33,6 +33,10 @@ export class DatadogSettingsConfig {
     * The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.
     */
     'service'?: string;
+    /**
+    * Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).
+    */
+    'timestampField'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -66,6 +70,12 @@ export class DatadogSettingsConfig {
         {
             "name": "service",
             "baseName": "service",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "timestampField",
+            "baseName": "timestamp_field",
             "type": "string",
             "format": ""
         }    ];

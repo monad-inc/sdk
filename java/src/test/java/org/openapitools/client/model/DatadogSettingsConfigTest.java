@@ -79,4 +79,12 @@ public class DatadogSettingsConfigTest {
         // TODO: test service
     }
 
+    /**
+     * Test the property 'timestampField'
+     */
+    @Test
+    public void timestampFieldTest() {
+        // TODO: test timestampField
+    }
+
 }

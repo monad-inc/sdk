@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
 **Hostname** | Pointer to **string** | The name of the originating host of the log. | [optional] 
 **Service** | Pointer to **string** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
+**TimestampField** | Pointer to **string** | Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts). | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetService sets Service field to given value.
 `func (o *DatadogSettingsConfig) HasService() bool`
 
 HasService returns a boolean if a field has been set.
+
+### GetTimestampField
+
+`func (o *DatadogSettingsConfig) GetTimestampField() string`
+
+GetTimestampField returns the TimestampField field if non-nil, zero value otherwise.
+
+### GetTimestampFieldOk
+
+`func (o *DatadogSettingsConfig) GetTimestampFieldOk() (*string, bool)`
+
+GetTimestampFieldOk returns a tuple with the TimestampField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampField
+
+`func (o *DatadogSettingsConfig) SetTimestampField(v string)`
+
+SetTimestampField sets TimestampField field to given value.
+
+### HasTimestampField
+
+`func (o *DatadogSettingsConfig) HasTimestampField() bool`
+
+HasTimestampField returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

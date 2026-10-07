@@ -141,6 +141,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 domain_url = '',
                 hostname = '',
                 service = '',
+                timestamp_field = '',
                 auth_config = monad.models.slack/auth_config.slack.AuthConfig(
                     bot_token = monad.models.slack/bot_token_variant.slack.BotTokenVariant(
                         channel_id = '', ), 
@@ -301,7 +302,6 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     static = monad.models.prometheus/static_metric_variant.prometheus.StaticMetricVariant(
                         value = '', ), 
                     type = '', ),
-                timestamp_field = '',
                 bearer_token = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 

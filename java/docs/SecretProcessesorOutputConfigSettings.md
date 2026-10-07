@@ -41,6 +41,7 @@
 |**domainUrl** | **String** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs |  [optional] |
 |**hostname** | **String** | The name of the originating host of the log. |  [optional] |
 |**service** | **String** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. |  [optional] |
+|**timestampField** | **String** |  |  [optional] |
 |**authConfig** | [**SlackAuthConfig**](SlackAuthConfig.md) |  |  [optional] |
 |**authType** | **String** |  |  [optional] |
 |**cloudId** | **String** |  |  [optional] |
@@ -97,7 +98,6 @@
 |**user** | **String** | The username of the Snowflake account used to authenticate. The user&#39;s DEFAULT_ROLE must be set to a role with access to the pipe. |  |
 |**labelFields** | **List&lt;String&gt;** |  |  [optional] |
 |**metricName** | [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  |  [optional] |
-|**timestampField** | **String** |  |  [optional] |
 |**bearerToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**webhookId** | **String** | The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI. |  |
 |**bucketUrl** | **String** | The name of the S3 bucket where data will be stored |  [optional] |

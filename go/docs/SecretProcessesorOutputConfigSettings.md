@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
 **Hostname** | Pointer to **string** | The name of the originating host of the log. | [optional] 
 **Service** | Pointer to **string** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
+**TimestampField** | Pointer to **string** |  | [optional] 
 **AuthConfig** | Pointer to [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
 **CloudId** | Pointer to **string** |  | [optional] 
@@ -94,7 +95,6 @@ Name | Type | Description | Notes
 **User** | **string** | The username of the Snowflake account used to authenticate. The user&#39;s DEFAULT_ROLE must be set to a role with access to the pipe. | 
 **LabelFields** | Pointer to **[]string** |  | [optional] 
 **MetricName** | Pointer to [**PrometheusMetricNameConfig**](PrometheusMetricNameConfig.md) |  | [optional] 
-**TimestampField** | Pointer to **string** |  | [optional] 
 **BearerToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **WebhookId** | **string** | The RunReveal webhook ID. Only the ID — not the full URL shown in the RunReveal UI. | 
 **BucketUrl** | Pointer to **string** | The name of the S3 bucket where data will be stored | [optional] 
@@ -914,6 +914,31 @@ SetService sets Service field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasService() bool`
 
 HasService returns a boolean if a field has been set.
+
+### GetTimestampField
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTimestampField() string`
+
+GetTimestampField returns the TimestampField field if non-nil, zero value otherwise.
+
+### GetTimestampFieldOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetTimestampFieldOk() (*string, bool)`
+
+GetTimestampFieldOk returns a tuple with the TimestampField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampField
+
+`func (o *SecretProcessesorOutputConfigSettings) SetTimestampField(v string)`
+
+SetTimestampField sets TimestampField field to given value.
+
+### HasTimestampField
+
+`func (o *SecretProcessesorOutputConfigSettings) HasTimestampField() bool`
+
+HasTimestampField returns a boolean if a field has been set.
 
 ### GetAuthConfig
 
@@ -2249,31 +2274,6 @@ SetMetricName sets MetricName field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasMetricName() bool`
 
 HasMetricName returns a boolean if a field has been set.
-
-### GetTimestampField
-
-`func (o *SecretProcessesorOutputConfigSettings) GetTimestampField() string`
-
-GetTimestampField returns the TimestampField field if non-nil, zero value otherwise.
-
-### GetTimestampFieldOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetTimestampFieldOk() (*string, bool)`
-
-GetTimestampFieldOk returns a tuple with the TimestampField field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTimestampField
-
-`func (o *SecretProcessesorOutputConfigSettings) SetTimestampField(v string)`
-
-SetTimestampField sets TimestampField field to given value.
-
-### HasTimestampField
-
-`func (o *SecretProcessesorOutputConfigSettings) HasTimestampField() bool`
-
-HasTimestampField returns a boolean if a field has been set.
 
 ### GetBearerToken
 

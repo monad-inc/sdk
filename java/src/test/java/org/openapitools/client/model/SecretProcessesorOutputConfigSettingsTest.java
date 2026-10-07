@@ -377,6 +377,14 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'timestampField'
+     */
+    @Test
+    public void timestampFieldTest() {
+        // TODO: test timestampField
+    }
+
+    /**
      * Test the property 'authConfig'
      */
     @Test
@@ -822,14 +830,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     @Test
     public void metricNameTest() {
         // TODO: test metricName
-    }
-
-    /**
-     * Test the property 'timestampField'
-     */
-    @Test
-    public void timestampFieldTest() {
-        // TODO: test timestampField
     }
 
     /**

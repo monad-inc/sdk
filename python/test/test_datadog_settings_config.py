@@ -42,7 +42,8 @@ class TestDatadogSettingsConfig(unittest.TestCase):
                     ],
                 domain_url = '',
                 hostname = '',
-                service = ''
+                service = '',
+                timestamp_field = ''
             )
         else:
             return DatadogSettingsConfig(

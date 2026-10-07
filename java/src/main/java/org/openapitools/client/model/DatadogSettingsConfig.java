@@ -77,6 +77,11 @@ public class DatadogSettingsConfig {
   @javax.annotation.Nullable
   private String service;
 
+  public static final String SERIALIZED_NAME_TIMESTAMP_FIELD = "timestamp_field";
+  @SerializedName(SERIALIZED_NAME_TIMESTAMP_FIELD)
+  @javax.annotation.Nullable
+  private String timestampField;
+
   public DatadogSettingsConfig() {
   }
 
@@ -183,6 +188,25 @@ public class DatadogSettingsConfig {
   }
 
 
+  public DatadogSettingsConfig timestampField(@javax.annotation.Nullable String timestampField) {
+    this.timestampField = timestampField;
+    return this;
+  }
+
+  /**
+   * Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).
+   * @return timestampField
+   */
+  @javax.annotation.Nullable
+  public String getTimestampField() {
+    return timestampField;
+  }
+
+  public void setTimestampField(@javax.annotation.Nullable String timestampField) {
+    this.timestampField = timestampField;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -197,12 +221,13 @@ public class DatadogSettingsConfig {
         Objects.equals(this.ddtags, datadogSettingsConfig.ddtags) &&
         Objects.equals(this.domainUrl, datadogSettingsConfig.domainUrl) &&
         Objects.equals(this.hostname, datadogSettingsConfig.hostname) &&
-        Objects.equals(this.service, datadogSettingsConfig.service);
+        Objects.equals(this.service, datadogSettingsConfig.service) &&
+        Objects.equals(this.timestampField, datadogSettingsConfig.timestampField);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ddsource, ddtags, domainUrl, hostname, service);
+    return Objects.hash(ddsource, ddtags, domainUrl, hostname, service, timestampField);
   }
 
   @Override
@@ -214,6 +239,7 @@ public class DatadogSettingsConfig {
     sb.append("    domainUrl: ").append(toIndentedString(domainUrl)).append("\n");
     sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
     sb.append("    service: ").append(toIndentedString(service)).append("\n");
+    sb.append("    timestampField: ").append(toIndentedString(timestampField)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -232,7 +258,7 @@ public class DatadogSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("ddsource", "ddtags", "domain_url", "hostname", "service"));
+    openapiFields = new HashSet<String>(Arrays.asList("ddsource", "ddtags", "domain_url", "hostname", "service", "timestamp_field"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -274,6 +300,9 @@ public class DatadogSettingsConfig {
       }
       if ((jsonObj.get("service") != null && !jsonObj.get("service").isJsonNull()) && !jsonObj.get("service").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `service` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service").toString()));
+      }
+      if ((jsonObj.get("timestamp_field") != null && !jsonObj.get("timestamp_field").isJsonNull()) && !jsonObj.get("timestamp_field").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `timestamp_field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timestamp_field").toString()));
       }
   }
 
