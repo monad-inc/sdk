@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Arguments** | Pointer to [**RoutesTransformOperationArguments**](RoutesTransformOperationArguments.md) |  | [optional] 
+**Arguments** | Pointer to **map[string]interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Operation** | Pointer to **string** |  | [optional] 
 **Secrets** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetArguments
 
-`func (o *RoutesTransformOperation) GetArguments() RoutesTransformOperationArguments`
+`func (o *RoutesTransformOperation) GetArguments() map[string]interface{}`
 
 GetArguments returns the Arguments field if non-nil, zero value otherwise.
 
 ### GetArgumentsOk
 
-`func (o *RoutesTransformOperation) GetArgumentsOk() (*RoutesTransformOperationArguments, bool)`
+`func (o *RoutesTransformOperation) GetArgumentsOk() (*map[string]interface{}, bool)`
 
 GetArgumentsOk returns a tuple with the Arguments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetArguments
 
-`func (o *RoutesTransformOperation) SetArguments(v RoutesTransformOperationArguments)`
+`func (o *RoutesTransformOperation) SetArguments(v map[string]interface{})`
 
 SetArguments sets Arguments field to given value.
 

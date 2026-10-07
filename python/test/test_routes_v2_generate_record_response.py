@@ -36,7 +36,7 @@ class TestRoutesV2GenerateRecordResponse(unittest.TestCase):
         model = RoutesV2GenerateRecordResponse()
         if include_optional:
             return RoutesV2GenerateRecordResponse(
-                record = monad.models.array.array()
+                record = None
             )
         else:
             return RoutesV2GenerateRecordResponse(

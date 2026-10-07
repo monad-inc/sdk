@@ -36,7 +36,7 @@ class TestRoutesV3EnrichmentSandboxResponse(unittest.TestCase):
         model = RoutesV3EnrichmentSandboxResponse()
         if include_optional:
             return RoutesV3EnrichmentSandboxResponse(
-                record = monad.models.array.array()
+                record = None
             )
         else:
             return RoutesV3EnrichmentSandboxResponse(

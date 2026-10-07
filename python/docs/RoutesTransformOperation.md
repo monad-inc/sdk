@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**arguments** | [**RoutesTransformOperationArguments**](RoutesTransformOperationArguments.md) |  | [optional] 
+**arguments** | **Dict[str, object]** |  | [optional] 
 **description** | **str** |  | [optional] 
 **operation** | **str** |  | [optional] 
 **secrets** | **Dict[str, object]** |  | [optional] 
