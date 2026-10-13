@@ -59,7 +59,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	OperationLogsSecretsConfig *OperationLogsSecretsConfig
 	OrgAuditLogsSecretsConfig *OrgAuditLogsSecretsConfig
 	PaloAltoDataSecurityAlertsSecretsConfig *PaloAltoDataSecurityAlertsSecretsConfig
-	PlaidWebhooksSecretsConfig *PlaidWebhooksSecretsConfig
 	TaniumGraphqlInputSecretsConfig *TaniumGraphqlInputSecretsConfig
 	TinesAuditLogsSecretsConfig *TinesAuditLogsSecretsConfig
 	TinesEventsLogsSecretsConfig *TinesEventsLogsSecretsConfig
@@ -348,13 +347,6 @@ func OrgAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *OrgAuditL
 func PaloAltoDataSecurityAlertsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PaloAltoDataSecurityAlertsSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		PaloAltoDataSecurityAlertsSecretsConfig: v,
-	}
-}
-
-// PlaidWebhooksSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns PlaidWebhooksSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func PlaidWebhooksSecretsConfigAsSecretProcessesorInputConfigSecrets(v *PlaidWebhooksSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		PlaidWebhooksSecretsConfig: v,
 	}
 }
 
@@ -1106,23 +1098,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
 	}
 
-	// try to unmarshal data into PlaidWebhooksSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.PlaidWebhooksSecretsConfig)
-	if err == nil {
-		jsonPlaidWebhooksSecretsConfig, _ := json.Marshal(dst.PlaidWebhooksSecretsConfig)
-		if string(jsonPlaidWebhooksSecretsConfig) == "{}" { // empty struct
-			dst.PlaidWebhooksSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.PlaidWebhooksSecretsConfig); err != nil {
-				dst.PlaidWebhooksSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.PlaidWebhooksSecretsConfig = nil
-	}
-
 	// try to unmarshal data into TaniumGraphqlInputSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.TaniumGraphqlInputSecretsConfig)
 	if err == nil {
@@ -1318,7 +1293,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.OperationLogsSecretsConfig = nil
 		dst.OrgAuditLogsSecretsConfig = nil
 		dst.PaloAltoDataSecurityAlertsSecretsConfig = nil
-		dst.PlaidWebhooksSecretsConfig = nil
 		dst.TaniumGraphqlInputSecretsConfig = nil
 		dst.TinesAuditLogsSecretsConfig = nil
 		dst.TinesEventsLogsSecretsConfig = nil
@@ -1497,10 +1471,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.PaloAltoDataSecurityAlertsSecretsConfig != nil {
 		return json.Marshal(&src.PaloAltoDataSecurityAlertsSecretsConfig)
-	}
-
-	if src.PlaidWebhooksSecretsConfig != nil {
-		return json.Marshal(&src.PlaidWebhooksSecretsConfig)
 	}
 
 	if src.TaniumGraphqlInputSecretsConfig != nil {
@@ -1707,10 +1677,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.PaloAltoDataSecurityAlertsSecretsConfig
 	}
 
-	if obj.PlaidWebhooksSecretsConfig != nil {
-		return obj.PlaidWebhooksSecretsConfig
-	}
-
 	if obj.TaniumGraphqlInputSecretsConfig != nil {
 		return obj.TaniumGraphqlInputSecretsConfig
 	}
@@ -1911,10 +1877,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.PaloAltoDataSecurityAlertsSecretsConfig != nil {
 		return *obj.PaloAltoDataSecurityAlertsSecretsConfig
-	}
-
-	if obj.PlaidWebhooksSecretsConfig != nil {
-		return *obj.PlaidWebhooksSecretsConfig
 	}
 
 	if obj.TaniumGraphqlInputSecretsConfig != nil {

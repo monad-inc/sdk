@@ -24,7 +24,6 @@
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**githubAppPrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
-|**secret** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

@@ -392,7 +392,6 @@ from monad.models.palo_alto_data_security_alerts_settings_config import PaloAlto
 from monad.models.panther_secrets_config import PantherSecretsConfig
 from monad.models.panther_settings_config import PantherSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter
-from monad.models.plaid_webhooks_secrets_config import PlaidWebhooksSecretsConfig
 from monad.models.plaid_webhooks_settings_config import PlaidWebhooksSettingsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig
 from monad.models.postgresql_settings_config import PostgresqlSettingsConfig

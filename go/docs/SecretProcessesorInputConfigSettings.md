@@ -121,8 +121,8 @@ Name | Type | Description | Notes
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
-**ClientId** | Pointer to **string** | ClientID is the Plaid API client_id. Required only when verification is enabled. | [optional] 
-**VerifyWebhooks** | Pointer to **bool** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. | [optional] 
+**ClientId** | **string** | ClientID is the Plaid API client_id. | 
+**Secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **WebhookTypes** | Pointer to **[]string** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **RecordType** | Pointer to **string** | The type of record to generate | [optional] 
@@ -147,7 +147,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(bucket string, compression string, format string, partitionFormat string, region string, schema []string, queueUrl string, tenantId string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, clusterName string, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(bucket string, compression string, format string, partitionFormat string, region string, schema []string, queueUrl string, tenantId string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, clusterName string, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, clientId string, secret ModelsSecret, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2966,36 +2966,26 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
 
-`func (o *SecretProcessesorInputConfigSettings) HasClientId() bool`
+### GetSecret
 
-HasClientId returns a boolean if a field has been set.
+`func (o *SecretProcessesorInputConfigSettings) GetSecret() ModelsSecret`
 
-### GetVerifyWebhooks
+GetSecret returns the Secret field if non-nil, zero value otherwise.
 
-`func (o *SecretProcessesorInputConfigSettings) GetVerifyWebhooks() bool`
+### GetSecretOk
 
-GetVerifyWebhooks returns the VerifyWebhooks field if non-nil, zero value otherwise.
+`func (o *SecretProcessesorInputConfigSettings) GetSecretOk() (*ModelsSecret, bool)`
 
-### GetVerifyWebhooksOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetVerifyWebhooksOk() (*bool, bool)`
-
-GetVerifyWebhooksOk returns a tuple with the VerifyWebhooks field if it's non-nil, zero value otherwise
+GetSecretOk returns a tuple with the Secret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVerifyWebhooks
+### SetSecret
 
-`func (o *SecretProcessesorInputConfigSettings) SetVerifyWebhooks(v bool)`
+`func (o *SecretProcessesorInputConfigSettings) SetSecret(v ModelsSecret)`
 
-SetVerifyWebhooks sets VerifyWebhooks field to given value.
+SetSecret sets Secret field to given value.
 
-### HasVerifyWebhooks
-
-`func (o *SecretProcessesorInputConfigSettings) HasVerifyWebhooks() bool`
-
-HasVerifyWebhooks returns a boolean if a field has been set.
 
 ### GetWebhookTypes
 

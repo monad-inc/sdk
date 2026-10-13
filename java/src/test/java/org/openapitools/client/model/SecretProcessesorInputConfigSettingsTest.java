@@ -1070,11 +1070,11 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'verifyWebhooks'
+     * Test the property 'secret'
      */
     @Test
-    public void verifyWebhooksTest() {
-        // TODO: test verifyWebhooks
+    public void secretTest() {
+        // TODO: test secret
     }
 
     /**

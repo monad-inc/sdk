@@ -245,7 +245,19 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 include = '',
                 organization = '',
                 client_id = '',
-                verify_webhooks = True,
+                secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
                 webhook_types = [
                     ''
                     ],
@@ -330,6 +342,20 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 log_type = 'connectionlog',
                 endpoint = '',
+                client_id = '',
+                secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
                 tenant_domain = '',
                 tenant_url = '',
                 asset_types = [

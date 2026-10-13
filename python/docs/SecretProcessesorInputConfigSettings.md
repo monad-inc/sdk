@@ -122,8 +122,8 @@ Name | Type | Description | Notes
 **github_client_id** | **str** | GitHub Client ID (alternative to personal access token) | [optional] 
 **include** | **str** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **organization** | **str** | Your GitHub organization name | [optional] 
-**client_id** | **str** | ClientID is the Plaid API client_id. Required only when verification is enabled. | [optional] 
-**verify_webhooks** | **bool** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. | [optional] 
+**client_id** | **str** | ClientID is the Plaid API client_id. | 
+**secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **webhook_types** | **List[str]** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 **rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
 **record_type** | **str** | The type of record to generate | [optional] 

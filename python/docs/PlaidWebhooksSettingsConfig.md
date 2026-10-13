@@ -6,8 +6,8 @@ Plaid Webhooks settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **str** | ClientID is the Plaid API client_id. Required only when verification is enabled. | [optional] 
-**verify_webhooks** | **bool** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. | [optional] 
+**client_id** | **str** | ClientID is the Plaid API client_id. | 
+**secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **webhook_types** | **List[str]** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 
 ## Example

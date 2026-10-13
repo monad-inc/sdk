@@ -376,7 +376,6 @@ export * from '../models/PaloAltoDataSecurityAlertsSettingsConfig';
 export * from '../models/PantherSecretsConfig';
 export * from '../models/PantherSettingsConfig';
 export * from '../models/ParquetParquetFormatter';
-export * from '../models/PlaidWebhooksSecretsConfig';
 export * from '../models/PlaidWebhooksSettingsConfig';
 export * from '../models/PostgresqlSecretsConfig';
 export * from '../models/PostgresqlSettingsConfig';
@@ -1002,7 +1001,6 @@ import { PaloAltoDataSecurityAlertsSettingsConfig } from '../models/PaloAltoData
 import { PantherSecretsConfig } from '../models/PantherSecretsConfig';
 import { PantherSettingsConfig } from '../models/PantherSettingsConfig';
 import { ParquetParquetFormatter } from '../models/ParquetParquetFormatter';
-import { PlaidWebhooksSecretsConfig } from '../models/PlaidWebhooksSecretsConfig';
 import { PlaidWebhooksSettingsConfig } from '../models/PlaidWebhooksSettingsConfig';
 import { PostgresqlSecretsConfig } from '../models/PostgresqlSecretsConfig';
 import { PostgresqlSettingsConfig } from '../models/PostgresqlSettingsConfig';
@@ -1696,7 +1694,6 @@ let typeMap: {[index: string]: any} = {
     "PantherSecretsConfig": PantherSecretsConfig,
     "PantherSettingsConfig": PantherSettingsConfig,
     "ParquetParquetFormatter": ParquetParquetFormatter,
-    "PlaidWebhooksSecretsConfig": PlaidWebhooksSecretsConfig,
     "PlaidWebhooksSettingsConfig": PlaidWebhooksSettingsConfig,
     "PostgresqlSecretsConfig": PostgresqlSecretsConfig,
     "PostgresqlSettingsConfig": PostgresqlSettingsConfig,

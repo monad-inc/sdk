@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,13 +55,13 @@ import org.openapitools.client.JSON;
 public class PlaidWebhooksSettingsConfig {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String clientId;
 
-  public static final String SERIALIZED_NAME_VERIFY_WEBHOOKS = "verify_webhooks";
-  @SerializedName(SERIALIZED_NAME_VERIFY_WEBHOOKS)
-  @javax.annotation.Nullable
-  private Boolean verifyWebhooks;
+  public static final String SERIALIZED_NAME_SECRET = "secret";
+  @SerializedName(SERIALIZED_NAME_SECRET)
+  @javax.annotation.Nonnull
+  private ModelsSecret secret;
 
   public static final String SERIALIZED_NAME_WEBHOOK_TYPES = "webhook_types";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_TYPES)
@@ -70,41 +71,41 @@ public class PlaidWebhooksSettingsConfig {
   public PlaidWebhooksSettingsConfig() {
   }
 
-  public PlaidWebhooksSettingsConfig clientId(@javax.annotation.Nullable String clientId) {
+  public PlaidWebhooksSettingsConfig clientId(@javax.annotation.Nonnull String clientId) {
     this.clientId = clientId;
     return this;
   }
 
   /**
-   * ClientID is the Plaid API client_id. Required only when verification is enabled.
+   * ClientID is the Plaid API client_id.
    * @return clientId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getClientId() {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nullable String clientId) {
+  public void setClientId(@javax.annotation.Nonnull String clientId) {
     this.clientId = clientId;
   }
 
 
-  public PlaidWebhooksSettingsConfig verifyWebhooks(@javax.annotation.Nullable Boolean verifyWebhooks) {
-    this.verifyWebhooks = verifyWebhooks;
+  public PlaidWebhooksSettingsConfig secret(@javax.annotation.Nonnull ModelsSecret secret) {
+    this.secret = secret;
     return this;
   }
 
   /**
-   * VerifyWebhooks toggles Plaid signature verification. Unset defaults to true.
-   * @return verifyWebhooks
+   * Get secret
+   * @return secret
    */
-  @javax.annotation.Nullable
-  public Boolean getVerifyWebhooks() {
-    return verifyWebhooks;
+  @javax.annotation.Nonnull
+  public ModelsSecret getSecret() {
+    return secret;
   }
 
-  public void setVerifyWebhooks(@javax.annotation.Nullable Boolean verifyWebhooks) {
-    this.verifyWebhooks = verifyWebhooks;
+  public void setSecret(@javax.annotation.Nonnull ModelsSecret secret) {
+    this.secret = secret;
   }
 
 
@@ -146,13 +147,13 @@ public class PlaidWebhooksSettingsConfig {
     }
     PlaidWebhooksSettingsConfig plaidWebhooksSettingsConfig = (PlaidWebhooksSettingsConfig) o;
     return Objects.equals(this.clientId, plaidWebhooksSettingsConfig.clientId) &&
-        Objects.equals(this.verifyWebhooks, plaidWebhooksSettingsConfig.verifyWebhooks) &&
+        Objects.equals(this.secret, plaidWebhooksSettingsConfig.secret) &&
         Objects.equals(this.webhookTypes, plaidWebhooksSettingsConfig.webhookTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, verifyWebhooks, webhookTypes);
+    return Objects.hash(clientId, secret, webhookTypes);
   }
 
   @Override
@@ -160,7 +161,7 @@ public class PlaidWebhooksSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class PlaidWebhooksSettingsConfig {\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    verifyWebhooks: ").append(toIndentedString(verifyWebhooks)).append("\n");
+    sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    webhookTypes: ").append(toIndentedString(webhookTypes)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -180,10 +181,10 @@ public class PlaidWebhooksSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("client_id", "verify_webhooks", "webhook_types"));
+    openapiFields = new HashSet<String>(Arrays.asList("client_id", "secret", "webhook_types"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("client_id", "secret"));
   }
 
   /**
@@ -206,10 +207,19 @@ public class PlaidWebhooksSettingsConfig {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PlaidWebhooksSettingsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PlaidWebhooksSettingsConfig.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) && !jsonObj.get("client_id").isJsonPrimitive()) {
+      if (!jsonObj.get("client_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `client_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("client_id").toString()));
       }
+      // validate the required field `secret`
+      ModelsSecret.validateJsonElement(jsonObj.get("secret"));
       // ensure the optional json data is an array if present
       if (jsonObj.get("webhook_types") != null && !jsonObj.get("webhook_types").isJsonNull() && !jsonObj.get("webhook_types").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `webhook_types` to be an array in the JSON string but got `%s`", jsonObj.get("webhook_types").toString()));

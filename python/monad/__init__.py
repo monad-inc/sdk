@@ -450,7 +450,6 @@ __all__ = [
     "PantherSecretsConfig",
     "PantherSettingsConfig",
     "ParquetParquetFormatter",
-    "PlaidWebhooksSecretsConfig",
     "PlaidWebhooksSettingsConfig",
     "PostgresqlSecretsConfig",
     "PostgresqlSettingsConfig",
@@ -1135,7 +1134,6 @@ from monad.models.palo_alto_data_security_alerts_settings_config import PaloAlto
 from monad.models.panther_secrets_config import PantherSecretsConfig as PantherSecretsConfig
 from monad.models.panther_settings_config import PantherSettingsConfig as PantherSettingsConfig
 from monad.models.parquet_parquet_formatter import ParquetParquetFormatter as ParquetParquetFormatter
-from monad.models.plaid_webhooks_secrets_config import PlaidWebhooksSecretsConfig as PlaidWebhooksSecretsConfig
 from monad.models.plaid_webhooks_settings_config import PlaidWebhooksSettingsConfig as PlaidWebhooksSettingsConfig
 from monad.models.postgresql_secrets_config import PostgresqlSecretsConfig as PostgresqlSecretsConfig
 from monad.models.postgresql_settings_config import PostgresqlSettingsConfig as PostgresqlSettingsConfig

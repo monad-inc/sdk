@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClientId** | Pointer to **string** | ClientID is the Plaid API client_id. Required only when verification is enabled. | [optional] 
-**VerifyWebhooks** | Pointer to **bool** | VerifyWebhooks toggles Plaid signature verification. Unset defaults to true. | [optional] 
+**ClientId** | **string** | ClientID is the Plaid API client_id. | 
+**Secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **WebhookTypes** | Pointer to **[]string** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 
 ## Methods
 
 ### NewPlaidWebhooksSettingsConfig
 
-`func NewPlaidWebhooksSettingsConfig() *PlaidWebhooksSettingsConfig`
+`func NewPlaidWebhooksSettingsConfig(clientId string, secret ModelsSecret, ) *PlaidWebhooksSettingsConfig`
 
 NewPlaidWebhooksSettingsConfig instantiates a new PlaidWebhooksSettingsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -46,36 +46,26 @@ and a boolean to check if the value has been set.
 
 SetClientId sets ClientId field to given value.
 
-### HasClientId
 
-`func (o *PlaidWebhooksSettingsConfig) HasClientId() bool`
+### GetSecret
 
-HasClientId returns a boolean if a field has been set.
+`func (o *PlaidWebhooksSettingsConfig) GetSecret() ModelsSecret`
 
-### GetVerifyWebhooks
+GetSecret returns the Secret field if non-nil, zero value otherwise.
 
-`func (o *PlaidWebhooksSettingsConfig) GetVerifyWebhooks() bool`
+### GetSecretOk
 
-GetVerifyWebhooks returns the VerifyWebhooks field if non-nil, zero value otherwise.
+`func (o *PlaidWebhooksSettingsConfig) GetSecretOk() (*ModelsSecret, bool)`
 
-### GetVerifyWebhooksOk
-
-`func (o *PlaidWebhooksSettingsConfig) GetVerifyWebhooksOk() (*bool, bool)`
-
-GetVerifyWebhooksOk returns a tuple with the VerifyWebhooks field if it's non-nil, zero value otherwise
+GetSecretOk returns a tuple with the Secret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVerifyWebhooks
+### SetSecret
 
-`func (o *PlaidWebhooksSettingsConfig) SetVerifyWebhooks(v bool)`
+`func (o *PlaidWebhooksSettingsConfig) SetSecret(v ModelsSecret)`
 
-SetVerifyWebhooks sets VerifyWebhooks field to given value.
+SetSecret sets Secret field to given value.
 
-### HasVerifyWebhooks
-
-`func (o *PlaidWebhooksSettingsConfig) HasVerifyWebhooks() bool`
-
-HasVerifyWebhooks returns a boolean if a field has been set.
 
 ### GetWebhookTypes
 

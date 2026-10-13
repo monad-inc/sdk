@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsSecret;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -48,11 +49,11 @@ public class PlaidWebhooksSettingsConfigTest {
     }
 
     /**
-     * Test the property 'verifyWebhooks'
+     * Test the property 'secret'
      */
     @Test
-    public void verifyWebhooksTest() {
-        // TODO: test verifyWebhooks
+    public void secretTest() {
+        // TODO: test secret
     }
 
     /**

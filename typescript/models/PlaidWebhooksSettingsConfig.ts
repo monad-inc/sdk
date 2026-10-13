@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
@@ -17,13 +18,10 @@ import { HttpFile } from '../http/http';
 */
 export class PlaidWebhooksSettingsConfig {
     /**
-    * ClientID is the Plaid API client_id. Required only when verification is enabled.
+    * ClientID is the Plaid API client_id.
     */
-    'clientId'?: string;
-    /**
-    * VerifyWebhooks toggles Plaid signature verification. Unset defaults to true.
-    */
-    'verifyWebhooks'?: boolean;
+    'clientId': string;
+    'secret': ModelsSecret;
     /**
     * WebhookTypes restricts which webhook_type values are emitted. Empty = keep all.
     */
@@ -41,9 +39,9 @@ export class PlaidWebhooksSettingsConfig {
             "format": ""
         },
         {
-            "name": "verifyWebhooks",
-            "baseName": "verify_webhooks",
-            "type": "boolean",
+            "name": "secret",
+            "baseName": "secret",
+            "type": "ModelsSecret",
             "format": ""
         },
         {

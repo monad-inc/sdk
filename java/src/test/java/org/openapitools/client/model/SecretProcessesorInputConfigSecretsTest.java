@@ -62,7 +62,6 @@ import org.openapitools.client.model.ObjectStorageInputSecretsConfig;
 import org.openapitools.client.model.OperationLogsSecretsConfig;
 import org.openapitools.client.model.OrgAuditLogsSecretsConfig;
 import org.openapitools.client.model.PaloAltoDataSecurityAlertsSecretsConfig;
-import org.openapitools.client.model.PlaidWebhooksSecretsConfig;
 import org.openapitools.client.model.TaniumGraphqlInputSecretsConfig;
 import org.openapitools.client.model.TinesAuditLogsSecretsConfig;
 import org.openapitools.client.model.TinesEventsLogsSecretsConfig;
@@ -222,14 +221,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void personalAccessTokenTest() {
         // TODO: test personalAccessToken
-    }
-
-    /**
-     * Test the property 'secret'
-     */
-    @Test
-    public void secretTest() {
-        // TODO: test secret
     }
 
     /**

@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **oauth_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **github_app_private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
-**secret** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

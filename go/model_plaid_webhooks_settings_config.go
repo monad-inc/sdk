@@ -13,6 +13,8 @@ package monad
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the PlaidWebhooksSettingsConfig type satisfies the MappedNullable interface at compile time
@@ -20,20 +22,23 @@ var _ MappedNullable = &PlaidWebhooksSettingsConfig{}
 
 // PlaidWebhooksSettingsConfig Plaid Webhooks settings
 type PlaidWebhooksSettingsConfig struct {
-	// ClientID is the Plaid API client_id. Required only when verification is enabled.
-	ClientId *string `json:"client_id,omitempty"`
-	// VerifyWebhooks toggles Plaid signature verification. Unset defaults to true.
-	VerifyWebhooks *bool `json:"verify_webhooks,omitempty"`
+	// ClientID is the Plaid API client_id.
+	ClientId string `json:"client_id"`
+	Secret ModelsSecret `json:"secret"`
 	// WebhookTypes restricts which webhook_type values are emitted. Empty = keep all.
 	WebhookTypes []string `json:"webhook_types,omitempty"`
 }
+
+type _PlaidWebhooksSettingsConfig PlaidWebhooksSettingsConfig
 
 // NewPlaidWebhooksSettingsConfig instantiates a new PlaidWebhooksSettingsConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPlaidWebhooksSettingsConfig() *PlaidWebhooksSettingsConfig {
+func NewPlaidWebhooksSettingsConfig(clientId string, secret ModelsSecret) *PlaidWebhooksSettingsConfig {
 	this := PlaidWebhooksSettingsConfig{}
+	this.ClientId = clientId
+	this.Secret = secret
 	return &this
 }
 
@@ -45,68 +50,52 @@ func NewPlaidWebhooksSettingsConfigWithDefaults() *PlaidWebhooksSettingsConfig {
 	return &this
 }
 
-// GetClientId returns the ClientId field value if set, zero value otherwise.
+// GetClientId returns the ClientId field value
 func (o *PlaidWebhooksSettingsConfig) GetClientId() string {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ClientId
+
+	return o.ClientId
 }
 
-// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// GetClientIdOk returns a tuple with the ClientId field value
 // and a boolean to check if the value has been set.
 func (o *PlaidWebhooksSettingsConfig) GetClientIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ClientId, true
+	return &o.ClientId, true
 }
 
-// HasClientId returns a boolean if a field has been set.
-func (o *PlaidWebhooksSettingsConfig) HasClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientId gets a reference to the given string and assigns it to the ClientId field.
+// SetClientId sets field value
 func (o *PlaidWebhooksSettingsConfig) SetClientId(v string) {
-	o.ClientId = &v
+	o.ClientId = v
 }
 
-// GetVerifyWebhooks returns the VerifyWebhooks field value if set, zero value otherwise.
-func (o *PlaidWebhooksSettingsConfig) GetVerifyWebhooks() bool {
-	if o == nil || IsNil(o.VerifyWebhooks) {
-		var ret bool
+// GetSecret returns the Secret field value
+func (o *PlaidWebhooksSettingsConfig) GetSecret() ModelsSecret {
+	if o == nil {
+		var ret ModelsSecret
 		return ret
 	}
-	return *o.VerifyWebhooks
+
+	return o.Secret
 }
 
-// GetVerifyWebhooksOk returns a tuple with the VerifyWebhooks field value if set, nil otherwise
+// GetSecretOk returns a tuple with the Secret field value
 // and a boolean to check if the value has been set.
-func (o *PlaidWebhooksSettingsConfig) GetVerifyWebhooksOk() (*bool, bool) {
-	if o == nil || IsNil(o.VerifyWebhooks) {
+func (o *PlaidWebhooksSettingsConfig) GetSecretOk() (*ModelsSecret, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VerifyWebhooks, true
+	return &o.Secret, true
 }
 
-// HasVerifyWebhooks returns a boolean if a field has been set.
-func (o *PlaidWebhooksSettingsConfig) HasVerifyWebhooks() bool {
-	if o != nil && !IsNil(o.VerifyWebhooks) {
-		return true
-	}
-
-	return false
-}
-
-// SetVerifyWebhooks gets a reference to the given bool and assigns it to the VerifyWebhooks field.
-func (o *PlaidWebhooksSettingsConfig) SetVerifyWebhooks(v bool) {
-	o.VerifyWebhooks = &v
+// SetSecret sets field value
+func (o *PlaidWebhooksSettingsConfig) SetSecret(v ModelsSecret) {
+	o.Secret = v
 }
 
 // GetWebhookTypes returns the WebhookTypes field value if set, zero value otherwise.
@@ -151,16 +140,50 @@ func (o PlaidWebhooksSettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o PlaidWebhooksSettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ClientId) {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if !IsNil(o.VerifyWebhooks) {
-		toSerialize["verify_webhooks"] = o.VerifyWebhooks
-	}
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["secret"] = o.Secret
 	if !IsNil(o.WebhookTypes) {
 		toSerialize["webhook_types"] = o.WebhookTypes
 	}
 	return toSerialize, nil
+}
+
+func (o *PlaidWebhooksSettingsConfig) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"client_id",
+		"secret",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varPlaidWebhooksSettingsConfig := _PlaidWebhooksSettingsConfig{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varPlaidWebhooksSettingsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PlaidWebhooksSettingsConfig(varPlaidWebhooksSettingsConfig)
+
+	return err
 }
 
 type NullablePlaidWebhooksSettingsConfig struct {

@@ -18,8 +18,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,10 +29,10 @@ class PlaidWebhooksSettingsConfig(BaseModel):
     """
     Plaid Webhooks settings
     """ # noqa: E501
-    client_id: Optional[StrictStr] = Field(default=None, description="ClientID is the Plaid API client_id. Required only when verification is enabled.")
-    verify_webhooks: Optional[StrictBool] = Field(default=None, description="VerifyWebhooks toggles Plaid signature verification. Unset defaults to true.")
+    client_id: StrictStr = Field(description="ClientID is the Plaid API client_id.")
+    secret: ModelsSecret
     webhook_types: Optional[List[StrictStr]] = Field(default=None, description="WebhookTypes restricts which webhook_type values are emitted. Empty = keep all.")
-    __properties: ClassVar[List[str]] = ["client_id", "verify_webhooks", "webhook_types"]
+    __properties: ClassVar[List[str]] = ["client_id", "secret", "webhook_types"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -72,6 +73,9 @@ class PlaidWebhooksSettingsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of secret
+        if self.secret:
+            _dict['secret'] = self.secret.to_dict()
         return _dict
 
     @classmethod
@@ -85,7 +89,7 @@ class PlaidWebhooksSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "client_id": obj.get("client_id"),
-            "verify_webhooks": obj.get("verify_webhooks"),
+            "secret": ModelsSecret.from_dict(obj["secret"]) if obj.get("secret") is not None else None,
             "webhook_types": obj.get("webhook_types")
         })
         return _obj
