@@ -28,7 +28,7 @@ from pydantic_core import to_jsonable_python
 
 class Sentinelv2DCRConfig(BaseModel):
     """
-    How the destination DCR is provided: a single manual DCR, or a managed pool.
+    How the destination DCR is provided: a single manual DCR, or a managed pool.  Optional so the connector can also accept the legacy v1 config shape, which carries a top-level RuleID instead of a DCRConfig block. When DCRConfig is nil and RuleID is set, the config is normalized to manual mode.
     """ # noqa: E501
     managed: Optional[Sentinelv2ManagedDCRVariant] = None
     manual: Optional[Sentinelv2ManualDCRVariant] = None

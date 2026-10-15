@@ -11473,7 +11473,7 @@
                 "type": "object"
             },
             "sentinelv2.DCRConfig": {
-                "description": "How the destination DCR is provided: a single manual DCR, or a managed pool.",
+                "description": "How the destination DCR is provided: a single manual DCR, or a managed pool.\n\nOptional so the connector can also accept the legacy v1 config shape, which\ncarries a top-level RuleID instead of a DCRConfig block. When DCRConfig is\nnil and RuleID is set, the config is normalized to manual mode.",
                 "properties": {
                     "managed": {
                         "$ref": "#/components/schemas/sentinelv2.ManagedDCRVariant"
@@ -11543,13 +11543,16 @@
                         "description": "The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.",
                         "type": "string"
                     },
+                    "rule_id": {
+                        "description": "Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a\nv1-shaped config still works against the v2 connector; when set with no\nDCRConfig it is treated as manual mode against this rule id.",
+                        "type": "string"
+                    },
                     "stream_name": {
                         "description": "The name of the data stream defined in the Data Collection Rule.",
                         "type": "string"
                     }
                 },
                 "required": [
-                    "dcr_config",
                     "endpoint",
                     "stream_name"
                 ],

@@ -53,13 +53,18 @@ import org.openapitools.client.JSON;
 public class Sentinelv2SettingsConfig {
   public static final String SERIALIZED_NAME_DCR_CONFIG = "dcr_config";
   @SerializedName(SERIALIZED_NAME_DCR_CONFIG)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Sentinelv2DCRConfig dcrConfig;
 
   public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
   @javax.annotation.Nonnull
   private String endpoint;
+
+  public static final String SERIALIZED_NAME_RULE_ID = "rule_id";
+  @SerializedName(SERIALIZED_NAME_RULE_ID)
+  @javax.annotation.Nullable
+  private String ruleId;
 
   public static final String SERIALIZED_NAME_STREAM_NAME = "stream_name";
   @SerializedName(SERIALIZED_NAME_STREAM_NAME)
@@ -69,7 +74,7 @@ public class Sentinelv2SettingsConfig {
   public Sentinelv2SettingsConfig() {
   }
 
-  public Sentinelv2SettingsConfig dcrConfig(@javax.annotation.Nonnull Sentinelv2DCRConfig dcrConfig) {
+  public Sentinelv2SettingsConfig dcrConfig(@javax.annotation.Nullable Sentinelv2DCRConfig dcrConfig) {
     this.dcrConfig = dcrConfig;
     return this;
   }
@@ -78,12 +83,12 @@ public class Sentinelv2SettingsConfig {
    * Get dcrConfig
    * @return dcrConfig
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Sentinelv2DCRConfig getDcrConfig() {
     return dcrConfig;
   }
 
-  public void setDcrConfig(@javax.annotation.Nonnull Sentinelv2DCRConfig dcrConfig) {
+  public void setDcrConfig(@javax.annotation.Nullable Sentinelv2DCRConfig dcrConfig) {
     this.dcrConfig = dcrConfig;
   }
 
@@ -104,6 +109,25 @@ public class Sentinelv2SettingsConfig {
 
   public void setEndpoint(@javax.annotation.Nonnull String endpoint) {
     this.endpoint = endpoint;
+  }
+
+
+  public Sentinelv2SettingsConfig ruleId(@javax.annotation.Nullable String ruleId) {
+    this.ruleId = ruleId;
+    return this;
+  }
+
+  /**
+   * Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id.
+   * @return ruleId
+   */
+  @javax.annotation.Nullable
+  public String getRuleId() {
+    return ruleId;
+  }
+
+  public void setRuleId(@javax.annotation.Nullable String ruleId) {
+    this.ruleId = ruleId;
   }
 
 
@@ -138,12 +162,13 @@ public class Sentinelv2SettingsConfig {
     Sentinelv2SettingsConfig sentinelv2SettingsConfig = (Sentinelv2SettingsConfig) o;
     return Objects.equals(this.dcrConfig, sentinelv2SettingsConfig.dcrConfig) &&
         Objects.equals(this.endpoint, sentinelv2SettingsConfig.endpoint) &&
+        Objects.equals(this.ruleId, sentinelv2SettingsConfig.ruleId) &&
         Objects.equals(this.streamName, sentinelv2SettingsConfig.streamName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dcrConfig, endpoint, streamName);
+    return Objects.hash(dcrConfig, endpoint, ruleId, streamName);
   }
 
   @Override
@@ -152,6 +177,7 @@ public class Sentinelv2SettingsConfig {
     sb.append("class Sentinelv2SettingsConfig {\n");
     sb.append("    dcrConfig: ").append(toIndentedString(dcrConfig)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+    sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
     sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -171,10 +197,10 @@ public class Sentinelv2SettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("dcr_config", "endpoint", "stream_name"));
+    openapiFields = new HashSet<String>(Arrays.asList("dcr_config", "endpoint", "rule_id", "stream_name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("dcr_config", "endpoint", "stream_name"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("endpoint", "stream_name"));
   }
 
   /**
@@ -205,10 +231,15 @@ public class Sentinelv2SettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `dcr_config`
-      Sentinelv2DCRConfig.validateJsonElement(jsonObj.get("dcr_config"));
+      // validate the optional field `dcr_config`
+      if (jsonObj.get("dcr_config") != null && !jsonObj.get("dcr_config").isJsonNull()) {
+        Sentinelv2DCRConfig.validateJsonElement(jsonObj.get("dcr_config"));
+      }
       if (!jsonObj.get("endpoint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("endpoint").toString()));
+      }
+      if ((jsonObj.get("rule_id") != null && !jsonObj.get("rule_id").isJsonNull()) && !jsonObj.get("rule_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rule_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_id").toString()));
       }
       if (!jsonObj.get("stream_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stream_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stream_name").toString()));

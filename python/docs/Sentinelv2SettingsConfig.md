@@ -6,8 +6,9 @@ Sentinel Output Settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dcr_config** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | 
+**dcr_config** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | [optional] 
 **endpoint** | **str** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. | 
+**rule_id** | **str** | Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id. | [optional] 
 **stream_name** | **str** | The name of the data stream defined in the Data Collection Rule. | 
 
 ## Example

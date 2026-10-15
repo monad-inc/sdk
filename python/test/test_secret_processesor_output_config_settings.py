@@ -331,6 +331,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     manual = monad.models.sentinelv2/manual_dcr_variant.sentinelv2.ManualDCRVariant(
                         rule_id = '', ), 
                     type = 'manual', ),
+                rule_id = '',
                 stream_name = '',
                 message_template = '',
                 account = '',
@@ -482,12 +483,6 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                 source_system = '',
                 tenant_id = '',
                 workspace_id = '',
-                dcr_config = monad.models.sentinelv2/dcr_config.sentinelv2.DCRConfig(
-                    managed = monad.models.sentinelv2/managed_dcr_variant.sentinelv2.ManagedDCRVariant(
-                        dcr_resource_id = '', ), 
-                    manual = monad.models.sentinelv2/manual_dcr_variant.sentinelv2.ManualDCRVariant(
-                        rule_id = '', ), 
-                    type = 'manual', ),
                 stream_name = '',
                 account = '',
                 pipe = '',
