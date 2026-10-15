@@ -106,7 +106,8 @@
 |**sourceSystem** | **String** | Free-form label identifying the source system in Sentinel. Must NOT be \&quot;Microsoft Sentinel\&quot; — that value is restricted by the API. |  |
 |**tenantId** | **String** | The Microsoft Entra tenant (directory) ID. |  |
 |**workspaceId** | **String** | The Log Analytics workspace ID (GUID) that will store the STIX objects. |  |
-|**dcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  |  |
+|**dcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  |  [optional] |
+|**ruleId** | **String** | Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id. |  [optional] |
 |**streamName** | **String** | The name of the data stream defined in the Data Collection Rule. |  |
 |**messageTemplate** | **String** |  |  [optional] |
 |**account** | **String** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. |  |
