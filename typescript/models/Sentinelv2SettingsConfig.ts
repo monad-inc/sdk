@@ -17,15 +17,11 @@ import { HttpFile } from '../http/http';
 * Sentinel Output Settings
 */
 export class Sentinelv2SettingsConfig {
-    'dcrConfig'?: Sentinelv2DCRConfig;
+    'dcrConfig': Sentinelv2DCRConfig;
     /**
     * The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.
     */
     'endpoint': string;
-    /**
-    * Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id.
-    */
-    'ruleId'?: string;
     /**
     * The name of the data stream defined in the Data Collection Rule.
     */
@@ -45,12 +41,6 @@ export class Sentinelv2SettingsConfig {
         {
             "name": "endpoint",
             "baseName": "endpoint",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "ruleId",
-            "baseName": "rule_id",
             "type": "string",
             "format": ""
         },

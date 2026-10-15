@@ -103,8 +103,7 @@ Name | Type | Description | Notes
 **SourceSystem** | **string** | Free-form label identifying the source system in Sentinel. Must NOT be \&quot;Microsoft Sentinel\&quot; — that value is restricted by the API. | 
 **TenantId** | **string** | The Microsoft Entra tenant (directory) ID. | 
 **WorkspaceId** | **string** | The Log Analytics workspace ID (GUID) that will store the STIX objects. | 
-**DcrConfig** | Pointer to [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | [optional] 
-**RuleId** | Pointer to **string** | Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id. | [optional] 
+**DcrConfig** | [**Sentinelv2DCRConfig**](Sentinelv2DCRConfig.md) |  | 
 **StreamName** | **string** | The name of the data stream defined in the Data Collection Rule. | 
 **MessageTemplate** | Pointer to **string** |  | [optional] 
 **Account** | **string** | The unique identifier for your Snowflake account, e.g. &#39;orgname-account_name&#39;. | 
@@ -126,7 +125,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorOutputConfigSettings
 
-`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, projectId string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, collectionTimePath string, credentialsJson ModelsSecret, endpoint string, instanceId string, logEntryTimePath string, logType string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, streamName string, account string, pipe string, privateKey ModelsSecret, tenantFqdn string, ) *SecretProcessesorOutputConfigSettings`
+`func NewSecretProcessesorOutputConfigSettings(batchConfig BatchConfigBatchConfig, compression string, region string, bucket string, projectId string, table string, applicationName string, subsystemName string, port string, catalog string, schema string, serverHostname string, writeMode DatabricksLakehouseWriteMode, clientId string, clientSecret ModelsSecret, index string, url string, username string, collectionTimePath string, credentialsJson ModelsSecret, endpoint string, instanceId string, logEntryTimePath string, logType string, auth ScannerAuthConfig, host string, database string, user string, webhookId string, sourceSystem string, tenantId string, workspaceId string, dcrConfig Sentinelv2DCRConfig, streamName string, account string, pipe string, privateKey ModelsSecret, tenantFqdn string, ) *SecretProcessesorOutputConfigSettings`
 
 NewSecretProcessesorOutputConfigSettings instantiates a new SecretProcessesorOutputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -2475,36 +2474,6 @@ and a boolean to check if the value has been set.
 
 SetDcrConfig sets DcrConfig field to given value.
 
-### HasDcrConfig
-
-`func (o *SecretProcessesorOutputConfigSettings) HasDcrConfig() bool`
-
-HasDcrConfig returns a boolean if a field has been set.
-
-### GetRuleId
-
-`func (o *SecretProcessesorOutputConfigSettings) GetRuleId() string`
-
-GetRuleId returns the RuleId field if non-nil, zero value otherwise.
-
-### GetRuleIdOk
-
-`func (o *SecretProcessesorOutputConfigSettings) GetRuleIdOk() (*string, bool)`
-
-GetRuleIdOk returns a tuple with the RuleId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRuleId
-
-`func (o *SecretProcessesorOutputConfigSettings) SetRuleId(v string)`
-
-SetRuleId sets RuleId field to given value.
-
-### HasRuleId
-
-`func (o *SecretProcessesorOutputConfigSettings) HasRuleId() bool`
-
-HasRuleId returns a boolean if a field has been set.
 
 ### GetStreamName
 

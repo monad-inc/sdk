@@ -22,11 +22,9 @@ var _ MappedNullable = &Sentinelv2SettingsConfig{}
 
 // Sentinelv2SettingsConfig Sentinel Output Settings
 type Sentinelv2SettingsConfig struct {
-	DcrConfig *Sentinelv2DCRConfig `json:"dcr_config,omitempty"`
+	DcrConfig Sentinelv2DCRConfig `json:"dcr_config"`
 	// The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.
 	Endpoint string `json:"endpoint"`
-	// Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id.
-	RuleId *string `json:"rule_id,omitempty"`
 	// The name of the data stream defined in the Data Collection Rule.
 	StreamName string `json:"stream_name"`
 }
@@ -37,8 +35,9 @@ type _Sentinelv2SettingsConfig Sentinelv2SettingsConfig
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSentinelv2SettingsConfig(endpoint string, streamName string) *Sentinelv2SettingsConfig {
+func NewSentinelv2SettingsConfig(dcrConfig Sentinelv2DCRConfig, endpoint string, streamName string) *Sentinelv2SettingsConfig {
 	this := Sentinelv2SettingsConfig{}
+	this.DcrConfig = dcrConfig
 	this.Endpoint = endpoint
 	this.StreamName = streamName
 	return &this
@@ -52,36 +51,28 @@ func NewSentinelv2SettingsConfigWithDefaults() *Sentinelv2SettingsConfig {
 	return &this
 }
 
-// GetDcrConfig returns the DcrConfig field value if set, zero value otherwise.
+// GetDcrConfig returns the DcrConfig field value
 func (o *Sentinelv2SettingsConfig) GetDcrConfig() Sentinelv2DCRConfig {
-	if o == nil || IsNil(o.DcrConfig) {
+	if o == nil {
 		var ret Sentinelv2DCRConfig
 		return ret
 	}
-	return *o.DcrConfig
+
+	return o.DcrConfig
 }
 
-// GetDcrConfigOk returns a tuple with the DcrConfig field value if set, nil otherwise
+// GetDcrConfigOk returns a tuple with the DcrConfig field value
 // and a boolean to check if the value has been set.
 func (o *Sentinelv2SettingsConfig) GetDcrConfigOk() (*Sentinelv2DCRConfig, bool) {
-	if o == nil || IsNil(o.DcrConfig) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DcrConfig, true
+	return &o.DcrConfig, true
 }
 
-// HasDcrConfig returns a boolean if a field has been set.
-func (o *Sentinelv2SettingsConfig) HasDcrConfig() bool {
-	if o != nil && !IsNil(o.DcrConfig) {
-		return true
-	}
-
-	return false
-}
-
-// SetDcrConfig gets a reference to the given Sentinelv2DCRConfig and assigns it to the DcrConfig field.
+// SetDcrConfig sets field value
 func (o *Sentinelv2SettingsConfig) SetDcrConfig(v Sentinelv2DCRConfig) {
-	o.DcrConfig = &v
+	o.DcrConfig = v
 }
 
 // GetEndpoint returns the Endpoint field value
@@ -106,38 +97,6 @@ func (o *Sentinelv2SettingsConfig) GetEndpointOk() (*string, bool) {
 // SetEndpoint sets field value
 func (o *Sentinelv2SettingsConfig) SetEndpoint(v string) {
 	o.Endpoint = v
-}
-
-// GetRuleId returns the RuleId field value if set, zero value otherwise.
-func (o *Sentinelv2SettingsConfig) GetRuleId() string {
-	if o == nil || IsNil(o.RuleId) {
-		var ret string
-		return ret
-	}
-	return *o.RuleId
-}
-
-// GetRuleIdOk returns a tuple with the RuleId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Sentinelv2SettingsConfig) GetRuleIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RuleId) {
-		return nil, false
-	}
-	return o.RuleId, true
-}
-
-// HasRuleId returns a boolean if a field has been set.
-func (o *Sentinelv2SettingsConfig) HasRuleId() bool {
-	if o != nil && !IsNil(o.RuleId) {
-		return true
-	}
-
-	return false
-}
-
-// SetRuleId gets a reference to the given string and assigns it to the RuleId field.
-func (o *Sentinelv2SettingsConfig) SetRuleId(v string) {
-	o.RuleId = &v
 }
 
 // GetStreamName returns the StreamName field value
@@ -174,13 +133,8 @@ func (o Sentinelv2SettingsConfig) MarshalJSON() ([]byte, error) {
 
 func (o Sentinelv2SettingsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DcrConfig) {
-		toSerialize["dcr_config"] = o.DcrConfig
-	}
+	toSerialize["dcr_config"] = o.DcrConfig
 	toSerialize["endpoint"] = o.Endpoint
-	if !IsNil(o.RuleId) {
-		toSerialize["rule_id"] = o.RuleId
-	}
 	toSerialize["stream_name"] = o.StreamName
 	return toSerialize, nil
 }
@@ -190,6 +144,7 @@ func (o *Sentinelv2SettingsConfig) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"dcr_config",
 		"endpoint",
 		"stream_name",
 	}

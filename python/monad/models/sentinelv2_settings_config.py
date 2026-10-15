@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from monad.models.sentinelv2_dcr_config import Sentinelv2DCRConfig
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +29,10 @@ class Sentinelv2SettingsConfig(BaseModel):
     """
     Sentinel Output Settings
     """ # noqa: E501
-    dcr_config: Optional[Sentinelv2DCRConfig] = None
+    dcr_config: Sentinelv2DCRConfig
     endpoint: StrictStr = Field(description="The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL.")
-    rule_id: Optional[StrictStr] = Field(default=None, description="Deprecated: RuleID is the legacy v1 top-level rule id. It is retained so a v1-shaped config still works against the v2 connector; when set with no DCRConfig it is treated as manual mode against this rule id.")
     stream_name: StrictStr = Field(description="The name of the data stream defined in the Data Collection Rule.")
-    __properties: ClassVar[List[str]] = ["dcr_config", "endpoint", "rule_id", "stream_name"]
+    __properties: ClassVar[List[str]] = ["dcr_config", "endpoint", "stream_name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -91,7 +90,6 @@ class Sentinelv2SettingsConfig(BaseModel):
         _obj = cls.model_validate({
             "dcr_config": Sentinelv2DCRConfig.from_dict(obj["dcr_config"]) if obj.get("dcr_config") is not None else None,
             "endpoint": obj.get("endpoint"),
-            "rule_id": obj.get("rule_id"),
             "stream_name": obj.get("stream_name")
         })
         return _obj

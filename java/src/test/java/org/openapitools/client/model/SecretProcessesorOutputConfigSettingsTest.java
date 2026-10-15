@@ -905,14 +905,6 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
-     * Test the property 'ruleId'
-     */
-    @Test
-    public void ruleIdTest() {
-        // TODO: test ruleId
-    }
-
-    /**
      * Test the property 'streamName'
      */
     @Test

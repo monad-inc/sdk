@@ -43,11 +43,16 @@ class TestSentinelv2SettingsConfig(unittest.TestCase):
                         rule_id = '', ), 
                     type = 'manual', ),
                 endpoint = '',
-                rule_id = '',
                 stream_name = ''
             )
         else:
             return Sentinelv2SettingsConfig(
+                dcr_config = monad.models.sentinelv2/dcr_config.sentinelv2.DCRConfig(
+                    managed = monad.models.sentinelv2/managed_dcr_variant.sentinelv2.ManagedDCRVariant(
+                        dcr_resource_id = '', ), 
+                    manual = monad.models.sentinelv2/manual_dcr_variant.sentinelv2.ManualDCRVariant(
+                        rule_id = '', ), 
+                    type = 'manual', ),
                 endpoint = '',
                 stream_name = '',
         )

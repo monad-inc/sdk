@@ -48,7 +48,7 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * How the destination DCR is provided: a single manual DCR, or a managed pool.  Optional so the connector can also accept the legacy v1 config shape, which carries a top-level RuleID instead of a DCRConfig block. When DCRConfig is nil and RuleID is set, the config is normalized to manual mode.
+ * How the destination DCR is provided: a single manual DCR, or a managed pool.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class Sentinelv2DCRConfig {
