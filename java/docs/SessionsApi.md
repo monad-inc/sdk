@@ -13,7 +13,7 @@ All URIs are relative to *https://monad.com/api*
 
 Mint a short-lived API token, optionally scoped to a single org
 
-Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key&#39;s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
 
 ### Example
 ```java
@@ -77,5 +77,6 @@ public class Example {
 | **200** | Session minted |  -  |
 | **400** | Invalid request |  -  |
 | **401** | Missing or invalid auth |  -  |
+| **403** | Called with a session token |  -  |
 | **500** | Internal server error |  -  |
 

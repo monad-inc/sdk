@@ -18,7 +18,7 @@ export class RoutesV3CreateSessionResponse {
     */
     'expiresAt'?: string;
     /**
-    * SessionToken is the minted short-lived JWT. Send it as a Bearer token.
+    * SessionToken is the minted short-lived JWT. Send it as \"Authorization: ApiKey <token>\", like the parent key.
     */
     'sessionToken'?: string;
     /**

@@ -5642,7 +5642,7 @@ export class PromiseSessionsApi {
     }
 
     /**
-     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key\'s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
      * Mint a short-lived API token, optionally scoped to a single org
      * @param [createSessionRequest] Session options
      */
@@ -5653,7 +5653,7 @@ export class PromiseSessionsApi {
     }
 
     /**
-     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key\'s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
      * Mint a short-lived API token, optionally scoped to a single org
      * @param [createSessionRequest] Session options
      */

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 # **createSession**
 > RoutesV3CreateSessionResponse createSession()
 
-Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+Creates a short-lived JWT off the calling API key. When `organization_id` is supplied, the token is pinned to that org via a `scoped_org` claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key\'s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
 
 ### Example
 
@@ -59,6 +59,7 @@ Name | Type | Description  | Notes
 **200** | Session minted |  -  |
 **400** | Invalid request |  -  |
 **401** | Missing or invalid auth |  -  |
+**403** | Called with a session token |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

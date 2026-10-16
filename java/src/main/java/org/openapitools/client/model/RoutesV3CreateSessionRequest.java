@@ -69,7 +69,7 @@ public class RoutesV3CreateSessionRequest {
   }
 
   /**
-   * OrganizationID, when set, pins the token to that single org via the &#x60;scoped_org&#x60; claim. Omit to inherit the parent key&#39;s org access. Not verified at mint time — the org-access middleware returns 403 at request time if the parent key has no role in it.
+   * OrganizationID, when set, pins the token to that single org via the &#x60;scoped_org&#x60; claim. Omit to reach the orgs the parent key can. Not verified at mint time — the org-access middleware returns 403 at request time if the parent key has no role in it.
    * @return organizationId
    */
   @javax.annotation.Nullable

@@ -49,6 +49,14 @@ refuses any other org for this token. No new API key row
 is created — revoking the parent key invalidates every
 session it minted.
 
+A session is meant for use in a browser, so it can do less
+than its parent key. Within an organization it can use the
+parent key's permissions on pipelines and their components,
+secrets, alert rules, tags and logs, but cannot manage API
+keys, roles, users, child organizations or the organization
+itself. It cannot mint further sessions or send data to
+ingest endpoints.
+
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSessionRequest
 */
@@ -147,6 +155,17 @@ func (a *SessionsAPIService) CreateSessionExecute(r ApiCreateSessionRequest) (*R
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
+			var v string
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
 			var v string
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

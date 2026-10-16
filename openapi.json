@@ -4051,9 +4051,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -9810,7 +9810,7 @@
             "routesV3.CreateSessionRequest": {
                 "properties": {
                     "organization_id": {
-                        "description": "OrganizationID, when set, pins the token to that single org via the\n`scoped_org` claim. Omit to inherit the parent key's org access. Not\nverified at mint time — the org-access middleware returns 403 at\nrequest time if the parent key has no role in it.",
+                        "description": "OrganizationID, when set, pins the token to that single org via the\n`scoped_org` claim. Omit to reach the orgs the parent key can. Not\nverified at mint time — the org-access middleware returns 403 at\nrequest time if the parent key has no role in it.",
                         "example": "00000000-0000-0000-0000-000000000000",
                         "type": "string"
                     },
@@ -9830,7 +9830,7 @@
                         "type": "string"
                     },
                     "session_token": {
-                        "description": "SessionToken is the minted short-lived JWT. Send it as a Bearer token.",
+                        "description": "SessionToken is the minted short-lived JWT. Send it as\n\"Authorization: ApiKey \u003ctoken\u003e\", like the parent key.",
                         "type": "string"
                     },
                     "ttl_seconds": {
@@ -22926,7 +22926,7 @@
         },
         "/v3/sessions": {
             "post": {
-                "description": "Creates a short-lived JWT off the calling API key. When\n`organization_id` is supplied, the token is pinned to that\norg via a `scoped_org` claim and the org-access middleware\nrefuses any other org for this token. No new API key row\nis created — revoking the parent key invalidates every\nsession it minted.",
+                "description": "Creates a short-lived JWT off the calling API key. When\n`organization_id` is supplied, the token is pinned to that\norg via a `scoped_org` claim and the org-access middleware\nrefuses any other org for this token. No new API key row\nis created — revoking the parent key invalidates every\nsession it minted.\n\nA session is meant for use in a browser, so it can do less\nthan its parent key. Within an organization it can use the\nparent key's permissions on pipelines and their components,\nsecrets, alert rules, tags and logs, but cannot manage API\nkeys, roles, users, child organizations or the organization\nitself. It cannot mint further sessions or send data to\ningest endpoints.",
                 "operationId": "CreateSession",
                 "requestBody": {
                     "content": {
@@ -22977,6 +22977,16 @@
                             }
                         },
                         "description": "Missing or invalid auth"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Called with a session token"
                     },
                     "500": {
                         "content": {

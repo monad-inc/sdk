@@ -93,7 +93,7 @@ public class RoutesV3CreateSessionResponse {
   }
 
   /**
-   * SessionToken is the minted short-lived JWT. Send it as a Bearer token.
+   * SessionToken is the minted short-lived JWT. Send it as \&quot;Authorization: ApiKey &lt;token&gt;\&quot;, like the parent key.
    * @return sessionToken
    */
   @javax.annotation.Nullable

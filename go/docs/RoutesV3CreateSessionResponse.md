@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExpiresAt** | Pointer to **string** | ExpiresAt is the token expiry as an RFC 3339 timestamp. | [optional] 
-**SessionToken** | Pointer to **string** | SessionToken is the minted short-lived JWT. Send it as a Bearer token. | [optional] 
+**SessionToken** | Pointer to **string** | SessionToken is the minted short-lived JWT. Send it as \&quot;Authorization: ApiKey &lt;token&gt;\&quot;, like the parent key. | [optional] 
 **TtlSeconds** | Pointer to **int32** | TTLSeconds is the effective lifetime applied after clamping. | [optional] 
 
 ## Methods

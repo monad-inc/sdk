@@ -86,6 +86,7 @@ public class SessionsApi {
         <tr><td> 200 </td><td> Session minted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Missing or invalid auth </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Called with a session token </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -142,7 +143,7 @@ public class SessionsApi {
 
     /**
      * Mint a short-lived API token, optionally scoped to a single org
-     * Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key&#39;s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
      * @param createSessionRequest Session options (optional)
      * @return RoutesV3CreateSessionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -153,6 +154,7 @@ public class SessionsApi {
         <tr><td> 200 </td><td> Session minted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Missing or invalid auth </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Called with a session token </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -163,7 +165,7 @@ public class SessionsApi {
 
     /**
      * Mint a short-lived API token, optionally scoped to a single org
-     * Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key&#39;s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
      * @param createSessionRequest Session options (optional)
      * @return ApiResponse&lt;RoutesV3CreateSessionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -174,6 +176,7 @@ public class SessionsApi {
         <tr><td> 200 </td><td> Session minted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Missing or invalid auth </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Called with a session token </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -185,7 +188,7 @@ public class SessionsApi {
 
     /**
      * Mint a short-lived API token, optionally scoped to a single org (asynchronously)
-     * Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.
+     * Creates a short-lived JWT off the calling API key. When &#x60;organization_id&#x60; is supplied, the token is pinned to that org via a &#x60;scoped_org&#x60; claim and the org-access middleware refuses any other org for this token. No new API key row is created — revoking the parent key invalidates every session it minted.  A session is meant for use in a browser, so it can do less than its parent key. Within an organization it can use the parent key&#39;s permissions on pipelines and their components, secrets, alert rules, tags and logs, but cannot manage API keys, roles, users, child organizations or the organization itself. It cannot mint further sessions or send data to ingest endpoints.
      * @param createSessionRequest Session options (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -197,6 +200,7 @@ public class SessionsApi {
         <tr><td> 200 </td><td> Session minted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Missing or invalid auth </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Called with a session token </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

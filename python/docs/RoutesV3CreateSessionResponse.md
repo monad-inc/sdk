@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **expires_at** | **str** | ExpiresAt is the token expiry as an RFC 3339 timestamp. | [optional] 
-**session_token** | **str** | SessionToken is the minted short-lived JWT. Send it as a Bearer token. | [optional] 
+**session_token** | **str** | SessionToken is the minted short-lived JWT. Send it as \&quot;Authorization: ApiKey &lt;token&gt;\&quot;, like the parent key. | [optional] 
 **ttl_seconds** | **int** | TTLSeconds is the effective lifetime applied after clamping. | [optional] 
 
 ## Example
