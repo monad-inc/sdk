@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
-import org.openapitools.client.model.ArizeAuditLogsSecretsConfig;
 import org.openapitools.client.model.AwsS3SecretsConfig;
 import org.openapitools.client.model.AzureActivityLogsSecretsConfig;
 import org.openapitools.client.model.AzureBlobStorageSecretsConfig;
@@ -85,14 +84,6 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void testSecretProcessesorInputConfigSecrets() {
         // TODO: test SecretProcessesorInputConfigSecrets
-    }
-
-    /**
-     * Test the property 'apiKey'
-     */
-    @Test
-    public void apiKeyTest() {
-        // TODO: test apiKey
     }
 
     /**
@@ -181,6 +172,14 @@ public class SecretProcessesorInputConfigSecretsTest {
     @Test
     public void apiTokenTest() {
         // TODO: test apiToken
+    }
+
+    /**
+     * Test the property 'apiKey'
+     */
+    @Test
+    public void apiKeyTest() {
+        // TODO: test apiKey
     }
 
     /**

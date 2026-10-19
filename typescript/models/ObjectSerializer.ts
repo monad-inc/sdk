@@ -8,8 +8,6 @@ export * from '../models/AlertsAlertHouse';
 export * from '../models/AlertsAlertMeta';
 export * from '../models/ApplyConditionV2Request';
 export * from '../models/ApplyTransformationV2Request';
-export * from '../models/ArizeAuditLogsSecretsConfig';
-export * from '../models/ArizeAuditLogsSettingsConfig';
 export * from '../models/AuthenticationtypesAuthenticationMethod';
 export * from '../models/AuthenticationtypesMFAEnrollmentTicket';
 export * from '../models/AuthenticationtypesTokenResponse';
@@ -633,8 +631,6 @@ import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
 import { AlertsAlertMeta            } from '../models/AlertsAlertMeta';
 import { ApplyConditionV2RequestClass } from '../models/ApplyConditionV2Request';
 import { ApplyTransformationV2RequestClass } from '../models/ApplyTransformationV2Request';
-import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
-import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';
@@ -1358,8 +1354,6 @@ let typeMap: {[index: string]: any} = {
     "AlertsAlertMeta": AlertsAlertMeta,
     "ApplyConditionV2Request": ApplyConditionV2RequestClass,
     "ApplyTransformationV2Request": ApplyTransformationV2RequestClass,
-    "ArizeAuditLogsSecretsConfig": ArizeAuditLogsSecretsConfig,
-    "ArizeAuditLogsSettingsConfig": ArizeAuditLogsSettingsConfig,
     "AuthenticationtypesAuthenticationMethod": AuthenticationtypesAuthenticationMethod,
     "AuthenticationtypesMFAEnrollmentTicket": AuthenticationtypesMFAEnrollmentTicket,
     "AuthenticationtypesTokenResponse": AuthenticationtypesTokenResponse,

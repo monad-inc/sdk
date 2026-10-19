@@ -12,8 +12,6 @@ import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
 import { AlertsAlertMeta } from '../models/AlertsAlertMeta';
 import { ApplyConditionV2Request } from '../models/ApplyConditionV2Request';
 import { ApplyTransformationV2Request } from '../models/ApplyTransformationV2Request';
-import { ArizeAuditLogsSecretsConfig } from '../models/ArizeAuditLogsSecretsConfig';
-import { ArizeAuditLogsSettingsConfig } from '../models/ArizeAuditLogsSettingsConfig';
 import { AuthenticationtypesAuthenticationMethod } from '../models/AuthenticationtypesAuthenticationMethod';
 import { AuthenticationtypesMFAEnrollmentTicket } from '../models/AuthenticationtypesMFAEnrollmentTicket';
 import { AuthenticationtypesTokenResponse } from '../models/AuthenticationtypesTokenResponse';

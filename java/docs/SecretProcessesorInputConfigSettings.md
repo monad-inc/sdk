@@ -8,9 +8,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**backfillStartTime** | **String** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. |  [optional] |
-|**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
-|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
-|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**bucket** | **String** | Name of the S3 bucket that receives Redshift audit logs. |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**format** | [**FormatEnum**](#FormatEnum) | File format of the objects |  |
@@ -28,11 +25,13 @@
 |**usesSns** | **Boolean** |  |  [optional] |
 |**withMetadata** | **Boolean** |  |  [optional] |
 |**correlationId** | **String** | The correlation ID of the log |  [optional] |
+|**rateLimit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  |  [optional] |
 |**resourceGroupName** | **String** | The name of the resource group containing the virtual network |  [optional] |
 |**resourceProvider** | **String** | The provider of the resource |  [optional] |
 |**resourceUri** | **String** | The URI of the resource |  [optional] |
 |**subscriptionId** | **String** | The Azure subscription ID where the virtual network and storage account are located |  [optional] |
 |**tenantId** | **String** | The Azure Entra ID tenant (directory) ID |  |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**accountUrl** | **String** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. |  [optional] |
 |**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
 |**partitionFormatTemplate** | **String** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. |  [optional] |
@@ -51,6 +50,7 @@
 |**enablePagination** | **Boolean** | Enable pagination support |  [optional] |
 |**graphqlQuery** | **String** | The GraphQL query to execute against the endpoint to fetch data |  [optional] |
 |**hasNextPagePath** | **String** | JSONPath location to check if there are more pages |  [optional] |
+|**intervalSeconds** | **Integer** | Time interval in seconds between consecutive GraphQL API calls |  [optional] |
 |**paginationCursorPath** | **String** | JSONPath location for pagination cursor/token |  [optional] |
 |**variables** | [**List&lt;MonadGraphqlInputVariable&gt;**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request |  [optional] |
 |**accountId** | **String** | Account ID for the input |  [optional] |

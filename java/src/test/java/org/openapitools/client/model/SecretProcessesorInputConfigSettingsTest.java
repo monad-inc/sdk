@@ -25,7 +25,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.openapitools.client.model.ArizeAuditLogsSettingsConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AwsSqsS3CloudtrailChunkingMode;
 import org.openapitools.client.model.AwsSqsS3CloudtrailSettingsConfig;
@@ -131,30 +130,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void backfillStartTimeTest() {
         // TODO: test backfillStartTime
-    }
-
-    /**
-     * Test the property 'intervalSeconds'
-     */
-    @Test
-    public void intervalSecondsTest() {
-        // TODO: test intervalSeconds
-    }
-
-    /**
-     * Test the property 'rateLimit'
-     */
-    @Test
-    public void rateLimitTest() {
-        // TODO: test rateLimit
-    }
-
-    /**
-     * Test the property 'useSyntheticData'
-     */
-    @Test
-    public void useSyntheticDataTest() {
-        // TODO: test useSyntheticData
     }
 
     /**
@@ -294,6 +269,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'rateLimit'
+     */
+    @Test
+    public void rateLimitTest() {
+        // TODO: test rateLimit
+    }
+
+    /**
      * Test the property 'resourceGroupName'
      */
     @Test
@@ -331,6 +314,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void tenantIdTest() {
         // TODO: test tenantId
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
     /**
@@ -475,6 +466,14 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void hasNextPagePathTest() {
         // TODO: test hasNextPagePath
+    }
+
+    /**
+     * Test the property 'intervalSeconds'
+     */
+    @Test
+    public void intervalSecondsTest() {
+        // TODO: test intervalSeconds
     }
 
     /**

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **SecretKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ClientId** | [**ModelsSecret**](ModelsSecret.md) |  | 
@@ -16,6 +15,7 @@ Name | Type | Description | Notes
 **Password** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **Username** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **ApiToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ApiKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **ApiSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **OauthToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSecrets
 
-`func NewSecretProcessesorInputConfigSecrets(apiKey ModelsSecret, accessKey ModelsSecret, secretKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, apiSecret ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
+`func NewSecretProcessesorInputConfigSecrets(accessKey ModelsSecret, secretKey ModelsSecret, clientId ModelsSecret, clientSecret ModelsSecret, credentialsJson ModelsSecret, password ModelsSecret, username ModelsSecret, apiToken ModelsSecret, apiKey ModelsSecret, apiSecret ModelsSecret, twilioAccountSid ModelsSecret, twilioAuthToken ModelsSecret, ) *SecretProcessesorInputConfigSecrets`
 
 NewSecretProcessesorInputConfigSecrets instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -43,26 +43,6 @@ will change when the set of required properties is changed
 NewSecretProcessesorInputConfigSecretsWithDefaults instantiates a new SecretProcessesorInputConfigSecrets object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
-
-GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
-
-### GetApiKeyOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
-
-GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApiKey
-
-`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
-
-SetApiKey sets ApiKey field to given value.
-
 
 ### GetAccessKey
 
@@ -297,6 +277,26 @@ and a boolean to check if the value has been set.
 `func (o *SecretProcessesorInputConfigSecrets) SetApiToken(v ModelsSecret)`
 
 SetApiToken sets ApiToken field to given value.
+
+
+### GetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKey() ModelsSecret`
+
+GetApiKey returns the ApiKey field if non-nil, zero value otherwise.
+
+### GetApiKeyOk
+
+`func (o *SecretProcessesorInputConfigSecrets) GetApiKeyOk() (*ModelsSecret, bool)`
+
+GetApiKeyOk returns a tuple with the ApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiKey
+
+`func (o *SecretProcessesorInputConfigSecrets) SetApiKey(v ModelsSecret)`
+
+SetApiKey sets ApiKey field to given value.
 
 
 ### GetAccessToken

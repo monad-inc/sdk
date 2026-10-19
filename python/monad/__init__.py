@@ -82,8 +82,6 @@ __all__ = [
     "AlertsAlertMeta",
     "ApplyConditionV2Request",
     "ApplyTransformationV2Request",
-    "ArizeAuditLogsSecretsConfig",
-    "ArizeAuditLogsSettingsConfig",
     "AuthenticationtypesAuthenticationMethod",
     "AuthenticationtypesMFAEnrollmentTicket",
     "AuthenticationtypesTokenResponse",
@@ -766,8 +764,6 @@ from monad.models.alerts_alert_house import AlertsAlertHouse as AlertsAlertHouse
 from monad.models.alerts_alert_meta import AlertsAlertMeta as AlertsAlertMeta
 from monad.models.apply_condition_v2_request import ApplyConditionV2Request as ApplyConditionV2Request
 from monad.models.apply_transformation_v2_request import ApplyTransformationV2Request as ApplyTransformationV2Request
-from monad.models.arize_audit_logs_secrets_config import ArizeAuditLogsSecretsConfig as ArizeAuditLogsSecretsConfig
-from monad.models.arize_audit_logs_settings_config import ArizeAuditLogsSettingsConfig as ArizeAuditLogsSettingsConfig
 from monad.models.authenticationtypes_authentication_method import AuthenticationtypesAuthenticationMethod as AuthenticationtypesAuthenticationMethod
 from monad.models.authenticationtypes_mfa_enrollment_ticket import AuthenticationtypesMFAEnrollmentTicket as AuthenticationtypesMFAEnrollmentTicket
 from monad.models.authenticationtypes_token_response import AuthenticationtypesTokenResponse as AuthenticationtypesTokenResponse

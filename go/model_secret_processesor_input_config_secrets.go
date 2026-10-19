@@ -19,7 +19,6 @@ import (
 
 // SecretProcessesorInputConfigSecrets - struct for SecretProcessesorInputConfigSecrets
 type SecretProcessesorInputConfigSecrets struct {
-	ArizeAuditLogsSecretsConfig *ArizeAuditLogsSecretsConfig
 	AwsS3SecretsConfig *AwsS3SecretsConfig
 	AzureActivityLogsSecretsConfig *AzureActivityLogsSecretsConfig
 	AzureBlobStorageSecretsConfig *AzureBlobStorageSecretsConfig
@@ -68,13 +67,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	VulnerabilityFindingsSecretsConfig *VulnerabilityFindingsSecretsConfig
 	WizAuditLogsSecretsConfig *WizAuditLogsSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
-}
-
-// ArizeAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns ArizeAuditLogsSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func ArizeAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *ArizeAuditLogsSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		ArizeAuditLogsSecretsConfig: v,
-	}
 }
 
 // AwsS3SecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns AwsS3SecretsConfig wrapped in SecretProcessesorInputConfigSecrets
@@ -418,23 +410,6 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSecrets(v *map[string]interf
 func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ArizeAuditLogsSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.ArizeAuditLogsSecretsConfig)
-	if err == nil {
-		jsonArizeAuditLogsSecretsConfig, _ := json.Marshal(dst.ArizeAuditLogsSecretsConfig)
-		if string(jsonArizeAuditLogsSecretsConfig) == "{}" { // empty struct
-			dst.ArizeAuditLogsSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.ArizeAuditLogsSecretsConfig); err != nil {
-				dst.ArizeAuditLogsSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ArizeAuditLogsSecretsConfig = nil
-	}
-
 	// try to unmarshal data into AwsS3SecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.AwsS3SecretsConfig)
 	if err == nil {
@@ -1253,7 +1228,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ArizeAuditLogsSecretsConfig = nil
 		dst.AwsS3SecretsConfig = nil
 		dst.AzureActivityLogsSecretsConfig = nil
 		dst.AzureBlobStorageSecretsConfig = nil
@@ -1313,10 +1287,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
-	if src.ArizeAuditLogsSecretsConfig != nil {
-		return json.Marshal(&src.ArizeAuditLogsSecretsConfig)
-	}
-
 	if src.AwsS3SecretsConfig != nil {
 		return json.Marshal(&src.AwsS3SecretsConfig)
 	}
@@ -1517,10 +1487,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 	if obj == nil {
 		return nil
 	}
-	if obj.ArizeAuditLogsSecretsConfig != nil {
-		return obj.ArizeAuditLogsSecretsConfig
-	}
-
 	if obj.AwsS3SecretsConfig != nil {
 		return obj.AwsS3SecretsConfig
 	}
@@ -1719,10 +1685,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interface{}) {
-	if obj.ArizeAuditLogsSecretsConfig != nil {
-		return *obj.ArizeAuditLogsSecretsConfig
-	}
-
 	if obj.AwsS3SecretsConfig != nil {
 		return *obj.AwsS3SecretsConfig
 	}

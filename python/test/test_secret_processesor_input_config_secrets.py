@@ -36,19 +36,6 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
         model = SecretProcessesorInputConfigSecrets()
         if include_optional:
             return SecretProcessesorInputConfigSecrets(
-                api_key = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', ),
                 access_key = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
@@ -192,6 +179,19 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                         shared_with_me = True, ), 
                     updated_at = '', 
                     value = '', ),
+                api_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
                 access_token = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
@@ -299,19 +299,6 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
             )
         else:
             return SecretProcessesorInputConfigSecrets(
-                api_key = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', ),
                 access_key = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
@@ -404,6 +391,19 @@ class TestSecretProcessesorInputConfigSecrets(unittest.TestCase):
                     updated_at = '', 
                     value = '', ),
                 api_token = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
+                api_key = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
                     id = '', 

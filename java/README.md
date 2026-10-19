@@ -398,8 +398,6 @@ Class | Method | HTTP request | Description
  - [AlertsAlertMeta](docs/AlertsAlertMeta.md)
  - [ApplyConditionV2Request](docs/ApplyConditionV2Request.md)
  - [ApplyTransformationV2Request](docs/ApplyTransformationV2Request.md)
- - [ArizeAuditLogsSecretsConfig](docs/ArizeAuditLogsSecretsConfig.md)
- - [ArizeAuditLogsSettingsConfig](docs/ArizeAuditLogsSettingsConfig.md)
  - [AuthenticationtypesAuthenticationMethod](docs/AuthenticationtypesAuthenticationMethod.md)
  - [AuthenticationtypesMFAEnrollmentTicket](docs/AuthenticationtypesMFAEnrollmentTicket.md)
  - [AuthenticationtypesTokenResponse](docs/AuthenticationtypesTokenResponse.md)

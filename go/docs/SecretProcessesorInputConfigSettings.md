@@ -5,9 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
-**IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
-**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
-**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **Bucket** | **string** | Name of the S3 bucket that receives Redshift audit logs. | 
 **Compression** | **string** | Compression format of the objects | 
 **Format** | **string** | File format of the objects | 
@@ -25,11 +22,13 @@ Name | Type | Description | Notes
 **UsesSns** | Pointer to **bool** |  | [optional] 
 **WithMetadata** | Pointer to **bool** |  | [optional] 
 **CorrelationId** | Pointer to **string** | The correlation ID of the log | [optional] 
+**RateLimit** | Pointer to [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **ResourceGroupName** | Pointer to **string** | The name of the resource group containing the virtual network | [optional] 
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
 **TenantId** | **string** | The Azure Entra ID tenant (directory) ID | 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **PartitionFormatTemplate** | Pointer to **string** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. | [optional] 
@@ -48,6 +47,7 @@ Name | Type | Description | Notes
 **EnablePagination** | Pointer to **bool** | Enable pagination support | [optional] 
 **GraphqlQuery** | Pointer to **string** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **HasNextPagePath** | Pointer to **string** | JSONPath location to check if there are more pages | [optional] 
+**IntervalSeconds** | Pointer to **int32** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **PaginationCursorPath** | Pointer to **string** | JSONPath location for pagination cursor/token | [optional] 
 **Variables** | Pointer to [**[]MonadGraphqlInputVariable**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request | [optional] 
 **AccountId** | Pointer to **string** | Account ID for the input | [optional] 
@@ -186,81 +186,6 @@ SetBackfillStartTime sets BackfillStartTime field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasBackfillStartTime() bool`
 
 HasBackfillStartTime returns a boolean if a field has been set.
-
-### GetIntervalSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) GetIntervalSeconds() int32`
-
-GetIntervalSeconds returns the IntervalSeconds field if non-nil, zero value otherwise.
-
-### GetIntervalSecondsOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetIntervalSecondsOk() (*int32, bool)`
-
-GetIntervalSecondsOk returns a tuple with the IntervalSeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntervalSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) SetIntervalSeconds(v int32)`
-
-SetIntervalSeconds sets IntervalSeconds field to given value.
-
-### HasIntervalSeconds
-
-`func (o *SecretProcessesorInputConfigSettings) HasIntervalSeconds() bool`
-
-HasIntervalSeconds returns a boolean if a field has been set.
-
-### GetRateLimit
-
-`func (o *SecretProcessesorInputConfigSettings) GetRateLimit() ModelsInputRateLimit`
-
-GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
-
-### GetRateLimitOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
-
-GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRateLimit
-
-`func (o *SecretProcessesorInputConfigSettings) SetRateLimit(v ModelsInputRateLimit)`
-
-SetRateLimit sets RateLimit field to given value.
-
-### HasRateLimit
-
-`func (o *SecretProcessesorInputConfigSettings) HasRateLimit() bool`
-
-HasRateLimit returns a boolean if a field has been set.
-
-### GetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
-
-GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
-
-### GetUseSyntheticDataOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
-
-GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
-
-SetUseSyntheticData sets UseSyntheticData field to given value.
-
-### HasUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
-
-HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetBucket
 
@@ -652,6 +577,31 @@ SetCorrelationId sets CorrelationId field to given value.
 
 HasCorrelationId returns a boolean if a field has been set.
 
+### GetRateLimit
+
+`func (o *SecretProcessesorInputConfigSettings) GetRateLimit() ModelsInputRateLimit`
+
+GetRateLimit returns the RateLimit field if non-nil, zero value otherwise.
+
+### GetRateLimitOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetRateLimitOk() (*ModelsInputRateLimit, bool)`
+
+GetRateLimitOk returns a tuple with the RateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRateLimit
+
+`func (o *SecretProcessesorInputConfigSettings) SetRateLimit(v ModelsInputRateLimit)`
+
+SetRateLimit sets RateLimit field to given value.
+
+### HasRateLimit
+
+`func (o *SecretProcessesorInputConfigSettings) HasRateLimit() bool`
+
+HasRateLimit returns a boolean if a field has been set.
+
 ### GetResourceGroupName
 
 `func (o *SecretProcessesorInputConfigSettings) GetResourceGroupName() string`
@@ -771,6 +721,31 @@ and a boolean to check if the value has been set.
 
 SetTenantId sets TenantId field to given value.
 
+
+### GetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetAccountUrl
 
@@ -1216,6 +1191,31 @@ SetHasNextPagePath sets HasNextPagePath field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasHasNextPagePath() bool`
 
 HasHasNextPagePath returns a boolean if a field has been set.
+
+### GetIntervalSeconds
+
+`func (o *SecretProcessesorInputConfigSettings) GetIntervalSeconds() int32`
+
+GetIntervalSeconds returns the IntervalSeconds field if non-nil, zero value otherwise.
+
+### GetIntervalSecondsOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetIntervalSecondsOk() (*int32, bool)`
+
+GetIntervalSecondsOk returns a tuple with the IntervalSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntervalSeconds
+
+`func (o *SecretProcessesorInputConfigSettings) SetIntervalSeconds(v int32)`
+
+SetIntervalSeconds sets IntervalSeconds field to given value.
+
+### HasIntervalSeconds
+
+`func (o *SecretProcessesorInputConfigSettings) HasIntervalSeconds() bool`
+
+HasIntervalSeconds returns a boolean if a field has been set.
 
 ### GetPaginationCursorPath
 

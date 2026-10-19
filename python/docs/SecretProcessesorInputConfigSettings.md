@@ -6,9 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
-**interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
-**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
-**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **bucket** | **str** | Name of the S3 bucket that receives Redshift audit logs. | 
 **compression** | **str** | Compression format of the objects | 
 **format** | **str** | File format of the objects | 
@@ -26,11 +23,13 @@ Name | Type | Description | Notes
 **uses_sns** | **bool** |  | [optional] 
 **with_metadata** | **bool** |  | [optional] 
 **correlation_id** | **str** | The correlation ID of the log | [optional] 
+**rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **resource_group_name** | **str** | The name of the resource group containing the virtual network | [optional] 
 **resource_provider** | **str** | The provider of the resource | [optional] 
 **resource_uri** | **str** | The URI of the resource | [optional] 
 **subscription_id** | **str** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
 **tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **account_url** | **str** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **container** | **str** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **partition_format_template** | **str** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. | [optional] 
@@ -49,6 +48,7 @@ Name | Type | Description | Notes
 **enable_pagination** | **bool** | Enable pagination support | [optional] 
 **graphql_query** | **str** | The GraphQL query to execute against the endpoint to fetch data | [optional] 
 **has_next_page_path** | **str** | JSONPath location to check if there are more pages | [optional] 
+**interval_seconds** | **int** | Time interval in seconds between consecutive GraphQL API calls | [optional] 
 **pagination_cursor_path** | **str** | JSONPath location for pagination cursor/token | [optional] 
 **variables** | [**List[MonadGraphqlInputVariable]**](MonadGraphqlInputVariable.md) | GraphQL query variables to pass with each request | [optional] 
 **account_id** | **str** | Account ID for the input | [optional] 

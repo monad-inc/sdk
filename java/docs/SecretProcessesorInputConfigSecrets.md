@@ -7,7 +7,6 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**accessKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**secretKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**clientId** | [**ModelsSecret**](ModelsSecret.md) |  |  |
@@ -19,6 +18,7 @@
 |**password** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**username** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**apiToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**apiKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**accessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**apiSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**oauthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |

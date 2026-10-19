@@ -150,36 +150,6 @@
                 },
                 "type": "object"
             },
-            "arize_audit_logs.SecretsConfig": {
-                "description": "Arize authenticated audit logs secrets",
-                "properties": {
-                    "api_key": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "arize_audit_logs.SettingsConfig": {
-                "description": "Arize authenticated audit logs settings",
-                "properties": {
-                    "backfill_start_time": {
-                        "description": "Date to start fetching data from.",
-                        "type": "string"
-                    },
-                    "interval_seconds": {
-                        "description": "Time interval in seconds between consecutive GraphQL API calls",
-                        "type": "integer"
-                    },
-                    "rate_limit": {
-                        "$ref": "#/components/schemas/models.InputRateLimit"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "authenticationtypes.AuthenticationMethod": {
                 "properties": {
                     "confirmed": {
@@ -4051,9 +4021,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -10844,9 +10814,6 @@
                         "additionalProperties": {},
                         "oneOf": [
                             {
-                                "$ref": "#/components/schemas/arize_audit_logs.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/aws_s3.SecretsConfig"
                             },
                             {
@@ -11008,9 +10975,6 @@
                     "settings": {
                         "additionalProperties": {},
                         "oneOf": [
-                            {
-                                "$ref": "#/components/schemas/arize_audit_logs.SettingsConfig"
-                            },
                             {
                                 "$ref": "#/components/schemas/aws_s3.SettingsConfig"
                             },

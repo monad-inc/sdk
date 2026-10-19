@@ -37,11 +37,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
         if include_optional:
             return SecretProcessesorInputConfigSettings(
                 backfill_start_time = '',
-                interval_seconds = 56,
-                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
-                    rate = 1.337, 
-                    unit = 'per_second', ),
-                use_synthetic_data = True,
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
@@ -66,11 +61,15 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 uses_sns = True,
                 with_metadata = True,
                 correlation_id = '',
+                rate_limit = monad.models.models/input_rate_limit.models.InputRateLimit(
+                    rate = 1.337, 
+                    unit = 'per_second', ),
                 resource_group_name = '',
                 resource_provider = '',
                 resource_uri = '',
                 subscription_id = '',
                 tenant_id = '',
+                use_synthetic_data = True,
                 account_url = '',
                 container = '',
                 partition_format_template = '',
@@ -89,6 +88,7 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 enable_pagination = True,
                 graphql_query = '',
                 has_next_page_path = '',
+                interval_seconds = 56,
                 pagination_cursor_path = '',
                 variables = [
                     monad.models.monad_graphql_input/variable.monad_graphql_input.Variable(
