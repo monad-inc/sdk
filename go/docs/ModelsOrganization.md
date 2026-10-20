@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **FriendlyName** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ParentOrganizationId** | Pointer to **string** |  | [optional] 
+**ParentOrganizationId** | Pointer to **string** | Set when this organization is a sub-org of that parent | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods

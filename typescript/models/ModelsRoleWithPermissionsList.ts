@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { HttpFile } from '../http/http';
 
 export class ModelsRoleWithPermissionsList {
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
     'roles'?: Array<ModelsRoleWithPermissions>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class ModelsRoleWithPermissionsList {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
+**pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 **permissions** | [**List[ModelsPermission]**](ModelsPermission.md) |  | [optional] 
 
 ## Example

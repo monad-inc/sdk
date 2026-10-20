@@ -369,7 +369,7 @@ public class ResourceSharesApi {
 
     /**
      * List a resource&#39;s share targets (all direct child orgs)
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
@@ -398,7 +398,7 @@ public class ResourceSharesApi {
 
     /**
      * List a resource&#39;s share targets (all direct child orgs)
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
@@ -428,7 +428,7 @@ public class ResourceSharesApi {
 
     /**
      * List a resource&#39;s share targets (all direct child orgs) (asynchronously)
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI&#39;s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)

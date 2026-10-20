@@ -18,20 +18,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.models_secret import ModelsSecret
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class EventSecretsConfig(BaseModel):
+class ModelsPagination(BaseModel):
     """
-    CrowdStrike EDR event stream secrets
+    Pagination metadata.
     """ # noqa: E501
-    client_id: Optional[ModelsSecret] = None
-    client_secret: Optional[ModelsSecret] = None
-    __properties: ClassVar[List[str]] = ["client_id", "client_secret"]
+    limit: Optional[StrictInt] = None
+    offset: Optional[StrictInt] = None
+    total: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["limit", "offset", "total"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -51,7 +51,7 @@ class EventSecretsConfig(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of EventSecretsConfig from a JSON string"""
+        """Create an instance of ModelsPagination from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,17 +72,11 @@ class EventSecretsConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of client_id
-        if self.client_id:
-            _dict['client_id'] = self.client_id.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of client_secret
-        if self.client_secret:
-            _dict['client_secret'] = self.client_secret.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of EventSecretsConfig from a dict"""
+        """Create an instance of ModelsPagination from a dict"""
         if obj is None:
             return None
 
@@ -90,8 +84,9 @@ class EventSecretsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "client_id": ModelsSecret.from_dict(obj["client_id"]) if obj.get("client_id") is not None else None,
-            "client_secret": ModelsSecret.from_dict(obj["client_secret"]) if obj.get("client_secret") is not None else None
+            "limit": obj.get("limit"),
+            "offset": obj.get("offset"),
+            "total": obj.get("total")
         })
         return _obj
 

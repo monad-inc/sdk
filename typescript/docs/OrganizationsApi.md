@@ -4,21 +4,21 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization (team)
+[**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create sub-org
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /v1/organizations | Create organization
-[**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team)
+[**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete sub-org
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /v1/organizations/{organization_id} | Delete organization
 [**getStorageTypeSummaryByType**](OrganizationsApi.md#getStorageTypeSummaryByType) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-[**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations (teams)
+[**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List sub-orgs
 [**listUserOrganizations**](OrganizationsApi.md#listUserOrganizations) | **GET** /v1/organizations | List organizations for user
-[**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team)
+[**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update sub-org
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PATCH** /v1/organizations/{organization_id} | Update organization
 
 
 # **createChildOrganization**
 > ModelsOrganization createChildOrganization(createChildOrganizationRequest)
 
-Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+Create a sub-org (child organization) under the given parent organization. The new organization\'s parent_organization_id is set to the parent.
 
 ### Example
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Created child organization |  -  |
+**200** | Created sub-org |  -  |
 **400** | Invalid request body |  -  |
 **500** | Internal server error |  -  |
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 # **deleteChildOrganization**
 > void deleteChildOrganization()
 
-Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+Delete a sub-org (child organization) of the given parent organization.
 
 ### Example
 
@@ -144,7 +144,7 @@ const apiInstance = new OrganizationsApi(configuration);
 const request: OrganizationsApiDeleteChildOrganizationRequest = {
     // Parent Organization ID
   organizationId: "organization_id_example",
-    // Child Organization ID
+    // Sub-org ID
   childOrganizationId: "child_organization_id_example",
 };
 
@@ -158,7 +158,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
- **childOrganizationId** | [**string**] | Child Organization ID | defaults to undefined
+ **childOrganizationId** | [**string**] | Sub-org ID | defaults to undefined
 
 
 ### Return type
@@ -178,8 +178,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Child organization deleted successfully |  -  |
-**404** | Child organization not found |  -  |
+**204** | Sub-org deleted successfully |  -  |
+**404** | Sub-org not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 # **listChildOrganizations**
 > ModelsUserOrganizationList listChildOrganizations()
 
-List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
 ### Example
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of child organizations |  -  |
+**200** | List of sub-orgs |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -391,9 +391,9 @@ const request: OrganizationsApiListUserOrganizationsRequest = {
   limit: 1,
     // Offset the organizations returned (default: 0) (optional)
   offset: 1,
-    // If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
+    // If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
   noChildren: true,
-    // If provided, only return organizations that are children of the specified parent organization (optional)
+    // If provided, only return the sub-orgs of the specified parent organization (optional)
   parentOrganizationId: "parent_organization_id_example",
     // If provided, only return organizations with names that contain the search string (optional)
   nameSearch: "name_search_example",
@@ -410,8 +410,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | [**number**] | Limit the number of organizations returned (default: 10) | (optional) defaults to undefined
  **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
- **noChildren** | [**boolean**] | If true, only return organizations that are directly associated with the user, not child organizations (default: false) | (optional) defaults to undefined
- **parentOrganizationId** | [**string**] | If provided, only return organizations that are children of the specified parent organization | (optional) defaults to undefined
+ **noChildren** | [**boolean**] | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | (optional) defaults to undefined
+ **parentOrganizationId** | [**string**] | If provided, only return the sub-orgs of the specified parent organization | (optional) defaults to undefined
  **nameSearch** | [**string**] | If provided, only return organizations with names that contain the search string | (optional) defaults to undefined
 
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 # **updateChildOrganization**
 > ModelsOrganization updateChildOrganization(updateChildOrganizationRequest)
 
-Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+Update a sub-org (child organization) of the given parent organization.
 
 ### Example
 
@@ -454,7 +454,7 @@ const apiInstance = new OrganizationsApi(configuration);
 const request: OrganizationsApiUpdateChildOrganizationRequest = {
     // Parent Organization ID
   organizationId: "organization_id_example",
-    // Child Organization ID
+    // Sub-org ID
   childOrganizationId: "child_organization_id_example",
     // Request body
   updateChildOrganizationRequest: null,
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateChildOrganizationRequest** | **UpdateChildOrganizationRequest**| Request body |
  **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
- **childOrganizationId** | [**string**] | Child Organization ID | defaults to undefined
+ **childOrganizationId** | [**string**] | Sub-org ID | defaults to undefined
 
 
 ### Return type
@@ -491,9 +491,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Updated child organization |  -  |
+**200** | Updated sub-org |  -  |
 **400** | Invalid request body |  -  |
-**404** | Child organization not found |  -  |
+**404** | Sub-org not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

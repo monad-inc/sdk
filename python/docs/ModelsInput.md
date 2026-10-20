@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **share_details** | [**ModelsShareDetails**](ModelsShareDetails.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
-**version** | **int** |  | [optional] 
 
 ## Example
 

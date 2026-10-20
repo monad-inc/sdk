@@ -275,7 +275,7 @@ func (r ApiListResourceShareTargetsRequest) Execute() (*ModelsResourceShareTarge
 /*
 ListResourceShareTargets List a resource's share targets (all direct child orgs)
 
-List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Owner organization ID

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Organizations** | Pointer to [**[]ModelsOrganization**](ModelsOrganization.md) |  | [optional] 
-**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasOrganizations returns a boolean if a field has been set.
 
 ### GetPagination
 
-`func (o *ModelsOrganizationList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
+`func (o *ModelsOrganizationList) GetPagination() ModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *ModelsOrganizationList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
+`func (o *ModelsOrganizationList) GetPaginationOk() (*ModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *ModelsOrganizationList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
+`func (o *ModelsOrganizationList) SetPagination(v ModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

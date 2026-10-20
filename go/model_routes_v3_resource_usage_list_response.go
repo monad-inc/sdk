@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV3ResourceUsageListResponse{}
 
 // RoutesV3ResourceUsageListResponse struct for RoutesV3ResourceUsageListResponse
 type RoutesV3ResourceUsageListResponse struct {
-	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
+	Pagination *ModelsPagination `json:"pagination,omitempty"`
 	Usages []RoutesV3ResourceUsageWithMetadata `json:"usages,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV3ResourceUsageListResponseWithDefaults() *RoutesV3ResourceUsageLi
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *RoutesV3ResourceUsageListResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
+func (o *RoutesV3ResourceUsageListResponse) GetPagination() ModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret GithubComMonadIncCorePkgTypesModelsPagination
+		var ret ModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -52,7 +52,7 @@ func (o *RoutesV3ResourceUsageListResponse) GetPagination() GithubComMonadIncCor
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV3ResourceUsageListResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
+func (o *RoutesV3ResourceUsageListResponse) GetPaginationOk() (*ModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV3ResourceUsageListResponse) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
-func (o *RoutesV3ResourceUsageListResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
+// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
+func (o *RoutesV3ResourceUsageListResponse) SetPagination(v ModelsPagination) {
 	o.Pagination = &v
 }
 

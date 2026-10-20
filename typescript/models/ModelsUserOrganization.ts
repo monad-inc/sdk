@@ -20,6 +20,9 @@ export class ModelsUserOrganization {
     'id'?: string;
     'inherited'?: boolean;
     'name'?: string;
+    /**
+    * Set when this organization is a sub-org of that parent
+    */
     'parentOrganizationId'?: string;
     'sourceOrganizationId'?: string;
     'sourceOrganizationName'?: string;

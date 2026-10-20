@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **inherited** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
-**parent_organization_id** | **str** |  | [optional] 
+**parent_organization_id** | **str** | Set when this organization is a sub-org of that parent | [optional] 
 **source_organization_id** | **str** |  | [optional] 
 **source_organization_name** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 

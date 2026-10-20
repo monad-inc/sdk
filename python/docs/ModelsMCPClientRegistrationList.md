@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
+**pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 **registrations** | [**List[ModelsMCPClientRegistration]**](ModelsMCPClientRegistration.md) |  | [optional] 
 
 ## Example

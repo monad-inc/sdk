@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create child organization (team) |
+| [**createChildOrganization**](OrganizationsApi.md#createChildOrganization) | **POST** /v3/{organization_id}/organizations | Create sub-org |
 | [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /v1/organizations | Create organization |
-| [**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team) |
+| [**deleteChildOrganization**](OrganizationsApi.md#deleteChildOrganization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete sub-org |
 | [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /v1/organizations/{organization_id} | Delete organization |
 | [**getStorageTypeSummaryByType**](OrganizationsApi.md#getStorageTypeSummaryByType) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type |
-| [**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List child organizations (teams) |
+| [**listChildOrganizations**](OrganizationsApi.md#listChildOrganizations) | **GET** /v3/{organization_id}/organizations | List sub-orgs |
 | [**listUserOrganizations**](OrganizationsApi.md#listUserOrganizations) | **GET** /v1/organizations | List organizations for user |
-| [**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team) |
+| [**updateChildOrganization**](OrganizationsApi.md#updateChildOrganization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update sub-org |
 | [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PATCH** /v1/organizations/{organization_id} | Update organization |
 
 
@@ -19,9 +19,9 @@ All URIs are relative to *https://monad.com/api*
 # **createChildOrganization**
 > ModelsOrganization createChildOrganization(organizationId, createChildOrganizationRequest)
 
-Create child organization (team)
+Create sub-org
 
-Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+Create a sub-org (child organization) under the given parent organization. The new organization&#39;s parent_organization_id is set to the parent.
 
 ### Example
 ```java
@@ -90,7 +90,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Created child organization |  -  |
+| **200** | Created sub-org |  -  |
 | **400** | Invalid request body |  -  |
 | **500** | Internal server error |  -  |
 
@@ -173,9 +173,9 @@ public class Example {
 # **deleteChildOrganization**
 > deleteChildOrganization(organizationId, childOrganizationId)
 
-Delete child organization (team)
+Delete sub-org
 
-Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+Delete a sub-org (child organization) of the given parent organization.
 
 ### Example
 ```java
@@ -206,7 +206,7 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Parent Organization ID
-    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
+    String childOrganizationId = "childOrganizationId_example"; // String | Sub-org ID
     try {
       apiInstance.deleteChildOrganization(organizationId, childOrganizationId);
     } catch (ApiException e) {
@@ -225,7 +225,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Parent Organization ID | |
-| **childOrganizationId** | **String**| Child Organization ID | |
+| **childOrganizationId** | **String**| Sub-org ID | |
 
 ### Return type
 
@@ -243,8 +243,8 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | Child organization deleted successfully |  -  |
-| **404** | Child organization not found |  -  |
+| **204** | Sub-org deleted successfully |  -  |
+| **404** | Sub-org not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="deleteOrganization"></a>
@@ -414,9 +414,9 @@ public class Example {
 # **listChildOrganizations**
 > ModelsUserOrganizationList listChildOrganizations(organizationId, limit, offset, nameSearch)
 
-List child organizations (teams)
+List sub-orgs
 
-List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
+List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
 ### Example
 ```java
@@ -489,7 +489,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | List of child organizations |  -  |
+| **200** | List of sub-orgs |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="listUserOrganizations"></a>
@@ -530,8 +530,8 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
-    Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not child organizations (default: false)
-    String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return organizations that are children of the specified parent organization
+    Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
+    String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return the sub-orgs of the specified parent organization
     String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
     try {
       ModelsOrganizationList result = apiInstance.listUserOrganizations(limit, offset, noChildren, parentOrganizationId, nameSearch);
@@ -553,8 +553,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
 | **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
-| **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] |
-| **parentOrganizationId** | **String**| If provided, only return organizations that are children of the specified parent organization | [optional] |
+| **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | [optional] |
+| **parentOrganizationId** | **String**| If provided, only return the sub-orgs of the specified parent organization | [optional] |
 | **nameSearch** | **String**| If provided, only return organizations with names that contain the search string | [optional] |
 
 ### Return type
@@ -579,9 +579,9 @@ public class Example {
 # **updateChildOrganization**
 > ModelsOrganization updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest)
 
-Update child organization (team)
+Update sub-org
 
-Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+Update a sub-org (child organization) of the given parent organization.
 
 ### Example
 ```java
@@ -612,7 +612,7 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Parent Organization ID
-    String childOrganizationId = "childOrganizationId_example"; // String | Child Organization ID
+    String childOrganizationId = "childOrganizationId_example"; // String | Sub-org ID
     UpdateChildOrganizationRequest updateChildOrganizationRequest = new UpdateChildOrganizationRequest(); // UpdateChildOrganizationRequest | Request body
     try {
       ModelsOrganization result = apiInstance.updateChildOrganization(organizationId, childOrganizationId, updateChildOrganizationRequest);
@@ -633,7 +633,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Parent Organization ID | |
-| **childOrganizationId** | **String**| Child Organization ID | |
+| **childOrganizationId** | **String**| Sub-org ID | |
 | **updateChildOrganizationRequest** | [**UpdateChildOrganizationRequest**](UpdateChildOrganizationRequest.md)| Request body | |
 
 ### Return type
@@ -652,9 +652,9 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Updated child organization |  -  |
+| **200** | Updated sub-org |  -  |
 | **400** | Invalid request body |  -  |
-| **404** | Child organization not found |  -  |
+| **404** | Sub-org not found |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="updateOrganization"></a>

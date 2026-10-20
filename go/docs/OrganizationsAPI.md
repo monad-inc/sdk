@@ -4,14 +4,14 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateChildOrganization**](OrganizationsAPI.md#CreateChildOrganization) | **Post** /v3/{organization_id}/organizations | Create child organization (team)
+[**CreateChildOrganization**](OrganizationsAPI.md#CreateChildOrganization) | **Post** /v3/{organization_id}/organizations | Create sub-org
 [**CreateOrganization**](OrganizationsAPI.md#CreateOrganization) | **Post** /v1/organizations | Create organization
-[**DeleteChildOrganization**](OrganizationsAPI.md#DeleteChildOrganization) | **Delete** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team)
+[**DeleteChildOrganization**](OrganizationsAPI.md#DeleteChildOrganization) | **Delete** /v3/{organization_id}/organizations/{child_organization_id} | Delete sub-org
 [**DeleteOrganization**](OrganizationsAPI.md#DeleteOrganization) | **Delete** /v1/organizations/{organization_id} | Delete organization
 [**GetStorageTypeSummaryByType**](OrganizationsAPI.md#GetStorageTypeSummaryByType) | **Get** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-[**ListChildOrganizations**](OrganizationsAPI.md#ListChildOrganizations) | **Get** /v3/{organization_id}/organizations | List child organizations (teams)
+[**ListChildOrganizations**](OrganizationsAPI.md#ListChildOrganizations) | **Get** /v3/{organization_id}/organizations | List sub-orgs
 [**ListUserOrganizations**](OrganizationsAPI.md#ListUserOrganizations) | **Get** /v1/organizations | List organizations for user
-[**UpdateChildOrganization**](OrganizationsAPI.md#UpdateChildOrganization) | **Patch** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team)
+[**UpdateChildOrganization**](OrganizationsAPI.md#UpdateChildOrganization) | **Patch** /v3/{organization_id}/organizations/{child_organization_id} | Update sub-org
 [**UpdateOrganization**](OrganizationsAPI.md#UpdateOrganization) | **Patch** /v1/organizations/{organization_id} | Update organization
 
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 > ModelsOrganization CreateChildOrganization(ctx, organizationId).CreateChildOrganizationRequest(createChildOrganizationRequest).Execute()
 
-Create child organization (team)
+Create sub-org
 
 
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 > DeleteChildOrganization(ctx, organizationId, childOrganizationId).Execute()
 
-Delete child organization (team)
+Delete sub-org
 
 
 
@@ -176,7 +176,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
-	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
+	childOrganizationId := "childOrganizationId_example" // string | Sub-org ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organizationId** | **string** | Parent Organization ID | 
-**childOrganizationId** | **string** | Child Organization ID | 
+**childOrganizationId** | **string** | Sub-org ID | 
 
 ### Other Parameters
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 > ModelsUserOrganizationList ListChildOrganizations(ctx, organizationId).Limit(limit).Offset(offset).NameSearch(nameSearch).Execute()
 
-List child organizations (teams)
+List sub-orgs
 
 
 
@@ -475,8 +475,8 @@ import (
 func main() {
 	limit := int32(56) // int32 | Limit the number of organizations returned (default: 10) (optional)
 	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
-	noChildren := true // bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-	parentOrganizationId := "parentOrganizationId_example" // string | If provided, only return organizations that are children of the specified parent organization (optional)
+	noChildren := true // bool | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
+	parentOrganizationId := "parentOrganizationId_example" // string | If provided, only return the sub-orgs of the specified parent organization (optional)
 	nameSearch := "nameSearch_example" // string | If provided, only return organizations with names that contain the search string (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -504,8 +504,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int32** | Limit the number of organizations returned (default: 10) | 
  **offset** | **int32** | Offset the organizations returned (default: 0) | 
- **noChildren** | **bool** | If true, only return organizations that are directly associated with the user, not child organizations (default: false) | 
- **parentOrganizationId** | **string** | If provided, only return organizations that are children of the specified parent organization | 
+ **noChildren** | **bool** | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | 
+ **parentOrganizationId** | **string** | If provided, only return the sub-orgs of the specified parent organization | 
  **nameSearch** | **string** | If provided, only return organizations with names that contain the search string | 
 
 ### Return type
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 > ModelsOrganization UpdateChildOrganization(ctx, organizationId, childOrganizationId).UpdateChildOrganizationRequest(updateChildOrganizationRequest).Execute()
 
-Update child organization (team)
+Update sub-org
 
 
 
@@ -548,7 +548,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
-	childOrganizationId := "childOrganizationId_example" // string | Child Organization ID
+	childOrganizationId := "childOrganizationId_example" // string | Sub-org ID
 	updateChildOrganizationRequest := openapiclient.UpdateChildOrganization_request{RoutesV3UpdateChildOrganizationRequest: openapiclient.NewRoutesV3UpdateChildOrganizationRequest()} // UpdateChildOrganizationRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organizationId** | **string** | Parent Organization ID | 
-**childOrganizationId** | **string** | Child Organization ID | 
+**childOrganizationId** | **string** | Sub-org ID | 
 
 ### Other Parameters
 

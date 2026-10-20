@@ -27,6 +27,7 @@ type ModelsOrganization struct {
 	FriendlyName *string `json:"friendly_name,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
+	// Set when this organization is a sub-org of that parent
 	ParentOrganizationId *string `json:"parent_organization_id,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 }

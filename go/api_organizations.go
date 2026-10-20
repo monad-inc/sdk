@@ -42,9 +42,9 @@ func (r ApiCreateChildOrganizationRequest) Execute() (*ModelsOrganization, *http
 }
 
 /*
-CreateChildOrganization Create child organization (team)
+CreateChildOrganization Create sub-org
 
-Create a new child organization under the given parent organization. Known as a "team" in the UI.
+Create a sub-org (child organization) under the given parent organization. The new organization's parent_organization_id is set to the parent.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
@@ -339,13 +339,13 @@ func (r ApiDeleteChildOrganizationRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteChildOrganization Delete child organization (team)
+DeleteChildOrganization Delete sub-org
 
-Delete a child organization under the given parent organization. Known as a "team" in the UI.
+Delete a sub-org (child organization) of the given parent organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
- @param childOrganizationId Child Organization ID
+ @param childOrganizationId Sub-org ID
  @return ApiDeleteChildOrganizationRequest
 */
 func (a *OrganizationsAPIService) DeleteChildOrganization(ctx context.Context, organizationId string, childOrganizationId string) ApiDeleteChildOrganizationRequest {
@@ -842,9 +842,9 @@ func (r ApiListChildOrganizationsRequest) Execute() (*ModelsUserOrganizationList
 }
 
 /*
-ListChildOrganizations List child organizations (teams)
+ListChildOrganizations List sub-orgs
 
-List child organizations for the given parent organization. These are surfaced as "teams" in the UI.
+List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
@@ -1003,13 +1003,13 @@ func (r ApiListUserOrganizationsRequest) Offset(offset int32) ApiListUserOrganiz
 	return r
 }
 
-// If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+// If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
 func (r ApiListUserOrganizationsRequest) NoChildren(noChildren bool) ApiListUserOrganizationsRequest {
 	r.noChildren = &noChildren
 	return r
 }
 
-// If provided, only return organizations that are children of the specified parent organization
+// If provided, only return the sub-orgs of the specified parent organization
 func (r ApiListUserOrganizationsRequest) ParentOrganizationId(parentOrganizationId string) ApiListUserOrganizationsRequest {
 	r.parentOrganizationId = &parentOrganizationId
 	return r
@@ -1177,13 +1177,13 @@ func (r ApiUpdateChildOrganizationRequest) Execute() (*ModelsOrganization, *http
 }
 
 /*
-UpdateChildOrganization Update child organization (team)
+UpdateChildOrganization Update sub-org
 
-Update a child organization under the given parent organization. Known as a "team" in the UI.
+Update a sub-org (child organization) of the given parent organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Parent Organization ID
- @param childOrganizationId Child Organization ID
+ @param childOrganizationId Sub-org ID
  @return ApiUpdateChildOrganizationRequest
 */
 func (a *OrganizationsAPIService) UpdateChildOrganization(ctx context.Context, organizationId string, childOrganizationId string) ApiUpdateChildOrganizationRequest {

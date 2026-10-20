@@ -36,7 +36,7 @@ class TestModelsTransformList(unittest.TestCase):
         model = ModelsTransformList()
         if include_optional:
             return ModelsTransformList(
-                pagination = monad.models.github_com_monad_inc_core_pkg_types_models/pagination.github_com_monad-inc_core_pkg_types_models.Pagination(
+                pagination = monad.models.models/pagination.models.Pagination(
                     limit = 56, 
                     offset = 56, 
                     total = 56, ),
@@ -70,8 +70,7 @@ class TestModelsTransformList(unittest.TestCase):
                             owner_organization_name = '', 
                             shared_with_children = True, 
                             shared_with_me = True, ), 
-                        updated_at = '', 
-                        version = 56, )
+                        updated_at = '', )
                     ]
             )
         else:

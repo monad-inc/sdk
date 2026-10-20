@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
+**pagination** | [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 **usages** | [**List[RoutesV3ResourceUsageWithMetadata]**](RoutesV3ResourceUsageWithMetadata.md) |  | [optional] 
 
 ## Example

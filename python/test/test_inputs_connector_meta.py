@@ -49,8 +49,7 @@ class TestInputsConnectorMeta(unittest.TestCase):
                 supported_features = monad.models.models/supported_features.models.SupportedFeatures(
                     test_connection = True, ),
                 tier = 56,
-                type_id = '',
-                version = 56
+                type_id = ''
             )
         else:
             return InputsConnectorMeta(

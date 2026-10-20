@@ -33,7 +33,6 @@ export class ModelsNodeComponent {
     'references'?: ModelsReferences;
     'shareDetails'?: ModelsShareDetails;
     'type'?: string;
-    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -92,12 +91,6 @@ export class ModelsNodeComponent {
             "name": "type",
             "baseName": "type",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "version",
-            "baseName": "version",
-            "type": "number",
             "format": ""
         }    ];
 

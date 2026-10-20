@@ -11,11 +11,11 @@
  */
 
 import { DatastoreTaggedResource } from '../models/DatastoreTaggedResource';
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3TagResourcesResponse {
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
     'resources'?: Array<DatastoreTaggedResource>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class RoutesV3TagResourcesResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {

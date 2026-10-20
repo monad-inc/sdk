@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class ModelsOrganization(BaseModel):
     friendly_name: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    parent_organization_id: Optional[StrictStr] = None
+    parent_organization_id: Optional[StrictStr] = Field(default=None, description="Set when this organization is a sub-org of that parent")
     updated_at: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["billing_account_id", "connection_id", "created_at", "description", "friendly_name", "id", "name", "parent_organization_id", "updated_at"]
 

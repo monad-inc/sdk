@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **supported_features** | [**ModelsSupportedFeatures**](ModelsSupportedFeatures.md) |  | [optional] 
 **tier** | **int** |  | [optional] 
 **type_id** | **str** |  | [optional] 
-**version** | **int** |  | [optional] 
 
 ## Example
 

@@ -156,8 +156,6 @@ import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
 import { EnrichmentSandboxRequest } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
-import { EventSecretsConfig } from '../models/EventSecretsConfig';
-import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { ExportTransformRequest } from '../models/ExportTransformRequest';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
@@ -172,7 +170,6 @@ import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/Git
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -284,6 +281,7 @@ import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
@@ -4725,7 +4723,7 @@ export interface OrganizationsApiDeleteChildOrganizationRequest {
      */
     organizationId: string
     /**
-     * Child Organization ID
+     * Sub-org ID
      * Defaults to: undefined
      * @type string
      * @memberof OrganizationsApideleteChildOrganization
@@ -4835,14 +4833,14 @@ export interface OrganizationsApiListUserOrganizationsRequest {
      */
     offset?: number
     /**
-     * If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+     * If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
      * Defaults to: undefined
      * @type boolean
      * @memberof OrganizationsApilistUserOrganizations
      */
     noChildren?: boolean
     /**
-     * If provided, only return organizations that are children of the specified parent organization
+     * If provided, only return the sub-orgs of the specified parent organization
      * Defaults to: undefined
      * @type string
      * @memberof OrganizationsApilistUserOrganizations
@@ -4866,7 +4864,7 @@ export interface OrganizationsApiUpdateChildOrganizationRequest {
      */
     organizationId: string
     /**
-     * Child Organization ID
+     * Sub-org ID
      * Defaults to: undefined
      * @type string
      * @memberof OrganizationsApiupdateChildOrganization
@@ -4904,8 +4902,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Create child organization (team)
+     * Create a sub-org (child organization) under the given parent organization. The new organization\'s parent_organization_id is set to the parent.
+     * Create sub-org
      * @param param the request object
      */
     public createChildOrganizationWithHttpInfo(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
@@ -4913,8 +4911,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Create child organization (team)
+     * Create a sub-org (child organization) under the given parent organization. The new organization\'s parent_organization_id is set to the parent.
+     * Create sub-org
      * @param param the request object
      */
     public createChildOrganization(param: OrganizationsApiCreateChildOrganizationRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
@@ -4940,8 +4938,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Delete child organization (team)
+     * Delete a sub-org (child organization) of the given parent organization.
+     * Delete sub-org
      * @param param the request object
      */
     public deleteChildOrganizationWithHttpInfo(param: OrganizationsApiDeleteChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<void>> {
@@ -4949,8 +4947,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Delete child organization (team)
+     * Delete a sub-org (child organization) of the given parent organization.
+     * Delete sub-org
      * @param param the request object
      */
     public deleteChildOrganization(param: OrganizationsApiDeleteChildOrganizationRequest, options?: ConfigurationOptions): Promise<void> {
@@ -4994,8 +4992,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
-     * List child organizations (teams)
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
+     * List sub-orgs
      * @param param the request object
      */
     public listChildOrganizationsWithHttpInfo(param: OrganizationsApiListChildOrganizationsRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsUserOrganizationList>> {
@@ -5003,8 +5001,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
-     * List child organizations (teams)
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
+     * List sub-orgs
      * @param param the request object
      */
     public listChildOrganizations(param: OrganizationsApiListChildOrganizationsRequest, options?: ConfigurationOptions): Promise<ModelsUserOrganizationList> {
@@ -5030,8 +5028,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Update child organization (team)
+     * Update a sub-org (child organization) of the given parent organization.
+     * Update sub-org
      * @param param the request object
      */
     public updateChildOrganizationWithHttpInfo(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<HttpInfo<ModelsOrganization>> {
@@ -5039,8 +5037,8 @@ export class ObjectOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Update child organization (team)
+     * Update a sub-org (child organization) of the given parent organization.
+     * Update sub-org
      * @param param the request object
      */
     public updateChildOrganization(param: OrganizationsApiUpdateChildOrganizationRequest, options?: ConfigurationOptions): Promise<ModelsOrganization> {
@@ -7203,7 +7201,7 @@ export class ObjectResourceSharesApi {
     }
 
     /**
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * List a resource\'s share targets (all direct child orgs)
      * @param param the request object
      */
@@ -7212,7 +7210,7 @@ export class ObjectResourceSharesApi {
     }
 
     /**
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * List a resource\'s share targets (all direct child orgs)
      * @param param the request object
      */

@@ -4,23 +4,23 @@ All URIs are relative to *https://monad.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_child_organization**](OrganizationsApi.md#create_child_organization) | **POST** /v3/{organization_id}/organizations | Create child organization (team)
+[**create_child_organization**](OrganizationsApi.md#create_child_organization) | **POST** /v3/{organization_id}/organizations | Create sub-org
 [**create_organization**](OrganizationsApi.md#create_organization) | **POST** /v1/organizations | Create organization
-[**delete_child_organization**](OrganizationsApi.md#delete_child_organization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete child organization (team)
+[**delete_child_organization**](OrganizationsApi.md#delete_child_organization) | **DELETE** /v3/{organization_id}/organizations/{child_organization_id} | Delete sub-org
 [**delete_organization**](OrganizationsApi.md#delete_organization) | **DELETE** /v1/organizations/{organization_id} | Delete organization
 [**get_storage_type_summary_by_type**](OrganizationsApi.md#get_storage_type_summary_by_type) | **GET** /v2/{organization_id}/metrics/storage-types/{storage_type}/summary | Get storage type cost summary by type
-[**list_child_organizations**](OrganizationsApi.md#list_child_organizations) | **GET** /v3/{organization_id}/organizations | List child organizations (teams)
+[**list_child_organizations**](OrganizationsApi.md#list_child_organizations) | **GET** /v3/{organization_id}/organizations | List sub-orgs
 [**list_user_organizations**](OrganizationsApi.md#list_user_organizations) | **GET** /v1/organizations | List organizations for user
-[**update_child_organization**](OrganizationsApi.md#update_child_organization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update child organization (team)
+[**update_child_organization**](OrganizationsApi.md#update_child_organization) | **PATCH** /v3/{organization_id}/organizations/{child_organization_id} | Update sub-org
 [**update_organization**](OrganizationsApi.md#update_organization) | **PATCH** /v1/organizations/{organization_id} | Update organization
 
 
 # **create_child_organization**
 > ModelsOrganization create_child_organization(organization_id, create_child_organization_request)
 
-Create child organization (team)
+Create sub-org
 
-Create a new child organization under the given parent organization. Known as a "team" in the UI.
+Create a sub-org (child organization) under the given parent organization. The new organization's parent_organization_id is set to the parent.
 
 ### Example
 
@@ -65,7 +65,7 @@ with monad.ApiClient(configuration) as api_client:
     create_child_organization_request = monad.CreateChildOrganizationRequest() # CreateChildOrganizationRequest | Request body
 
     try:
-        # Create child organization (team)
+        # Create sub-org
         api_response = api_instance.create_child_organization(organization_id, create_child_organization_request)
         print("The response of OrganizationsApi->create_child_organization:\n")
         pprint(api_response)
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Created child organization |  -  |
+**200** | Created sub-org |  -  |
 **400** | Invalid request body |  -  |
 **500** | Internal server error |  -  |
 
@@ -196,9 +196,9 @@ Name | Type | Description  | Notes
 # **delete_child_organization**
 > delete_child_organization(organization_id, child_organization_id)
 
-Delete child organization (team)
+Delete sub-org
 
-Delete a child organization under the given parent organization. Known as a "team" in the UI.
+Delete a sub-org (child organization) of the given parent organization.
 
 ### Example
 
@@ -238,10 +238,10 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Parent Organization ID
-    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
+    child_organization_id = 'child_organization_id_example' # str | Sub-org ID
 
     try:
-        # Delete child organization (team)
+        # Delete sub-org
         api_instance.delete_child_organization(organization_id, child_organization_id)
     except Exception as e:
         print("Exception when calling OrganizationsApi->delete_child_organization: %s\n" % e)
@@ -255,7 +255,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Parent Organization ID | 
- **child_organization_id** | **str**| Child Organization ID | 
+ **child_organization_id** | **str**| Sub-org ID | 
 
 ### Return type
 
@@ -274,8 +274,8 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Child organization deleted successfully |  -  |
-**404** | Child organization not found |  -  |
+**204** | Sub-org deleted successfully |  -  |
+**404** | Sub-org not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -467,9 +467,9 @@ Name | Type | Description  | Notes
 # **list_child_organizations**
 > ModelsUserOrganizationList list_child_organizations(organization_id, limit=limit, offset=offset, name_search=name_search)
 
-List child organizations (teams)
+List sub-orgs
 
-List child organizations for the given parent organization. These are surfaced as "teams" in the UI.
+List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
 ### Example
 
@@ -515,7 +515,7 @@ with monad.ApiClient(configuration) as api_client:
     name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
 
     try:
-        # List child organizations (teams)
+        # List sub-orgs
         api_response = api_instance.list_child_organizations(organization_id, limit=limit, offset=offset, name_search=name_search)
         print("The response of OrganizationsApi->list_child_organizations:\n")
         pprint(api_response)
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of child organizations |  -  |
+**200** | List of sub-orgs |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -604,8 +604,8 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationsApi(api_client)
     limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
     offset = 56 # int | Offset the organizations returned (default: 0) (optional)
-    no_children = True # bool | If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-    parent_organization_id = 'parent_organization_id_example' # str | If provided, only return organizations that are children of the specified parent organization (optional)
+    no_children = True # bool | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
+    parent_organization_id = 'parent_organization_id_example' # str | If provided, only return the sub-orgs of the specified parent organization (optional)
     name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
 
     try:
@@ -626,8 +626,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
  **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
- **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not child organizations (default: false) | [optional] 
- **parent_organization_id** | **str**| If provided, only return organizations that are children of the specified parent organization | [optional] 
+ **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | [optional] 
+ **parent_organization_id** | **str**| If provided, only return the sub-orgs of the specified parent organization | [optional] 
  **name_search** | **str**| If provided, only return organizations with names that contain the search string | [optional] 
 
 ### Return type
@@ -654,9 +654,9 @@ Name | Type | Description  | Notes
 # **update_child_organization**
 > ModelsOrganization update_child_organization(organization_id, child_organization_id, update_child_organization_request)
 
-Update child organization (team)
+Update sub-org
 
-Update a child organization under the given parent organization. Known as a "team" in the UI.
+Update a sub-org (child organization) of the given parent organization.
 
 ### Example
 
@@ -698,11 +698,11 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Parent Organization ID
-    child_organization_id = 'child_organization_id_example' # str | Child Organization ID
+    child_organization_id = 'child_organization_id_example' # str | Sub-org ID
     update_child_organization_request = monad.UpdateChildOrganizationRequest() # UpdateChildOrganizationRequest | Request body
 
     try:
-        # Update child organization (team)
+        # Update sub-org
         api_response = api_instance.update_child_organization(organization_id, child_organization_id, update_child_organization_request)
         print("The response of OrganizationsApi->update_child_organization:\n")
         pprint(api_response)
@@ -718,7 +718,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Parent Organization ID | 
- **child_organization_id** | **str**| Child Organization ID | 
+ **child_organization_id** | **str**| Sub-org ID | 
  **update_child_organization_request** | [**UpdateChildOrganizationRequest**](UpdateChildOrganizationRequest.md)| Request body | 
 
 ### Return type
@@ -738,9 +738,9 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Updated child organization |  -  |
+**200** | Updated sub-org |  -  |
 **400** | Invalid request body |  -  |
-**404** | Child organization not found |  -  |
+**404** | Sub-org not found |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

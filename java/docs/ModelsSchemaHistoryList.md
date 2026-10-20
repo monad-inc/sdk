@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**pagination** | [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  |  [optional] |
+|**pagination** | [**ModelsPagination**](ModelsPagination.md) |  |  [optional] |
 |**schemaHistory** | [**List&lt;ModelsSchemaHistory&gt;**](ModelsSchemaHistory.md) |  |  [optional] |
 
 

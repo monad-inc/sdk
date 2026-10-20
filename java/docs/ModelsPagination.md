@@ -1,6 +1,6 @@
 
 
-# GithubComMonadIncCorePkgTypesModelsPagination
+# ModelsPagination
 
 Pagination metadata.
 

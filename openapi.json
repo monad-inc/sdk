@@ -2813,40 +2813,6 @@
                 ],
                 "type": "object"
             },
-            "event.SecretsConfig": {
-                "description": "CrowdStrike EDR event stream secrets",
-                "properties": {
-                    "client_id": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    },
-                    "client_secret": {
-                        "$ref": "#/components/schemas/models.Secret"
-                    }
-                },
-                "type": "object"
-            },
-            "event.SettingsConfig": {
-                "description": "CrowdStrike EDR event stream settings",
-                "properties": {
-                    "app_name": {
-                        "description": "The application name the connector uses to connect to the CrowdStrike data stream.\nIt's important that this name is unique to avoid conflicts with other applications\nconnecting to the same stream. You're advised to use a unique identifier for this\napplication. For example, if you have 2 stream input connections they should not both\nshare the same name.",
-                        "type": "string"
-                    },
-                    "cloud": {
-                        "description": "Your cloud type for CrowdStrike. Ex: 'autodiscover', 'us-1', 'us-2', 'eu-1', 'us-gov-1'.",
-                        "type": "string"
-                    },
-                    "member_cid": {
-                        "description": "In environments where an entity (like an MSSP) manages security for multiple clients,\neach client is typically assigned a unique CID. This identifier allows the managing\nentity to access and operate within the specific customer's environment. This is crucial\nfor scenarios where operational isolation between different clients' data and\nconfigurations is necessary.",
-                        "type": "string"
-                    },
-                    "use_synthetic_data": {
-                        "description": "Generate synthetic demo data instead of connecting to the real data source.",
-                        "type": "boolean"
-                    }
-                },
-                "type": "object"
-            },
             "flatten.ArgumentsConfig": {
                 "properties": {
                     "delimiter": {
@@ -3030,21 +2996,6 @@
                 "required": [
                     "webhook_secret"
                 ],
-                "type": "object"
-            },
-            "github_com_monad-inc_core_pkg_types_models.Pagination": {
-                "description": "Pagination metadata.",
-                "properties": {
-                    "limit": {
-                        "type": "integer"
-                    },
-                    "offset": {
-                        "type": "integer"
-                    },
-                    "total": {
-                        "type": "integer"
-                    }
-                },
                 "type": "object"
             },
             "gke_audit_logs.SecretsConfig": {
@@ -3703,9 +3654,6 @@
                     },
                     "type_id": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -4419,7 +4367,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -4691,7 +4639,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -4822,7 +4770,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -4994,7 +4942,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -5075,9 +5023,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5158,9 +5103,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5303,7 +5245,7 @@
             "models.MCPClientRegistrationList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "registrations": {
                         "items": {
@@ -5373,9 +5315,6 @@
                     },
                     "type": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5404,6 +5343,7 @@
                         "type": "string"
                     },
                     "parent_organization_id": {
+                        "description": "Set when this organization is a sub-org of that parent",
                         "type": "string"
                     },
                     "updated_at": {
@@ -5487,7 +5427,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -5536,7 +5476,7 @@
             "models.OrganizationUserList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "users": {
                         "items": {
@@ -5582,9 +5522,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -5623,6 +5560,21 @@
                     "WebServices"
                 ]
             },
+            "models.Pagination": {
+                "description": "Pagination metadata.",
+                "properties": {
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "total": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
             "models.Permission": {
                 "properties": {
                     "created_at": {
@@ -5649,7 +5601,7 @@
             "models.PermissionList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "permissions": {
                         "items": {
@@ -5833,7 +5785,7 @@
             "models.PipelineList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "pipelines": {
                         "items": {
@@ -6241,7 +6193,7 @@
             "models.QuotaList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "quotas": {
                         "items": {
@@ -6439,7 +6391,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "share_with_all_new_children": {
                         "description": "Whether the resource's policy auto-shares it with new direct children.",
@@ -6538,7 +6490,7 @@
             "models.RoleWithPermissionsList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "roles": {
                         "items": {
@@ -6606,7 +6558,7 @@
             "models.SchemaHistoryList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "schema_history": {
                         "items": {
@@ -6908,9 +6860,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -6930,7 +6879,7 @@
             "models.TransformList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "transforms": {
                         "items": {
@@ -6960,7 +6909,7 @@
             "models.TransformsRepositoryList": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "transforms": {
                         "items": {
@@ -7086,6 +7035,7 @@
                         "type": "string"
                     },
                     "parent_organization_id": {
+                        "description": "Set when this organization is a sub-org of that parent",
                         "type": "string"
                     },
                     "source_organization_id": {
@@ -7110,7 +7060,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -7561,9 +7511,6 @@
                     },
                     "type_id": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8051,9 +7998,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8102,9 +8046,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8147,9 +8088,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8191,9 +8129,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -8223,7 +8158,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -8238,7 +8173,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -8291,9 +8226,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9060,7 +8992,7 @@
             "routesV2.SecretWithComponentsListResponse": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "secrets": {
                         "items": {
@@ -9586,7 +9518,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -9890,9 +9822,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -9955,9 +9884,6 @@
                     },
                     "updated_at": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -10010,7 +9936,7 @@
                         "uniqueItems": false
                     },
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     }
                 },
                 "type": "object"
@@ -10050,7 +9976,7 @@
             "routesV3.ResourceUsageListResponse": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "usages": {
                         "items": {
@@ -10145,7 +10071,7 @@
             "routesV3.SharedResourceListResponse": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "shared_resources": {
                         "items": {
@@ -10226,7 +10152,7 @@
             "routesV3.TagListResponse": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "tags": {
                         "items": {
@@ -10241,7 +10167,7 @@
             "routesV3.TagResourcesResponse": {
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/github_com_monad-inc_core_pkg_types_models.Pagination"
+                        "$ref": "#/components/schemas/models.Pagination"
                     },
                     "resources": {
                         "items": {
@@ -10889,9 +10815,6 @@
                                 "$ref": "#/components/schemas/entra_id.SecretsConfig"
                             },
                             {
-                                "$ref": "#/components/schemas/event.SecretsConfig"
-                            },
-                            {
                                 "$ref": "#/components/schemas/full_scans.SecretsConfig"
                             },
                             {
@@ -11061,9 +10984,6 @@
                             },
                             {
                                 "$ref": "#/components/schemas/entra_id.SettingsConfig"
-                            },
-                            {
-                                "$ref": "#/components/schemas/event.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/full_scans.SettingsConfig"
@@ -13286,7 +13206,7 @@
                         }
                     },
                     {
-                        "description": "If true, only return organizations that are directly associated with the user, not child organizations (default: false)",
+                        "description": "If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)",
                         "in": "query",
                         "name": "no_children",
                         "schema": {
@@ -13294,7 +13214,7 @@
                         }
                     },
                     {
-                        "description": "If provided, only return organizations that are children of the specified parent organization",
+                        "description": "If provided, only return the sub-orgs of the specified parent organization",
                         "in": "query",
                         "name": "parent_organization_id",
                         "schema": {
@@ -25612,7 +25532,7 @@
         },
         "/v3/{organization_id}/organizations": {
             "get": {
-                "description": "List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.",
+                "description": "List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.",
                 "operationId": "ListChildOrganizations",
                 "parameters": [
                     {
@@ -25658,7 +25578,7 @@
                                 }
                             }
                         },
-                        "description": "List of child organizations"
+                        "description": "List of sub-orgs"
                     },
                     "500": {
                         "content": {
@@ -25679,16 +25599,16 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "summary": "List child organizations (teams)",
+                "summary": "List sub-orgs",
                 "tags": [
                     "Organizations"
                 ],
                 "x-required-permissions": [
-                    "team:read"
+                    "sub_org:read"
                 ]
             },
             "post": {
-                "description": "Create a new child organization under the given parent organization. Known as a \"team\" in the UI.",
+                "description": "Create a sub-org (child organization) under the given parent organization. The new organization's parent_organization_id is set to the parent.",
                 "operationId": "CreateChildOrganization",
                 "parameters": [
                     {
@@ -25730,7 +25650,7 @@
                                 }
                             }
                         },
-                        "description": "Created child organization"
+                        "description": "Created sub-org"
                     },
                     "400": {
                         "content": {
@@ -25761,18 +25681,18 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "summary": "Create child organization (team)",
+                "summary": "Create sub-org",
                 "tags": [
                     "Organizations"
                 ],
                 "x-required-permissions": [
-                    "team:write"
+                    "sub_org:write"
                 ]
             }
         },
         "/v3/{organization_id}/organizations/{child_organization_id}": {
             "delete": {
-                "description": "Delete a child organization under the given parent organization. Known as a \"team\" in the UI.",
+                "description": "Delete a sub-org (child organization) of the given parent organization.",
                 "operationId": "DeleteChildOrganization",
                 "parameters": [
                     {
@@ -25785,7 +25705,7 @@
                         }
                     },
                     {
-                        "description": "Child Organization ID",
+                        "description": "Sub-org ID",
                         "in": "path",
                         "name": "child_organization_id",
                         "required": true,
@@ -25796,7 +25716,7 @@
                 ],
                 "responses": {
                     "204": {
-                        "description": "Child organization deleted successfully"
+                        "description": "Sub-org deleted successfully"
                     },
                     "404": {
                         "content": {
@@ -25806,7 +25726,7 @@
                                 }
                             }
                         },
-                        "description": "Child organization not found"
+                        "description": "Sub-org not found"
                     },
                     "500": {
                         "content": {
@@ -25827,16 +25747,16 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "summary": "Delete child organization (team)",
+                "summary": "Delete sub-org",
                 "tags": [
                     "Organizations"
                 ],
                 "x-required-permissions": [
-                    "team:delete"
+                    "sub_org:delete"
                 ]
             },
             "patch": {
-                "description": "Update a child organization under the given parent organization. Known as a \"team\" in the UI.",
+                "description": "Update a sub-org (child organization) of the given parent organization.",
                 "operationId": "UpdateChildOrganization",
                 "parameters": [
                     {
@@ -25849,7 +25769,7 @@
                         }
                     },
                     {
-                        "description": "Child Organization ID",
+                        "description": "Sub-org ID",
                         "in": "path",
                         "name": "child_organization_id",
                         "required": true,
@@ -25887,7 +25807,7 @@
                                 }
                             }
                         },
-                        "description": "Updated child organization"
+                        "description": "Updated sub-org"
                     },
                     "400": {
                         "content": {
@@ -25907,7 +25827,7 @@
                                 }
                             }
                         },
-                        "description": "Child organization not found"
+                        "description": "Sub-org not found"
                     },
                     "500": {
                         "content": {
@@ -25928,12 +25848,12 @@
                         "ApiKeyAuth": []
                     }
                 ],
-                "summary": "Update child organization (team)",
+                "summary": "Update sub-org",
                 "tags": [
                     "Organizations"
                 ],
                 "x-required-permissions": [
-                    "team:write"
+                    "sub_org:write"
                 ]
             }
         },
@@ -26829,7 +26749,7 @@
         },
         "/v3/{organization_id}/resource_shares/{resource_type}/{resource_id}/organizations": {
             "get": {
-                "description": "List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.",
+                "description": "List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI's per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.",
                 "operationId": "ListResourceShareTargets",
                 "parameters": [
                     {

@@ -10,15 +10,15 @@
  * Do not edit the class manually.
  */
 
-import { ModelsSecret } from '../models/ModelsSecret';
 import { HttpFile } from '../http/http';
 
 /**
-* CrowdStrike EDR event stream secrets
+* Pagination metadata.
 */
-export class EventSecretsConfig {
-    'clientId'?: ModelsSecret;
-    'clientSecret'?: ModelsSecret;
+export class ModelsPagination {
+    'limit'?: number;
+    'offset'?: number;
+    'total'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -26,20 +26,26 @@ export class EventSecretsConfig {
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "clientId",
-            "baseName": "client_id",
-            "type": "ModelsSecret",
+            "name": "limit",
+            "baseName": "limit",
+            "type": "number",
             "format": ""
         },
         {
-            "name": "clientSecret",
-            "baseName": "client_secret",
-            "type": "ModelsSecret",
+            "name": "offset",
+            "baseName": "offset",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "total",
+            "baseName": "total",
+            "type": "number",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return EventSecretsConfig.attributeTypeMap;
+        return ModelsPagination.attributeTypeMap;
     }
 
     public constructor() {

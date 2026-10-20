@@ -46,7 +46,6 @@ import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
-import org.openapitools.client.model.EventSecretsConfig;
 import org.openapitools.client.model.FullScansSecretsConfig;
 import org.openapitools.client.model.GkeAuditLogsSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSecretsConfig;
@@ -143,7 +142,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             final TypeAdapter<DefenderForEndpointAlertsSecretsConfig> adapterDefenderForEndpointAlertsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(DefenderForEndpointAlertsSecretsConfig.class));
             final TypeAdapter<EndorLabsAuditLogsSecretsConfig> adapterEndorLabsAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EndorLabsAuditLogsSecretsConfig.class));
             final TypeAdapter<EntraIdSecretsConfig> adapterEntraIdSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EntraIdSecretsConfig.class));
-            final TypeAdapter<EventSecretsConfig> adapterEventSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(EventSecretsConfig.class));
             final TypeAdapter<FullScansSecretsConfig> adapterFullScansSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(FullScansSecretsConfig.class));
             final TypeAdapter<GkeAuditLogsSecretsConfig> adapterGkeAuditLogsSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GkeAuditLogsSecretsConfig.class));
             final TypeAdapter<GoogleCloudStorageSecretsConfig> adapterGoogleCloudStorageSecretsConfig = gson.getDelegateAdapter(this, TypeToken.get(GoogleCloudStorageSecretsConfig.class));
@@ -327,12 +325,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `EventSecretsConfig`
-                    if (value.getActualInstance() instanceof EventSecretsConfig) {
-                        JsonElement element = adapterEventSecretsConfig.toJsonTree((EventSecretsConfig)value.getActualInstance());
-                        elementAdapter.write(out, element);
-                        return;
-                    }
                     // check if the actual instance is of the type `FullScansSecretsConfig`
                     if (value.getActualInstance() instanceof FullScansSecretsConfig) {
                         JsonElement element = adapterFullScansSecretsConfig.toJsonTree((FullScansSecretsConfig)value.getActualInstance());
@@ -471,7 +463,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig");
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig");
                 }
 
                 @Override
@@ -784,18 +776,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
                         // deserialization failed, continue
                         errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for EntraIdSecretsConfig failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'EntraIdSecretsConfig'", e);
-                    }
-                    // deserialize EventSecretsConfig
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        EventSecretsConfig.validateJsonElement(jsonElement);
-                        actualAdapter = adapterEventSecretsConfig;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'EventSecretsConfig'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for EventSecretsConfig failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'EventSecretsConfig'", e);
                     }
                     // deserialize FullScansSecretsConfig
                     try {
@@ -1127,7 +1107,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
         schemas.put("DefenderForEndpointAlertsSecretsConfig", DefenderForEndpointAlertsSecretsConfig.class);
         schemas.put("EndorLabsAuditLogsSecretsConfig", EndorLabsAuditLogsSecretsConfig.class);
         schemas.put("EntraIdSecretsConfig", EntraIdSecretsConfig.class);
-        schemas.put("EventSecretsConfig", EventSecretsConfig.class);
         schemas.put("FullScansSecretsConfig", FullScansSecretsConfig.class);
         schemas.put("GkeAuditLogsSecretsConfig", GkeAuditLogsSecretsConfig.class);
         schemas.put("GoogleCloudStorageSecretsConfig", GoogleCloudStorageSecretsConfig.class);
@@ -1161,7 +1140,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas:
-     * AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig
+     * AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig
      *
      * It could be an instance of the 'oneOf' schemas.
      */
@@ -1292,11 +1271,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof EventSecretsConfig) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof FullScansSecretsConfig) {
             super.setActualInstance(instance);
             return;
@@ -1412,14 +1386,14 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig");
+        throw new RuntimeException("Invalid instance type. Must be AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig
+     * AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig
      *
-     * @return The actual instance (AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig)
+     * @return The actual instance (AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map&lt;String, Object&gt;, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -1725,18 +1699,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
     @SuppressWarnings("unchecked")
     public EntraIdSecretsConfig getEntraIdSecretsConfig() throws ClassCastException {
         return (EntraIdSecretsConfig)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `EventSecretsConfig`. If the actual instance is not `EventSecretsConfig`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `EventSecretsConfig`
-     * @throws ClassCastException if the instance is not `EventSecretsConfig`
-     */
-    @SuppressWarnings("unchecked")
-    public EventSecretsConfig getEventSecretsConfig() throws ClassCastException {
-        return (EventSecretsConfig)super.getActualInstance();
     }
 
     /**
@@ -2227,14 +2189,6 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for EntraIdSecretsConfig failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with EventSecretsConfig
-        try {
-            EventSecretsConfig.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for EventSecretsConfig failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
         // validate the json string with FullScansSecretsConfig
         try {
             FullScansSecretsConfig.validateJsonElement(jsonElement);
@@ -2423,7 +2377,7 @@ public class SecretProcessesorInputConfigSecrets extends AbstractOpenApiSchema {
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorInputConfigSecrets with oneOf schemas: AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, EventSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SecretProcessesorInputConfigSecrets with oneOf schemas: AwsS3SecretsConfig, AzureActivityLogsSecretsConfig, AzureBlobStorageSecretsConfig, AzureEventHubsSecretsConfig, AzureVnetFlowLogsSecretsConfig, BackblazeB2SecretsConfig, BigqueryInputSecretsConfig, BrinqaAuditLogsSecretsConfig, BuildkiteGraphqlInputSecretsConfig, CatoNetworksEventsSecretsConfig, CloudConfigurationFindingsSecretsConfig, CloudLogsSecretsConfig, CloudResourceInventorySecretsConfig, CloudflareDdosAttackAnalyticsSecretsConfig, CloudflareFirewallEventsSecretsConfig, CloudflareHttpRequestsSecretsConfig, CloudflareUrlScannerSecretsConfig, CloudflareZeroTrustAccessRequestsSecretsConfig, ClumioAuditLogsSecretsConfig, ClumioConsolidatedAlertsSecretsConfig, CortexXsoarManagementLogsSecretsConfig, DefenderForEndpointAlertsSecretsConfig, EndorLabsAuditLogsSecretsConfig, EntraIdSecretsConfig, FullScansSecretsConfig, GkeAuditLogsSecretsConfig, GoogleCloudStorageSecretsConfig, GoogleWorkspaceSecretsConfig, IndividualAlertsSecretsConfig, IssuesSecretsConfig, KoiAuditLogsSecretsConfig, LogAnalyticsQuerySecretsConfig, LookerAuditLogsSecretsConfig, Map<String, Object>, Microsoft365GenericSecretsConfig, Object, ObjectStorageInputSecretsConfig, OperationLogsSecretsConfig, OrgAuditLogsSecretsConfig, PaloAltoDataSecurityAlertsSecretsConfig, TaniumGraphqlInputSecretsConfig, TinesAuditLogsSecretsConfig, TinesEventsLogsSecretsConfig, TwilioEventsSecretsConfig, TwilioSendgridEmailActivitySecretsConfig, VoltioAuditLogsSecretsConfig, VulnerabilityFindingsSecretsConfig, WizAuditLogsSecretsConfig. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

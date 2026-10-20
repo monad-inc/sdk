@@ -61,8 +61,7 @@ class TestModelsNodeComponent(unittest.TestCase):
                     owner_organization_name = '', 
                     shared_with_children = True, 
                     shared_with_me = True, ),
-                type = '',
-                version = 56
+                type = ''
             )
         else:
             return ModelsNodeComponent(

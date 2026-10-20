@@ -152,8 +152,6 @@ export * from '../models/EnrichmentConnectorMeta';
 export * from '../models/EnrichmentSandboxRequest';
 export * from '../models/EntraIdSecretsConfig';
 export * from '../models/EntraIdSettingsConfig';
-export * from '../models/EventSecretsConfig';
-export * from '../models/EventSettingsConfig';
 export * from '../models/ExportTransformRequest';
 export * from '../models/FlattenArgumentsConfig';
 export * from '../models/FlattenallArgumentsConfig';
@@ -168,7 +166,6 @@ export * from '../models/GithubActionsWorkflowLogsWebhookOrganizationScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 export * from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 export * from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-export * from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 export * from '../models/GkeAuditLogsSecretsConfig';
 export * from '../models/GkeAuditLogsSettingsConfig';
 export * from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -280,6 +277,7 @@ export * from '../models/ModelsOrganizationUserList';
 export * from '../models/ModelsOutput';
 export * from '../models/ModelsOutputConfig';
 export * from '../models/ModelsOutputConnectorCategory';
+export * from '../models/ModelsPagination';
 export * from '../models/ModelsPermission';
 export * from '../models/ModelsPermissionList';
 export * from '../models/ModelsPipeline';
@@ -775,8 +773,6 @@ import { EnrichmentConnectorMeta            } from '../models/EnrichmentConnecto
 import { EnrichmentSandboxRequestClass } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig , EntraIdSettingsConfigCategoryEnum        } from '../models/EntraIdSettingsConfig';
-import { EventSecretsConfig } from '../models/EventSecretsConfig';
-import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { ExportTransformRequestClass } from '../models/ExportTransformRequest';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
@@ -791,7 +787,6 @@ import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/Git
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig  , GithubActionsWorkflowLogsWebhookScopeConfigTypeEnum   } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -820,7 +815,7 @@ import { IbmQradarHeaderAuthVariant } from '../models/IbmQradarHeaderAuthVariant
 import { IbmQradarSettingsConfig } from '../models/IbmQradarSettingsConfig';
 import { IndividualAlertsSecretsConfig } from '../models/IndividualAlertsSecretsConfig';
 import { IndividualAlertsSettingsConfig } from '../models/IndividualAlertsSettingsConfig';
-import { InputsConnectorMeta               } from '../models/InputsConnectorMeta';
+import { InputsConnectorMeta              } from '../models/InputsConnectorMeta';
 import { IssuesSecretsConfig } from '../models/IssuesSecretsConfig';
 import { IssuesSettingsConfig                     } from '../models/IssuesSettingsConfig';
 import { JqArgumentsConfig } from '../models/JqArgumentsConfig';
@@ -880,11 +875,11 @@ import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessi
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
-import { ModelsEnrichment             } from '../models/ModelsEnrichment';
+import { ModelsEnrichment            } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { ModelsFieldState } from '../models/ModelsFieldState';
-import { ModelsInput             } from '../models/ModelsInput';
+import { ModelsInput            } from '../models/ModelsInput';
 import { ModelsInputConfig } from '../models/ModelsInputConfig';
 import { ModelsInputConnectorCategory } from '../models/ModelsInputConnectorCategory';
 import { ModelsInputRateLimit   } from '../models/ModelsInputRateLimit';
@@ -900,9 +895,10 @@ import { ModelsOrganizationAuditLogList } from '../models/ModelsOrganizationAudi
 import { ModelsOrganizationList } from '../models/ModelsOrganizationList';
 import { ModelsOrganizationUser } from '../models/ModelsOrganizationUser';
 import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList';
-import { ModelsOutput             } from '../models/ModelsOutput';
+import { ModelsOutput            } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline              } from '../models/ModelsPipeline';
@@ -955,7 +951,7 @@ import { ModelsStorageTypeTimeSeries } from '../models/ModelsStorageTypeTimeSeri
 import { ModelsStorageTypeTimeSeriesResponse } from '../models/ModelsStorageTypeTimeSeriesResponse';
 import { ModelsSupportedFeatures } from '../models/ModelsSupportedFeatures';
 import { ModelsTimeRange } from '../models/ModelsTimeRange';
-import { ModelsTransform            } from '../models/ModelsTransform';
+import { ModelsTransform           } from '../models/ModelsTransform';
 import { ModelsTransformConfig } from '../models/ModelsTransformConfig';
 import { ModelsTransformList } from '../models/ModelsTransformList';
 import { ModelsTransformOperation } from '../models/ModelsTransformOperation';
@@ -986,7 +982,7 @@ import { OperationLogsSecretsConfig } from '../models/OperationLogsSecretsConfig
 import { OperationLogsSettingsConfig } from '../models/OperationLogsSettingsConfig';
 import { OrgAuditLogsSecretsConfig } from '../models/OrgAuditLogsSecretsConfig';
 import { OrgAuditLogsSettingsConfig         } from '../models/OrgAuditLogsSettingsConfig';
-import { OutputsConnectorMeta              } from '../models/OutputsConnectorMeta';
+import { OutputsConnectorMeta             } from '../models/OutputsConnectorMeta';
 import { PagerdutyAlertsConfig } from '../models/PagerdutyAlertsConfig';
 import { PagerdutyEventType } from '../models/PagerdutyEventType';
 import { PagerdutySecretsConfig } from '../models/PagerdutySecretsConfig';
@@ -1020,15 +1016,15 @@ import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesAddUserToOrganizationRequest } from '../models/RoutesAddUserToOrganizationRequest';
 import { RoutesCreateOrganizationRequest } from '../models/RoutesCreateOrganizationRequest';
 import { RoutesCreateTransformRequest } from '../models/RoutesCreateTransformRequest';
-import { RoutesGetInputResponse               } from '../models/RoutesGetInputResponse';
-import { RoutesGetOutputResponse               } from '../models/RoutesGetOutputResponse';
-import { RoutesGetTransformResponse             } from '../models/RoutesGetTransformResponse';
-import { RoutesInputWithMetadata              } from '../models/RoutesInputWithMetadata';
+import { RoutesGetInputResponse              } from '../models/RoutesGetInputResponse';
+import { RoutesGetOutputResponse              } from '../models/RoutesGetOutputResponse';
+import { RoutesGetTransformResponse            } from '../models/RoutesGetTransformResponse';
+import { RoutesInputWithMetadata             } from '../models/RoutesInputWithMetadata';
 import { RoutesInviteUserToOrganizationRequest } from '../models/RoutesInviteUserToOrganizationRequest';
 import { RoutesListInputsResponse } from '../models/RoutesListInputsResponse';
 import { RoutesListOutputsResponse } from '../models/RoutesListOutputsResponse';
 import { RoutesLoginRequest } from '../models/RoutesLoginRequest';
-import { RoutesOutputWithMetadata              } from '../models/RoutesOutputWithMetadata';
+import { RoutesOutputWithMetadata             } from '../models/RoutesOutputWithMetadata';
 import { RoutesRetryQueueMessage } from '../models/RoutesRetryQueueMessage';
 import { RoutesTransformConfig } from '../models/RoutesTransformConfig';
 import { RoutesTransformOperation } from '../models/RoutesTransformOperation';
@@ -1104,9 +1100,9 @@ import { RoutesV3CreateSessionResponse } from '../models/RoutesV3CreateSessionRe
 import { RoutesV3CreateTagRequest } from '../models/RoutesV3CreateTagRequest';
 import { RoutesV3EnrichmentSandboxRequest } from '../models/RoutesV3EnrichmentSandboxRequest';
 import { RoutesV3EnrichmentSandboxResponse } from '../models/RoutesV3EnrichmentSandboxResponse';
-import { RoutesV3EnrichmentWithMetadata              } from '../models/RoutesV3EnrichmentWithMetadata';
+import { RoutesV3EnrichmentWithMetadata             } from '../models/RoutesV3EnrichmentWithMetadata';
 import { RoutesV3FieldUpdation } from '../models/RoutesV3FieldUpdation';
-import { RoutesV3GetEnrichmentResponse               } from '../models/RoutesV3GetEnrichmentResponse';
+import { RoutesV3GetEnrichmentResponse              } from '../models/RoutesV3GetEnrichmentResponse';
 import { RoutesV3GetFeatureFlagResponse } from '../models/RoutesV3GetFeatureFlagResponse';
 import { RoutesV3ImportTransformResponse } from '../models/RoutesV3ImportTransformResponse';
 import { RoutesV3KvEntryResponse } from '../models/RoutesV3KvEntryResponse';
@@ -1492,8 +1488,6 @@ let typeMap: {[index: string]: any} = {
     "EnrichmentSandboxRequest": EnrichmentSandboxRequestClass,
     "EntraIdSecretsConfig": EntraIdSecretsConfig,
     "EntraIdSettingsConfig": EntraIdSettingsConfig,
-    "EventSecretsConfig": EventSecretsConfig,
-    "EventSettingsConfig": EventSettingsConfig,
     "ExportTransformRequest": ExportTransformRequestClass,
     "FlattenArgumentsConfig": FlattenArgumentsConfig,
     "FlattenallArgumentsConfig": FlattenallArgumentsConfig,
@@ -1507,7 +1501,6 @@ let typeMap: {[index: string]: any} = {
     "GithubActionsWorkflowLogsWebhookRepositoryScope": GithubActionsWorkflowLogsWebhookRepositoryScope,
     "GithubActionsWorkflowLogsWebhookScopeConfig": GithubActionsWorkflowLogsWebhookScopeConfig,
     "GithubActionsWorkflowLogsWebhookSettingsConfig": GithubActionsWorkflowLogsWebhookSettingsConfig,
-    "GithubComMonadIncCorePkgTypesModelsPagination": GithubComMonadIncCorePkgTypesModelsPagination,
     "GkeAuditLogsSecretsConfig": GkeAuditLogsSecretsConfig,
     "GkeAuditLogsSettingsConfig": GkeAuditLogsSettingsConfig,
     "GoogleCloudStorageOutputSecretsConfig": GoogleCloudStorageOutputSecretsConfig,
@@ -1603,6 +1596,7 @@ let typeMap: {[index: string]: any} = {
     "ModelsOrganizationUserList": ModelsOrganizationUserList,
     "ModelsOutput": ModelsOutput,
     "ModelsOutputConfig": ModelsOutputConfig,
+    "ModelsPagination": ModelsPagination,
     "ModelsPermission": ModelsPermission,
     "ModelsPermissionList": ModelsPermissionList,
     "ModelsPipeline": ModelsPipeline,

@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { RoutesV3ResourceUsageWithMetadata } from '../models/RoutesV3ResourceUsageWithMetadata';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3ResourceUsageListResponse {
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
     'usages'?: Array<RoutesV3ResourceUsageWithMetadata>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class RoutesV3ResourceUsageListResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {

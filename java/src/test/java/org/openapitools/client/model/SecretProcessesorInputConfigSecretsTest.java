@@ -45,7 +45,6 @@ import org.openapitools.client.model.CortexXsoarManagementLogsSecretsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSecretsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSecretsConfig;
 import org.openapitools.client.model.EntraIdSecretsConfig;
-import org.openapitools.client.model.EventSecretsConfig;
 import org.openapitools.client.model.FullScansSecretsConfig;
 import org.openapitools.client.model.GkeAuditLogsSecretsConfig;
 import org.openapitools.client.model.GoogleCloudStorageSecretsConfig;

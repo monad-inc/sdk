@@ -24,8 +24,8 @@ import { UpdateChildOrganizationRequest } from '../models/UpdateChildOrganizatio
 export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Create child organization (team)
+     * Create a sub-org (child organization) under the given parent organization. The new organization\'s parent_organization_id is set to the parent.
+     * Create sub-org
      * @param organizationId Parent Organization ID
      * @param createChildOrganizationRequest Request body
      */
@@ -138,10 +138,10 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Delete child organization (team)
+     * Delete a sub-org (child organization) of the given parent organization.
+     * Delete sub-org
      * @param organizationId Parent Organization ID
-     * @param childOrganizationId Child Organization ID
+     * @param childOrganizationId Sub-org ID
      */
     public async deleteChildOrganization(organizationId: string, childOrganizationId: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -311,8 +311,8 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
-     * List child organizations (teams)
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
+     * List sub-orgs
      * @param organizationId Parent Organization ID
      * @param limit Limit the number of organizations returned (default: 10)
      * @param offset Offset the organizations returned (default: 0)
@@ -379,8 +379,8 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10)
      * @param offset Offset the organizations returned (default: 0)
-     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false)
-     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization
+     * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
+     * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization
      * @param nameSearch If provided, only return organizations with names that contain the search string
      */
     public async listUserOrganizations(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: Configuration): Promise<RequestContext> {
@@ -445,10 +445,10 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Update child organization (team)
+     * Update a sub-org (child organization) of the given parent organization.
+     * Update sub-org
      * @param organizationId Parent Organization ID
-     * @param childOrganizationId Child Organization ID
+     * @param childOrganizationId Sub-org ID
      * @param updateChildOrganizationRequest Request body
      */
     public async updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: Configuration): Promise<RequestContext> {
@@ -667,7 +667,7 @@ export class OrganizationsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Child organization not found", body, response.headers);
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Sub-org not found", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(
@@ -861,7 +861,7 @@ export class OrganizationsApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ResponderErrorResponse", ""
             ) as ResponderErrorResponse;
-            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Child organization not found", body, response.headers);
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Sub-org not found", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

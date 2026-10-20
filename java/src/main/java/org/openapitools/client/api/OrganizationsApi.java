@@ -91,7 +91,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Created sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -159,8 +159,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Create child organization (team)
-     * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Create sub-org
+     * Create a sub-org (child organization) under the given parent organization. The new organization&#39;s parent_organization_id is set to the parent.
      * @param organizationId Parent Organization ID (required)
      * @param createChildOrganizationRequest Request body (required)
      * @return ModelsOrganization
@@ -169,7 +169,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Created sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -180,8 +180,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Create child organization (team)
-     * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Create sub-org
+     * Create a sub-org (child organization) under the given parent organization. The new organization&#39;s parent_organization_id is set to the parent.
      * @param organizationId Parent Organization ID (required)
      * @param createChildOrganizationRequest Request body (required)
      * @return ApiResponse&lt;ModelsOrganization&gt;
@@ -190,7 +190,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Created sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -202,8 +202,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * Create child organization (team) (asynchronously)
-     * Create a new child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Create sub-org (asynchronously)
+     * Create a sub-org (child organization) under the given parent organization. The new organization&#39;s parent_organization_id is set to the parent.
      * @param organizationId Parent Organization ID (required)
      * @param createChildOrganizationRequest Request body (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -213,7 +213,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Created child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Created sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -355,7 +355,7 @@ public class OrganizationsApi {
     /**
      * Build call for deleteChildOrganization
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -363,8 +363,8 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Sub-org deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -431,17 +431,17 @@ public class OrganizationsApi {
     }
 
     /**
-     * Delete child organization (team)
-     * Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Delete sub-org
+     * Delete a sub-org (child organization) of the given parent organization.
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Sub-org deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -450,18 +450,18 @@ public class OrganizationsApi {
     }
 
     /**
-     * Delete child organization (team)
-     * Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Delete sub-org
+     * Delete a sub-org (child organization) of the given parent organization.
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Sub-org deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -471,10 +471,10 @@ public class OrganizationsApi {
     }
 
     /**
-     * Delete child organization (team) (asynchronously)
-     * Delete a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Delete sub-org (asynchronously)
+     * Delete a sub-org (child organization) of the given parent organization.
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -482,8 +482,8 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Child organization deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Sub-org deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -814,7 +814,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -887,8 +887,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * List child organizations (teams)
-     * List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
+     * List sub-orgs
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
@@ -899,7 +899,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -909,8 +909,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * List child organizations (teams)
-     * List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
+     * List sub-orgs
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
@@ -921,7 +921,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -932,8 +932,8 @@ public class OrganizationsApi {
     }
 
     /**
-     * List child organizations (teams) (asynchronously)
-     * List child organizations for the given parent organization. These are surfaced as \&quot;teams\&quot; in the UI.
+     * List sub-orgs (asynchronously)
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * @param organizationId Parent Organization ID (required)
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
@@ -945,7 +945,7 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> List of child organizations </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -960,8 +960,8 @@ public class OrganizationsApi {
      * Build call for listUserOrganizations
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
-     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
+     * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1048,8 +1048,8 @@ public class OrganizationsApi {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
-     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
+     * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ModelsOrganizationList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1070,8 +1070,8 @@ public class OrganizationsApi {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
-     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
+     * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ApiResponse&lt;ModelsOrganizationList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1093,8 +1093,8 @@ public class OrganizationsApi {
      * List organizations for user
      * @param limit Limit the number of organizations returned (default: 10) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
-     * @param noChildren If true, only return organizations that are directly associated with the user, not child organizations (default: false) (optional)
-     * @param parentOrganizationId If provided, only return organizations that are children of the specified parent organization (optional)
+     * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
+     * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1116,7 +1116,7 @@ public class OrganizationsApi {
     /**
      * Build call for updateChildOrganization
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @param updateChildOrganizationRequest Request body (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1125,9 +1125,9 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -1200,10 +1200,10 @@ public class OrganizationsApi {
     }
 
     /**
-     * Update child organization (team)
-     * Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Update sub-org
+     * Update a sub-org (child organization) of the given parent organization.
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @param updateChildOrganizationRequest Request body (required)
      * @return ModelsOrganization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1211,9 +1211,9 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -1223,10 +1223,10 @@ public class OrganizationsApi {
     }
 
     /**
-     * Update child organization (team)
-     * Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Update sub-org
+     * Update a sub-org (child organization) of the given parent organization.
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @param updateChildOrganizationRequest Request body (required)
      * @return ApiResponse&lt;ModelsOrganization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1234,9 +1234,9 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -1247,10 +1247,10 @@ public class OrganizationsApi {
     }
 
     /**
-     * Update child organization (team) (asynchronously)
-     * Update a child organization under the given parent organization. Known as a \&quot;team\&quot; in the UI.
+     * Update sub-org (asynchronously)
+     * Update a sub-org (child organization) of the given parent organization.
      * @param organizationId Parent Organization ID (required)
-     * @param childOrganizationId Child Organization ID (required)
+     * @param childOrganizationId Sub-org ID (required)
      * @param updateChildOrganizationRequest Request body (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1259,9 +1259,9 @@ public class OrganizationsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Updated child organization </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Updated sub-org </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request body </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Child organization not found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Sub-org not found </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

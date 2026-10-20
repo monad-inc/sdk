@@ -15,10 +15,10 @@
 
 import unittest
 
-from monad.models.event_secrets_config import EventSecretsConfig
+from monad.models.models_pagination import ModelsPagination
 
-class TestEventSecretsConfig(unittest.TestCase):
-    """EventSecretsConfig unit test stubs"""
+class TestModelsPagination(unittest.TestCase):
+    """ModelsPagination unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,50 +26,27 @@ class TestEventSecretsConfig(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EventSecretsConfig:
-        """Test EventSecretsConfig
+    def make_instance(self, include_optional) -> ModelsPagination:
+        """Test ModelsPagination
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `EventSecretsConfig`
+        # uncomment below to create an instance of `ModelsPagination`
         """
-        model = EventSecretsConfig()
+        model = ModelsPagination()
         if include_optional:
-            return EventSecretsConfig(
-                client_id = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', ),
-                client_secret = monad.models.models/secret.models.Secret(
-                    created_at = '', 
-                    description = '', 
-                    id = '', 
-                    name = '', 
-                    organization_id = '', 
-                    share_details = monad.models.models/share_details.models.ShareDetails(
-                        owner_organization_id = '', 
-                        owner_organization_name = '', 
-                        shared_with_children = True, 
-                        shared_with_me = True, ), 
-                    updated_at = '', 
-                    value = '', )
+            return ModelsPagination(
+                limit = 56,
+                offset = 56,
+                total = 56
             )
         else:
-            return EventSecretsConfig(
+            return ModelsPagination(
         )
         """
 
-    def testEventSecretsConfig(self):
-        """Test EventSecretsConfig"""
+    def testModelsPagination(self):
+        """Test ModelsPagination"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

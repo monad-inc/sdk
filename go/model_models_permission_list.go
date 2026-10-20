@@ -20,7 +20,7 @@ var _ MappedNullable = &ModelsPermissionList{}
 
 // ModelsPermissionList struct for ModelsPermissionList
 type ModelsPermissionList struct {
-	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
+	Pagination *ModelsPagination `json:"pagination,omitempty"`
 	Permissions []ModelsPermission `json:"permissions,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewModelsPermissionListWithDefaults() *ModelsPermissionList {
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *ModelsPermissionList) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
+func (o *ModelsPermissionList) GetPagination() ModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret GithubComMonadIncCorePkgTypesModelsPagination
+		var ret ModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -52,7 +52,7 @@ func (o *ModelsPermissionList) GetPagination() GithubComMonadIncCorePkgTypesMode
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPermissionList) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
+func (o *ModelsPermissionList) GetPaginationOk() (*ModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ModelsPermissionList) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
-func (o *ModelsPermissionList) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
+// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
+func (o *ModelsPermissionList) SetPagination(v ModelsPagination) {
 	o.Pagination = &v
 }
 

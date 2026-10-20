@@ -14,7 +14,7 @@
 |**id** | **String** |  |  [optional] |
 |**inherited** | **Boolean** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**parentOrganizationId** | **String** |  |  [optional] |
+|**parentOrganizationId** | **String** | Set when this organization is a sub-org of that parent |  [optional] |
 |**sourceOrganizationId** | **String** |  |  [optional] |
 |**sourceOrganizationName** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |

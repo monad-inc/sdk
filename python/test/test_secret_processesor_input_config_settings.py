@@ -131,9 +131,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 namespace = '',
                 ingestion_delay = 56,
                 workspace_id = '',
-                app_name = '',
-                cloud = '',
-                member_cid = '',
                 org_slug = '',
                 repo = '',
                 auth_config = monad.models.common/auth_config.common.AuthConfig(

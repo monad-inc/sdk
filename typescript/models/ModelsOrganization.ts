@@ -20,6 +20,9 @@ export class ModelsOrganization {
     'friendlyName'?: string;
     'id'?: string;
     'name'?: string;
+    /**
+    * Set when this organization is a sub-org of that parent
+    */
     'parentOrganizationId'?: string;
     'updatedAt'?: string;
 

@@ -16,7 +16,6 @@
 |**references** | [**ModelsReferences**](ModelsReferences.md) |  |  [optional] |
 |**shareDetails** | [**ModelsShareDetails**](ModelsShareDetails.md) |  |  [optional] |
 |**type** | **String** |  |  [optional] |
-|**version** | **Integer** |  |  [optional] |
 
 
 

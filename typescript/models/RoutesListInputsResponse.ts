@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { RoutesInputWithMetadata } from '../models/RoutesInputWithMetadata';
 import { HttpFile } from '../http/http';
 
 export class RoutesListInputsResponse {
     'inputs'?: Array<RoutesInputWithMetadata>;
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class RoutesListInputsResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         }    ];
 

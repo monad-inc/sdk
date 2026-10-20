@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from monad.models.models_references import ModelsReferences
 from monad.models.models_share_details import ModelsShareDetails
@@ -39,8 +39,7 @@ class ModelsNodeComponent(BaseModel):
     references: Optional[ModelsReferences] = None
     share_details: Optional[ModelsShareDetails] = None
     type: Optional[StrictStr] = None
-    version: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["base_config", "config", "description", "id", "name", "overrides", "references", "share_details", "type", "version"]
+    __properties: ClassVar[List[str]] = ["base_config", "config", "description", "id", "name", "overrides", "references", "share_details", "type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -107,8 +106,7 @@ class ModelsNodeComponent(BaseModel):
             "overrides": obj.get("overrides"),
             "references": ModelsReferences.from_dict(obj["references"]) if obj.get("references") is not None else None,
             "share_details": ModelsShareDetails.from_dict(obj["share_details"]) if obj.get("share_details") is not None else None,
-            "type": obj.get("type"),
-            "version": obj.get("version")
+            "type": obj.get("type")
         })
         return _obj
 

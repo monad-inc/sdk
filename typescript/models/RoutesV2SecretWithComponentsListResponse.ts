@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { RoutesV2SecretWithComponentsResponse } from '../models/RoutesV2SecretWithComponentsResponse';
 import { HttpFile } from '../http/http';
 
 export class RoutesV2SecretWithComponentsListResponse {
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
     'secrets'?: Array<RoutesV2SecretWithComponentsResponse>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class RoutesV2SecretWithComponentsListResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {

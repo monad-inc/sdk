@@ -157,8 +157,6 @@ import { EnrichmentConnectorMeta } from '../models/EnrichmentConnectorMeta';
 import { EnrichmentSandboxRequest } from '../models/EnrichmentSandboxRequest';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
 import { EntraIdSettingsConfig } from '../models/EntraIdSettingsConfig';
-import { EventSecretsConfig } from '../models/EventSecretsConfig';
-import { EventSettingsConfig } from '../models/EventSettingsConfig';
 import { ExportTransformRequest } from '../models/ExportTransformRequest';
 import { FlattenArgumentsConfig } from '../models/FlattenArgumentsConfig';
 import { FlattenallArgumentsConfig } from '../models/FlattenallArgumentsConfig';
@@ -173,7 +171,6 @@ import { GithubActionsWorkflowLogsWebhookOrganizationScope } from '../models/Git
 import { GithubActionsWorkflowLogsWebhookRepositoryScope } from '../models/GithubActionsWorkflowLogsWebhookRepositoryScope';
 import { GithubActionsWorkflowLogsWebhookScopeConfig } from '../models/GithubActionsWorkflowLogsWebhookScopeConfig';
 import { GithubActionsWorkflowLogsWebhookSettingsConfig } from '../models/GithubActionsWorkflowLogsWebhookSettingsConfig';
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GkeAuditLogsSettingsConfig } from '../models/GkeAuditLogsSettingsConfig';
 import { GoogleCloudStorageOutputSecretsConfig } from '../models/GoogleCloudStorageOutputSecretsConfig';
@@ -285,6 +282,7 @@ import { ModelsOrganizationUserList } from '../models/ModelsOrganizationUserList
 import { ModelsOutput } from '../models/ModelsOutput';
 import { ModelsOutputConfig } from '../models/ModelsOutputConfig';
 import { ModelsOutputConnectorCategory } from '../models/ModelsOutputConnectorCategory';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline } from '../models/ModelsPipeline';
@@ -4767,8 +4765,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Create child organization (team)
+     * Create a sub-org (child organization) under the given parent organization. The new organization\'s parent_organization_id is set to the parent.
+     * Create sub-org
      * @param organizationId Parent Organization ID
      * @param createChildOrganizationRequest Request body
      */
@@ -4793,8 +4791,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Create child organization (team)
+     * Create a sub-org (child organization) under the given parent organization. The new organization\'s parent_organization_id is set to the parent.
+     * Create sub-org
      * @param organizationId Parent Organization ID
      * @param createChildOrganizationRequest Request body
      */
@@ -4837,10 +4835,10 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Delete child organization (team)
+     * Delete a sub-org (child organization) of the given parent organization.
+     * Delete sub-org
      * @param organizationId Parent Organization ID
-     * @param childOrganizationId Child Organization ID
+     * @param childOrganizationId Sub-org ID
      */
     public deleteChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, _options?: ConfigurationOptions): Observable<HttpInfo<void>> {
         const _config = mergeConfiguration(this.configuration, _options);
@@ -4863,10 +4861,10 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Delete child organization (team)
+     * Delete a sub-org (child organization) of the given parent organization.
+     * Delete sub-org
      * @param organizationId Parent Organization ID
-     * @param childOrganizationId Child Organization ID
+     * @param childOrganizationId Sub-org ID
      */
     public deleteChildOrganization(organizationId: string, childOrganizationId: string, _options?: ConfigurationOptions): Observable<void> {
         return this.deleteChildOrganizationWithHttpInfo(organizationId, childOrganizationId, _options).pipe(map((apiResponse: HttpInfo<void>) => apiResponse.data));
@@ -4951,8 +4949,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
-     * List child organizations (teams)
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
+     * List sub-orgs
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
@@ -4979,8 +4977,8 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
-     * List child organizations (teams)
+     * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
+     * List sub-orgs
      * @param organizationId Parent Organization ID
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
@@ -4995,8 +4993,8 @@ export class ObservableOrganizationsApi {
      * List organizations for user
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
-     * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
-     * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
+     * @param [noChildren] If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
+     * @param [parentOrganizationId] If provided, only return the sub-orgs of the specified parent organization
      * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
     public listUserOrganizationsWithHttpInfo(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationList>> {
@@ -5024,8 +5022,8 @@ export class ObservableOrganizationsApi {
      * List organizations for user
      * @param [limit] Limit the number of organizations returned (default: 10)
      * @param [offset] Offset the organizations returned (default: 0)
-     * @param [noChildren] If true, only return organizations that are directly associated with the user, not child organizations (default: false)
-     * @param [parentOrganizationId] If provided, only return organizations that are children of the specified parent organization
+     * @param [noChildren] If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
+     * @param [parentOrganizationId] If provided, only return the sub-orgs of the specified parent organization
      * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
     public listUserOrganizations(limit?: number, offset?: number, noChildren?: boolean, parentOrganizationId?: string, nameSearch?: string, _options?: ConfigurationOptions): Observable<ModelsOrganizationList> {
@@ -5033,10 +5031,10 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Update child organization (team)
+     * Update a sub-org (child organization) of the given parent organization.
+     * Update sub-org
      * @param organizationId Parent Organization ID
-     * @param childOrganizationId Child Organization ID
+     * @param childOrganizationId Sub-org ID
      * @param updateChildOrganizationRequest Request body
      */
     public updateChildOrganizationWithHttpInfo(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganization>> {
@@ -5060,10 +5058,10 @@ export class ObservableOrganizationsApi {
     }
 
     /**
-     * Update a child organization under the given parent organization. Known as a \"team\" in the UI.
-     * Update child organization (team)
+     * Update a sub-org (child organization) of the given parent organization.
+     * Update sub-org
      * @param organizationId Parent Organization ID
-     * @param childOrganizationId Child Organization ID
+     * @param childOrganizationId Sub-org ID
      * @param updateChildOrganizationRequest Request body
      */
     public updateChildOrganization(organizationId: string, childOrganizationId: string, updateChildOrganizationRequest: UpdateChildOrganizationRequest, _options?: ConfigurationOptions): Observable<ModelsOrganization> {
@@ -6827,7 +6825,7 @@ export class ObservableResourceSharesApi {
     }
 
     /**
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * List a resource\'s share targets (all direct child orgs)
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
@@ -6860,7 +6858,7 @@ export class ObservableResourceSharesApi {
     }
 
     /**
-     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-team shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
+     * List every direct child organization of the owner for one resource, each annotated with whether the resource is shared to it (and whether the child is using it). Backs the share UI\'s per-sub-org shared/not-shared toggles. Filterable by name and share state; sortable (shared-first by default, or by name); paginated.
      * List a resource\'s share targets (all direct child orgs)
      * @param organizationId Owner organization ID
      * @param resourceType Resource type

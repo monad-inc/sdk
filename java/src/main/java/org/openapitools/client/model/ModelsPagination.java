@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.ModelsSecret;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,58 +46,82 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * CrowdStrike EDR event stream secrets
+ * Pagination metadata.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
-public class EventSecretsConfig {
-  public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
-  @SerializedName(SERIALIZED_NAME_CLIENT_ID)
+public class ModelsPagination {
+  public static final String SERIALIZED_NAME_LIMIT = "limit";
+  @SerializedName(SERIALIZED_NAME_LIMIT)
   @javax.annotation.Nullable
-  private ModelsSecret clientId;
+  private Integer limit;
 
-  public static final String SERIALIZED_NAME_CLIENT_SECRET = "client_secret";
-  @SerializedName(SERIALIZED_NAME_CLIENT_SECRET)
+  public static final String SERIALIZED_NAME_OFFSET = "offset";
+  @SerializedName(SERIALIZED_NAME_OFFSET)
   @javax.annotation.Nullable
-  private ModelsSecret clientSecret;
+  private Integer offset;
 
-  public EventSecretsConfig() {
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
+  @javax.annotation.Nullable
+  private Integer total;
+
+  public ModelsPagination() {
   }
 
-  public EventSecretsConfig clientId(@javax.annotation.Nullable ModelsSecret clientId) {
-    this.clientId = clientId;
+  public ModelsPagination limit(@javax.annotation.Nullable Integer limit) {
+    this.limit = limit;
     return this;
   }
 
   /**
-   * Get clientId
-   * @return clientId
+   * Get limit
+   * @return limit
    */
   @javax.annotation.Nullable
-  public ModelsSecret getClientId() {
-    return clientId;
+  public Integer getLimit() {
+    return limit;
   }
 
-  public void setClientId(@javax.annotation.Nullable ModelsSecret clientId) {
-    this.clientId = clientId;
+  public void setLimit(@javax.annotation.Nullable Integer limit) {
+    this.limit = limit;
   }
 
 
-  public EventSecretsConfig clientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
-    this.clientSecret = clientSecret;
+  public ModelsPagination offset(@javax.annotation.Nullable Integer offset) {
+    this.offset = offset;
     return this;
   }
 
   /**
-   * Get clientSecret
-   * @return clientSecret
+   * Get offset
+   * @return offset
    */
   @javax.annotation.Nullable
-  public ModelsSecret getClientSecret() {
-    return clientSecret;
+  public Integer getOffset() {
+    return offset;
   }
 
-  public void setClientSecret(@javax.annotation.Nullable ModelsSecret clientSecret) {
-    this.clientSecret = clientSecret;
+  public void setOffset(@javax.annotation.Nullable Integer offset) {
+    this.offset = offset;
+  }
+
+
+  public ModelsPagination total(@javax.annotation.Nullable Integer total) {
+    this.total = total;
+    return this;
+  }
+
+  /**
+   * Get total
+   * @return total
+   */
+  @javax.annotation.Nullable
+  public Integer getTotal() {
+    return total;
+  }
+
+  public void setTotal(@javax.annotation.Nullable Integer total) {
+    this.total = total;
   }
 
 
@@ -111,22 +134,24 @@ public class EventSecretsConfig {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EventSecretsConfig eventSecretsConfig = (EventSecretsConfig) o;
-    return Objects.equals(this.clientId, eventSecretsConfig.clientId) &&
-        Objects.equals(this.clientSecret, eventSecretsConfig.clientSecret);
+    ModelsPagination modelsPagination = (ModelsPagination) o;
+    return Objects.equals(this.limit, modelsPagination.limit) &&
+        Objects.equals(this.offset, modelsPagination.offset) &&
+        Objects.equals(this.total, modelsPagination.total);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, clientSecret);
+    return Objects.hash(limit, offset, total);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EventSecretsConfig {\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
+    sb.append("class ModelsPagination {\n");
+    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -145,7 +170,7 @@ public class EventSecretsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("client_id", "client_secret"));
+    openapiFields = new HashSet<String>(Arrays.asList("limit", "offset", "total"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -155,53 +180,45 @@ public class EventSecretsConfig {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EventSecretsConfig
+   * @throws IOException if the JSON Element is invalid with respect to ModelsPagination
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!EventSecretsConfig.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in EventSecretsConfig is not found in the empty JSON string", EventSecretsConfig.openapiRequiredFields.toString()));
+        if (!ModelsPagination.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModelsPagination is not found in the empty JSON string", ModelsPagination.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!EventSecretsConfig.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EventSecretsConfig` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ModelsPagination.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ModelsPagination` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `client_id`
-      if (jsonObj.get("client_id") != null && !jsonObj.get("client_id").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_id"));
-      }
-      // validate the optional field `client_secret`
-      if (jsonObj.get("client_secret") != null && !jsonObj.get("client_secret").isJsonNull()) {
-        ModelsSecret.validateJsonElement(jsonObj.get("client_secret"));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!EventSecretsConfig.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'EventSecretsConfig' and its subtypes
+       if (!ModelsPagination.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ModelsPagination' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<EventSecretsConfig> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(EventSecretsConfig.class));
+       final TypeAdapter<ModelsPagination> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ModelsPagination.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<EventSecretsConfig>() {
+       return (TypeAdapter<T>) new TypeAdapter<ModelsPagination>() {
            @Override
-           public void write(JsonWriter out, EventSecretsConfig value) throws IOException {
+           public void write(JsonWriter out, ModelsPagination value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public EventSecretsConfig read(JsonReader in) throws IOException {
+           public ModelsPagination read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -212,18 +229,18 @@ public class EventSecretsConfig {
   }
 
   /**
-   * Create an instance of EventSecretsConfig given an JSON string
+   * Create an instance of ModelsPagination given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of EventSecretsConfig
-   * @throws IOException if the JSON string is invalid with respect to EventSecretsConfig
+   * @return An instance of ModelsPagination
+   * @throws IOException if the JSON string is invalid with respect to ModelsPagination
    */
-  public static EventSecretsConfig fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, EventSecretsConfig.class);
+  public static ModelsPagination fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ModelsPagination.class);
   }
 
   /**
-   * Convert an instance of EventSecretsConfig to an JSON string
+   * Convert an instance of ModelsPagination to an JSON string
    *
    * @return JSON string
    */

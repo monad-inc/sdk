@@ -29,7 +29,6 @@ export class RoutesGetTransformResponse {
     'references'?: ModelsReferences;
     'shareDetails'?: ModelsShareDetails;
     'updatedAt'?: string;
-    'version'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -100,12 +99,6 @@ export class RoutesGetTransformResponse {
             "name": "updatedAt",
             "baseName": "updated_at",
             "type": "string",
-            "format": ""
-        },
-        {
-            "name": "version",
-            "baseName": "version",
-            "type": "number",
             "format": ""
         }    ];
 

@@ -10,13 +10,13 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
 import { ModelsOrganization } from '../models/ModelsOrganization';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { HttpFile } from '../http/http';
 
 export class ModelsOrganizationList {
     'organizations'?: Array<ModelsOrganization>;
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -32,7 +32,7 @@ export class ModelsOrganizationList {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         }    ];
 

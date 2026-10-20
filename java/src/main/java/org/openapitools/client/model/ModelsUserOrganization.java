@@ -247,7 +247,7 @@ public class ModelsUserOrganization {
   }
 
   /**
-   * Get parentOrganizationId
+   * Set when this organization is a sub-org of that parent
    * @return parentOrganizationId
    */
   @javax.annotation.Nullable

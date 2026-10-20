@@ -57,7 +57,6 @@ import org.openapitools.client.model.CortexXsoarManagementLogsSettingsConfig;
 import org.openapitools.client.model.DefenderForEndpointAlertsSettingsConfig;
 import org.openapitools.client.model.EndorLabsAuditLogsSettingsConfig;
 import org.openapitools.client.model.EntraIdSettingsConfig;
-import org.openapitools.client.model.EventSettingsConfig;
 import org.openapitools.client.model.FullScansSettingsConfig;
 import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookScopeConfig;
 import org.openapitools.client.model.GithubActionsWorkflowLogsWebhookSettingsConfig;
@@ -682,30 +681,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void workspaceIdTest() {
         // TODO: test workspaceId
-    }
-
-    /**
-     * Test the property 'appName'
-     */
-    @Test
-    public void appNameTest() {
-        // TODO: test appName
-    }
-
-    /**
-     * Test the property 'cloud'
-     */
-    @Test
-    public void cloudTest() {
-        // TODO: test cloud
-    }
-
-    /**
-     * Test the property 'memberCid'
-     */
-    @Test
-    public void memberCidTest() {
-        // TODO: test memberCid
     }
 
     /**

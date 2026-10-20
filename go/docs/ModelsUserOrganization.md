@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Inherited** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ParentOrganizationId** | Pointer to **string** |  | [optional] 
+**ParentOrganizationId** | Pointer to **string** | Set when this organization is a sub-org of that parent | [optional] 
 **SourceOrganizationId** | Pointer to **string** |  | [optional] 
 **SourceOrganizationName** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 

@@ -27,6 +27,7 @@ type ModelsUserOrganization struct {
 	Id *string `json:"id,omitempty"`
 	Inherited *bool `json:"inherited,omitempty"`
 	Name *string `json:"name,omitempty"`
+	// Set when this organization is a sub-org of that parent
 	ParentOrganizationId *string `json:"parent_organization_id,omitempty"`
 	SourceOrganizationId *string `json:"source_organization_id,omitempty"`
 	SourceOrganizationName *string `json:"source_organization_name,omitempty"`

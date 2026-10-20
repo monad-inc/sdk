@@ -43,7 +43,6 @@ type SecretProcessesorInputConfigSecrets struct {
 	DefenderForEndpointAlertsSecretsConfig *DefenderForEndpointAlertsSecretsConfig
 	EndorLabsAuditLogsSecretsConfig *EndorLabsAuditLogsSecretsConfig
 	EntraIdSecretsConfig *EntraIdSecretsConfig
-	EventSecretsConfig *EventSecretsConfig
 	FullScansSecretsConfig *FullScansSecretsConfig
 	GkeAuditLogsSecretsConfig *GkeAuditLogsSecretsConfig
 	GoogleCloudStorageSecretsConfig *GoogleCloudStorageSecretsConfig
@@ -234,13 +233,6 @@ func EndorLabsAuditLogsSecretsConfigAsSecretProcessesorInputConfigSecrets(v *End
 func EntraIdSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EntraIdSecretsConfig) SecretProcessesorInputConfigSecrets {
 	return SecretProcessesorInputConfigSecrets{
 		EntraIdSecretsConfig: v,
-	}
-}
-
-// EventSecretsConfigAsSecretProcessesorInputConfigSecrets is a convenience function that returns EventSecretsConfig wrapped in SecretProcessesorInputConfigSecrets
-func EventSecretsConfigAsSecretProcessesorInputConfigSecrets(v *EventSecretsConfig) SecretProcessesorInputConfigSecrets {
-	return SecretProcessesorInputConfigSecrets{
-		EventSecretsConfig: v,
 	}
 }
 
@@ -818,23 +810,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.EntraIdSecretsConfig = nil
 	}
 
-	// try to unmarshal data into EventSecretsConfig
-	err = newStrictDecoder(data).Decode(&dst.EventSecretsConfig)
-	if err == nil {
-		jsonEventSecretsConfig, _ := json.Marshal(dst.EventSecretsConfig)
-		if string(jsonEventSecretsConfig) == "{}" { // empty struct
-			dst.EventSecretsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EventSecretsConfig); err != nil {
-				dst.EventSecretsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EventSecretsConfig = nil
-	}
-
 	// try to unmarshal data into FullScansSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.FullScansSecretsConfig)
 	if err == nil {
@@ -1252,7 +1227,6 @@ func (dst *SecretProcessesorInputConfigSecrets) UnmarshalJSON(data []byte) error
 		dst.DefenderForEndpointAlertsSecretsConfig = nil
 		dst.EndorLabsAuditLogsSecretsConfig = nil
 		dst.EntraIdSecretsConfig = nil
-		dst.EventSecretsConfig = nil
 		dst.FullScansSecretsConfig = nil
 		dst.GkeAuditLogsSecretsConfig = nil
 		dst.GoogleCloudStorageSecretsConfig = nil
@@ -1381,10 +1355,6 @@ func (src SecretProcessesorInputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.EntraIdSecretsConfig != nil {
 		return json.Marshal(&src.EntraIdSecretsConfig)
-	}
-
-	if src.EventSecretsConfig != nil {
-		return json.Marshal(&src.EventSecretsConfig)
 	}
 
 	if src.FullScansSecretsConfig != nil {
@@ -1583,10 +1553,6 @@ func (obj *SecretProcessesorInputConfigSecrets) GetActualInstance() (interface{}
 		return obj.EntraIdSecretsConfig
 	}
 
-	if obj.EventSecretsConfig != nil {
-		return obj.EventSecretsConfig
-	}
-
 	if obj.FullScansSecretsConfig != nil {
 		return obj.FullScansSecretsConfig
 	}
@@ -1779,10 +1745,6 @@ func (obj SecretProcessesorInputConfigSecrets) GetActualInstanceValue() (interfa
 
 	if obj.EntraIdSecretsConfig != nil {
 		return *obj.EntraIdSecretsConfig
-	}
-
-	if obj.EventSecretsConfig != nil {
-		return *obj.EventSecretsConfig
 	}
 
 	if obj.FullScansSecretsConfig != nil {

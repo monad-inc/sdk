@@ -74,9 +74,6 @@ Name | Type | Description | Notes
 **Namespace** | **string** | Your Endor Labs organization namespace (e.g., \&quot;your-org\&quot;) | 
 **IngestionDelay** | Pointer to **int32** | The ingestion delay in seconds for the data source | [optional] 
 **WorkspaceId** | **string** | The workspace ID of the Log Analytics workspace | 
-**AppName** | Pointer to **string** | The application name the connector uses to connect to the CrowdStrike data stream. It&#39;s important that this name is unique to avoid conflicts with other applications connecting to the same stream. You&#39;re advised to use a unique identifier for this application. For example, if you have 2 stream input connections they should not both share the same name. | [optional] 
-**Cloud** | Pointer to **string** | Your cloud type for CrowdStrike. Ex: &#39;autodiscover&#39;, &#39;us-1&#39;, &#39;us-2&#39;, &#39;eu-1&#39;, &#39;us-gov-1&#39;. | [optional] 
-**MemberCid** | Pointer to **string** | In environments where an entity (like an MSSP) manages security for multiple clients, each client is typically assigned a unique CID. This identifier allows the managing entity to access and operate within the specific customer&#39;s environment. This is crucial for scenarios where operational isolation between different clients&#39; data and configurations is necessary. | [optional] 
 **OrgSlug** | **string** | Cron expression for scheduling the input | 
 **Repo** | Pointer to **string** | A repository slug to filter full-scans by. | [optional] 
 **AuthConfig** | Pointer to [**CommonAuthConfig**](CommonAuthConfig.md) |  | [optional] 
@@ -1831,81 +1828,6 @@ and a boolean to check if the value has been set.
 
 SetWorkspaceId sets WorkspaceId field to given value.
 
-
-### GetAppName
-
-`func (o *SecretProcessesorInputConfigSettings) GetAppName() string`
-
-GetAppName returns the AppName field if non-nil, zero value otherwise.
-
-### GetAppNameOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetAppNameOk() (*string, bool)`
-
-GetAppNameOk returns a tuple with the AppName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAppName
-
-`func (o *SecretProcessesorInputConfigSettings) SetAppName(v string)`
-
-SetAppName sets AppName field to given value.
-
-### HasAppName
-
-`func (o *SecretProcessesorInputConfigSettings) HasAppName() bool`
-
-HasAppName returns a boolean if a field has been set.
-
-### GetCloud
-
-`func (o *SecretProcessesorInputConfigSettings) GetCloud() string`
-
-GetCloud returns the Cloud field if non-nil, zero value otherwise.
-
-### GetCloudOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetCloudOk() (*string, bool)`
-
-GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCloud
-
-`func (o *SecretProcessesorInputConfigSettings) SetCloud(v string)`
-
-SetCloud sets Cloud field to given value.
-
-### HasCloud
-
-`func (o *SecretProcessesorInputConfigSettings) HasCloud() bool`
-
-HasCloud returns a boolean if a field has been set.
-
-### GetMemberCid
-
-`func (o *SecretProcessesorInputConfigSettings) GetMemberCid() string`
-
-GetMemberCid returns the MemberCid field if non-nil, zero value otherwise.
-
-### GetMemberCidOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetMemberCidOk() (*string, bool)`
-
-GetMemberCidOk returns a tuple with the MemberCid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMemberCid
-
-`func (o *SecretProcessesorInputConfigSettings) SetMemberCid(v string)`
-
-SetMemberCid sets MemberCid field to given value.
-
-### HasMemberCid
-
-`func (o *SecretProcessesorInputConfigSettings) HasMemberCid() bool`
-
-HasMemberCid returns a boolean if a field has been set.
 
 ### GetOrgSlug
 

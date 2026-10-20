@@ -131,8 +131,7 @@ class TestRoutesV3GetEnrichmentResponse(unittest.TestCase):
                     shared_with_children = True, 
                     shared_with_me = True, ),
                 type = '',
-                updated_at = '',
-                version = 56
+                updated_at = ''
             )
         else:
             return RoutesV3GetEnrichmentResponse(

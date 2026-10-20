@@ -124,8 +124,7 @@ class TestRoutesGetTransformResponse(unittest.TestCase):
                     owner_organization_name = '', 
                     shared_with_children = True, 
                     shared_with_me = True, ),
-                updated_at = '',
-                version = 56
+                updated_at = ''
             )
         else:
             return RoutesGetTransformResponse(

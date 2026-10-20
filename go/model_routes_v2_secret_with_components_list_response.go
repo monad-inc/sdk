@@ -20,7 +20,7 @@ var _ MappedNullable = &RoutesV2SecretWithComponentsListResponse{}
 
 // RoutesV2SecretWithComponentsListResponse struct for RoutesV2SecretWithComponentsListResponse
 type RoutesV2SecretWithComponentsListResponse struct {
-	Pagination *GithubComMonadIncCorePkgTypesModelsPagination `json:"pagination,omitempty"`
+	Pagination *ModelsPagination `json:"pagination,omitempty"`
 	Secrets []RoutesV2SecretWithComponentsResponse `json:"secrets,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewRoutesV2SecretWithComponentsListResponseWithDefaults() *RoutesV2SecretWi
 }
 
 // GetPagination returns the Pagination field value if set, zero value otherwise.
-func (o *RoutesV2SecretWithComponentsListResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination {
+func (o *RoutesV2SecretWithComponentsListResponse) GetPagination() ModelsPagination {
 	if o == nil || IsNil(o.Pagination) {
-		var ret GithubComMonadIncCorePkgTypesModelsPagination
+		var ret ModelsPagination
 		return ret
 	}
 	return *o.Pagination
@@ -52,7 +52,7 @@ func (o *RoutesV2SecretWithComponentsListResponse) GetPagination() GithubComMona
 
 // GetPaginationOk returns a tuple with the Pagination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoutesV2SecretWithComponentsListResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool) {
+func (o *RoutesV2SecretWithComponentsListResponse) GetPaginationOk() (*ModelsPagination, bool) {
 	if o == nil || IsNil(o.Pagination) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *RoutesV2SecretWithComponentsListResponse) HasPagination() bool {
 	return false
 }
 
-// SetPagination gets a reference to the given GithubComMonadIncCorePkgTypesModelsPagination and assigns it to the Pagination field.
-func (o *RoutesV2SecretWithComponentsListResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination) {
+// SetPagination gets a reference to the given ModelsPagination and assigns it to the Pagination field.
+func (o *RoutesV2SecretWithComponentsListResponse) SetPagination(v ModelsPagination) {
 	o.Pagination = &v
 }
 

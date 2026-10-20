@@ -48,7 +48,6 @@ type SecretProcessesorInputConfigSettings struct {
 	DefenderForEndpointAlertsSettingsConfig *DefenderForEndpointAlertsSettingsConfig
 	EndorLabsAuditLogsSettingsConfig *EndorLabsAuditLogsSettingsConfig
 	EntraIdSettingsConfig *EntraIdSettingsConfig
-	EventSettingsConfig *EventSettingsConfig
 	FullScansSettingsConfig *FullScansSettingsConfig
 	GithubActionsWorkflowLogsWebhookSettingsConfig *GithubActionsWorkflowLogsWebhookSettingsConfig
 	GkeAuditLogsSettingsConfig *GkeAuditLogsSettingsConfig
@@ -280,13 +279,6 @@ func EndorLabsAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *E
 func EntraIdSettingsConfigAsSecretProcessesorInputConfigSettings(v *EntraIdSettingsConfig) SecretProcessesorInputConfigSettings {
 	return SecretProcessesorInputConfigSettings{
 		EntraIdSettingsConfig: v,
-	}
-}
-
-// EventSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns EventSettingsConfig wrapped in SecretProcessesorInputConfigSettings
-func EventSettingsConfigAsSecretProcessesorInputConfigSettings(v *EventSettingsConfig) SecretProcessesorInputConfigSettings {
-	return SecretProcessesorInputConfigSettings{
-		EventSettingsConfig: v,
 	}
 }
 
@@ -991,23 +983,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.EntraIdSettingsConfig = nil
 	}
 
-	// try to unmarshal data into EventSettingsConfig
-	err = newStrictDecoder(data).Decode(&dst.EventSettingsConfig)
-	if err == nil {
-		jsonEventSettingsConfig, _ := json.Marshal(dst.EventSettingsConfig)
-		if string(jsonEventSettingsConfig) == "{}" { // empty struct
-			dst.EventSettingsConfig = nil
-		} else {
-			if err = validator.Validate(dst.EventSettingsConfig); err != nil {
-				dst.EventSettingsConfig = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.EventSettingsConfig = nil
-	}
-
 	// try to unmarshal data into FullScansSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.FullScansSettingsConfig)
 	if err == nil {
@@ -1532,7 +1507,6 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 		dst.DefenderForEndpointAlertsSettingsConfig = nil
 		dst.EndorLabsAuditLogsSettingsConfig = nil
 		dst.EntraIdSettingsConfig = nil
-		dst.EventSettingsConfig = nil
 		dst.FullScansSettingsConfig = nil
 		dst.GithubActionsWorkflowLogsWebhookSettingsConfig = nil
 		dst.GkeAuditLogsSettingsConfig = nil
@@ -1687,10 +1661,6 @@ func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.EntraIdSettingsConfig != nil {
 		return json.Marshal(&src.EntraIdSettingsConfig)
-	}
-
-	if src.EventSettingsConfig != nil {
-		return json.Marshal(&src.EventSettingsConfig)
 	}
 
 	if src.FullScansSettingsConfig != nil {
@@ -1933,10 +1903,6 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 		return obj.EntraIdSettingsConfig
 	}
 
-	if obj.EventSettingsConfig != nil {
-		return obj.EventSettingsConfig
-	}
-
 	if obj.FullScansSettingsConfig != nil {
 		return obj.FullScansSettingsConfig
 	}
@@ -2173,10 +2139,6 @@ func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interf
 
 	if obj.EntraIdSettingsConfig != nil {
 		return *obj.EntraIdSettingsConfig
-	}
-
-	if obj.EventSettingsConfig != nil {
-		return *obj.EventSettingsConfig
 	}
 
 	if obj.FullScansSettingsConfig != nil {

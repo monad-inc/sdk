@@ -10,12 +10,12 @@
  * Do not edit the class manually.
  */
 
-import { GithubComMonadIncCorePkgTypesModelsPagination } from '../models/GithubComMonadIncCorePkgTypesModelsPagination';
+import { ModelsPagination } from '../models/ModelsPagination';
 import { RoutesV3TagResponse } from '../models/RoutesV3TagResponse';
 import { HttpFile } from '../http/http';
 
 export class RoutesV3TagListResponse {
-    'pagination'?: GithubComMonadIncCorePkgTypesModelsPagination;
+    'pagination'?: ModelsPagination;
     'tags'?: Array<RoutesV3TagResponse>;
 
     static readonly discriminator: string | undefined = undefined;
@@ -26,7 +26,7 @@ export class RoutesV3TagListResponse {
         {
             "name": "pagination",
             "baseName": "pagination",
-            "type": "GithubComMonadIncCorePkgTypesModelsPagination",
+            "type": "ModelsPagination",
             "format": ""
         },
         {

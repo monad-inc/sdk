@@ -64,9 +64,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ModelsOrganization:
-        """Create child organization (team)
+        """Create sub-org
 
-        Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+        Create a sub-org (child organization) under the given parent organization. The new organization's parent_organization_id is set to the parent.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -137,9 +137,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ModelsOrganization]:
-        """Create child organization (team)
+        """Create sub-org
 
-        Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+        Create a sub-org (child organization) under the given parent organization. The new organization's parent_organization_id is set to the parent.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -210,9 +210,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create child organization (team)
+        """Create sub-org
 
-        Create a new child organization under the given parent organization. Known as a \"team\" in the UI.
+        Create a sub-org (child organization) under the given parent organization. The new organization's parent_organization_id is set to the parent.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -621,7 +621,7 @@ class OrganizationsApi:
     def delete_child_organization(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
+        child_organization_id: Annotated[StrictStr, Field(description="Sub-org ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -635,13 +635,13 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """Delete child organization (team)
+        """Delete sub-org
 
-        Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+        Delete a sub-org (child organization) of the given parent organization.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param child_organization_id: Child Organization ID (required)
+        :param child_organization_id: Sub-org ID (required)
         :type child_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -694,7 +694,7 @@ class OrganizationsApi:
     def delete_child_organization_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
+        child_organization_id: Annotated[StrictStr, Field(description="Sub-org ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -708,13 +708,13 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """Delete child organization (team)
+        """Delete sub-org
 
-        Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+        Delete a sub-org (child organization) of the given parent organization.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param child_organization_id: Child Organization ID (required)
+        :param child_organization_id: Sub-org ID (required)
         :type child_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -767,7 +767,7 @@ class OrganizationsApi:
     def delete_child_organization_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
+        child_organization_id: Annotated[StrictStr, Field(description="Sub-org ID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -781,13 +781,13 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete child organization (team)
+        """Delete sub-org
 
-        Delete a child organization under the given parent organization. Known as a \"team\" in the UI.
+        Delete a sub-org (child organization) of the given parent organization.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param child_organization_id: Child Organization ID (required)
+        :param child_organization_id: Sub-org ID (required)
         :type child_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1536,9 +1536,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ModelsUserOrganizationList:
-        """List child organizations (teams)
+        """List sub-orgs
 
-        List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+        List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -1616,9 +1616,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ModelsUserOrganizationList]:
-        """List child organizations (teams)
+        """List sub-orgs
 
-        List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+        List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -1696,9 +1696,9 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List child organizations (teams)
+        """List sub-orgs
 
-        List child organizations for the given parent organization. These are surfaced as \"teams\" in the UI.
+        List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
@@ -1837,8 +1837,8 @@ class OrganizationsApi:
         self,
         limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
-        no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not child organizations (default: false)")] = None,
-        parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations that are children of the specified parent organization")] = None,
+        no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)")] = None,
+        parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return the sub-orgs of the specified parent organization")] = None,
         name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
@@ -1861,9 +1861,9 @@ class OrganizationsApi:
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
-        :param no_children: If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+        :param no_children: If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
         :type no_children: bool
-        :param parent_organization_id: If provided, only return organizations that are children of the specified parent organization
+        :param parent_organization_id: If provided, only return the sub-orgs of the specified parent organization
         :type parent_organization_id: str
         :param name_search: If provided, only return organizations with names that contain the search string
         :type name_search: str
@@ -1920,8 +1920,8 @@ class OrganizationsApi:
         self,
         limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
-        no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not child organizations (default: false)")] = None,
-        parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations that are children of the specified parent organization")] = None,
+        no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)")] = None,
+        parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return the sub-orgs of the specified parent organization")] = None,
         name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
@@ -1944,9 +1944,9 @@ class OrganizationsApi:
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
-        :param no_children: If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+        :param no_children: If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
         :type no_children: bool
-        :param parent_organization_id: If provided, only return organizations that are children of the specified parent organization
+        :param parent_organization_id: If provided, only return the sub-orgs of the specified parent organization
         :type parent_organization_id: str
         :param name_search: If provided, only return organizations with names that contain the search string
         :type name_search: str
@@ -2003,8 +2003,8 @@ class OrganizationsApi:
         self,
         limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
-        no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not child organizations (default: false)")] = None,
-        parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations that are children of the specified parent organization")] = None,
+        no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)")] = None,
+        parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return the sub-orgs of the specified parent organization")] = None,
         name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
             None,
@@ -2027,9 +2027,9 @@ class OrganizationsApi:
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
-        :param no_children: If true, only return organizations that are directly associated with the user, not child organizations (default: false)
+        :param no_children: If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
         :type no_children: bool
-        :param parent_organization_id: If provided, only return organizations that are children of the specified parent organization
+        :param parent_organization_id: If provided, only return the sub-orgs of the specified parent organization
         :type parent_organization_id: str
         :param name_search: If provided, only return organizations with names that contain the search string
         :type name_search: str
@@ -2168,7 +2168,7 @@ class OrganizationsApi:
     def update_child_organization(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
+        child_organization_id: Annotated[StrictStr, Field(description="Sub-org ID")],
         update_child_organization_request: Annotated[UpdateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
@@ -2183,13 +2183,13 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ModelsOrganization:
-        """Update child organization (team)
+        """Update sub-org
 
-        Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+        Update a sub-org (child organization) of the given parent organization.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param child_organization_id: Child Organization ID (required)
+        :param child_organization_id: Sub-org ID (required)
         :type child_organization_id: str
         :param update_child_organization_request: Request body (required)
         :type update_child_organization_request: UpdateChildOrganizationRequest
@@ -2246,7 +2246,7 @@ class OrganizationsApi:
     def update_child_organization_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
+        child_organization_id: Annotated[StrictStr, Field(description="Sub-org ID")],
         update_child_organization_request: Annotated[UpdateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
@@ -2261,13 +2261,13 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ModelsOrganization]:
-        """Update child organization (team)
+        """Update sub-org
 
-        Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+        Update a sub-org (child organization) of the given parent organization.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param child_organization_id: Child Organization ID (required)
+        :param child_organization_id: Sub-org ID (required)
         :type child_organization_id: str
         :param update_child_organization_request: Request body (required)
         :type update_child_organization_request: UpdateChildOrganizationRequest
@@ -2324,7 +2324,7 @@ class OrganizationsApi:
     def update_child_organization_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        child_organization_id: Annotated[StrictStr, Field(description="Child Organization ID")],
+        child_organization_id: Annotated[StrictStr, Field(description="Sub-org ID")],
         update_child_organization_request: Annotated[UpdateChildOrganizationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
@@ -2339,13 +2339,13 @@ class OrganizationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update child organization (team)
+        """Update sub-org
 
-        Update a child organization under the given parent organization. Known as a \"team\" in the UI.
+        Update a sub-org (child organization) of the given parent organization.
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param child_organization_id: Child Organization ID (required)
+        :param child_organization_id: Sub-org ID (required)
         :type child_organization_id: str
         :param update_child_organization_request: Request body (required)
         :type update_child_organization_request: UpdateChildOrganizationRequest

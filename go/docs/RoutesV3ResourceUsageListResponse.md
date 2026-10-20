@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Pagination** | Pointer to [**GithubComMonadIncCorePkgTypesModelsPagination**](GithubComMonadIncCorePkgTypesModelsPagination.md) |  | [optional] 
+**Pagination** | Pointer to [**ModelsPagination**](ModelsPagination.md) |  | [optional] 
 **Usages** | Pointer to [**[]RoutesV3ResourceUsageWithMetadata**](RoutesV3ResourceUsageWithMetadata.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPagination
 
-`func (o *RoutesV3ResourceUsageListResponse) GetPagination() GithubComMonadIncCorePkgTypesModelsPagination`
+`func (o *RoutesV3ResourceUsageListResponse) GetPagination() ModelsPagination`
 
 GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
 ### GetPaginationOk
 
-`func (o *RoutesV3ResourceUsageListResponse) GetPaginationOk() (*GithubComMonadIncCorePkgTypesModelsPagination, bool)`
+`func (o *RoutesV3ResourceUsageListResponse) GetPaginationOk() (*ModelsPagination, bool)`
 
 GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPagination
 
-`func (o *RoutesV3ResourceUsageListResponse) SetPagination(v GithubComMonadIncCorePkgTypesModelsPagination)`
+`func (o *RoutesV3ResourceUsageListResponse) SetPagination(v ModelsPagination)`
 
 SetPagination sets Pagination field to given value.
 

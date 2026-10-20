@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class ModelsUserOrganization(BaseModel):
     id: Optional[StrictStr] = None
     inherited: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    parent_organization_id: Optional[StrictStr] = None
+    parent_organization_id: Optional[StrictStr] = Field(default=None, description="Set when this organization is a sub-org of that parent")
     source_organization_id: Optional[StrictStr] = None
     source_organization_name: Optional[StrictStr] = None
     updated_at: Optional[StrictStr] = None

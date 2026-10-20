@@ -34,7 +34,6 @@ import { CortexXsoarManagementLogsSecretsConfig } from '../models/CortexXsoarMan
 import { DefenderForEndpointAlertsSecretsConfig } from '../models/DefenderForEndpointAlertsSecretsConfig';
 import { EndorLabsAuditLogsSecretsConfig } from '../models/EndorLabsAuditLogsSecretsConfig';
 import { EntraIdSecretsConfig } from '../models/EntraIdSecretsConfig';
-import { EventSecretsConfig } from '../models/EventSecretsConfig';
 import { FullScansSecretsConfig } from '../models/FullScansSecretsConfig';
 import { GkeAuditLogsSecretsConfig } from '../models/GkeAuditLogsSecretsConfig';
 import { GoogleCloudStorageSecretsConfig } from '../models/GoogleCloudStorageSecretsConfig';
@@ -64,7 +63,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSecrets = AwsS3SecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureEventHubsSecretsConfig | AzureVnetFlowLogsSecretsConfig | BackblazeB2SecretsConfig | BigqueryInputSecretsConfig | BrinqaAuditLogsSecretsConfig | BuildkiteGraphqlInputSecretsConfig | CatoNetworksEventsSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CloudflareDdosAttackAnalyticsSecretsConfig | CloudflareFirewallEventsSecretsConfig | CloudflareHttpRequestsSecretsConfig | CloudflareUrlScannerSecretsConfig | CloudflareZeroTrustAccessRequestsSecretsConfig | ClumioAuditLogsSecretsConfig | ClumioConsolidatedAlertsSecretsConfig | CortexXsoarManagementLogsSecretsConfig | DefenderForEndpointAlertsSecretsConfig | EndorLabsAuditLogsSecretsConfig | EntraIdSecretsConfig | EventSecretsConfig | FullScansSecretsConfig | GkeAuditLogsSecretsConfig | GoogleCloudStorageSecretsConfig | GoogleWorkspaceSecretsConfig | IndividualAlertsSecretsConfig | IssuesSecretsConfig | KoiAuditLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LookerAuditLogsSecretsConfig | Microsoft365GenericSecretsConfig | ObjectStorageInputSecretsConfig | OperationLogsSecretsConfig | OrgAuditLogsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | TaniumGraphqlInputSecretsConfig | TinesAuditLogsSecretsConfig | TinesEventsLogsSecretsConfig | TwilioEventsSecretsConfig | TwilioSendgridEmailActivitySecretsConfig | VoltioAuditLogsSecretsConfig | VulnerabilityFindingsSecretsConfig | WizAuditLogsSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorInputConfigSecrets = AwsS3SecretsConfig | AzureActivityLogsSecretsConfig | AzureBlobStorageSecretsConfig | AzureEventHubsSecretsConfig | AzureVnetFlowLogsSecretsConfig | BackblazeB2SecretsConfig | BigqueryInputSecretsConfig | BrinqaAuditLogsSecretsConfig | BuildkiteGraphqlInputSecretsConfig | CatoNetworksEventsSecretsConfig | CloudConfigurationFindingsSecretsConfig | CloudLogsSecretsConfig | CloudResourceInventorySecretsConfig | CloudflareDdosAttackAnalyticsSecretsConfig | CloudflareFirewallEventsSecretsConfig | CloudflareHttpRequestsSecretsConfig | CloudflareUrlScannerSecretsConfig | CloudflareZeroTrustAccessRequestsSecretsConfig | ClumioAuditLogsSecretsConfig | ClumioConsolidatedAlertsSecretsConfig | CortexXsoarManagementLogsSecretsConfig | DefenderForEndpointAlertsSecretsConfig | EndorLabsAuditLogsSecretsConfig | EntraIdSecretsConfig | FullScansSecretsConfig | GkeAuditLogsSecretsConfig | GoogleCloudStorageSecretsConfig | GoogleWorkspaceSecretsConfig | IndividualAlertsSecretsConfig | IssuesSecretsConfig | KoiAuditLogsSecretsConfig | LogAnalyticsQuerySecretsConfig | LookerAuditLogsSecretsConfig | Microsoft365GenericSecretsConfig | ObjectStorageInputSecretsConfig | OperationLogsSecretsConfig | OrgAuditLogsSecretsConfig | PaloAltoDataSecurityAlertsSecretsConfig | TaniumGraphqlInputSecretsConfig | TinesAuditLogsSecretsConfig | TinesEventsLogsSecretsConfig | TwilioEventsSecretsConfig | TwilioSendgridEmailActivitySecretsConfig | VoltioAuditLogsSecretsConfig | VulnerabilityFindingsSecretsConfig | WizAuditLogsSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSecretsClass
@@ -75,7 +74,6 @@ export class SecretProcessesorInputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
-
 
 
 

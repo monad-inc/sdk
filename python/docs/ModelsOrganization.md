@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **friendly_name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**parent_organization_id** | **str** |  | [optional] 
+**parent_organization_id** | **str** | Set when this organization is a sub-org of that parent | [optional] 
 **updated_at** | **str** |  | [optional] 
 
 ## Example
