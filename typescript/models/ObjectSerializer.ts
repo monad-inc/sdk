@@ -208,6 +208,10 @@ export * from '../models/KafkaSaslMechanism';
 export * from '../models/KafkaSecretsConfig';
 export * from '../models/KafkaSecurityProtocol';
 export * from '../models/KafkaSettingsConfig';
+export * from '../models/KeyFilterFilterVariant';
+export * from '../models/KeyFilterKeyFilterMode';
+export * from '../models/KeyFilterKeyFilterOperator';
+export * from '../models/KeyFilterKeyFilterType';
 export * from '../models/KoiAuditLogsSecretsConfig';
 export * from '../models/KoiAuditLogsSettingsConfig';
 export * from '../models/KvLookupOutputSettingsConfig';
@@ -551,11 +555,7 @@ export * from '../models/SnowflakeOutputSettingsConfig';
 export * from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
 export * from '../models/SplunkSecretsConfig';
 export * from '../models/SplunkSettingsConfig';
-export * from '../models/SqsS3BaseFilterVariant';
 export * from '../models/SqsS3BaseKeyFilter';
-export * from '../models/SqsS3BaseKeyFilterMode';
-export * from '../models/SqsS3BaseKeyFilterOperator';
-export * from '../models/SqsS3BaseKeyFilterType';
 export * from '../models/SumologicSecretsConfig';
 export * from '../models/SumologicSettingsConfig';
 export * from '../models/SumologicSourceMetadata';
@@ -829,6 +829,10 @@ import { KafkaSaslMechanism } from '../models/KafkaSaslMechanism';
 import { KafkaSecretsConfig } from '../models/KafkaSecretsConfig';
 import { KafkaSecurityProtocol } from '../models/KafkaSecurityProtocol';
 import { KafkaSettingsConfig             } from '../models/KafkaSettingsConfig';
+import { KeyFilterFilterVariant    } from '../models/KeyFilterFilterVariant';
+import { KeyFilterKeyFilterMode } from '../models/KeyFilterKeyFilterMode';
+import { KeyFilterKeyFilterOperator } from '../models/KeyFilterKeyFilterOperator';
+import { KeyFilterKeyFilterType } from '../models/KeyFilterKeyFilterType';
 import { KoiAuditLogsSecretsConfig } from '../models/KoiAuditLogsSecretsConfig';
 import { KoiAuditLogsSettingsConfig } from '../models/KoiAuditLogsSettingsConfig';
 import { KvLookupOutputSettingsConfig } from '../models/KvLookupOutputSettingsConfig';
@@ -1172,11 +1176,7 @@ import { SnowflakeOutputSettingsConfig } from '../models/SnowflakeOutputSettings
 import { SnowflakeSnowpipeStreamingSettingsConfig } from '../models/SnowflakeSnowpipeStreamingSettingsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SplunkSettingsConfig } from '../models/SplunkSettingsConfig';
-import { SqsS3BaseFilterVariant    } from '../models/SqsS3BaseFilterVariant';
 import { SqsS3BaseKeyFilter   } from '../models/SqsS3BaseKeyFilter';
-import { SqsS3BaseKeyFilterMode } from '../models/SqsS3BaseKeyFilterMode';
-import { SqsS3BaseKeyFilterOperator } from '../models/SqsS3BaseKeyFilterOperator';
-import { SqsS3BaseKeyFilterType } from '../models/SqsS3BaseKeyFilterType';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
 import { SumologicSettingsConfig } from '../models/SumologicSettingsConfig';
 import { SumologicSourceMetadata } from '../models/SumologicSourceMetadata';
@@ -1286,6 +1286,9 @@ let enumsMap: Set<string> = new Set<string>([
     "KafkaPayloadFormat",
     "KafkaSaslMechanism",
     "KafkaSecurityProtocol",
+    "KeyFilterKeyFilterMode",
+    "KeyFilterKeyFilterOperator",
+    "KeyFilterKeyFilterType",
     "ModelsAlertState",
     "ModelsAuditAction",
     "ModelsBillingProductType",
@@ -1319,9 +1322,6 @@ let enumsMap: Set<string> = new Set<string>([
     "SecretProcessesorInputConfigSettingsLogTypeEnum",
     "SecretProcessesorOutputConfigSettingsCompressionEnum",
     "Sentinelv2DCRConfigTypeEnum",
-    "SqsS3BaseKeyFilterMode",
-    "SqsS3BaseKeyFilterOperator",
-    "SqsS3BaseKeyFilterType",
     "UtcTimestampTimestampFormat",
     "WizAssetStatus",
     "WizAssetType",
@@ -1536,6 +1536,7 @@ let typeMap: {[index: string]: any} = {
     "KafkaKafkaHeader": KafkaKafkaHeader,
     "KafkaSecretsConfig": KafkaSecretsConfig,
     "KafkaSettingsConfig": KafkaSettingsConfig,
+    "KeyFilterFilterVariant": KeyFilterFilterVariant,
     "KoiAuditLogsSecretsConfig": KoiAuditLogsSecretsConfig,
     "KoiAuditLogsSettingsConfig": KoiAuditLogsSettingsConfig,
     "KvLookupOutputSettingsConfig": KvLookupOutputSettingsConfig,
@@ -1861,7 +1862,6 @@ let typeMap: {[index: string]: any} = {
     "SnowflakeSnowpipeStreamingSettingsConfig": SnowflakeSnowpipeStreamingSettingsConfig,
     "SplunkSecretsConfig": SplunkSecretsConfig,
     "SplunkSettingsConfig": SplunkSettingsConfig,
-    "SqsS3BaseFilterVariant": SqsS3BaseFilterVariant,
     "SqsS3BaseKeyFilter": SqsS3BaseKeyFilter,
     "SumologicSecretsConfig": SumologicSecretsConfig,
     "SumologicSettingsConfig": SumologicSettingsConfig,

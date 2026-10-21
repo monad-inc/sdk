@@ -224,6 +224,10 @@ from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism
 from monad.models.kafka_secrets_config import KafkaSecretsConfig
 from monad.models.kafka_security_protocol import KafkaSecurityProtocol
 from monad.models.kafka_settings_config import KafkaSettingsConfig
+from monad.models.key_filter_filter_variant import KeyFilterFilterVariant
+from monad.models.key_filter_key_filter_mode import KeyFilterKeyFilterMode
+from monad.models.key_filter_key_filter_operator import KeyFilterKeyFilterOperator
+from monad.models.key_filter_key_filter_type import KeyFilterKeyFilterType
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig
 from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig
 from monad.models.kv_lookup_output_settings_config import KvLookupOutputSettingsConfig
@@ -567,11 +571,7 @@ from monad.models.snowflake_output_settings_config import SnowflakeOutputSetting
 from monad.models.snowflake_snowpipe_streaming_settings_config import SnowflakeSnowpipeStreamingSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig
-from monad.models.sqs_s3_base_filter_variant import SqsS3BaseFilterVariant
 from monad.models.sqs_s3_base_key_filter import SqsS3BaseKeyFilter
-from monad.models.sqs_s3_base_key_filter_mode import SqsS3BaseKeyFilterMode
-from monad.models.sqs_s3_base_key_filter_operator import SqsS3BaseKeyFilterOperator
-from monad.models.sqs_s3_base_key_filter_type import SqsS3BaseKeyFilterType
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig
 from monad.models.sumologic_source_metadata import SumologicSourceMetadata

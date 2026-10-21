@@ -6,8 +6,8 @@ Optional S3 key filter. nil pointer = no filtering.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter** | [**SqsS3BaseFilterVariant**](SqsS3BaseFilterVariant.md) |  | [optional] 
-**type** | [**SqsS3BaseKeyFilterType**](SqsS3BaseKeyFilterType.md) |  | 
+**filter** | [**KeyFilterFilterVariant**](KeyFilterFilterVariant.md) |  | [optional] 
+**type** | [**KeyFilterKeyFilterType**](KeyFilterKeyFilterType.md) |  | 
 
 ## Example
 

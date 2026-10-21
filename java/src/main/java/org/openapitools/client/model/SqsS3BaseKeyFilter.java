@@ -21,8 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.client.model.SqsS3BaseFilterVariant;
-import org.openapitools.client.model.SqsS3BaseKeyFilterType;
+import org.openapitools.client.model.KeyFilterFilterVariant;
+import org.openapitools.client.model.KeyFilterKeyFilterType;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,17 +55,17 @@ public class SqsS3BaseKeyFilter {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
-  private SqsS3BaseFilterVariant filter;
+  private KeyFilterFilterVariant filter;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
-  private SqsS3BaseKeyFilterType type;
+  private KeyFilterKeyFilterType type;
 
   public SqsS3BaseKeyFilter() {
   }
 
-  public SqsS3BaseKeyFilter filter(@javax.annotation.Nullable SqsS3BaseFilterVariant filter) {
+  public SqsS3BaseKeyFilter filter(@javax.annotation.Nullable KeyFilterFilterVariant filter) {
     this.filter = filter;
     return this;
   }
@@ -75,16 +75,16 @@ public class SqsS3BaseKeyFilter {
    * @return filter
    */
   @javax.annotation.Nullable
-  public SqsS3BaseFilterVariant getFilter() {
+  public KeyFilterFilterVariant getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable SqsS3BaseFilterVariant filter) {
+  public void setFilter(@javax.annotation.Nullable KeyFilterFilterVariant filter) {
     this.filter = filter;
   }
 
 
-  public SqsS3BaseKeyFilter type(@javax.annotation.Nonnull SqsS3BaseKeyFilterType type) {
+  public SqsS3BaseKeyFilter type(@javax.annotation.Nonnull KeyFilterKeyFilterType type) {
     this.type = type;
     return this;
   }
@@ -94,11 +94,11 @@ public class SqsS3BaseKeyFilter {
    * @return type
    */
   @javax.annotation.Nonnull
-  public SqsS3BaseKeyFilterType getType() {
+  public KeyFilterKeyFilterType getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull SqsS3BaseKeyFilterType type) {
+  public void setType(@javax.annotation.Nonnull KeyFilterKeyFilterType type) {
     this.type = type;
   }
 
@@ -182,10 +182,10 @@ public class SqsS3BaseKeyFilter {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `filter`
       if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonNull()) {
-        SqsS3BaseFilterVariant.validateJsonElement(jsonObj.get("filter"));
+        KeyFilterFilterVariant.validateJsonElement(jsonObj.get("filter"));
       }
       // validate the required field `type`
-      SqsS3BaseKeyFilterType.validateJsonElement(jsonObj.get("type"));
+      KeyFilterKeyFilterType.validateJsonElement(jsonObj.get("type"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

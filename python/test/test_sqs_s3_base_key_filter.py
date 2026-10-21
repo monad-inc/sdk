@@ -36,7 +36,7 @@ class TestSqsS3BaseKeyFilter(unittest.TestCase):
         model = SqsS3BaseKeyFilter()
         if include_optional:
             return SqsS3BaseKeyFilter(
-                filter = monad.models.sqs_s3_base/filter_variant.sqs_s3_base.FilterVariant(
+                filter = monad.models.key_filter/filter_variant.key_filter.FilterVariant(
                     mode = 'include', 
                     operator = 'contains', 
                     value = '', ),

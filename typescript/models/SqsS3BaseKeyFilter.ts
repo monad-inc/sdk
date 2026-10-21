@@ -10,16 +10,16 @@
  * Do not edit the class manually.
  */
 
-import { SqsS3BaseFilterVariant } from '../models/SqsS3BaseFilterVariant';
-import { SqsS3BaseKeyFilterType } from '../models/SqsS3BaseKeyFilterType';
+import { KeyFilterFilterVariant } from '../models/KeyFilterFilterVariant';
+import { KeyFilterKeyFilterType } from '../models/KeyFilterKeyFilterType';
 import { HttpFile } from '../http/http';
 
 /**
 * Optional S3 key filter. nil pointer = no filtering.
 */
 export class SqsS3BaseKeyFilter {
-    'filter'?: SqsS3BaseFilterVariant;
-    'type': SqsS3BaseKeyFilterType;
+    'filter'?: KeyFilterFilterVariant;
+    'type': KeyFilterKeyFilterType;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -29,13 +29,13 @@ export class SqsS3BaseKeyFilter {
         {
             "name": "filter",
             "baseName": "filter",
-            "type": "SqsS3BaseFilterVariant",
+            "type": "KeyFilterFilterVariant",
             "format": ""
         },
         {
             "name": "type",
             "baseName": "type",
-            "type": "SqsS3BaseKeyFilterType",
+            "type": "KeyFilterKeyFilterType",
             "format": ""
         }    ];
 

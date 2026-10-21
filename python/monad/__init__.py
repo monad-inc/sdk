@@ -282,6 +282,10 @@ __all__ = [
     "KafkaSecretsConfig",
     "KafkaSecurityProtocol",
     "KafkaSettingsConfig",
+    "KeyFilterFilterVariant",
+    "KeyFilterKeyFilterMode",
+    "KeyFilterKeyFilterOperator",
+    "KeyFilterKeyFilterType",
     "KoiAuditLogsSecretsConfig",
     "KoiAuditLogsSettingsConfig",
     "KvLookupOutputSettingsConfig",
@@ -625,11 +629,7 @@ __all__ = [
     "SnowflakeSnowpipeStreamingSettingsConfig",
     "SplunkSecretsConfig",
     "SplunkSettingsConfig",
-    "SqsS3BaseFilterVariant",
     "SqsS3BaseKeyFilter",
-    "SqsS3BaseKeyFilterMode",
-    "SqsS3BaseKeyFilterOperator",
-    "SqsS3BaseKeyFilterType",
     "SumologicSecretsConfig",
     "SumologicSettingsConfig",
     "SumologicSourceMetadata",
@@ -962,6 +962,10 @@ from monad.models.kafka_sasl_mechanism import KafkaSaslMechanism as KafkaSaslMec
 from monad.models.kafka_secrets_config import KafkaSecretsConfig as KafkaSecretsConfig
 from monad.models.kafka_security_protocol import KafkaSecurityProtocol as KafkaSecurityProtocol
 from monad.models.kafka_settings_config import KafkaSettingsConfig as KafkaSettingsConfig
+from monad.models.key_filter_filter_variant import KeyFilterFilterVariant as KeyFilterFilterVariant
+from monad.models.key_filter_key_filter_mode import KeyFilterKeyFilterMode as KeyFilterKeyFilterMode
+from monad.models.key_filter_key_filter_operator import KeyFilterKeyFilterOperator as KeyFilterKeyFilterOperator
+from monad.models.key_filter_key_filter_type import KeyFilterKeyFilterType as KeyFilterKeyFilterType
 from monad.models.koi_audit_logs_secrets_config import KoiAuditLogsSecretsConfig as KoiAuditLogsSecretsConfig
 from monad.models.koi_audit_logs_settings_config import KoiAuditLogsSettingsConfig as KoiAuditLogsSettingsConfig
 from monad.models.kv_lookup_output_settings_config import KvLookupOutputSettingsConfig as KvLookupOutputSettingsConfig
@@ -1305,11 +1309,7 @@ from monad.models.snowflake_output_settings_config import SnowflakeOutputSetting
 from monad.models.snowflake_snowpipe_streaming_settings_config import SnowflakeSnowpipeStreamingSettingsConfig as SnowflakeSnowpipeStreamingSettingsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig as SplunkSecretsConfig
 from monad.models.splunk_settings_config import SplunkSettingsConfig as SplunkSettingsConfig
-from monad.models.sqs_s3_base_filter_variant import SqsS3BaseFilterVariant as SqsS3BaseFilterVariant
 from monad.models.sqs_s3_base_key_filter import SqsS3BaseKeyFilter as SqsS3BaseKeyFilter
-from monad.models.sqs_s3_base_key_filter_mode import SqsS3BaseKeyFilterMode as SqsS3BaseKeyFilterMode
-from monad.models.sqs_s3_base_key_filter_operator import SqsS3BaseKeyFilterOperator as SqsS3BaseKeyFilterOperator
-from monad.models.sqs_s3_base_key_filter_type import SqsS3BaseKeyFilterType as SqsS3BaseKeyFilterType
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig as SumologicSecretsConfig
 from monad.models.sumologic_settings_config import SumologicSettingsConfig as SumologicSettingsConfig
 from monad.models.sumologic_source_metadata import SumologicSourceMetadata as SumologicSourceMetadata

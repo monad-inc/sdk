@@ -22,8 +22,8 @@ var _ MappedNullable = &SqsS3BaseKeyFilter{}
 
 // SqsS3BaseKeyFilter Optional S3 key filter. nil pointer = no filtering.
 type SqsS3BaseKeyFilter struct {
-	Filter *SqsS3BaseFilterVariant `json:"filter,omitempty"`
-	Type SqsS3BaseKeyFilterType `json:"type"`
+	Filter *KeyFilterFilterVariant `json:"filter,omitempty"`
+	Type KeyFilterKeyFilterType `json:"type"`
 }
 
 type _SqsS3BaseKeyFilter SqsS3BaseKeyFilter
@@ -32,7 +32,7 @@ type _SqsS3BaseKeyFilter SqsS3BaseKeyFilter
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSqsS3BaseKeyFilter(type_ SqsS3BaseKeyFilterType) *SqsS3BaseKeyFilter {
+func NewSqsS3BaseKeyFilter(type_ KeyFilterKeyFilterType) *SqsS3BaseKeyFilter {
 	this := SqsS3BaseKeyFilter{}
 	this.Type = type_
 	return &this
@@ -47,9 +47,9 @@ func NewSqsS3BaseKeyFilterWithDefaults() *SqsS3BaseKeyFilter {
 }
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
-func (o *SqsS3BaseKeyFilter) GetFilter() SqsS3BaseFilterVariant {
+func (o *SqsS3BaseKeyFilter) GetFilter() KeyFilterFilterVariant {
 	if o == nil || IsNil(o.Filter) {
-		var ret SqsS3BaseFilterVariant
+		var ret KeyFilterFilterVariant
 		return ret
 	}
 	return *o.Filter
@@ -57,7 +57,7 @@ func (o *SqsS3BaseKeyFilter) GetFilter() SqsS3BaseFilterVariant {
 
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SqsS3BaseKeyFilter) GetFilterOk() (*SqsS3BaseFilterVariant, bool) {
+func (o *SqsS3BaseKeyFilter) GetFilterOk() (*KeyFilterFilterVariant, bool) {
 	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *SqsS3BaseKeyFilter) HasFilter() bool {
 	return false
 }
 
-// SetFilter gets a reference to the given SqsS3BaseFilterVariant and assigns it to the Filter field.
-func (o *SqsS3BaseKeyFilter) SetFilter(v SqsS3BaseFilterVariant) {
+// SetFilter gets a reference to the given KeyFilterFilterVariant and assigns it to the Filter field.
+func (o *SqsS3BaseKeyFilter) SetFilter(v KeyFilterFilterVariant) {
 	o.Filter = &v
 }
 
 // GetType returns the Type field value
-func (o *SqsS3BaseKeyFilter) GetType() SqsS3BaseKeyFilterType {
+func (o *SqsS3BaseKeyFilter) GetType() KeyFilterKeyFilterType {
 	if o == nil {
-		var ret SqsS3BaseKeyFilterType
+		var ret KeyFilterKeyFilterType
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *SqsS3BaseKeyFilter) GetType() SqsS3BaseKeyFilterType {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *SqsS3BaseKeyFilter) GetTypeOk() (*SqsS3BaseKeyFilterType, bool) {
+func (o *SqsS3BaseKeyFilter) GetTypeOk() (*KeyFilterKeyFilterType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *SqsS3BaseKeyFilter) GetTypeOk() (*SqsS3BaseKeyFilterType, bool) {
 }
 
 // SetType sets field value
-func (o *SqsS3BaseKeyFilter) SetType(v SqsS3BaseKeyFilterType) {
+func (o *SqsS3BaseKeyFilter) SetType(v KeyFilterKeyFilterType) {
 	o.Type = v
 }
 

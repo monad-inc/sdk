@@ -39,7 +39,7 @@ class TestAwssqss3SettingsConfig(unittest.TestCase):
                 compression = 'auto',
                 format = 'csv',
                 key_filter = monad.models.sqs_s3_base/key_filter.sqs_s3_base.KeyFilter(
-                    filter = monad.models.sqs_s3_base/filter_variant.sqs_s3_base.FilterVariant(
+                    filter = monad.models.key_filter/filter_variant.key_filter.FilterVariant(
                         mode = 'include', 
                         operator = 'contains', 
                         value = '', ), 

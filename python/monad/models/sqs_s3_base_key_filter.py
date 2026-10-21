@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from monad.models.sqs_s3_base_filter_variant import SqsS3BaseFilterVariant
-from monad.models.sqs_s3_base_key_filter_type import SqsS3BaseKeyFilterType
+from monad.models.key_filter_filter_variant import KeyFilterFilterVariant
+from monad.models.key_filter_key_filter_type import KeyFilterKeyFilterType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,8 +30,8 @@ class SqsS3BaseKeyFilter(BaseModel):
     """
     Optional S3 key filter. nil pointer = no filtering.
     """ # noqa: E501
-    filter: Optional[SqsS3BaseFilterVariant] = None
-    type: SqsS3BaseKeyFilterType
+    filter: Optional[KeyFilterFilterVariant] = None
+    type: KeyFilterKeyFilterType
     __properties: ClassVar[List[str]] = ["filter", "type"]
 
     model_config = ConfigDict(
@@ -88,7 +88,7 @@ class SqsS3BaseKeyFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "filter": SqsS3BaseFilterVariant.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
+            "filter": KeyFilterFilterVariant.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
             "type": obj.get("type")
         })
         return _obj

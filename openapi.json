@@ -3969,9 +3969,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -4002,6 +4002,60 @@
                     "securityProtocolSASLPlaintext",
                     "securityProtocolSASLSSL",
                     "securityProtocolSSL"
+                ]
+            },
+            "key_filter.FilterVariant": {
+                "properties": {
+                    "mode": {
+                        "$ref": "#/components/schemas/key_filter.KeyFilterMode"
+                    },
+                    "operator": {
+                        "$ref": "#/components/schemas/key_filter.KeyFilterOperator"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "mode",
+                    "operator",
+                    "value"
+                ],
+                "type": "object"
+            },
+            "key_filter.KeyFilterMode": {
+                "enum": [
+                    "include",
+                    "exclude"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "KeyFilterModeInclude",
+                    "KeyFilterModeExclude"
+                ]
+            },
+            "key_filter.KeyFilterOperator": {
+                "enum": [
+                    "contains",
+                    "ends_with",
+                    "starts_with"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "KeyFilterOpContains",
+                    "KeyFilterOpEndsWith",
+                    "KeyFilterOpStartsWith"
+                ]
+            },
+            "key_filter.KeyFilterType": {
+                "enum": [
+                    "none",
+                    "filter"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "KeyFilterTypeNone",
+                    "KeyFilterTypeFilter"
                 ]
             },
             "koi_audit_logs.SecretsConfig": {
@@ -11637,74 +11691,20 @@
                 ],
                 "type": "object"
             },
-            "sqs_s3_base.FilterVariant": {
-                "properties": {
-                    "mode": {
-                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilterMode"
-                    },
-                    "operator": {
-                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilterOperator"
-                    },
-                    "value": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "mode",
-                    "operator",
-                    "value"
-                ],
-                "type": "object"
-            },
             "sqs_s3_base.KeyFilter": {
                 "description": "Optional S3 key filter. nil pointer = no filtering.",
                 "properties": {
                     "filter": {
-                        "$ref": "#/components/schemas/sqs_s3_base.FilterVariant"
+                        "$ref": "#/components/schemas/key_filter.FilterVariant"
                     },
                     "type": {
-                        "$ref": "#/components/schemas/sqs_s3_base.KeyFilterType"
+                        "$ref": "#/components/schemas/key_filter.KeyFilterType"
                     }
                 },
                 "required": [
                     "type"
                 ],
                 "type": "object"
-            },
-            "sqs_s3_base.KeyFilterMode": {
-                "enum": [
-                    "include",
-                    "exclude"
-                ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "KeyFilterModeInclude",
-                    "KeyFilterModeExclude"
-                ]
-            },
-            "sqs_s3_base.KeyFilterOperator": {
-                "enum": [
-                    "contains",
-                    "ends_with",
-                    "starts_with"
-                ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "KeyFilterOpContains",
-                    "KeyFilterOpEndsWith",
-                    "KeyFilterOpStartsWith"
-                ]
-            },
-            "sqs_s3_base.KeyFilterType": {
-                "enum": [
-                    "none",
-                    "filter"
-                ],
-                "type": "string",
-                "x-enum-varnames": [
-                    "KeyFilterTypeNone",
-                    "KeyFilterTypeFilter"
-                ]
             },
             "sumologic.SecretsConfig": {
                 "description": "Sumo Logic Output Secrets",
