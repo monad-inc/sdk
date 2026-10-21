@@ -26,7 +26,6 @@
 |**personalAccessToken** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**twilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**twilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 
 
 

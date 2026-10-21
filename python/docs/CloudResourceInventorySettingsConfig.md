@@ -6,7 +6,7 @@ Wiz cloud resource inventory settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backfill_start_time** | **str** | Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data. | [optional] 
+**backfill_start_time** | **str** | Date to start fetching data from when no saved state exists. If not specified, syncing starts from now; historical data is not backfilled. | [optional] 
 **cloud_platform** | [**List[WizCloudPlatform]**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **endpoint_url** | **str** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | 
 **entity_type** | [**List[WizEntityType]**](WizEntityType.md) | Entity types for Wiz. | 

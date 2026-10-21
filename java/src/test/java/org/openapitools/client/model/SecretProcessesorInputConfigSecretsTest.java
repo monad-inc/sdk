@@ -237,12 +237,4 @@ public class SecretProcessesorInputConfigSecretsTest {
         // TODO: test twilioAuthToken
     }
 
-    /**
-     * Test the property 'token'
-     */
-    @Test
-    public void tokenTest() {
-        // TODO: test token
-    }
-
 }

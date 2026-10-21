@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BackfillStartTime** | Pointer to **string** | Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data. | [optional] 
+**BackfillStartTime** | Pointer to **string** | Date to start fetching data from when no saved state exists. If not specified, syncing starts from now; historical data is not backfilled. | [optional] 
 **CloudPlatform** | Pointer to [**[]WizCloudPlatform**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **EndpointUrl** | **string** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | 
 **EntityType** | [**[]WizEntityType**](WizEntityType.md) | Entity types for Wiz. | 

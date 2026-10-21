@@ -22,7 +22,7 @@ var _ MappedNullable = &IssuesSettingsConfig{}
 
 // IssuesSettingsConfig Wiz Issues settings
 type IssuesSettingsConfig struct {
-	// Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.
+	// Date to start fetching data from when no saved state exists. If not specified, syncing starts from now; historical data is not backfilled.
 	BackfillStartTime *string `json:"backfill_start_time,omitempty"`
 	// @Description Filter Issues created by specific control IDs
 	ControlIds []string `json:"control_ids,omitempty"`

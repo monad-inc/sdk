@@ -32,7 +32,7 @@ class CloudResourceInventorySettingsConfig(BaseModel):
     """
     Wiz cloud resource inventory settings
     """ # noqa: E501
-    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from. If not specified, A Wiz report is generated on the first sync. All syncs thereafter will be of incremental data.")
+    backfill_start_time: Optional[StrictStr] = Field(default=None, description="Date to start fetching data from when no saved state exists. If not specified, syncing starts from now; historical data is not backfilled.")
     cloud_platform: Optional[List[WizCloudPlatform]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
     endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
     entity_type: Annotated[List[WizEntityType], Field(min_length=1)] = Field(description="Entity types for Wiz.", alias="entityType")

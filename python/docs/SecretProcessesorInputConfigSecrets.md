@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **personal_access_token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **twilio_account_sid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **twilio_auth_token** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Example
 

@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **PersonalAccessToken** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **TwilioAccountSid** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **TwilioAuthToken** | [**ModelsSecret**](ModelsSecret.md) |  | 
-**Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -458,31 +457,6 @@ and a boolean to check if the value has been set.
 
 SetTwilioAuthToken sets TwilioAuthToken field to given value.
 
-
-### GetToken
-
-`func (o *SecretProcessesorInputConfigSecrets) GetToken() ModelsSecret`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *SecretProcessesorInputConfigSecrets) GetTokenOk() (*ModelsSecret, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *SecretProcessesorInputConfigSecrets) SetToken(v ModelsSecret)`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *SecretProcessesorInputConfigSecrets) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
