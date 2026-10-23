@@ -37,6 +37,7 @@ class TestDatabricksLakehouseMonadManagedPipeline(unittest.TestCase):
         if include_optional:
             return DatabricksLakehouseMonadManagedPipeline(
                 interval = 56,
+                schema_evolution_mode = 'addNewColumns',
                 table_name = ''
             )
         else:

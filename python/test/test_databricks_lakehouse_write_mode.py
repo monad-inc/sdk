@@ -45,6 +45,7 @@ class TestDatabricksLakehouseWriteMode(unittest.TestCase):
                         mode = 'self_managed', 
                         monad_managed = monad.models.databricks_lakehouse/monad_managed_pipeline.databricks_lakehouse.MonadManagedPipeline(
                             interval = 56, 
+                            schema_evolution_mode = 'addNewColumns', 
                             table_name = '', ), ), 
                     volume = '', ),
                 write_mode = 'autoloader',

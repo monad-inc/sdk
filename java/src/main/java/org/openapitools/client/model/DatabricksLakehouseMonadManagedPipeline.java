@@ -55,6 +55,67 @@ public class DatabricksLakehouseMonadManagedPipeline {
   @javax.annotation.Nullable
   private Integer interval;
 
+  /**
+   * How Auto Loader handles fields that aren&#39;t in the inferred schema; defaults to addNewColumns
+   */
+  @JsonAdapter(SchemaEvolutionModeEnum.Adapter.class)
+  public enum SchemaEvolutionModeEnum {
+    ADD_NEW_COLUMNS("addNewColumns"),
+    
+    RESCUE("rescue"),
+    
+    FAIL_ON_NEW_COLUMNS("failOnNewColumns"),
+    
+    NONE("none");
+
+    private String value;
+
+    SchemaEvolutionModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SchemaEvolutionModeEnum fromValue(String value) {
+      for (SchemaEvolutionModeEnum b : SchemaEvolutionModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SchemaEvolutionModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SchemaEvolutionModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SchemaEvolutionModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SchemaEvolutionModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SchemaEvolutionModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SCHEMA_EVOLUTION_MODE = "schema_evolution_mode";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_EVOLUTION_MODE)
+  @javax.annotation.Nullable
+  private SchemaEvolutionModeEnum schemaEvolutionMode;
+
   public static final String SERIALIZED_NAME_TABLE_NAME = "table_name";
   @SerializedName(SERIALIZED_NAME_TABLE_NAME)
   @javax.annotation.Nullable
@@ -79,6 +140,25 @@ public class DatabricksLakehouseMonadManagedPipeline {
 
   public void setInterval(@javax.annotation.Nullable Integer interval) {
     this.interval = interval;
+  }
+
+
+  public DatabricksLakehouseMonadManagedPipeline schemaEvolutionMode(@javax.annotation.Nullable SchemaEvolutionModeEnum schemaEvolutionMode) {
+    this.schemaEvolutionMode = schemaEvolutionMode;
+    return this;
+  }
+
+  /**
+   * How Auto Loader handles fields that aren&#39;t in the inferred schema; defaults to addNewColumns
+   * @return schemaEvolutionMode
+   */
+  @javax.annotation.Nullable
+  public SchemaEvolutionModeEnum getSchemaEvolutionMode() {
+    return schemaEvolutionMode;
+  }
+
+  public void setSchemaEvolutionMode(@javax.annotation.Nullable SchemaEvolutionModeEnum schemaEvolutionMode) {
+    this.schemaEvolutionMode = schemaEvolutionMode;
   }
 
 
@@ -112,12 +192,13 @@ public class DatabricksLakehouseMonadManagedPipeline {
     }
     DatabricksLakehouseMonadManagedPipeline databricksLakehouseMonadManagedPipeline = (DatabricksLakehouseMonadManagedPipeline) o;
     return Objects.equals(this.interval, databricksLakehouseMonadManagedPipeline.interval) &&
+        Objects.equals(this.schemaEvolutionMode, databricksLakehouseMonadManagedPipeline.schemaEvolutionMode) &&
         Objects.equals(this.tableName, databricksLakehouseMonadManagedPipeline.tableName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, tableName);
+    return Objects.hash(interval, schemaEvolutionMode, tableName);
   }
 
   @Override
@@ -125,6 +206,7 @@ public class DatabricksLakehouseMonadManagedPipeline {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatabricksLakehouseMonadManagedPipeline {\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+    sb.append("    schemaEvolutionMode: ").append(toIndentedString(schemaEvolutionMode)).append("\n");
     sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -144,7 +226,7 @@ public class DatabricksLakehouseMonadManagedPipeline {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("interval", "table_name"));
+    openapiFields = new HashSet<String>(Arrays.asList("interval", "schema_evolution_mode", "table_name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -171,6 +253,13 @@ public class DatabricksLakehouseMonadManagedPipeline {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("schema_evolution_mode") != null && !jsonObj.get("schema_evolution_mode").isJsonNull()) && !jsonObj.get("schema_evolution_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_evolution_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_evolution_mode").toString()));
+      }
+      // validate the optional field `schema_evolution_mode`
+      if (jsonObj.get("schema_evolution_mode") != null && !jsonObj.get("schema_evolution_mode").isJsonNull()) {
+        SchemaEvolutionModeEnum.validateJsonElement(jsonObj.get("schema_evolution_mode"));
+      }
       if ((jsonObj.get("table_name") != null && !jsonObj.get("table_name").isJsonNull()) && !jsonObj.get("table_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `table_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("table_name").toString()));
       }

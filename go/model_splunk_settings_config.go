@@ -24,10 +24,18 @@ var _ MappedNullable = &SplunkSettingsConfig{}
 type SplunkSettingsConfig struct {
 	// Whether to allow insecure connections (not recommended for production).
 	AllowInsecure *bool `json:"allow_insecure,omitempty"`
+	// The host set on every event, used as-is. If left empty, the token's default host applies.
+	Host *string `json:"host,omitempty"`
 	// The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.
 	Index *string `json:"index,omitempty"`
 	// The port of the Splunk instance.
 	Port string `json:"port"`
+	// The source set on every event, used as-is. If left empty, the token's default source applies.
+	Source *string `json:"source,omitempty"`
+	// The sourcetype set on every event, used as-is. If left empty, the token's default sourcetype applies.
+	Sourcetype *string `json:"sourcetype,omitempty"`
+	// Optional JSON path to the event timestamp in each record, sent as the event's time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them.
+	TimestampField *string `json:"timestamp_field,omitempty"`
 	// Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
 	ToCreate *bool `json:"to_create,omitempty"`
 	// The URL of the Splunk instance (must start with http or https).
@@ -89,6 +97,38 @@ func (o *SplunkSettingsConfig) SetAllowInsecure(v bool) {
 	o.AllowInsecure = &v
 }
 
+// GetHost returns the Host field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetHost() string {
+	if o == nil || IsNil(o.Host) {
+		var ret string
+		return ret
+	}
+	return *o.Host
+}
+
+// GetHostOk returns a tuple with the Host field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetHostOk() (*string, bool) {
+	if o == nil || IsNil(o.Host) {
+		return nil, false
+	}
+	return o.Host, true
+}
+
+// HasHost returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasHost() bool {
+	if o != nil && !IsNil(o.Host) {
+		return true
+	}
+
+	return false
+}
+
+// SetHost gets a reference to the given string and assigns it to the Host field.
+func (o *SplunkSettingsConfig) SetHost(v string) {
+	o.Host = &v
+}
+
 // GetIndex returns the Index field value if set, zero value otherwise.
 func (o *SplunkSettingsConfig) GetIndex() string {
 	if o == nil || IsNil(o.Index) {
@@ -143,6 +183,102 @@ func (o *SplunkSettingsConfig) GetPortOk() (*string, bool) {
 // SetPort sets field value
 func (o *SplunkSettingsConfig) SetPort(v string) {
 	o.Port = v
+}
+
+// GetSource returns the Source field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetSource() string {
+	if o == nil || IsNil(o.Source) {
+		var ret string
+		return ret
+	}
+	return *o.Source
+}
+
+// GetSourceOk returns a tuple with the Source field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetSourceOk() (*string, bool) {
+	if o == nil || IsNil(o.Source) {
+		return nil, false
+	}
+	return o.Source, true
+}
+
+// HasSource returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasSource() bool {
+	if o != nil && !IsNil(o.Source) {
+		return true
+	}
+
+	return false
+}
+
+// SetSource gets a reference to the given string and assigns it to the Source field.
+func (o *SplunkSettingsConfig) SetSource(v string) {
+	o.Source = &v
+}
+
+// GetSourcetype returns the Sourcetype field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetSourcetype() string {
+	if o == nil || IsNil(o.Sourcetype) {
+		var ret string
+		return ret
+	}
+	return *o.Sourcetype
+}
+
+// GetSourcetypeOk returns a tuple with the Sourcetype field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetSourcetypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Sourcetype) {
+		return nil, false
+	}
+	return o.Sourcetype, true
+}
+
+// HasSourcetype returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasSourcetype() bool {
+	if o != nil && !IsNil(o.Sourcetype) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourcetype gets a reference to the given string and assigns it to the Sourcetype field.
+func (o *SplunkSettingsConfig) SetSourcetype(v string) {
+	o.Sourcetype = &v
+}
+
+// GetTimestampField returns the TimestampField field value if set, zero value otherwise.
+func (o *SplunkSettingsConfig) GetTimestampField() string {
+	if o == nil || IsNil(o.TimestampField) {
+		var ret string
+		return ret
+	}
+	return *o.TimestampField
+}
+
+// GetTimestampFieldOk returns a tuple with the TimestampField field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SplunkSettingsConfig) GetTimestampFieldOk() (*string, bool) {
+	if o == nil || IsNil(o.TimestampField) {
+		return nil, false
+	}
+	return o.TimestampField, true
+}
+
+// HasTimestampField returns a boolean if a field has been set.
+func (o *SplunkSettingsConfig) HasTimestampField() bool {
+	if o != nil && !IsNil(o.TimestampField) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimestampField gets a reference to the given string and assigns it to the TimestampField field.
+func (o *SplunkSettingsConfig) SetTimestampField(v string) {
+	o.TimestampField = &v
 }
 
 // GetToCreate returns the ToCreate field value if set, zero value otherwise.
@@ -246,10 +382,22 @@ func (o SplunkSettingsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AllowInsecure) {
 		toSerialize["allow_insecure"] = o.AllowInsecure
 	}
+	if !IsNil(o.Host) {
+		toSerialize["host"] = o.Host
+	}
 	if !IsNil(o.Index) {
 		toSerialize["index"] = o.Index
 	}
 	toSerialize["port"] = o.Port
+	if !IsNil(o.Source) {
+		toSerialize["source"] = o.Source
+	}
+	if !IsNil(o.Sourcetype) {
+		toSerialize["sourcetype"] = o.Sourcetype
+	}
+	if !IsNil(o.TimestampField) {
+		toSerialize["timestamp_field"] = o.TimestampField
+	}
 	if !IsNil(o.ToCreate) {
 		toSerialize["to_create"] = o.ToCreate
 	}

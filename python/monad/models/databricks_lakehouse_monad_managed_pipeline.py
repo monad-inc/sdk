@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,8 +29,19 @@ class DatabricksLakehouseMonadManagedPipeline(BaseModel):
     DatabricksLakehouseMonadManagedPipeline
     """ # noqa: E501
     interval: Optional[StrictInt] = Field(default=None, description="How often the pipeline runs, in minutes; defaults to 60")
+    schema_evolution_mode: Optional[StrictStr] = Field(default=None, description="How Auto Loader handles fields that aren't in the inferred schema; defaults to addNewColumns")
     table_name: Optional[StrictStr] = Field(default=None, description="The bronze table the pipeline writes into; defaults to bronze_<volume>")
-    __properties: ClassVar[List[str]] = ["interval", "table_name"]
+    __properties: ClassVar[List[str]] = ["interval", "schema_evolution_mode", "table_name"]
+
+    @field_validator('schema_evolution_mode')
+    def schema_evolution_mode_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['addNewColumns', 'rescue', 'failOnNewColumns', 'none']):
+            raise ValueError("must be one of enum values ('addNewColumns', 'rescue', 'failOnNewColumns', 'none')")
+        return value
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +95,7 @@ class DatabricksLakehouseMonadManagedPipeline(BaseModel):
 
         _obj = cls.model_validate({
             "interval": obj.get("interval"),
+            "schema_evolution_mode": obj.get("schema_evolution_mode"),
             "table_name": obj.get("table_name")
         })
         return _obj

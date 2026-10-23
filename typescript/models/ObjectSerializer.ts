@@ -739,7 +739,7 @@ import { DatabricksDeltaTableSettingsConfig } from '../models/DatabricksDeltaTab
 import { DatabricksDeltaTableWriteMode  , DatabricksDeltaTableWriteModeWriteModeEnum    } from '../models/DatabricksDeltaTableWriteMode';
 import { DatabricksDeltaTableZeroBusWriteMode } from '../models/DatabricksDeltaTableZeroBusWriteMode';
 import { DatabricksLakehouseAutoLoaderWriteMode } from '../models/DatabricksLakehouseAutoLoaderWriteMode';
-import { DatabricksLakehouseMonadManagedPipeline } from '../models/DatabricksLakehouseMonadManagedPipeline';
+import { DatabricksLakehouseMonadManagedPipeline , DatabricksLakehouseMonadManagedPipelineSchemaEvolutionModeEnum    } from '../models/DatabricksLakehouseMonadManagedPipeline';
 import { DatabricksLakehousePipelineConfig, DatabricksLakehousePipelineConfigModeEnum    } from '../models/DatabricksLakehousePipelineConfig';
 import { DatabricksLakehouseSettingsConfig } from '../models/DatabricksLakehouseSettingsConfig';
 import { DatabricksLakehouseWriteMode , DatabricksLakehouseWriteModeWriteModeEnum    } from '../models/DatabricksLakehouseWriteMode';
@@ -1267,6 +1267,7 @@ let enumsMap: Set<string> = new Set<string>([
     "CoralogixCommunicationConfigTypeEnum",
     "CoralogixSettingsConfigRegionEnum",
     "DatabricksDeltaTableWriteModeWriteModeEnum",
+    "DatabricksLakehouseMonadManagedPipelineSchemaEvolutionModeEnum",
     "DatabricksLakehousePipelineConfigModeEnum",
     "DatabricksLakehouseWriteModeWriteModeEnum",
     "DatastoreResourceKind",

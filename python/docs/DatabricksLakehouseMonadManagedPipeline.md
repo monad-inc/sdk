@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **interval** | **int** | How often the pipeline runs, in minutes; defaults to 60 | [optional] 
+**schema_evolution_mode** | **str** | How Auto Loader handles fields that aren&#39;t in the inferred schema; defaults to addNewColumns | [optional] 
 **table_name** | **str** | The bronze table the pipeline writes into; defaults to bronze_&lt;volume&gt; | [optional] 
 
 ## Example

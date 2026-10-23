@@ -113,6 +113,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             mode = 'self_managed', 
                             monad_managed = monad.models.databricks_lakehouse/monad_managed_pipeline.databricks_lakehouse.MonadManagedPipeline(
                                 interval = 56, 
+                                schema_evolution_mode = 'addNewColumns', 
                                 table_name = '', ), ), 
                         volume = '', ), 
                     write_mode = 'autoloader', 
@@ -355,6 +356,8 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                     updated_at = '', 
                     value = '', ),
                 allow_insecure = True,
+                source = '',
+                sourcetype = '',
                 to_create = True,
                 source_metadata = monad.models.sumologic/source_metadata.sumologic.SourceMetadata(
                     custom_source_category = '', 
@@ -408,6 +411,7 @@ class TestSecretProcessesorOutputConfigSettings(unittest.TestCase):
                             mode = 'self_managed', 
                             monad_managed = monad.models.databricks_lakehouse/monad_managed_pipeline.databricks_lakehouse.MonadManagedPipeline(
                                 interval = 56, 
+                                schema_evolution_mode = 'addNewColumns', 
                                 table_name = '', ), ), 
                         volume = '', ), 
                     write_mode = 'autoloader', 

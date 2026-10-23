@@ -46,6 +46,14 @@ public class SplunkSettingsConfigTest {
     }
 
     /**
+     * Test the property 'host'
+     */
+    @Test
+    public void hostTest() {
+        // TODO: test host
+    }
+
+    /**
      * Test the property 'index'
      */
     @Test
@@ -59,6 +67,30 @@ public class SplunkSettingsConfigTest {
     @Test
     public void portTest() {
         // TODO: test port
+    }
+
+    /**
+     * Test the property 'source'
+     */
+    @Test
+    public void sourceTest() {
+        // TODO: test source
+    }
+
+    /**
+     * Test the property 'sourcetype'
+     */
+    @Test
+    public void sourcetypeTest() {
+        // TODO: test sourcetype
+    }
+
+    /**
+     * Test the property 'timestampField'
+     */
+    @Test
+    public void timestampFieldTest() {
+        // TODO: test timestampField
     }
 
     /**

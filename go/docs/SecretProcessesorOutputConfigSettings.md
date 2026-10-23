@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **DomainUrl** | Pointer to **string** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
 **Hostname** | Pointer to **string** | The name of the originating host of the log. | [optional] 
 **Service** | Pointer to **string** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
-**TimestampField** | Pointer to **string** |  | [optional] 
+**TimestampField** | Pointer to **string** | Optional JSON path to the event timestamp in each record, sent as the event&#39;s time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them. | [optional] 
 **AuthConfig** | Pointer to [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
 **AuthType** | Pointer to **string** |  | [optional] 
 **CloudId** | Pointer to **string** |  | [optional] 
@@ -67,7 +67,7 @@ Name | Type | Description | Notes
 **TlsSkipVerify** | Pointer to **bool** |  | [optional] 
 **WrapperKey** | Pointer to **string** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
 **Auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | 
-**Host** | **string** | The host of the PostgreSQL database | 
+**Host** | **string** | The host set on every event, used as-is. If left empty, the token&#39;s default host applies. | 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Transform** | Pointer to **string** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
 **EventFormat** | Pointer to [**IbmQradarEventFormatConfig**](IbmQradarEventFormatConfig.md) |  | [optional] 
@@ -116,6 +116,8 @@ Name | Type | Description | Notes
 **Pipe** | **string** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
 **PrivateKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **AllowInsecure** | Pointer to **bool** | Skip TLS verification. Not recommended outside local testing. | [optional] 
+**Source** | Pointer to **string** | The source set on every event, used as-is. If left empty, the token&#39;s default source applies. | [optional] 
+**Sourcetype** | Pointer to **string** | The sourcetype set on every event, used as-is. If left empty, the token&#39;s default sourcetype applies. | [optional] 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **SourceMetadata** | Pointer to [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
 **ApiKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
@@ -2760,6 +2762,56 @@ SetAllowInsecure sets AllowInsecure field to given value.
 `func (o *SecretProcessesorOutputConfigSettings) HasAllowInsecure() bool`
 
 HasAllowInsecure returns a boolean if a field has been set.
+
+### GetSource
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSource() string`
+
+GetSource returns the Source field if non-nil, zero value otherwise.
+
+### GetSourceOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourceOk() (*string, bool)`
+
+GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSource
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSource(v string)`
+
+SetSource sets Source field to given value.
+
+### HasSource
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
+
+### GetSourcetype
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourcetype() string`
+
+GetSourcetype returns the Sourcetype field if non-nil, zero value otherwise.
+
+### GetSourcetypeOk
+
+`func (o *SecretProcessesorOutputConfigSettings) GetSourcetypeOk() (*string, bool)`
+
+GetSourcetypeOk returns a tuple with the Sourcetype field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourcetype
+
+`func (o *SecretProcessesorOutputConfigSettings) SetSourcetype(v string)`
+
+SetSourcetype sets Sourcetype field to given value.
+
+### HasSourcetype
+
+`func (o *SecretProcessesorOutputConfigSettings) HasSourcetype() bool`
+
+HasSourcetype returns a boolean if a field has been set.
 
 ### GetToCreate
 

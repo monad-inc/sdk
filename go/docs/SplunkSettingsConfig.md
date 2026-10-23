@@ -5,8 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowInsecure** | Pointer to **bool** | Whether to allow insecure connections (not recommended for production). | [optional] 
+**Host** | Pointer to **string** | The host set on every event, used as-is. If left empty, the token&#39;s default host applies. | [optional] 
 **Index** | Pointer to **string** | The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **Port** | **string** | The port of the Splunk instance. | 
+**Source** | Pointer to **string** | The source set on every event, used as-is. If left empty, the token&#39;s default source applies. | [optional] 
+**Sourcetype** | Pointer to **string** | The sourcetype set on every event, used as-is. If left empty, the token&#39;s default sourcetype applies. | [optional] 
+**TimestampField** | Pointer to **string** | Optional JSON path to the event timestamp in each record, sent as the event&#39;s time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them. | [optional] 
 **ToCreate** | Pointer to **bool** | Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **Url** | **string** | The URL of the Splunk instance (must start with http or https). | 
 **Username** | Pointer to **string** | Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used. | [optional] 
@@ -55,6 +59,31 @@ SetAllowInsecure sets AllowInsecure field to given value.
 
 HasAllowInsecure returns a boolean if a field has been set.
 
+### GetHost
+
+`func (o *SplunkSettingsConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *SplunkSettingsConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *SplunkSettingsConfig) SetHost(v string)`
+
+SetHost sets Host field to given value.
+
+### HasHost
+
+`func (o *SplunkSettingsConfig) HasHost() bool`
+
+HasHost returns a boolean if a field has been set.
+
 ### GetIndex
 
 `func (o *SplunkSettingsConfig) GetIndex() string`
@@ -99,6 +128,81 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
+
+### GetSource
+
+`func (o *SplunkSettingsConfig) GetSource() string`
+
+GetSource returns the Source field if non-nil, zero value otherwise.
+
+### GetSourceOk
+
+`func (o *SplunkSettingsConfig) GetSourceOk() (*string, bool)`
+
+GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSource
+
+`func (o *SplunkSettingsConfig) SetSource(v string)`
+
+SetSource sets Source field to given value.
+
+### HasSource
+
+`func (o *SplunkSettingsConfig) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
+
+### GetSourcetype
+
+`func (o *SplunkSettingsConfig) GetSourcetype() string`
+
+GetSourcetype returns the Sourcetype field if non-nil, zero value otherwise.
+
+### GetSourcetypeOk
+
+`func (o *SplunkSettingsConfig) GetSourcetypeOk() (*string, bool)`
+
+GetSourcetypeOk returns a tuple with the Sourcetype field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourcetype
+
+`func (o *SplunkSettingsConfig) SetSourcetype(v string)`
+
+SetSourcetype sets Sourcetype field to given value.
+
+### HasSourcetype
+
+`func (o *SplunkSettingsConfig) HasSourcetype() bool`
+
+HasSourcetype returns a boolean if a field has been set.
+
+### GetTimestampField
+
+`func (o *SplunkSettingsConfig) GetTimestampField() string`
+
+GetTimestampField returns the TimestampField field if non-nil, zero value otherwise.
+
+### GetTimestampFieldOk
+
+`func (o *SplunkSettingsConfig) GetTimestampFieldOk() (*string, bool)`
+
+GetTimestampFieldOk returns a tuple with the TimestampField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimestampField
+
+`func (o *SplunkSettingsConfig) SetTimestampField(v string)`
+
+SetTimestampField sets TimestampField field to given value.
+
+### HasTimestampField
+
+`func (o *SplunkSettingsConfig) HasTimestampField() bool`
+
+HasTimestampField returns a boolean if a field has been set.
 
 ### GetToCreate
 

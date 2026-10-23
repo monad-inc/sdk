@@ -21,6 +21,10 @@ export class SplunkSettingsConfig {
     */
     'allowInsecure'?: boolean;
     /**
+    * The host set on every event, used as-is. If left empty, the token\'s default host applies.
+    */
+    'host'?: string;
+    /**
     * The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.
     */
     'index'?: string;
@@ -28,6 +32,18 @@ export class SplunkSettingsConfig {
     * The port of the Splunk instance.
     */
     'port': string;
+    /**
+    * The source set on every event, used as-is. If left empty, the token\'s default source applies.
+    */
+    'source'?: string;
+    /**
+    * The sourcetype set on every event, used as-is. If left empty, the token\'s default sourcetype applies.
+    */
+    'sourcetype'?: string;
+    /**
+    * Optional JSON path to the event timestamp in each record, sent as the event\'s time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them.
+    */
+    'timestampField'?: string;
     /**
     * Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.
     */
@@ -53,6 +69,12 @@ export class SplunkSettingsConfig {
             "format": ""
         },
         {
+            "name": "host",
+            "baseName": "host",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "index",
             "baseName": "index",
             "type": "string",
@@ -61,6 +83,24 @@ export class SplunkSettingsConfig {
         {
             "name": "port",
             "baseName": "port",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "source",
+            "baseName": "source",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "sourcetype",
+            "baseName": "sourcetype",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "timestampField",
+            "baseName": "timestamp_field",
             "type": "string",
             "format": ""
         },

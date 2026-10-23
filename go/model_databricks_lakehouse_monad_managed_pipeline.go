@@ -22,6 +22,8 @@ var _ MappedNullable = &DatabricksLakehouseMonadManagedPipeline{}
 type DatabricksLakehouseMonadManagedPipeline struct {
 	// How often the pipeline runs, in minutes; defaults to 60
 	Interval *int32 `json:"interval,omitempty"`
+	// How Auto Loader handles fields that aren't in the inferred schema; defaults to addNewColumns
+	SchemaEvolutionMode *string `json:"schema_evolution_mode,omitempty"`
 	// The bronze table the pipeline writes into; defaults to bronze_<volume>
 	TableName *string `json:"table_name,omitempty"`
 }
@@ -75,6 +77,38 @@ func (o *DatabricksLakehouseMonadManagedPipeline) SetInterval(v int32) {
 	o.Interval = &v
 }
 
+// GetSchemaEvolutionMode returns the SchemaEvolutionMode field value if set, zero value otherwise.
+func (o *DatabricksLakehouseMonadManagedPipeline) GetSchemaEvolutionMode() string {
+	if o == nil || IsNil(o.SchemaEvolutionMode) {
+		var ret string
+		return ret
+	}
+	return *o.SchemaEvolutionMode
+}
+
+// GetSchemaEvolutionModeOk returns a tuple with the SchemaEvolutionMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DatabricksLakehouseMonadManagedPipeline) GetSchemaEvolutionModeOk() (*string, bool) {
+	if o == nil || IsNil(o.SchemaEvolutionMode) {
+		return nil, false
+	}
+	return o.SchemaEvolutionMode, true
+}
+
+// HasSchemaEvolutionMode returns a boolean if a field has been set.
+func (o *DatabricksLakehouseMonadManagedPipeline) HasSchemaEvolutionMode() bool {
+	if o != nil && !IsNil(o.SchemaEvolutionMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemaEvolutionMode gets a reference to the given string and assigns it to the SchemaEvolutionMode field.
+func (o *DatabricksLakehouseMonadManagedPipeline) SetSchemaEvolutionMode(v string) {
+	o.SchemaEvolutionMode = &v
+}
+
 // GetTableName returns the TableName field value if set, zero value otherwise.
 func (o *DatabricksLakehouseMonadManagedPipeline) GetTableName() string {
 	if o == nil || IsNil(o.TableName) {
@@ -119,6 +153,9 @@ func (o DatabricksLakehouseMonadManagedPipeline) ToMap() (map[string]interface{}
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Interval) {
 		toSerialize["interval"] = o.Interval
+	}
+	if !IsNil(o.SchemaEvolutionMode) {
+		toSerialize["schema_evolution_mode"] = o.SchemaEvolutionMode
 	}
 	if !IsNil(o.TableName) {
 		toSerialize["table_name"] = o.TableName

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Interval** | Pointer to **int32** | How often the pipeline runs, in minutes; defaults to 60 | [optional] 
+**SchemaEvolutionMode** | Pointer to **string** | How Auto Loader handles fields that aren&#39;t in the inferred schema; defaults to addNewColumns | [optional] 
 **TableName** | Pointer to **string** | The bronze table the pipeline writes into; defaults to bronze_&lt;volume&gt; | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetInterval sets Interval field to given value.
 `func (o *DatabricksLakehouseMonadManagedPipeline) HasInterval() bool`
 
 HasInterval returns a boolean if a field has been set.
+
+### GetSchemaEvolutionMode
+
+`func (o *DatabricksLakehouseMonadManagedPipeline) GetSchemaEvolutionMode() string`
+
+GetSchemaEvolutionMode returns the SchemaEvolutionMode field if non-nil, zero value otherwise.
+
+### GetSchemaEvolutionModeOk
+
+`func (o *DatabricksLakehouseMonadManagedPipeline) GetSchemaEvolutionModeOk() (*string, bool)`
+
+GetSchemaEvolutionModeOk returns a tuple with the SchemaEvolutionMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemaEvolutionMode
+
+`func (o *DatabricksLakehouseMonadManagedPipeline) SetSchemaEvolutionMode(v string)`
+
+SetSchemaEvolutionMode sets SchemaEvolutionMode field to given value.
+
+### HasSchemaEvolutionMode
+
+`func (o *DatabricksLakehouseMonadManagedPipeline) HasSchemaEvolutionMode() bool`
+
+HasSchemaEvolutionMode returns a boolean if a field has been set.
 
 ### GetTableName
 

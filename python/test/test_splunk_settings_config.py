@@ -37,8 +37,12 @@ class TestSplunkSettingsConfig(unittest.TestCase):
         if include_optional:
             return SplunkSettingsConfig(
                 allow_insecure = True,
+                host = '',
                 index = '',
                 port = '',
+                source = '',
+                sourcetype = '',
+                timestamp_field = '',
                 to_create = True,
                 url = '',
                 username = ''

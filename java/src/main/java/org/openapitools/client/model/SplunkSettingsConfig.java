@@ -55,6 +55,11 @@ public class SplunkSettingsConfig {
   @javax.annotation.Nullable
   private Boolean allowInsecure;
 
+  public static final String SERIALIZED_NAME_HOST = "host";
+  @SerializedName(SERIALIZED_NAME_HOST)
+  @javax.annotation.Nullable
+  private String host;
+
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   @javax.annotation.Nullable
@@ -64,6 +69,21 @@ public class SplunkSettingsConfig {
   @SerializedName(SERIALIZED_NAME_PORT)
   @javax.annotation.Nonnull
   private String port;
+
+  public static final String SERIALIZED_NAME_SOURCE = "source";
+  @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
+  private String source;
+
+  public static final String SERIALIZED_NAME_SOURCETYPE = "sourcetype";
+  @SerializedName(SERIALIZED_NAME_SOURCETYPE)
+  @javax.annotation.Nullable
+  private String sourcetype;
+
+  public static final String SERIALIZED_NAME_TIMESTAMP_FIELD = "timestamp_field";
+  @SerializedName(SERIALIZED_NAME_TIMESTAMP_FIELD)
+  @javax.annotation.Nullable
+  private String timestampField;
 
   public static final String SERIALIZED_NAME_TO_CREATE = "to_create";
   @SerializedName(SERIALIZED_NAME_TO_CREATE)
@@ -102,6 +122,25 @@ public class SplunkSettingsConfig {
   }
 
 
+  public SplunkSettingsConfig host(@javax.annotation.Nullable String host) {
+    this.host = host;
+    return this;
+  }
+
+  /**
+   * The host set on every event, used as-is. If left empty, the token&#39;s default host applies.
+   * @return host
+   */
+  @javax.annotation.Nullable
+  public String getHost() {
+    return host;
+  }
+
+  public void setHost(@javax.annotation.Nullable String host) {
+    this.host = host;
+  }
+
+
   public SplunkSettingsConfig index(@javax.annotation.Nullable String index) {
     this.index = index;
     return this;
@@ -137,6 +176,63 @@ public class SplunkSettingsConfig {
 
   public void setPort(@javax.annotation.Nonnull String port) {
     this.port = port;
+  }
+
+
+  public SplunkSettingsConfig source(@javax.annotation.Nullable String source) {
+    this.source = source;
+    return this;
+  }
+
+  /**
+   * The source set on every event, used as-is. If left empty, the token&#39;s default source applies.
+   * @return source
+   */
+  @javax.annotation.Nullable
+  public String getSource() {
+    return source;
+  }
+
+  public void setSource(@javax.annotation.Nullable String source) {
+    this.source = source;
+  }
+
+
+  public SplunkSettingsConfig sourcetype(@javax.annotation.Nullable String sourcetype) {
+    this.sourcetype = sourcetype;
+    return this;
+  }
+
+  /**
+   * The sourcetype set on every event, used as-is. If left empty, the token&#39;s default sourcetype applies.
+   * @return sourcetype
+   */
+  @javax.annotation.Nullable
+  public String getSourcetype() {
+    return sourcetype;
+  }
+
+  public void setSourcetype(@javax.annotation.Nullable String sourcetype) {
+    this.sourcetype = sourcetype;
+  }
+
+
+  public SplunkSettingsConfig timestampField(@javax.annotation.Nullable String timestampField) {
+    this.timestampField = timestampField;
+    return this;
+  }
+
+  /**
+   * Optional JSON path to the event timestamp in each record, sent as the event&#39;s time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them.
+   * @return timestampField
+   */
+  @javax.annotation.Nullable
+  public String getTimestampField() {
+    return timestampField;
+  }
+
+  public void setTimestampField(@javax.annotation.Nullable String timestampField) {
+    this.timestampField = timestampField;
   }
 
 
@@ -208,8 +304,12 @@ public class SplunkSettingsConfig {
     }
     SplunkSettingsConfig splunkSettingsConfig = (SplunkSettingsConfig) o;
     return Objects.equals(this.allowInsecure, splunkSettingsConfig.allowInsecure) &&
+        Objects.equals(this.host, splunkSettingsConfig.host) &&
         Objects.equals(this.index, splunkSettingsConfig.index) &&
         Objects.equals(this.port, splunkSettingsConfig.port) &&
+        Objects.equals(this.source, splunkSettingsConfig.source) &&
+        Objects.equals(this.sourcetype, splunkSettingsConfig.sourcetype) &&
+        Objects.equals(this.timestampField, splunkSettingsConfig.timestampField) &&
         Objects.equals(this.toCreate, splunkSettingsConfig.toCreate) &&
         Objects.equals(this.url, splunkSettingsConfig.url) &&
         Objects.equals(this.username, splunkSettingsConfig.username);
@@ -217,7 +317,7 @@ public class SplunkSettingsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowInsecure, index, port, toCreate, url, username);
+    return Objects.hash(allowInsecure, host, index, port, source, sourcetype, timestampField, toCreate, url, username);
   }
 
   @Override
@@ -225,8 +325,12 @@ public class SplunkSettingsConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class SplunkSettingsConfig {\n");
     sb.append("    allowInsecure: ").append(toIndentedString(allowInsecure)).append("\n");
+    sb.append("    host: ").append(toIndentedString(host)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    port: ").append(toIndentedString(port)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    sourcetype: ").append(toIndentedString(sourcetype)).append("\n");
+    sb.append("    timestampField: ").append(toIndentedString(timestampField)).append("\n");
     sb.append("    toCreate: ").append(toIndentedString(toCreate)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
@@ -248,7 +352,7 @@ public class SplunkSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("allow_insecure", "index", "port", "to_create", "url", "username"));
+    openapiFields = new HashSet<String>(Arrays.asList("allow_insecure", "host", "index", "port", "source", "sourcetype", "timestamp_field", "to_create", "url", "username"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("port", "url"));
@@ -282,11 +386,23 @@ public class SplunkSettingsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("host") != null && !jsonObj.get("host").isJsonNull()) && !jsonObj.get("host").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `host` to be a primitive type in the JSON string but got `%s`", jsonObj.get("host").toString()));
+      }
       if ((jsonObj.get("index") != null && !jsonObj.get("index").isJsonNull()) && !jsonObj.get("index").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `index` to be a primitive type in the JSON string but got `%s`", jsonObj.get("index").toString()));
       }
       if (!jsonObj.get("port").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `port` to be a primitive type in the JSON string but got `%s`", jsonObj.get("port").toString()));
+      }
+      if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
+      }
+      if ((jsonObj.get("sourcetype") != null && !jsonObj.get("sourcetype").isJsonNull()) && !jsonObj.get("sourcetype").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sourcetype` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sourcetype").toString()));
+      }
+      if ((jsonObj.get("timestamp_field") != null && !jsonObj.get("timestamp_field").isJsonNull()) && !jsonObj.get("timestamp_field").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `timestamp_field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("timestamp_field").toString()));
       }
       if (!jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));

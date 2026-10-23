@@ -18,6 +18,10 @@ export class DatabricksLakehouseMonadManagedPipeline {
     */
     'interval'?: number;
     /**
+    * How Auto Loader handles fields that aren\'t in the inferred schema; defaults to addNewColumns
+    */
+    'schemaEvolutionMode'?: DatabricksLakehouseMonadManagedPipelineSchemaEvolutionModeEnum;
+    /**
     * The bronze table the pipeline writes into; defaults to bronze_<volume>
     */
     'tableName'?: string;
@@ -34,6 +38,12 @@ export class DatabricksLakehouseMonadManagedPipeline {
             "format": ""
         },
         {
+            "name": "schemaEvolutionMode",
+            "baseName": "schema_evolution_mode",
+            "type": "DatabricksLakehouseMonadManagedPipelineSchemaEvolutionModeEnum",
+            "format": ""
+        },
+        {
             "name": "tableName",
             "baseName": "table_name",
             "type": "string",
@@ -47,3 +57,11 @@ export class DatabricksLakehouseMonadManagedPipeline {
     public constructor() {
     }
 }
+
+export enum DatabricksLakehouseMonadManagedPipelineSchemaEvolutionModeEnum {
+    AddNewColumns = 'addNewColumns',
+    Rescue = 'rescue',
+    FailOnNewColumns = 'failOnNewColumns',
+    None = 'none'
+}
+

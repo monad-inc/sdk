@@ -2210,6 +2210,16 @@
                         "description": "How often the pipeline runs, in minutes; defaults to 60",
                         "type": "integer"
                     },
+                    "schema_evolution_mode": {
+                        "description": "How Auto Loader handles fields that aren't in the inferred schema; defaults to addNewColumns",
+                        "enum": [
+                            "addNewColumns",
+                            "rescue",
+                            "failOnNewColumns",
+                            "none"
+                        ],
+                        "type": "string"
+                    },
                     "table_name": {
                         "description": "The bronze table the pipeline writes into; defaults to bronze_\u003cvolume\u003e",
                         "type": "string"
@@ -11664,12 +11674,28 @@
                         "description": "Whether to allow insecure connections (not recommended for production).",
                         "type": "boolean"
                     },
+                    "host": {
+                        "description": "The host set on every event, used as-is. If left empty, the token's default host applies.",
+                        "type": "string"
+                    },
                     "index": {
                         "description": "The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token \u0026 Index scoping.",
                         "type": "string"
                     },
                     "port": {
                         "description": "The port of the Splunk instance.",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "The source set on every event, used as-is. If left empty, the token's default source applies.",
+                        "type": "string"
+                    },
+                    "sourcetype": {
+                        "description": "The sourcetype set on every event, used as-is. If left empty, the token's default sourcetype applies.",
+                        "type": "string"
+                    },
+                    "timestamp_field": {
+                        "description": "Optional JSON path to the event timestamp in each record, sent as the event's time. Records where\nit is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them.",
                         "type": "string"
                     },
                     "to_create": {

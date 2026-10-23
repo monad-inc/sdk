@@ -46,6 +46,14 @@ public class DatabricksLakehouseMonadManagedPipelineTest {
     }
 
     /**
+     * Test the property 'schemaEvolutionMode'
+     */
+    @Test
+    public void schemaEvolutionModeTest() {
+        // TODO: test schemaEvolutionMode
+    }
+
+    /**
      * Test the property 'tableName'
      */
     @Test

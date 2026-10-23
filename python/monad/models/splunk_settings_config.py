@@ -29,12 +29,16 @@ class SplunkSettingsConfig(BaseModel):
     Splunk Output Settings
     """ # noqa: E501
     allow_insecure: Optional[StrictBool] = Field(default=None, description="Whether to allow insecure connections (not recommended for production).")
+    host: Optional[StrictStr] = Field(default=None, description="The host set on every event, used as-is. If left empty, the token's default host applies.")
     index: Optional[StrictStr] = Field(default=None, description="The index you want to send data to. If left empty, data is sent to the default index associated with the token. If specified, please read our docs for more context on Splunk token & Index scoping.")
     port: StrictStr = Field(description="The port of the Splunk instance.")
+    source: Optional[StrictStr] = Field(default=None, description="The source set on every event, used as-is. If left empty, the token's default source applies.")
+    sourcetype: Optional[StrictStr] = Field(default=None, description="The sourcetype set on every event, used as-is. If left empty, the token's default sourcetype applies.")
+    timestamp_field: Optional[StrictStr] = Field(default=None, description="Optional JSON path to the event timestamp in each record, sent as the event's time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them.")
     to_create: Optional[StrictBool] = Field(default=None, description="Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token & Index scoping.")
     url: StrictStr = Field(description="The URL of the Splunk instance (must start with http or https).")
     username: Optional[StrictStr] = Field(default=None, description="Represents an administrative account to manage indices. Used to create an index, hence can be left empty if default index is to be used.")
-    __properties: ClassVar[List[str]] = ["allow_insecure", "index", "port", "to_create", "url", "username"]
+    __properties: ClassVar[List[str]] = ["allow_insecure", "host", "index", "port", "source", "sourcetype", "timestamp_field", "to_create", "url", "username"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,8 +92,12 @@ class SplunkSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "allow_insecure": obj.get("allow_insecure"),
+            "host": obj.get("host"),
             "index": obj.get("index"),
             "port": obj.get("port"),
+            "source": obj.get("source"),
+            "sourcetype": obj.get("sourcetype"),
+            "timestamp_field": obj.get("timestamp_field"),
             "to_create": obj.get("to_create"),
             "url": obj.get("url"),
             "username": obj.get("username")

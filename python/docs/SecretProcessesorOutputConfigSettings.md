@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **domain_url** | **str** | The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.&lt;DOMAIN_URL&gt;/api/v2/logs | [optional] 
 **hostname** | **str** | The name of the originating host of the log. | [optional] 
 **service** | **str** | The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products. | [optional] 
-**timestamp_field** | **str** |  | [optional] 
+**timestamp_field** | **str** | Optional JSON path to the event timestamp in each record, sent as the event&#39;s time. Records where it is missing, unparseable or out of range are sent without a time, so Splunk uses the time it received them. | [optional] 
 **auth_config** | [**SlackAuthConfig**](SlackAuthConfig.md) |  | [optional] 
 **auth_type** | **str** |  | [optional] 
 **cloud_id** | **str** |  | [optional] 
@@ -68,7 +68,7 @@ Name | Type | Description | Notes
 **tls_skip_verify** | **bool** |  | [optional] 
 **wrapper_key** | **str** | The key to use for wrapping the payload when PayloadStructure is set to &#39;wrapped&#39;. | [optional] 
 **auth** | [**ScannerAuthConfig**](ScannerAuthConfig.md) |  | 
-**host** | **str** | The host of the PostgreSQL database | 
+**host** | **str** | The host set on every event, used as-is. If left empty, the token&#39;s default host applies. | 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **transform** | **str** | Optional transform schema Hydrolix should apply when handling payloads. Sent as the &#x60;X-Hdx-Transform&#x60; header. | [optional] 
 **event_format** | [**IbmQradarEventFormatConfig**](IbmQradarEventFormatConfig.md) |  | [optional] 
@@ -117,6 +117,8 @@ Name | Type | Description | Notes
 **pipe** | **str** | The name of the pre-existing STREAMING pipe (created with DATA_SOURCE(TYPE &#x3D;&gt; &#39;STREAMING&#39;)). | 
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **allow_insecure** | **bool** | Skip TLS verification. Not recommended outside local testing. | [optional] 
+**source** | **str** | The source set on every event, used as-is. If left empty, the token&#39;s default source applies. | [optional] 
+**sourcetype** | **str** | The sourcetype set on every event, used as-is. If left empty, the token&#39;s default sourcetype applies. | [optional] 
 **to_create** | **bool** | Ensure this is selected if you want the connector to create the index for you. If you are using a pre-existing index, please leave this deselected. Read our docs for more context on Splunk token &amp; Index scoping. | [optional] 
 **source_metadata** | [**SumologicSourceMetadata**](SumologicSourceMetadata.md) |  | [optional] 
 **api_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 

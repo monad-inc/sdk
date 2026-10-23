@@ -1001,6 +1001,22 @@ public class SecretProcessesorOutputConfigSettingsTest {
     }
 
     /**
+     * Test the property 'source'
+     */
+    @Test
+    public void sourceTest() {
+        // TODO: test source
+    }
+
+    /**
+     * Test the property 'sourcetype'
+     */
+    @Test
+    public void sourcetypeTest() {
+        // TODO: test sourcetype
+    }
+
+    /**
      * Test the property 'toCreate'
      */
     @Test
