@@ -60,6 +60,11 @@ public class ModelsSchemaTrackingSummary {
   @javax.annotation.Nullable
   private Integer inLearning;
 
+  public static final String SERIALIZED_NAME_WITH_STATS = "with_stats";
+  @SerializedName(SERIALIZED_NAME_WITH_STATS)
+  @javax.annotation.Nullable
+  private Integer withStats;
+
   public ModelsSchemaTrackingSummary() {
   }
 
@@ -101,6 +106,25 @@ public class ModelsSchemaTrackingSummary {
   }
 
 
+  public ModelsSchemaTrackingSummary withStats(@javax.annotation.Nullable Integer withStats) {
+    this.withStats = withStats;
+    return this;
+  }
+
+  /**
+   * Get withStats
+   * @return withStats
+   */
+  @javax.annotation.Nullable
+  public Integer getWithStats() {
+    return withStats;
+  }
+
+  public void setWithStats(@javax.annotation.Nullable Integer withStats) {
+    this.withStats = withStats;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -112,12 +136,13 @@ public class ModelsSchemaTrackingSummary {
     }
     ModelsSchemaTrackingSummary modelsSchemaTrackingSummary = (ModelsSchemaTrackingSummary) o;
     return Objects.equals(this.inDetection, modelsSchemaTrackingSummary.inDetection) &&
-        Objects.equals(this.inLearning, modelsSchemaTrackingSummary.inLearning);
+        Objects.equals(this.inLearning, modelsSchemaTrackingSummary.inLearning) &&
+        Objects.equals(this.withStats, modelsSchemaTrackingSummary.withStats);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inDetection, inLearning);
+    return Objects.hash(inDetection, inLearning, withStats);
   }
 
   @Override
@@ -126,6 +151,7 @@ public class ModelsSchemaTrackingSummary {
     sb.append("class ModelsSchemaTrackingSummary {\n");
     sb.append("    inDetection: ").append(toIndentedString(inDetection)).append("\n");
     sb.append("    inLearning: ").append(toIndentedString(inLearning)).append("\n");
+    sb.append("    withStats: ").append(toIndentedString(withStats)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,7 +170,7 @@ public class ModelsSchemaTrackingSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("in_detection", "in_learning"));
+    openapiFields = new HashSet<String>(Arrays.asList("in_detection", "in_learning", "with_stats"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

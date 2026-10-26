@@ -13,6 +13,7 @@
 import { HttpFile } from '../http/http';
 
 export class ModelsPipelineWithSchemaTracked {
+    'edgesWithStats'?: number;
     'id'?: string;
     'name'?: string;
 
@@ -21,6 +22,12 @@ export class ModelsPipelineWithSchemaTracked {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "edgesWithStats",
+            "baseName": "edges_with_stats",
+            "type": "number",
+            "format": ""
+        },
         {
             "name": "id",
             "baseName": "id",

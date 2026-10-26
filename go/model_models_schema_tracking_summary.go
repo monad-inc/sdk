@@ -22,6 +22,7 @@ var _ MappedNullable = &ModelsSchemaTrackingSummary{}
 type ModelsSchemaTrackingSummary struct {
 	InDetection *int32 `json:"in_detection,omitempty"`
 	InLearning *int32 `json:"in_learning,omitempty"`
+	WithStats *int32 `json:"with_stats,omitempty"`
 }
 
 // NewModelsSchemaTrackingSummary instantiates a new ModelsSchemaTrackingSummary object
@@ -105,6 +106,38 @@ func (o *ModelsSchemaTrackingSummary) SetInLearning(v int32) {
 	o.InLearning = &v
 }
 
+// GetWithStats returns the WithStats field value if set, zero value otherwise.
+func (o *ModelsSchemaTrackingSummary) GetWithStats() int32 {
+	if o == nil || IsNil(o.WithStats) {
+		var ret int32
+		return ret
+	}
+	return *o.WithStats
+}
+
+// GetWithStatsOk returns a tuple with the WithStats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsSchemaTrackingSummary) GetWithStatsOk() (*int32, bool) {
+	if o == nil || IsNil(o.WithStats) {
+		return nil, false
+	}
+	return o.WithStats, true
+}
+
+// HasWithStats returns a boolean if a field has been set.
+func (o *ModelsSchemaTrackingSummary) HasWithStats() bool {
+	if o != nil && !IsNil(o.WithStats) {
+		return true
+	}
+
+	return false
+}
+
+// SetWithStats gets a reference to the given int32 and assigns it to the WithStats field.
+func (o *ModelsSchemaTrackingSummary) SetWithStats(v int32) {
+	o.WithStats = &v
+}
+
 func (o ModelsSchemaTrackingSummary) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o ModelsSchemaTrackingSummary) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.InLearning) {
 		toSerialize["in_learning"] = o.InLearning
+	}
+	if !IsNil(o.WithStats) {
+		toSerialize["with_stats"] = o.WithStats
 	}
 	return toSerialize, nil
 }

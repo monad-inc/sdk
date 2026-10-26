@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **in_detection** | **int** |  | [optional] 
 **in_learning** | **int** |  | [optional] 
+**with_stats** | **int** |  | [optional] 
 
 ## Example
 

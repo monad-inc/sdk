@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**EdgesWithStats** | Pointer to **int32** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewModelsPipelineWithSchemaTrackedWithDefaults instantiates a new ModelsPipelineWithSchemaTracked object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEdgesWithStats
+
+`func (o *ModelsPipelineWithSchemaTracked) GetEdgesWithStats() int32`
+
+GetEdgesWithStats returns the EdgesWithStats field if non-nil, zero value otherwise.
+
+### GetEdgesWithStatsOk
+
+`func (o *ModelsPipelineWithSchemaTracked) GetEdgesWithStatsOk() (*int32, bool)`
+
+GetEdgesWithStatsOk returns a tuple with the EdgesWithStats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEdgesWithStats
+
+`func (o *ModelsPipelineWithSchemaTracked) SetEdgesWithStats(v int32)`
+
+SetEdgesWithStats sets EdgesWithStats field to given value.
+
+### HasEdgesWithStats
+
+`func (o *ModelsPipelineWithSchemaTracked) HasEdgesWithStats() bool`
+
+HasEdgesWithStats returns a boolean if a field has been set.
 
 ### GetId
 

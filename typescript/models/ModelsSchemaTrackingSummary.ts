@@ -15,6 +15,7 @@ import { HttpFile } from '../http/http';
 export class ModelsSchemaTrackingSummary {
     'inDetection'?: number;
     'inLearning'?: number;
+    'withStats'?: number;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -30,6 +31,12 @@ export class ModelsSchemaTrackingSummary {
         {
             "name": "inLearning",
             "baseName": "in_learning",
+            "type": "number",
+            "format": ""
+        },
+        {
+            "name": "withStats",
+            "baseName": "with_stats",
             "type": "number",
             "format": ""
         }    ];

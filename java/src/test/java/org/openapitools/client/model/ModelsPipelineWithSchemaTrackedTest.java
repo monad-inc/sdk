@@ -38,6 +38,14 @@ public class ModelsPipelineWithSchemaTrackedTest {
     }
 
     /**
+     * Test the property 'edgesWithStats'
+     */
+    @Test
+    public void edgesWithStatsTest() {
+        // TODO: test edgesWithStats
+    }
+
+    /**
      * Test the property 'id'
      */
     @Test

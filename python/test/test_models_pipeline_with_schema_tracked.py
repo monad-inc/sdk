@@ -36,6 +36,7 @@ class TestModelsPipelineWithSchemaTracked(unittest.TestCase):
         model = ModelsPipelineWithSchemaTracked()
         if include_optional:
             return ModelsPipelineWithSchemaTracked(
+                edges_with_stats = 56,
                 id = '',
                 name = ''
             )

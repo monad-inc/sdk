@@ -30,7 +30,8 @@ class ModelsSchemaTrackingSummary(BaseModel):
     """ # noqa: E501
     in_detection: Optional[StrictInt] = None
     in_learning: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["in_detection", "in_learning"]
+    with_stats: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["in_detection", "in_learning", "with_stats"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,7 +85,8 @@ class ModelsSchemaTrackingSummary(BaseModel):
 
         _obj = cls.model_validate({
             "in_detection": obj.get("in_detection"),
-            "in_learning": obj.get("in_learning")
+            "in_learning": obj.get("in_learning"),
+            "with_stats": obj.get("with_stats")
         })
         return _obj
 

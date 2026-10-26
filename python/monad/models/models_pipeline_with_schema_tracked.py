@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,10 @@ class ModelsPipelineWithSchemaTracked(BaseModel):
     """
     ModelsPipelineWithSchemaTracked
     """ # noqa: E501
+    edges_with_stats: Optional[StrictInt] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "name"]
+    __properties: ClassVar[List[str]] = ["edges_with_stats", "id", "name"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,6 +84,7 @@ class ModelsPipelineWithSchemaTracked(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "edges_with_stats": obj.get("edges_with_stats"),
             "id": obj.get("id"),
             "name": obj.get("name")
         })

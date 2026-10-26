@@ -6137,6 +6137,9 @@
             },
             "models.PipelineWithSchemaTracked": {
                 "properties": {
+                    "edges_with_stats": {
+                        "type": "integer"
+                    },
                     "id": {
                         "type": "string"
                     },
@@ -6655,6 +6658,9 @@
                         "type": "integer"
                     },
                     "in_learning": {
+                        "type": "integer"
+                    },
+                    "with_stats": {
                         "type": "integer"
                     }
                 },

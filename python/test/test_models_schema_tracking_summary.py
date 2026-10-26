@@ -37,7 +37,8 @@ class TestModelsSchemaTrackingSummary(unittest.TestCase):
         if include_optional:
             return ModelsSchemaTrackingSummary(
                 in_detection = 56,
-                in_learning = 56
+                in_learning = 56,
+                with_stats = 56
             )
         else:
             return ModelsSchemaTrackingSummary(

@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsPipelineWithSchemaTracked{}
 
 // ModelsPipelineWithSchemaTracked struct for ModelsPipelineWithSchemaTracked
 type ModelsPipelineWithSchemaTracked struct {
+	EdgesWithStats *int32 `json:"edges_with_stats,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 }
@@ -39,6 +40,38 @@ func NewModelsPipelineWithSchemaTracked() *ModelsPipelineWithSchemaTracked {
 func NewModelsPipelineWithSchemaTrackedWithDefaults() *ModelsPipelineWithSchemaTracked {
 	this := ModelsPipelineWithSchemaTracked{}
 	return &this
+}
+
+// GetEdgesWithStats returns the EdgesWithStats field value if set, zero value otherwise.
+func (o *ModelsPipelineWithSchemaTracked) GetEdgesWithStats() int32 {
+	if o == nil || IsNil(o.EdgesWithStats) {
+		var ret int32
+		return ret
+	}
+	return *o.EdgesWithStats
+}
+
+// GetEdgesWithStatsOk returns a tuple with the EdgesWithStats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineWithSchemaTracked) GetEdgesWithStatsOk() (*int32, bool) {
+	if o == nil || IsNil(o.EdgesWithStats) {
+		return nil, false
+	}
+	return o.EdgesWithStats, true
+}
+
+// HasEdgesWithStats returns a boolean if a field has been set.
+func (o *ModelsPipelineWithSchemaTracked) HasEdgesWithStats() bool {
+	if o != nil && !IsNil(o.EdgesWithStats) {
+		return true
+	}
+
+	return false
+}
+
+// SetEdgesWithStats gets a reference to the given int32 and assigns it to the EdgesWithStats field.
+func (o *ModelsPipelineWithSchemaTracked) SetEdgesWithStats(v int32) {
+	o.EdgesWithStats = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -115,6 +148,9 @@ func (o ModelsPipelineWithSchemaTracked) MarshalJSON() ([]byte, error) {
 
 func (o ModelsPipelineWithSchemaTracked) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.EdgesWithStats) {
+		toSerialize["edges_with_stats"] = o.EdgesWithStats
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}

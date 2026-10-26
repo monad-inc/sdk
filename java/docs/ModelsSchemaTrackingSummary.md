@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**inDetection** | **Integer** |  |  [optional] |
 |**inLearning** | **Integer** |  |  [optional] |
+|**withStats** | **Integer** |  |  [optional] |
 
 
 

@@ -50,6 +50,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsPipelineWithSchemaTracked {
+  public static final String SERIALIZED_NAME_EDGES_WITH_STATS = "edges_with_stats";
+  @SerializedName(SERIALIZED_NAME_EDGES_WITH_STATS)
+  @javax.annotation.Nullable
+  private Integer edgesWithStats;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -62,6 +67,25 @@ public class ModelsPipelineWithSchemaTracked {
 
   public ModelsPipelineWithSchemaTracked() {
   }
+
+  public ModelsPipelineWithSchemaTracked edgesWithStats(@javax.annotation.Nullable Integer edgesWithStats) {
+    this.edgesWithStats = edgesWithStats;
+    return this;
+  }
+
+  /**
+   * Get edgesWithStats
+   * @return edgesWithStats
+   */
+  @javax.annotation.Nullable
+  public Integer getEdgesWithStats() {
+    return edgesWithStats;
+  }
+
+  public void setEdgesWithStats(@javax.annotation.Nullable Integer edgesWithStats) {
+    this.edgesWithStats = edgesWithStats;
+  }
+
 
   public ModelsPipelineWithSchemaTracked id(@javax.annotation.Nullable String id) {
     this.id = id;
@@ -111,19 +135,21 @@ public class ModelsPipelineWithSchemaTracked {
       return false;
     }
     ModelsPipelineWithSchemaTracked modelsPipelineWithSchemaTracked = (ModelsPipelineWithSchemaTracked) o;
-    return Objects.equals(this.id, modelsPipelineWithSchemaTracked.id) &&
+    return Objects.equals(this.edgesWithStats, modelsPipelineWithSchemaTracked.edgesWithStats) &&
+        Objects.equals(this.id, modelsPipelineWithSchemaTracked.id) &&
         Objects.equals(this.name, modelsPipelineWithSchemaTracked.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(edgesWithStats, id, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsPipelineWithSchemaTracked {\n");
+    sb.append("    edgesWithStats: ").append(toIndentedString(edgesWithStats)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
@@ -144,7 +170,7 @@ public class ModelsPipelineWithSchemaTracked {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "name"));
+    openapiFields = new HashSet<String>(Arrays.asList("edges_with_stats", "id", "name"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

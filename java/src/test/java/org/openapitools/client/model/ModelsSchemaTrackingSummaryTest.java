@@ -53,4 +53,12 @@ public class ModelsSchemaTrackingSummaryTest {
         // TODO: test inLearning
     }
 
+    /**
+     * Test the property 'withStats'
+     */
+    @Test
+    public void withStatsTest() {
+        // TODO: test withStats
+    }
+
 }
