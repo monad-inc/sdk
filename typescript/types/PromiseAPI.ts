@@ -87,6 +87,7 @@ import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
 import { ConvertTimestampArgumentsConfig } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampParseErrorMode } from '../models/ConvertTimestampParseErrorMode';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CoralogixCommunicationConfig } from '../models/CoralogixCommunicationConfig';
 import { CoralogixRESTVariant } from '../models/CoralogixRESTVariant';

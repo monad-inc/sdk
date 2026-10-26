@@ -83,6 +83,7 @@ export * from '../models/ComponentpreviewResponse';
 export * from '../models/ConnectormetaResourceMetadata';
 export * from '../models/ConvertCefArgumentsConfig';
 export * from '../models/ConvertTimestampArgumentsConfig';
+export * from '../models/ConvertTimestampParseErrorMode';
 export * from '../models/ConvertTimestampTimestampFormat';
 export * from '../models/CoralogixCommunicationConfig';
 export * from '../models/CoralogixRESTVariant';
@@ -703,7 +704,8 @@ import { CommunityTransformsInternalTransformsIndex } from '../models/CommunityT
 import { ComponentpreviewResponse } from '../models/ComponentpreviewResponse';
 import { ConnectormetaResourceMetadata } from '../models/ConnectormetaResourceMetadata';
 import { ConvertCefArgumentsConfig } from '../models/ConvertCefArgumentsConfig';
-import { ConvertTimestampArgumentsConfig         } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampArgumentsConfig          } from '../models/ConvertTimestampArgumentsConfig';
+import { ConvertTimestampParseErrorMode } from '../models/ConvertTimestampParseErrorMode';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { CoralogixCommunicationConfig , CoralogixCommunicationConfigTypeEnum   } from '../models/CoralogixCommunicationConfig';
 import { CoralogixRESTVariant } from '../models/CoralogixRESTVariant';
@@ -1263,6 +1265,7 @@ let enumsMap: Set<string> = new Set<string>([
     "BlastradiusSeverity",
     "CommonAuthConfigTypeEnum",
     "CommonAuthType",
+    "ConvertTimestampParseErrorMode",
     "ConvertTimestampTimestampFormat",
     "CoralogixCommunicationConfigTypeEnum",
     "CoralogixSettingsConfigRegionEnum",

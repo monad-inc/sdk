@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **Strict** | Pointer to **bool** | Fail the record on structural problems instead of best-effort parsing. Default false. | [optional] 
 **StripQuotes** | Pointer to **bool** | Remove one leading+trailing double-quote from values that carry both. Default false. | [optional] 
 **WarningsKey** | Pointer to **string** | Write parse warnings as a string array under this key; \&quot;\&quot; (default) omits them. | [optional] 
+**OnParseError** | Pointer to [**ConvertTimestampParseErrorMode**](ConvertTimestampParseErrorMode.md) |  | [optional] 
 **SourceFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **SourceFormatCustom** | Pointer to **string** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **SourceKey** | Pointer to **string** | Required: JSONPath to source timestamp field | [optional] 
@@ -599,6 +600,31 @@ SetWarningsKey sets WarningsKey field to given value.
 `func (o *RoutesTransformOperationArguments) HasWarningsKey() bool`
 
 HasWarningsKey returns a boolean if a field has been set.
+
+### GetOnParseError
+
+`func (o *RoutesTransformOperationArguments) GetOnParseError() ConvertTimestampParseErrorMode`
+
+GetOnParseError returns the OnParseError field if non-nil, zero value otherwise.
+
+### GetOnParseErrorOk
+
+`func (o *RoutesTransformOperationArguments) GetOnParseErrorOk() (*ConvertTimestampParseErrorMode, bool)`
+
+GetOnParseErrorOk returns a tuple with the OnParseError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnParseError
+
+`func (o *RoutesTransformOperationArguments) SetOnParseError(v ConvertTimestampParseErrorMode)`
+
+SetOnParseError sets OnParseError field to given value.
+
+### HasOnParseError
+
+`func (o *RoutesTransformOperationArguments) HasOnParseError() bool`
+
+HasOnParseError returns a boolean if a field has been set.
 
 ### GetSourceFormat
 

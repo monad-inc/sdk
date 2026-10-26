@@ -473,6 +473,7 @@ Class | Method | HTTP request | Description
  - [ConnectormetaResourceMetadata](docs/ConnectormetaResourceMetadata.md)
  - [ConvertCefArgumentsConfig](docs/ConvertCefArgumentsConfig.md)
  - [ConvertTimestampArgumentsConfig](docs/ConvertTimestampArgumentsConfig.md)
+ - [ConvertTimestampParseErrorMode](docs/ConvertTimestampParseErrorMode.md)
  - [ConvertTimestampTimestampFormat](docs/ConvertTimestampTimestampFormat.md)
  - [CoralogixCommunicationConfig](docs/CoralogixCommunicationConfig.md)
  - [CoralogixRESTVariant](docs/CoralogixRESTVariant.md)

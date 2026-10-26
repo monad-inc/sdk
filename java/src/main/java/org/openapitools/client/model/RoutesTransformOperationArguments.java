@@ -29,6 +29,7 @@ import org.openapitools.client.model.AddArgumentsConfig;
 import org.openapitools.client.model.AddIdArgumentsConfig;
 import org.openapitools.client.model.ConvertCefArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
+import org.openapitools.client.model.ConvertTimestampParseErrorMode;
 import org.openapitools.client.model.ConvertTimestampTimestampFormat;
 import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
 import org.openapitools.client.model.DedupArgumentsConfig;

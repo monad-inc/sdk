@@ -67,6 +67,7 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                 strict = True,
                 strip_quotes = True,
                 warnings_key = '',
+                on_parse_error = 'fail',
                 source_format = 'auto',
                 source_format_custom = '',
                 source_key = '',

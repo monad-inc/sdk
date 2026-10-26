@@ -10,10 +10,12 @@
  * Do not edit the class manually.
  */
 
+import { ConvertTimestampParseErrorMode } from '../models/ConvertTimestampParseErrorMode';
 import { ConvertTimestampTimestampFormat } from '../models/ConvertTimestampTimestampFormat';
 import { HttpFile } from '../http/http';
 
 export class ConvertTimestampArgumentsConfig {
+    'onParseError'?: ConvertTimestampParseErrorMode;
     'sourceFormat'?: ConvertTimestampTimestampFormat;
     /**
     * Optional: Custom Go time layout (only if SourceFormat = \"custom\")
@@ -46,6 +48,12 @@ export class ConvertTimestampArgumentsConfig {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "onParseError",
+            "baseName": "on_parse_error",
+            "type": "ConvertTimestampParseErrorMode",
+            "format": ""
+        },
         {
             "name": "sourceFormat",
             "baseName": "source_format",

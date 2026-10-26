@@ -28,6 +28,7 @@
 |**strict** | **Boolean** | Fail the record on structural problems instead of best-effort parsing. Default false. |  [optional] |
 |**stripQuotes** | **Boolean** | Remove one leading+trailing double-quote from values that carry both. Default false. |  [optional] |
 |**warningsKey** | **String** | Write parse warnings as a string array under this key; \&quot;\&quot; (default) omits them. |  [optional] |
+|**onParseError** | **ConvertTimestampParseErrorMode** |  |  [optional] |
 |**sourceFormat** | **ConvertTimestampTimestampFormat** |  |  [optional] |
 |**sourceFormatCustom** | **String** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) |  [optional] |
 |**sourceKey** | **String** | Required: JSONPath to source timestamp field |  [optional] |

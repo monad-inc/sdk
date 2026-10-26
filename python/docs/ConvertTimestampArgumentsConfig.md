@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**on_parse_error** | [**ConvertTimestampParseErrorMode**](ConvertTimestampParseErrorMode.md) |  | [optional] 
 **source_format** | [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **source_format_custom** | **str** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **source_key** | **str** | Required: JSONPath to source timestamp field | [optional] 

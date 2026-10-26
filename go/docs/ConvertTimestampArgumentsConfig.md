@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**OnParseError** | Pointer to [**ConvertTimestampParseErrorMode**](ConvertTimestampParseErrorMode.md) |  | [optional] 
 **SourceFormat** | Pointer to [**ConvertTimestampTimestampFormat**](ConvertTimestampTimestampFormat.md) |  | [optional] 
 **SourceFormatCustom** | Pointer to **string** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) | [optional] 
 **SourceKey** | Pointer to **string** | Required: JSONPath to source timestamp field | [optional] 
@@ -31,6 +32,31 @@ will change when the set of required properties is changed
 NewConvertTimestampArgumentsConfigWithDefaults instantiates a new ConvertTimestampArgumentsConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetOnParseError
+
+`func (o *ConvertTimestampArgumentsConfig) GetOnParseError() ConvertTimestampParseErrorMode`
+
+GetOnParseError returns the OnParseError field if non-nil, zero value otherwise.
+
+### GetOnParseErrorOk
+
+`func (o *ConvertTimestampArgumentsConfig) GetOnParseErrorOk() (*ConvertTimestampParseErrorMode, bool)`
+
+GetOnParseErrorOk returns a tuple with the OnParseError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnParseError
+
+`func (o *ConvertTimestampArgumentsConfig) SetOnParseError(v ConvertTimestampParseErrorMode)`
+
+SetOnParseError sets OnParseError field to given value.
+
+### HasOnParseError
+
+`func (o *ConvertTimestampArgumentsConfig) HasOnParseError() bool`
+
+HasOnParseError returns a boolean if a field has been set.
 
 ### GetSourceFormat
 

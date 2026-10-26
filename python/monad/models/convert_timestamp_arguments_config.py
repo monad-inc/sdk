@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.convert_timestamp_parse_error_mode import ConvertTimestampParseErrorMode
 from monad.models.convert_timestamp_timestamp_format import ConvertTimestampTimestampFormat
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,6 +30,7 @@ class ConvertTimestampArgumentsConfig(BaseModel):
     """
     ConvertTimestampArgumentsConfig
     """ # noqa: E501
+    on_parse_error: Optional[ConvertTimestampParseErrorMode] = None
     source_format: Optional[ConvertTimestampTimestampFormat] = None
     source_format_custom: Optional[StrictStr] = Field(default=None, description="Optional: Custom Go time layout (only if SourceFormat = \"custom\")")
     source_key: Optional[StrictStr] = Field(default=None, description="Required: JSONPath to source timestamp field")
@@ -37,7 +39,7 @@ class ConvertTimestampArgumentsConfig(BaseModel):
     target_format_custom: Optional[StrictStr] = Field(default=None, description="Optional: Custom target format (only if TargetFormat = \"custom\")")
     target_key: Optional[StrictStr] = Field(default=None, description="Optional: Target field (if empty, overwrites SourceKey)")
     target_timezone: Optional[StrictStr] = Field(default=None, description="Optional: Target timezone (default: UTC)")
-    __properties: ClassVar[List[str]] = ["source_format", "source_format_custom", "source_key", "source_timezone", "target_format", "target_format_custom", "target_key", "target_timezone"]
+    __properties: ClassVar[List[str]] = ["on_parse_error", "source_format", "source_format_custom", "source_key", "source_timezone", "target_format", "target_format_custom", "target_key", "target_timezone"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,6 +92,7 @@ class ConvertTimestampArgumentsConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "on_parse_error": obj.get("on_parse_error"),
             "source_format": obj.get("source_format"),
             "source_format_custom": obj.get("source_format_custom"),
             "source_key": obj.get("source_key"),

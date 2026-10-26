@@ -28,6 +28,7 @@ import org.openapitools.client.model.AddArgumentsConfig;
 import org.openapitools.client.model.AddIdArgumentsConfig;
 import org.openapitools.client.model.ConvertCefArgumentsConfig;
 import org.openapitools.client.model.ConvertTimestampArgumentsConfig;
+import org.openapitools.client.model.ConvertTimestampParseErrorMode;
 import org.openapitools.client.model.ConvertTimestampTimestampFormat;
 import org.openapitools.client.model.CreateKeyValueIfKeyValueArgumentsConfig;
 import org.openapitools.client.model.DedupArgumentsConfig;
@@ -234,6 +235,14 @@ public class RoutesTransformOperationArgumentsTest {
     @Test
     public void warningsKeyTest() {
         // TODO: test warningsKey
+    }
+
+    /**
+     * Test the property 'onParseError'
+     */
+    @Test
+    public void onParseErrorTest() {
+        // TODO: test onParseError
     }
 
     /**

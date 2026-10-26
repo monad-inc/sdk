@@ -20,6 +20,7 @@ var _ MappedNullable = &ConvertTimestampArgumentsConfig{}
 
 // ConvertTimestampArgumentsConfig struct for ConvertTimestampArgumentsConfig
 type ConvertTimestampArgumentsConfig struct {
+	OnParseError *ConvertTimestampParseErrorMode `json:"on_parse_error,omitempty"`
 	SourceFormat *ConvertTimestampTimestampFormat `json:"source_format,omitempty"`
 	// Optional: Custom Go time layout (only if SourceFormat = \"custom\")
 	SourceFormatCustom *string `json:"source_format_custom,omitempty"`
@@ -51,6 +52,38 @@ func NewConvertTimestampArgumentsConfig() *ConvertTimestampArgumentsConfig {
 func NewConvertTimestampArgumentsConfigWithDefaults() *ConvertTimestampArgumentsConfig {
 	this := ConvertTimestampArgumentsConfig{}
 	return &this
+}
+
+// GetOnParseError returns the OnParseError field value if set, zero value otherwise.
+func (o *ConvertTimestampArgumentsConfig) GetOnParseError() ConvertTimestampParseErrorMode {
+	if o == nil || IsNil(o.OnParseError) {
+		var ret ConvertTimestampParseErrorMode
+		return ret
+	}
+	return *o.OnParseError
+}
+
+// GetOnParseErrorOk returns a tuple with the OnParseError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConvertTimestampArgumentsConfig) GetOnParseErrorOk() (*ConvertTimestampParseErrorMode, bool) {
+	if o == nil || IsNil(o.OnParseError) {
+		return nil, false
+	}
+	return o.OnParseError, true
+}
+
+// HasOnParseError returns a boolean if a field has been set.
+func (o *ConvertTimestampArgumentsConfig) HasOnParseError() bool {
+	if o != nil && !IsNil(o.OnParseError) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnParseError gets a reference to the given ConvertTimestampParseErrorMode and assigns it to the OnParseError field.
+func (o *ConvertTimestampArgumentsConfig) SetOnParseError(v ConvertTimestampParseErrorMode) {
+	o.OnParseError = &v
 }
 
 // GetSourceFormat returns the SourceFormat field value if set, zero value otherwise.
@@ -319,6 +352,9 @@ func (o ConvertTimestampArgumentsConfig) MarshalJSON() ([]byte, error) {
 
 func (o ConvertTimestampArgumentsConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.OnParseError) {
+		toSerialize["on_parse_error"] = o.OnParseError
+	}
 	if !IsNil(o.SourceFormat) {
 		toSerialize["source_format"] = o.SourceFormat
 	}

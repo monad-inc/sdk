@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.ConvertTimestampParseErrorMode;
 import org.openapitools.client.model.ConvertTimestampTimestampFormat;
 
 import com.google.gson.Gson;
@@ -51,6 +52,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ConvertTimestampArgumentsConfig {
+  public static final String SERIALIZED_NAME_ON_PARSE_ERROR = "on_parse_error";
+  @SerializedName(SERIALIZED_NAME_ON_PARSE_ERROR)
+  @javax.annotation.Nullable
+  private ConvertTimestampParseErrorMode onParseError;
+
   public static final String SERIALIZED_NAME_SOURCE_FORMAT = "source_format";
   @SerializedName(SERIALIZED_NAME_SOURCE_FORMAT)
   @javax.annotation.Nullable
@@ -93,6 +99,25 @@ public class ConvertTimestampArgumentsConfig {
 
   public ConvertTimestampArgumentsConfig() {
   }
+
+  public ConvertTimestampArgumentsConfig onParseError(@javax.annotation.Nullable ConvertTimestampParseErrorMode onParseError) {
+    this.onParseError = onParseError;
+    return this;
+  }
+
+  /**
+   * Get onParseError
+   * @return onParseError
+   */
+  @javax.annotation.Nullable
+  public ConvertTimestampParseErrorMode getOnParseError() {
+    return onParseError;
+  }
+
+  public void setOnParseError(@javax.annotation.Nullable ConvertTimestampParseErrorMode onParseError) {
+    this.onParseError = onParseError;
+  }
+
 
   public ConvertTimestampArgumentsConfig sourceFormat(@javax.annotation.Nullable ConvertTimestampTimestampFormat sourceFormat) {
     this.sourceFormat = sourceFormat;
@@ -256,7 +281,8 @@ public class ConvertTimestampArgumentsConfig {
       return false;
     }
     ConvertTimestampArgumentsConfig convertTimestampArgumentsConfig = (ConvertTimestampArgumentsConfig) o;
-    return Objects.equals(this.sourceFormat, convertTimestampArgumentsConfig.sourceFormat) &&
+    return Objects.equals(this.onParseError, convertTimestampArgumentsConfig.onParseError) &&
+        Objects.equals(this.sourceFormat, convertTimestampArgumentsConfig.sourceFormat) &&
         Objects.equals(this.sourceFormatCustom, convertTimestampArgumentsConfig.sourceFormatCustom) &&
         Objects.equals(this.sourceKey, convertTimestampArgumentsConfig.sourceKey) &&
         Objects.equals(this.sourceTimezone, convertTimestampArgumentsConfig.sourceTimezone) &&
@@ -268,13 +294,14 @@ public class ConvertTimestampArgumentsConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceFormat, sourceFormatCustom, sourceKey, sourceTimezone, targetFormat, targetFormatCustom, targetKey, targetTimezone);
+    return Objects.hash(onParseError, sourceFormat, sourceFormatCustom, sourceKey, sourceTimezone, targetFormat, targetFormatCustom, targetKey, targetTimezone);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConvertTimestampArgumentsConfig {\n");
+    sb.append("    onParseError: ").append(toIndentedString(onParseError)).append("\n");
     sb.append("    sourceFormat: ").append(toIndentedString(sourceFormat)).append("\n");
     sb.append("    sourceFormatCustom: ").append(toIndentedString(sourceFormatCustom)).append("\n");
     sb.append("    sourceKey: ").append(toIndentedString(sourceKey)).append("\n");
@@ -301,7 +328,7 @@ public class ConvertTimestampArgumentsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("source_format", "source_format_custom", "source_key", "source_timezone", "target_format", "target_format_custom", "target_key", "target_timezone"));
+    openapiFields = new HashSet<String>(Arrays.asList("on_parse_error", "source_format", "source_format_custom", "source_key", "source_timezone", "target_format", "target_format_custom", "target_key", "target_timezone"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -328,6 +355,10 @@ public class ConvertTimestampArgumentsConfig {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `on_parse_error`
+      if (jsonObj.get("on_parse_error") != null && !jsonObj.get("on_parse_error").isJsonNull()) {
+        ConvertTimestampParseErrorMode.validateJsonElement(jsonObj.get("on_parse_error"));
+      }
       // validate the optional field `source_format`
       if (jsonObj.get("source_format") != null && !jsonObj.get("source_format").isJsonNull()) {
         ConvertTimestampTimestampFormat.validateJsonElement(jsonObj.get("source_format"));

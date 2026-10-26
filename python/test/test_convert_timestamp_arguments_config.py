@@ -36,6 +36,7 @@ class TestConvertTimestampArgumentsConfig(unittest.TestCase):
         model = ConvertTimestampArgumentsConfig()
         if include_optional:
             return ConvertTimestampArgumentsConfig(
+                on_parse_error = 'fail',
                 source_format = 'auto',
                 source_format_custom = '',
                 source_key = '',
