@@ -199,8 +199,8 @@ export class OrganizationInputsApiRequestFactory extends BaseAPIRequestFactory {
      * List configured inputs in organization
      * List organization inputs
      * @param organizationId Organization ID
-     * @param limit Limit the number of organizations returned (default: DefaultLimit)
-     * @param offset Offset the organizations returned (default: 0)
+     * @param limit Page size (default 10, max 1000)
+     * @param offset Rows to skip (default 0)
      */
     public async listOrganizationInputs(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -668,6 +668,13 @@ export class OrganizationInputsApiResponseProcessor {
                 "RoutesListInputsResponse", ""
             ) as RoutesListInputsResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml

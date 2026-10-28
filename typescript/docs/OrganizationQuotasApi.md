@@ -25,7 +25,7 @@ const apiInstance = new OrganizationQuotasApi(configuration);
 const request: OrganizationQuotasApiGetQuotasByOrganizationIDRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Limit (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **any**|  |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 

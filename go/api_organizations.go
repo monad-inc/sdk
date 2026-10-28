@@ -819,7 +819,7 @@ type ApiListChildOrganizationsRequest struct {
 	nameSearch *string
 }
 
-// Limit the number of organizations returned (default: 10)
+// Page size (default 10, max 500)
 func (r ApiListChildOrganizationsRequest) Limit(limit int32) ApiListChildOrganizationsRequest {
 	r.limit = &limit
 	return r
@@ -956,6 +956,17 @@ func (a *OrganizationsAPIService) ListChildOrganizationsExecute(r ApiListChildOr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 500 {
 			var v ResponderErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -991,7 +1002,7 @@ type ApiListUserOrganizationsRequest struct {
 	nameSearch *string
 }
 
-// Limit the number of organizations returned (default: 10)
+// Page size (default 10, max 500)
 func (r ApiListUserOrganizationsRequest) Limit(limit int32) ApiListUserOrganizationsRequest {
 	r.limit = &limit
 	return r
@@ -1142,6 +1153,16 @@ func (a *OrganizationsAPIService) ListUserOrganizationsExecute(r ApiListUserOrga
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}

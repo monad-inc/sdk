@@ -905,7 +905,7 @@ class RolesApi:
     def list_roles(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of roles returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the roles returned (default: 0)")] = None,
         _request_timeout: Union[
             None,
@@ -926,7 +926,7 @@ class RolesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of roles returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the roles returned (default: 0)
         :type offset: int
@@ -964,6 +964,7 @@ class RolesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissionsList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -981,7 +982,7 @@ class RolesApi:
     def list_roles_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of roles returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the roles returned (default: 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1002,7 +1003,7 @@ class RolesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of roles returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the roles returned (default: 0)
         :type offset: int
@@ -1040,6 +1041,7 @@ class RolesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissionsList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1057,7 +1059,7 @@ class RolesApi:
     def list_roles_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of roles returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the roles returned (default: 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1078,7 +1080,7 @@ class RolesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of roles returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the roles returned (default: 0)
         :type offset: int
@@ -1116,6 +1118,7 @@ class RolesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissionsList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

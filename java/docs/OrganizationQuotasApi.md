@@ -44,7 +44,7 @@ public class Example {
 
     OrganizationQuotasApi apiInstance = new OrganizationQuotasApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     Object body = null; // Object | 
     try {
@@ -66,7 +66,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 | **body** | **Object**|  | [optional] |
 

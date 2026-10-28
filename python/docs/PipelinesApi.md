@@ -1552,8 +1552,8 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    limit = 56 # int | Maximum number of pipelines to return (default is 10) (optional)
-    offset = 56 # int | Offset for pagination (default is 0) (optional)
+    limit = 56 # int | Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
+    offset = 56 # int | Number of pipelines to skip (default 0) (optional)
     start = 'start_example' # str | Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
     end = 'end_example' # str | End time (RFC3339 format) for status metrics (default: now) (optional)
 
@@ -1574,8 +1574,8 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **limit** | **int**| Maximum number of pipelines to return (default is 10) | [optional] 
- **offset** | **int**| Offset for pagination (default is 0) | [optional] 
+ **limit** | **int**| Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on | [optional] 
+ **offset** | **int**| Number of pipelines to skip (default 0) | [optional] 
  **start** | **str**| Start time (RFC3339 format) for status metrics (default: 24 hours ago) | [optional] 
  **end** | **str**| End time (RFC3339 format) for status metrics (default: now) | [optional] 
 
@@ -1740,7 +1740,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (optional)
     include_status = True # bool | Include the status of the pipeline nodes (optional)
 
@@ -1761,7 +1761,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset | [optional] 
  **include_status** | **bool**| Include the status of the pipeline nodes | [optional] 
 
@@ -1834,7 +1834,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.PipelinesApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (optional)
 
     try:
@@ -1854,7 +1854,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset | [optional] 
 
 ### Return type

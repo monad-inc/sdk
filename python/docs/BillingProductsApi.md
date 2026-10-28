@@ -292,7 +292,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.BillingProductsApi(api_client)
     show_inactive = True # bool | Show inactive products (optional)
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (optional)
 
     try:
@@ -312,7 +312,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **show_inactive** | **bool**| Show inactive products | [optional] 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset | [optional] 
 
 ### Return type

@@ -208,7 +208,7 @@ const apiInstance = new OrganizationEnrichmentsApi(configuration);
 const request: OrganizationEnrichmentsApiListEnrichmentsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Number of results to return (default 100) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Number of results to skip (default 0) (optional)
   offset: 1,
@@ -224,7 +224,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Number of results to return (default 100) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Number of results to skip (default 0) | (optional) defaults to undefined
 
 

@@ -326,7 +326,7 @@ const apiInstance = new OrganizationsApi(configuration);
 const request: OrganizationsApiListChildOrganizationsRequest = {
     // Parent Organization ID
   organizationId: "organization_id_example",
-    // Limit the number of organizations returned (default: 10) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset the organizations returned (default: 0) (optional)
   offset: 1,
@@ -344,7 +344,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Parent Organization ID | defaults to undefined
- **limit** | [**number**] | Limit the number of organizations returned (default: 10) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
  **nameSearch** | [**string**] | If provided, only return organizations with names that contain the search string | (optional) defaults to undefined
 
@@ -367,6 +367,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of sub-orgs |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -387,7 +388,7 @@ const configuration = createConfiguration();
 const apiInstance = new OrganizationsApi(configuration);
 
 const request: OrganizationsApiListUserOrganizationsRequest = {
-    // Limit the number of organizations returned (default: 10) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset the organizations returned (default: 0) (optional)
   offset: 1,
@@ -408,7 +409,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**number**] | Limit the number of organizations returned (default: 10) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset the organizations returned (default: 0) | (optional) defaults to undefined
  **noChildren** | [**boolean**] | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | (optional) defaults to undefined
  **parentOrganizationId** | [**string**] | If provided, only return the sub-orgs of the specified parent organization | (optional) defaults to undefined
@@ -433,6 +434,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Response body for listing organizations |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

@@ -53,7 +53,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationQuotasApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (optional)
     body = None # object |  (optional)
 
@@ -74,7 +74,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset | [optional] 
  **body** | **object**|  | [optional] 
 

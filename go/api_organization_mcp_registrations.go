@@ -39,7 +39,7 @@ func (r ApiListMCPClientRegistrationsRequest) OwnedBy(ownedBy string) ApiListMCP
 	return r
 }
 
-// Limit
+// Page size (default 10, max 200)
 func (r ApiListMCPClientRegistrationsRequest) Limit(limit int32) ApiListMCPClientRegistrationsRequest {
 	r.limit = &limit
 	return r
@@ -169,6 +169,17 @@ func (a *OrganizationMCPRegistrationsAPIService) ListMCPClientRegistrationsExecu
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
 			var v string

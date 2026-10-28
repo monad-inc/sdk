@@ -253,7 +253,7 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     BillingAccountsApi apiInstance = new BillingAccountsApi(defaultClient);
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     try {
       ModelsBillingAccountList result = apiInstance.getBillingAccounts(limit, offset);
@@ -273,7 +273,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type

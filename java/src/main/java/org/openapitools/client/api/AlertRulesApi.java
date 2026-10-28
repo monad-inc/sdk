@@ -767,7 +767,7 @@ public class AlertRulesApi {
     /**
      * Build call for listAlertRules
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -777,6 +777,7 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -848,7 +849,7 @@ public class AlertRulesApi {
      * Get all alert rules
      * Retrieve all alert rules for an organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return RoutesV3AlertRuleListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -857,6 +858,7 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -869,7 +871,7 @@ public class AlertRulesApi {
      * Get all alert rules
      * Retrieve all alert rules for an organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;RoutesV3AlertRuleListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -878,6 +880,7 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -891,7 +894,7 @@ public class AlertRulesApi {
      * Get all alert rules (asynchronously)
      * Retrieve all alert rules for an organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -901,6 +904,7 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

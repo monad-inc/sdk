@@ -442,7 +442,7 @@ type ApiGetBillingAccountsRequest struct {
 	offset *int32
 }
 
-// Limit
+// Page size (default 10, max 500)
 func (r ApiGetBillingAccountsRequest) Limit(limit int32) ApiGetBillingAccountsRequest {
 	r.limit = &limit
 	return r

@@ -109,7 +109,7 @@ const request: ResourceSharesApiListResourceShareTargetsRequest = {
   sortBy: "name",
     // Sort direction (used with sort_by) (optional)
   order: "asc",
-    // Page size (optional)
+    // Page size (default 10, max 1000) (optional)
   limit: 10,
     // Rows to skip (optional)
   offset: 0,
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
  **shared** | [**boolean**] | Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | (optional) defaults to undefined
  **sortBy** | [**&#39;name&#39; | &#39;shared&#39; | &#39;shared_at&#39; | &#39;in_use&#39;**]**Array<&#39;name&#39; &#124; &#39;shared&#39; &#124; &#39;shared_at&#39; &#124; &#39;in_use&#39;>** | Column to sort by; default puts shared rows first | (optional) defaults to undefined
  **order** | [**&#39;asc&#39; | &#39;desc&#39;**]**Array<&#39;asc&#39; &#124; &#39;desc&#39;>** | Sort direction (used with sort_by) | (optional) defaults to 'asc'
- **limit** | [**number**] | Page size | (optional) defaults to 10
+ **limit** | [**number**] | Page size (default 10, max 1000) | (optional) defaults to 10
  **offset** | [**number**] | Rows to skip | (optional) defaults to 0
 
 
@@ -243,7 +243,7 @@ const request: ResourceSharesApiListResourceUsageRequest = {
   resourceType: "secret",
     // Resource ID
   resourceId: "resource_id_example",
-    // Page size (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 10,
     // Rows to skip (optional)
   offset: 0,
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
  **organizationId** | [**string**] | Owner organization ID | defaults to undefined
  **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Resource type | defaults to undefined
  **resourceId** | [**string**] | Resource ID | defaults to undefined
- **limit** | [**number**] | Page size | (optional) defaults to 10
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to 10
  **offset** | [**number**] | Rows to skip | (optional) defaults to 0
 
 
@@ -307,7 +307,7 @@ const apiInstance = new ResourceSharesApi(configuration);
 const request: ResourceSharesApiListSharedResourcesRequest = {
     // Owner organization ID
   organizationId: "organization_id_example",
-    // Page size (default: 10) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (default: 0) (optional)
   offset: 1,
@@ -325,7 +325,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Owner organization ID | defaults to undefined
- **limit** | [**number**] | Page size (default: 10) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset (default: 0) | (optional) defaults to undefined
  **resourceType** | [**&#39;secret&#39; | &#39;component&#39;**]**Array<&#39;secret&#39; &#124; &#39;component&#39;>** | Filter by resource type | (optional) defaults to undefined
 

@@ -294,7 +294,7 @@ const configuration = createConfiguration();
 const apiInstance = new TransformsRepositoryApi(configuration);
 
 const request: TransformsRepositoryApiListTransformRepositoryRequest = {
-    // Number of items to return (default: 10) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Number of items to skip (default: 0) (optional)
   offset: 1,
@@ -309,7 +309,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**number**] | Number of items to return (default: 10) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Number of items to skip (default: 0) | (optional) defaults to undefined
 
 
@@ -331,6 +331,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transforms retrieved successfully |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Failed to list transforms |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

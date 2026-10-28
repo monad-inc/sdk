@@ -32,6 +32,7 @@ import org.openapitools.client.model.ModelsAPIKey;
 import org.openapitools.client.model.ModelsAPIKeyList;
 import org.openapitools.client.model.ModelsAPIKeyWithToken;
 import org.openapitools.client.model.RegenerateAPIKeyRequest;
+import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.UpdateAPIKeyRequest;
 
 import java.lang.reflect.Type;
@@ -515,7 +516,7 @@ public class OrganizationApiKeysApi {
     /**
      * Build call for listAPIKeys
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -525,6 +526,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
@@ -596,7 +598,7 @@ public class OrganizationApiKeysApi {
      * List API keys
      * List API keys
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsAPIKeyList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -605,6 +607,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
@@ -617,7 +620,7 @@ public class OrganizationApiKeysApi {
      * List API keys
      * List API keys
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsAPIKeyList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -626,6 +629,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */
@@ -639,7 +643,7 @@ public class OrganizationApiKeysApi {
      * List API keys (asynchronously)
      * List API keys
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -649,6 +653,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of API keys </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list API keys </td><td>  -  </td></tr>
      </table>
      */

@@ -453,7 +453,7 @@ func (r ApiGetBillingProductsRequest) ShowInactive(showInactive bool) ApiGetBill
 	return r
 }
 
-// Limit
+// Page size (default 10, max 500)
 func (r ApiGetBillingProductsRequest) Limit(limit int32) ApiGetBillingProductsRequest {
 	r.limit = &limit
 	return r

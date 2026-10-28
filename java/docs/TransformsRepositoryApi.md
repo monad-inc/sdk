@@ -427,7 +427,7 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     TransformsRepositoryApi apiInstance = new TransformsRepositoryApi(defaultClient);
-    Integer limit = 56; // Integer | Number of items to return (default: 10)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Number of items to skip (default: 0)
     try {
       ModelsTransformsRepositoryList result = apiInstance.listTransformRepository(limit, offset);
@@ -447,7 +447,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **limit** | **Integer**| Number of items to return (default: 10) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Number of items to skip (default: 0) | [optional] |
 
 ### Return type
@@ -467,5 +467,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Transforms retrieved successfully |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Failed to list transforms |  -  |
 

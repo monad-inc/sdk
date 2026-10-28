@@ -386,7 +386,7 @@ class ResourceSharesApi:
         shared: Annotated[Optional[StrictBool], Field(description="Filter by share state: true = only shared, false = only not shared")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Column to sort by; default puts shared rows first")] = None,
         order: Annotated[Optional[StrictStr], Field(description="Sort direction (used with sort_by)")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
         _request_timeout: Union[
             None,
@@ -419,7 +419,7 @@ class ResourceSharesApi:
         :type sort_by: str
         :param order: Sort direction (used with sort_by)
         :type order: str
-        :param limit: Page size
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
         :param offset: Rows to skip
         :type offset: int
@@ -488,7 +488,7 @@ class ResourceSharesApi:
         shared: Annotated[Optional[StrictBool], Field(description="Filter by share state: true = only shared, false = only not shared")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Column to sort by; default puts shared rows first")] = None,
         order: Annotated[Optional[StrictStr], Field(description="Sort direction (used with sort_by)")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
         _request_timeout: Union[
             None,
@@ -521,7 +521,7 @@ class ResourceSharesApi:
         :type sort_by: str
         :param order: Sort direction (used with sort_by)
         :type order: str
-        :param limit: Page size
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
         :param offset: Rows to skip
         :type offset: int
@@ -590,7 +590,7 @@ class ResourceSharesApi:
         shared: Annotated[Optional[StrictBool], Field(description="Filter by share state: true = only shared, false = only not shared")] = None,
         sort_by: Annotated[Optional[StrictStr], Field(description="Column to sort by; default puts shared rows first")] = None,
         order: Annotated[Optional[StrictStr], Field(description="Sort direction (used with sort_by)")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
         _request_timeout: Union[
             None,
@@ -623,7 +623,7 @@ class ResourceSharesApi:
         :type sort_by: str
         :param order: Sort direction (used with sort_by)
         :type order: str
-        :param limit: Page size
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
         :param offset: Rows to skip
         :type offset: int
@@ -1086,7 +1086,7 @@ class ResourceSharesApi:
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
         resource_type: Annotated[StrictStr, Field(description="Resource type")],
         resource_id: Annotated[StrictStr, Field(description="Resource ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
         _request_timeout: Union[
             None,
@@ -1111,7 +1111,7 @@ class ResourceSharesApi:
         :type resource_type: str
         :param resource_id: Resource ID (required)
         :type resource_id: str
-        :param limit: Page size
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Rows to skip
         :type offset: int
@@ -1172,7 +1172,7 @@ class ResourceSharesApi:
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
         resource_type: Annotated[StrictStr, Field(description="Resource type")],
         resource_id: Annotated[StrictStr, Field(description="Resource ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
         _request_timeout: Union[
             None,
@@ -1197,7 +1197,7 @@ class ResourceSharesApi:
         :type resource_type: str
         :param resource_id: Resource ID (required)
         :type resource_id: str
-        :param limit: Page size
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Rows to skip
         :type offset: int
@@ -1258,7 +1258,7 @@ class ResourceSharesApi:
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
         resource_type: Annotated[StrictStr, Field(description="Resource type")],
         resource_id: Annotated[StrictStr, Field(description="Resource ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Rows to skip")] = None,
         _request_timeout: Union[
             None,
@@ -1283,7 +1283,7 @@ class ResourceSharesApi:
         :type resource_type: str
         :param resource_id: Resource ID (required)
         :type resource_id: str
-        :param limit: Page size
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Rows to skip
         :type offset: int
@@ -1419,7 +1419,7 @@ class ResourceSharesApi:
     def list_shared_resources(
         self,
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset (default: 0)")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Filter by resource type")] = None,
         _request_timeout: Union[
@@ -1441,7 +1441,7 @@ class ResourceSharesApi:
 
         :param organization_id: Owner organization ID (required)
         :type organization_id: str
-        :param limit: Page size (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset (default: 0)
         :type offset: int
@@ -1501,7 +1501,7 @@ class ResourceSharesApi:
     def list_shared_resources_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset (default: 0)")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Filter by resource type")] = None,
         _request_timeout: Union[
@@ -1523,7 +1523,7 @@ class ResourceSharesApi:
 
         :param organization_id: Owner organization ID (required)
         :type organization_id: str
-        :param limit: Page size (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset (default: 0)
         :type offset: int
@@ -1583,7 +1583,7 @@ class ResourceSharesApi:
     def list_shared_resources_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Owner organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset (default: 0)")] = None,
         resource_type: Annotated[Optional[StrictStr], Field(description="Filter by resource type")] = None,
         _request_timeout: Union[
@@ -1605,7 +1605,7 @@ class ResourceSharesApi:
 
         :param organization_id: Owner organization ID (required)
         :type organization_id: str
-        :param limit: Page size (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset (default: 0)
         :type offset: int

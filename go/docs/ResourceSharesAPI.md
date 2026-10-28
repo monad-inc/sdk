@@ -120,7 +120,7 @@ func main() {
 	shared := true // bool | Filter by share state: true = only shared, false = only not shared (optional)
 	sortBy := "sortBy_example" // string | Column to sort by; default puts shared rows first (optional)
 	order := "order_example" // string | Sort direction (used with sort_by) (optional) (default to "asc")
-	limit := int32(56) // int32 | Page size (optional) (default to 10)
+	limit := int32(56) // int32 | Page size (default 10, max 1000) (optional) (default to 10)
 	offset := int32(56) // int32 | Rows to skip (optional) (default to 0)
 
 	configuration := openapiclient.NewConfiguration()
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
  **shared** | **bool** | Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | 
  **sortBy** | **string** | Column to sort by; default puts shared rows first | 
  **order** | **string** | Sort direction (used with sort_by) | [default to &quot;asc&quot;]
- **limit** | **int32** | Page size | [default to 10]
+ **limit** | **int32** | Page size (default 10, max 1000) | [default to 10]
  **offset** | **int32** | Rows to skip | [default to 0]
 
 ### Return type
@@ -280,7 +280,7 @@ func main() {
 	organizationId := "organizationId_example" // string | Owner organization ID
 	resourceType := "resourceType_example" // string | Resource type
 	resourceId := "resourceId_example" // string | Resource ID
-	limit := int32(56) // int32 | Page size (optional) (default to 10)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional) (default to 10)
 	offset := int32(56) // int32 | Rows to skip (optional) (default to 0)
 
 	configuration := openapiclient.NewConfiguration()
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **int32** | Page size | [default to 10]
+ **limit** | **int32** | Page size (default 10, max 500) | [default to 10]
  **offset** | **int32** | Rows to skip | [default to 0]
 
 ### Return type
@@ -358,7 +358,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Owner organization ID
-	limit := int32(56) // int32 | Page size (default: 10) (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset (default: 0) (optional)
 	resourceType := "resourceType_example" // string | Filter by resource type (optional)
 
@@ -390,7 +390,7 @@ Other parameters are passed through a pointer to a apiListSharedResourcesRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Page size (default: 10) | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset (default: 0) | 
  **resourceType** | **string** | Filter by resource type | 
 

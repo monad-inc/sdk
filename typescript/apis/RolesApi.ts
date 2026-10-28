@@ -11,6 +11,7 @@ import {SecurityAuthentication} from '../auth/auth';
 import { CreateRoleRequest } from '../models/CreateRoleRequest';
 import { ModelsRoleWithPermissions } from '../models/ModelsRoleWithPermissions';
 import { ModelsRoleWithPermissionsList } from '../models/ModelsRoleWithPermissionsList';
+import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { UpdateRoleRequest } from '../models/UpdateRoleRequest';
 
 /**
@@ -185,7 +186,7 @@ export class RolesApiRequestFactory extends BaseAPIRequestFactory {
      * List roles with their associated permissions
      * List roles
      * @param organizationId Organization ID
-     * @param limit Limit the number of roles returned (default: 10)
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset the roles returned (default: 0)
      */
     public async listRoles(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -448,6 +449,13 @@ export class RolesApiResponseProcessor {
                 "ModelsRoleWithPermissionsList", ""
             ) as ModelsRoleWithPermissionsList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

@@ -13,6 +13,7 @@ import { ModelsAPIKey } from '../models/ModelsAPIKey';
 import { ModelsAPIKeyList } from '../models/ModelsAPIKeyList';
 import { ModelsAPIKeyWithToken } from '../models/ModelsAPIKeyWithToken';
 import { RegenerateAPIKeyRequest } from '../models/RegenerateAPIKeyRequest';
+import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { UpdateAPIKeyRequest } from '../models/UpdateAPIKeyRequest';
 
 /**
@@ -187,7 +188,7 @@ export class OrganizationAPIKeysApiRequestFactory extends BaseAPIRequestFactory 
      * List API keys
      * List API keys
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      */
     public async listAPIKeys(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -521,6 +522,13 @@ export class OrganizationAPIKeysApiResponseProcessor {
                 "ModelsAPIKeyList", ""
             ) as ModelsAPIKeyList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

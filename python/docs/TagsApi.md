@@ -391,7 +391,7 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.TagsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     search = 'search_example' # str | Prefix match on tag name (optional)
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (optional)
 
     try:
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **search** | **str**| Prefix match on tag name | [optional] 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset | [optional] 
 
 ### Return type
@@ -433,6 +433,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of tags |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

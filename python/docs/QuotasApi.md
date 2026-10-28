@@ -47,7 +47,7 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.QuotasApi(api_client)
     billing_account_id = 'billing_account_id_example' # str | Billing Account ID (optional)
     organization_id = 'organization_id_example' # str | Organization ID (optional)
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (optional)
     body = None # object |  (optional)
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **billing_account_id** | **str**| Billing Account ID | [optional] 
  **organization_id** | **str**| Organization ID | [optional] 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset | [optional] 
  **body** | **object**|  | [optional] 
 

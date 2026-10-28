@@ -28,7 +28,7 @@ const request: OrganizationMCPRegistrationsApiListMCPClientRegistrationsRequest 
   organizationId: "organization_id_example",
     // Set to `me` to scope to the caller\'s own registrations (optional)
   ownedBy: "owned_by_example",
-    // Limit (optional)
+    // Page size (default 10, max 200) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **ownedBy** | [**string**] | Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations | (optional) defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 200) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 
@@ -67,6 +67,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **403** | access denied |  -  |
 **500** | Failed to list registrations |  -  |
 

@@ -367,7 +367,7 @@ import (
 )
 
 func main() {
-	limit := int32(56) // int32 | Number of items to return (default: 10) (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Number of items to skip (default: 0) (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -393,7 +393,7 @@ Other parameters are passed through a pointer to a apiListTransformRepositoryReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int32** | Number of items to return (default: 10) | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Number of items to skip (default: 0) | 
 
 ### Return type

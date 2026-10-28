@@ -162,7 +162,7 @@ with monad.ApiClient(configuration) as api_client:
     shared = True # bool | Filter by share state: true = only shared, false = only not shared (optional)
     sort_by = 'sort_by_example' # str | Column to sort by; default puts shared rows first (optional)
     order = asc # str | Sort direction (used with sort_by) (optional) (default to asc)
-    limit = 10 # int | Page size (optional) (default to 10)
+    limit = 10 # int | Page size (default 10, max 1000) (optional) (default to 10)
     offset = 0 # int | Rows to skip (optional) (default to 0)
 
     try:
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
  **shared** | **bool**| Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | [optional] 
  **sort_by** | **str**| Column to sort by; default puts shared rows first | [optional] 
  **order** | **str**| Sort direction (used with sort_by) | [optional] [default to asc]
- **limit** | **int**| Page size | [optional] [default to 10]
+ **limit** | **int**| Page size (default 10, max 1000) | [optional] [default to 10]
  **offset** | **int**| Rows to skip | [optional] [default to 0]
 
 ### Return type
@@ -356,7 +356,7 @@ with monad.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | Owner organization ID
     resource_type = 'resource_type_example' # str | Resource type
     resource_id = 'resource_id_example' # str | Resource ID
-    limit = 10 # int | Page size (optional) (default to 10)
+    limit = 10 # int | Page size (default 10, max 500) (optional) (default to 10)
     offset = 0 # int | Rows to skip (optional) (default to 0)
 
     try:
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| Owner organization ID | 
  **resource_type** | **str**| Resource type | 
  **resource_id** | **str**| Resource ID | 
- **limit** | **int**| Page size | [optional] [default to 10]
+ **limit** | **int**| Page size (default 10, max 500) | [optional] [default to 10]
  **offset** | **int**| Rows to skip | [optional] [default to 0]
 
 ### Return type
@@ -451,7 +451,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.ResourceSharesApi(api_client)
     organization_id = 'organization_id_example' # str | Owner organization ID
-    limit = 56 # int | Page size (default: 10) (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset (default: 0) (optional)
     resource_type = 'resource_type_example' # str | Filter by resource type (optional)
 
@@ -472,7 +472,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Owner organization ID | 
- **limit** | **int**| Page size (default: 10) | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset (default: 0) | [optional] 
  **resource_type** | **str**| Filter by resource type | [optional] 
 

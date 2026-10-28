@@ -76,7 +76,7 @@ public class QuotasApi {
      * Build call for listQuotas
      * @param billingAccountId Billing Account ID (optional)
      * @param organizationId Organization ID (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
@@ -163,7 +163,7 @@ public class QuotasApi {
      * List quotas for a given billing account or organization id.
      * @param billingAccountId Billing Account ID (optional)
      * @param organizationId Organization ID (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @return ModelsQuotaList
@@ -187,7 +187,7 @@ public class QuotasApi {
      * List quotas for a given billing account or organization id.
      * @param billingAccountId Billing Account ID (optional)
      * @param organizationId Organization ID (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;ModelsQuotaList&gt;
@@ -212,7 +212,7 @@ public class QuotasApi {
      * List quotas for a given billing account or organization id.
      * @param billingAccountId Billing Account ID (optional)
      * @param organizationId Organization ID (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes

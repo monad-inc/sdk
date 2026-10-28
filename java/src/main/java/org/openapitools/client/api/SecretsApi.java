@@ -522,7 +522,7 @@ public class SecretsApi {
     /**
      * Build call for listSecrets
      * @param organizationId Organization ID (required)
-     * @param limit Limit number of results (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset results (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -532,6 +532,7 @@ public class SecretsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -603,7 +604,7 @@ public class SecretsApi {
      * List secrets with components
      * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * @param organizationId Organization ID (required)
-     * @param limit Limit number of results (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset results (optional)
      * @return RoutesV2SecretWithComponentsListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -612,6 +613,7 @@ public class SecretsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -624,7 +626,7 @@ public class SecretsApi {
      * List secrets with components
      * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * @param organizationId Organization ID (required)
-     * @param limit Limit number of results (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset results (optional)
      * @return ApiResponse&lt;RoutesV2SecretWithComponentsListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -633,6 +635,7 @@ public class SecretsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -646,7 +649,7 @@ public class SecretsApi {
      * List secrets with components (asynchronously)
      * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * @param organizationId Organization ID (required)
-     * @param limit Limit number of results (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset results (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -656,6 +659,7 @@ public class SecretsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

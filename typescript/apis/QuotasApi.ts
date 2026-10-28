@@ -20,7 +20,7 @@ export class QuotasApiRequestFactory extends BaseAPIRequestFactory {
      * List quotas
      * @param billingAccountId Billing Account ID
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      * @param body 
      */

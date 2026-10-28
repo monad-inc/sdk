@@ -447,7 +447,7 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Parent Organization ID
-    Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
     String nameSearch = "nameSearch_example"; // String | If provided, only return organizations with names that contain the search string
     try {
@@ -469,7 +469,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Parent Organization ID | |
-| **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
 | **nameSearch** | **String**| If provided, only return organizations with names that contain the search string | [optional] |
 
@@ -490,6 +490,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of sub-orgs |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="listUserOrganizations"></a>
@@ -528,7 +529,7 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    Integer limit = 56; // Integer | Limit the number of organizations returned (default: 10)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
     Boolean noChildren = true; // Boolean | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
     String parentOrganizationId = "parentOrganizationId_example"; // String | If provided, only return the sub-orgs of the specified parent organization
@@ -551,7 +552,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **limit** | **Integer**| Limit the number of organizations returned (default: 10) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
 | **noChildren** | **Boolean**| If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | [optional] |
 | **parentOrganizationId** | **String**| If provided, only return the sub-orgs of the specified parent organization | [optional] |
@@ -574,6 +575,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Response body for listing organizations |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 
 <a id="updateChildOrganization"></a>
 # **updateChildOrganization**

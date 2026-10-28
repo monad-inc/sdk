@@ -344,7 +344,7 @@ public class Example {
     TagsApi apiInstance = new TagsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String search = "search_example"; // String | Prefix match on tag name
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     try {
       RoutesV3TagListResponse result = apiInstance.listTags(organizationId, search, limit, offset);
@@ -366,7 +366,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **search** | **String**| Prefix match on tag name | [optional] |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type
@@ -386,6 +386,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of tags |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="updateTag"></a>

@@ -11,6 +11,7 @@ import {SecurityAuthentication} from '../auth/auth';
 import { CreateTransformRequest } from '../models/CreateTransformRequest';
 import { ModelsTransform } from '../models/ModelsTransform';
 import { ModelsTransformList } from '../models/ModelsTransformList';
+import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 import { RoutesGetTransformResponse } from '../models/RoutesGetTransformResponse';
 import { RoutesUpdateTransformRequest } from '../models/RoutesUpdateTransformRequest';
 
@@ -186,7 +187,7 @@ export class OrganizationTransformsApiRequestFactory extends BaseAPIRequestFacto
      * List transforms
      * List configured transforms in a transform
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      */
     public async listOrganizationTransforms(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -442,6 +443,13 @@ export class OrganizationTransformsApiResponseProcessor {
                 "ModelsTransformList", ""
             ) as ModelsTransformList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

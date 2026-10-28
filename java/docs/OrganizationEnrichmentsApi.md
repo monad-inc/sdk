@@ -289,7 +289,7 @@ public class Example {
 
     OrganizationEnrichmentsApi apiInstance = new OrganizationEnrichmentsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Number of results to return (default 100)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Number of results to skip (default 0)
     try {
       RoutesV3ListEnrichmentsResponse result = apiInstance.listEnrichments(organizationId, limit, offset);
@@ -310,7 +310,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Number of results to return (default 100) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Number of results to skip (default 0) | [optional] |
 
 ### Return type

@@ -2610,8 +2610,8 @@ public class PipelinesApi {
     /**
      * Build call for getPipelinesStatuses
      * @param organizationId Organization ID (required)
-     * @param limit Maximum number of pipelines to return (default is 10) (optional)
-     * @param offset Offset for pagination (default is 0) (optional)
+     * @param limit Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
+     * @param offset Number of pipelines to skip (default 0) (optional)
      * @param start Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
      * @param end End time (RFC3339 format) for status metrics (default: now) (optional)
      * @param _callback Callback for upload/download progress
@@ -2702,8 +2702,8 @@ public class PipelinesApi {
      * Get pipeline status
      * Retrieve the status of pipelines within an organization for a specified time period.
      * @param organizationId Organization ID (required)
-     * @param limit Maximum number of pipelines to return (default is 10) (optional)
-     * @param offset Offset for pagination (default is 0) (optional)
+     * @param limit Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
+     * @param offset Number of pipelines to skip (default 0) (optional)
      * @param start Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
      * @param end End time (RFC3339 format) for status metrics (default: now) (optional)
      * @return List&lt;RoutesV2PipelineWithStatus&gt;
@@ -2726,8 +2726,8 @@ public class PipelinesApi {
      * Get pipeline status
      * Retrieve the status of pipelines within an organization for a specified time period.
      * @param organizationId Organization ID (required)
-     * @param limit Maximum number of pipelines to return (default is 10) (optional)
-     * @param offset Offset for pagination (default is 0) (optional)
+     * @param limit Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
+     * @param offset Number of pipelines to skip (default 0) (optional)
      * @param start Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
      * @param end End time (RFC3339 format) for status metrics (default: now) (optional)
      * @return ApiResponse&lt;List&lt;RoutesV2PipelineWithStatus&gt;&gt;
@@ -2751,8 +2751,8 @@ public class PipelinesApi {
      * Get pipeline status (asynchronously)
      * Retrieve the status of pipelines within an organization for a specified time period.
      * @param organizationId Organization ID (required)
-     * @param limit Maximum number of pipelines to return (default is 10) (optional)
-     * @param offset Offset for pagination (default is 0) (optional)
+     * @param limit Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
+     * @param offset Number of pipelines to skip (default 0) (optional)
      * @param start Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
      * @param end End time (RFC3339 format) for status metrics (default: now) (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -2932,7 +2932,7 @@ public class PipelinesApi {
     /**
      * Build call for listPipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param includeStatus Include the status of the pipeline nodes (optional)
      * @param _callback Callback for upload/download progress
@@ -3019,7 +3019,7 @@ public class PipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param includeStatus Include the status of the pipeline nodes (optional)
      * @return ModelsPipelineList
@@ -3042,7 +3042,7 @@ public class PipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param includeStatus Include the status of the pipeline nodes (optional)
      * @return ApiResponse&lt;ModelsPipelineList&gt;
@@ -3066,7 +3066,7 @@ public class PipelinesApi {
      * List pipelines (asynchronously)
      * List pipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param includeStatus Include the status of the pipeline nodes (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -3091,7 +3091,7 @@ public class PipelinesApi {
     /**
      * Build call for listPipelinesV1
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -3176,7 +3176,7 @@ public class PipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsPipelineList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3200,7 +3200,7 @@ public class PipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsPipelineList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3225,7 +3225,7 @@ public class PipelinesApi {
      * List pipelines (asynchronously)
      * List pipelines
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

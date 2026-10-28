@@ -141,7 +141,7 @@ public class Example {
     Boolean shared = true; // Boolean | Filter by share state: true = only shared, false = only not shared
     String sortBy = "name"; // String | Column to sort by; default puts shared rows first
     String order = "asc"; // String | Sort direction (used with sort_by)
-    Integer limit = 10; // Integer | Page size
+    Integer limit = 10; // Integer | Page size (default 10, max 1000)
     Integer offset = 0; // Integer | Rows to skip
     try {
       ModelsResourceShareTargetList result = apiInstance.listResourceShareTargets(organizationId, resourceType, resourceId, search, shared, sortBy, order, limit, offset);
@@ -168,7 +168,7 @@ public class Example {
 | **shared** | **Boolean**| Filter by share state: true &#x3D; only shared, false &#x3D; only not shared | [optional] |
 | **sortBy** | **String**| Column to sort by; default puts shared rows first | [optional] [enum: name, shared, shared_at, in_use] |
 | **order** | **String**| Sort direction (used with sort_by) | [optional] [default to asc] [enum: asc, desc] |
-| **limit** | **Integer**| Page size | [optional] [default to 10] |
+| **limit** | **Integer**| Page size (default 10, max 1000) | [optional] [default to 10] |
 | **offset** | **Integer**| Rows to skip | [optional] [default to 0] |
 
 ### Return type
@@ -313,7 +313,7 @@ public class Example {
     String organizationId = "organizationId_example"; // String | Owner organization ID
     String resourceType = "secret"; // String | Resource type
     String resourceId = "resourceId_example"; // String | Resource ID
-    Integer limit = 10; // Integer | Page size
+    Integer limit = 10; // Integer | Page size (default 10, max 500)
     Integer offset = 0; // Integer | Rows to skip
     try {
       RoutesV3ResourceUsageListResponse result = apiInstance.listResourceUsage(organizationId, resourceType, resourceId, limit, offset);
@@ -336,7 +336,7 @@ public class Example {
 | **organizationId** | **String**| Owner organization ID | |
 | **resourceType** | **String**| Resource type | [enum: secret, component] |
 | **resourceId** | **String**| Resource ID | |
-| **limit** | **Integer**| Page size | [optional] [default to 10] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] [default to 10] |
 | **offset** | **Integer**| Rows to skip | [optional] [default to 0] |
 
 ### Return type
@@ -397,7 +397,7 @@ public class Example {
 
     ResourceSharesApi apiInstance = new ResourceSharesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Owner organization ID
-    Integer limit = 56; // Integer | Page size (default: 10)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset (default: 0)
     String resourceType = "secret"; // String | Filter by resource type
     try {
@@ -419,7 +419,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Owner organization ID | |
-| **limit** | **Integer**| Page size (default: 10) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset (default: 0) | [optional] |
 | **resourceType** | **String**| Filter by resource type | [optional] [enum: secret, component] |
 

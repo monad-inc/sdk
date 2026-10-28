@@ -45,7 +45,7 @@ func (r ApiListQuotasRequest) OrganizationId(organizationId string) ApiListQuota
 	return r
 }
 
-// Limit
+// Page size (default 10, max 500)
 func (r ApiListQuotasRequest) Limit(limit int32) ApiListQuotasRequest {
 	r.limit = &limit
 	return r

@@ -925,7 +925,7 @@ class OrganizationOutputsApi:
     def list_organization_outputs(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -946,7 +946,7 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -984,6 +984,7 @@ class OrganizationOutputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesListOutputsResponse",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1001,7 +1002,7 @@ class OrganizationOutputsApi:
     def list_organization_outputs_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1022,7 +1023,7 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1060,6 +1061,7 @@ class OrganizationOutputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesListOutputsResponse",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1077,7 +1079,7 @@ class OrganizationOutputsApi:
     def list_organization_outputs_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1098,7 +1100,7 @@ class OrganizationOutputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1136,6 +1138,7 @@ class OrganizationOutputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesListOutputsResponse",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

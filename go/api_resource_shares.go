@@ -256,7 +256,7 @@ func (r ApiListResourceShareTargetsRequest) Order(order string) ApiListResourceS
 	return r
 }
 
-// Page size
+// Page size (default 10, max 1000)
 func (r ApiListResourceShareTargetsRequest) Limit(limit int32) ApiListResourceShareTargetsRequest {
 	r.limit = &limit
 	return r
@@ -642,7 +642,7 @@ type ApiListResourceUsageRequest struct {
 	offset *int32
 }
 
-// Page size
+// Page size (default 10, max 500)
 func (r ApiListResourceUsageRequest) Limit(limit int32) ApiListResourceUsageRequest {
 	r.limit = &limit
 	return r
@@ -840,7 +840,7 @@ type ApiListSharedResourcesRequest struct {
 	resourceType *string
 }
 
-// Page size (default: 10)
+// Page size (default 10, max 500)
 func (r ApiListSharedResourcesRequest) Limit(limit int32) ApiListSharedResourcesRequest {
 	r.limit = &limit
 	return r

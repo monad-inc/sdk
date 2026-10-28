@@ -478,7 +478,7 @@ public class BillingAccountsApi {
     }
     /**
      * Build call for getBillingAccounts
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -553,7 +553,7 @@ public class BillingAccountsApi {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsBillingAccountList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -574,7 +574,7 @@ public class BillingAccountsApi {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsBillingAccountList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -596,7 +596,7 @@ public class BillingAccountsApi {
     /**
      * List Billing Accounts (asynchronously)
      * List Billing Accounts
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

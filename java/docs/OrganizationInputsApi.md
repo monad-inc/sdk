@@ -287,8 +287,8 @@ public class Example {
 
     OrganizationInputsApi apiInstance = new OrganizationInputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit the number of organizations returned (default: DefaultLimit)
-    Integer offset = 56; // Integer | Offset the organizations returned (default: 0)
+    Integer limit = 56; // Integer | Page size (default 10, max 1000)
+    Integer offset = 56; // Integer | Rows to skip (default 0)
     try {
       RoutesListInputsResponse result = apiInstance.listOrganizationInputs(organizationId, limit, offset);
       System.out.println(result);
@@ -308,8 +308,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit the number of organizations returned (default: DefaultLimit) | [optional] |
-| **offset** | **Integer**| Offset the organizations returned (default: 0) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 1000) | [optional] |
+| **offset** | **Integer**| Rows to skip (default 0) | [optional] |
 
 ### Return type
 
@@ -328,6 +328,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Inputs retrieved successfully |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 
 <a id="previewInput"></a>
 # **previewInput**

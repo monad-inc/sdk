@@ -172,7 +172,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	limit := int32(56) // int32 | Page size (default 10) (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Row offset for pagination (default 0) (optional)
 	from := "from_example" // string | Only events strictly after this RFC3339 timestamp (optional)
 
@@ -204,7 +204,7 @@ Other parameters are passed through a pointer to a apiListOrganizationSchemaChan
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Page size (default 10) | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Row offset for pagination (default 0) | 
  **from** | **string** | Only events strictly after this RFC3339 timestamp | 
 

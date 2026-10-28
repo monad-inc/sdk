@@ -2725,13 +2725,13 @@ type ApiGetPipelinesStatusesRequest struct {
 	end *string
 }
 
-// Maximum number of pipelines to return (default is 10)
+// Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
 func (r ApiGetPipelinesStatusesRequest) Limit(limit int32) ApiGetPipelinesStatusesRequest {
 	r.limit = &limit
 	return r
 }
 
-// Offset for pagination (default is 0)
+// Number of pipelines to skip (default 0)
 func (r ApiGetPipelinesStatusesRequest) Offset(offset int32) ApiGetPipelinesStatusesRequest {
 	r.offset = &offset
 	return r
@@ -3076,7 +3076,7 @@ type ApiListPipelinesRequest struct {
 	includeStatus *bool
 }
 
-// Limit
+// Page size (default 10, max 500)
 func (r ApiListPipelinesRequest) Limit(limit int32) ApiListPipelinesRequest {
 	r.limit = &limit
 	return r
@@ -3257,7 +3257,7 @@ type ApiListPipelinesV1Request struct {
 	offset *int32
 }
 
-// Limit
+// Page size (default 10, max 500)
 func (r ApiListPipelinesV1Request) Limit(limit int32) ApiListPipelinesV1Request {
 	r.limit = &limit
 	return r

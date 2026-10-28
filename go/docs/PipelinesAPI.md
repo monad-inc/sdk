@@ -1258,8 +1258,8 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	limit := int32(56) // int32 | Maximum number of pipelines to return (default is 10) (optional)
-	offset := int32(56) // int32 | Offset for pagination (default is 0) (optional)
+	limit := int32(56) // int32 | Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
+	offset := int32(56) // int32 | Number of pipelines to skip (default 0) (optional)
 	start := "start_example" // string | Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
 	end := "end_example" // string | End time (RFC3339 format) for status metrics (default: now) (optional)
 
@@ -1291,8 +1291,8 @@ Other parameters are passed through a pointer to a apiGetPipelinesStatusesReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Maximum number of pipelines to return (default is 10) | 
- **offset** | **int32** | Offset for pagination (default is 0) | 
+ **limit** | **int32** | Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on | 
+ **offset** | **int32** | Number of pipelines to skip (default 0) | 
  **start** | **string** | Start time (RFC3339 format) for status metrics (default: 24 hours ago) | 
  **end** | **string** | End time (RFC3339 format) for status metrics (default: now) | 
 
@@ -1412,7 +1412,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	limit := int32(56) // int32 | Limit (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset (optional)
 	includeStatus := true // bool | Include the status of the pipeline nodes (optional)
 
@@ -1444,7 +1444,7 @@ Other parameters are passed through a pointer to a apiListPipelinesRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Limit | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset | 
  **includeStatus** | **bool** | Include the status of the pipeline nodes | 
 
@@ -1488,7 +1488,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	limit := int32(56) // int32 | Limit (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1519,7 +1519,7 @@ Other parameters are passed through a pointer to a apiListPipelinesV1Request str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Limit | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset | 
 
 ### Return type

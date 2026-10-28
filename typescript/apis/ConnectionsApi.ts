@@ -171,7 +171,7 @@ export class ConnectionsApiRequestFactory extends BaseAPIRequestFactory {
      * Retrieve all connections
      * Get all connections
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      */
     public async listConnections(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -434,6 +434,13 @@ export class ConnectionsApiResponseProcessor {
                 "ModelsConnectionList", ""
             ) as ModelsConnectionList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

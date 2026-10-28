@@ -44,7 +44,7 @@ class OrganizationMCPRegistrationsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         owned_by: Annotated[Optional[StrictStr], Field(description="Set to `me` to scope to the caller's own registrations")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 200)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -67,7 +67,7 @@ class OrganizationMCPRegistrationsApi:
         :type organization_id: str
         :param owned_by: Set to `me` to scope to the caller's own registrations
         :type owned_by: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 200)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -106,6 +106,7 @@ class OrganizationMCPRegistrationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsMCPClientRegistrationList",
+            '400': "ResponderErrorResponse",
             '403': "str",
             '500': "str",
         }
@@ -125,7 +126,7 @@ class OrganizationMCPRegistrationsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         owned_by: Annotated[Optional[StrictStr], Field(description="Set to `me` to scope to the caller's own registrations")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 200)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -148,7 +149,7 @@ class OrganizationMCPRegistrationsApi:
         :type organization_id: str
         :param owned_by: Set to `me` to scope to the caller's own registrations
         :type owned_by: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 200)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -187,6 +188,7 @@ class OrganizationMCPRegistrationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsMCPClientRegistrationList",
+            '400': "ResponderErrorResponse",
             '403': "str",
             '500': "str",
         }
@@ -206,7 +208,7 @@ class OrganizationMCPRegistrationsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         owned_by: Annotated[Optional[StrictStr], Field(description="Set to `me` to scope to the caller's own registrations")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 200)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -229,7 +231,7 @@ class OrganizationMCPRegistrationsApi:
         :type organization_id: str
         :param owned_by: Set to `me` to scope to the caller's own registrations
         :type owned_by: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 200)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -268,6 +270,7 @@ class OrganizationMCPRegistrationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsMCPClientRegistrationList",
+            '400': "ResponderErrorResponse",
             '403': "str",
             '500': "str",
         }

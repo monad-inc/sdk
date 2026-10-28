@@ -288,7 +288,7 @@ public class Example {
 
     OrganizationOutputsApi apiInstance = new OrganizationOutputsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 1000)
     Integer offset = 56; // Integer | Offset
     try {
       RoutesListOutputsResponse result = apiInstance.listOrganizationOutputs(organizationId, limit, offset);
@@ -309,7 +309,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 1000) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type
@@ -329,6 +329,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of outputs |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Failed to marshal outputs |  -  |
 
 <a id="previewOutput"></a>

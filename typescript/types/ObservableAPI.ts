@@ -819,7 +819,7 @@ export class ObservableAlertRulesApi {
      * Retrieve all alert rules for an organization
      * Get all alert rules
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listAlertRulesWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3AlertRuleListResponse>> {
@@ -846,7 +846,7 @@ export class ObservableAlertRulesApi {
      * Retrieve all alert rules for an organization
      * Get all alert rules
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listAlertRules(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV3AlertRuleListResponse> {
@@ -1392,7 +1392,7 @@ export class ObservableBillingAccountsApi {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public getBillingAccountsWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingAccountList>> {
@@ -1418,7 +1418,7 @@ export class ObservableBillingAccountsApi {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public getBillingAccounts(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingAccountList> {
@@ -1893,7 +1893,7 @@ export class ObservableBillingProductsApi {
      * List Billing Products
      * List Billing Products
      * @param [showInactive] Show inactive products
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public getBillingProductsWithHttpInfo(showInactive?: boolean, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsBillingProductList>> {
@@ -1920,7 +1920,7 @@ export class ObservableBillingProductsApi {
      * List Billing Products
      * List Billing Products
      * @param [showInactive] Show inactive products
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public getBillingProducts(showInactive?: boolean, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsBillingProductList> {
@@ -2159,7 +2159,7 @@ export class ObservableConnectionsApi {
      * Retrieve all connections
      * Get all connections
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listConnectionsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsConnectionList>> {
@@ -2186,7 +2186,7 @@ export class ObservableConnectionsApi {
      * Retrieve all connections
      * Get all connections
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listConnections(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsConnectionList> {
@@ -3101,7 +3101,7 @@ export class ObservableOrganizationAPIKeysApi {
      * List API keys
      * List API keys
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listAPIKeysWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsAPIKeyList>> {
@@ -3128,7 +3128,7 @@ export class ObservableOrganizationAPIKeysApi {
      * List API keys
      * List API keys
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listAPIKeys(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsAPIKeyList> {
@@ -3343,7 +3343,7 @@ export class ObservableOrganizationEnrichmentsApi {
      * List all enrichments for an organization
      * List enrichments
      * @param organizationId Organization ID
-     * @param [limit] Number of results to return (default 100)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Number of results to skip (default 0)
      */
     public listEnrichmentsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3ListEnrichmentsResponse>> {
@@ -3370,7 +3370,7 @@ export class ObservableOrganizationEnrichmentsApi {
      * List all enrichments for an organization
      * List enrichments
      * @param organizationId Organization ID
-     * @param [limit] Number of results to return (default 100)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Number of results to skip (default 0)
      */
     public listEnrichments(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV3ListEnrichmentsResponse> {
@@ -3625,8 +3625,8 @@ export class ObservableOrganizationInputsApi {
      * List configured inputs in organization
      * List organization inputs
      * @param organizationId Organization ID
-     * @param [limit] Limit the number of organizations returned (default: DefaultLimit)
-     * @param [offset] Offset the organizations returned (default: 0)
+     * @param [limit] Page size (default 10, max 1000)
+     * @param [offset] Rows to skip (default 0)
      */
     public listOrganizationInputsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesListInputsResponse>> {
         const _config = mergeConfiguration(this.configuration, _options);
@@ -3652,8 +3652,8 @@ export class ObservableOrganizationInputsApi {
      * List configured inputs in organization
      * List organization inputs
      * @param organizationId Organization ID
-     * @param [limit] Limit the number of organizations returned (default: DefaultLimit)
-     * @param [offset] Offset the organizations returned (default: 0)
+     * @param [limit] Page size (default 10, max 1000)
+     * @param [offset] Rows to skip (default 0)
      */
     public listOrganizationInputs(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesListInputsResponse> {
         return this.listOrganizationInputsWithHttpInfo(organizationId, limit, offset, _options).pipe(map((apiResponse: HttpInfo<RoutesListInputsResponse>) => apiResponse.data));
@@ -3892,7 +3892,7 @@ export class ObservableOrganizationMCPRegistrationsApi {
      * List MCP client registrations
      * @param organizationId Organization ID
      * @param [ownedBy] Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 200)
      * @param [offset] Offset
      */
     public listMCPClientRegistrationsWithHttpInfo(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsMCPClientRegistrationList>> {
@@ -3920,7 +3920,7 @@ export class ObservableOrganizationMCPRegistrationsApi {
      * List MCP client registrations
      * @param organizationId Organization ID
      * @param [ownedBy] Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 200)
      * @param [offset] Offset
      */
     public listMCPClientRegistrations(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsMCPClientRegistrationList> {
@@ -4095,7 +4095,7 @@ export class ObservableOrganizationOutputsApi {
      * List outputs
      * List configured outputs in organization
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 1000)
      * @param [offset] Offset
      */
     public listOrganizationOutputsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesListOutputsResponse>> {
@@ -4122,7 +4122,7 @@ export class ObservableOrganizationOutputsApi {
      * List outputs
      * List configured outputs in organization
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 1000)
      * @param [offset] Offset
      */
     public listOrganizationOutputs(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesListOutputsResponse> {
@@ -4307,7 +4307,7 @@ export class ObservableOrganizationQuotasApi {
      * Returns a paginated list of quotas with their latest usage for a given organization
      * Get Organization Quotas
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      * @param [body]
      */
@@ -4335,7 +4335,7 @@ export class ObservableOrganizationQuotasApi {
      * Returns a paginated list of quotas with their latest usage for a given organization
      * Get Organization Quotas
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      * @param [body]
      */
@@ -4473,7 +4473,7 @@ export class ObservableOrganizationTransformsApi {
      * List transforms
      * List configured transforms in a transform
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listOrganizationTransformsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsTransformList>> {
@@ -4500,7 +4500,7 @@ export class ObservableOrganizationTransformsApi {
      * List transforms
      * List configured transforms in a transform
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listOrganizationTransforms(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsTransformList> {
@@ -4603,7 +4603,7 @@ export class ObservableOrganizationUsersApi {
      * List organization users
      * List organization users
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listUsersWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsOrganizationUserList>> {
@@ -4630,7 +4630,7 @@ export class ObservableOrganizationUsersApi {
      * List organization users
      * List organization users
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listUsers(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsOrganizationUserList> {
@@ -4953,7 +4953,7 @@ export class ObservableOrganizationsApi {
      * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * List sub-orgs
      * @param organizationId Parent Organization ID
-     * @param [limit] Limit the number of organizations returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
@@ -4981,7 +4981,7 @@ export class ObservableOrganizationsApi {
      * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * List sub-orgs
      * @param organizationId Parent Organization ID
-     * @param [limit] Limit the number of organizations returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [nameSearch] If provided, only return organizations with names that contain the search string
      */
@@ -4992,7 +4992,7 @@ export class ObservableOrganizationsApi {
     /**
      * List organizations for user
      * List organizations for user
-     * @param [limit] Limit the number of organizations returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [noChildren] If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
      * @param [parentOrganizationId] If provided, only return the sub-orgs of the specified parent organization
@@ -5021,7 +5021,7 @@ export class ObservableOrganizationsApi {
     /**
      * List organizations for user
      * List organizations for user
-     * @param [limit] Limit the number of organizations returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the organizations returned (default: 0)
      * @param [noChildren] If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
      * @param [parentOrganizationId] If provided, only return the sub-orgs of the specified parent organization
@@ -5533,7 +5533,7 @@ export class ObservablePermissionsApi {
      * List all available permissions in the system
      * List permissions
      * @param organizationId Organization ID
-     * @param [limit] Limit the number of permissions returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the permissions returned (default: 0)
      */
     public listPermissionsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPermissionList>> {
@@ -5560,7 +5560,7 @@ export class ObservablePermissionsApi {
      * List all available permissions in the system
      * List permissions
      * @param organizationId Organization ID
-     * @param [limit] Limit the number of permissions returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the permissions returned (default: 0)
      */
     public listPermissions(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsPermissionList> {
@@ -6213,8 +6213,8 @@ export class ObservablePipelinesApi {
      * Retrieve the status of pipelines within an organization for a specified time period.
      * Get pipeline status
      * @param organizationId Organization ID
-     * @param [limit] Maximum number of pipelines to return (default is 10)
-     * @param [offset] Offset for pagination (default is 0)
+     * @param [limit] Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
+     * @param [offset] Number of pipelines to skip (default 0)
      * @param [start] Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * @param [end] End time (RFC3339 format) for status metrics (default: now)
      */
@@ -6242,8 +6242,8 @@ export class ObservablePipelinesApi {
      * Retrieve the status of pipelines within an organization for a specified time period.
      * Get pipeline status
      * @param organizationId Organization ID
-     * @param [limit] Maximum number of pipelines to return (default is 10)
-     * @param [offset] Offset for pagination (default is 0)
+     * @param [limit] Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
+     * @param [offset] Number of pipelines to skip (default 0)
      * @param [start] Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * @param [end] End time (RFC3339 format) for status metrics (default: now)
      */
@@ -6293,7 +6293,7 @@ export class ObservablePipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      * @param [includeStatus] Include the status of the pipeline nodes
      */
@@ -6321,7 +6321,7 @@ export class ObservablePipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      * @param [includeStatus] Include the status of the pipeline nodes
      */
@@ -6333,7 +6333,7 @@ export class ObservablePipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listPipelinesV1WithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsPipelineList>> {
@@ -6360,7 +6360,7 @@ export class ObservablePipelinesApi {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listPipelinesV1(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsPipelineList> {
@@ -6730,7 +6730,7 @@ export class ObservableQuotasApi {
      * List quotas
      * @param [billingAccountId] Billing Account ID
      * @param [organizationId] Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      * @param [body]
      */
@@ -6759,7 +6759,7 @@ export class ObservableQuotasApi {
      * List quotas
      * @param [billingAccountId] Billing Account ID
      * @param [organizationId] Organization ID
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      * @param [body]
      */
@@ -6835,7 +6835,7 @@ export class ObservableResourceSharesApi {
      * @param [shared] Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
      * @param [sortBy] Column to sort by; default puts shared rows first
      * @param [order] Sort direction (used with sort_by)
-     * @param [limit] Page size
+     * @param [limit] Page size (default 10, max 1000)
      * @param [offset] Rows to skip
      */
     public listResourceShareTargetsWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsResourceShareTargetList>> {
@@ -6868,7 +6868,7 @@ export class ObservableResourceSharesApi {
      * @param [shared] Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
      * @param [sortBy] Column to sort by; default puts shared rows first
      * @param [order] Sort direction (used with sort_by)
-     * @param [limit] Page size
+     * @param [limit] Page size (default 10, max 1000)
      * @param [offset] Rows to skip
      */
     public listResourceShareTargets(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsResourceShareTargetList> {
@@ -6919,7 +6919,7 @@ export class ObservableResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param [limit] Page size
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Rows to skip
      */
     public listResourceUsageWithHttpInfo(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3ResourceUsageListResponse>> {
@@ -6948,7 +6948,7 @@ export class ObservableResourceSharesApi {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param [limit] Page size
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Rows to skip
      */
     public listResourceUsage(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV3ResourceUsageListResponse> {
@@ -6959,7 +6959,7 @@ export class ObservableResourceSharesApi {
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * List shared resources
      * @param organizationId Owner organization ID
-     * @param [limit] Page size (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset (default: 0)
      * @param [resourceType] Filter by resource type
      */
@@ -6987,7 +6987,7 @@ export class ObservableResourceSharesApi {
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * List shared resources
      * @param organizationId Owner organization ID
-     * @param [limit] Page size (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset (default: 0)
      * @param [resourceType] Filter by resource type
      */
@@ -7203,7 +7203,7 @@ export class ObservableRolesApi {
      * List roles with their associated permissions
      * List roles
      * @param organizationId Organization ID
-     * @param [limit] Limit the number of roles returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the roles returned (default: 0)
      */
     public listRolesWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsRoleWithPermissionsList>> {
@@ -7230,7 +7230,7 @@ export class ObservableRolesApi {
      * List roles with their associated permissions
      * List roles
      * @param organizationId Organization ID
-     * @param [limit] Limit the number of roles returned (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset the roles returned (default: 0)
      */
     public listRoles(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsRoleWithPermissionsList> {
@@ -7365,7 +7365,7 @@ export class ObservableSchemaDetectionApi {
      * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
      * List organization schema change events
      * @param organizationId Organization ID
-     * @param [limit] Page size (default 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Row offset for pagination (default 0)
      * @param [_from] Only events strictly after this RFC3339 timestamp
      */
@@ -7393,7 +7393,7 @@ export class ObservableSchemaDetectionApi {
      * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
      * List organization schema change events
      * @param organizationId Organization ID
-     * @param [limit] Page size (default 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Row offset for pagination (default 0)
      * @param [_from] Only events strictly after this RFC3339 timestamp
      */
@@ -7531,7 +7531,7 @@ export class ObservableSecretsApi {
      * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * List secrets with components
      * @param organizationId Organization ID
-     * @param [limit] Limit number of results
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset results
      */
     public listSecretsWithHttpInfo(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV2SecretWithComponentsListResponse>> {
@@ -7558,7 +7558,7 @@ export class ObservableSecretsApi {
      * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * List secrets with components
      * @param organizationId Organization ID
-     * @param [limit] Limit number of results
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset results
      */
     public listSecrets(organizationId: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV2SecretWithComponentsListResponse> {
@@ -7826,7 +7826,7 @@ export class ObservableTagsApi {
      * List tags
      * @param organizationId Organization ID
      * @param [search] Prefix match on tag name
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listTagsWithHttpInfo(organizationId: string, search?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<RoutesV3TagListResponse>> {
@@ -7854,7 +7854,7 @@ export class ObservableTagsApi {
      * List tags
      * @param organizationId Organization ID
      * @param [search] Prefix match on tag name
-     * @param [limit] Limit
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Offset
      */
     public listTags(organizationId: string, search?: string, limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<RoutesV3TagListResponse> {
@@ -8420,7 +8420,7 @@ export class ObservableTransformsRepositoryApi {
     /**
      * List transforms from repository with pagination
      * List transforms
-     * @param [limit] Number of items to return (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Number of items to skip (default: 0)
      */
     public listTransformRepositoryWithHttpInfo(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<HttpInfo<ModelsTransformsRepositoryList>> {
@@ -8446,7 +8446,7 @@ export class ObservableTransformsRepositoryApi {
     /**
      * List transforms from repository with pagination
      * List transforms
-     * @param [limit] Number of items to return (default: 10)
+     * @param [limit] Page size (default 10, max 500)
      * @param [offset] Number of items to skip (default: 0)
      */
     public listTransformRepository(limit?: number, offset?: number, _options?: ConfigurationOptions): Observable<ModelsTransformsRepositoryList> {

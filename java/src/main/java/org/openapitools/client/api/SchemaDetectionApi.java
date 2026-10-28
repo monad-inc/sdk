@@ -348,7 +348,7 @@ public class SchemaDetectionApi {
     /**
      * Build call for listOrganizationSchemaChangeEvents
      * @param organizationId Organization ID (required)
-     * @param limit Page size (default 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Row offset for pagination (default 0) (optional)
      * @param from Only events strictly after this RFC3339 timestamp (optional)
      * @param _callback Callback for upload/download progress
@@ -436,7 +436,7 @@ public class SchemaDetectionApi {
      * List organization schema change events
      * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after &#x60;from&#x60;.
      * @param organizationId Organization ID (required)
-     * @param limit Page size (default 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Row offset for pagination (default 0) (optional)
      * @param from Only events strictly after this RFC3339 timestamp (optional)
      * @return ModelsSchemaHistoryList
@@ -460,7 +460,7 @@ public class SchemaDetectionApi {
      * List organization schema change events
      * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after &#x60;from&#x60;.
      * @param organizationId Organization ID (required)
-     * @param limit Page size (default 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Row offset for pagination (default 0) (optional)
      * @param from Only events strictly after this RFC3339 timestamp (optional)
      * @return ApiResponse&lt;ModelsSchemaHistoryList&gt;
@@ -485,7 +485,7 @@ public class SchemaDetectionApi {
      * List organization schema change events (asynchronously)
      * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after &#x60;from&#x60;.
      * @param organizationId Organization ID (required)
-     * @param limit Page size (default 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Row offset for pagination (default 0) (optional)
      * @param from Only events strictly after this RFC3339 timestamp (optional)
      * @param _callback The callback to be executed when the API call finishes

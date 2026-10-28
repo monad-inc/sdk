@@ -32,7 +32,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	ownedBy := "ownedBy_example" // string | Set to `me` to scope to the caller's own registrations (optional)
-	limit := int32(56) // int32 | Limit (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 200) (optional)
 	offset := int32(56) // int32 | Offset (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **ownedBy** | **string** | Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations | 
- **limit** | **int32** | Limit | 
+ **limit** | **int32** | Page size (default 10, max 200) | 
  **offset** | **int32** | Offset | 
 
 ### Return type

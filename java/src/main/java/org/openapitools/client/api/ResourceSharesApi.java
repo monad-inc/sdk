@@ -260,7 +260,7 @@ public class ResourceSharesApi {
      * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
      * @param sortBy Column to sort by; default puts shared rows first (optional)
      * @param order Sort direction (used with sort_by) (optional, default to asc)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 1000) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -377,7 +377,7 @@ public class ResourceSharesApi {
      * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
      * @param sortBy Column to sort by; default puts shared rows first (optional)
      * @param order Sort direction (used with sort_by) (optional, default to asc)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 1000) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @return ModelsResourceShareTargetList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -406,7 +406,7 @@ public class ResourceSharesApi {
      * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
      * @param sortBy Column to sort by; default puts shared rows first (optional)
      * @param order Sort direction (used with sort_by) (optional, default to asc)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 1000) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @return ApiResponse&lt;ModelsResourceShareTargetList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -436,7 +436,7 @@ public class ResourceSharesApi {
      * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared (optional)
      * @param sortBy Column to sort by; default puts shared rows first (optional)
      * @param order Sort direction (used with sort_by) (optional, default to asc)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 1000) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -622,7 +622,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 500) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -719,7 +719,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 500) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @return RoutesV3ResourceUsageListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -744,7 +744,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 500) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @return ApiResponse&lt;RoutesV3ResourceUsageListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -770,7 +770,7 @@ public class ResourceSharesApi {
      * @param organizationId Owner organization ID (required)
      * @param resourceType Resource type (required)
      * @param resourceId Resource ID (required)
-     * @param limit Page size (optional, default to 10)
+     * @param limit Page size (default 10, max 500) (optional, default to 10)
      * @param offset Rows to skip (optional, default to 0)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -795,7 +795,7 @@ public class ResourceSharesApi {
     /**
      * Build call for listSharedResources
      * @param organizationId Owner organization ID (required)
-     * @param limit Page size (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (default: 0) (optional)
      * @param resourceType Filter by resource type (optional)
      * @param _callback Callback for upload/download progress
@@ -883,7 +883,7 @@ public class ResourceSharesApi {
      * List shared resources
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * @param organizationId Owner organization ID (required)
-     * @param limit Page size (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (default: 0) (optional)
      * @param resourceType Filter by resource type (optional)
      * @return RoutesV3SharedResourceListResponse
@@ -907,7 +907,7 @@ public class ResourceSharesApi {
      * List shared resources
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * @param organizationId Owner organization ID (required)
-     * @param limit Page size (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (default: 0) (optional)
      * @param resourceType Filter by resource type (optional)
      * @return ApiResponse&lt;RoutesV3SharedResourceListResponse&gt;
@@ -932,7 +932,7 @@ public class ResourceSharesApi {
      * List shared resources (asynchronously)
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * @param organizationId Owner organization ID (required)
-     * @param limit Page size (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (default: 0) (optional)
      * @param resourceType Filter by resource type (optional)
      * @param _callback The callback to be executed when the API call finishes

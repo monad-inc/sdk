@@ -283,7 +283,7 @@ public class Example {
 
     OrganizationTransformsApi apiInstance = new OrganizationTransformsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     try {
       ModelsTransformList result = apiInstance.listOrganizationTransforms(organizationId, limit, offset);
@@ -304,7 +304,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type
@@ -324,6 +324,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of transforms |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Failed to marshal transforms |  -  |
 
 <a id="updateOrganizationTransform"></a>

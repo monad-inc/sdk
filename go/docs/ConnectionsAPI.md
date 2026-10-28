@@ -250,7 +250,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	limit := int32(56) // int32 | Limit (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -281,7 +281,7 @@ Other parameters are passed through a pointer to a apiListConnectionsRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Limit | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset | 
 
 ### Return type

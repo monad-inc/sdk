@@ -75,7 +75,7 @@ public class OrganizationQuotasApi {
     /**
      * Build call for getQuotasByOrganizationID
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @param _callback Callback for upload/download progress
@@ -159,7 +159,7 @@ public class OrganizationQuotasApi {
      * Get Organization Quotas
      * Returns a paginated list of quotas with their latest usage for a given organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @return ModelsQuotaList
@@ -182,7 +182,7 @@ public class OrganizationQuotasApi {
      * Get Organization Quotas
      * Returns a paginated list of quotas with their latest usage for a given organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @return ApiResponse&lt;ModelsQuotaList&gt;
@@ -206,7 +206,7 @@ public class OrganizationQuotasApi {
      * Get Organization Quotas (asynchronously)
      * Returns a paginated list of quotas with their latest usage for a given organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param body  (optional)
      * @param _callback The callback to be executed when the API call finishes

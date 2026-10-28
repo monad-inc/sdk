@@ -314,7 +314,7 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
      * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * List sub-orgs
      * @param organizationId Parent Organization ID
-     * @param limit Limit the number of organizations returned (default: 10)
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset the organizations returned (default: 0)
      * @param nameSearch If provided, only return organizations with names that contain the search string
      */
@@ -377,7 +377,7 @@ export class OrganizationsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * List organizations for user
      * List organizations for user
-     * @param limit Limit the number of organizations returned (default: 10)
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset the organizations returned (default: 0)
      * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)
      * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization
@@ -784,6 +784,13 @@ export class OrganizationsApiResponseProcessor {
             ) as ModelsUserOrganizationList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -819,6 +826,13 @@ export class OrganizationsApiResponseProcessor {
                 "ModelsOrganizationList", ""
             ) as ModelsOrganizationList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
 
         // Work around for missing responses in specification, e.g. for petstore.yaml

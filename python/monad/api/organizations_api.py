@@ -1520,7 +1520,7 @@ class OrganizationsApi:
     def list_child_organizations(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
@@ -1542,7 +1542,7 @@ class OrganizationsApi:
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of organizations returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
@@ -1583,6 +1583,7 @@ class OrganizationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsUserOrganizationList",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1600,7 +1601,7 @@ class OrganizationsApi:
     def list_child_organizations_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
@@ -1622,7 +1623,7 @@ class OrganizationsApi:
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of organizations returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
@@ -1663,6 +1664,7 @@ class OrganizationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsUserOrganizationList",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1680,7 +1682,7 @@ class OrganizationsApi:
     def list_child_organizations_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Parent Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         name_search: Annotated[Optional[StrictStr], Field(description="If provided, only return organizations with names that contain the search string")] = None,
         _request_timeout: Union[
@@ -1702,7 +1704,7 @@ class OrganizationsApi:
 
         :param organization_id: Parent Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of organizations returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
@@ -1743,6 +1745,7 @@ class OrganizationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsUserOrganizationList",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1835,7 +1838,7 @@ class OrganizationsApi:
     @validate_call
     def list_user_organizations(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)")] = None,
         parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return the sub-orgs of the specified parent organization")] = None,
@@ -1857,7 +1860,7 @@ class OrganizationsApi:
 
         List organizations for user
 
-        :param limit: Limit the number of organizations returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
@@ -1903,6 +1906,7 @@ class OrganizationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOrganizationList",
+            '400': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1918,7 +1922,7 @@ class OrganizationsApi:
     @validate_call
     def list_user_organizations_with_http_info(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)")] = None,
         parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return the sub-orgs of the specified parent organization")] = None,
@@ -1940,7 +1944,7 @@ class OrganizationsApi:
 
         List organizations for user
 
-        :param limit: Limit the number of organizations returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
@@ -1986,6 +1990,7 @@ class OrganizationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOrganizationList",
+            '400': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2001,7 +2006,7 @@ class OrganizationsApi:
     @validate_call
     def list_user_organizations_without_preload_content(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
         no_children: Annotated[Optional[StrictBool], Field(description="If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false)")] = None,
         parent_organization_id: Annotated[Optional[StrictStr], Field(description="If provided, only return the sub-orgs of the specified parent organization")] = None,
@@ -2023,7 +2028,7 @@ class OrganizationsApi:
 
         List organizations for user
 
-        :param limit: Limit the number of organizations returned (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset the organizations returned (default: 0)
         :type offset: int
@@ -2069,6 +2074,7 @@ class OrganizationsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOrganizationList",
+            '400': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.ModelsOrganizationUser;
 import org.openapitools.client.model.ModelsOrganizationUserList;
+import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesAddUserToOrganizationRequest;
 import org.openapitools.client.model.RoutesUpdateUserInOrganizationRequest;
 
@@ -223,7 +224,7 @@ public class OrganizationUsersApi {
     /**
      * Build call for listUsers
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -233,6 +234,7 @@ public class OrganizationUsersApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of organization users </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -304,7 +306,7 @@ public class OrganizationUsersApi {
      * List organization users
      * List organization users
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsOrganizationUserList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -313,6 +315,7 @@ public class OrganizationUsersApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of organization users </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -325,7 +328,7 @@ public class OrganizationUsersApi {
      * List organization users
      * List organization users
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsOrganizationUserList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -334,6 +337,7 @@ public class OrganizationUsersApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of organization users </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
@@ -347,7 +351,7 @@ public class OrganizationUsersApi {
      * List organization users (asynchronously)
      * List organization users
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -357,6 +361,7 @@ public class OrganizationUsersApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of organization users </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */

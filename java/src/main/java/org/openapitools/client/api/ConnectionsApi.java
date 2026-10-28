@@ -514,7 +514,7 @@ public class ConnectionsApi {
     /**
      * Build call for listConnections
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -524,6 +524,7 @@ public class ConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of connections retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -595,7 +596,7 @@ public class ConnectionsApi {
      * Get all connections
      * Retrieve all connections
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsConnectionList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -604,6 +605,7 @@ public class ConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of connections retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -616,7 +618,7 @@ public class ConnectionsApi {
      * Get all connections
      * Retrieve all connections
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsConnectionList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -625,6 +627,7 @@ public class ConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of connections retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -638,7 +641,7 @@ public class ConnectionsApi {
      * Get all connections (asynchronously)
      * Retrieve all connections
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -648,6 +651,7 @@ public class ConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of connections retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

@@ -44,7 +44,7 @@ public class Example {
 
     PermissionsApi apiInstance = new PermissionsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit the number of permissions returned (default: 10)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset the permissions returned (default: 0)
     try {
       ModelsPermissionList result = apiInstance.listPermissions(organizationId, limit, offset);
@@ -65,7 +65,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit the number of permissions returned (default: 10) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset the permissions returned (default: 0) | [optional] |
 
 ### Return type
@@ -85,5 +85,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Permissions retrieved successfully |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Error listing permissions |  -  |
 

@@ -693,7 +693,7 @@ public class TagsApi {
      * Build call for listTags
      * @param organizationId Organization ID (required)
      * @param search Prefix match on tag name (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -703,6 +703,7 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of tags </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -779,7 +780,7 @@ public class TagsApi {
      * List the organization&#39;s customer tags, optionally prefix-filtered by name.
      * @param organizationId Organization ID (required)
      * @param search Prefix match on tag name (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return RoutesV3TagListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -788,6 +789,7 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of tags </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -801,7 +803,7 @@ public class TagsApi {
      * List the organization&#39;s customer tags, optionally prefix-filtered by name.
      * @param organizationId Organization ID (required)
      * @param search Prefix match on tag name (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;RoutesV3TagListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -810,6 +812,7 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of tags </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -824,7 +827,7 @@ public class TagsApi {
      * List the organization&#39;s customer tags, optionally prefix-filtered by name.
      * @param organizationId Organization ID (required)
      * @param search Prefix match on tag name (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -834,6 +837,7 @@ public class TagsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of tags </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */

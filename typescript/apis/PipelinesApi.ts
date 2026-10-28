@@ -1061,8 +1061,8 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * Retrieve the status of pipelines within an organization for a specified time period.
      * Get pipeline status
      * @param organizationId Organization ID
-     * @param limit Maximum number of pipelines to return (default is 10)
-     * @param offset Offset for pagination (default is 0)
+     * @param limit Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
+     * @param offset Number of pipelines to skip (default 0)
      * @param start Start time (RFC3339 format) for status metrics (default: 24 hours ago)
      * @param end End time (RFC3339 format) for status metrics (default: now)
      */
@@ -1191,7 +1191,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      * @param includeStatus Include the status of the pipeline nodes
      */
@@ -1257,7 +1257,7 @@ export class PipelinesApiRequestFactory extends BaseAPIRequestFactory {
      * List pipelines
      * List pipelines
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      */
     public async listPipelinesV1(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {

@@ -581,7 +581,7 @@ class SchemaDetectionApi:
     def list_organization_schema_change_events(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Row offset for pagination (default 0)")] = None,
         var_from: Annotated[Optional[StrictStr], Field(description="Only events strictly after this RFC3339 timestamp")] = None,
         _request_timeout: Union[
@@ -603,7 +603,7 @@ class SchemaDetectionApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Page size (default 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Row offset for pagination (default 0)
         :type offset: int
@@ -663,7 +663,7 @@ class SchemaDetectionApi:
     def list_organization_schema_change_events_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Row offset for pagination (default 0)")] = None,
         var_from: Annotated[Optional[StrictStr], Field(description="Only events strictly after this RFC3339 timestamp")] = None,
         _request_timeout: Union[
@@ -685,7 +685,7 @@ class SchemaDetectionApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Page size (default 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Row offset for pagination (default 0)
         :type offset: int
@@ -745,7 +745,7 @@ class SchemaDetectionApi:
     def list_organization_schema_change_events_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Row offset for pagination (default 0)")] = None,
         var_from: Annotated[Optional[StrictStr], Field(description="Only events strictly after this RFC3339 timestamp")] = None,
         _request_timeout: Union[
@@ -767,7 +767,7 @@ class SchemaDetectionApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Page size (default 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Row offset for pagination (default 0)
         :type offset: int

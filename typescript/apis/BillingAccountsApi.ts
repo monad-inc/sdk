@@ -145,7 +145,7 @@ export class BillingAccountsApiRequestFactory extends BaseAPIRequestFactory {
     /**
      * List Billing Accounts
      * List Billing Accounts
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      */
     public async getBillingAccounts(limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {

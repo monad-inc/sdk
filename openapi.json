@@ -3994,9 +3994,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -13234,7 +13234,7 @@
                 "operationId": "ListUserOrganizations",
                 "parameters": [
                     {
-                        "description": "Limit the number of organizations returned (default: 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -13284,6 +13284,16 @@
                             }
                         },
                         "description": "Response body for listing organizations"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     }
                 },
                 "security": [
@@ -13936,7 +13946,7 @@
                         }
                     },
                     {
-                        "description": "Limit the number of organizations returned (default: DefaultLimit)",
+                        "description": "Page size (default 10, max 1000)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -13944,7 +13954,7 @@
                         }
                     },
                     {
-                        "description": "Offset the organizations returned (default: 0)",
+                        "description": "Rows to skip (default 0)",
                         "in": "query",
                         "name": "offset",
                         "schema": {
@@ -13962,6 +13972,16 @@
                             }
                         },
                         "description": "Inputs retrieved successfully"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     }
                 },
                 "security": [
@@ -14608,7 +14628,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 1000)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -14634,6 +14654,16 @@
                             }
                         },
                         "description": "List of outputs"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -14803,7 +14833,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -15100,7 +15130,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -15126,6 +15156,16 @@
                             }
                         },
                         "description": "List of transforms"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -15460,7 +15500,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -15486,6 +15526,16 @@
                             }
                         },
                         "description": "List of organization users"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -15810,7 +15860,7 @@
                 "operationId": "GetBillingAccounts",
                 "parameters": [
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -16929,7 +16979,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -17045,7 +17095,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -17361,7 +17411,7 @@
                 "operationId": "ListTransformRepository",
                 "parameters": [
                     {
-                        "description": "Number of items to return (default: 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -17387,6 +17437,16 @@
                             }
                         },
                         "description": "Transforms retrieved successfully"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -17481,7 +17541,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -17507,6 +17567,16 @@
                             }
                         },
                         "description": "List of API keys"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -18495,7 +18565,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 200)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -18521,6 +18591,16 @@
                             }
                         },
                         "description": "OK"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "403": {
                         "content": {
@@ -20125,7 +20205,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -20386,7 +20466,7 @@
                         }
                     },
                     {
-                        "description": "Maximum number of pipelines to return (default is 10)",
+                        "description": "Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -20394,7 +20474,7 @@
                         }
                     },
                     {
-                        "description": "Offset for pagination (default is 0)",
+                        "description": "Number of pipelines to skip (default 0)",
                         "in": "query",
                         "name": "offset",
                         "schema": {
@@ -21474,7 +21554,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -21563,7 +21643,7 @@
                         }
                     },
                     {
-                        "description": "Limit the number of roles returned (default: 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -21589,6 +21669,16 @@
                             }
                         },
                         "description": "Roles retrieved successfully"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -21725,7 +21815,7 @@
                         }
                     },
                     {
-                        "description": "Limit the number of permissions returned (default: 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -21751,6 +21841,16 @@
                             }
                         },
                         "description": "Permissions retrieved successfully"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -22102,7 +22202,7 @@
                         }
                     },
                     {
-                        "description": "Limit number of results",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -22128,6 +22228,16 @@
                             }
                         },
                         "description": "OK"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -23275,7 +23385,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -23301,6 +23411,16 @@
                             }
                         },
                         "description": "List of alert rules retrieved successfully"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -24158,7 +24278,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -24184,6 +24304,16 @@
                             }
                         },
                         "description": "List of connections retrieved successfully"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -24533,7 +24663,7 @@
                         }
                     },
                     {
-                        "description": "Number of results to return (default 100)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -25589,7 +25719,7 @@
                         }
                     },
                     {
-                        "description": "Limit the number of organizations returned (default: 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -25623,6 +25753,16 @@
                             }
                         },
                         "description": "List of sub-orgs"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {
@@ -26256,7 +26396,7 @@
                         }
                     },
                     {
-                        "description": "Page size (default: 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -26871,7 +27011,7 @@
                         }
                     },
                     {
-                        "description": "Page size",
+                        "description": "Page size (default 10, max 1000)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -26985,7 +27125,7 @@
                         }
                     },
                     {
-                        "description": "Page size",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -27077,7 +27217,7 @@
                         }
                     },
                     {
-                        "description": "Page size (default 10)",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -27305,7 +27445,7 @@
                         }
                     },
                     {
-                        "description": "Limit",
+                        "description": "Page size (default 10, max 500)",
                         "in": "query",
                         "name": "limit",
                         "schema": {
@@ -27331,6 +27471,16 @@
                             }
                         },
                         "description": "List of tags"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Offset larger than 2147483647"
                     },
                     "500": {
                         "content": {

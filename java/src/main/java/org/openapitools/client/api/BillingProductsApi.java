@@ -489,7 +489,7 @@ public class BillingProductsApi {
     /**
      * Build call for getBillingProducts
      * @param showInactive Show inactive products (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -569,7 +569,7 @@ public class BillingProductsApi {
      * List Billing Products
      * List Billing Products
      * @param showInactive Show inactive products (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsBillingProductList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -591,7 +591,7 @@ public class BillingProductsApi {
      * List Billing Products
      * List Billing Products
      * @param showInactive Show inactive products (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsBillingProductList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -614,7 +614,7 @@ public class BillingProductsApi {
      * List Billing Products (asynchronously)
      * List Billing Products
      * @param showInactive Show inactive products (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

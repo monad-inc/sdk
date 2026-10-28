@@ -39,7 +39,7 @@ public class Example {
     QuotasApi apiInstance = new QuotasApi(defaultClient);
     String billingAccountId = "billingAccountId_example"; // String | Billing Account ID
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     Object body = null; // Object | 
     try {
@@ -62,7 +62,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **billingAccountId** | **String**| Billing Account ID | [optional] |
 | **organizationId** | **String**| Organization ID | [optional] |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 | **body** | **Object**|  | [optional] |
 

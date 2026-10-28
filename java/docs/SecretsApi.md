@@ -287,7 +287,7 @@ public class Example {
 
     SecretsApi apiInstance = new SecretsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit number of results
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset results
     try {
       RoutesV2SecretWithComponentsListResponse result = apiInstance.listSecrets(organizationId, limit, offset);
@@ -308,7 +308,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit number of results | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset results | [optional] |
 
 ### Return type
@@ -328,6 +328,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **500** | Internal server error |  -  |
 
 <a id="updateSecret"></a>

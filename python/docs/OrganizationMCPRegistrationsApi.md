@@ -55,7 +55,7 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationMCPRegistrationsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     owned_by = 'owned_by_example' # str | Set to `me` to scope to the caller's own registrations (optional)
-    limit = 56 # int | Limit (optional)
+    limit = 56 # int | Page size (default 10, max 200) (optional)
     offset = 56 # int | Offset (optional)
 
     try:
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **owned_by** | **str**| Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations | [optional] 
- **limit** | **int**| Limit | [optional] 
+ **limit** | **int**| Page size (default 10, max 200) | [optional] 
  **offset** | **int**| Offset | [optional] 
 
 ### Return type
@@ -97,6 +97,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **403** | access denied |  -  |
 **500** | Failed to list registrations |  -  |
 

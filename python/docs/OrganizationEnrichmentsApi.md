@@ -332,7 +332,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationEnrichmentsApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    limit = 56 # int | Number of results to return (default 100) (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Number of results to skip (default 0) (optional)
 
     try:
@@ -352,7 +352,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **limit** | **int**| Number of results to return (default 100) | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Number of results to skip (default 0) | [optional] 
 
 ### Return type

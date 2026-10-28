@@ -108,7 +108,7 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
      * @param shared Filter by share state: true &#x3D; only shared, false &#x3D; only not shared
      * @param sortBy Column to sort by; default puts shared rows first
      * @param order Sort direction (used with sort_by)
-     * @param limit Page size
+     * @param limit Page size (default 10, max 1000)
      * @param offset Rows to skip
      */
     public async listResourceShareTargets(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, search?: string, shared?: boolean, sortBy?: 'name' | 'shared' | 'shared_at' | 'in_use', order?: 'asc' | 'desc', limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -264,7 +264,7 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
      * @param organizationId Owner organization ID
      * @param resourceType Resource type
      * @param resourceId Resource ID
-     * @param limit Page size
+     * @param limit Page size (default 10, max 500)
      * @param offset Rows to skip
      */
     public async listResourceUsage(organizationId: string, resourceType: 'secret' | 'component', resourceId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -335,7 +335,7 @@ export class ResourceSharesApiRequestFactory extends BaseAPIRequestFactory {
      * List the resources this organization has shared with its child organizations, one entry per resource with its aggregated share summary and metadata. Owner view only.
      * List shared resources
      * @param organizationId Owner organization ID
-     * @param limit Page size (default: 10)
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset (default: 0)
      * @param resourceType Filter by resource type
      */

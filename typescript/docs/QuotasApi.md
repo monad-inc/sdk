@@ -27,7 +27,7 @@ const request: QuotasApiListQuotasRequest = {
   billingAccountId: "billing_account_id_example",
     // Organization ID (optional)
   organizationId: "organization_id_example",
-    // Limit (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
  **body** | **any**|  |
  **billingAccountId** | [**string**] | Billing Account ID | (optional) defaults to undefined
  **organizationId** | [**string**] | Organization ID | (optional) defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 

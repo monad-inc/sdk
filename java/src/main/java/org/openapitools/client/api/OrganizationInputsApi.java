@@ -516,8 +516,8 @@ public class OrganizationInputsApi {
     /**
      * Build call for listOrganizationInputs
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: DefaultLimit) (optional)
-     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
+     * @param offset Rows to skip (default 0) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -526,6 +526,7 @@ public class OrganizationInputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listOrganizationInputsCall(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback _callback) throws ApiException {
@@ -596,8 +597,8 @@ public class OrganizationInputsApi {
      * List organization inputs
      * List configured inputs in organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: DefaultLimit) (optional)
-     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
+     * @param offset Rows to skip (default 0) (optional)
      * @return RoutesListInputsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -605,6 +606,7 @@ public class OrganizationInputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public RoutesListInputsResponse listOrganizationInputs(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -616,8 +618,8 @@ public class OrganizationInputsApi {
      * List organization inputs
      * List configured inputs in organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: DefaultLimit) (optional)
-     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
+     * @param offset Rows to skip (default 0) (optional)
      * @return ApiResponse&lt;RoutesListInputsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -625,6 +627,7 @@ public class OrganizationInputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<RoutesListInputsResponse> listOrganizationInputsWithHttpInfo(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset) throws ApiException {
@@ -637,8 +640,8 @@ public class OrganizationInputsApi {
      * List organization inputs (asynchronously)
      * List configured inputs in organization
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: DefaultLimit) (optional)
-     * @param offset Offset the organizations returned (default: 0) (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
+     * @param offset Rows to skip (default 0) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -647,6 +650,7 @@ public class OrganizationInputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inputs retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listOrganizationInputsAsync(@javax.annotation.Nonnull String organizationId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, final ApiCallback<RoutesListInputsResponse> _callback) throws ApiException {

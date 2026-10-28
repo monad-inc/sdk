@@ -1393,7 +1393,7 @@ class TransformsRepositoryApi:
     @validate_call
     def list_transform_repository(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Number of items to return (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of items to skip (default: 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1412,7 +1412,7 @@ class TransformsRepositoryApi:
 
         List transforms from repository with pagination
 
-        :param limit: Number of items to return (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Number of items to skip (default: 0)
         :type offset: int
@@ -1449,6 +1449,7 @@ class TransformsRepositoryApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsTransformsRepositoryList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1465,7 +1466,7 @@ class TransformsRepositoryApi:
     @validate_call
     def list_transform_repository_with_http_info(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Number of items to return (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of items to skip (default: 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1484,7 +1485,7 @@ class TransformsRepositoryApi:
 
         List transforms from repository with pagination
 
-        :param limit: Number of items to return (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Number of items to skip (default: 0)
         :type offset: int
@@ -1521,6 +1522,7 @@ class TransformsRepositoryApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsTransformsRepositoryList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1537,7 +1539,7 @@ class TransformsRepositoryApi:
     @validate_call
     def list_transform_repository_without_preload_content(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Number of items to return (default: 10)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of items to skip (default: 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1556,7 +1558,7 @@ class TransformsRepositoryApi:
 
         List transforms from repository with pagination
 
-        :param limit: Number of items to return (default: 10)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Number of items to skip (default: 0)
         :type offset: int
@@ -1593,6 +1595,7 @@ class TransformsRepositoryApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsTransformsRepositoryList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

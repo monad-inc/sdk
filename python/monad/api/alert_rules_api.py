@@ -1424,7 +1424,7 @@ class AlertRulesApi:
     def list_alert_rules(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1445,7 +1445,7 @@ class AlertRulesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1483,6 +1483,7 @@ class AlertRulesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3AlertRuleListResponse",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1500,7 +1501,7 @@ class AlertRulesApi:
     def list_alert_rules_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1521,7 +1522,7 @@ class AlertRulesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1559,6 +1560,7 @@ class AlertRulesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3AlertRuleListResponse",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1576,7 +1578,7 @@ class AlertRulesApi:
     def list_alert_rules_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1597,7 +1599,7 @@ class AlertRulesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1635,6 +1637,7 @@ class AlertRulesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3AlertRuleListResponse",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(

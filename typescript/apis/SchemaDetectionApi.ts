@@ -108,7 +108,7 @@ export class SchemaDetectionApiRequestFactory extends BaseAPIRequestFactory {
      * List schema drift events (new field / type change) across every pipeline and edge in the organization, newest first, with offset pagination. Optionally bounded to events after `from`.
      * List organization schema change events
      * @param organizationId Organization ID
-     * @param limit Page size (default 10)
+     * @param limit Page size (default 10, max 500)
      * @param offset Row offset for pagination (default 0)
      * @param _from Only events strictly after this RFC3339 timestamp
      */

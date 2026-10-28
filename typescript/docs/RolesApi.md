@@ -202,7 +202,7 @@ const apiInstance = new RolesApi(configuration);
 const request: RolesApiListRolesRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Limit the number of roles returned (default: 10) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset the roles returned (default: 0) (optional)
   offset: 1,
@@ -218,7 +218,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit the number of roles returned (default: 10) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset the roles returned (default: 0) | (optional) defaults to undefined
 
 
@@ -240,6 +240,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Roles retrieved successfully |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Error listing roles |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

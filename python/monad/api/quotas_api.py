@@ -44,7 +44,7 @@ class QuotasApi:
         self,
         billing_account_id: Annotated[Optional[StrictStr], Field(description="Billing Account ID")] = None,
         organization_id: Annotated[Optional[StrictStr], Field(description="Organization ID")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
@@ -68,7 +68,7 @@ class QuotasApi:
         :type billing_account_id: str
         :param organization_id: Organization ID
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -129,7 +129,7 @@ class QuotasApi:
         self,
         billing_account_id: Annotated[Optional[StrictStr], Field(description="Billing Account ID")] = None,
         organization_id: Annotated[Optional[StrictStr], Field(description="Organization ID")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
@@ -153,7 +153,7 @@ class QuotasApi:
         :type billing_account_id: str
         :param organization_id: Organization ID
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -214,7 +214,7 @@ class QuotasApi:
         self,
         billing_account_id: Annotated[Optional[StrictStr], Field(description="Billing Account ID")] = None,
         organization_id: Annotated[Optional[StrictStr], Field(description="Organization ID")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
@@ -238,7 +238,7 @@ class QuotasApi:
         :type billing_account_id: str
         :param organization_id: Organization ID
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int

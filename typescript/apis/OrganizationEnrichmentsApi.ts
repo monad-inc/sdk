@@ -197,7 +197,7 @@ export class OrganizationEnrichmentsApiRequestFactory extends BaseAPIRequestFact
      * List all enrichments for an organization
      * List enrichments
      * @param organizationId Organization ID
-     * @param limit Number of results to return (default 100)
+     * @param limit Page size (default 10, max 500)
      * @param offset Number of results to skip (default 0)
      */
     public async listEnrichments(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {

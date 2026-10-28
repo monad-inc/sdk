@@ -929,7 +929,7 @@ class OrganizationEnrichmentsApi:
     def list_enrichments(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Number of results to return (default 100)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of results to skip (default 0)")] = None,
         _request_timeout: Union[
             None,
@@ -950,7 +950,7 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Number of results to return (default 100)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Number of results to skip (default 0)
         :type offset: int
@@ -1006,7 +1006,7 @@ class OrganizationEnrichmentsApi:
     def list_enrichments_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Number of results to return (default 100)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of results to skip (default 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1027,7 +1027,7 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Number of results to return (default 100)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Number of results to skip (default 0)
         :type offset: int
@@ -1083,7 +1083,7 @@ class OrganizationEnrichmentsApi:
     def list_enrichments_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Number of results to return (default 100)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of results to skip (default 0)")] = None,
         _request_timeout: Union[
             None,
@@ -1104,7 +1104,7 @@ class OrganizationEnrichmentsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Number of results to return (default 100)
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Number of results to skip (default 0)
         :type offset: int

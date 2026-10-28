@@ -859,7 +859,7 @@ class BillingAccountsApi:
     @validate_call
     def get_billing_accounts(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -878,7 +878,7 @@ class BillingAccountsApi:
 
         List Billing Accounts
 
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -932,7 +932,7 @@ class BillingAccountsApi:
     @validate_call
     def get_billing_accounts_with_http_info(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -951,7 +951,7 @@ class BillingAccountsApi:
 
         List Billing Accounts
 
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1005,7 +1005,7 @@ class BillingAccountsApi:
     @validate_call
     def get_billing_accounts_without_preload_content(
         self,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1024,7 +1024,7 @@ class BillingAccountsApi:
 
         List Billing Accounts
 
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int

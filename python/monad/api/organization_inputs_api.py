@@ -922,8 +922,8 @@ class OrganizationInputsApi:
     def list_organization_inputs(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: DefaultLimit)")] = None,
-        offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip (default 0)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -943,9 +943,9 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of organizations returned (default: DefaultLimit)
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
-        :param offset: Offset the organizations returned (default: 0)
+        :param offset: Rows to skip (default 0)
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -981,6 +981,7 @@ class OrganizationInputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesListInputsResponse",
+            '400': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -997,8 +998,8 @@ class OrganizationInputsApi:
     def list_organization_inputs_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: DefaultLimit)")] = None,
-        offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip (default 0)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1018,9 +1019,9 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of organizations returned (default: DefaultLimit)
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
-        :param offset: Offset the organizations returned (default: 0)
+        :param offset: Rows to skip (default 0)
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1056,6 +1057,7 @@ class OrganizationInputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesListInputsResponse",
+            '400': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1072,8 +1074,8 @@ class OrganizationInputsApi:
     def list_organization_inputs_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit the number of organizations returned (default: DefaultLimit)")] = None,
-        offset: Annotated[Optional[StrictInt], Field(description="Offset the organizations returned (default: 0)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 1000)")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Rows to skip (default 0)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1093,9 +1095,9 @@ class OrganizationInputsApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit the number of organizations returned (default: DefaultLimit)
+        :param limit: Page size (default 10, max 1000)
         :type limit: int
-        :param offset: Offset the organizations returned (default: 0)
+        :param offset: Rows to skip (default 0)
         :type offset: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1131,6 +1133,7 @@ class OrganizationInputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesListInputsResponse",
+            '400': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

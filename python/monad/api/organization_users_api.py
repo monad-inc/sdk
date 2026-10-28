@@ -342,7 +342,7 @@ class OrganizationUsersApi:
     def list_users(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -363,7 +363,7 @@ class OrganizationUsersApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -401,6 +401,7 @@ class OrganizationUsersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOrganizationUserList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -418,7 +419,7 @@ class OrganizationUsersApi:
     def list_users_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -439,7 +440,7 @@ class OrganizationUsersApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -477,6 +478,7 @@ class OrganizationUsersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOrganizationUserList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -494,7 +496,7 @@ class OrganizationUsersApi:
     def list_users_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -515,7 +517,7 @@ class OrganizationUsersApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -553,6 +555,7 @@ class OrganizationUsersApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsOrganizationUserList",
+            '400': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

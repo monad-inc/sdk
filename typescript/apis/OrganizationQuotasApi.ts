@@ -19,7 +19,7 @@ export class OrganizationQuotasApiRequestFactory extends BaseAPIRequestFactory {
      * Returns a paginated list of quotas with their latest usage for a given organization
      * Get Organization Quotas
      * @param organizationId Organization ID
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      * @param body 
      */

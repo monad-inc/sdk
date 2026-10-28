@@ -329,7 +329,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	search := "search_example" // string | Prefix match on tag name (optional)
-	limit := int32(56) // int32 | Limit (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **search** | **string** | Prefix match on tag name | 
- **limit** | **int32** | Limit | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset | 
 
 ### Return type

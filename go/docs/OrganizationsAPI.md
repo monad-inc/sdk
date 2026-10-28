@@ -398,7 +398,7 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Parent Organization ID
-	limit := int32(56) // int32 | Limit the number of organizations returned (default: 10) (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
 	nameSearch := "nameSearch_example" // string | If provided, only return organizations with names that contain the search string (optional)
 
@@ -430,7 +430,7 @@ Other parameters are passed through a pointer to a apiListChildOrganizationsRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Limit the number of organizations returned (default: 10) | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset the organizations returned (default: 0) | 
  **nameSearch** | **string** | If provided, only return organizations with names that contain the search string | 
 
@@ -473,7 +473,7 @@ import (
 )
 
 func main() {
-	limit := int32(56) // int32 | Limit the number of organizations returned (default: 10) (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 500) (optional)
 	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
 	noChildren := true // bool | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
 	parentOrganizationId := "parentOrganizationId_example" // string | If provided, only return the sub-orgs of the specified parent organization (optional)
@@ -502,7 +502,7 @@ Other parameters are passed through a pointer to a apiListUserOrganizationsReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int32** | Limit the number of organizations returned (default: 10) | 
+ **limit** | **int32** | Page size (default 10, max 500) | 
  **offset** | **int32** | Offset the organizations returned (default: 0) | 
  **noChildren** | **bool** | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | 
  **parentOrganizationId** | **string** | If provided, only return the sub-orgs of the specified parent organization | 

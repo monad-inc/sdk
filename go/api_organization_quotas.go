@@ -33,7 +33,7 @@ type ApiGetQuotasByOrganizationIDRequest struct {
 	body *map[string]interface{}
 }
 
-// Limit
+// Page size (default 10, max 500)
 func (r ApiGetQuotasByOrganizationIDRequest) Limit(limit int32) ApiGetQuotasByOrganizationIDRequest {
 	r.limit = &limit
 	return r

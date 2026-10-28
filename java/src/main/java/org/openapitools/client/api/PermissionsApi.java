@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ModelsPermissionList;
+import org.openapitools.client.model.ResponderErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class PermissionsApi {
     /**
      * Build call for listPermissions
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of permissions returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the permissions returned (default: 0) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -85,6 +86,7 @@ public class PermissionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Permissions retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
@@ -156,7 +158,7 @@ public class PermissionsApi {
      * List permissions
      * List all available permissions in the system
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of permissions returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the permissions returned (default: 0) (optional)
      * @return ModelsPermissionList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -165,6 +167,7 @@ public class PermissionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Permissions retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
@@ -177,7 +180,7 @@ public class PermissionsApi {
      * List permissions
      * List all available permissions in the system
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of permissions returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the permissions returned (default: 0) (optional)
      * @return ApiResponse&lt;ModelsPermissionList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -186,6 +189,7 @@ public class PermissionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Permissions retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */
@@ -199,7 +203,7 @@ public class PermissionsApi {
      * List permissions (asynchronously)
      * List all available permissions in the system
      * @param organizationId Organization ID (required)
-     * @param limit Limit the number of permissions returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the permissions returned (default: 0) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -209,6 +213,7 @@ public class PermissionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Permissions retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Error listing permissions </td><td>  -  </td></tr>
      </table>
      */

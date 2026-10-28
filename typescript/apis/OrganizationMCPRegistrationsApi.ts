@@ -9,6 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { ModelsMCPClientRegistrationList } from '../models/ModelsMCPClientRegistrationList';
+import { ResponderErrorResponse } from '../models/ResponderErrorResponse';
 
 /**
  * no description
@@ -20,7 +21,7 @@ export class OrganizationMCPRegistrationsApiRequestFactory extends BaseAPIReques
      * List MCP client registrations
      * @param organizationId Organization ID
      * @param ownedBy Set to &#x60;me&#x60; to scope to the caller\&#39;s own registrations
-     * @param limit Limit
+     * @param limit Page size (default 10, max 200)
      * @param offset Offset
      */
     public async listMCPClientRegistrations(organizationId: string, ownedBy?: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -149,6 +150,13 @@ export class OrganizationMCPRegistrationsApiResponseProcessor {
                 "ModelsMCPClientRegistrationList", ""
             ) as ModelsMCPClientRegistrationList;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
         if (isCodeInRange("403", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(

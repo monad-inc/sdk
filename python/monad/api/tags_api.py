@@ -1238,7 +1238,7 @@ class TagsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         search: Annotated[Optional[StrictStr], Field(description="Prefix match on tag name")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1261,7 +1261,7 @@ class TagsApi:
         :type organization_id: str
         :param search: Prefix match on tag name
         :type search: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1300,6 +1300,7 @@ class TagsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3TagListResponse",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1318,7 +1319,7 @@ class TagsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         search: Annotated[Optional[StrictStr], Field(description="Prefix match on tag name")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1341,7 +1342,7 @@ class TagsApi:
         :type organization_id: str
         :param search: Prefix match on tag name
         :type search: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1380,6 +1381,7 @@ class TagsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3TagListResponse",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1398,7 +1400,7 @@ class TagsApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         search: Annotated[Optional[StrictStr], Field(description="Prefix match on tag name")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1421,7 +1423,7 @@ class TagsApi:
         :type organization_id: str
         :param search: Prefix match on tag name
         :type search: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1460,6 +1462,7 @@ class TagsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RoutesV3TagListResponse",
+            '400': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
         response_data = self.api_client.call_api(

@@ -496,7 +496,7 @@ type ApiListOrganizationOutputsRequest struct {
 	offset *int32
 }
 
-// Limit
+// Page size (default 10, max 1000)
 func (r ApiListOrganizationOutputsRequest) Limit(limit int32) ApiListOrganizationOutputsRequest {
 	r.limit = &limit
 	return r
@@ -623,6 +623,17 @@ func (a *OrganizationOutputsAPIService) ListOrganizationOutputsExecute(r ApiList
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
 			var v string

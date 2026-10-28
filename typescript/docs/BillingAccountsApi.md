@@ -192,7 +192,7 @@ const configuration = createConfiguration();
 const apiInstance = new BillingAccountsApi(configuration);
 
 const request: BillingAccountsApiGetBillingAccountsRequest = {
-    // Limit (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -207,7 +207,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 

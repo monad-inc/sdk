@@ -154,7 +154,7 @@ export class BillingProductsApiRequestFactory extends BaseAPIRequestFactory {
      * List Billing Products
      * List Billing Products
      * @param showInactive Show inactive products
-     * @param limit Limit
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset
      */
     public async getBillingProducts(showInactive?: boolean, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {

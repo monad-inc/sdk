@@ -186,7 +186,7 @@ export class SecretsApiRequestFactory extends BaseAPIRequestFactory {
      * Lists all secrets for the specified organization, each with the inputs, outputs, enrichments and transforms that reference it. A secret with no references in any of those lists can be deleted; one with references cannot (see DELETE). Pipeline-node config overrides are not included in these lists but do block deletion.
      * List secrets with components
      * @param organizationId Organization ID
-     * @param limit Limit number of results
+     * @param limit Page size (default 10, max 500)
      * @param offset Offset results
      */
     public async listSecrets(organizationId: string, limit?: number, offset?: number, _options?: Configuration): Promise<RequestContext> {
@@ -473,6 +473,13 @@ export class SecretsApiResponseProcessor {
                 "RoutesV2SecretWithComponentsListResponse", ""
             ) as RoutesV2SecretWithComponentsListResponse;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("400", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Offset larger than 2147483647", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

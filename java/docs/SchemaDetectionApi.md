@@ -200,7 +200,7 @@ public class Example {
 
     SchemaDetectionApi apiInstance = new SchemaDetectionApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Page size (default 10)
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Row offset for pagination (default 0)
     String from = "from_example"; // String | Only events strictly after this RFC3339 timestamp
     try {
@@ -222,7 +222,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Page size (default 10) | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Row offset for pagination (default 0) | [optional] |
 | **from** | **String**| Only events strictly after this RFC3339 timestamp | [optional] |
 

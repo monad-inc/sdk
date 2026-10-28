@@ -526,7 +526,7 @@ public class OrganizationEnrichmentsApi {
     /**
      * Build call for listEnrichments
      * @param organizationId Organization ID (required)
-     * @param limit Number of results to return (default 100) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of results to skip (default 0) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -608,7 +608,7 @@ public class OrganizationEnrichmentsApi {
      * List enrichments
      * List all enrichments for an organization
      * @param organizationId Organization ID (required)
-     * @param limit Number of results to return (default 100) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of results to skip (default 0) (optional)
      * @return RoutesV3ListEnrichmentsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -630,7 +630,7 @@ public class OrganizationEnrichmentsApi {
      * List enrichments
      * List all enrichments for an organization
      * @param organizationId Organization ID (required)
-     * @param limit Number of results to return (default 100) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of results to skip (default 0) (optional)
      * @return ApiResponse&lt;RoutesV3ListEnrichmentsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -653,7 +653,7 @@ public class OrganizationEnrichmentsApi {
      * List enrichments (asynchronously)
      * List all enrichments for an organization
      * @param organizationId Organization ID (required)
-     * @param limit Number of results to return (default 100) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of results to skip (default 0) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

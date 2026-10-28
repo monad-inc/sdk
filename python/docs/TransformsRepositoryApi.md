@@ -491,7 +491,7 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.TransformsRepositoryApi(api_client)
-    limit = 56 # int | Number of items to return (default: 10) (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Number of items to skip (default: 0) (optional)
 
     try:
@@ -510,7 +510,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of items to return (default: 10) | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Number of items to skip (default: 0) | [optional] 
 
 ### Return type
@@ -531,6 +531,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transforms retrieved successfully |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Failed to list transforms |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -518,7 +518,7 @@ type ApiListEnrichmentsRequest struct {
 	offset *int32
 }
 
-// Number of results to return (default 100)
+// Page size (default 10, max 500)
 func (r ApiListEnrichmentsRequest) Limit(limit int32) ApiListEnrichmentsRequest {
 	r.limit = &limit
 	return r

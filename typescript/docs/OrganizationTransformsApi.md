@@ -201,7 +201,7 @@ const apiInstance = new OrganizationTransformsApi(configuration);
 const request: OrganizationTransformsApiListOrganizationTransformsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Limit (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -217,7 +217,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 
@@ -239,6 +239,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of transforms |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Failed to marshal transforms |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

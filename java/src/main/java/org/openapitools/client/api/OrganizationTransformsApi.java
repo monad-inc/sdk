@@ -30,6 +30,7 @@ import java.io.IOException;
 import org.openapitools.client.model.CreateTransformRequest;
 import org.openapitools.client.model.ModelsTransform;
 import org.openapitools.client.model.ModelsTransformList;
+import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesGetTransformResponse;
 import org.openapitools.client.model.RoutesUpdateTransformRequest;
 
@@ -506,7 +507,7 @@ public class OrganizationTransformsApi {
     /**
      * Build call for listOrganizationTransforms
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -516,6 +517,7 @@ public class OrganizationTransformsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of transforms </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
@@ -587,7 +589,7 @@ public class OrganizationTransformsApi {
      * List configured transforms in a transform
      * List transforms
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ModelsTransformList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -596,6 +598,7 @@ public class OrganizationTransformsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of transforms </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
@@ -608,7 +611,7 @@ public class OrganizationTransformsApi {
      * List configured transforms in a transform
      * List transforms
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsTransformList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -617,6 +620,7 @@ public class OrganizationTransformsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of transforms </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */
@@ -630,7 +634,7 @@ public class OrganizationTransformsApi {
      * List configured transforms in a transform (asynchronously)
      * List transforms
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -640,6 +644,7 @@ public class OrganizationTransformsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of transforms </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal transforms </td><td>  -  </td></tr>
      </table>
      */

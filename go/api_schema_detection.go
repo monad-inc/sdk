@@ -337,7 +337,7 @@ type ApiListOrganizationSchemaChangeEventsRequest struct {
 	from *string
 }
 
-// Page size (default 10)
+// Page size (default 10, max 500)
 func (r ApiListOrganizationSchemaChangeEventsRequest) Limit(limit int32) ApiListOrganizationSchemaChangeEventsRequest {
 	r.limit = &limit
 	return r

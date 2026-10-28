@@ -206,7 +206,7 @@ const apiInstance = new SecretsApi(configuration);
 const request: SecretsApiListSecretsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Limit number of results (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset results (optional)
   offset: 1,
@@ -222,7 +222,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit number of results | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset results | (optional) defaults to undefined
 
 
@@ -244,6 +244,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

@@ -804,7 +804,7 @@ public class OrganizationsApi {
     /**
      * Build call for listChildOrganizations
      * @param organizationId Parent Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback Callback for upload/download progress
@@ -815,6 +815,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -890,7 +891,7 @@ public class OrganizationsApi {
      * List sub-orgs
      * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * @param organizationId Parent Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ModelsUserOrganizationList
@@ -900,6 +901,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -912,7 +914,7 @@ public class OrganizationsApi {
      * List sub-orgs
      * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * @param organizationId Parent Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @return ApiResponse&lt;ModelsUserOrganizationList&gt;
@@ -922,6 +924,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -935,7 +938,7 @@ public class OrganizationsApi {
      * List sub-orgs (asynchronously)
      * List the sub-orgs (child organizations) of the given parent organization. A sub-org is an organization with a non-empty parent_organization_id.
      * @param organizationId Parent Organization ID (required)
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param nameSearch If provided, only return organizations with names that contain the search string (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -946,6 +949,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sub-orgs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
@@ -958,7 +962,7 @@ public class OrganizationsApi {
     }
     /**
      * Build call for listUserOrganizations
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
      * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
@@ -971,6 +975,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listUserOrganizationsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch, final ApiCallback _callback) throws ApiException {
@@ -1046,7 +1051,7 @@ public class OrganizationsApi {
     /**
      * List organizations for user
      * List organizations for user
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
      * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
@@ -1058,6 +1063,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public ModelsOrganizationList listUserOrganizations(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch) throws ApiException {
@@ -1068,7 +1074,7 @@ public class OrganizationsApi {
     /**
      * List organizations for user
      * List organizations for user
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
      * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
@@ -1080,6 +1086,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ModelsOrganizationList> listUserOrganizationsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch) throws ApiException {
@@ -1091,7 +1098,7 @@ public class OrganizationsApi {
     /**
      * List organizations for user (asynchronously)
      * List organizations for user
-     * @param limit Limit the number of organizations returned (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Offset the organizations returned (default: 0) (optional)
      * @param noChildren If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
      * @param parentOrganizationId If provided, only return the sub-orgs of the specified parent organization (optional)
@@ -1104,6 +1111,7 @@ public class OrganizationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Response body for listing organizations </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listUserOrganizationsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Boolean noChildren, @javax.annotation.Nullable String parentOrganizationId, @javax.annotation.Nullable String nameSearch, final ApiCallback<ModelsOrganizationList> _callback) throws ApiException {

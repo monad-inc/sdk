@@ -32,6 +32,7 @@ import org.openapitools.client.model.CommunityTransformsInternalTransformsIndex;
 import org.openapitools.client.model.ExportTransformRequest;
 import org.openapitools.client.model.ModelsTransformsRepositoryList;
 import org.openapitools.client.model.ModelsTransformsRepositoryTransform;
+import org.openapitools.client.model.ResponderErrorResponse;
 import org.openapitools.client.model.RoutesV3ImportTransformResponse;
 
 import java.lang.reflect.Type;
@@ -737,7 +738,7 @@ public class TransformsRepositoryApi {
     }
     /**
      * Build call for listTransformRepository
-     * @param limit Number of items to return (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of items to skip (default: 0) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -747,6 +748,7 @@ public class TransformsRepositoryApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
@@ -811,7 +813,7 @@ public class TransformsRepositoryApi {
     /**
      * List transforms
      * List transforms from repository with pagination
-     * @param limit Number of items to return (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of items to skip (default: 0) (optional)
      * @return ModelsTransformsRepositoryList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -820,6 +822,7 @@ public class TransformsRepositoryApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
@@ -831,7 +834,7 @@ public class TransformsRepositoryApi {
     /**
      * List transforms
      * List transforms from repository with pagination
-     * @param limit Number of items to return (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of items to skip (default: 0) (optional)
      * @return ApiResponse&lt;ModelsTransformsRepositoryList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -840,6 +843,7 @@ public class TransformsRepositoryApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */
@@ -852,7 +856,7 @@ public class TransformsRepositoryApi {
     /**
      * List transforms (asynchronously)
      * List transforms from repository with pagination
-     * @param limit Number of items to return (default: 10) (optional)
+     * @param limit Page size (default 10, max 500) (optional)
      * @param offset Number of items to skip (default: 0) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -862,6 +866,7 @@ public class TransformsRepositoryApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Transforms retrieved successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list transforms </td><td>  -  </td></tr>
      </table>
      */

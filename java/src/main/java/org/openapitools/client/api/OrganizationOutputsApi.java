@@ -520,7 +520,7 @@ public class OrganizationOutputsApi {
     /**
      * Build call for listOrganizationOutputs
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -530,6 +530,7 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of outputs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
@@ -601,7 +602,7 @@ public class OrganizationOutputsApi {
      * List configured outputs in organization
      * List outputs
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
      * @param offset Offset (optional)
      * @return RoutesListOutputsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -610,6 +611,7 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of outputs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
@@ -622,7 +624,7 @@ public class OrganizationOutputsApi {
      * List configured outputs in organization
      * List outputs
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;RoutesListOutputsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -631,6 +633,7 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of outputs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */
@@ -644,7 +647,7 @@ public class OrganizationOutputsApi {
      * List configured outputs in organization (asynchronously)
      * List outputs
      * @param organizationId Organization ID (required)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 1000) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -654,6 +657,7 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of outputs </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to marshal outputs </td><td>  -  </td></tr>
      </table>
      */

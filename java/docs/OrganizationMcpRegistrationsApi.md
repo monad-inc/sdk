@@ -46,7 +46,7 @@ public class Example {
     OrganizationMcpRegistrationsApi apiInstance = new OrganizationMcpRegistrationsApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
     String ownedBy = "ownedBy_example"; // String | Set to `me` to scope to the caller's own registrations
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 200)
     Integer offset = 56; // Integer | Offset
     try {
       ModelsMCPClientRegistrationList result = apiInstance.listMCPClientRegistrations(organizationId, ownedBy, limit, offset);
@@ -68,7 +68,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
 | **ownedBy** | **String**| Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations | [optional] |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 200) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type
@@ -88,6 +88,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Offset larger than 2147483647 |  -  |
 | **403** | access denied |  -  |
 | **500** | Failed to list registrations |  -  |
 

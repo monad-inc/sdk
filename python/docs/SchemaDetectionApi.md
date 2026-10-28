@@ -231,7 +231,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.SchemaDetectionApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
-    limit = 56 # int | Page size (default 10) (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Row offset for pagination (default 0) (optional)
     var_from = 'var_from_example' # str | Only events strictly after this RFC3339 timestamp (optional)
 
@@ -252,7 +252,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
- **limit** | **int**| Page size (default 10) | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Row offset for pagination (default 0) | [optional] 
  **var_from** | **str**| Only events strictly after this RFC3339 timestamp | [optional] 
 

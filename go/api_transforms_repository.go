@@ -781,7 +781,7 @@ type ApiListTransformRepositoryRequest struct {
 	offset *int32
 }
 
-// Number of items to return (default: 10)
+// Page size (default 10, max 500)
 func (r ApiListTransformRepositoryRequest) Limit(limit int32) ApiListTransformRepositoryRequest {
 	r.limit = &limit
 	return r
@@ -905,6 +905,17 @@ func (a *TransformsRepositoryAPIService) ListTransformRepositoryExecute(r ApiLis
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v ResponderErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
 			var v string

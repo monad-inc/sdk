@@ -257,8 +257,8 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
-	limit := int32(56) // int32 | Limit the number of organizations returned (default: DefaultLimit) (optional)
-	offset := int32(56) // int32 | Offset the organizations returned (default: 0) (optional)
+	limit := int32(56) // int32 | Page size (default 10, max 1000) (optional)
+	offset := int32(56) // int32 | Rows to skip (default 0) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -288,8 +288,8 @@ Other parameters are passed through a pointer to a apiListOrganizationInputsRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **limit** | **int32** | Limit the number of organizations returned (default: DefaultLimit) | 
- **offset** | **int32** | Offset the organizations returned (default: 0) | 
+ **limit** | **int32** | Page size (default 10, max 1000) | 
+ **offset** | **int32** | Rows to skip (default 0) | 
 
 ### Return type
 

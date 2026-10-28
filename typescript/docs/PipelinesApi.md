@@ -1042,9 +1042,9 @@ const apiInstance = new PipelinesApi(configuration);
 const request: PipelinesApiGetPipelinesStatusesRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Maximum number of pipelines to return (default is 10) (optional)
+    // Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on (optional)
   limit: 1,
-    // Offset for pagination (default is 0) (optional)
+    // Number of pipelines to skip (default 0) (optional)
   offset: 1,
     // Start time (RFC3339 format) for status metrics (default: 24 hours ago) (optional)
   start: "start_example",
@@ -1062,8 +1062,8 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Maximum number of pipelines to return (default is 10) | (optional) defaults to undefined
- **offset** | [**number**] | Offset for pagination (default is 0) | (optional) defaults to undefined
+ **limit** | [**number**] | Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on | (optional) defaults to undefined
+ **offset** | [**number**] | Number of pipelines to skip (default 0) | (optional) defaults to undefined
  **start** | [**string**] | Start time (RFC3339 format) for status metrics (default: 24 hours ago) | (optional) defaults to undefined
  **end** | [**string**] | End time (RFC3339 format) for status metrics (default: now) | (optional) defaults to undefined
 
@@ -1170,7 +1170,7 @@ const apiInstance = new PipelinesApi(configuration);
 const request: PipelinesApiListPipelinesRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Limit (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -1188,7 +1188,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
  **includeStatus** | [**boolean**] | Include the status of the pipeline nodes | (optional) defaults to undefined
 
@@ -1234,7 +1234,7 @@ const apiInstance = new PipelinesApi(configuration);
 const request: PipelinesApiListPipelinesV1Request = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Limit (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Offset (optional)
   offset: 1,
@@ -1250,7 +1250,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Limit | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Offset | (optional) defaults to undefined
 
 

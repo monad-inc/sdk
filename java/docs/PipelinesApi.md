@@ -1372,8 +1372,8 @@ public class Example {
 
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Maximum number of pipelines to return (default is 10)
-    Integer offset = 56; // Integer | Offset for pagination (default is 0)
+    Integer limit = 56; // Integer | Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
+    Integer offset = 56; // Integer | Number of pipelines to skip (default 0)
     String start = "start_example"; // String | Start time (RFC3339 format) for status metrics (default: 24 hours ago)
     String end = "end_example"; // String | End time (RFC3339 format) for status metrics (default: now)
     try {
@@ -1395,8 +1395,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Maximum number of pipelines to return (default is 10) | [optional] |
-| **offset** | **Integer**| Offset for pagination (default is 0) | [optional] |
+| **limit** | **Integer**| Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on | [optional] |
+| **offset** | **Integer**| Number of pipelines to skip (default 0) | [optional] |
 | **start** | **String**| Start time (RFC3339 format) for status metrics (default: 24 hours ago) | [optional] |
 | **end** | **String**| End time (RFC3339 format) for status metrics (default: now) | [optional] |
 
@@ -1538,7 +1538,7 @@ public class Example {
 
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     Boolean includeStatus = true; // Boolean | Include the status of the pipeline nodes
     try {
@@ -1560,7 +1560,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 | **includeStatus** | **Boolean**| Include the status of the pipeline nodes | [optional] |
 
@@ -1621,7 +1621,7 @@ public class Example {
 
     PipelinesApi apiInstance = new PipelinesApi(defaultClient);
     String organizationId = "organizationId_example"; // String | Organization ID
-    Integer limit = 56; // Integer | Limit
+    Integer limit = 56; // Integer | Page size (default 10, max 500)
     Integer offset = 56; // Integer | Offset
     try {
       ModelsPipelineList result = apiInstance.listPipelinesV1(organizationId, limit, offset);
@@ -1642,7 +1642,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **String**| Organization ID | |
-| **limit** | **Integer**| Limit | [optional] |
+| **limit** | **Integer**| Page size (default 10, max 500) | [optional] |
 | **offset** | **Integer**| Offset | [optional] |
 
 ### Return type

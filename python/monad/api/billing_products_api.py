@@ -875,7 +875,7 @@ class BillingProductsApi:
     def get_billing_products(
         self,
         show_inactive: Annotated[Optional[StrictBool], Field(description="Show inactive products")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -896,7 +896,7 @@ class BillingProductsApi:
 
         :param show_inactive: Show inactive products
         :type show_inactive: bool
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -952,7 +952,7 @@ class BillingProductsApi:
     def get_billing_products_with_http_info(
         self,
         show_inactive: Annotated[Optional[StrictBool], Field(description="Show inactive products")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -973,7 +973,7 @@ class BillingProductsApi:
 
         :param show_inactive: Show inactive products
         :type show_inactive: bool
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -1029,7 +1029,7 @@ class BillingProductsApi:
     def get_billing_products_without_preload_content(
         self,
         show_inactive: Annotated[Optional[StrictBool], Field(description="Show inactive products")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -1050,7 +1050,7 @@ class BillingProductsApi:
 
         :param show_inactive: Show inactive products
         :type show_inactive: bool
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int

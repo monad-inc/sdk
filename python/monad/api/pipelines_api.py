@@ -4999,8 +4999,8 @@ class PipelinesApi:
     def get_pipelines_statuses(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of pipelines to return (default is 10)")] = None,
-        offset: Annotated[Optional[StrictInt], Field(description="Offset for pagination (default is 0)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Number of pipelines to skip (default 0)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="Start time (RFC3339 format) for status metrics (default: 24 hours ago)")] = None,
         end: Annotated[Optional[StrictStr], Field(description="End time (RFC3339 format) for status metrics (default: now)")] = None,
         _request_timeout: Union[
@@ -5022,9 +5022,9 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Maximum number of pipelines to return (default is 10)
+        :param limit: Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
         :type limit: int
-        :param offset: Offset for pagination (default is 0)
+        :param offset: Number of pipelines to skip (default 0)
         :type offset: int
         :param start: Start time (RFC3339 format) for status metrics (default: 24 hours ago)
         :type start: str
@@ -5084,8 +5084,8 @@ class PipelinesApi:
     def get_pipelines_statuses_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of pipelines to return (default is 10)")] = None,
-        offset: Annotated[Optional[StrictInt], Field(description="Offset for pagination (default is 0)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Number of pipelines to skip (default 0)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="Start time (RFC3339 format) for status metrics (default: 24 hours ago)")] = None,
         end: Annotated[Optional[StrictStr], Field(description="End time (RFC3339 format) for status metrics (default: now)")] = None,
         _request_timeout: Union[
@@ -5107,9 +5107,9 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Maximum number of pipelines to return (default is 10)
+        :param limit: Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
         :type limit: int
-        :param offset: Offset for pagination (default is 0)
+        :param offset: Number of pipelines to skip (default 0)
         :type offset: int
         :param start: Start time (RFC3339 format) for status metrics (default: 24 hours ago)
         :type start: str
@@ -5169,8 +5169,8 @@ class PipelinesApi:
     def get_pipelines_statuses_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of pipelines to return (default is 10)")] = None,
-        offset: Annotated[Optional[StrictInt], Field(description="Offset for pagination (default is 0)")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on")] = None,
+        offset: Annotated[Optional[StrictInt], Field(description="Number of pipelines to skip (default 0)")] = None,
         start: Annotated[Optional[StrictStr], Field(description="Start time (RFC3339 format) for status metrics (default: 24 hours ago)")] = None,
         end: Annotated[Optional[StrictStr], Field(description="End time (RFC3339 format) for status metrics (default: now)")] = None,
         _request_timeout: Union[
@@ -5192,9 +5192,9 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Maximum number of pipelines to return (default is 10)
+        :param limit: Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
         :type limit: int
-        :param offset: Offset for pagination (default is 0)
+        :param offset: Number of pipelines to skip (default 0)
         :type offset: int
         :param start: Start time (RFC3339 format) for status metrics (default: 24 hours ago)
         :type start: str
@@ -5633,7 +5633,7 @@ class PipelinesApi:
     def list_pipelines(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
@@ -5655,7 +5655,7 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -5714,7 +5714,7 @@ class PipelinesApi:
     def list_pipelines_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
@@ -5736,7 +5736,7 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -5795,7 +5795,7 @@ class PipelinesApi:
     def list_pipelines_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         include_status: Annotated[Optional[StrictBool], Field(description="Include the status of the pipeline nodes")] = None,
         _request_timeout: Union[
@@ -5817,7 +5817,7 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -5952,7 +5952,7 @@ class PipelinesApi:
     def list_pipelines_v1(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -5973,7 +5973,7 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -6030,7 +6030,7 @@ class PipelinesApi:
     def list_pipelines_v1_with_http_info(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -6051,7 +6051,7 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int
@@ -6108,7 +6108,7 @@ class PipelinesApi:
     def list_pipelines_v1_without_preload_content(
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
-        limit: Annotated[Optional[StrictInt], Field(description="Limit")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Page size (default 10, max 500)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Offset")] = None,
         _request_timeout: Union[
             None,
@@ -6129,7 +6129,7 @@ class PipelinesApi:
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
-        :param limit: Limit
+        :param limit: Page size (default 10, max 500)
         :type limit: int
         :param offset: Offset
         :type offset: int

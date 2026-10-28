@@ -137,7 +137,7 @@ const apiInstance = new SchemaDetectionApi(configuration);
 const request: SchemaDetectionApiListOrganizationSchemaChangeEventsRequest = {
     // Organization ID
   organizationId: "organization_id_example",
-    // Page size (default 10) (optional)
+    // Page size (default 10, max 500) (optional)
   limit: 1,
     // Row offset for pagination (default 0) (optional)
   offset: 1,
@@ -155,7 +155,7 @@ console.log('API called successfully. Returned data:', data);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | [**string**] | Organization ID | defaults to undefined
- **limit** | [**number**] | Page size (default 10) | (optional) defaults to undefined
+ **limit** | [**number**] | Page size (default 10, max 500) | (optional) defaults to undefined
  **offset** | [**number**] | Row offset for pagination (default 0) | (optional) defaults to undefined
  **_from** | [**string**] | Only events strictly after this RFC3339 timestamp | (optional) defaults to undefined
 

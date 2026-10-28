@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ModelsMCPClientRegistrationList;
+import org.openapitools.client.model.ResponderErrorResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class OrganizationMcpRegistrationsApi {
      * Build call for listMCPClientRegistrations
      * @param organizationId Organization ID (required)
      * @param ownedBy Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 200) (optional)
      * @param offset Offset (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -86,6 +87,7 @@ public class OrganizationMcpRegistrationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> access denied </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list registrations </td><td>  -  </td></tr>
      </table>
@@ -163,7 +165,7 @@ public class OrganizationMcpRegistrationsApi {
      * List Connected-Applications: caller&#39;s own with &#x60;owned_by&#x3D;me&#x60;, or all in the org for admins.
      * @param organizationId Organization ID (required)
      * @param ownedBy Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 200) (optional)
      * @param offset Offset (optional)
      * @return ModelsMCPClientRegistrationList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -172,6 +174,7 @@ public class OrganizationMcpRegistrationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> access denied </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list registrations </td><td>  -  </td></tr>
      </table>
@@ -186,7 +189,7 @@ public class OrganizationMcpRegistrationsApi {
      * List Connected-Applications: caller&#39;s own with &#x60;owned_by&#x3D;me&#x60;, or all in the org for admins.
      * @param organizationId Organization ID (required)
      * @param ownedBy Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 200) (optional)
      * @param offset Offset (optional)
      * @return ApiResponse&lt;ModelsMCPClientRegistrationList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -195,6 +198,7 @@ public class OrganizationMcpRegistrationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> access denied </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list registrations </td><td>  -  </td></tr>
      </table>
@@ -210,7 +214,7 @@ public class OrganizationMcpRegistrationsApi {
      * List Connected-Applications: caller&#39;s own with &#x60;owned_by&#x3D;me&#x60;, or all in the org for admins.
      * @param organizationId Organization ID (required)
      * @param ownedBy Set to &#x60;me&#x60; to scope to the caller&#39;s own registrations (optional)
-     * @param limit Limit (optional)
+     * @param limit Page size (default 10, max 200) (optional)
      * @param offset Offset (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -220,6 +224,7 @@ public class OrganizationMcpRegistrationsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Offset larger than 2147483647 </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> access denied </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to list registrations </td><td>  -  </td></tr>
      </table>

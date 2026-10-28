@@ -510,7 +510,7 @@ with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
     organization_id = 'organization_id_example' # str | Parent Organization ID
-    limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset the organizations returned (default: 0) (optional)
     name_search = 'name_search_example' # str | If provided, only return organizations with names that contain the search string (optional)
 
@@ -531,7 +531,7 @@ with monad.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Parent Organization ID | 
- **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
  **name_search** | **str**| If provided, only return organizations with names that contain the search string | [optional] 
 
@@ -553,6 +553,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of sub-orgs |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -602,7 +603,7 @@ configuration.api_key['Bearer'] = os.environ["API_KEY"]
 with monad.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = monad.OrganizationsApi(api_client)
-    limit = 56 # int | Limit the number of organizations returned (default: 10) (optional)
+    limit = 56 # int | Page size (default 10, max 500) (optional)
     offset = 56 # int | Offset the organizations returned (default: 0) (optional)
     no_children = True # bool | If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) (optional)
     parent_organization_id = 'parent_organization_id_example' # str | If provided, only return the sub-orgs of the specified parent organization (optional)
@@ -624,7 +625,7 @@ with monad.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Limit the number of organizations returned (default: 10) | [optional] 
+ **limit** | **int**| Page size (default 10, max 500) | [optional] 
  **offset** | **int**| Offset the organizations returned (default: 0) | [optional] 
  **no_children** | **bool**| If true, only return organizations that are directly associated with the user, not their sub-orgs (default: false) | [optional] 
  **parent_organization_id** | **str**| If provided, only return the sub-orgs of the specified parent organization | [optional] 
@@ -648,6 +649,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Response body for listing organizations |  -  |
+**400** | Offset larger than 2147483647 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

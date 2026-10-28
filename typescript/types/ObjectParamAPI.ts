@@ -699,7 +699,7 @@ export interface AlertRulesApiListAlertRulesRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof AlertRulesApilistAlertRules
@@ -1347,7 +1347,7 @@ export interface BillingAccountsApiGetBillingAccountRequest {
 
 export interface BillingAccountsApiGetBillingAccountsRequest {
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof BillingAccountsApigetBillingAccounts
@@ -1814,7 +1814,7 @@ export interface BillingProductsApiGetBillingProductsRequest {
      */
     showInactive?: boolean
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof BillingProductsApigetBillingProducts
@@ -2044,7 +2044,7 @@ export interface ConnectionsApiListConnectionsRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof ConnectionsApilistConnections
@@ -2928,7 +2928,7 @@ export interface OrganizationAPIKeysApiListAPIKeysRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationAPIKeysApilistAPIKeys
@@ -3175,7 +3175,7 @@ export interface OrganizationEnrichmentsApiListEnrichmentsRequest {
      */
     organizationId: string
     /**
-     * Number of results to return (default 100)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationEnrichmentsApilistEnrichments
@@ -3470,14 +3470,14 @@ export interface OrganizationInputsApiListOrganizationInputsRequest {
      */
     organizationId: string
     /**
-     * Limit the number of organizations returned (default: DefaultLimit)
+     * Page size (default 10, max 1000)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationInputsApilistOrganizationInputs
      */
     limit?: number
     /**
-     * Offset the organizations returned (default: 0)
+     * Rows to skip (default 0)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationInputsApilistOrganizationInputs
@@ -3809,7 +3809,7 @@ export interface OrganizationMCPRegistrationsApiListMCPClientRegistrationsReques
      */
     ownedBy?: string
     /**
-     * Limit
+     * Page size (default 10, max 200)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationMCPRegistrationsApilistMCPClientRegistrations
@@ -3955,7 +3955,7 @@ export interface OrganizationOutputsApiListOrganizationOutputsRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 1000)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationOutputsApilistOrganizationOutputs
@@ -4241,7 +4241,7 @@ export interface OrganizationQuotasApiGetQuotasByOrganizationIDRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationQuotasApigetQuotasByOrganizationID
@@ -4351,7 +4351,7 @@ export interface OrganizationTransformsApiListOrganizationTransformsRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationTransformsApilistOrganizationTransforms
@@ -4516,7 +4516,7 @@ export interface OrganizationUsersApiListUsersRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationUsersApilistUsers
@@ -4796,7 +4796,7 @@ export interface OrganizationsApiListChildOrganizationsRequest {
      */
     organizationId: string
     /**
-     * Limit the number of organizations returned (default: 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationsApilistChildOrganizations
@@ -4820,7 +4820,7 @@ export interface OrganizationsApiListChildOrganizationsRequest {
 
 export interface OrganizationsApiListUserOrganizationsRequest {
     /**
-     * Limit the number of organizations returned (default: 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof OrganizationsApilistUserOrganizations
@@ -5526,7 +5526,7 @@ export interface PermissionsApiListPermissionsRequest {
      */
     organizationId: string
     /**
-     * Limit the number of permissions returned (default: 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof PermissionsApilistPermissions
@@ -6019,14 +6019,14 @@ export interface PipelinesApiGetPipelinesStatusesRequest {
      */
     organizationId: string
     /**
-     * Maximum number of pipelines to return (default is 10)
+     * Batch size for reading pipelines (default 10, max 500); the response includes every pipeline from offset on
      * Defaults to: undefined
      * @type number
      * @memberof PipelinesApigetPipelinesStatuses
      */
     limit?: number
     /**
-     * Offset for pagination (default is 0)
+     * Number of pipelines to skip (default 0)
      * Defaults to: undefined
      * @type number
      * @memberof PipelinesApigetPipelinesStatuses
@@ -6081,7 +6081,7 @@ export interface PipelinesApiListPipelinesRequest {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof PipelinesApilistPipelines
@@ -6112,7 +6112,7 @@ export interface PipelinesApiListPipelinesV1Request {
      */
     organizationId: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof PipelinesApilistPipelinesV1
@@ -6882,7 +6882,7 @@ export interface QuotasApiListQuotasRequest {
      */
     organizationId?: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof QuotasApilistQuotas
@@ -7014,7 +7014,7 @@ export interface ResourceSharesApiListResourceShareTargetsRequest {
      */
     order?: 'asc' | 'desc'
     /**
-     * Page size
+     * Page size (default 10, max 1000)
      * Defaults to: 10
      * @type number
      * @memberof ResourceSharesApilistResourceShareTargets
@@ -7076,7 +7076,7 @@ export interface ResourceSharesApiListResourceUsageRequest {
      */
     resourceId: string
     /**
-     * Page size
+     * Page size (default 10, max 500)
      * Defaults to: 10
      * @type number
      * @memberof ResourceSharesApilistResourceUsage
@@ -7100,7 +7100,7 @@ export interface ResourceSharesApiListSharedResourcesRequest {
      */
     organizationId: string
     /**
-     * Page size (default: 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof ResourceSharesApilistSharedResources
@@ -7373,7 +7373,7 @@ export interface RolesApiListRolesRequest {
      */
     organizationId: string
     /**
-     * Limit the number of roles returned (default: 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof RolesApilistRoles
@@ -7542,7 +7542,7 @@ export interface SchemaDetectionApiListOrganizationSchemaChangeEventsRequest {
      */
     organizationId: string
     /**
-     * Page size (default 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof SchemaDetectionApilistOrganizationSchemaChangeEvents
@@ -7689,7 +7689,7 @@ export interface SecretsApiListSecretsRequest {
      */
     organizationId: string
     /**
-     * Limit number of results
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof SecretsApilistSecrets
@@ -7965,7 +7965,7 @@ export interface TagsApiListTagsRequest {
      */
     search?: string
     /**
-     * Limit
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof TagsApilistTags
@@ -8440,7 +8440,7 @@ export interface TransformsRepositoryApiListCommunityTransformsRequest {
 
 export interface TransformsRepositoryApiListTransformRepositoryRequest {
     /**
-     * Number of items to return (default: 10)
+     * Page size (default 10, max 500)
      * Defaults to: undefined
      * @type number
      * @memberof TransformsRepositoryApilistTransformRepository
