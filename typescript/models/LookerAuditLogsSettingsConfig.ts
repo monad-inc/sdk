@@ -24,6 +24,10 @@ export class LookerAuditLogsSettingsConfig {
     * The GCP project IDs hosting Looker Core instances.
     */
     'projectIds': Array<string>;
+    /**
+    * Generate synthetic data instead of reading Cloud Logging.
+    */
+    'useSyntheticData'?: boolean;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -40,6 +44,12 @@ export class LookerAuditLogsSettingsConfig {
             "name": "projectIds",
             "baseName": "project_ids",
             "type": "Array<string>",
+            "format": ""
+        },
+        {
+            "name": "useSyntheticData",
+            "baseName": "use_synthetic_data",
+            "type": "boolean",
             "format": ""
         }    ];
 

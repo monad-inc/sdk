@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **log_categories** | **List[str]** | The audit log categories to ingest. | 
 **project_ids** | **List[str]** | The GCP project IDs hosting Looker Core instances. | 
+**use_synthetic_data** | **bool** | Generate synthetic data instead of reading Cloud Logging. | [optional] 
 
 ## Example
 

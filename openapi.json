@@ -4299,6 +4299,10 @@
                         "minItems": 1,
                         "type": "array",
                         "uniqueItems": false
+                    },
+                    "use_synthetic_data": {
+                        "description": "Generate synthetic data instead of reading Cloud Logging.",
+                        "type": "boolean"
                     }
                 },
                 "required": [

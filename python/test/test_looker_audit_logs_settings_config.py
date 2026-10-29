@@ -41,7 +41,8 @@ class TestLookerAuditLogsSettingsConfig(unittest.TestCase):
                     ],
                 project_ids = [
                     ''
-                    ]
+                    ],
+                use_synthetic_data = True
             )
         else:
             return LookerAuditLogsSettingsConfig(

@@ -55,4 +55,12 @@ public class LookerAuditLogsSettingsConfigTest {
         // TODO: test projectIds
     }
 
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
+    }
+
 }

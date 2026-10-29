@@ -62,6 +62,11 @@ public class LookerAuditLogsSettingsConfig {
   @javax.annotation.Nonnull
   private List<String> projectIds = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_USE_SYNTHETIC_DATA = "use_synthetic_data";
+  @SerializedName(SERIALIZED_NAME_USE_SYNTHETIC_DATA)
+  @javax.annotation.Nullable
+  private Boolean useSyntheticData;
+
   public LookerAuditLogsSettingsConfig() {
   }
 
@@ -119,6 +124,25 @@ public class LookerAuditLogsSettingsConfig {
   }
 
 
+  public LookerAuditLogsSettingsConfig useSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+    return this;
+  }
+
+  /**
+   * Generate synthetic data instead of reading Cloud Logging.
+   * @return useSyntheticData
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseSyntheticData() {
+    return useSyntheticData;
+  }
+
+  public void setUseSyntheticData(@javax.annotation.Nullable Boolean useSyntheticData) {
+    this.useSyntheticData = useSyntheticData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -130,12 +154,13 @@ public class LookerAuditLogsSettingsConfig {
     }
     LookerAuditLogsSettingsConfig lookerAuditLogsSettingsConfig = (LookerAuditLogsSettingsConfig) o;
     return Objects.equals(this.logCategories, lookerAuditLogsSettingsConfig.logCategories) &&
-        Objects.equals(this.projectIds, lookerAuditLogsSettingsConfig.projectIds);
+        Objects.equals(this.projectIds, lookerAuditLogsSettingsConfig.projectIds) &&
+        Objects.equals(this.useSyntheticData, lookerAuditLogsSettingsConfig.useSyntheticData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(logCategories, projectIds);
+    return Objects.hash(logCategories, projectIds, useSyntheticData);
   }
 
   @Override
@@ -144,6 +169,7 @@ public class LookerAuditLogsSettingsConfig {
     sb.append("class LookerAuditLogsSettingsConfig {\n");
     sb.append("    logCategories: ").append(toIndentedString(logCategories)).append("\n");
     sb.append("    projectIds: ").append(toIndentedString(projectIds)).append("\n");
+    sb.append("    useSyntheticData: ").append(toIndentedString(useSyntheticData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -162,7 +188,7 @@ public class LookerAuditLogsSettingsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("log_categories", "project_ids"));
+    openapiFields = new HashSet<String>(Arrays.asList("log_categories", "project_ids", "use_synthetic_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("log_categories", "project_ids"));

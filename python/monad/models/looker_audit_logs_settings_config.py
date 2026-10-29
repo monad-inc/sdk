@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +31,8 @@ class LookerAuditLogsSettingsConfig(BaseModel):
     """ # noqa: E501
     log_categories: List[StrictStr] = Field(description="The audit log categories to ingest.")
     project_ids: Annotated[List[StrictStr], Field(min_length=1)] = Field(description="The GCP project IDs hosting Looker Core instances.")
-    __properties: ClassVar[List[str]] = ["log_categories", "project_ids"]
+    use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic data instead of reading Cloud Logging.")
+    __properties: ClassVar[List[str]] = ["log_categories", "project_ids", "use_synthetic_data"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -85,7 +86,8 @@ class LookerAuditLogsSettingsConfig(BaseModel):
 
         _obj = cls.model_validate({
             "log_categories": obj.get("log_categories"),
-            "project_ids": obj.get("project_ids")
+            "project_ids": obj.get("project_ids"),
+            "use_synthetic_data": obj.get("use_synthetic_data")
         })
         return _obj
 
