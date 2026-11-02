@@ -1422,6 +1422,7 @@ class OrganizationsStorageCostApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsStorageTypeCostConfig",
             '400': "str",
+            '403': "str",
             '404': "str",
             '500': "str",
         }
@@ -1496,6 +1497,7 @@ class OrganizationsStorageCostApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsStorageTypeCostConfig",
             '400': "str",
+            '403': "str",
             '404': "str",
             '500': "str",
         }
@@ -1570,6 +1572,7 @@ class OrganizationsStorageCostApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsStorageTypeCostConfig",
             '400': "str",
+            '403': "str",
             '404': "str",
             '500': "str",
         }

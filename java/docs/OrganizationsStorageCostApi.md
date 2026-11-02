@@ -428,6 +428,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Updated storage type cost |  -  |
 | **400** | Bad request |  -  |
+| **403** | Per-output pricing not enabled |  -  |
 | **404** | Organization not found |  -  |
 | **500** | Internal server error |  -  |
 

@@ -22749,6 +22749,16 @@
                         },
                         "description": "Bad request"
                     },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "description": "Per-output pricing not enabled"
+                    },
                     "404": {
                         "content": {
                             "application/json": {

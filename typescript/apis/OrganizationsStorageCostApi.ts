@@ -654,6 +654,13 @@ export class OrganizationsStorageCostApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Bad request", body, response.headers);
         }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Per-output pricing not enabled", body, response.headers);
+        }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
