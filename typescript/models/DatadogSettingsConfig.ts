@@ -34,7 +34,7 @@ export class DatadogSettingsConfig {
     */
     'service'?: string;
     /**
-    * Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).
+    * Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts). Records whose value can\'t be used are sent unchanged.
     */
     'timestampField'?: string;
 

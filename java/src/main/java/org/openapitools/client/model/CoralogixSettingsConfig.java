@@ -250,7 +250,7 @@ public class CoralogixSettingsConfig {
   }
 
   /**
-   * TimestampRecordLocation is an optional JSONPath (&#x60;$.event.time&#x60;) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field and fails the batch if the value is not a parseable timestamp.
+   * TimestampRecordLocation is an optional JSONPath (&#x60;$.event.time&#x60;) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field, and sends a record whose value is missing or can&#39;t be used without a timestamp.
    * @return timestampRecordLocation
    */
   @javax.annotation.Nullable

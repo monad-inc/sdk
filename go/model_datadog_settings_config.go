@@ -30,7 +30,7 @@ type DatadogSettingsConfig struct {
 	Hostname *string `json:"hostname,omitempty"`
 	// The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.
 	Service *string `json:"service,omitempty"`
-	// Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).
+	// Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts). Records whose value can't be used are sent unchanged.
 	TimestampField *string `json:"timestamp_field,omitempty"`
 }
 

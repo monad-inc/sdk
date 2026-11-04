@@ -1974,7 +1974,7 @@
                         "type": "string"
                     },
                     "timestamp_record_location": {
-                        "description": "TimestampRecordLocation is an optional JSONPath (`$.event.time`) or\ngjson path pointing at the timestamp field inside each incoming record.\nWhen unset the connector stamps the current time on every record; when\nset the connector reads the field and fails the batch if the value is\nnot a parseable timestamp.",
+                        "description": "TimestampRecordLocation is an optional JSONPath (`$.event.time`) or\ngjson path pointing at the timestamp field inside each incoming record.\nWhen unset the connector stamps the current time on every record; when\nset the connector reads the field, and sends a record whose value is\nmissing or can't be used without a timestamp.",
                         "type": "string"
                     }
                 },
@@ -2375,7 +2375,7 @@
                         "type": "string"
                     },
                     "timestamp_field": {
-                        "description": "Optional JSON path to the event timestamp in each record. When set, the value is converted in place\nto epoch milliseconds (the only numeric format Datadog accepts).",
+                        "description": "Optional JSON path to the event timestamp in each record. When set, the value is converted in place\nto epoch milliseconds (the only numeric format Datadog accepts). Records whose value can't be used are sent unchanged.",
                         "type": "string"
                     }
                 },
@@ -3994,9 +3994,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {

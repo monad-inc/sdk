@@ -33,7 +33,7 @@ class DatadogSettingsConfig(BaseModel):
     domain_url: Optional[StrictStr] = Field(default=None, description="The base domain of the Datadog API (e.g., us5.datadoghq.com). Logs are sent to https://http-intake.logs.<DOMAIN_URL>/api/v2/logs")
     hostname: Optional[StrictStr] = Field(default=None, description="The name of the originating host of the log.")
     service: Optional[StrictStr] = Field(default=None, description="The name of the application or service generating the log events. It is used to switch from Logs to APM, so make sure you define the same value when you use both products.")
-    timestamp_field: Optional[StrictStr] = Field(default=None, description="Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).")
+    timestamp_field: Optional[StrictStr] = Field(default=None, description="Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts). Records whose value can't be used are sent unchanged.")
     __properties: ClassVar[List[str]] = ["ddsource", "ddtags", "domain_url", "hostname", "service", "timestamp_field"]
 
     model_config = ConfigDict(

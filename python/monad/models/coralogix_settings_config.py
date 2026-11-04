@@ -35,7 +35,7 @@ class CoralogixSettingsConfig(BaseModel):
     communication: Optional[CoralogixCommunicationConfig] = None
     region: StrictStr = Field(description="Coralogix region (e.g. us1, eu2). Determines which regional ingress hostname is used. See https://coralogix.com/docs/integrations/coralogix-endpoints/.")
     subsystem_name: StrictStr = Field(description="SubsystemName is stamped on every record. Coralogix uses this to separate components within an application.")
-    timestamp_record_location: Optional[StrictStr] = Field(default=None, description="TimestampRecordLocation is an optional JSONPath (`$.event.time`) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field and fails the batch if the value is not a parseable timestamp.")
+    timestamp_record_location: Optional[StrictStr] = Field(default=None, description="TimestampRecordLocation is an optional JSONPath (`$.event.time`) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field, and sends a record whose value is missing or can't be used without a timestamp.")
     __properties: ClassVar[List[str]] = ["application_name", "batch_config", "communication", "region", "subsystem_name", "timestamp_record_location"]
 
     @field_validator('region')

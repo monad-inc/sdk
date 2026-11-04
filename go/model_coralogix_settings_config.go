@@ -30,7 +30,7 @@ type CoralogixSettingsConfig struct {
 	Region string `json:"region"`
 	// SubsystemName is stamped on every record. Coralogix uses this to separate components within an application.
 	SubsystemName string `json:"subsystem_name"`
-	// TimestampRecordLocation is an optional JSONPath (`$.event.time`) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field and fails the batch if the value is not a parseable timestamp.
+	// TimestampRecordLocation is an optional JSONPath (`$.event.time`) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field, and sends a record whose value is missing or can't be used without a timestamp.
 	TimestampRecordLocation *string `json:"timestamp_record_location,omitempty"`
 }
 

@@ -194,7 +194,7 @@ public class DatadogSettingsConfig {
   }
 
   /**
-   * Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts).
+   * Optional JSON path to the event timestamp in each record. When set, the value is converted in place to epoch milliseconds (the only numeric format Datadog accepts). Records whose value can&#39;t be used are sent unchanged.
    * @return timestampField
    */
   @javax.annotation.Nullable
