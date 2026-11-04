@@ -247,6 +247,8 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Output is managed by the platform and cannot be deleted </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node&#39;s config override, or is shared with other organizations; the message names what holds the reference </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
@@ -324,6 +326,8 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Output is managed by the platform and cannot be deleted </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node&#39;s config override, or is shared with other organizations; the message names what holds the reference </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
@@ -344,6 +348,8 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Output is managed by the platform and cannot be deleted </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node&#39;s config override, or is shared with other organizations; the message names what holds the reference </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */
@@ -366,6 +372,8 @@ public class OrganizationOutputsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Output deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Output is managed by the platform and cannot be deleted </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node&#39;s config override, or is shared with other organizations; the message names what holds the reference </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to delete output </td><td>  -  </td></tr>
      </table>
      */

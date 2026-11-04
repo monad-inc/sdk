@@ -191,6 +191,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Output deleted successfully |  -  |
+**403** | Output is managed by the platform and cannot be deleted |  -  |
+**409** | A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node&#39;s config override, or is shared with other organizations; the message names what holds the reference |  -  |
 **500** | Failed to delete output |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -420,6 +420,8 @@ class OrganizationOutputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
+            '403': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -492,6 +494,8 @@ class OrganizationOutputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
+            '403': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -564,6 +568,8 @@ class OrganizationOutputsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "str",
+            '403': "ResponderErrorResponse",
+            '409': "ResponderErrorResponse",
             '500': "str",
         }
         response_data = self.api_client.call_api(

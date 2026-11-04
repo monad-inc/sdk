@@ -604,6 +604,20 @@ export class OrganizationOutputsApiResponseProcessor {
             ) as string;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "Output is managed by the platform and cannot be deleted", body, response.headers);
+        }
+        if (isCodeInRange("409", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node\&#39;s config override, or is shared with other organizations; the message names what holds the reference", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),

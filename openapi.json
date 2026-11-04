@@ -3994,9 +3994,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {
@@ -14731,6 +14731,26 @@
                             }
                         },
                         "description": "Output deleted successfully"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "Output is managed by the platform and cannot be deleted"
+                    },
+                    "409": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "A KV lookup output is still referenced by a KV lookup enrichment or a pipeline node's config override, or is shared with other organizations; the message names what holds the reference"
                     },
                     "500": {
                         "content": {
