@@ -328,7 +328,7 @@ import (
 func main() {
 	organizationId := "organizationId_example" // string | Organization ID
 	apiKeyId := "apiKeyId_example" // string | API Key ID
-	regenerateAPIKeyRequest := openapiclient.RegenerateAPIKey_request{RoutesV2RegenerateAPIKeyRequest: openapiclient.NewRoutesV2RegenerateAPIKeyRequest()} // RegenerateAPIKeyRequest | Optional new expiration for the regenerated key (optional)
+	regenerateAPIKeyRequest := openapiclient.RegenerateAPIKey_request{RoutesV2RegenerateAPIKeyRequest: openapiclient.NewRoutesV2RegenerateAPIKeyRequest()} // RegenerateAPIKeyRequest | Optional new and previous token expirations (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **regenerateAPIKeyRequest** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md) | Optional new expiration for the regenerated key | 
+ **regenerateAPIKeyRequest** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md) | Optional new and previous token expirations | 
 
 ### Return type
 

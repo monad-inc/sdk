@@ -17,6 +17,10 @@ export class RoutesV2RegenerateAPIKeyRequest {
     * Omitted (nil) keeps the key\'s existing expiration — rotating the secret does not extend the key\'s term on its own.
     */
     'expirationTime'?: string;
+    /**
+    * The previous token stays valid until this time. Omitted revokes it immediately. At most 90 days ahead, and not past the key\'s current or new expiration.
+    */
+    'previousTokenExpirationTime'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -26,6 +30,12 @@ export class RoutesV2RegenerateAPIKeyRequest {
         {
             "name": "expirationTime",
             "baseName": "expiration_time",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "previousTokenExpirationTime",
+            "baseName": "previous_token_expiration_time",
             "type": "string",
             "format": ""
         }    ];

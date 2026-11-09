@@ -32,7 +32,7 @@ class RegenerateAPIKeyRequest(BaseModel):
     # data type: object
     oneof_schema_1_validator: Optional[Dict[str, Any]] = None
     # data type: RoutesV2RegenerateAPIKeyRequest
-    oneof_schema_2_validator: Optional[RoutesV2RegenerateAPIKeyRequest] = Field(default=None, description="Optional new expiration for the regenerated key")
+    oneof_schema_2_validator: Optional[RoutesV2RegenerateAPIKeyRequest] = Field(default=None, description="Optional new and previous token expirations")
     actual_instance: Optional[Union[RoutesV2RegenerateAPIKeyRequest, object]] = None
     one_of_schemas: Set[str] = { "RoutesV2RegenerateAPIKeyRequest", "object" }
 

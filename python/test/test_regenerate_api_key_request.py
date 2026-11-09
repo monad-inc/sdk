@@ -36,7 +36,8 @@ class TestRegenerateAPIKeyRequest(unittest.TestCase):
         model = RegenerateAPIKeyRequest()
         if include_optional:
             return RegenerateAPIKeyRequest(
-                expiration_time = ''
+                expiration_time = '',
+                previous_token_expiration_time = ''
             )
         else:
             return RegenerateAPIKeyRequest(

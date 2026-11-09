@@ -55,6 +55,11 @@ public class RoutesV2RegenerateAPIKeyRequest {
   @javax.annotation.Nullable
   private String expirationTime;
 
+  public static final String SERIALIZED_NAME_PREVIOUS_TOKEN_EXPIRATION_TIME = "previous_token_expiration_time";
+  @SerializedName(SERIALIZED_NAME_PREVIOUS_TOKEN_EXPIRATION_TIME)
+  @javax.annotation.Nullable
+  private String previousTokenExpirationTime;
+
   public RoutesV2RegenerateAPIKeyRequest() {
   }
 
@@ -77,6 +82,25 @@ public class RoutesV2RegenerateAPIKeyRequest {
   }
 
 
+  public RoutesV2RegenerateAPIKeyRequest previousTokenExpirationTime(@javax.annotation.Nullable String previousTokenExpirationTime) {
+    this.previousTokenExpirationTime = previousTokenExpirationTime;
+    return this;
+  }
+
+  /**
+   * The previous token stays valid until this time. Omitted revokes it immediately. At most 90 days ahead, and not past the key&#39;s current or new expiration.
+   * @return previousTokenExpirationTime
+   */
+  @javax.annotation.Nullable
+  public String getPreviousTokenExpirationTime() {
+    return previousTokenExpirationTime;
+  }
+
+  public void setPreviousTokenExpirationTime(@javax.annotation.Nullable String previousTokenExpirationTime) {
+    this.previousTokenExpirationTime = previousTokenExpirationTime;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -87,12 +111,13 @@ public class RoutesV2RegenerateAPIKeyRequest {
       return false;
     }
     RoutesV2RegenerateAPIKeyRequest routesV2RegenerateAPIKeyRequest = (RoutesV2RegenerateAPIKeyRequest) o;
-    return Objects.equals(this.expirationTime, routesV2RegenerateAPIKeyRequest.expirationTime);
+    return Objects.equals(this.expirationTime, routesV2RegenerateAPIKeyRequest.expirationTime) &&
+        Objects.equals(this.previousTokenExpirationTime, routesV2RegenerateAPIKeyRequest.previousTokenExpirationTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expirationTime);
+    return Objects.hash(expirationTime, previousTokenExpirationTime);
   }
 
   @Override
@@ -100,6 +125,7 @@ public class RoutesV2RegenerateAPIKeyRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutesV2RegenerateAPIKeyRequest {\n");
     sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
+    sb.append("    previousTokenExpirationTime: ").append(toIndentedString(previousTokenExpirationTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,7 +144,7 @@ public class RoutesV2RegenerateAPIKeyRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("expiration_time"));
+    openapiFields = new HashSet<String>(Arrays.asList("expiration_time", "previous_token_expiration_time"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -147,6 +173,9 @@ public class RoutesV2RegenerateAPIKeyRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("expiration_time") != null && !jsonObj.get("expiration_time").isJsonNull()) && !jsonObj.get("expiration_time").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `expiration_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expiration_time").toString()));
+      }
+      if ((jsonObj.get("previous_token_expiration_time") != null && !jsonObj.get("previous_token_expiration_time").isJsonNull()) && !jsonObj.get("previous_token_expiration_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `previous_token_expiration_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous_token_expiration_time").toString()));
       }
   }
 

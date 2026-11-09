@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **expiration_time** | **str** | Omitted (nil) keeps the key&#39;s existing expiration — rotating the secret does not extend the key&#39;s term on its own. | [optional] 
+**previous_token_expiration_time** | **str** | The previous token stays valid until this time. Omitted revokes it immediately. At most 90 days ahead, and not past the key&#39;s current or new expiration. | [optional] 
 
 ## Example
 

@@ -2429,11 +2429,11 @@ export class PromiseOrganizationAPIKeysApi {
     }
 
     /**
-     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key\'s current or new expiration.
      * Regenerate API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param [regenerateAPIKeyRequest] Optional new expiration for the regenerated key
+     * @param [regenerateAPIKeyRequest] Optional new and previous token expirations
      */
     public regenerateAPIKeyWithHttpInfo(organizationId: string, apiKeyId: string, regenerateAPIKeyRequest?: RegenerateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<HttpInfo<ModelsAPIKeyWithToken>> {
         const observableOptions = wrapOptions(_options);
@@ -2442,11 +2442,11 @@ export class PromiseOrganizationAPIKeysApi {
     }
 
     /**
-     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key\'s current or new expiration.
      * Regenerate API key
      * @param organizationId Organization ID
      * @param apiKeyId API Key ID
-     * @param [regenerateAPIKeyRequest] Optional new expiration for the regenerated key
+     * @param [regenerateAPIKeyRequest] Optional new and previous token expirations
      */
     public regenerateAPIKey(organizationId: string, apiKeyId: string, regenerateAPIKeyRequest?: RegenerateAPIKeyRequest, _options?: PromiseConfigurationOptions): Promise<ModelsAPIKeyWithToken> {
         const observableOptions = wrapOptions(_options);

@@ -2959,7 +2959,7 @@ export interface OrganizationAPIKeysApiRegenerateAPIKeyRequest {
      */
     apiKeyId: string
     /**
-     * Optional new expiration for the regenerated key
+     * Optional new and previous token expirations
      * @type RegenerateAPIKeyRequest
      * @memberof OrganizationAPIKeysApiregenerateAPIKey
      */
@@ -3069,7 +3069,7 @@ export class ObjectOrganizationAPIKeysApi {
     }
 
     /**
-     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key\'s current or new expiration.
      * Regenerate API key
      * @param param the request object
      */
@@ -3078,7 +3078,7 @@ export class ObjectOrganizationAPIKeysApi {
     }
 
     /**
-     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key\'s current or new expiration.
      * Regenerate API key
      * @param param the request object
      */

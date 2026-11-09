@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 Regenerate API key
 
-Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key's current or new expiration.
 
 ### Example
 
@@ -422,7 +422,7 @@ with monad.ApiClient(configuration) as api_client:
     api_instance = monad.OrganizationAPIKeysApi(api_client)
     organization_id = 'organization_id_example' # str | Organization ID
     api_key_id = 'api_key_id_example' # str | API Key ID
-    regenerate_api_key_request = monad.RegenerateAPIKeyRequest() # RegenerateAPIKeyRequest | Optional new expiration for the regenerated key (optional)
+    regenerate_api_key_request = monad.RegenerateAPIKeyRequest() # RegenerateAPIKeyRequest | Optional new and previous token expirations (optional)
 
     try:
         # Regenerate API key
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization_id** | **str**| Organization ID | 
  **api_key_id** | **str**| API Key ID | 
- **regenerate_api_key_request** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md)| Optional new expiration for the regenerated key | [optional] 
+ **regenerate_api_key_request** | [**RegenerateAPIKeyRequest**](RegenerateAPIKeyRequest.md)| Optional new and previous token expirations | [optional] 
 
 ### Return type
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New API key generated successfully |  -  |
-**400** | Invalid JSON request body or expiration time |  -  |
+**400** | Invalid JSON request body, expiration time or previous token expiration time |  -  |
 **404** | API key not found |  -  |
 **422** | Expiration time required for an expired API key |  -  |
 **500** | Failed to regenerate API key |  -  |

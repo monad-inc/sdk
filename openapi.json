@@ -9055,6 +9055,10 @@
                     "expiration_time": {
                         "description": "Omitted (nil) keeps the key's existing expiration — rotating the secret\ndoes not extend the key's term on its own.",
                         "type": "string"
+                    },
+                    "previous_token_expiration_time": {
+                        "description": "The previous token stays valid until this time. Omitted revokes it\nimmediately. At most 90 days ahead, and not past the key's current or new\nexpiration.",
+                        "type": "string"
                     }
                 },
                 "type": "object"
@@ -17957,7 +17961,7 @@
         },
         "/v2/{organization_id}/api_keys/{api_key_id}/regenerate": {
             "post": {
-                "description": "Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.",
+                "description": "Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key's current or new expiration.",
                 "operationId": "RegenerateAPIKey",
                 "parameters": [
                     {
@@ -17989,14 +17993,14 @@
                                     },
                                     {
                                         "$ref": "#/components/schemas/routesV2.RegenerateAPIKeyRequest",
-                                        "description": "Optional new expiration for the regenerated key",
+                                        "description": "Optional new and previous token expirations",
                                         "summary": "regenerateAPIKeyRequest"
                                     }
                                 ]
                             }
                         }
                     },
-                    "description": "Optional new expiration for the regenerated key"
+                    "description": "Optional new and previous token expirations"
                 },
                 "responses": {
                     "200": {
@@ -18017,7 +18021,7 @@
                                 }
                             }
                         },
-                        "description": "Invalid JSON request body or expiration time"
+                        "description": "Invalid JSON request body, expiration time or previous token expiration time"
                     },
                     "404": {
                         "content": {

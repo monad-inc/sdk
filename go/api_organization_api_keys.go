@@ -680,7 +680,7 @@ type ApiRegenerateAPIKeyRequest struct {
 	regenerateAPIKeyRequest *RegenerateAPIKeyRequest
 }
 
-// Optional new expiration for the regenerated key
+// Optional new and previous token expirations
 func (r ApiRegenerateAPIKeyRequest) RegenerateAPIKeyRequest(regenerateAPIKeyRequest RegenerateAPIKeyRequest) ApiRegenerateAPIKeyRequest {
 	r.regenerateAPIKeyRequest = &regenerateAPIKeyRequest
 	return r
@@ -693,7 +693,7 @@ func (r ApiRegenerateAPIKeyRequest) Execute() (*ModelsAPIKeyWithToken, *http.Res
 /*
 RegenerateAPIKey Regenerate API key
 
-Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key's current or new expiration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID

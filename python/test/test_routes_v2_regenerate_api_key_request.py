@@ -36,7 +36,8 @@ class TestRoutesV2RegenerateAPIKeyRequest(unittest.TestCase):
         model = RoutesV2RegenerateAPIKeyRequest()
         if include_optional:
             return RoutesV2RegenerateAPIKeyRequest(
-                expiration_time = ''
+                expiration_time = '',
+                previous_token_expiration_time = ''
             )
         else:
             return RoutesV2RegenerateAPIKeyRequest(

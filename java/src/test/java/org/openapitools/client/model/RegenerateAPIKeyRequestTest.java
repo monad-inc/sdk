@@ -45,4 +45,12 @@ public class RegenerateAPIKeyRequestTest {
         // TODO: test expirationTime
     }
 
+    /**
+     * Test the property 'previousTokenExpirationTime'
+     */
+    @Test
+    public void previousTokenExpirationTimeTest() {
+        // TODO: test previousTokenExpirationTime
+    }
+
 }

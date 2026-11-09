@@ -29,7 +29,8 @@ class RoutesV2RegenerateAPIKeyRequest(BaseModel):
     RoutesV2RegenerateAPIKeyRequest
     """ # noqa: E501
     expiration_time: Optional[StrictStr] = Field(default=None, description="Omitted (nil) keeps the key's existing expiration — rotating the secret does not extend the key's term on its own.")
-    __properties: ClassVar[List[str]] = ["expiration_time"]
+    previous_token_expiration_time: Optional[StrictStr] = Field(default=None, description="The previous token stays valid until this time. Omitted revokes it immediately. At most 90 days ahead, and not past the key's current or new expiration.")
+    __properties: ClassVar[List[str]] = ["expiration_time", "previous_token_expiration_time"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -82,7 +83,8 @@ class RoutesV2RegenerateAPIKeyRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "expiration_time": obj.get("expiration_time")
+            "expiration_time": obj.get("expiration_time"),
+            "previous_token_expiration_time": obj.get("previous_token_expiration_time")
         })
         return _obj
 

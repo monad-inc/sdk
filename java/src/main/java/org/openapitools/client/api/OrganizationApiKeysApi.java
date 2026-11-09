@@ -668,7 +668,7 @@ public class OrganizationApiKeysApi {
      * Build call for regenerateAPIKey
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
+     * @param regenerateAPIKeyRequest Optional new and previous token expirations (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -677,7 +677,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body, expiration time or previous token expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
@@ -748,10 +748,10 @@ public class OrganizationApiKeysApi {
 
     /**
      * Regenerate API key
-     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key&#39;s current or new expiration.
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
+     * @param regenerateAPIKeyRequest Optional new and previous token expirations (optional)
      * @return ModelsAPIKeyWithToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -759,7 +759,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body, expiration time or previous token expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
@@ -772,10 +772,10 @@ public class OrganizationApiKeysApi {
 
     /**
      * Regenerate API key
-     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key&#39;s current or new expiration.
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
+     * @param regenerateAPIKeyRequest Optional new and previous token expirations (optional)
      * @return ApiResponse&lt;ModelsAPIKeyWithToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -783,7 +783,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body, expiration time or previous token expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>
@@ -797,10 +797,10 @@ public class OrganizationApiKeysApi {
 
     /**
      * Regenerate API key (asynchronously)
-     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+     * Rotates an API key&#39;s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key&#39;s current or new expiration.
      * @param organizationId Organization ID (required)
      * @param apiKeyId API Key ID (required)
-     * @param regenerateAPIKeyRequest Optional new expiration for the regenerated key (optional)
+     * @param regenerateAPIKeyRequest Optional new and previous token expirations (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -809,7 +809,7 @@ public class OrganizationApiKeysApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> New API key generated successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid JSON request body or expiration time </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid JSON request body, expiration time or previous token expiration time </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Expiration time required for an expired API key </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Failed to regenerate API key </td><td>  -  </td></tr>

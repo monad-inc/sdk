@@ -1213,7 +1213,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
-        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new expiration for the regenerated key")] = None,
+        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new and previous token expirations")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1229,13 +1229,13 @@ class OrganizationAPIKeysApi:
     ) -> ModelsAPIKeyWithToken:
         """Regenerate API key
 
-        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key's current or new expiration.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
-        :param regenerate_api_key_request: Optional new expiration for the regenerated key
+        :param regenerate_api_key_request: Optional new and previous token expirations
         :type regenerate_api_key_request: RegenerateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1292,7 +1292,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
-        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new expiration for the regenerated key")] = None,
+        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new and previous token expirations")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1308,13 +1308,13 @@ class OrganizationAPIKeysApi:
     ) -> ApiResponse[ModelsAPIKeyWithToken]:
         """Regenerate API key
 
-        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key's current or new expiration.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
-        :param regenerate_api_key_request: Optional new expiration for the regenerated key
+        :param regenerate_api_key_request: Optional new and previous token expirations
         :type regenerate_api_key_request: RegenerateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1371,7 +1371,7 @@ class OrganizationAPIKeysApi:
         self,
         organization_id: Annotated[StrictStr, Field(description="Organization ID")],
         api_key_id: Annotated[StrictStr, Field(description="API Key ID")],
-        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new expiration for the regenerated key")] = None,
+        regenerate_api_key_request: Annotated[Optional[RegenerateAPIKeyRequest], Field(description="Optional new and previous token expirations")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1387,13 +1387,13 @@ class OrganizationAPIKeysApi:
     ) -> RESTResponseType:
         """Regenerate API key
 
-        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+        Rotates an API key's secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key's current or new expiration.
 
         :param organization_id: Organization ID (required)
         :type organization_id: str
         :param api_key_id: API Key ID (required)
         :type api_key_id: str
-        :param regenerate_api_key_request: Optional new expiration for the regenerated key
+        :param regenerate_api_key_request: Optional new and previous token expirations
         :type regenerate_api_key_request: RegenerateAPIKeyRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

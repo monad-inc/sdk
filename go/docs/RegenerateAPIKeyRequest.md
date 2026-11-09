@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExpirationTime** | Pointer to **string** | Omitted (nil) keeps the key&#39;s existing expiration — rotating the secret does not extend the key&#39;s term on its own. | [optional] 
+**PreviousTokenExpirationTime** | Pointer to **string** | The previous token stays valid until this time. Omitted revokes it immediately. At most 90 days ahead, and not past the key&#39;s current or new expiration. | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetExpirationTime sets ExpirationTime field to given value.
 `func (o *RegenerateAPIKeyRequest) HasExpirationTime() bool`
 
 HasExpirationTime returns a boolean if a field has been set.
+
+### GetPreviousTokenExpirationTime
+
+`func (o *RegenerateAPIKeyRequest) GetPreviousTokenExpirationTime() string`
+
+GetPreviousTokenExpirationTime returns the PreviousTokenExpirationTime field if non-nil, zero value otherwise.
+
+### GetPreviousTokenExpirationTimeOk
+
+`func (o *RegenerateAPIKeyRequest) GetPreviousTokenExpirationTimeOk() (*string, bool)`
+
+GetPreviousTokenExpirationTimeOk returns a tuple with the PreviousTokenExpirationTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreviousTokenExpirationTime
+
+`func (o *RegenerateAPIKeyRequest) SetPreviousTokenExpirationTime(v string)`
+
+SetPreviousTokenExpirationTime sets PreviousTokenExpirationTime field to given value.
+
+### HasPreviousTokenExpirationTime
+
+`func (o *RegenerateAPIKeyRequest) HasPreviousTokenExpirationTime() bool`
+
+HasPreviousTokenExpirationTime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

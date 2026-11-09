@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 # **regenerateAPIKey**
 > ModelsAPIKeyWithToken regenerateAPIKey()
 
-Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired.
+Rotates an API key\'s secret in place, invalidating previously issued tokens. Keeps the existing expiration unless expiration_time is supplied; supplying one is required if the key has already expired. When previous_token_expiration_time is supplied, the previous token stays valid until then; omitted, it is revoked immediately. It must be at most 90 days ahead and not past the key\'s current or new expiration.
 
 ### Example
 
@@ -267,7 +267,7 @@ const request: OrganizationAPIKeysApiRegenerateAPIKeyRequest = {
   organizationId: "organization_id_example",
     // API Key ID
   apiKeyId: "api_key_id_example",
-    // Optional new expiration for the regenerated key (optional)
+    // Optional new and previous token expirations (optional)
   regenerateAPIKeyRequest: null,
 };
 
@@ -280,7 +280,7 @@ console.log('API called successfully. Returned data:', data);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **regenerateAPIKeyRequest** | **RegenerateAPIKeyRequest**| Optional new expiration for the regenerated key |
+ **regenerateAPIKeyRequest** | **RegenerateAPIKeyRequest**| Optional new and previous token expirations |
  **organizationId** | [**string**] | Organization ID | defaults to undefined
  **apiKeyId** | [**string**] | API Key ID | defaults to undefined
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New API key generated successfully |  -  |
-**400** | Invalid JSON request body or expiration time |  -  |
+**400** | Invalid JSON request body, expiration time or previous token expiration time |  -  |
 **404** | API key not found |  -  |
 **422** | Expiration time required for an expired API key |  -  |
 **500** | Failed to regenerate API key |  -  |

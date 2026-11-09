@@ -22,6 +22,8 @@ var _ MappedNullable = &RoutesV2RegenerateAPIKeyRequest{}
 type RoutesV2RegenerateAPIKeyRequest struct {
 	// Omitted (nil) keeps the key's existing expiration — rotating the secret does not extend the key's term on its own.
 	ExpirationTime *string `json:"expiration_time,omitempty"`
+	// The previous token stays valid until this time. Omitted revokes it immediately. At most 90 days ahead, and not past the key's current or new expiration.
+	PreviousTokenExpirationTime *string `json:"previous_token_expiration_time,omitempty"`
 }
 
 // NewRoutesV2RegenerateAPIKeyRequest instantiates a new RoutesV2RegenerateAPIKeyRequest object
@@ -73,6 +75,38 @@ func (o *RoutesV2RegenerateAPIKeyRequest) SetExpirationTime(v string) {
 	o.ExpirationTime = &v
 }
 
+// GetPreviousTokenExpirationTime returns the PreviousTokenExpirationTime field value if set, zero value otherwise.
+func (o *RoutesV2RegenerateAPIKeyRequest) GetPreviousTokenExpirationTime() string {
+	if o == nil || IsNil(o.PreviousTokenExpirationTime) {
+		var ret string
+		return ret
+	}
+	return *o.PreviousTokenExpirationTime
+}
+
+// GetPreviousTokenExpirationTimeOk returns a tuple with the PreviousTokenExpirationTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoutesV2RegenerateAPIKeyRequest) GetPreviousTokenExpirationTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.PreviousTokenExpirationTime) {
+		return nil, false
+	}
+	return o.PreviousTokenExpirationTime, true
+}
+
+// HasPreviousTokenExpirationTime returns a boolean if a field has been set.
+func (o *RoutesV2RegenerateAPIKeyRequest) HasPreviousTokenExpirationTime() bool {
+	if o != nil && !IsNil(o.PreviousTokenExpirationTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreviousTokenExpirationTime gets a reference to the given string and assigns it to the PreviousTokenExpirationTime field.
+func (o *RoutesV2RegenerateAPIKeyRequest) SetPreviousTokenExpirationTime(v string) {
+	o.PreviousTokenExpirationTime = &v
+}
+
 func (o RoutesV2RegenerateAPIKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -85,6 +119,9 @@ func (o RoutesV2RegenerateAPIKeyRequest) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ExpirationTime) {
 		toSerialize["expiration_time"] = o.ExpirationTime
+	}
+	if !IsNil(o.PreviousTokenExpirationTime) {
+		toSerialize["previous_token_expiration_time"] = o.PreviousTokenExpirationTime
 	}
 	return toSerialize, nil
 }
