@@ -44,6 +44,7 @@ class TestModelsAPIKey(unittest.TestCase):
                 last_used_at = '',
                 name = '',
                 organization_id = '',
+                previous_token_expiration_time = '',
                 role_id = '',
                 token_version = 56,
                 updated_at = ''

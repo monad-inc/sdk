@@ -15,6 +15,7 @@
 |**lastUsedAt** | **String** | LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began. |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**organizationId** | **String** |  |  [optional] |
+|**previousTokenExpirationTime** | **String** | PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past. |  [optional] |
 |**roleId** | **String** |  |  [optional] |
 |**tokenVersion** | **Integer** | TokenVersion is the current generation of the key. It is embedded in minted JWTs as the &#x60;ver&#x60; claim and bumped on rotation to invalidate previously-issued tokens without changing the key&#39;s id. |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |

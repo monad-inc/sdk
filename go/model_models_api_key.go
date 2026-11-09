@@ -30,6 +30,8 @@ type ModelsAPIKey struct {
 	LastUsedAt *string `json:"last_used_at,omitempty"`
 	Name *string `json:"name,omitempty"`
 	OrganizationId *string `json:"organization_id,omitempty"`
+	// PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past.
+	PreviousTokenExpirationTime *string `json:"previous_token_expiration_time,omitempty"`
 	RoleId *string `json:"role_id,omitempty"`
 	// TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key's id.
 	TokenVersion *int32 `json:"token_version,omitempty"`
@@ -309,6 +311,38 @@ func (o *ModelsAPIKey) SetOrganizationId(v string) {
 	o.OrganizationId = &v
 }
 
+// GetPreviousTokenExpirationTime returns the PreviousTokenExpirationTime field value if set, zero value otherwise.
+func (o *ModelsAPIKey) GetPreviousTokenExpirationTime() string {
+	if o == nil || IsNil(o.PreviousTokenExpirationTime) {
+		var ret string
+		return ret
+	}
+	return *o.PreviousTokenExpirationTime
+}
+
+// GetPreviousTokenExpirationTimeOk returns a tuple with the PreviousTokenExpirationTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsAPIKey) GetPreviousTokenExpirationTimeOk() (*string, bool) {
+	if o == nil || IsNil(o.PreviousTokenExpirationTime) {
+		return nil, false
+	}
+	return o.PreviousTokenExpirationTime, true
+}
+
+// HasPreviousTokenExpirationTime returns a boolean if a field has been set.
+func (o *ModelsAPIKey) HasPreviousTokenExpirationTime() bool {
+	if o != nil && !IsNil(o.PreviousTokenExpirationTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreviousTokenExpirationTime gets a reference to the given string and assigns it to the PreviousTokenExpirationTime field.
+func (o *ModelsAPIKey) SetPreviousTokenExpirationTime(v string) {
+	o.PreviousTokenExpirationTime = &v
+}
+
 // GetRoleId returns the RoleId field value if set, zero value otherwise.
 func (o *ModelsAPIKey) GetRoleId() string {
 	if o == nil || IsNil(o.RoleId) {
@@ -438,6 +472,9 @@ func (o ModelsAPIKey) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.OrganizationId) {
 		toSerialize["organization_id"] = o.OrganizationId
+	}
+	if !IsNil(o.PreviousTokenExpirationTime) {
+		toSerialize["previous_token_expiration_time"] = o.PreviousTokenExpirationTime
 	}
 	if !IsNil(o.RoleId) {
 		toSerialize["role_id"] = o.RoleId

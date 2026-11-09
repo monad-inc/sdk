@@ -102,6 +102,14 @@ public class ModelsAPIKeyTest {
     }
 
     /**
+     * Test the property 'previousTokenExpirationTime'
+     */
+    @Test
+    public void previousTokenExpirationTimeTest() {
+        // TODO: test previousTokenExpirationTime
+    }
+
+    /**
      * Test the property 'roleId'
      */
     @Test

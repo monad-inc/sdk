@@ -36,11 +36,12 @@ class ModelsAPIKeyWithToken(BaseModel):
     last_used_at: Optional[StrictStr] = Field(default=None, description="LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began.")
     name: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
+    previous_token_expiration_time: Optional[StrictStr] = Field(default=None, description="PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past.")
     role_id: Optional[StrictStr] = None
     token: Optional[StrictStr] = None
     token_version: Optional[StrictInt] = Field(default=None, description="TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key's id.")
     updated_at: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "last_used_at", "name", "organization_id", "role_id", "token", "token_version", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "last_used_at", "name", "organization_id", "previous_token_expiration_time", "role_id", "token", "token_version", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -101,6 +102,7 @@ class ModelsAPIKeyWithToken(BaseModel):
             "last_used_at": obj.get("last_used_at"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
+            "previous_token_expiration_time": obj.get("previous_token_expiration_time"),
             "role_id": obj.get("role_id"),
             "token": obj.get("token"),
             "token_version": obj.get("token_version"),

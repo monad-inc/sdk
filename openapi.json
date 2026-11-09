@@ -3994,9 +3994,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -4427,6 +4427,10 @@
                     "organization_id": {
                         "type": "string"
                     },
+                    "previous_token_expiration_time": {
+                        "description": "PreviousTokenExpirationTime is when the token of the previous generation\n(TokenVersion-1) stops being accepted. Nil means it was revoked on\nrotation. Returned as stored, so it may be in the past.",
+                        "type": "string"
+                    },
                     "role_id": {
                         "type": "string"
                     },
@@ -4481,6 +4485,10 @@
                         "type": "string"
                     },
                     "organization_id": {
+                        "type": "string"
+                    },
+                    "previous_token_expiration_time": {
+                        "description": "PreviousTokenExpirationTime is when the token of the previous generation\n(TokenVersion-1) stops being accepted. Nil means it was revoked on\nrotation. Returned as stored, so it may be in the past.",
                         "type": "string"
                     },
                     "role_id": {

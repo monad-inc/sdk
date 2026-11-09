@@ -90,6 +90,11 @@ public class ModelsAPIKeyWithToken {
   @javax.annotation.Nullable
   private String organizationId;
 
+  public static final String SERIALIZED_NAME_PREVIOUS_TOKEN_EXPIRATION_TIME = "previous_token_expiration_time";
+  @SerializedName(SERIALIZED_NAME_PREVIOUS_TOKEN_EXPIRATION_TIME)
+  @javax.annotation.Nullable
+  private String previousTokenExpirationTime;
+
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
   @javax.annotation.Nullable
@@ -265,6 +270,25 @@ public class ModelsAPIKeyWithToken {
   }
 
 
+  public ModelsAPIKeyWithToken previousTokenExpirationTime(@javax.annotation.Nullable String previousTokenExpirationTime) {
+    this.previousTokenExpirationTime = previousTokenExpirationTime;
+    return this;
+  }
+
+  /**
+   * PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past.
+   * @return previousTokenExpirationTime
+   */
+  @javax.annotation.Nullable
+  public String getPreviousTokenExpirationTime() {
+    return previousTokenExpirationTime;
+  }
+
+  public void setPreviousTokenExpirationTime(@javax.annotation.Nullable String previousTokenExpirationTime) {
+    this.previousTokenExpirationTime = previousTokenExpirationTime;
+  }
+
+
   public ModelsAPIKeyWithToken roleId(@javax.annotation.Nullable String roleId) {
     this.roleId = roleId;
     return this;
@@ -359,6 +383,7 @@ public class ModelsAPIKeyWithToken {
         Objects.equals(this.lastUsedAt, modelsAPIKeyWithToken.lastUsedAt) &&
         Objects.equals(this.name, modelsAPIKeyWithToken.name) &&
         Objects.equals(this.organizationId, modelsAPIKeyWithToken.organizationId) &&
+        Objects.equals(this.previousTokenExpirationTime, modelsAPIKeyWithToken.previousTokenExpirationTime) &&
         Objects.equals(this.roleId, modelsAPIKeyWithToken.roleId) &&
         Objects.equals(this.token, modelsAPIKeyWithToken.token) &&
         Objects.equals(this.tokenVersion, modelsAPIKeyWithToken.tokenVersion) &&
@@ -367,7 +392,7 @@ public class ModelsAPIKeyWithToken {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, expirationTime, id, jwtSigningKeyId, lastUsedAt, name, organizationId, roleId, token, tokenVersion, updatedAt);
+    return Objects.hash(createdAt, description, expirationTime, id, jwtSigningKeyId, lastUsedAt, name, organizationId, previousTokenExpirationTime, roleId, token, tokenVersion, updatedAt);
   }
 
   @Override
@@ -382,6 +407,7 @@ public class ModelsAPIKeyWithToken {
     sb.append("    lastUsedAt: ").append(toIndentedString(lastUsedAt)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    previousTokenExpirationTime: ").append(toIndentedString(previousTokenExpirationTime)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    tokenVersion: ").append(toIndentedString(tokenVersion)).append("\n");
@@ -404,7 +430,7 @@ public class ModelsAPIKeyWithToken {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "last_used_at", "name", "organization_id", "role_id", "token", "token_version", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("created_at", "description", "expiration_time", "id", "jwt_signing_key_id", "last_used_at", "name", "organization_id", "previous_token_expiration_time", "role_id", "token", "token_version", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -454,6 +480,9 @@ public class ModelsAPIKeyWithToken {
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      }
+      if ((jsonObj.get("previous_token_expiration_time") != null && !jsonObj.get("previous_token_expiration_time").isJsonNull()) && !jsonObj.get("previous_token_expiration_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `previous_token_expiration_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous_token_expiration_time").toString()));
       }
       if ((jsonObj.get("role_id") != null && !jsonObj.get("role_id").isJsonNull()) && !jsonObj.get("role_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));

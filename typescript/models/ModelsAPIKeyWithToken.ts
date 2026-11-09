@@ -27,6 +27,10 @@ export class ModelsAPIKeyWithToken {
     'lastUsedAt'?: string;
     'name'?: string;
     'organizationId'?: string;
+    /**
+    * PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past.
+    */
+    'previousTokenExpirationTime'?: string;
     'roleId'?: string;
     'token'?: string;
     /**
@@ -85,6 +89,12 @@ export class ModelsAPIKeyWithToken {
         {
             "name": "organizationId",
             "baseName": "organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "previousTokenExpirationTime",
+            "baseName": "previous_token_expiration_time",
             "type": "string",
             "format": ""
         },

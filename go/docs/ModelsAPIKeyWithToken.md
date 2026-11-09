@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **LastUsedAt** | Pointer to **string** | LastUsedAt is when the key, or a token minted from it, last authenticated a request. Recorded at most once a minute, so it can lag real use by that much. Nil when the key has not been used since tracking began. | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OrganizationId** | Pointer to **string** |  | [optional] 
+**PreviousTokenExpirationTime** | Pointer to **string** | PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past. | [optional] 
 **RoleId** | Pointer to **string** |  | [optional] 
 **Token** | Pointer to **string** |  | [optional] 
 **TokenVersion** | Pointer to **int32** | TokenVersion is the current generation of the key. It is embedded in minted JWTs as the &#x60;ver&#x60; claim and bumped on rotation to invalidate previously-issued tokens without changing the key&#39;s id. | [optional] 
@@ -235,6 +236,31 @@ SetOrganizationId sets OrganizationId field to given value.
 `func (o *ModelsAPIKeyWithToken) HasOrganizationId() bool`
 
 HasOrganizationId returns a boolean if a field has been set.
+
+### GetPreviousTokenExpirationTime
+
+`func (o *ModelsAPIKeyWithToken) GetPreviousTokenExpirationTime() string`
+
+GetPreviousTokenExpirationTime returns the PreviousTokenExpirationTime field if non-nil, zero value otherwise.
+
+### GetPreviousTokenExpirationTimeOk
+
+`func (o *ModelsAPIKeyWithToken) GetPreviousTokenExpirationTimeOk() (*string, bool)`
+
+GetPreviousTokenExpirationTimeOk returns a tuple with the PreviousTokenExpirationTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreviousTokenExpirationTime
+
+`func (o *ModelsAPIKeyWithToken) SetPreviousTokenExpirationTime(v string)`
+
+SetPreviousTokenExpirationTime sets PreviousTokenExpirationTime field to given value.
+
+### HasPreviousTokenExpirationTime
+
+`func (o *ModelsAPIKeyWithToken) HasPreviousTokenExpirationTime() bool`
+
+HasPreviousTokenExpirationTime returns a boolean if a field has been set.
 
 ### GetRoleId
 

@@ -27,6 +27,10 @@ export class ModelsAPIKey {
     'lastUsedAt'?: string;
     'name'?: string;
     'organizationId'?: string;
+    /**
+    * PreviousTokenExpirationTime is when the token of the previous generation (TokenVersion-1) stops being accepted. Nil means it was revoked on rotation. Returned as stored, so it may be in the past.
+    */
+    'previousTokenExpirationTime'?: string;
     'roleId'?: string;
     /**
     * TokenVersion is the current generation of the key. It is embedded in minted JWTs as the `ver` claim and bumped on rotation to invalidate previously-issued tokens without changing the key\'s id.
@@ -84,6 +88,12 @@ export class ModelsAPIKey {
         {
             "name": "organizationId",
             "baseName": "organization_id",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "previousTokenExpirationTime",
+            "baseName": "previous_token_expiration_time",
             "type": "string",
             "format": ""
         },
