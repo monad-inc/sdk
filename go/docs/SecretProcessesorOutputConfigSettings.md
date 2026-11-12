@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **SubsystemName** | **string** | SubsystemName is stamped on every record. Coralogix uses this to separate components within an application. | 
 **TimestampRecordLocation** | Pointer to **string** | TimestampRecordLocation is an optional JSONPath (&#x60;$.event.time&#x60;) or gjson path pointing at the timestamp field inside each incoming record. When unset the connector stamps the current time on every record; when set the connector reads the field, and sends a record whose value is missing or can&#39;t be used without a timestamp. | [optional] 
 **IngressAddress** | Pointer to **string** | Your group&#39;s ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible. | [optional] 
-**Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as monad already does this for you. | [optional] 
+**Path** | Pointer to **string** | The path you&#39;ve set for your HTTP Source&#39;s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append &#x60;_bulk&#x60; to this path as the connector already does this for you. | [optional] 
 **Port** | **string** | The port of the Splunk instance. | 
 **Catalog** | **string** | The Unity Catalog name | 
 **Schema** | **string** | The schema within the database that contains the target pipe. | 

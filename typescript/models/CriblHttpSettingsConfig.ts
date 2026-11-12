@@ -21,7 +21,7 @@ export class CriblHttpSettingsConfig {
     */
     'ingressAddress'?: string;
     /**
-    * The path you\'ve set for your HTTP Source\'s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as monad already does this for you.
+    * The path you\'ve set for your HTTP Source\'s HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as the connector already does this for you.
     */
     'path'?: string;
     /**

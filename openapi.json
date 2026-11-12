@@ -2156,7 +2156,7 @@
                         "type": "string"
                     },
                     "path": {
-                        "description": "The path you've set for your HTTP Source's HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as monad already does this for you.",
+                        "description": "The path you've set for your HTTP Source's HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as the connector already does this for you.",
                         "type": "string"
                     },
                     "port": {
@@ -4088,9 +4088,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {

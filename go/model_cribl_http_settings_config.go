@@ -22,7 +22,7 @@ var _ MappedNullable = &CriblHttpSettingsConfig{}
 type CriblHttpSettingsConfig struct {
 	// Your group's ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible.
 	IngressAddress *string `json:"ingress_address,omitempty"`
-	// The path you've set for your HTTP Source's HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as monad already does this for you.
+	// The path you've set for your HTTP Source's HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as the connector already does this for you.
 	Path *string `json:"path,omitempty"`
 	// The port you've set your HTTP Source to listen on. This should be the port number where your Cribl HTTP Source is configured to receive data.
 	Port *int32 `json:"port,omitempty"`

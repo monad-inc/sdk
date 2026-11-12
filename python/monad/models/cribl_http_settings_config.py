@@ -29,7 +29,7 @@ class CriblHttpSettingsConfig(BaseModel):
     Cribl HTTP Output Settings
     """ # noqa: E501
     ingress_address: Optional[StrictStr] = Field(default=None, description="Your group's ingress address found in your group information panel. This is the hostname where your Cribl instance is accessible.")
-    path: Optional[StrictStr] = Field(default=None, description="The path you've set for your HTTP Source's HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as monad already does this for you.")
+    path: Optional[StrictStr] = Field(default=None, description="The path you've set for your HTTP Source's HTTP Event API. This is the endpoint path where data will be sent. Note: You do not need to append `_bulk` to this path as the connector already does this for you.")
     port: Optional[StrictInt] = Field(default=None, description="The port you've set your HTTP Source to listen on. This should be the port number where your Cribl HTTP Source is configured to receive data.")
     __properties: ClassVar[List[str]] = ["ingress_address", "path", "port"]
 
