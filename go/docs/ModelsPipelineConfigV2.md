@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Edges** | Pointer to [**[]ModelsPipelineEdge**](ModelsPipelineEdge.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
+**FailureSettings** | Pointer to [**ModelsFailureSettings**](ModelsFailureSettings.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **IsSynthetic** | Pointer to **bool** |  | [optional] 
 **ManagedBy** | Pointer to [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 
@@ -218,6 +219,31 @@ SetEnabled sets Enabled field to given value.
 `func (o *ModelsPipelineConfigV2) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetFailureSettings
+
+`func (o *ModelsPipelineConfigV2) GetFailureSettings() ModelsFailureSettings`
+
+GetFailureSettings returns the FailureSettings field if non-nil, zero value otherwise.
+
+### GetFailureSettingsOk
+
+`func (o *ModelsPipelineConfigV2) GetFailureSettingsOk() (*ModelsFailureSettings, bool)`
+
+GetFailureSettingsOk returns a tuple with the FailureSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFailureSettings
+
+`func (o *ModelsPipelineConfigV2) SetFailureSettings(v ModelsFailureSettings)`
+
+SetFailureSettings sets FailureSettings field to given value.
+
+### HasFailureSettings
+
+`func (o *ModelsPipelineConfigV2) HasFailureSettings() bool`
+
+HasFailureSettings returns a boolean if a field has been set.
 
 ### GetId
 

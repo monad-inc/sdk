@@ -16,6 +16,9 @@ import { ModelsPipelineNodeStatus } from '../models/ModelsPipelineNodeStatus';
 import { ModelsReferences } from '../models/ModelsReferences';
 import { HttpFile } from '../http/http';
 
+/**
+* Node is the resolved sink, inlined by the api at publish for the DLQ writer. Never stored or returned on customer reads.
+*/
 export class ModelsPipelineNode {
     'component'?: ModelsNodeComponent;
     'componentHouse'?: string;

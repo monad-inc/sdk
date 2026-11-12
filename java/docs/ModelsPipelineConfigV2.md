@@ -14,6 +14,7 @@
 |**description** | **String** |  |  [optional] |
 |**edges** | [**List&lt;ModelsPipelineEdge&gt;**](ModelsPipelineEdge.md) |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
+|**failureSettings** | [**ModelsFailureSettings**](ModelsFailureSettings.md) |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**isSynthetic** | **Boolean** |  |  [optional] |
 |**managedBy** | **ModelsManagedBy** |  |  [optional] |

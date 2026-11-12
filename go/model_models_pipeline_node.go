@@ -18,7 +18,7 @@ import (
 // checks if the ModelsPipelineNode type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ModelsPipelineNode{}
 
-// ModelsPipelineNode struct for ModelsPipelineNode
+// ModelsPipelineNode Node is the resolved sink, inlined by the api at publish for the DLQ writer. Never stored or returned on customer reads.
 type ModelsPipelineNode struct {
 	Component *ModelsNodeComponent `json:"component,omitempty"`
 	ComponentHouse *string `json:"component_house,omitempty"`

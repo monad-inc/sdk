@@ -36,12 +36,12 @@ class TestRoutesV2PipelineStatus(unittest.TestCase):
         model = RoutesV2PipelineStatus()
         if include_optional:
             return RoutesV2PipelineStatus(
-                egress = monad.models.models/data_usage.models.DataUsage(
+                egress = monad.models.models/node_backpressure.models.NodeBackpressure(
                     bytes = 56, 
                     records = 56, ),
                 errors = 56,
                 expired_messages = 56,
-                ingress = monad.models.models/data_usage.models.DataUsage(
+                ingress = monad.models.models/node_backpressure.models.NodeBackpressure(
                     bytes = 56, 
                     records = 56, ),
                 last_ingested_time = '',

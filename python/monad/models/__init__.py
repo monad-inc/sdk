@@ -275,8 +275,11 @@ from monad.models.models_connection_session_settings import ModelsConnectionSess
 from monad.models.models_connector_info import ModelsConnectorInfo
 from monad.models.models_cursor_pagination import ModelsCursorPagination
 from monad.models.models_data_usage import ModelsDataUsage
+from monad.models.models_dead_letter_action import ModelsDeadLetterAction
 from monad.models.models_enrichment import ModelsEnrichment
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig
+from monad.models.models_failure_settings import ModelsFailureSettings
+from monad.models.models_failure_sink import ModelsFailureSink
 from monad.models.models_feature_flag import ModelsFeatureFlag
 from monad.models.models_field_state import ModelsFieldState
 from monad.models.models_input import ModelsInput

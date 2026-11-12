@@ -3994,9 +3994,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -5080,6 +5080,18 @@
                 },
                 "type": "object"
             },
+            "models.DeadLetterAction": {
+                "description": "Action defaults to none when empty.",
+                "enum": [
+                    "none",
+                    "sink"
+                ],
+                "type": "string",
+                "x-enum-varnames": [
+                    "DeadLetterNone",
+                    "DeadLetterSink"
+                ]
+            },
             "models.Enrichment": {
                 "properties": {
                     "config": {
@@ -5127,6 +5139,34 @@
                     "settings": {
                         "additionalProperties": {},
                         "type": "object"
+                    }
+                },
+                "type": "object"
+            },
+            "models.FailureSettings": {
+                "description": "FailureSettings configures dead lettering; nil retries failing records\nforever. omitempty leaves the ConfigHash unchanged for pipelines without it.",
+                "properties": {
+                    "action": {
+                        "$ref": "#/components/schemas/models.DeadLetterAction"
+                    },
+                    "retry_for": {
+                        "description": "RetryFor is how long a record may keep failing at one node before it is\ndead-lettered, as a Go duration. Required.",
+                        "type": "string"
+                    },
+                    "sink": {
+                        "$ref": "#/components/schemas/models.FailureSink"
+                    }
+                },
+                "type": "object"
+            },
+            "models.FailureSink": {
+                "description": "Sink is required when Action is sink.",
+                "properties": {
+                    "component_id": {
+                        "type": "string"
+                    },
+                    "node": {
+                        "$ref": "#/components/schemas/models.PipelineNode"
                     }
                 },
                 "type": "object"
@@ -5780,6 +5820,9 @@
                     "enabled": {
                         "type": "boolean"
                     },
+                    "failure_settings": {
+                        "$ref": "#/components/schemas/models.FailureSettings"
+                    },
                     "id": {
                         "type": "string"
                     },
@@ -5942,6 +5985,7 @@
                 "type": "object"
             },
             "models.PipelineNode": {
+                "description": "Node is the resolved sink, inlined by the api at publish for the DLQ\nwriter. Never stored or returned on customer reads.",
                 "properties": {
                     "component": {
                         "$ref": "#/components/schemas/models.NodeComponent"

@@ -264,8 +264,11 @@ import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessi
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsDeadLetterAction } from '../models/ModelsDeadLetterAction';
 import { ModelsEnrichment } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
+import { ModelsFailureSettings } from '../models/ModelsFailureSettings';
+import { ModelsFailureSink } from '../models/ModelsFailureSink';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { ModelsFieldState } from '../models/ModelsFieldState';
 import { ModelsInput } from '../models/ModelsInput';

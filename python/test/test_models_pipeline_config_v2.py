@@ -64,6 +64,81 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                         updated_at = '', )
                     ],
                 enabled = True,
+                failure_settings = monad.models.models/failure_settings.models.FailureSettings(
+                    action = 'none', 
+                    retry_for = '', 
+                    sink = monad.models.models/failure_sink.models.FailureSink(
+                        component_id = '', 
+                        node = monad.models.models/pipeline_node.models.PipelineNode(
+                            component = monad.models.models/node_component.models.NodeComponent(
+                                base_config = {
+                                    'key' : null
+                                    }, 
+                                config = {
+                                    'key' : null
+                                    }, 
+                                description = '', 
+                                id = '', 
+                                name = '', 
+                                overrides = {
+                                    'key' : null
+                                    }, 
+                                references = monad.models.models/references.models.References(
+                                    secrets = [
+                                        monad.models.models/reference.models.Reference(
+                                            id = '', 
+                                            name = '', 
+                                            organization_id = '', 
+                                            shared = True, )
+                                        ], ), 
+                                share_details = monad.models.models/share_details.models.ShareDetails(
+                                    owner_organization_id = '', 
+                                    owner_organization_name = '', 
+                                    shared_with_children = True, 
+                                    shared_with_me = True, ), 
+                                type = '', ), 
+                            component_house = '', 
+                            component_id = '', 
+                            component_sub_type = '', 
+                            component_type = 'transform', 
+                            config_overrides = {
+                                'key' : null
+                                }, 
+                            created_at = '', 
+                            enabled = True, 
+                            id = '', 
+                            organization_id = '', 
+                            pipeline_id = '', 
+                            resource_references = monad.models.models/references.models.References(), 
+                            slug = '', 
+                            status = monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
+                                avg_bytes_per_record_egress = 56, 
+                                avg_bytes_per_record_ingress = 56, 
+                                backpressure = monad.models.models/node_backpressure.models.NodeBackpressure(
+                                    bytes = 56, 
+                                    records = 56, ), 
+                                component_type_id = '', 
+                                egress = monad.models.models/node_backpressure.models.NodeBackpressure(
+                                    bytes = 56, 
+                                    records = 56, ), 
+                                errors = 56, 
+                                ingress = , 
+                                last_ingested_time = '', 
+                                last_record_processed_time = '', 
+                                last_updated_at = '', 
+                                node_id = '', 
+                                node_slug = '', 
+                                progress = monad.models.models/progress_entries.models.ProgressEntries(
+                                    entries = [
+                                        monad.models.models/progress_entry.models.ProgressEntry(
+                                            label = 'Last Processed', 
+                                            partition_key = '', 
+                                            ranges = [
+                                                monad.models.models/time_range.models.TimeRange(
+                                                    end = '', 
+                                                    start = '', )
+                                                ], )
+                                        ], ), ), ), ), ),
                 id = '',
                 is_synthetic = True,
                 managed_by = 'customer',
@@ -115,11 +190,11 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                         status = monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                             avg_bytes_per_record_egress = 56, 
                             avg_bytes_per_record_ingress = 56, 
-                            backpressure = monad.models.models/data_usage.models.DataUsage(
+                            backpressure = monad.models.models/node_backpressure.models.NodeBackpressure(
                                 bytes = 56, 
                                 records = 56, ), 
                             component_type_id = '', 
-                            egress = monad.models.models/data_usage.models.DataUsage(
+                            egress = monad.models.models/node_backpressure.models.NodeBackpressure(
                                 bytes = 56, 
                                 records = 56, ), 
                             errors = 56, 
@@ -150,11 +225,11 @@ class TestModelsPipelineConfigV2(unittest.TestCase):
                 status = monad.models.models/pipeline_status.models.PipelineStatus(
                     average_size_egressed = 56, 
                     average_size_ingested = 56, 
-                    egress = monad.models.models/data_usage.models.DataUsage(
+                    egress = monad.models.models/node_backpressure.models.NodeBackpressure(
                         bytes = 56, 
                         records = 56, ), 
                     errors = 56, 
-                    ingress = monad.models.models/data_usage.models.DataUsage(
+                    ingress = monad.models.models/node_backpressure.models.NodeBackpressure(
                         bytes = 56, 
                         records = 56, ), 
                     last_ingested_time = '', 

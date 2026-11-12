@@ -30,7 +30,7 @@ from pydantic_core import to_jsonable_python
 
 class ModelsPipelineNode(BaseModel):
     """
-    ModelsPipelineNode
+    Node is the resolved sink, inlined by the api at publish for the DLQ writer. Never stored or returned on customer reads.
     """ # noqa: E501
     component: Optional[ModelsNodeComponent] = None
     component_house: Optional[StrictStr] = None

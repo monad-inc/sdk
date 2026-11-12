@@ -1,5 +1,6 @@
 # ModelsPipelineNode
 
+Node is the resolved sink, inlined by the api at publish for the DLQ writer. Never stored or returned on customer reads.
 
 ## Properties
 

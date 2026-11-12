@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsFailureSettings;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
@@ -91,6 +92,11 @@ public class ModelsPipelineConfigV2 {
   @SerializedName(SERIALIZED_NAME_ENABLED)
   @javax.annotation.Nullable
   private Boolean enabled;
+
+  public static final String SERIALIZED_NAME_FAILURE_SETTINGS = "failure_settings";
+  @SerializedName(SERIALIZED_NAME_FAILURE_SETTINGS)
+  @javax.annotation.Nullable
+  private ModelsFailureSettings failureSettings;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -298,6 +304,25 @@ public class ModelsPipelineConfigV2 {
 
   public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
+  }
+
+
+  public ModelsPipelineConfigV2 failureSettings(@javax.annotation.Nullable ModelsFailureSettings failureSettings) {
+    this.failureSettings = failureSettings;
+    return this;
+  }
+
+  /**
+   * Get failureSettings
+   * @return failureSettings
+   */
+  @javax.annotation.Nullable
+  public ModelsFailureSettings getFailureSettings() {
+    return failureSettings;
+  }
+
+  public void setFailureSettings(@javax.annotation.Nullable ModelsFailureSettings failureSettings) {
+    this.failureSettings = failureSettings;
   }
 
 
@@ -581,6 +606,7 @@ public class ModelsPipelineConfigV2 {
         Objects.equals(this.description, modelsPipelineConfigV2.description) &&
         Objects.equals(this.edges, modelsPipelineConfigV2.edges) &&
         Objects.equals(this.enabled, modelsPipelineConfigV2.enabled) &&
+        Objects.equals(this.failureSettings, modelsPipelineConfigV2.failureSettings) &&
         Objects.equals(this.id, modelsPipelineConfigV2.id) &&
         Objects.equals(this.isSynthetic, modelsPipelineConfigV2.isSynthetic) &&
         Objects.equals(this.managedBy, modelsPipelineConfigV2.managedBy) &&
@@ -598,7 +624,7 @@ public class ModelsPipelineConfigV2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, routable, status, tags, updatedAt);
+    return Objects.hash(billingAccountId, componentTier, createdAt, cronSchedule, description, edges, enabled, failureSettings, id, isSynthetic, managedBy, name, nextCronRunAt, nodes, organizationId, organizationName, retentionPolicy, routable, status, tags, updatedAt);
   }
 
   @Override
@@ -612,6 +638,7 @@ public class ModelsPipelineConfigV2 {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    failureSettings: ").append(toIndentedString(failureSettings)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isSynthetic: ").append(toIndentedString(isSynthetic)).append("\n");
     sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
@@ -643,7 +670,7 @@ public class ModelsPipelineConfigV2 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "routable", "status", "tags", "updatedAt"));
+    openapiFields = new HashSet<String>(Arrays.asList("billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "failure_settings", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "routable", "status", "tags", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -695,6 +722,10 @@ public class ModelsPipelineConfigV2 {
             ModelsPipelineEdge.validateJsonElement(jsonArrayedges.get(i));
           };
         }
+      }
+      // validate the optional field `failure_settings`
+      if (jsonObj.get("failure_settings") != null && !jsonObj.get("failure_settings").isJsonNull()) {
+        ModelsFailureSettings.validateJsonElement(jsonObj.get("failure_settings"));
       }
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));

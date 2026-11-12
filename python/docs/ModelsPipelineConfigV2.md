@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **edges** | [**List[ModelsPipelineEdge]**](ModelsPipelineEdge.md) |  | [optional] 
 **enabled** | **bool** |  | [optional] 
+**failure_settings** | [**ModelsFailureSettings**](ModelsFailureSettings.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **is_synthetic** | **bool** |  | [optional] 
 **managed_by** | [**ModelsManagedBy**](ModelsManagedBy.md) |  | [optional] 

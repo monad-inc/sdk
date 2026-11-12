@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { ModelsFailureSettings } from '../models/ModelsFailureSettings';
 import { ModelsManagedBy } from '../models/ModelsManagedBy';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineNode } from '../models/ModelsPipelineNode';
@@ -25,6 +26,7 @@ export class ModelsPipelineConfigV2 {
     'description'?: string;
     'edges'?: Array<ModelsPipelineEdge>;
     'enabled'?: boolean;
+    'failureSettings'?: ModelsFailureSettings;
     'id'?: string;
     'isSynthetic'?: boolean;
     'managedBy'?: ModelsManagedBy;
@@ -90,6 +92,12 @@ export class ModelsPipelineConfigV2 {
             "name": "enabled",
             "baseName": "enabled",
             "type": "boolean",
+            "format": ""
+        },
+        {
+            "name": "failureSettings",
+            "baseName": "failure_settings",
+            "type": "ModelsFailureSettings",
             "format": ""
         },
         {

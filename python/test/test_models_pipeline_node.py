@@ -87,12 +87,12 @@ class TestModelsPipelineNode(unittest.TestCase):
                 status = monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                     avg_bytes_per_record_egress = 56, 
                     avg_bytes_per_record_ingress = 56, 
-                    backpressure = monad.models.models/data_usage.models.DataUsage(
+                    backpressure = monad.models.models/node_backpressure.models.NodeBackpressure(
                         bytes = 56, 
                         records = 56, ), 
                     component_type = '', 
                     component_type_id = '', 
-                    egress = monad.models.models/data_usage.models.DataUsage(
+                    egress = monad.models.models/node_backpressure.models.NodeBackpressure(
                         bytes = 56, 
                         records = 56, ), 
                     errors = 56, 

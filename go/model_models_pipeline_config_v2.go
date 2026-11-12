@@ -27,6 +27,7 @@ type ModelsPipelineConfigV2 struct {
 	Description *string `json:"description,omitempty"`
 	Edges []ModelsPipelineEdge `json:"edges,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
+	FailureSettings *ModelsFailureSettings `json:"failure_settings,omitempty"`
 	Id *string `json:"id,omitempty"`
 	IsSynthetic *bool `json:"is_synthetic,omitempty"`
 	ManagedBy *ModelsManagedBy `json:"managed_by,omitempty"`
@@ -283,6 +284,38 @@ func (o *ModelsPipelineConfigV2) HasEnabled() bool {
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *ModelsPipelineConfigV2) SetEnabled(v bool) {
 	o.Enabled = &v
+}
+
+// GetFailureSettings returns the FailureSettings field value if set, zero value otherwise.
+func (o *ModelsPipelineConfigV2) GetFailureSettings() ModelsFailureSettings {
+	if o == nil || IsNil(o.FailureSettings) {
+		var ret ModelsFailureSettings
+		return ret
+	}
+	return *o.FailureSettings
+}
+
+// GetFailureSettingsOk returns a tuple with the FailureSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsPipelineConfigV2) GetFailureSettingsOk() (*ModelsFailureSettings, bool) {
+	if o == nil || IsNil(o.FailureSettings) {
+		return nil, false
+	}
+	return o.FailureSettings, true
+}
+
+// HasFailureSettings returns a boolean if a field has been set.
+func (o *ModelsPipelineConfigV2) HasFailureSettings() bool {
+	if o != nil && !IsNil(o.FailureSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetFailureSettings gets a reference to the given ModelsFailureSettings and assigns it to the FailureSettings field.
+func (o *ModelsPipelineConfigV2) SetFailureSettings(v ModelsFailureSettings) {
+	o.FailureSettings = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -731,6 +764,9 @@ func (o ModelsPipelineConfigV2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.FailureSettings) {
+		toSerialize["failure_settings"] = o.FailureSettings
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

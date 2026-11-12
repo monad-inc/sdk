@@ -333,8 +333,11 @@ __all__ = [
     "ModelsConnectorInfo",
     "ModelsCursorPagination",
     "ModelsDataUsage",
+    "ModelsDeadLetterAction",
     "ModelsEnrichment",
     "ModelsEnrichmentConfig",
+    "ModelsFailureSettings",
+    "ModelsFailureSink",
     "ModelsFeatureFlag",
     "ModelsFieldState",
     "ModelsInput",
@@ -1014,8 +1017,11 @@ from monad.models.models_connection_session_settings import ModelsConnectionSess
 from monad.models.models_connector_info import ModelsConnectorInfo as ModelsConnectorInfo
 from monad.models.models_cursor_pagination import ModelsCursorPagination as ModelsCursorPagination
 from monad.models.models_data_usage import ModelsDataUsage as ModelsDataUsage
+from monad.models.models_dead_letter_action import ModelsDeadLetterAction as ModelsDeadLetterAction
 from monad.models.models_enrichment import ModelsEnrichment as ModelsEnrichment
 from monad.models.models_enrichment_config import ModelsEnrichmentConfig as ModelsEnrichmentConfig
+from monad.models.models_failure_settings import ModelsFailureSettings as ModelsFailureSettings
+from monad.models.models_failure_sink import ModelsFailureSink as ModelsFailureSink
 from monad.models.models_feature_flag import ModelsFeatureFlag as ModelsFeatureFlag
 from monad.models.models_field_state import ModelsFieldState as ModelsFieldState
 from monad.models.models_input import ModelsInput as ModelsInput

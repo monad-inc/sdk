@@ -38,11 +38,11 @@ class TestModelsPipelineStatus(unittest.TestCase):
             return ModelsPipelineStatus(
                 average_size_egressed = 56,
                 average_size_ingested = 56,
-                egress = monad.models.models/data_usage.models.DataUsage(
+                egress = monad.models.models/node_backpressure.models.NodeBackpressure(
                     bytes = 56, 
                     records = 56, ),
                 errors = 56,
-                ingress = monad.models.models/data_usage.models.DataUsage(
+                ingress = monad.models.models/node_backpressure.models.NodeBackpressure(
                     bytes = 56, 
                     records = 56, ),
                 last_ingested_time = '',
@@ -51,12 +51,12 @@ class TestModelsPipelineStatus(unittest.TestCase):
                     monad.models.models/pipeline_node_status.models.PipelineNodeStatus(
                         avg_bytes_per_record_egress = 56, 
                         avg_bytes_per_record_ingress = 56, 
-                        backpressure = monad.models.models/data_usage.models.DataUsage(
+                        backpressure = monad.models.models/node_backpressure.models.NodeBackpressure(
                             bytes = 56, 
                             records = 56, ), 
                         component_type = '', 
                         component_type_id = '', 
-                        egress = monad.models.models/data_usage.models.DataUsage(
+                        egress = monad.models.models/node_backpressure.models.NodeBackpressure(
                             bytes = 56, 
                             records = 56, ), 
                         errors = 56, 
@@ -95,7 +95,7 @@ class TestModelsPipelineStatus(unittest.TestCase):
                                 ], )
                         ], ),
                 status = 'Unknown',
-                stream = monad.models.models/data_usage.models.DataUsage(
+                stream = monad.models.models/node_backpressure.models.NodeBackpressure(
                     bytes = 56, 
                     records = 56, )
             )

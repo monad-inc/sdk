@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from monad.models.models_failure_settings import ModelsFailureSettings
 from monad.models.models_managed_by import ModelsManagedBy
 from monad.models.models_pipeline_edge import ModelsPipelineEdge
 from monad.models.models_pipeline_node import ModelsPipelineNode
@@ -40,6 +41,7 @@ class ModelsPipelineConfigV2(BaseModel):
     description: Optional[StrictStr] = None
     edges: Optional[List[ModelsPipelineEdge]] = None
     enabled: Optional[StrictBool] = None
+    failure_settings: Optional[ModelsFailureSettings] = None
     id: Optional[StrictStr] = None
     is_synthetic: Optional[StrictBool] = None
     managed_by: Optional[ModelsManagedBy] = None
@@ -53,7 +55,7 @@ class ModelsPipelineConfigV2(BaseModel):
     status: Optional[ModelsPipelineStatus] = None
     tags: Optional[List[StrictStr]] = Field(default=None, description="Tags is the pipeline's customer tag names, populated only on customer reads (never on the operator path), so omitempty keeps the ConfigHash unchanged and tag edits don't roll pods.")
     updated_at: Optional[StrictStr] = Field(default=None, alias="updatedAt")
-    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "routable", "status", "tags", "updatedAt"]
+    __properties: ClassVar[List[str]] = ["billingAccountId", "component_tier", "createdAt", "cron_schedule", "description", "edges", "enabled", "failure_settings", "id", "is_synthetic", "managed_by", "name", "next_cron_run_at", "nodes", "organizationId", "organizationName", "retention_policy", "routable", "status", "tags", "updatedAt"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -101,6 +103,9 @@ class ModelsPipelineConfigV2(BaseModel):
                 if _item_edges:
                     _items.append(_item_edges.to_dict())
             _dict['edges'] = _items
+        # override the default output from pydantic by calling `to_dict()` of failure_settings
+        if self.failure_settings:
+            _dict['failure_settings'] = self.failure_settings.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in nodes (list)
         _items = []
         if self.nodes:
@@ -133,6 +138,7 @@ class ModelsPipelineConfigV2(BaseModel):
             "description": obj.get("description"),
             "edges": [ModelsPipelineEdge.from_dict(_item) for _item in obj["edges"]] if obj.get("edges") is not None else None,
             "enabled": obj.get("enabled"),
+            "failure_settings": ModelsFailureSettings.from_dict(obj["failure_settings"]) if obj.get("failure_settings") is not None else None,
             "id": obj.get("id"),
             "is_synthetic": obj.get("is_synthetic"),
             "managed_by": obj.get("managed_by"),

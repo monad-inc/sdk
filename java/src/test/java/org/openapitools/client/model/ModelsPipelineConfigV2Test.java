@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.client.model.ModelsFailureSettings;
 import org.openapitools.client.model.ModelsManagedBy;
 import org.openapitools.client.model.ModelsPipelineEdge;
 import org.openapitools.client.model.ModelsPipelineNode;
@@ -98,6 +99,14 @@ public class ModelsPipelineConfigV2Test {
     @Test
     public void enabledTest() {
         // TODO: test enabled
+    }
+
+    /**
+     * Test the property 'failureSettings'
+     */
+    @Test
+    public void failureSettingsTest() {
+        // TODO: test failureSettings
     }
 
     /**

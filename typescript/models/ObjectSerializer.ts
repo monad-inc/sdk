@@ -259,8 +259,11 @@ export * from '../models/ModelsConnectionSessionSettings';
 export * from '../models/ModelsConnectorInfo';
 export * from '../models/ModelsCursorPagination';
 export * from '../models/ModelsDataUsage';
+export * from '../models/ModelsDeadLetterAction';
 export * from '../models/ModelsEnrichment';
 export * from '../models/ModelsEnrichmentConfig';
+export * from '../models/ModelsFailureSettings';
+export * from '../models/ModelsFailureSink';
 export * from '../models/ModelsFeatureFlag';
 export * from '../models/ModelsFieldState';
 export * from '../models/ModelsInput';
@@ -881,8 +884,11 @@ import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessi
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
+import { ModelsDeadLetterAction } from '../models/ModelsDeadLetterAction';
 import { ModelsEnrichment            } from '../models/ModelsEnrichment';
 import { ModelsEnrichmentConfig } from '../models/ModelsEnrichmentConfig';
+import { ModelsFailureSettings    } from '../models/ModelsFailureSettings';
+import { ModelsFailureSink } from '../models/ModelsFailureSink';
 import { ModelsFeatureFlag } from '../models/ModelsFeatureFlag';
 import { ModelsFieldState } from '../models/ModelsFieldState';
 import { ModelsInput            } from '../models/ModelsInput';
@@ -908,7 +914,7 @@ import { ModelsPagination } from '../models/ModelsPagination';
 import { ModelsPermission } from '../models/ModelsPermission';
 import { ModelsPermissionList } from '../models/ModelsPermissionList';
 import { ModelsPipeline              } from '../models/ModelsPipeline';
-import { ModelsPipelineConfigV2                     } from '../models/ModelsPipelineConfigV2';
+import { ModelsPipelineConfigV2                      } from '../models/ModelsPipelineConfigV2';
 import { ModelsPipelineEdge } from '../models/ModelsPipelineEdge';
 import { ModelsPipelineList } from '../models/ModelsPipelineList';
 import { ModelsPipelineMetrics } from '../models/ModelsPipelineMetrics';
@@ -1299,6 +1305,7 @@ let enumsMap: Set<string> = new Set<string>([
     "ModelsBillingType",
     "ModelsComponentType",
     "ModelsConditionOperator",
+    "ModelsDeadLetterAction",
     "ModelsInputConnectorCategory",
     "ModelsManagedBy",
     "ModelsOutputConnectorCategory",
@@ -1583,6 +1590,8 @@ let typeMap: {[index: string]: any} = {
     "ModelsDataUsage": ModelsDataUsage,
     "ModelsEnrichment": ModelsEnrichment,
     "ModelsEnrichmentConfig": ModelsEnrichmentConfig,
+    "ModelsFailureSettings": ModelsFailureSettings,
+    "ModelsFailureSink": ModelsFailureSink,
     "ModelsFeatureFlag": ModelsFeatureFlag,
     "ModelsFieldState": ModelsFieldState,
     "ModelsInput": ModelsInput,
