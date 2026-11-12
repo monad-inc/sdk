@@ -37,6 +37,33 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
         if include_optional:
             return SecretProcessesorInputConfigSettings(
                 backfill_start_time = '',
+                client_id = '',
+                client_secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
+                cluster_resource_id = '',
+                log_category = 'kube-audit-admin',
+                source = monad.models.aks_audit_logs/source_config.aks_audit_logs.SourceConfig(
+                    event_hubs = monad.models.aks_audit_logs/event_hubs_source.aks_audit_logs.EventHubsSource(
+                        consumer_group = '', 
+                        event_hub_name = '', 
+                        namespace = '', ), 
+                    log_analytics = monad.models.aks_audit_logs/log_analytics_source.aks_audit_logs.LogAnalyticsSource(
+                        ingestion_delay = 0, 
+                        workspace_id = '', ), 
+                    type = 'log_analytics', ),
+                tenant_id = '',
+                use_synthetic_data = True,
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
@@ -68,8 +95,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 resource_provider = '',
                 resource_uri = '',
                 subscription_id = '',
-                tenant_id = '',
-                use_synthetic_data = True,
                 account_url = '',
                 container = '',
                 partition_format_template = '',
@@ -241,7 +266,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                 github_client_id = '',
                 include = '',
                 organization = '',
-                client_id = '',
                 secret = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
@@ -291,6 +315,22 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
             )
         else:
             return SecretProcessesorInputConfigSettings(
+                client_id = '',
+                client_secret = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
+                log_category = 'kube-audit-admin',
+                tenant_id = '',
                 bucket = '',
                 compression = 'auto',
                 format = 'json',
@@ -300,7 +340,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ''
                     ],
                 queue_url = '',
-                tenant_id = '',
                 query = '',
                 endpoint_url = '',
                 entity_type = [
@@ -339,7 +378,6 @@ class TestSecretProcessesorInputConfigSettings(unittest.TestCase):
                     ],
                 log_type = 'connectionlog',
                 endpoint = '',
-                client_id = '',
                 secret = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 

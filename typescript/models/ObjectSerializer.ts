@@ -2,6 +2,10 @@ export * from '../models/AbsSecretsConfig';
 export * from '../models/AbsSettingsConfig';
 export * from '../models/AddArgumentsConfig';
 export * from '../models/AddIdArgumentsConfig';
+export * from '../models/AksAuditLogsEventHubsSource';
+export * from '../models/AksAuditLogsLogAnalyticsSource';
+export * from '../models/AksAuditLogsSettingsConfig';
+export * from '../models/AksAuditLogsSourceConfig';
 export * from '../models/AlertsAlertCategory';
 export * from '../models/AlertsAlertGranularity';
 export * from '../models/AlertsAlertHouse';
@@ -627,6 +631,10 @@ import { AbsSecretsConfig } from '../models/AbsSecretsConfig';
 import { AbsSettingsConfig } from '../models/AbsSettingsConfig';
 import { AddArgumentsConfig } from '../models/AddArgumentsConfig';
 import { AddIdArgumentsConfig } from '../models/AddIdArgumentsConfig';
+import { AksAuditLogsEventHubsSource } from '../models/AksAuditLogsEventHubsSource';
+import { AksAuditLogsLogAnalyticsSource } from '../models/AksAuditLogsLogAnalyticsSource';
+import { AksAuditLogsSettingsConfig    , AksAuditLogsSettingsConfigLogCategoryEnum      } from '../models/AksAuditLogsSettingsConfig';
+import { AksAuditLogsSourceConfig  , AksAuditLogsSourceConfigTypeEnum   } from '../models/AksAuditLogsSourceConfig';
 import { AlertsAlertCategory } from '../models/AlertsAlertCategory';
 import { AlertsAlertGranularity } from '../models/AlertsAlertGranularity';
 import { AlertsAlertHouse } from '../models/AlertsAlertHouse';
@@ -1261,6 +1269,8 @@ let primitives = [
                  ];
 
 let enumsMap: Set<string> = new Set<string>([
+    "AksAuditLogsSettingsConfigLogCategoryEnum",
+    "AksAuditLogsSourceConfigTypeEnum",
     "AlertsAlertCategory",
     "AlertsAlertGranularity",
     "AlertsAlertHouse",
@@ -1326,6 +1336,7 @@ let enumsMap: Set<string> = new Set<string>([
     "ScannerFormatConfigTypeEnum",
     "ScannerJSONVariantTypeEnum",
     "ScannerSettingsConfigCompressionEnum",
+    "SecretProcessesorInputConfigSettingsLogCategoryEnum",
     "SecretProcessesorInputConfigSettingsCompressionEnum",
     "SecretProcessesorInputConfigSettingsFormatEnum",
     "SecretProcessesorInputConfigSettingsPartitionFormatEnum",
@@ -1358,6 +1369,10 @@ let typeMap: {[index: string]: any} = {
     "AbsSettingsConfig": AbsSettingsConfig,
     "AddArgumentsConfig": AddArgumentsConfig,
     "AddIdArgumentsConfig": AddIdArgumentsConfig,
+    "AksAuditLogsEventHubsSource": AksAuditLogsEventHubsSource,
+    "AksAuditLogsLogAnalyticsSource": AksAuditLogsLogAnalyticsSource,
+    "AksAuditLogsSettingsConfig": AksAuditLogsSettingsConfig,
+    "AksAuditLogsSourceConfig": AksAuditLogsSourceConfig,
     "AlertsAlertMeta": AlertsAlertMeta,
     "ApplyConditionV2Request": ApplyConditionV2RequestClass,
     "ApplyTransformationV2Request": ApplyTransformationV2RequestClass,

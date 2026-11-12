@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { AksAuditLogsSettingsConfig } from '../models/AksAuditLogsSettingsConfig';
 import { AwsS3SettingsConfig } from '../models/AwsS3SettingsConfig';
 import { AwsSqsS3CloudtrailSettingsConfig } from '../models/AwsSqsS3CloudtrailSettingsConfig';
 import { AwsSqsS3GuarddutySettingsConfig } from '../models/AwsSqsS3GuarddutySettingsConfig';
@@ -74,7 +75,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorInputConfigSettings = AwsS3SettingsConfig | AwsSqsS3CloudtrailSettingsConfig | AwsSqsS3GuarddutySettingsConfig | Awssqss3SettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureEventHubsSettingsConfig | AzureVnetFlowLogsSettingsConfig | BackblazeB2SettingsConfig | BigqueryInputSettingsConfig | BrinqaAuditLogsSettingsConfig | BuildkiteGraphqlInputSettingsConfig | CatoNetworksEventsSettingsConfig | CisaUserSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudflareDdosAttackAnalyticsSettingsConfig | CloudflareFirewallEventsSettingsConfig | CloudflareHttpRequestsSettingsConfig | CloudflareUrlScannerSettingsConfig | CloudflareZeroTrustAccessRequestsSettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CortexXsoarManagementLogsSettingsConfig | DefenderForEndpointAlertsSettingsConfig | EndorLabsAuditLogsSettingsConfig | EntraIdSettingsConfig | FullScansSettingsConfig | GithubActionsWorkflowLogsWebhookSettingsConfig | GkeAuditLogsSettingsConfig | GoogleCloudStorageSettingsConfig | GoogleWorkspaceSettingsConfig | IndividualAlertsSettingsConfig | IssuesSettingsConfig | KoiAuditLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LookerAuditLogsSettingsConfig | Microsoft365GenericSettingsConfig | MonadLogSettingsConfig | ObjectStorageInputSettingsConfig | OperationLogsSettingsConfig | OrgAuditLogsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | PlaidWebhooksSettingsConfig | RedshiftAuditLogsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | TaniumGraphqlInputSettingsConfig | TinesAuditLogsSettingsConfig | TinesEventsLogsSettingsConfig | TwilioEventsSettingsConfig | TwilioSendgridEmailActivitySettingsConfig | VoltioAuditLogsSettingsConfig | VulnerabilityFindingsSettingsConfig | WizAuditLogsSettingsConfig | { [key: string]: any; };
+export type SecretProcessesorInputConfigSettings = AksAuditLogsSettingsConfig | AwsS3SettingsConfig | AwsSqsS3CloudtrailSettingsConfig | AwsSqsS3GuarddutySettingsConfig | Awssqss3SettingsConfig | AzureActivityLogsSettingsConfig | AzureBlobStorageSettingsConfig | AzureEventHubsSettingsConfig | AzureVnetFlowLogsSettingsConfig | BackblazeB2SettingsConfig | BigqueryInputSettingsConfig | BrinqaAuditLogsSettingsConfig | BuildkiteGraphqlInputSettingsConfig | CatoNetworksEventsSettingsConfig | CisaUserSettingsConfig | CloudConfigurationFindingsSettingsConfig | CloudLogsSettingsConfig | CloudResourceInventorySettingsConfig | CloudflareDdosAttackAnalyticsSettingsConfig | CloudflareFirewallEventsSettingsConfig | CloudflareHttpRequestsSettingsConfig | CloudflareUrlScannerSettingsConfig | CloudflareZeroTrustAccessRequestsSettingsConfig | CloudtrailSettingsConfig | ClumioAuditLogsSettingsConfig | ClumioConsolidatedAlertsSettingsConfig | CortexXsoarManagementLogsSettingsConfig | DefenderForEndpointAlertsSettingsConfig | EndorLabsAuditLogsSettingsConfig | EntraIdSettingsConfig | FullScansSettingsConfig | GithubActionsWorkflowLogsWebhookSettingsConfig | GkeAuditLogsSettingsConfig | GoogleCloudStorageSettingsConfig | GoogleWorkspaceSettingsConfig | IndividualAlertsSettingsConfig | IssuesSettingsConfig | KoiAuditLogsSettingsConfig | LogAnalyticsQuerySettingsConfig | LookerAuditLogsSettingsConfig | Microsoft365GenericSettingsConfig | MonadLogSettingsConfig | ObjectStorageInputSettingsConfig | OperationLogsSettingsConfig | OrgAuditLogsSettingsConfig | PaloAltoDataSecurityAlertsSettingsConfig | PlaidWebhooksSettingsConfig | RedshiftAuditLogsSettingsConfig | SyntheticDataCustomSettingsConfig | SyntheticDataSettingsConfig | TaniumGraphqlInputSettingsConfig | TinesAuditLogsSettingsConfig | TinesEventsLogsSettingsConfig | TwilioEventsSettingsConfig | TwilioSendgridEmailActivitySettingsConfig | VoltioAuditLogsSettingsConfig | VulnerabilityFindingsSettingsConfig | WizAuditLogsSettingsConfig | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorInputConfigSettingsClass
@@ -85,6 +86,7 @@ export class SecretProcessesorInputConfigSettingsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

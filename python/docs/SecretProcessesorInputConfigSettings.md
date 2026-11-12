@@ -6,6 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backfill_start_time** | **str** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
+**client_id** | **str** | ClientID is the Plaid API client_id. | 
+**client_secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**cluster_resource_id** | **str** |  | [optional] 
+**log_category** | **str** |  | 
+**source** | [**AksAuditLogsSourceConfig**](AksAuditLogsSourceConfig.md) |  | [optional] 
+**tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | 
+**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **bucket** | **str** | Name of the S3 bucket that receives Redshift audit logs. | 
 **compression** | **str** | Compression format of the objects | 
 **format** | **str** | File format of the objects | 
@@ -28,8 +35,6 @@ Name | Type | Description | Notes
 **resource_provider** | **str** | The provider of the resource | [optional] 
 **resource_uri** | **str** | The URI of the resource | [optional] 
 **subscription_id** | **str** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
-**tenant_id** | **str** | The Azure Entra ID tenant (directory) ID | 
-**use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **account_url** | **str** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **container** | **str** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **partition_format_template** | **str** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. | [optional] 
@@ -119,7 +124,6 @@ Name | Type | Description | Notes
 **github_client_id** | **str** | GitHub Client ID (alternative to personal access token) | [optional] 
 **include** | **str** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **organization** | **str** | Your GitHub organization name | [optional] 
-**client_id** | **str** | ClientID is the Plaid API client_id. | 
 **secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **webhook_types** | **List[str]** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 **rate** | **int** | The rate at which to generate records (between 1 and 1000) per second | [optional] 

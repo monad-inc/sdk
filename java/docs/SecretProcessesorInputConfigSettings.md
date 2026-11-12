@@ -8,6 +8,13 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**backfillStartTime** | **String** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. |  [optional] |
+|**clientId** | **String** | ClientID is the Plaid API client_id. |  |
+|**clientSecret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
+|**clusterResourceId** | **String** |  |  [optional] |
+|**logCategory** | [**LogCategoryEnum**](#LogCategoryEnum) |  |  |
+|**source** | [**AksAuditLogsSourceConfig**](AksAuditLogsSourceConfig.md) |  |  [optional] |
+|**tenantId** | **String** | The Azure Entra ID tenant (directory) ID |  |
+|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**bucket** | **String** | Name of the S3 bucket that receives Redshift audit logs. |  |
 |**compression** | [**CompressionEnum**](#CompressionEnum) | Compression format of the objects |  |
 |**format** | [**FormatEnum**](#FormatEnum) | File format of the objects |  |
@@ -30,8 +37,6 @@
 |**resourceProvider** | **String** | The provider of the resource |  [optional] |
 |**resourceUri** | **String** | The URI of the resource |  [optional] |
 |**subscriptionId** | **String** | The Azure subscription ID where the virtual network and storage account are located |  [optional] |
-|**tenantId** | **String** | The Azure Entra ID tenant (directory) ID |  |
-|**useSyntheticData** | **Boolean** | Generate synthetic demo data instead of connecting to the real data source. |  [optional] |
 |**accountUrl** | **String** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. |  [optional] |
 |**container** | **String** | A container organizes a set of blobs, similar to a directory in a file system. |  [optional] |
 |**partitionFormatTemplate** | **String** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. |  [optional] |
@@ -121,7 +126,6 @@
 |**githubClientId** | **String** | GitHub Client ID (alternative to personal access token) |  [optional] |
 |**include** | **String** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. |  [optional] |
 |**organization** | **String** | Your GitHub organization name |  [optional] |
-|**clientId** | **String** | ClientID is the Plaid API client_id. |  |
 |**secret** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 |**webhookTypes** | **List&lt;String&gt;** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. |  [optional] |
 |**rate** | **Integer** | The rate at which to generate records (between 1 and 1000) per second |  [optional] |
@@ -142,6 +146,15 @@
 |**assetTypes** | **List&lt;WizAssetType&gt;** | Asset types for Wiz. Ex: &#39;VIRTUAL_MACHINE&#39;, &#39;CONTAINER&#39;, etc. |  |
 |**detectionMethod** | **List&lt;WizDetectionMethod&gt;** | Detection method types for Wiz. Ex: &#39;AGENT&#39;, &#39;CLOUD&#39;, &#39;AGENT_CLOUD&#39;. |  [optional] |
 |**vendorSeverity** | **List&lt;WizVendorSeverity&gt;** | Vendor severity types for Wiz. Ex: &#39;CRITICAL&#39;, &#39;HIGH&#39;, &#39;MEDIUM&#39;, &#39;LOW&#39; |  [optional] |
+
+
+
+## Enum: LogCategoryEnum
+
+| Name | Value |
+|---- | -----|
+| KUBE_AUDIT_ADMIN | &quot;kube-audit-admin&quot; |
+| KUBE_AUDIT | &quot;kube-audit&quot; |
 
 
 

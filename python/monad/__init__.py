@@ -76,6 +76,10 @@ __all__ = [
     "AbsSettingsConfig",
     "AddArgumentsConfig",
     "AddIdArgumentsConfig",
+    "AksAuditLogsEventHubsSource",
+    "AksAuditLogsLogAnalyticsSource",
+    "AksAuditLogsSettingsConfig",
+    "AksAuditLogsSourceConfig",
     "AlertsAlertCategory",
     "AlertsAlertGranularity",
     "AlertsAlertHouse",
@@ -760,6 +764,10 @@ from monad.models.abs_secrets_config import AbsSecretsConfig as AbsSecretsConfig
 from monad.models.abs_settings_config import AbsSettingsConfig as AbsSettingsConfig
 from monad.models.add_arguments_config import AddArgumentsConfig as AddArgumentsConfig
 from monad.models.add_id_arguments_config import AddIdArgumentsConfig as AddIdArgumentsConfig
+from monad.models.aks_audit_logs_event_hubs_source import AksAuditLogsEventHubsSource as AksAuditLogsEventHubsSource
+from monad.models.aks_audit_logs_log_analytics_source import AksAuditLogsLogAnalyticsSource as AksAuditLogsLogAnalyticsSource
+from monad.models.aks_audit_logs_settings_config import AksAuditLogsSettingsConfig as AksAuditLogsSettingsConfig
+from monad.models.aks_audit_logs_source_config import AksAuditLogsSourceConfig as AksAuditLogsSourceConfig
 from monad.models.alerts_alert_category import AlertsAlertCategory as AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity as AlertsAlertGranularity
 from monad.models.alerts_alert_house import AlertsAlertHouse as AlertsAlertHouse

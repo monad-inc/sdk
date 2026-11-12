@@ -19,6 +19,7 @@ import (
 
 // SecretProcessesorInputConfigSettings - struct for SecretProcessesorInputConfigSettings
 type SecretProcessesorInputConfigSettings struct {
+	AksAuditLogsSettingsConfig *AksAuditLogsSettingsConfig
 	AwsS3SettingsConfig *AwsS3SettingsConfig
 	AwsSqsS3CloudtrailSettingsConfig *AwsSqsS3CloudtrailSettingsConfig
 	AwsSqsS3GuarddutySettingsConfig *AwsSqsS3GuarddutySettingsConfig
@@ -77,6 +78,13 @@ type SecretProcessesorInputConfigSettings struct {
 	VulnerabilityFindingsSettingsConfig *VulnerabilityFindingsSettingsConfig
 	WizAuditLogsSettingsConfig *WizAuditLogsSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
+}
+
+// AksAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AksAuditLogsSettingsConfig wrapped in SecretProcessesorInputConfigSettings
+func AksAuditLogsSettingsConfigAsSecretProcessesorInputConfigSettings(v *AksAuditLogsSettingsConfig) SecretProcessesorInputConfigSettings {
+	return SecretProcessesorInputConfigSettings{
+		AksAuditLogsSettingsConfig: v,
+	}
 }
 
 // AwsS3SettingsConfigAsSecretProcessesorInputConfigSettings is a convenience function that returns AwsS3SettingsConfig wrapped in SecretProcessesorInputConfigSettings
@@ -490,6 +498,23 @@ func MapmapOfStringAnyAsSecretProcessesorInputConfigSettings(v *map[string]inter
 func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into AksAuditLogsSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.AksAuditLogsSettingsConfig)
+	if err == nil {
+		jsonAksAuditLogsSettingsConfig, _ := json.Marshal(dst.AksAuditLogsSettingsConfig)
+		if string(jsonAksAuditLogsSettingsConfig) == "{}" { // empty struct
+			dst.AksAuditLogsSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.AksAuditLogsSettingsConfig); err != nil {
+				dst.AksAuditLogsSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AksAuditLogsSettingsConfig = nil
+	}
+
 	// try to unmarshal data into AwsS3SettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.AwsS3SettingsConfig)
 	if err == nil {
@@ -1478,6 +1503,7 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.AksAuditLogsSettingsConfig = nil
 		dst.AwsS3SettingsConfig = nil
 		dst.AwsSqsS3CloudtrailSettingsConfig = nil
 		dst.AwsSqsS3GuarddutySettingsConfig = nil
@@ -1547,6 +1573,10 @@ func (dst *SecretProcessesorInputConfigSettings) UnmarshalJSON(data []byte) erro
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src SecretProcessesorInputConfigSettings) MarshalJSON() ([]byte, error) {
+	if src.AksAuditLogsSettingsConfig != nil {
+		return json.Marshal(&src.AksAuditLogsSettingsConfig)
+	}
+
 	if src.AwsS3SettingsConfig != nil {
 		return json.Marshal(&src.AwsS3SettingsConfig)
 	}
@@ -1787,6 +1817,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 	if obj == nil {
 		return nil
 	}
+	if obj.AksAuditLogsSettingsConfig != nil {
+		return obj.AksAuditLogsSettingsConfig
+	}
+
 	if obj.AwsS3SettingsConfig != nil {
 		return obj.AwsS3SettingsConfig
 	}
@@ -2025,6 +2059,10 @@ func (obj *SecretProcessesorInputConfigSettings) GetActualInstance() (interface{
 
 // Get the actual instance value
 func (obj SecretProcessesorInputConfigSettings) GetActualInstanceValue() (interface{}) {
+	if obj.AksAuditLogsSettingsConfig != nil {
+		return *obj.AksAuditLogsSettingsConfig
+	}
+
 	if obj.AwsS3SettingsConfig != nil {
 		return *obj.AwsS3SettingsConfig
 	}

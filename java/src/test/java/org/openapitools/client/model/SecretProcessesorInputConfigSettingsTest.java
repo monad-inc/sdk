@@ -25,6 +25,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import org.openapitools.client.model.AksAuditLogsSettingsConfig;
+import org.openapitools.client.model.AksAuditLogsSourceConfig;
 import org.openapitools.client.model.AwsS3SettingsConfig;
 import org.openapitools.client.model.AwsSqsS3CloudtrailChunkingMode;
 import org.openapitools.client.model.AwsSqsS3CloudtrailSettingsConfig;
@@ -129,6 +131,62 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void backfillStartTimeTest() {
         // TODO: test backfillStartTime
+    }
+
+    /**
+     * Test the property 'clientId'
+     */
+    @Test
+    public void clientIdTest() {
+        // TODO: test clientId
+    }
+
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
+    }
+
+    /**
+     * Test the property 'clusterResourceId'
+     */
+    @Test
+    public void clusterResourceIdTest() {
+        // TODO: test clusterResourceId
+    }
+
+    /**
+     * Test the property 'logCategory'
+     */
+    @Test
+    public void logCategoryTest() {
+        // TODO: test logCategory
+    }
+
+    /**
+     * Test the property 'source'
+     */
+    @Test
+    public void sourceTest() {
+        // TODO: test source
+    }
+
+    /**
+     * Test the property 'tenantId'
+     */
+    @Test
+    public void tenantIdTest() {
+        // TODO: test tenantId
+    }
+
+    /**
+     * Test the property 'useSyntheticData'
+     */
+    @Test
+    public void useSyntheticDataTest() {
+        // TODO: test useSyntheticData
     }
 
     /**
@@ -305,22 +363,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void subscriptionIdTest() {
         // TODO: test subscriptionId
-    }
-
-    /**
-     * Test the property 'tenantId'
-     */
-    @Test
-    public void tenantIdTest() {
-        // TODO: test tenantId
-    }
-
-    /**
-     * Test the property 'useSyntheticData'
-     */
-    @Test
-    public void useSyntheticDataTest() {
-        // TODO: test useSyntheticData
     }
 
     /**
@@ -1033,14 +1075,6 @@ public class SecretProcessesorInputConfigSettingsTest {
     @Test
     public void organizationTest() {
         // TODO: test organization
-    }
-
-    /**
-     * Test the property 'clientId'
-     */
-    @Test
-    public void clientIdTest() {
-        // TODO: test clientId
     }
 
     /**

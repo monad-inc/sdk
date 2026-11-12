@@ -18,6 +18,10 @@ from monad.models.abs_secrets_config import AbsSecretsConfig
 from monad.models.abs_settings_config import AbsSettingsConfig
 from monad.models.add_arguments_config import AddArgumentsConfig
 from monad.models.add_id_arguments_config import AddIdArgumentsConfig
+from monad.models.aks_audit_logs_event_hubs_source import AksAuditLogsEventHubsSource
+from monad.models.aks_audit_logs_log_analytics_source import AksAuditLogsLogAnalyticsSource
+from monad.models.aks_audit_logs_settings_config import AksAuditLogsSettingsConfig
+from monad.models.aks_audit_logs_source_config import AksAuditLogsSourceConfig
 from monad.models.alerts_alert_category import AlertsAlertCategory
 from monad.models.alerts_alert_granularity import AlertsAlertGranularity
 from monad.models.alerts_alert_house import AlertsAlertHouse

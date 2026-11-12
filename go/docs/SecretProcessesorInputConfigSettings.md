@@ -5,6 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BackfillStartTime** | Pointer to **string** | Date to start fetching data from, up to a maximum lookback of 180 days; older values are clamped to 180 days ago. If not specified, no past records are fetched and syncing starts from the current time. All syncs thereafter are incremental. | [optional] 
+**ClientId** | **string** | ClientID is the Plaid API client_id. | 
+**ClientSecret** | [**ModelsSecret**](ModelsSecret.md) |  | 
+**ClusterResourceId** | Pointer to **string** |  | [optional] 
+**LogCategory** | **string** |  | 
+**Source** | Pointer to [**AksAuditLogsSourceConfig**](AksAuditLogsSourceConfig.md) |  | [optional] 
+**TenantId** | **string** | The Azure Entra ID tenant (directory) ID | 
+**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **Bucket** | **string** | Name of the S3 bucket that receives Redshift audit logs. | 
 **Compression** | **string** | Compression format of the objects | 
 **Format** | **string** | File format of the objects | 
@@ -27,8 +34,6 @@ Name | Type | Description | Notes
 **ResourceProvider** | Pointer to **string** | The provider of the resource | [optional] 
 **ResourceUri** | Pointer to **string** | The URI of the resource | [optional] 
 **SubscriptionId** | Pointer to **string** | The Azure subscription ID where the virtual network and storage account are located | [optional] 
-**TenantId** | **string** | The Azure Entra ID tenant (directory) ID | 
-**UseSyntheticData** | Pointer to **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 **AccountUrl** | Pointer to **string** | Represents your storage account in Azure. Typically of the format https://{account}.blob.core.windows.net. | [optional] 
 **Container** | Pointer to **string** | A container organizes a set of blobs, similar to a directory in a file system. | [optional] 
 **PartitionFormatTemplate** | Pointer to **string** | Only used when PartitionFormat is \&quot;custom\&quot;: the template describing your bucket&#39;s partition path, e.g. &#39;y&#x3D;{yyyy}/m&#x3D;{mm}/d&#x3D;{dd}&#39;. | [optional] 
@@ -118,7 +123,6 @@ Name | Type | Description | Notes
 **GithubClientId** | Pointer to **string** | GitHub Client ID (alternative to personal access token) | [optional] 
 **Include** | Pointer to **string** | Event types to include. web: Gets all web (non-git) events. git: Gets git events. all: Gets both. | [optional] 
 **Organization** | Pointer to **string** | Your GitHub organization name | [optional] 
-**ClientId** | **string** | ClientID is the Plaid API client_id. | 
 **Secret** | [**ModelsSecret**](ModelsSecret.md) |  | 
 **WebhookTypes** | Pointer to **[]string** | WebhookTypes restricts which webhook_type values are emitted. Empty &#x3D; keep all. | [optional] 
 **Rate** | Pointer to **int32** | The rate at which to generate records (between 1 and 1000) per second | [optional] 
@@ -144,7 +148,7 @@ Name | Type | Description | Notes
 
 ### NewSecretProcessesorInputConfigSettings
 
-`func NewSecretProcessesorInputConfigSettings(bucket string, compression string, format string, partitionFormat string, region string, schema []string, queueUrl string, tenantId string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, clusterName string, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, clientId string, secret ModelsSecret, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
+`func NewSecretProcessesorInputConfigSettings(clientId string, clientSecret ModelsSecret, logCategory string, tenantId string, bucket string, compression string, format string, partitionFormat string, region string, schema []string, queueUrl string, query string, endpointUrl string, entityType []WizEntityType, apiKeyId string, domainName string, category string, namespace string, workspaceId string, orgSlug string, webhookSecret ModelsSecret, clusterName string, location string, projectId string, bucketName string, projectIds []string, tenantDataCenter string, baseUrl string, logCategories []string, logType string, endpoint string, secret ModelsSecret, tenantDomain string, tenantUrl string, assetTypes []WizAssetType, ) *SecretProcessesorInputConfigSettings`
 
 NewSecretProcessesorInputConfigSettings instantiates a new SecretProcessesorInputConfigSettings object
 This constructor will assign default values to properties that have it defined,
@@ -183,6 +187,161 @@ SetBackfillStartTime sets BackfillStartTime field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasBackfillStartTime() bool`
 
 HasBackfillStartTime returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *SecretProcessesorInputConfigSettings) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SecretProcessesorInputConfigSettings) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+
+### GetClientSecret
+
+`func (o *SecretProcessesorInputConfigSettings) GetClientSecret() ModelsSecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetClientSecretOk() (*ModelsSecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SecretProcessesorInputConfigSettings) SetClientSecret(v ModelsSecret)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+
+### GetClusterResourceId
+
+`func (o *SecretProcessesorInputConfigSettings) GetClusterResourceId() string`
+
+GetClusterResourceId returns the ClusterResourceId field if non-nil, zero value otherwise.
+
+### GetClusterResourceIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetClusterResourceIdOk() (*string, bool)`
+
+GetClusterResourceIdOk returns a tuple with the ClusterResourceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClusterResourceId
+
+`func (o *SecretProcessesorInputConfigSettings) SetClusterResourceId(v string)`
+
+SetClusterResourceId sets ClusterResourceId field to given value.
+
+### HasClusterResourceId
+
+`func (o *SecretProcessesorInputConfigSettings) HasClusterResourceId() bool`
+
+HasClusterResourceId returns a boolean if a field has been set.
+
+### GetLogCategory
+
+`func (o *SecretProcessesorInputConfigSettings) GetLogCategory() string`
+
+GetLogCategory returns the LogCategory field if non-nil, zero value otherwise.
+
+### GetLogCategoryOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetLogCategoryOk() (*string, bool)`
+
+GetLogCategoryOk returns a tuple with the LogCategory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogCategory
+
+`func (o *SecretProcessesorInputConfigSettings) SetLogCategory(v string)`
+
+SetLogCategory sets LogCategory field to given value.
+
+
+### GetSource
+
+`func (o *SecretProcessesorInputConfigSettings) GetSource() AksAuditLogsSourceConfig`
+
+GetSource returns the Source field if non-nil, zero value otherwise.
+
+### GetSourceOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetSourceOk() (*AksAuditLogsSourceConfig, bool)`
+
+GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSource
+
+`func (o *SecretProcessesorInputConfigSettings) SetSource(v AksAuditLogsSourceConfig)`
+
+SetSource sets Source field to given value.
+
+### HasSource
+
+`func (o *SecretProcessesorInputConfigSettings) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
+
+### GetTenantId
+
+`func (o *SecretProcessesorInputConfigSettings) GetTenantId() string`
+
+GetTenantId returns the TenantId field if non-nil, zero value otherwise.
+
+### GetTenantIdOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetTenantIdOk() (*string, bool)`
+
+GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTenantId
+
+`func (o *SecretProcessesorInputConfigSettings) SetTenantId(v string)`
+
+SetTenantId sets TenantId field to given value.
+
+
+### GetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
+
+GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
+
+### GetUseSyntheticDataOk
+
+`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
+
+GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
+
+SetUseSyntheticData sets UseSyntheticData field to given value.
+
+### HasUseSyntheticData
+
+`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
+
+HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetBucket
 
@@ -698,51 +857,6 @@ SetSubscriptionId sets SubscriptionId field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasSubscriptionId() bool`
 
 HasSubscriptionId returns a boolean if a field has been set.
-
-### GetTenantId
-
-`func (o *SecretProcessesorInputConfigSettings) GetTenantId() string`
-
-GetTenantId returns the TenantId field if non-nil, zero value otherwise.
-
-### GetTenantIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetTenantIdOk() (*string, bool)`
-
-GetTenantIdOk returns a tuple with the TenantId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTenantId
-
-`func (o *SecretProcessesorInputConfigSettings) SetTenantId(v string)`
-
-SetTenantId sets TenantId field to given value.
-
-
-### GetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticData() bool`
-
-GetUseSyntheticData returns the UseSyntheticData field if non-nil, zero value otherwise.
-
-### GetUseSyntheticDataOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetUseSyntheticDataOk() (*bool, bool)`
-
-GetUseSyntheticDataOk returns a tuple with the UseSyntheticData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) SetUseSyntheticData(v bool)`
-
-SetUseSyntheticData sets UseSyntheticData field to given value.
-
-### HasUseSyntheticData
-
-`func (o *SecretProcessesorInputConfigSettings) HasUseSyntheticData() bool`
-
-HasUseSyntheticData returns a boolean if a field has been set.
 
 ### GetAccountUrl
 
@@ -2868,26 +2982,6 @@ SetOrganization sets Organization field to given value.
 `func (o *SecretProcessesorInputConfigSettings) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
-
-### GetClientId
-
-`func (o *SecretProcessesorInputConfigSettings) GetClientId() string`
-
-GetClientId returns the ClientId field if non-nil, zero value otherwise.
-
-### GetClientIdOk
-
-`func (o *SecretProcessesorInputConfigSettings) GetClientIdOk() (*string, bool)`
-
-GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientId
-
-`func (o *SecretProcessesorInputConfigSettings) SetClientId(v string)`
-
-SetClientId sets ClientId field to given value.
-
 
 ### GetSecret
 

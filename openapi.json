@@ -72,6 +72,100 @@
                 },
                 "type": "object"
             },
+            "aks_audit_logs.EventHubsSource": {
+                "properties": {
+                    "consumer_group": {
+                        "type": "string"
+                    },
+                    "event_hub_name": {
+                        "type": "string"
+                    },
+                    "namespace": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "consumer_group",
+                    "event_hub_name",
+                    "namespace"
+                ],
+                "type": "object"
+            },
+            "aks_audit_logs.LogAnalyticsSource": {
+                "properties": {
+                    "ingestion_delay": {
+                        "minimum": 0,
+                        "type": "integer"
+                    },
+                    "workspace_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "workspace_id"
+                ],
+                "type": "object"
+            },
+            "aks_audit_logs.SettingsConfig": {
+                "properties": {
+                    "backfill_start_time": {
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "client_secret": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    },
+                    "cluster_resource_id": {
+                        "type": "string"
+                    },
+                    "log_category": {
+                        "enum": [
+                            "kube-audit-admin",
+                            "kube-audit"
+                        ],
+                        "type": "string"
+                    },
+                    "source": {
+                        "$ref": "#/components/schemas/aks_audit_logs.SourceConfig"
+                    },
+                    "tenant_id": {
+                        "type": "string"
+                    },
+                    "use_synthetic_data": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "client_id",
+                    "client_secret",
+                    "log_category",
+                    "tenant_id"
+                ],
+                "type": "object"
+            },
+            "aks_audit_logs.SourceConfig": {
+                "properties": {
+                    "event_hubs": {
+                        "$ref": "#/components/schemas/aks_audit_logs.EventHubsSource"
+                    },
+                    "log_analytics": {
+                        "$ref": "#/components/schemas/aks_audit_logs.LogAnalyticsSource"
+                    },
+                    "type": {
+                        "enum": [
+                            "log_analytics",
+                            "event_hubs"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "type": "object"
+            },
             "alerts.AlertCategory": {
                 "enum": [
                     "Security",
@@ -11043,6 +11137,9 @@
                     "settings": {
                         "additionalProperties": {},
                         "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/aks_audit_logs.SettingsConfig"
+                            },
                             {
                                 "$ref": "#/components/schemas/aws_s3.SettingsConfig"
                             },
