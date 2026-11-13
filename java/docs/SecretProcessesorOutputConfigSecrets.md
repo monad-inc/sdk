@@ -30,6 +30,7 @@
 |**privateKey** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**token** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
 |**accessId** | [**ModelsSecret**](ModelsSecret.md) |  |  [optional] |
+|**ingestionKey** | [**ModelsSecret**](ModelsSecret.md) |  |  |
 
 
 

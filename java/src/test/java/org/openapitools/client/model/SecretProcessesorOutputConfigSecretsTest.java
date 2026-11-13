@@ -45,6 +45,7 @@ import org.openapitools.client.model.Sentinelv2SecretsConfig;
 import org.openapitools.client.model.SnowflakeOutputSecretsConfig;
 import org.openapitools.client.model.SplunkSecretsConfig;
 import org.openapitools.client.model.SumologicSecretsConfig;
+import org.openapitools.client.model.TsugaSecretsConfig;
 import org.openapitools.client.model.WazuhSecretsConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -245,6 +246,14 @@ public class SecretProcessesorOutputConfigSecretsTest {
     @Test
     public void accessIdTest() {
         // TODO: test accessId
+    }
+
+    /**
+     * Test the property 'ingestionKey'
+     */
+    @Test
+    public void ingestionKeyTest() {
+        // TODO: test ingestionKey
     }
 
 }

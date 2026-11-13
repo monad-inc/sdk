@@ -944,6 +944,8 @@ Class | Method | HTTP request | Description
  - [TinesAuditLogsSettingsConfig](docs/TinesAuditLogsSettingsConfig.md)
  - [TinesEventsLogsSecretsConfig](docs/TinesEventsLogsSecretsConfig.md)
  - [TinesEventsLogsSettingsConfig](docs/TinesEventsLogsSettingsConfig.md)
+ - [TsugaSecretsConfig](docs/TsugaSecretsConfig.md)
+ - [TsugaSettingsConfig](docs/TsugaSettingsConfig.md)
  - [TwilioEventsSecretsConfig](docs/TwilioEventsSecretsConfig.md)
  - [TwilioEventsSettingsConfig](docs/TwilioEventsSettingsConfig.md)
  - [TwilioSendgridEmailActivitySecretsConfig](docs/TwilioSendgridEmailActivitySecretsConfig.md)

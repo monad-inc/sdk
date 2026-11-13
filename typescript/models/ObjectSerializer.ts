@@ -580,6 +580,8 @@ export * from '../models/TinesAuditLogsSecretsConfig';
 export * from '../models/TinesAuditLogsSettingsConfig';
 export * from '../models/TinesEventsLogsSecretsConfig';
 export * from '../models/TinesEventsLogsSettingsConfig';
+export * from '../models/TsugaSecretsConfig';
+export * from '../models/TsugaSettingsConfig';
 export * from '../models/TwilioEventsSecretsConfig';
 export * from '../models/TwilioEventsSettingsConfig';
 export * from '../models/TwilioSendgridEmailActivitySecretsConfig';
@@ -1209,6 +1211,8 @@ import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConf
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
 import { TinesEventsLogsSettingsConfig } from '../models/TinesEventsLogsSettingsConfig';
+import { TsugaSecretsConfig } from '../models/TsugaSecretsConfig';
+import { TsugaSettingsConfig } from '../models/TsugaSettingsConfig';
 import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
 import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';
@@ -1907,6 +1911,8 @@ let typeMap: {[index: string]: any} = {
     "TinesAuditLogsSettingsConfig": TinesAuditLogsSettingsConfig,
     "TinesEventsLogsSecretsConfig": TinesEventsLogsSecretsConfig,
     "TinesEventsLogsSettingsConfig": TinesEventsLogsSettingsConfig,
+    "TsugaSecretsConfig": TsugaSecretsConfig,
+    "TsugaSettingsConfig": TsugaSettingsConfig,
     "TwilioEventsSecretsConfig": TwilioEventsSecretsConfig,
     "TwilioEventsSettingsConfig": TwilioEventsSettingsConfig,
     "TwilioSendgridEmailActivitySecretsConfig": TwilioSendgridEmailActivitySecretsConfig,

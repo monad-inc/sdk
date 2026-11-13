@@ -584,6 +584,8 @@ import { TinesAuditLogsSecretsConfig } from '../models/TinesAuditLogsSecretsConf
 import { TinesAuditLogsSettingsConfig } from '../models/TinesAuditLogsSettingsConfig';
 import { TinesEventsLogsSecretsConfig } from '../models/TinesEventsLogsSecretsConfig';
 import { TinesEventsLogsSettingsConfig } from '../models/TinesEventsLogsSettingsConfig';
+import { TsugaSecretsConfig } from '../models/TsugaSecretsConfig';
+import { TsugaSettingsConfig } from '../models/TsugaSettingsConfig';
 import { TwilioEventsSecretsConfig } from '../models/TwilioEventsSecretsConfig';
 import { TwilioEventsSettingsConfig } from '../models/TwilioEventsSettingsConfig';
 import { TwilioSendgridEmailActivitySecretsConfig } from '../models/TwilioSendgridEmailActivitySecretsConfig';

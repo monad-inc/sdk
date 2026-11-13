@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **private_key** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **token** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **access_id** | [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**ingestion_key** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Example
 

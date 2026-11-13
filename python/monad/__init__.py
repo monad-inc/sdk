@@ -654,6 +654,8 @@ __all__ = [
     "TinesAuditLogsSettingsConfig",
     "TinesEventsLogsSecretsConfig",
     "TinesEventsLogsSettingsConfig",
+    "TsugaSecretsConfig",
+    "TsugaSettingsConfig",
     "TwilioEventsSecretsConfig",
     "TwilioEventsSettingsConfig",
     "TwilioSendgridEmailActivitySecretsConfig",
@@ -1342,6 +1344,8 @@ from monad.models.tines_audit_logs_secrets_config import TinesAuditLogsSecretsCo
 from monad.models.tines_audit_logs_settings_config import TinesAuditLogsSettingsConfig as TinesAuditLogsSettingsConfig
 from monad.models.tines_events_logs_secrets_config import TinesEventsLogsSecretsConfig as TinesEventsLogsSecretsConfig
 from monad.models.tines_events_logs_settings_config import TinesEventsLogsSettingsConfig as TinesEventsLogsSettingsConfig
+from monad.models.tsuga_secrets_config import TsugaSecretsConfig as TsugaSecretsConfig
+from monad.models.tsuga_settings_config import TsugaSettingsConfig as TsugaSettingsConfig
 from monad.models.twilio_events_secrets_config import TwilioEventsSecretsConfig as TwilioEventsSecretsConfig
 from monad.models.twilio_events_settings_config import TwilioEventsSettingsConfig as TwilioEventsSettingsConfig
 from monad.models.twilio_sendgrid_email_activity_secrets_config import TwilioSendgridEmailActivitySecretsConfig as TwilioSendgridEmailActivitySecretsConfig

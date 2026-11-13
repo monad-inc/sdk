@@ -55,7 +55,7 @@
 |**collectionTimePath** | **String** |  |  |
 |**compress** | **Boolean** |  |  [optional] |
 |**credentialsJson** | [**ModelsSecret**](ModelsSecret.md) |  |  |
-|**endpoint** | **String** | The Azure Monitor Data Collection Rule (DCR) ingestion endpoint URL. |  |
+|**endpoint** | **String** | Base URL of the Tsuga cluster&#39;s intake, e.g. https://intake.&lt;cluster&gt;.tsuga.com |  |
 |**environmentNamespace** | **String** |  |  [optional] |
 |**forwarder** | **String** |  |  [optional] |
 |**instanceId** | **String** |  |  |

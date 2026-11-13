@@ -32,6 +32,7 @@ import { Sentinelv2SecretsConfig } from '../models/Sentinelv2SecretsConfig';
 import { SnowflakeOutputSecretsConfig } from '../models/SnowflakeOutputSecretsConfig';
 import { SplunkSecretsConfig } from '../models/SplunkSecretsConfig';
 import { SumologicSecretsConfig } from '../models/SumologicSecretsConfig';
+import { TsugaSecretsConfig } from '../models/TsugaSecretsConfig';
 import { WazuhSecretsConfig } from '../models/WazuhSecretsConfig';
 import { HttpFile } from '../http/http';
 
@@ -40,7 +41,7 @@ import { HttpFile } from '../http/http';
  * Type
  * @export
  */
-export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | Sentinelv2SecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | WazuhSecretsConfig | any | { [key: string]: any; };
+export type SecretProcessesorOutputConfigSecrets = AbsSecretsConfig | AxiomSecretsConfig | BackblazeSecretsConfig | BigquerySecretsConfig | CriblHttpSecretsConfig | DatabricksDeltaTableSecretsConfig | DatadogSecretsConfig | ElasticsearchSecretsConfig | GoogleCloudStorageOutputSecretsConfig | HttpSecretsConfig | KafkaSecretsConfig | NextGenSiemSecretsConfig | ObjectStorageSecretsConfig | OpensearchSecretsConfig | PagerdutySecretsConfig | PantherSecretsConfig | PostgresqlSecretsConfig | S3SecretsConfig | Sentinelv2SecretsConfig | SnowflakeOutputSecretsConfig | SplunkSecretsConfig | SumologicSecretsConfig | TsugaSecretsConfig | WazuhSecretsConfig | any | { [key: string]: any; };
 
 /**
 * @type SecretProcessesorOutputConfigSecretsClass
@@ -51,6 +52,7 @@ export class SecretProcessesorOutputConfigSecretsClass {
 
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 }
+
 
 
 

@@ -85,6 +85,7 @@ import org.openapitools.client.model.SnowflakeSnowpipeStreamingSettingsConfig;
 import org.openapitools.client.model.SplunkSettingsConfig;
 import org.openapitools.client.model.SumologicSettingsConfig;
 import org.openapitools.client.model.SumologicSourceMetadata;
+import org.openapitools.client.model.TsugaSettingsConfig;
 import org.openapitools.client.model.WazuhSettingsConfig;
 import org.openapitools.client.model.XsiamSettingsConfig;
 import org.junit.jupiter.api.Disabled;

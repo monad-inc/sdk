@@ -40,12 +40,13 @@ from monad.models.sentinelv2_secrets_config import Sentinelv2SecretsConfig
 from monad.models.snowflake_output_secrets_config import SnowflakeOutputSecretsConfig
 from monad.models.splunk_secrets_config import SplunkSecretsConfig
 from monad.models.sumologic_secrets_config import SumologicSecretsConfig
+from monad.models.tsuga_secrets_config import TsugaSecretsConfig
 from monad.models.wazuh_secrets_config import WazuhSecretsConfig
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-SECRETPROCESSESOROUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["AbsSecretsConfig", "AxiomSecretsConfig", "BackblazeSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "DatabricksDeltaTableSecretsConfig", "DatadogSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "KafkaSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "S3SecretsConfig", "Sentinelv2SecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "WazuhSecretsConfig", "object"]
+SECRETPROCESSESOROUTPUTCONFIGSECRETS_ONE_OF_SCHEMAS = ["AbsSecretsConfig", "AxiomSecretsConfig", "BackblazeSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "DatabricksDeltaTableSecretsConfig", "DatadogSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "KafkaSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "S3SecretsConfig", "Sentinelv2SecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "TsugaSecretsConfig", "WazuhSecretsConfig", "object"]
 
 class SecretProcessesorOutputConfigSecrets(BaseModel):
     """
@@ -99,10 +100,12 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
     oneof_schema_23_validator: Optional[SplunkSecretsConfig] = None
     # data type: SumologicSecretsConfig
     oneof_schema_24_validator: Optional[SumologicSecretsConfig] = None
+    # data type: TsugaSecretsConfig
+    oneof_schema_25_validator: Optional[TsugaSecretsConfig] = None
     # data type: WazuhSecretsConfig
-    oneof_schema_25_validator: Optional[WazuhSecretsConfig] = None
-    actual_instance: Optional[Union[AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig, object]] = None
-    one_of_schemas: Set[str] = { "AbsSecretsConfig", "AxiomSecretsConfig", "BackblazeSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "DatabricksDeltaTableSecretsConfig", "DatadogSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "KafkaSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "S3SecretsConfig", "Sentinelv2SecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "WazuhSecretsConfig", "object" }
+    oneof_schema_26_validator: Optional[WazuhSecretsConfig] = None
+    actual_instance: Optional[Union[AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, TsugaSecretsConfig, WazuhSecretsConfig, object]] = None
+    one_of_schemas: Set[str] = { "AbsSecretsConfig", "AxiomSecretsConfig", "BackblazeSecretsConfig", "BigquerySecretsConfig", "CriblHttpSecretsConfig", "DatabricksDeltaTableSecretsConfig", "DatadogSecretsConfig", "Dict[str, object]", "ElasticsearchSecretsConfig", "GoogleCloudStorageOutputSecretsConfig", "HttpSecretsConfig", "KafkaSecretsConfig", "NextGenSiemSecretsConfig", "ObjectStorageSecretsConfig", "OpensearchSecretsConfig", "PagerdutySecretsConfig", "PantherSecretsConfig", "PostgresqlSecretsConfig", "S3SecretsConfig", "Sentinelv2SecretsConfig", "SnowflakeOutputSecretsConfig", "SplunkSecretsConfig", "SumologicSecretsConfig", "TsugaSecretsConfig", "WazuhSecretsConfig", "object" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -247,6 +250,11 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `SumologicSecretsConfig`")
         else:
             match += 1
+        # validate data type: TsugaSecretsConfig
+        if not isinstance(v, TsugaSecretsConfig):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `TsugaSecretsConfig`")
+        else:
+            match += 1
         # validate data type: WazuhSecretsConfig
         if not isinstance(v, WazuhSecretsConfig):
             error_messages.append(f"Error! Input type `{type(v)}` is not `WazuhSecretsConfig`")
@@ -254,10 +262,10 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, TsugaSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, TsugaSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -422,6 +430,12 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into TsugaSecretsConfig
+        try:
+            instance.actual_instance = TsugaSecretsConfig.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # deserialize data into WazuhSecretsConfig
         try:
             instance.actual_instance = WazuhSecretsConfig.from_json(json_str)
@@ -431,10 +445,10 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, TsugaSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into SecretProcessesorOutputConfigSecrets with oneOf schemas: AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, TsugaSecretsConfig, WazuhSecretsConfig, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -448,7 +462,7 @@ class SecretProcessesorOutputConfigSecrets(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, WazuhSecretsConfig, object]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AbsSecretsConfig, AxiomSecretsConfig, BackblazeSecretsConfig, BigquerySecretsConfig, CriblHttpSecretsConfig, DatabricksDeltaTableSecretsConfig, DatadogSecretsConfig, Dict[str, object], ElasticsearchSecretsConfig, GoogleCloudStorageOutputSecretsConfig, HttpSecretsConfig, KafkaSecretsConfig, NextGenSiemSecretsConfig, ObjectStorageSecretsConfig, OpensearchSecretsConfig, PagerdutySecretsConfig, PantherSecretsConfig, PostgresqlSecretsConfig, S3SecretsConfig, Sentinelv2SecretsConfig, SnowflakeOutputSecretsConfig, SplunkSecretsConfig, SumologicSecretsConfig, TsugaSecretsConfig, WazuhSecretsConfig, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

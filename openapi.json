@@ -4088,9 +4088,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -11398,6 +11398,9 @@
                                 "$ref": "#/components/schemas/sumologic.SecretsConfig"
                             },
                             {
+                                "$ref": "#/components/schemas/tsuga.SecretsConfig"
+                            },
+                            {
                                 "$ref": "#/components/schemas/wazuh.SecretsConfig"
                             }
                         ],
@@ -11516,6 +11519,9 @@
                             },
                             {
                                 "$ref": "#/components/schemas/sumologic.SettingsConfig"
+                            },
+                            {
+                                "$ref": "#/components/schemas/tsuga.SettingsConfig"
                             },
                             {
                                 "$ref": "#/components/schemas/wazuh.SettingsConfig"
@@ -12151,6 +12157,31 @@
                 },
                 "required": [
                     "tenant_url"
+                ],
+                "type": "object"
+            },
+            "tsuga.SecretsConfig": {
+                "description": "Tsuga Output Secrets",
+                "properties": {
+                    "ingestion_key": {
+                        "$ref": "#/components/schemas/models.Secret"
+                    }
+                },
+                "required": [
+                    "ingestion_key"
+                ],
+                "type": "object"
+            },
+            "tsuga.SettingsConfig": {
+                "description": "Tsuga Output Settings",
+                "properties": {
+                    "endpoint": {
+                        "description": "Base URL of the Tsuga cluster's intake, e.g. https://intake.\u003ccluster\u003e.tsuga.com",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "endpoint"
                 ],
                 "type": "object"
             },

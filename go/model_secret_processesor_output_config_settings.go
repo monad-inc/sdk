@@ -55,6 +55,7 @@ type SecretProcessesorOutputConfigSettings struct {
 	SnowflakeSnowpipeStreamingSettingsConfig *SnowflakeSnowpipeStreamingSettingsConfig
 	SplunkSettingsConfig *SplunkSettingsConfig
 	SumologicSettingsConfig *SumologicSettingsConfig
+	TsugaSettingsConfig *TsugaSettingsConfig
 	WazuhSettingsConfig *WazuhSettingsConfig
 	XsiamSettingsConfig *XsiamSettingsConfig
 	MapmapOfStringAny *map[string]interface{}
@@ -309,6 +310,13 @@ func SplunkSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SplunkSettin
 func SumologicSettingsConfigAsSecretProcessesorOutputConfigSettings(v *SumologicSettingsConfig) SecretProcessesorOutputConfigSettings {
 	return SecretProcessesorOutputConfigSettings{
 		SumologicSettingsConfig: v,
+	}
+}
+
+// TsugaSettingsConfigAsSecretProcessesorOutputConfigSettings is a convenience function that returns TsugaSettingsConfig wrapped in SecretProcessesorOutputConfigSettings
+func TsugaSettingsConfigAsSecretProcessesorOutputConfigSettings(v *TsugaSettingsConfig) SecretProcessesorOutputConfigSettings {
+	return SecretProcessesorOutputConfigSettings{
+		TsugaSettingsConfig: v,
 	}
 }
 
@@ -950,6 +958,23 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SumologicSettingsConfig = nil
 	}
 
+	// try to unmarshal data into TsugaSettingsConfig
+	err = newStrictDecoder(data).Decode(&dst.TsugaSettingsConfig)
+	if err == nil {
+		jsonTsugaSettingsConfig, _ := json.Marshal(dst.TsugaSettingsConfig)
+		if string(jsonTsugaSettingsConfig) == "{}" { // empty struct
+			dst.TsugaSettingsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TsugaSettingsConfig); err != nil {
+				dst.TsugaSettingsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TsugaSettingsConfig = nil
+	}
+
 	// try to unmarshal data into WazuhSettingsConfig
 	err = newStrictDecoder(data).Decode(&dst.WazuhSettingsConfig)
 	if err == nil {
@@ -1039,6 +1064,7 @@ func (dst *SecretProcessesorOutputConfigSettings) UnmarshalJSON(data []byte) err
 		dst.SnowflakeSnowpipeStreamingSettingsConfig = nil
 		dst.SplunkSettingsConfig = nil
 		dst.SumologicSettingsConfig = nil
+		dst.TsugaSettingsConfig = nil
 		dst.WazuhSettingsConfig = nil
 		dst.XsiamSettingsConfig = nil
 		dst.MapmapOfStringAny = nil
@@ -1195,6 +1221,10 @@ func (src SecretProcessesorOutputConfigSettings) MarshalJSON() ([]byte, error) {
 
 	if src.SumologicSettingsConfig != nil {
 		return json.Marshal(&src.SumologicSettingsConfig)
+	}
+
+	if src.TsugaSettingsConfig != nil {
+		return json.Marshal(&src.TsugaSettingsConfig)
 	}
 
 	if src.WazuhSettingsConfig != nil {
@@ -1361,6 +1391,10 @@ func (obj *SecretProcessesorOutputConfigSettings) GetActualInstance() (interface
 		return obj.SumologicSettingsConfig
 	}
 
+	if obj.TsugaSettingsConfig != nil {
+		return obj.TsugaSettingsConfig
+	}
+
 	if obj.WazuhSettingsConfig != nil {
 		return obj.WazuhSettingsConfig
 	}
@@ -1521,6 +1555,10 @@ func (obj SecretProcessesorOutputConfigSettings) GetActualInstanceValue() (inter
 
 	if obj.SumologicSettingsConfig != nil {
 		return *obj.SumologicSettingsConfig
+	}
+
+	if obj.TsugaSettingsConfig != nil {
+		return *obj.TsugaSettingsConfig
 	}
 
 	if obj.WazuhSettingsConfig != nil {

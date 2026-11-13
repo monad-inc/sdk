@@ -41,6 +41,7 @@ type SecretProcessesorOutputConfigSecrets struct {
 	SnowflakeOutputSecretsConfig *SnowflakeOutputSecretsConfig
 	SplunkSecretsConfig *SplunkSecretsConfig
 	SumologicSecretsConfig *SumologicSecretsConfig
+	TsugaSecretsConfig *TsugaSecretsConfig
 	WazuhSecretsConfig *WazuhSecretsConfig
 	MapmapOfStringAny *map[string]interface{}
 }
@@ -196,6 +197,13 @@ func SplunkSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *SplunkSecretsC
 func SumologicSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *SumologicSecretsConfig) SecretProcessesorOutputConfigSecrets {
 	return SecretProcessesorOutputConfigSecrets{
 		SumologicSecretsConfig: v,
+	}
+}
+
+// TsugaSecretsConfigAsSecretProcessesorOutputConfigSecrets is a convenience function that returns TsugaSecretsConfig wrapped in SecretProcessesorOutputConfigSecrets
+func TsugaSecretsConfigAsSecretProcessesorOutputConfigSecrets(v *TsugaSecretsConfig) SecretProcessesorOutputConfigSecrets {
+	return SecretProcessesorOutputConfigSecrets{
+		TsugaSecretsConfig: v,
 	}
 }
 
@@ -592,6 +600,23 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.SumologicSecretsConfig = nil
 	}
 
+	// try to unmarshal data into TsugaSecretsConfig
+	err = newStrictDecoder(data).Decode(&dst.TsugaSecretsConfig)
+	if err == nil {
+		jsonTsugaSecretsConfig, _ := json.Marshal(dst.TsugaSecretsConfig)
+		if string(jsonTsugaSecretsConfig) == "{}" { // empty struct
+			dst.TsugaSecretsConfig = nil
+		} else {
+			if err = validator.Validate(dst.TsugaSecretsConfig); err != nil {
+				dst.TsugaSecretsConfig = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.TsugaSecretsConfig = nil
+	}
+
 	// try to unmarshal data into WazuhSecretsConfig
 	err = newStrictDecoder(data).Decode(&dst.WazuhSecretsConfig)
 	if err == nil {
@@ -650,6 +675,7 @@ func (dst *SecretProcessesorOutputConfigSecrets) UnmarshalJSON(data []byte) erro
 		dst.SnowflakeOutputSecretsConfig = nil
 		dst.SplunkSecretsConfig = nil
 		dst.SumologicSecretsConfig = nil
+		dst.TsugaSecretsConfig = nil
 		dst.WazuhSecretsConfig = nil
 		dst.MapmapOfStringAny = nil
 
@@ -749,6 +775,10 @@ func (src SecretProcessesorOutputConfigSecrets) MarshalJSON() ([]byte, error) {
 
 	if src.SumologicSecretsConfig != nil {
 		return json.Marshal(&src.SumologicSecretsConfig)
+	}
+
+	if src.TsugaSecretsConfig != nil {
+		return json.Marshal(&src.TsugaSecretsConfig)
 	}
 
 	if src.WazuhSecretsConfig != nil {
@@ -855,6 +885,10 @@ func (obj *SecretProcessesorOutputConfigSecrets) GetActualInstance() (interface{
 		return obj.SumologicSecretsConfig
 	}
 
+	if obj.TsugaSecretsConfig != nil {
+		return obj.TsugaSecretsConfig
+	}
+
 	if obj.WazuhSecretsConfig != nil {
 		return obj.WazuhSecretsConfig
 	}
@@ -955,6 +989,10 @@ func (obj SecretProcessesorOutputConfigSecrets) GetActualInstanceValue() (interf
 
 	if obj.SumologicSecretsConfig != nil {
 		return *obj.SumologicSecretsConfig
+	}
+
+	if obj.TsugaSecretsConfig != nil {
+		return *obj.TsugaSecretsConfig
 	}
 
 	if obj.WazuhSecretsConfig != nil {

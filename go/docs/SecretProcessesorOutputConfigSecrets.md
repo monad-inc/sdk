@@ -27,12 +27,13 @@ Name | Type | Description | Notes
 **PrivateKey** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **Token** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
 **AccessId** | Pointer to [**ModelsSecret**](ModelsSecret.md) |  | [optional] 
+**IngestionKey** | [**ModelsSecret**](ModelsSecret.md) |  | 
 
 ## Methods
 
 ### NewSecretProcessesorOutputConfigSecrets
 
-`func NewSecretProcessesorOutputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, ) *SecretProcessesorOutputConfigSecrets`
+`func NewSecretProcessesorOutputConfigSecrets(clientId ModelsSecret, clientSecret ModelsSecret, password ModelsSecret, ingestionKey ModelsSecret, ) *SecretProcessesorOutputConfigSecrets`
 
 NewSecretProcessesorOutputConfigSecrets instantiates a new SecretProcessesorOutputConfigSecrets object
 This constructor will assign default values to properties that have it defined,
@@ -606,6 +607,26 @@ SetAccessId sets AccessId field to given value.
 `func (o *SecretProcessesorOutputConfigSecrets) HasAccessId() bool`
 
 HasAccessId returns a boolean if a field has been set.
+
+### GetIngestionKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetIngestionKey() ModelsSecret`
+
+GetIngestionKey returns the IngestionKey field if non-nil, zero value otherwise.
+
+### GetIngestionKeyOk
+
+`func (o *SecretProcessesorOutputConfigSecrets) GetIngestionKeyOk() (*ModelsSecret, bool)`
+
+GetIngestionKeyOk returns a tuple with the IngestionKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngestionKey
+
+`func (o *SecretProcessesorOutputConfigSecrets) SetIngestionKey(v ModelsSecret)`
+
+SetIngestionKey sets IngestionKey field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

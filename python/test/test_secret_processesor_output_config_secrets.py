@@ -336,6 +336,19 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                         shared_with_children = True, 
                         shared_with_me = True, ), 
                     updated_at = '', 
+                    value = '', ),
+                ingestion_key = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
                     value = '', )
             )
         else:
@@ -367,6 +380,19 @@ class TestSecretProcessesorOutputConfigSecrets(unittest.TestCase):
                     updated_at = '', 
                     value = '', ),
                 password = monad.models.models/secret.models.Secret(
+                    created_at = '', 
+                    description = '', 
+                    id = '', 
+                    name = '', 
+                    organization_id = '', 
+                    share_details = monad.models.models/share_details.models.ShareDetails(
+                        owner_organization_id = '', 
+                        owner_organization_name = '', 
+                        shared_with_children = True, 
+                        shared_with_me = True, ), 
+                    updated_at = '', 
+                    value = '', ),
+                ingestion_key = monad.models.models/secret.models.Secret(
                     created_at = '', 
                     description = '', 
                     id = '', 
