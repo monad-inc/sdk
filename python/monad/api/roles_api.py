@@ -102,7 +102,7 @@ class RolesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissions",
             '400': "str",
-            '401': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -176,7 +176,7 @@ class RolesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissions",
             '400': "str",
-            '401': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -250,7 +250,7 @@ class RolesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissions",
             '400': "str",
-            '401': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1267,7 +1267,7 @@ class RolesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissions",
             '400': "str",
-            '401': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1345,7 +1345,7 @@ class RolesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissions",
             '400': "str",
-            '401': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(
@@ -1423,7 +1423,7 @@ class RolesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ModelsRoleWithPermissions",
             '400': "str",
-            '401': "str",
+            '403': "str",
             '500': "str",
         }
         response_data = self.api_client.call_api(

@@ -21970,7 +21970,7 @@
                         },
                         "description": "Invalid JSON request body"
                     },
-                    "401": {
+                    "403": {
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -22275,7 +22275,7 @@
                         },
                         "description": "Invalid JSON request body"
                     },
-                    "401": {
+                    "403": {
                         "content": {
                             "application/json": {
                                 "schema": {

@@ -88,7 +88,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Role created successfully |  -  |
 | **400** | Invalid JSON request body |  -  |
-| **401** | Cannot create a role with permissions that your user does not have |  -  |
+| **403** | Cannot create a role with permissions that your user does not have |  -  |
 | **500** | Failed to create role |  -  |
 
 <a id="deleteRole"></a>
@@ -407,6 +407,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Role updated successfully |  -  |
 | **400** | Invalid JSON request body |  -  |
-| **401** | Cannot change permissions on a role that your user does not have |  -  |
+| **403** | Cannot change permissions on a role that your user does not have |  -  |
 | **500** | Failed to update role |  -  |
 

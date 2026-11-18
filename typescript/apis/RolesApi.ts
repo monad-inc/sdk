@@ -335,7 +335,7 @@ export class RolesApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
         }
-        if (isCodeInRange("401", response.httpStatusCode)) {
+        if (isCodeInRange("403", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
@@ -500,7 +500,7 @@ export class RolesApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Invalid JSON request body", body, response.headers);
         }
-        if (isCodeInRange("401", response.httpStatusCode)) {
+        if (isCodeInRange("403", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "string", ""
