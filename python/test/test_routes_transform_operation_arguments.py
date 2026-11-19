@@ -45,10 +45,12 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                 continuation_marker = '',
                 continuation_mode = '',
                 dialect = '',
+                dictionary_types = True,
                 empty_to_null = True,
                 envelope = {
                     'key' : ''
                     },
+                fallback_year_path = '',
                 header_fields = [
                     ''
                     ],
@@ -67,6 +69,9 @@ class TestRoutesTransformOperationArguments(unittest.TestCase):
                 strict = True,
                 strip_quotes = True,
                 warnings_key = '',
+                zone_aliases = {
+                    'key' : ''
+                    },
                 on_parse_error = 'fail',
                 source_format = 'auto',
                 source_format_custom = '',

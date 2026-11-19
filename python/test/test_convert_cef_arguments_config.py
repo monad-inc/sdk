@@ -42,10 +42,12 @@ class TestConvertCefArgumentsConfig(unittest.TestCase):
                 continuation_marker = '',
                 continuation_mode = '',
                 dialect = '',
+                dictionary_types = True,
                 empty_to_null = True,
                 envelope = {
                     'key' : ''
                     },
+                fallback_year_path = '',
                 header_fields = [
                     ''
                     ],
@@ -64,7 +66,10 @@ class TestConvertCefArgumentsConfig(unittest.TestCase):
                 resolve_labels = True,
                 strict = True,
                 strip_quotes = True,
-                warnings_key = ''
+                warnings_key = '',
+                zone_aliases = {
+                    'key' : ''
+                    }
             )
         else:
             return ConvertCefArgumentsConfig(

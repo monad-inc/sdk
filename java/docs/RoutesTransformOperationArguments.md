@@ -14,8 +14,10 @@
 |**continuationMarker** | **String** | Collector continuation marker, e.g. \&quot;#LF#\&quot; or \&quot;#012\&quot;; \&quot;\&quot; disables continuation handling. |  [optional] |
 |**continuationMode** | **String** | \&quot;spill\&quot; (default), \&quot;keep\&quot;, or \&quot;newline\&quot;. |  [optional] |
 |**dialect** | **String** | \&quot;cef\&quot; (spec-faithful, default) or \&quot;legacy_kv\&quot; (bug-compat with jq CEF parsers). |  [optional] |
+|**dictionaryTypes** | **Boolean** | Emit values typed per the CEF extension dictionary (numbers; TimeStamp -&gt; ISO 8601). Default false. |  [optional] |
 |**emptyToNull** | **Boolean** | Write empty-string values as null. Default false. |  [optional] |
 |**envelope** | **Map&lt;String, String&gt;** | Output field -&gt; record path (JSONPath), copied verbatim; missing -&gt; null. |  [optional] |
+|**fallbackYearPath** | **String** | Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \&quot;\&quot; &#x3D; current UTC year. |  [optional] |
 |**headerFields** | **List&lt;String&gt;** | Exactly 7 output names for the header slots; default per preset. |  [optional] |
 |**isoDateColumns** | **List&lt;String&gt;** | Output columns rewritten \&quot;YYYY/MM/DD HH:MM:SS\&quot; -&gt; \&quot;YYYY-MM-DDTHH:MM:SSZ\&quot;. |  [optional] |
 |**numericColumns** | **List&lt;String&gt;** | Output columns coerced to number (invalid -&gt; null); unset &#x3D; preset default, [] &#x3D; off. |  [optional] |
@@ -28,6 +30,7 @@
 |**strict** | **Boolean** | Fail the record on structural problems instead of best-effort parsing. Default false. |  [optional] |
 |**stripQuotes** | **Boolean** | Remove one leading+trailing double-quote from values that carry both. Default false. |  [optional] |
 |**warningsKey** | **String** | Write parse warnings as a string array under this key; \&quot;\&quot; (default) omits them. |  [optional] |
+|**zoneAliases** | **Map&lt;String, String&gt;** | Zone abbreviation -&gt; UTC offset (\&quot;PST\&quot;: \&quot;-08:00\&quot;) for the CEF \&quot;MMM dd yyyy HH:mm:ss zzz\&quot; form. Unlisted abbreviations emit UTC + unknown_zone warning. |  [optional] |
 |**onParseError** | **ConvertTimestampParseErrorMode** |  |  [optional] |
 |**sourceFormat** | **ConvertTimestampTimestampFormat** |  |  [optional] |
 |**sourceFormatCustom** | **String** | Optional: Custom Go time layout (only if SourceFormat &#x3D; \&quot;custom\&quot;) |  [optional] |

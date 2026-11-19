@@ -1844,6 +1844,10 @@
                         "description": "\"cef\" (spec-faithful, default) or \"legacy_kv\" (bug-compat with jq CEF parsers).",
                         "type": "string"
                     },
+                    "dictionary_types": {
+                        "description": "Emit values typed per the CEF extension dictionary (numbers; TimeStamp -\u003e ISO 8601). Default false.",
+                        "type": "boolean"
+                    },
                     "empty_to_null": {
                         "description": "Write empty-string values as null. Default false.",
                         "type": "boolean"
@@ -1854,6 +1858,10 @@
                         },
                         "description": "Output field -\u003e record path (JSONPath), copied verbatim; missing -\u003e null.",
                         "type": "object"
+                    },
+                    "fallback_year_path": {
+                        "description": "Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \"\" = current UTC year.",
+                        "type": "string"
                     },
                     "header_fields": {
                         "description": "Exactly 7 output names for the header slots; default per preset.",
@@ -1918,6 +1926,13 @@
                     "warnings_key": {
                         "description": "Write parse warnings as a string array under this key; \"\" (default) omits them.",
                         "type": "string"
+                    },
+                    "zone_aliases": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Zone abbreviation -\u003e UTC offset (\"PST\": \"-08:00\") for the CEF \"MMM dd yyyy HH:mm:ss zzz\" form. Unlisted abbreviations emit UTC + unknown_zone warning.",
+                        "type": "object"
                     }
                 },
                 "type": "object"
@@ -4088,9 +4103,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
-                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray"
+                    "payloadFormatJSONArray",
+                    "defaultPayloadFormat"
                 ]
             },
             "kafka.saslMechanism": {

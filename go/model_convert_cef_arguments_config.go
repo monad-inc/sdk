@@ -28,10 +28,14 @@ type ConvertCefArgumentsConfig struct {
 	ContinuationMode *string `json:"continuation_mode,omitempty"`
 	// \"cef\" (spec-faithful, default) or \"legacy_kv\" (bug-compat with jq CEF parsers).
 	Dialect *string `json:"dialect,omitempty"`
+	// Emit values typed per the CEF extension dictionary (numbers; TimeStamp -> ISO 8601). Default false.
+	DictionaryTypes *bool `json:"dictionary_types,omitempty"`
 	// Write empty-string values as null. Default false.
 	EmptyToNull *bool `json:"empty_to_null,omitempty"`
 	// Output field -> record path (JSONPath), copied verbatim; missing -> null.
 	Envelope map[string]string `json:"envelope,omitempty"`
+	// Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \"\" = current UTC year.
+	FallbackYearPath *string `json:"fallback_year_path,omitempty"`
 	// Exactly 7 output names for the header slots; default per preset.
 	HeaderFields []string `json:"header_fields,omitempty"`
 	// Output columns rewritten \"YYYY/MM/DD HH:MM:SS\" -> \"YYYY-MM-DDTHH:MM:SSZ\".
@@ -58,6 +62,8 @@ type ConvertCefArgumentsConfig struct {
 	StripQuotes *bool `json:"strip_quotes,omitempty"`
 	// Write parse warnings as a string array under this key; \"\" (default) omits them.
 	WarningsKey *string `json:"warnings_key,omitempty"`
+	// Zone abbreviation -> UTC offset (\"PST\": \"-08:00\") for the CEF \"MMM dd yyyy HH:mm:ss zzz\" form. Unlisted abbreviations emit UTC + unknown_zone warning.
+	ZoneAliases map[string]string `json:"zone_aliases,omitempty"`
 }
 
 // NewConvertCefArgumentsConfig instantiates a new ConvertCefArgumentsConfig object
@@ -205,6 +211,38 @@ func (o *ConvertCefArgumentsConfig) SetDialect(v string) {
 	o.Dialect = &v
 }
 
+// GetDictionaryTypes returns the DictionaryTypes field value if set, zero value otherwise.
+func (o *ConvertCefArgumentsConfig) GetDictionaryTypes() bool {
+	if o == nil || IsNil(o.DictionaryTypes) {
+		var ret bool
+		return ret
+	}
+	return *o.DictionaryTypes
+}
+
+// GetDictionaryTypesOk returns a tuple with the DictionaryTypes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConvertCefArgumentsConfig) GetDictionaryTypesOk() (*bool, bool) {
+	if o == nil || IsNil(o.DictionaryTypes) {
+		return nil, false
+	}
+	return o.DictionaryTypes, true
+}
+
+// HasDictionaryTypes returns a boolean if a field has been set.
+func (o *ConvertCefArgumentsConfig) HasDictionaryTypes() bool {
+	if o != nil && !IsNil(o.DictionaryTypes) {
+		return true
+	}
+
+	return false
+}
+
+// SetDictionaryTypes gets a reference to the given bool and assigns it to the DictionaryTypes field.
+func (o *ConvertCefArgumentsConfig) SetDictionaryTypes(v bool) {
+	o.DictionaryTypes = &v
+}
+
 // GetEmptyToNull returns the EmptyToNull field value if set, zero value otherwise.
 func (o *ConvertCefArgumentsConfig) GetEmptyToNull() bool {
 	if o == nil || IsNil(o.EmptyToNull) {
@@ -267,6 +305,38 @@ func (o *ConvertCefArgumentsConfig) HasEnvelope() bool {
 // SetEnvelope gets a reference to the given map[string]string and assigns it to the Envelope field.
 func (o *ConvertCefArgumentsConfig) SetEnvelope(v map[string]string) {
 	o.Envelope = v
+}
+
+// GetFallbackYearPath returns the FallbackYearPath field value if set, zero value otherwise.
+func (o *ConvertCefArgumentsConfig) GetFallbackYearPath() string {
+	if o == nil || IsNil(o.FallbackYearPath) {
+		var ret string
+		return ret
+	}
+	return *o.FallbackYearPath
+}
+
+// GetFallbackYearPathOk returns a tuple with the FallbackYearPath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConvertCefArgumentsConfig) GetFallbackYearPathOk() (*string, bool) {
+	if o == nil || IsNil(o.FallbackYearPath) {
+		return nil, false
+	}
+	return o.FallbackYearPath, true
+}
+
+// HasFallbackYearPath returns a boolean if a field has been set.
+func (o *ConvertCefArgumentsConfig) HasFallbackYearPath() bool {
+	if o != nil && !IsNil(o.FallbackYearPath) {
+		return true
+	}
+
+	return false
+}
+
+// SetFallbackYearPath gets a reference to the given string and assigns it to the FallbackYearPath field.
+func (o *ConvertCefArgumentsConfig) SetFallbackYearPath(v string) {
+	o.FallbackYearPath = &v
 }
 
 // GetHeaderFields returns the HeaderFields field value if set, zero value otherwise.
@@ -685,6 +755,38 @@ func (o *ConvertCefArgumentsConfig) SetWarningsKey(v string) {
 	o.WarningsKey = &v
 }
 
+// GetZoneAliases returns the ZoneAliases field value if set, zero value otherwise.
+func (o *ConvertCefArgumentsConfig) GetZoneAliases() map[string]string {
+	if o == nil || IsNil(o.ZoneAliases) {
+		var ret map[string]string
+		return ret
+	}
+	return o.ZoneAliases
+}
+
+// GetZoneAliasesOk returns a tuple with the ZoneAliases field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConvertCefArgumentsConfig) GetZoneAliasesOk() (map[string]string, bool) {
+	if o == nil || IsNil(o.ZoneAliases) {
+		return map[string]string{}, false
+	}
+	return o.ZoneAliases, true
+}
+
+// HasZoneAliases returns a boolean if a field has been set.
+func (o *ConvertCefArgumentsConfig) HasZoneAliases() bool {
+	if o != nil && !IsNil(o.ZoneAliases) {
+		return true
+	}
+
+	return false
+}
+
+// SetZoneAliases gets a reference to the given map[string]string and assigns it to the ZoneAliases field.
+func (o *ConvertCefArgumentsConfig) SetZoneAliases(v map[string]string) {
+	o.ZoneAliases = v
+}
+
 func (o ConvertCefArgumentsConfig) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -707,11 +809,17 @@ func (o ConvertCefArgumentsConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Dialect) {
 		toSerialize["dialect"] = o.Dialect
 	}
+	if !IsNil(o.DictionaryTypes) {
+		toSerialize["dictionary_types"] = o.DictionaryTypes
+	}
 	if !IsNil(o.EmptyToNull) {
 		toSerialize["empty_to_null"] = o.EmptyToNull
 	}
 	if !IsNil(o.Envelope) {
 		toSerialize["envelope"] = o.Envelope
+	}
+	if !IsNil(o.FallbackYearPath) {
+		toSerialize["fallback_year_path"] = o.FallbackYearPath
 	}
 	if !IsNil(o.HeaderFields) {
 		toSerialize["header_fields"] = o.HeaderFields
@@ -751,6 +859,9 @@ func (o ConvertCefArgumentsConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.WarningsKey) {
 		toSerialize["warnings_key"] = o.WarningsKey
+	}
+	if !IsNil(o.ZoneAliases) {
+		toSerialize["zone_aliases"] = o.ZoneAliases
 	}
 	return toSerialize, nil
 }

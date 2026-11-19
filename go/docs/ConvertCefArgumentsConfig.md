@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **ContinuationMarker** | Pointer to **string** | Collector continuation marker, e.g. \&quot;#LF#\&quot; or \&quot;#012\&quot;; \&quot;\&quot; disables continuation handling. | [optional] 
 **ContinuationMode** | Pointer to **string** | \&quot;spill\&quot; (default), \&quot;keep\&quot;, or \&quot;newline\&quot;. | [optional] 
 **Dialect** | Pointer to **string** | \&quot;cef\&quot; (spec-faithful, default) or \&quot;legacy_kv\&quot; (bug-compat with jq CEF parsers). | [optional] 
+**DictionaryTypes** | Pointer to **bool** | Emit values typed per the CEF extension dictionary (numbers; TimeStamp -&gt; ISO 8601). Default false. | [optional] 
 **EmptyToNull** | Pointer to **bool** | Write empty-string values as null. Default false. | [optional] 
 **Envelope** | Pointer to **map[string]string** | Output field -&gt; record path (JSONPath), copied verbatim; missing -&gt; null. | [optional] 
+**FallbackYearPath** | Pointer to **string** | Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \&quot;\&quot; &#x3D; current UTC year. | [optional] 
 **HeaderFields** | Pointer to **[]string** | Exactly 7 output names for the header slots; default per preset. | [optional] 
 **IsoDateColumns** | Pointer to **[]string** | Output columns rewritten \&quot;YYYY/MM/DD HH:MM:SS\&quot; -&gt; \&quot;YYYY-MM-DDTHH:MM:SSZ\&quot;. | [optional] 
 **Key** | Pointer to **string** | Source key holding the CEF line (JSONPath). Default \&quot;message\&quot;. | [optional] 
@@ -23,6 +25,7 @@ Name | Type | Description | Notes
 **Strict** | Pointer to **bool** | Fail the record on structural problems instead of best-effort parsing. Default false. | [optional] 
 **StripQuotes** | Pointer to **bool** | Remove one leading+trailing double-quote from values that carry both. Default false. | [optional] 
 **WarningsKey** | Pointer to **string** | Write parse warnings as a string array under this key; \&quot;\&quot; (default) omits them. | [optional] 
+**ZoneAliases** | Pointer to **map[string]string** | Zone abbreviation -&gt; UTC offset (\&quot;PST\&quot;: \&quot;-08:00\&quot;) for the CEF \&quot;MMM dd yyyy HH:mm:ss zzz\&quot; form. Unlisted abbreviations emit UTC + unknown_zone warning. | [optional] 
 
 ## Methods
 
@@ -143,6 +146,31 @@ SetDialect sets Dialect field to given value.
 
 HasDialect returns a boolean if a field has been set.
 
+### GetDictionaryTypes
+
+`func (o *ConvertCefArgumentsConfig) GetDictionaryTypes() bool`
+
+GetDictionaryTypes returns the DictionaryTypes field if non-nil, zero value otherwise.
+
+### GetDictionaryTypesOk
+
+`func (o *ConvertCefArgumentsConfig) GetDictionaryTypesOk() (*bool, bool)`
+
+GetDictionaryTypesOk returns a tuple with the DictionaryTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDictionaryTypes
+
+`func (o *ConvertCefArgumentsConfig) SetDictionaryTypes(v bool)`
+
+SetDictionaryTypes sets DictionaryTypes field to given value.
+
+### HasDictionaryTypes
+
+`func (o *ConvertCefArgumentsConfig) HasDictionaryTypes() bool`
+
+HasDictionaryTypes returns a boolean if a field has been set.
+
 ### GetEmptyToNull
 
 `func (o *ConvertCefArgumentsConfig) GetEmptyToNull() bool`
@@ -192,6 +220,31 @@ SetEnvelope sets Envelope field to given value.
 `func (o *ConvertCefArgumentsConfig) HasEnvelope() bool`
 
 HasEnvelope returns a boolean if a field has been set.
+
+### GetFallbackYearPath
+
+`func (o *ConvertCefArgumentsConfig) GetFallbackYearPath() string`
+
+GetFallbackYearPath returns the FallbackYearPath field if non-nil, zero value otherwise.
+
+### GetFallbackYearPathOk
+
+`func (o *ConvertCefArgumentsConfig) GetFallbackYearPathOk() (*string, bool)`
+
+GetFallbackYearPathOk returns a tuple with the FallbackYearPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFallbackYearPath
+
+`func (o *ConvertCefArgumentsConfig) SetFallbackYearPath(v string)`
+
+SetFallbackYearPath sets FallbackYearPath field to given value.
+
+### HasFallbackYearPath
+
+`func (o *ConvertCefArgumentsConfig) HasFallbackYearPath() bool`
+
+HasFallbackYearPath returns a boolean if a field has been set.
 
 ### GetHeaderFields
 
@@ -517,6 +570,31 @@ SetWarningsKey sets WarningsKey field to given value.
 `func (o *ConvertCefArgumentsConfig) HasWarningsKey() bool`
 
 HasWarningsKey returns a boolean if a field has been set.
+
+### GetZoneAliases
+
+`func (o *ConvertCefArgumentsConfig) GetZoneAliases() map[string]string`
+
+GetZoneAliases returns the ZoneAliases field if non-nil, zero value otherwise.
+
+### GetZoneAliasesOk
+
+`func (o *ConvertCefArgumentsConfig) GetZoneAliasesOk() (*map[string]string, bool)`
+
+GetZoneAliasesOk returns a tuple with the ZoneAliases field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZoneAliases
+
+`func (o *ConvertCefArgumentsConfig) SetZoneAliases(v map[string]string)`
+
+SetZoneAliases sets ZoneAliases field to given value.
+
+### HasZoneAliases
+
+`func (o *ConvertCefArgumentsConfig) HasZoneAliases() bool`
+
+HasZoneAliases returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

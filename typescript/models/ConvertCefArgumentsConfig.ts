@@ -30,6 +30,10 @@ export class ConvertCefArgumentsConfig {
     */
     'dialect'?: string;
     /**
+    * Emit values typed per the CEF extension dictionary (numbers; TimeStamp -> ISO 8601). Default false.
+    */
+    'dictionaryTypes'?: boolean;
+    /**
     * Write empty-string values as null. Default false.
     */
     'emptyToNull'?: boolean;
@@ -37,6 +41,10 @@ export class ConvertCefArgumentsConfig {
     * Output field -> record path (JSONPath), copied verbatim; missing -> null.
     */
     'envelope'?: { [key: string]: string; };
+    /**
+    * Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \"\" = current UTC year.
+    */
+    'fallbackYearPath'?: string;
     /**
     * Exactly 7 output names for the header slots; default per preset.
     */
@@ -89,6 +97,10 @@ export class ConvertCefArgumentsConfig {
     * Write parse warnings as a string array under this key; \"\" (default) omits them.
     */
     'warningsKey'?: string;
+    /**
+    * Zone abbreviation -> UTC offset (\"PST\": \"-08:00\") for the CEF \"MMM dd yyyy HH:mm:ss zzz\" form. Unlisted abbreviations emit UTC + unknown_zone warning.
+    */
+    'zoneAliases'?: { [key: string]: string; };
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -120,6 +132,12 @@ export class ConvertCefArgumentsConfig {
             "format": ""
         },
         {
+            "name": "dictionaryTypes",
+            "baseName": "dictionary_types",
+            "type": "boolean",
+            "format": ""
+        },
+        {
             "name": "emptyToNull",
             "baseName": "empty_to_null",
             "type": "boolean",
@@ -129,6 +147,12 @@ export class ConvertCefArgumentsConfig {
             "name": "envelope",
             "baseName": "envelope",
             "type": "{ [key: string]: string; }",
+            "format": ""
+        },
+        {
+            "name": "fallbackYearPath",
+            "baseName": "fallback_year_path",
+            "type": "string",
             "format": ""
         },
         {
@@ -207,6 +231,12 @@ export class ConvertCefArgumentsConfig {
             "name": "warningsKey",
             "baseName": "warnings_key",
             "type": "string",
+            "format": ""
+        },
+        {
+            "name": "zoneAliases",
+            "baseName": "zone_aliases",
+            "type": "{ [key: string]: string; }",
             "format": ""
         }    ];
 

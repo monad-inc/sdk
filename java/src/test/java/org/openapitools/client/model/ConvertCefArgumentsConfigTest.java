@@ -74,6 +74,14 @@ public class ConvertCefArgumentsConfigTest {
     }
 
     /**
+     * Test the property 'dictionaryTypes'
+     */
+    @Test
+    public void dictionaryTypesTest() {
+        // TODO: test dictionaryTypes
+    }
+
+    /**
      * Test the property 'emptyToNull'
      */
     @Test
@@ -87,6 +95,14 @@ public class ConvertCefArgumentsConfigTest {
     @Test
     public void envelopeTest() {
         // TODO: test envelope
+    }
+
+    /**
+     * Test the property 'fallbackYearPath'
+     */
+    @Test
+    public void fallbackYearPathTest() {
+        // TODO: test fallbackYearPath
     }
 
     /**
@@ -191,6 +207,14 @@ public class ConvertCefArgumentsConfigTest {
     @Test
     public void warningsKeyTest() {
         // TODO: test warningsKey
+    }
+
+    /**
+     * Test the property 'zoneAliases'
+     */
+    @Test
+    public void zoneAliasesTest() {
+        // TODO: test zoneAliases
     }
 
 }

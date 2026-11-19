@@ -32,8 +32,10 @@ class ConvertCefArgumentsConfig(BaseModel):
     continuation_marker: Optional[StrictStr] = Field(default=None, description="Collector continuation marker, e.g. \"#LF#\" or \"#012\"; \"\" disables continuation handling.")
     continuation_mode: Optional[StrictStr] = Field(default=None, description="\"spill\" (default), \"keep\", or \"newline\".")
     dialect: Optional[StrictStr] = Field(default=None, description="\"cef\" (spec-faithful, default) or \"legacy_kv\" (bug-compat with jq CEF parsers).")
+    dictionary_types: Optional[StrictBool] = Field(default=None, description="Emit values typed per the CEF extension dictionary (numbers; TimeStamp -> ISO 8601). Default false.")
     empty_to_null: Optional[StrictBool] = Field(default=None, description="Write empty-string values as null. Default false.")
     envelope: Optional[Dict[str, StrictStr]] = Field(default=None, description="Output field -> record path (JSONPath), copied verbatim; missing -> null.")
+    fallback_year_path: Optional[StrictStr] = Field(default=None, description="Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \"\" = current UTC year.")
     header_fields: Optional[List[StrictStr]] = Field(default=None, description="Exactly 7 output names for the header slots; default per preset.")
     iso_date_columns: Optional[List[StrictStr]] = Field(default=None, description="Output columns rewritten \"YYYY/MM/DD HH:MM:SS\" -> \"YYYY-MM-DDTHH:MM:SSZ\".")
     key: Optional[StrictStr] = Field(default=None, description="Source key holding the CEF line (JSONPath). Default \"message\".")
@@ -47,7 +49,8 @@ class ConvertCefArgumentsConfig(BaseModel):
     strict: Optional[StrictBool] = Field(default=None, description="Fail the record on structural problems instead of best-effort parsing. Default false.")
     strip_quotes: Optional[StrictBool] = Field(default=None, description="Remove one leading+trailing double-quote from values that carry both. Default false.")
     warnings_key: Optional[StrictStr] = Field(default=None, description="Write parse warnings as a string array under this key; \"\" (default) omits them.")
-    __properties: ClassVar[List[str]] = ["columns", "continuation_marker", "continuation_mode", "dialect", "empty_to_null", "envelope", "header_fields", "iso_date_columns", "key", "numeric_columns", "output_key", "output_mode", "overflow_field", "overflow_separator", "preset", "resolve_labels", "strict", "strip_quotes", "warnings_key"]
+    zone_aliases: Optional[Dict[str, StrictStr]] = Field(default=None, description="Zone abbreviation -> UTC offset (\"PST\": \"-08:00\") for the CEF \"MMM dd yyyy HH:mm:ss zzz\" form. Unlisted abbreviations emit UTC + unknown_zone warning.")
+    __properties: ClassVar[List[str]] = ["columns", "continuation_marker", "continuation_mode", "dialect", "dictionary_types", "empty_to_null", "envelope", "fallback_year_path", "header_fields", "iso_date_columns", "key", "numeric_columns", "output_key", "output_mode", "overflow_field", "overflow_separator", "preset", "resolve_labels", "strict", "strip_quotes", "warnings_key", "zone_aliases"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -104,8 +107,10 @@ class ConvertCefArgumentsConfig(BaseModel):
             "continuation_marker": obj.get("continuation_marker"),
             "continuation_mode": obj.get("continuation_mode"),
             "dialect": obj.get("dialect"),
+            "dictionary_types": obj.get("dictionary_types"),
             "empty_to_null": obj.get("empty_to_null"),
             "envelope": obj.get("envelope"),
+            "fallback_year_path": obj.get("fallback_year_path"),
             "header_fields": obj.get("header_fields"),
             "iso_date_columns": obj.get("iso_date_columns"),
             "key": obj.get("key"),
@@ -118,7 +123,8 @@ class ConvertCefArgumentsConfig(BaseModel):
             "resolve_labels": obj.get("resolve_labels"),
             "strict": obj.get("strict"),
             "strip_quotes": obj.get("strip_quotes"),
-            "warnings_key": obj.get("warnings_key")
+            "warnings_key": obj.get("warnings_key"),
+            "zone_aliases": obj.get("zone_aliases")
         })
         return _obj
 

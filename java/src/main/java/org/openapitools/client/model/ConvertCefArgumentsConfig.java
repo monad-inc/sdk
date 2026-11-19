@@ -74,6 +74,11 @@ public class ConvertCefArgumentsConfig {
   @javax.annotation.Nullable
   private String dialect;
 
+  public static final String SERIALIZED_NAME_DICTIONARY_TYPES = "dictionary_types";
+  @SerializedName(SERIALIZED_NAME_DICTIONARY_TYPES)
+  @javax.annotation.Nullable
+  private Boolean dictionaryTypes;
+
   public static final String SERIALIZED_NAME_EMPTY_TO_NULL = "empty_to_null";
   @SerializedName(SERIALIZED_NAME_EMPTY_TO_NULL)
   @javax.annotation.Nullable
@@ -83,6 +88,11 @@ public class ConvertCefArgumentsConfig {
   @SerializedName(SERIALIZED_NAME_ENVELOPE)
   @javax.annotation.Nullable
   private Map<String, String> envelope = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_FALLBACK_YEAR_PATH = "fallback_year_path";
+  @SerializedName(SERIALIZED_NAME_FALLBACK_YEAR_PATH)
+  @javax.annotation.Nullable
+  private String fallbackYearPath;
 
   public static final String SERIALIZED_NAME_HEADER_FIELDS = "header_fields";
   @SerializedName(SERIALIZED_NAME_HEADER_FIELDS)
@@ -148,6 +158,11 @@ public class ConvertCefArgumentsConfig {
   @SerializedName(SERIALIZED_NAME_WARNINGS_KEY)
   @javax.annotation.Nullable
   private String warningsKey;
+
+  public static final String SERIALIZED_NAME_ZONE_ALIASES = "zone_aliases";
+  @SerializedName(SERIALIZED_NAME_ZONE_ALIASES)
+  @javax.annotation.Nullable
+  private Map<String, String> zoneAliases = new HashMap<>();
 
   public ConvertCefArgumentsConfig() {
   }
@@ -236,6 +251,25 @@ public class ConvertCefArgumentsConfig {
   }
 
 
+  public ConvertCefArgumentsConfig dictionaryTypes(@javax.annotation.Nullable Boolean dictionaryTypes) {
+    this.dictionaryTypes = dictionaryTypes;
+    return this;
+  }
+
+  /**
+   * Emit values typed per the CEF extension dictionary (numbers; TimeStamp -&gt; ISO 8601). Default false.
+   * @return dictionaryTypes
+   */
+  @javax.annotation.Nullable
+  public Boolean getDictionaryTypes() {
+    return dictionaryTypes;
+  }
+
+  public void setDictionaryTypes(@javax.annotation.Nullable Boolean dictionaryTypes) {
+    this.dictionaryTypes = dictionaryTypes;
+  }
+
+
   public ConvertCefArgumentsConfig emptyToNull(@javax.annotation.Nullable Boolean emptyToNull) {
     this.emptyToNull = emptyToNull;
     return this;
@@ -279,6 +313,25 @@ public class ConvertCefArgumentsConfig {
 
   public void setEnvelope(@javax.annotation.Nullable Map<String, String> envelope) {
     this.envelope = envelope;
+  }
+
+
+  public ConvertCefArgumentsConfig fallbackYearPath(@javax.annotation.Nullable String fallbackYearPath) {
+    this.fallbackYearPath = fallbackYearPath;
+    return this;
+  }
+
+  /**
+   * Record path (JSONPath) whose leading 4 digits supply the year for year-less CEF timestamps; \&quot;\&quot; &#x3D; current UTC year.
+   * @return fallbackYearPath
+   */
+  @javax.annotation.Nullable
+  public String getFallbackYearPath() {
+    return fallbackYearPath;
+  }
+
+  public void setFallbackYearPath(@javax.annotation.Nullable String fallbackYearPath) {
+    this.fallbackYearPath = fallbackYearPath;
   }
 
 
@@ -553,6 +606,33 @@ public class ConvertCefArgumentsConfig {
   }
 
 
+  public ConvertCefArgumentsConfig zoneAliases(@javax.annotation.Nullable Map<String, String> zoneAliases) {
+    this.zoneAliases = zoneAliases;
+    return this;
+  }
+
+  public ConvertCefArgumentsConfig putZoneAliasesItem(String key, String zoneAliasesItem) {
+    if (this.zoneAliases == null) {
+      this.zoneAliases = new HashMap<>();
+    }
+    this.zoneAliases.put(key, zoneAliasesItem);
+    return this;
+  }
+
+  /**
+   * Zone abbreviation -&gt; UTC offset (\&quot;PST\&quot;: \&quot;-08:00\&quot;) for the CEF \&quot;MMM dd yyyy HH:mm:ss zzz\&quot; form. Unlisted abbreviations emit UTC + unknown_zone warning.
+   * @return zoneAliases
+   */
+  @javax.annotation.Nullable
+  public Map<String, String> getZoneAliases() {
+    return zoneAliases;
+  }
+
+  public void setZoneAliases(@javax.annotation.Nullable Map<String, String> zoneAliases) {
+    this.zoneAliases = zoneAliases;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -567,8 +647,10 @@ public class ConvertCefArgumentsConfig {
         Objects.equals(this.continuationMarker, convertCefArgumentsConfig.continuationMarker) &&
         Objects.equals(this.continuationMode, convertCefArgumentsConfig.continuationMode) &&
         Objects.equals(this.dialect, convertCefArgumentsConfig.dialect) &&
+        Objects.equals(this.dictionaryTypes, convertCefArgumentsConfig.dictionaryTypes) &&
         Objects.equals(this.emptyToNull, convertCefArgumentsConfig.emptyToNull) &&
         Objects.equals(this.envelope, convertCefArgumentsConfig.envelope) &&
+        Objects.equals(this.fallbackYearPath, convertCefArgumentsConfig.fallbackYearPath) &&
         Objects.equals(this.headerFields, convertCefArgumentsConfig.headerFields) &&
         Objects.equals(this.isoDateColumns, convertCefArgumentsConfig.isoDateColumns) &&
         Objects.equals(this.key, convertCefArgumentsConfig.key) &&
@@ -581,12 +663,13 @@ public class ConvertCefArgumentsConfig {
         Objects.equals(this.resolveLabels, convertCefArgumentsConfig.resolveLabels) &&
         Objects.equals(this.strict, convertCefArgumentsConfig.strict) &&
         Objects.equals(this.stripQuotes, convertCefArgumentsConfig.stripQuotes) &&
-        Objects.equals(this.warningsKey, convertCefArgumentsConfig.warningsKey);
+        Objects.equals(this.warningsKey, convertCefArgumentsConfig.warningsKey) &&
+        Objects.equals(this.zoneAliases, convertCefArgumentsConfig.zoneAliases);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columns, continuationMarker, continuationMode, dialect, emptyToNull, envelope, headerFields, isoDateColumns, key, numericColumns, outputKey, outputMode, overflowField, overflowSeparator, preset, resolveLabels, strict, stripQuotes, warningsKey);
+    return Objects.hash(columns, continuationMarker, continuationMode, dialect, dictionaryTypes, emptyToNull, envelope, fallbackYearPath, headerFields, isoDateColumns, key, numericColumns, outputKey, outputMode, overflowField, overflowSeparator, preset, resolveLabels, strict, stripQuotes, warningsKey, zoneAliases);
   }
 
   @Override
@@ -597,8 +680,10 @@ public class ConvertCefArgumentsConfig {
     sb.append("    continuationMarker: ").append(toIndentedString(continuationMarker)).append("\n");
     sb.append("    continuationMode: ").append(toIndentedString(continuationMode)).append("\n");
     sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");
+    sb.append("    dictionaryTypes: ").append(toIndentedString(dictionaryTypes)).append("\n");
     sb.append("    emptyToNull: ").append(toIndentedString(emptyToNull)).append("\n");
     sb.append("    envelope: ").append(toIndentedString(envelope)).append("\n");
+    sb.append("    fallbackYearPath: ").append(toIndentedString(fallbackYearPath)).append("\n");
     sb.append("    headerFields: ").append(toIndentedString(headerFields)).append("\n");
     sb.append("    isoDateColumns: ").append(toIndentedString(isoDateColumns)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
@@ -612,6 +697,7 @@ public class ConvertCefArgumentsConfig {
     sb.append("    strict: ").append(toIndentedString(strict)).append("\n");
     sb.append("    stripQuotes: ").append(toIndentedString(stripQuotes)).append("\n");
     sb.append("    warningsKey: ").append(toIndentedString(warningsKey)).append("\n");
+    sb.append("    zoneAliases: ").append(toIndentedString(zoneAliases)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -630,7 +716,7 @@ public class ConvertCefArgumentsConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("columns", "continuation_marker", "continuation_mode", "dialect", "empty_to_null", "envelope", "header_fields", "iso_date_columns", "key", "numeric_columns", "output_key", "output_mode", "overflow_field", "overflow_separator", "preset", "resolve_labels", "strict", "strip_quotes", "warnings_key"));
+    openapiFields = new HashSet<String>(Arrays.asList("columns", "continuation_marker", "continuation_mode", "dialect", "dictionary_types", "empty_to_null", "envelope", "fallback_year_path", "header_fields", "iso_date_columns", "key", "numeric_columns", "output_key", "output_mode", "overflow_field", "overflow_separator", "preset", "resolve_labels", "strict", "strip_quotes", "warnings_key", "zone_aliases"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -665,6 +751,9 @@ public class ConvertCefArgumentsConfig {
       }
       if ((jsonObj.get("dialect") != null && !jsonObj.get("dialect").isJsonNull()) && !jsonObj.get("dialect").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dialect` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dialect").toString()));
+      }
+      if ((jsonObj.get("fallback_year_path") != null && !jsonObj.get("fallback_year_path").isJsonNull()) && !jsonObj.get("fallback_year_path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `fallback_year_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fallback_year_path").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("header_fields") != null && !jsonObj.get("header_fields").isJsonNull() && !jsonObj.get("header_fields").isJsonArray()) {
