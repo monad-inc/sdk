@@ -94,6 +94,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -188,6 +189,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -213,6 +215,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -240,6 +243,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1134,6 +1138,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1228,6 +1233,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1253,6 +1259,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
@@ -1280,6 +1287,7 @@ public class ResourceSharesApi {
         <tr><td> 200 </td><td> Created and revoked shares </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Missing resource_sharing:write permission </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The organization owns no such resource </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A revoked share is in use by the target organization </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>

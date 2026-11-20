@@ -565,6 +565,13 @@ export class ResourceSharesApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Missing resource_sharing:write permission", body, response.headers);
         }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "The organization owns no such resource", body, response.headers);
+        }
         if (isCodeInRange("409", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -878,6 +885,13 @@ export class ResourceSharesApiResponseProcessor {
                 "string", ""
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Missing resource_sharing:write permission", body, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            const body: ResponderErrorResponse = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "ResponderErrorResponse", ""
+            ) as ResponderErrorResponse;
+            throw new ApiException<ResponderErrorResponse>(response.httpStatusCode, "The organization owns no such resource", body, response.headers);
         }
         if (isCodeInRange("409", response.httpStatusCode)) {
             const body: ResponderErrorResponse = ObjectSerializer.deserialize(

@@ -27002,6 +27002,16 @@
                         },
                         "description": "Missing resource_sharing:write permission"
                     },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "The organization owns no such resource"
+                    },
                     "409": {
                         "content": {
                             "application/json": {
@@ -27125,6 +27135,16 @@
                             }
                         },
                         "description": "Missing resource_sharing:write permission"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responder.ErrorResponse"
+                                }
+                            }
+                        },
+                        "description": "The organization owns no such resource"
                     },
                     "409": {
                         "content": {

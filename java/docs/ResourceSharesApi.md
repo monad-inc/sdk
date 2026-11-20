@@ -95,6 +95,7 @@ public class Example {
 | **200** | Created and revoked shares |  -  |
 | **400** | Invalid request |  -  |
 | **403** | Missing resource_sharing:write permission |  -  |
+| **404** | The organization owns no such resource |  -  |
 | **409** | A revoked share is in use by the target organization |  -  |
 | **500** | Internal server error |  -  |
 
@@ -609,6 +610,7 @@ public class Example {
 | **200** | Created and revoked shares |  -  |
 | **400** | Invalid request |  -  |
 | **403** | Missing resource_sharing:write permission |  -  |
+| **404** | The organization owns no such resource |  -  |
 | **409** | A revoked share is in use by the target organization |  -  |
 | **500** | Internal server error |  -  |
 

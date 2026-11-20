@@ -113,6 +113,7 @@ class ResourceSharesApi:
             '200': "ModelsResourceShareChangeSet",
             '400': "ResponderErrorResponse",
             '403': "str",
+            '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -196,6 +197,7 @@ class ResourceSharesApi:
             '200': "ModelsResourceShareChangeSet",
             '400': "ResponderErrorResponse",
             '403': "str",
+            '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -279,6 +281,7 @@ class ResourceSharesApi:
             '200': "ModelsResourceShareChangeSet",
             '400': "ResponderErrorResponse",
             '403': "str",
+            '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -2110,6 +2113,7 @@ class ResourceSharesApi:
             '200': "ModelsResourceShareChangeSet",
             '400': "ResponderErrorResponse",
             '403': "str",
+            '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -2193,6 +2197,7 @@ class ResourceSharesApi:
             '200': "ModelsResourceShareChangeSet",
             '400': "ResponderErrorResponse",
             '403': "str",
+            '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
@@ -2276,6 +2281,7 @@ class ResourceSharesApi:
             '200': "ModelsResourceShareChangeSet",
             '400': "ResponderErrorResponse",
             '403': "str",
+            '404': "ResponderErrorResponse",
             '409': "ResponderErrorResponse",
             '500': "ResponderErrorResponse",
         }
