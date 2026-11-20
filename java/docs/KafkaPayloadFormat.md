@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `payloadFormatIndividual` (value: `"individual"`)
+* `defaultPayloadFormat` (value: `"individual"`)
 
-* `payloadFormatJSONArray` (value: `"json_array"`)
+* `payloadFormatIndividual` (value: `"json_array"`)
 
 
 
