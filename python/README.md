@@ -625,6 +625,7 @@ Class | Method | HTTP request | Description
  - [ModelsConnectionList](docs/ModelsConnectionList.md)
  - [ModelsConnectionSessionSettings](docs/ModelsConnectionSessionSettings.md)
  - [ModelsConnectorInfo](docs/ModelsConnectorInfo.md)
+ - [ModelsCostBreakdown](docs/ModelsCostBreakdown.md)
  - [ModelsCursorPagination](docs/ModelsCursorPagination.md)
  - [ModelsDataUsage](docs/ModelsDataUsage.md)
  - [ModelsDeadLetterAction](docs/ModelsDeadLetterAction.md)

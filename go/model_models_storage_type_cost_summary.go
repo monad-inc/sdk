@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsStorageTypeCostSummary{}
 
 // ModelsStorageTypeCostSummary struct for ModelsStorageTypeCostSummary
 type ModelsStorageTypeCostSummary struct {
+	Breakdown *ModelsCostBreakdown `json:"breakdown,omitempty"`
 	TotalOrgCostPostFilter *float32 `json:"total_org_cost_post_filter,omitempty"`
 	TotalOrgCostPreFilter *float32 `json:"total_org_cost_pre_filter,omitempty"`
 	TotalOrgIngestBytes *int32 `json:"total_org_ingest_bytes,omitempty"`
@@ -46,6 +47,38 @@ func NewModelsStorageTypeCostSummary() *ModelsStorageTypeCostSummary {
 func NewModelsStorageTypeCostSummaryWithDefaults() *ModelsStorageTypeCostSummary {
 	this := ModelsStorageTypeCostSummary{}
 	return &this
+}
+
+// GetBreakdown returns the Breakdown field value if set, zero value otherwise.
+func (o *ModelsStorageTypeCostSummary) GetBreakdown() ModelsCostBreakdown {
+	if o == nil || IsNil(o.Breakdown) {
+		var ret ModelsCostBreakdown
+		return ret
+	}
+	return *o.Breakdown
+}
+
+// GetBreakdownOk returns a tuple with the Breakdown field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsStorageTypeCostSummary) GetBreakdownOk() (*ModelsCostBreakdown, bool) {
+	if o == nil || IsNil(o.Breakdown) {
+		return nil, false
+	}
+	return o.Breakdown, true
+}
+
+// HasBreakdown returns a boolean if a field has been set.
+func (o *ModelsStorageTypeCostSummary) HasBreakdown() bool {
+	if o != nil && !IsNil(o.Breakdown) {
+		return true
+	}
+
+	return false
+}
+
+// SetBreakdown gets a reference to the given ModelsCostBreakdown and assigns it to the Breakdown field.
+func (o *ModelsStorageTypeCostSummary) SetBreakdown(v ModelsCostBreakdown) {
+	o.Breakdown = &v
 }
 
 // GetTotalOrgCostPostFilter returns the TotalOrgCostPostFilter field value if set, zero value otherwise.
@@ -314,6 +347,9 @@ func (o ModelsStorageTypeCostSummary) MarshalJSON() ([]byte, error) {
 
 func (o ModelsStorageTypeCostSummary) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Breakdown) {
+		toSerialize["breakdown"] = o.Breakdown
+	}
 	if !IsNil(o.TotalOrgCostPostFilter) {
 		toSerialize["total_org_cost_post_filter"] = o.TotalOrgCostPostFilter
 	}

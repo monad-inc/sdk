@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsCostBreakdown;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,6 +52,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsStorageTypeCostSummary {
+  public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
+  @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
+  private ModelsCostBreakdown breakdown;
+
   public static final String SERIALIZED_NAME_TOTAL_ORG_COST_POST_FILTER = "total_org_cost_post_filter";
   @SerializedName(SERIALIZED_NAME_TOTAL_ORG_COST_POST_FILTER)
   @javax.annotation.Nullable
@@ -93,6 +99,25 @@ public class ModelsStorageTypeCostSummary {
 
   public ModelsStorageTypeCostSummary() {
   }
+
+  public ModelsStorageTypeCostSummary breakdown(@javax.annotation.Nullable ModelsCostBreakdown breakdown) {
+    this.breakdown = breakdown;
+    return this;
+  }
+
+  /**
+   * Get breakdown
+   * @return breakdown
+   */
+  @javax.annotation.Nullable
+  public ModelsCostBreakdown getBreakdown() {
+    return breakdown;
+  }
+
+  public void setBreakdown(@javax.annotation.Nullable ModelsCostBreakdown breakdown) {
+    this.breakdown = breakdown;
+  }
+
 
   public ModelsStorageTypeCostSummary totalOrgCostPostFilter(@javax.annotation.Nullable BigDecimal totalOrgCostPostFilter) {
     this.totalOrgCostPostFilter = totalOrgCostPostFilter;
@@ -256,7 +281,8 @@ public class ModelsStorageTypeCostSummary {
       return false;
     }
     ModelsStorageTypeCostSummary modelsStorageTypeCostSummary = (ModelsStorageTypeCostSummary) o;
-    return Objects.equals(this.totalOrgCostPostFilter, modelsStorageTypeCostSummary.totalOrgCostPostFilter) &&
+    return Objects.equals(this.breakdown, modelsStorageTypeCostSummary.breakdown) &&
+        Objects.equals(this.totalOrgCostPostFilter, modelsStorageTypeCostSummary.totalOrgCostPostFilter) &&
         Objects.equals(this.totalOrgCostPreFilter, modelsStorageTypeCostSummary.totalOrgCostPreFilter) &&
         Objects.equals(this.totalOrgIngestBytes, modelsStorageTypeCostSummary.totalOrgIngestBytes) &&
         Objects.equals(this.totalOrgIngestGb, modelsStorageTypeCostSummary.totalOrgIngestGb) &&
@@ -268,13 +294,14 @@ public class ModelsStorageTypeCostSummary {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalOrgCostPostFilter, totalOrgCostPreFilter, totalOrgIngestBytes, totalOrgIngestGb, totalOrgOutputStorageBytes, totalOrgOutputStorageGb, totalOrgRoutingDroppedBytes, totalOrgRoutingDroppedGb);
+    return Objects.hash(breakdown, totalOrgCostPostFilter, totalOrgCostPreFilter, totalOrgIngestBytes, totalOrgIngestGb, totalOrgOutputStorageBytes, totalOrgOutputStorageGb, totalOrgRoutingDroppedBytes, totalOrgRoutingDroppedGb);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsStorageTypeCostSummary {\n");
+    sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    totalOrgCostPostFilter: ").append(toIndentedString(totalOrgCostPostFilter)).append("\n");
     sb.append("    totalOrgCostPreFilter: ").append(toIndentedString(totalOrgCostPreFilter)).append("\n");
     sb.append("    totalOrgIngestBytes: ").append(toIndentedString(totalOrgIngestBytes)).append("\n");
@@ -301,7 +328,7 @@ public class ModelsStorageTypeCostSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb", "total_org_routing_dropped_bytes", "total_org_routing_dropped_gb"));
+    openapiFields = new HashSet<String>(Arrays.asList("breakdown", "total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb", "total_org_routing_dropped_bytes", "total_org_routing_dropped_gb"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -328,6 +355,10 @@ public class ModelsStorageTypeCostSummary {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `breakdown`
+      if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
+        ModelsCostBreakdown.validateJsonElement(jsonObj.get("breakdown"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

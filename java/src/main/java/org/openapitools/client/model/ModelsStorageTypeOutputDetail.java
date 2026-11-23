@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsCostBreakdown;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,6 +52,11 @@ import org.openapitools.client.JSON;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
 public class ModelsStorageTypeOutputDetail {
+  public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
+  @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nullable
+  private ModelsCostBreakdown breakdown;
+
   public static final String SERIALIZED_NAME_COST_ID = "cost_id";
   @SerializedName(SERIALIZED_NAME_COST_ID)
   @javax.annotation.Nullable
@@ -98,6 +104,25 @@ public class ModelsStorageTypeOutputDetail {
 
   public ModelsStorageTypeOutputDetail() {
   }
+
+  public ModelsStorageTypeOutputDetail breakdown(@javax.annotation.Nullable ModelsCostBreakdown breakdown) {
+    this.breakdown = breakdown;
+    return this;
+  }
+
+  /**
+   * Get breakdown
+   * @return breakdown
+   */
+  @javax.annotation.Nullable
+  public ModelsCostBreakdown getBreakdown() {
+    return breakdown;
+  }
+
+  public void setBreakdown(@javax.annotation.Nullable ModelsCostBreakdown breakdown) {
+    this.breakdown = breakdown;
+  }
+
 
   public ModelsStorageTypeOutputDetail costId(@javax.annotation.Nullable String costId) {
     this.costId = costId;
@@ -280,7 +305,8 @@ public class ModelsStorageTypeOutputDetail {
       return false;
     }
     ModelsStorageTypeOutputDetail modelsStorageTypeOutputDetail = (ModelsStorageTypeOutputDetail) o;
-    return Objects.equals(this.costId, modelsStorageTypeOutputDetail.costId) &&
+    return Objects.equals(this.breakdown, modelsStorageTypeOutputDetail.breakdown) &&
+        Objects.equals(this.costId, modelsStorageTypeOutputDetail.costId) &&
         Objects.equals(this.costPerGb, modelsStorageTypeOutputDetail.costPerGb) &&
         Objects.equals(this.egressBytes, modelsStorageTypeOutputDetail.egressBytes) &&
         Objects.equals(this.egressBytesGb, modelsStorageTypeOutputDetail.egressBytesGb) &&
@@ -293,13 +319,14 @@ public class ModelsStorageTypeOutputDetail {
 
   @Override
   public int hashCode() {
-    return Objects.hash(costId, costPerGb, egressBytes, egressBytesGb, numPipelines, preFilterBytes, preFilterBytesGb, totalCostPostFilter, totalCostPreFilter);
+    return Objects.hash(breakdown, costId, costPerGb, egressBytes, egressBytesGb, numPipelines, preFilterBytes, preFilterBytesGb, totalCostPostFilter, totalCostPreFilter);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelsStorageTypeOutputDetail {\n");
+    sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
     sb.append("    costId: ").append(toIndentedString(costId)).append("\n");
     sb.append("    costPerGb: ").append(toIndentedString(costPerGb)).append("\n");
     sb.append("    egressBytes: ").append(toIndentedString(egressBytes)).append("\n");
@@ -327,7 +354,7 @@ public class ModelsStorageTypeOutputDetail {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"));
+    openapiFields = new HashSet<String>(Arrays.asList("breakdown", "cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -354,6 +381,10 @@ public class ModelsStorageTypeOutputDetail {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `breakdown`
+      if (jsonObj.get("breakdown") != null && !jsonObj.get("breakdown").isJsonNull()) {
+        ModelsCostBreakdown.validateJsonElement(jsonObj.get("breakdown"));
+      }
       if ((jsonObj.get("cost_id") != null && !jsonObj.get("cost_id").isJsonNull()) && !jsonObj.get("cost_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `cost_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cost_id").toString()));
       }

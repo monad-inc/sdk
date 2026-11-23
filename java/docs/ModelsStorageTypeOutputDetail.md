@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**breakdown** | [**ModelsCostBreakdown**](ModelsCostBreakdown.md) |  |  [optional] |
 |**costId** | **String** |  |  [optional] |
 |**costPerGb** | **BigDecimal** |  |  [optional] |
 |**egressBytes** | **Integer** |  |  [optional] |

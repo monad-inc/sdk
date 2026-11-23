@@ -36,6 +36,22 @@ class TestModelsStorageTypeCostSummary(unittest.TestCase):
         model = ModelsStorageTypeCostSummary()
         if include_optional:
             return ModelsStorageTypeCostSummary(
+                breakdown = monad.models.models/cost_breakdown.models.CostBreakdown(
+                    added_bytes = 56, 
+                    context_cost = 1.337, 
+                    cost_with_monad = 1.337, 
+                    cost_without_monad = 1.337, 
+                    delivered_bytes = 56, 
+                    estimated = True, 
+                    filtered_bytes = 56, 
+                    filtering_savings = 1.337, 
+                    kept_bytes = 56, 
+                    kept_cost = 1.337, 
+                    raw_input_bytes = 56, 
+                    reduction_savings = 1.337, 
+                    removed_bytes = 56, 
+                    routed_away_bytes = 56, 
+                    routing_savings = 1.337, ),
                 total_org_cost_post_filter = 1.337,
                 total_org_cost_pre_filter = 1.337,
                 total_org_ingest_bytes = 56,

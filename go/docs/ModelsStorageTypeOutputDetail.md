@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Breakdown** | Pointer to [**ModelsCostBreakdown**](ModelsCostBreakdown.md) |  | [optional] 
 **CostId** | Pointer to **string** |  | [optional] 
 **CostPerGb** | Pointer to **float32** |  | [optional] 
 **EgressBytes** | Pointer to **int32** |  | [optional] 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewModelsStorageTypeOutputDetailWithDefaults instantiates a new ModelsStorageTypeOutputDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBreakdown
+
+`func (o *ModelsStorageTypeOutputDetail) GetBreakdown() ModelsCostBreakdown`
+
+GetBreakdown returns the Breakdown field if non-nil, zero value otherwise.
+
+### GetBreakdownOk
+
+`func (o *ModelsStorageTypeOutputDetail) GetBreakdownOk() (*ModelsCostBreakdown, bool)`
+
+GetBreakdownOk returns a tuple with the Breakdown field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBreakdown
+
+`func (o *ModelsStorageTypeOutputDetail) SetBreakdown(v ModelsCostBreakdown)`
+
+SetBreakdown sets Breakdown field to given value.
+
+### HasBreakdown
+
+`func (o *ModelsStorageTypeOutputDetail) HasBreakdown() bool`
+
+HasBreakdown returns a boolean if a field has been set.
 
 ### GetCostId
 

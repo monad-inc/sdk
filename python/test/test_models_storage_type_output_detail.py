@@ -36,6 +36,22 @@ class TestModelsStorageTypeOutputDetail(unittest.TestCase):
         model = ModelsStorageTypeOutputDetail()
         if include_optional:
             return ModelsStorageTypeOutputDetail(
+                breakdown = monad.models.models/cost_breakdown.models.CostBreakdown(
+                    added_bytes = 56, 
+                    context_cost = 1.337, 
+                    cost_with_monad = 1.337, 
+                    cost_without_monad = 1.337, 
+                    delivered_bytes = 56, 
+                    estimated = True, 
+                    filtered_bytes = 56, 
+                    filtering_savings = 1.337, 
+                    kept_bytes = 56, 
+                    kept_cost = 1.337, 
+                    raw_input_bytes = 56, 
+                    reduction_savings = 1.337, 
+                    removed_bytes = 56, 
+                    routed_away_bytes = 56, 
+                    routing_savings = 1.337, ),
                 cost_id = '',
                 cost_per_gb = 1.337,
                 egress_bytes = 56,

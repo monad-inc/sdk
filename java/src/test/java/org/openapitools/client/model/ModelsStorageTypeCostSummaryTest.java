@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import org.openapitools.client.model.ModelsCostBreakdown;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -36,6 +37,14 @@ public class ModelsStorageTypeCostSummaryTest {
     @Test
     public void testModelsStorageTypeCostSummary() {
         // TODO: test ModelsStorageTypeCostSummary
+    }
+
+    /**
+     * Test the property 'breakdown'
+     */
+    @Test
+    public void breakdownTest() {
+        // TODO: test breakdown
     }
 
     /**

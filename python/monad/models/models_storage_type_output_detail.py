@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from monad.models.models_cost_breakdown import ModelsCostBreakdown
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,6 +29,7 @@ class ModelsStorageTypeOutputDetail(BaseModel):
     """
     ModelsStorageTypeOutputDetail
     """ # noqa: E501
+    breakdown: Optional[ModelsCostBreakdown] = None
     cost_id: Optional[StrictStr] = None
     cost_per_gb: Optional[Union[StrictFloat, StrictInt]] = None
     egress_bytes: Optional[StrictInt] = None
@@ -37,7 +39,7 @@ class ModelsStorageTypeOutputDetail(BaseModel):
     pre_filter_bytes_gb: Optional[Union[StrictFloat, StrictInt]] = None
     total_cost_post_filter: Optional[Union[StrictFloat, StrictInt]] = None
     total_cost_pre_filter: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"]
+    __properties: ClassVar[List[str]] = ["breakdown", "cost_id", "cost_per_gb", "egress_bytes", "egress_bytes_gb", "num_pipelines", "pre_filter_bytes", "pre_filter_bytes_gb", "total_cost_post_filter", "total_cost_pre_filter"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -78,6 +80,9 @@ class ModelsStorageTypeOutputDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of breakdown
+        if self.breakdown:
+            _dict['breakdown'] = self.breakdown.to_dict()
         return _dict
 
     @classmethod
@@ -90,6 +95,7 @@ class ModelsStorageTypeOutputDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "breakdown": ModelsCostBreakdown.from_dict(obj["breakdown"]) if obj.get("breakdown") is not None else None,
             "cost_id": obj.get("cost_id"),
             "cost_per_gb": obj.get("cost_per_gb"),
             "egress_bytes": obj.get("egress_bytes"),

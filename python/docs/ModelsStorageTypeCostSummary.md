@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**breakdown** | [**ModelsCostBreakdown**](ModelsCostBreakdown.md) |  | [optional] 
 **total_org_cost_post_filter** | **float** |  | [optional] 
 **total_org_cost_pre_filter** | **float** |  | [optional] 
 **total_org_ingest_bytes** | **int** |  | [optional] 

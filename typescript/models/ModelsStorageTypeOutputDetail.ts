@@ -10,9 +10,11 @@
  * Do not edit the class manually.
  */
 
+import { ModelsCostBreakdown } from '../models/ModelsCostBreakdown';
 import { HttpFile } from '../http/http';
 
 export class ModelsStorageTypeOutputDetail {
+    'breakdown'?: ModelsCostBreakdown;
     'costId'?: string;
     'costPerGb'?: number;
     'egressBytes'?: number;
@@ -28,6 +30,12 @@ export class ModelsStorageTypeOutputDetail {
     static readonly mapping: {[index: string]: string} | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
+        {
+            "name": "breakdown",
+            "baseName": "breakdown",
+            "type": "ModelsCostBreakdown",
+            "format": ""
+        },
         {
             "name": "costId",
             "baseName": "cost_id",

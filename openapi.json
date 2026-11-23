@@ -5167,6 +5167,57 @@
                 },
                 "type": "object"
             },
+            "models.CostBreakdown": {
+                "description": "Breakdown is the org-wide sum of the per-output breakdowns, each priced at its\noutput's own rate. Omitted when it was not computed.",
+                "properties": {
+                    "added_bytes": {
+                        "type": "integer"
+                    },
+                    "context_cost": {
+                        "type": "number"
+                    },
+                    "cost_with_monad": {
+                        "type": "number"
+                    },
+                    "cost_without_monad": {
+                        "type": "number"
+                    },
+                    "delivered_bytes": {
+                        "type": "integer"
+                    },
+                    "estimated": {
+                        "type": "boolean"
+                    },
+                    "filtered_bytes": {
+                        "type": "integer"
+                    },
+                    "filtering_savings": {
+                        "type": "number"
+                    },
+                    "kept_bytes": {
+                        "type": "integer"
+                    },
+                    "kept_cost": {
+                        "type": "number"
+                    },
+                    "raw_input_bytes": {
+                        "type": "integer"
+                    },
+                    "reduction_savings": {
+                        "type": "number"
+                    },
+                    "removed_bytes": {
+                        "type": "integer"
+                    },
+                    "routed_away_bytes": {
+                        "type": "integer"
+                    },
+                    "routing_savings": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
             "models.CursorPagination": {
                 "properties": {
                     "limit": {
@@ -6927,6 +6978,9 @@
             },
             "models.StorageTypeCostSummary": {
                 "properties": {
+                    "breakdown": {
+                        "$ref": "#/components/schemas/models.CostBreakdown"
+                    },
                     "total_org_cost_post_filter": {
                         "type": "number"
                     },
@@ -6957,6 +7011,9 @@
             },
             "models.StorageTypeOutputDetail": {
                 "properties": {
+                    "breakdown": {
+                        "$ref": "#/components/schemas/models.CostBreakdown"
+                    },
                     "cost_id": {
                         "type": "string"
                     },

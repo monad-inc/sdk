@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**breakdown** | [**ModelsCostBreakdown**](ModelsCostBreakdown.md) |  | [optional] 
 **cost_id** | **str** |  | [optional] 
 **cost_per_gb** | **float** |  | [optional] 
 **egress_bytes** | **int** |  | [optional] 

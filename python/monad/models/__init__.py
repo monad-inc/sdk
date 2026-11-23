@@ -277,6 +277,7 @@ from monad.models.models_connection import ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList
 from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings
 from monad.models.models_connector_info import ModelsConnectorInfo
+from monad.models.models_cost_breakdown import ModelsCostBreakdown
 from monad.models.models_cursor_pagination import ModelsCursorPagination
 from monad.models.models_data_usage import ModelsDataUsage
 from monad.models.models_dead_letter_action import ModelsDeadLetterAction

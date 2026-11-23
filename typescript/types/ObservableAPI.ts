@@ -266,6 +266,7 @@ import { ModelsConnection } from '../models/ModelsConnection';
 import { ModelsConnectionList } from '../models/ModelsConnectionList';
 import { ModelsConnectionSessionSettings } from '../models/ModelsConnectionSessionSettings';
 import { ModelsConnectorInfo } from '../models/ModelsConnectorInfo';
+import { ModelsCostBreakdown } from '../models/ModelsCostBreakdown';
 import { ModelsCursorPagination } from '../models/ModelsCursorPagination';
 import { ModelsDataUsage } from '../models/ModelsDataUsage';
 import { ModelsDeadLetterAction } from '../models/ModelsDeadLetterAction';

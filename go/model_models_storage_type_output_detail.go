@@ -20,6 +20,7 @@ var _ MappedNullable = &ModelsStorageTypeOutputDetail{}
 
 // ModelsStorageTypeOutputDetail struct for ModelsStorageTypeOutputDetail
 type ModelsStorageTypeOutputDetail struct {
+	Breakdown *ModelsCostBreakdown `json:"breakdown,omitempty"`
 	CostId *string `json:"cost_id,omitempty"`
 	CostPerGb *float32 `json:"cost_per_gb,omitempty"`
 	EgressBytes *int32 `json:"egress_bytes,omitempty"`
@@ -46,6 +47,38 @@ func NewModelsStorageTypeOutputDetail() *ModelsStorageTypeOutputDetail {
 func NewModelsStorageTypeOutputDetailWithDefaults() *ModelsStorageTypeOutputDetail {
 	this := ModelsStorageTypeOutputDetail{}
 	return &this
+}
+
+// GetBreakdown returns the Breakdown field value if set, zero value otherwise.
+func (o *ModelsStorageTypeOutputDetail) GetBreakdown() ModelsCostBreakdown {
+	if o == nil || IsNil(o.Breakdown) {
+		var ret ModelsCostBreakdown
+		return ret
+	}
+	return *o.Breakdown
+}
+
+// GetBreakdownOk returns a tuple with the Breakdown field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsStorageTypeOutputDetail) GetBreakdownOk() (*ModelsCostBreakdown, bool) {
+	if o == nil || IsNil(o.Breakdown) {
+		return nil, false
+	}
+	return o.Breakdown, true
+}
+
+// HasBreakdown returns a boolean if a field has been set.
+func (o *ModelsStorageTypeOutputDetail) HasBreakdown() bool {
+	if o != nil && !IsNil(o.Breakdown) {
+		return true
+	}
+
+	return false
+}
+
+// SetBreakdown gets a reference to the given ModelsCostBreakdown and assigns it to the Breakdown field.
+func (o *ModelsStorageTypeOutputDetail) SetBreakdown(v ModelsCostBreakdown) {
+	o.Breakdown = &v
 }
 
 // GetCostId returns the CostId field value if set, zero value otherwise.
@@ -346,6 +379,9 @@ func (o ModelsStorageTypeOutputDetail) MarshalJSON() ([]byte, error) {
 
 func (o ModelsStorageTypeOutputDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Breakdown) {
+		toSerialize["breakdown"] = o.Breakdown
+	}
 	if !IsNil(o.CostId) {
 		toSerialize["cost_id"] = o.CostId
 	}

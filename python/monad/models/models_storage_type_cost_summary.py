@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from monad.models.models_cost_breakdown import ModelsCostBreakdown
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -28,6 +29,7 @@ class ModelsStorageTypeCostSummary(BaseModel):
     """
     ModelsStorageTypeCostSummary
     """ # noqa: E501
+    breakdown: Optional[ModelsCostBreakdown] = None
     total_org_cost_post_filter: Optional[Union[StrictFloat, StrictInt]] = None
     total_org_cost_pre_filter: Optional[Union[StrictFloat, StrictInt]] = None
     total_org_ingest_bytes: Optional[StrictInt] = None
@@ -36,7 +38,7 @@ class ModelsStorageTypeCostSummary(BaseModel):
     total_org_output_storage_gb: Optional[Union[StrictFloat, StrictInt]] = None
     total_org_routing_dropped_bytes: Optional[StrictInt] = Field(default=None, description="Bytes that reached a routing fan-out and matched none of its edges. They were dropped silently — no output ever saw them — so they are counted in no output's baseline and reported here on their own, where a misrouted pipeline shows up.")
     total_org_routing_dropped_gb: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb", "total_org_routing_dropped_bytes", "total_org_routing_dropped_gb"]
+    __properties: ClassVar[List[str]] = ["breakdown", "total_org_cost_post_filter", "total_org_cost_pre_filter", "total_org_ingest_bytes", "total_org_ingest_gb", "total_org_output_storage_bytes", "total_org_output_storage_gb", "total_org_routing_dropped_bytes", "total_org_routing_dropped_gb"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,6 +79,9 @@ class ModelsStorageTypeCostSummary(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of breakdown
+        if self.breakdown:
+            _dict['breakdown'] = self.breakdown.to_dict()
         return _dict
 
     @classmethod
@@ -89,6 +94,7 @@ class ModelsStorageTypeCostSummary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "breakdown": ModelsCostBreakdown.from_dict(obj["breakdown"]) if obj.get("breakdown") is not None else None,
             "total_org_cost_post_filter": obj.get("total_org_cost_post_filter"),
             "total_org_cost_pre_filter": obj.get("total_org_cost_pre_filter"),
             "total_org_ingest_bytes": obj.get("total_org_ingest_bytes"),

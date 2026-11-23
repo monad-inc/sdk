@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**breakdown** | [**ModelsCostBreakdown**](ModelsCostBreakdown.md) |  |  [optional] |
 |**totalOrgCostPostFilter** | **BigDecimal** |  |  [optional] |
 |**totalOrgCostPreFilter** | **BigDecimal** |  |  [optional] |
 |**totalOrgIngestBytes** | **Integer** |  |  [optional] |

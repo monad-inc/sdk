@@ -335,6 +335,7 @@ __all__ = [
     "ModelsConnectionList",
     "ModelsConnectionSessionSettings",
     "ModelsConnectorInfo",
+    "ModelsCostBreakdown",
     "ModelsCursorPagination",
     "ModelsDataUsage",
     "ModelsDeadLetterAction",
@@ -1025,6 +1026,7 @@ from monad.models.models_connection import ModelsConnection as ModelsConnection
 from monad.models.models_connection_list import ModelsConnectionList as ModelsConnectionList
 from monad.models.models_connection_session_settings import ModelsConnectionSessionSettings as ModelsConnectionSessionSettings
 from monad.models.models_connector_info import ModelsConnectorInfo as ModelsConnectorInfo
+from monad.models.models_cost_breakdown import ModelsCostBreakdown as ModelsCostBreakdown
 from monad.models.models_cursor_pagination import ModelsCursorPagination as ModelsCursorPagination
 from monad.models.models_data_usage import ModelsDataUsage as ModelsDataUsage
 from monad.models.models_dead_letter_action import ModelsDeadLetterAction as ModelsDeadLetterAction
