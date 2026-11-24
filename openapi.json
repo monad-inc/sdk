@@ -4103,9 +4103,9 @@
                 ],
                 "type": "string",
                 "x-enum-varnames": [
+                    "defaultPayloadFormat",
                     "payloadFormatIndividual",
-                    "payloadFormatJSONArray",
-                    "defaultPayloadFormat"
+                    "payloadFormatJSONArray"
                 ]
             },
             "kafka.saslMechanism": {
@@ -8546,11 +8546,11 @@
                         "type": "object"
                     },
                     "data_bytes": {
-                        "description": "DataBytes is the payload size in bytes. Omitted is set when the payload was\nleft out for exceeding maxRetryRecordBytes. (meta_only leaves out every\npayload without setting Omitted — it isn't a size decision.)",
+                        "description": "DataBytes is the payload size in bytes. Omitted is set when the payload was\nleft out for being over 256 KiB. (meta_only leaves out every\npayload without setting Omitted — it isn't a size decision.)",
                         "type": "integer"
                     },
                     "eligible_at": {
-                        "description": "EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt),\nnot an authoritative floor — it under-estimates output/enrichment nodes.",
+                        "description": "EligibleAt is a rough estimate of the earliest retry time, not an\nauthoritative floor — it under-estimates output/enrichment nodes.",
                         "type": "string"
                     },
                     "error_node_id": {

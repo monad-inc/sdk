@@ -16,11 +16,11 @@ export class RoutesRetryQueueMessage {
     'createdAt'?: string;
     'data'?: any;
     /**
-    * DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn\'t a size decision.)
+    * DataBytes is the payload size in bytes. Omitted is set when the payload was left out for being over 256 KiB. (meta_only leaves out every payload without setting Omitted — it isn\'t a size decision.)
     */
     'dataBytes'?: number;
     /**
-    * EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt), not an authoritative floor — it under-estimates output/enrichment nodes.
+    * EligibleAt is a rough estimate of the earliest retry time, not an authoritative floor — it under-estimates output/enrichment nodes.
     */
     'eligibleAt'?: string;
     'errorNodeId'?: string;

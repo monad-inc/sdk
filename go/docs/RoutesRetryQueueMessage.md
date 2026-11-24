@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **map[string]interface{}** |  | [optional] 
-**DataBytes** | Pointer to **int32** | DataBytes is the payload size in bytes. Omitted is set when the payload was left out for exceeding maxRetryRecordBytes. (meta_only leaves out every payload without setting Omitted — it isn&#39;t a size decision.) | [optional] 
-**EligibleAt** | Pointer to **string** | EligibleAt is a rough estimate of the earliest retry time (see estEligibleAt), not an authoritative floor — it under-estimates output/enrichment nodes. | [optional] 
+**DataBytes** | Pointer to **int32** | DataBytes is the payload size in bytes. Omitted is set when the payload was left out for being over 256 KiB. (meta_only leaves out every payload without setting Omitted — it isn&#39;t a size decision.) | [optional] 
+**EligibleAt** | Pointer to **string** | EligibleAt is a rough estimate of the earliest retry time, not an authoritative floor — it under-estimates output/enrichment nodes. | [optional] 
 **ErrorNodeId** | Pointer to **string** |  | [optional] 
 **LastError** | Pointer to **string** |  | [optional] 
 **LastSeenAt** | Pointer to **string** |  | [optional] 
