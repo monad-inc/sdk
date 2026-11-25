@@ -36,8 +36,8 @@ class CloudResourceInventorySettingsConfig(BaseModel):
     cloud_platform: Optional[List[WizCloudPlatform]] = Field(default=None, description="Cloud Platform types for Wiz. Ex: 'AWS', 'AZURE', 'GCP'.", alias="cloudPlatform")
     endpoint_url: StrictStr = Field(description="Endpoint URL for the Wiz API. Ex: 'https://api.wiz.io/v1/cloud-resource-inventory'.")
     entity_type: Annotated[List[WizEntityType], Field(min_length=1)] = Field(description="Entity types for Wiz.", alias="entityType")
-    full_snapshot: Optional[StrictBool] = Field(default=None, description="FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.")
-    interval: Optional[StrictInt] = Field(default=None, description="Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.")
+    full_snapshot: Optional[StrictBool] = Field(default=None, description="Re-fetch every resource of the selected entity types on each sync instead of only resources updated since the last sync.")
+    interval: Optional[StrictInt] = Field(default=None, description="Minimum number of hours between syncs, in both incremental and full snapshot modes. Values below 24 are raised to 24. The interval timer begins after each sync operation completes.")
     rate_limit: Optional[ModelsInputRateLimit] = None
     use_synthetic_data: Optional[StrictBool] = Field(default=None, description="Generate synthetic demo data instead of connecting to the real data source.")
     __properties: ClassVar[List[str]] = ["backfill_start_time", "cloudPlatform", "endpoint_url", "entityType", "full_snapshot", "interval", "rate_limit", "use_synthetic_data"]

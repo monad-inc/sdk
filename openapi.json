@@ -1303,11 +1303,11 @@
                         "uniqueItems": false
                     },
                     "full_snapshot": {
-                        "description": "FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.",
+                        "description": "Re-fetch every resource of the selected entity types on each sync instead of only resources updated since the last sync.",
                         "type": "boolean"
                     },
                     "interval": {
-                        "description": "Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.",
+                        "description": "Minimum number of hours between syncs, in both incremental and full snapshot modes. Values below 24 are raised to 24. The interval timer begins after each sync operation completes.",
                         "type": "integer"
                     },
                     "rate_limit": {

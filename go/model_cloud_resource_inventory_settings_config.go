@@ -30,9 +30,9 @@ type CloudResourceInventorySettingsConfig struct {
 	EndpointUrl string `json:"endpoint_url"`
 	// Entity types for Wiz.
 	EntityType []WizEntityType `json:"entityType"`
-	// FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
+	// Re-fetch every resource of the selected entity types on each sync instead of only resources updated since the last sync.
 	FullSnapshot *bool `json:"full_snapshot,omitempty"`
-	// Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
+	// Minimum number of hours between syncs, in both incremental and full snapshot modes. Values below 24 are raised to 24. The interval timer begins after each sync operation completes.
 	Interval *int32 `json:"interval,omitempty"`
 	RateLimit *ModelsInputRateLimit `json:"rate_limit,omitempty"`
 	// Generate synthetic demo data instead of connecting to the real data source.

@@ -66,8 +66,8 @@ Name | Type | Description | Notes
 **resource_names** | **List[str]** | The resources to query logs from. | [optional] 
 **cloud_platform** | [**List[WizCloudPlatform]**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **entity_type** | [**List[WizEntityType]**](WizEntityType.md) | Entity types for Wiz. | 
-**full_snapshot** | **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
-**interval** | **int** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**full_snapshot** | **bool** | Re-fetch every resource of the selected entity types on each sync instead of only resources updated since the last sync. | [optional] 
+**interval** | **int** | Minimum number of hours between syncs, in both incremental and full snapshot modes. Values below 24 are raised to 24. The interval timer begins after each sync operation completes. | [optional] 
 **include_bot_fields** | **bool** | Include Bot Management fields (requires Enterprise plan with Bot Management add-on) | [optional] 
 **zone_id** | **str** | Cloudflare Zone ID | [optional] 
 **fields** | **List[str]** | Fields to include in the query. Leave empty to use default curated list. Only fields available to your account will be included (validated against API). Maximum 50 fields due to API constraints. | [optional] 

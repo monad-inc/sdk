@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **cloud_platform** | [**List[WizCloudPlatform]**](WizCloudPlatform.md) | Cloud Platform types for Wiz. Ex: &#39;AWS&#39;, &#39;AZURE&#39;, &#39;GCP&#39;. | [optional] 
 **endpoint_url** | **str** | Endpoint URL for the Wiz API. Ex: &#39;https://api.wiz.io/v1/cloud-resource-inventory&#39;. | 
 **entity_type** | [**List[WizEntityType]**](WizEntityType.md) | Entity types for Wiz. | 
-**full_snapshot** | **bool** | FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory. | [optional] 
-**interval** | **int** | Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes. | [optional] 
+**full_snapshot** | **bool** | Re-fetch every resource of the selected entity types on each sync instead of only resources updated since the last sync. | [optional] 
+**interval** | **int** | Minimum number of hours between syncs, in both incremental and full snapshot modes. Values below 24 are raised to 24. The interval timer begins after each sync operation completes. | [optional] 
 **rate_limit** | [**ModelsInputRateLimit**](ModelsInputRateLimit.md) |  | [optional] 
 **use_synthetic_data** | **bool** | Generate synthetic demo data instead of connecting to the real data source. | [optional] 
 

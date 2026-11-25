@@ -36,11 +36,11 @@ export class CloudResourceInventorySettingsConfig {
     */
     'entityType': Array<WizEntityType>;
     /**
-    * FullSnapshot indicates whether to fetch a full snapshot of the cloud resource inventory.
+    * Re-fetch every resource of the selected entity types on each sync instead of only resources updated since the last sync.
     */
     'fullSnapshot'?: boolean;
     /**
-    * Defines how frequently (in hours) the system polls the Wiz API to retrieve updated data. Only applicable when full_snapshot is enabled. The interval timer begins after each sync operation completes.
+    * Minimum number of hours between syncs, in both incremental and full snapshot modes. Values below 24 are raised to 24. The interval timer begins after each sync operation completes.
     */
     'interval'?: number;
     'rateLimit'?: ModelsInputRateLimit;
