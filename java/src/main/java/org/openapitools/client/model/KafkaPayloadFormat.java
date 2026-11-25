@@ -29,9 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(KafkaPayloadFormat.Adapter.class)
 public enum KafkaPayloadFormat {
   
-  defaultPayloadFormat("individual"),
+  payloadFormatIndividual("individual"),
   
-  payloadFormatIndividual("json_array");
+  payloadFormatJSONArray("json_array");
 
   private String value;
 
